@@ -1,16 +1,54 @@
-# Python-generated files
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.py[cod]
+*$py.class
 
-# Virtual environments
-.venv
-venv
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
 .env
 
-# Stuff
+# FastF1 and Telemetry Cache
 cache/
+.cache/
+*.ff1pkl
+fastf1_http_cache.sqlite
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Scratch & Temporary Notes
+scratch/
 notas tesis.txt
+Palavecino Nicolás PTF vf n1 04-02-26.docx

@@ -1,0 +1,62 @@
+# Pipeline Configuration for F1 Driving Style Clustering (Thesis)
+
+general:
+  season: 2025
+  default_session_type: "R"  # R for Race, Q for Qualifying, FP2 for Practice
+  cache_dir: "cache"
+  enable_fastf1_cache: true
+  random_state: 42
+
+data_filtering:
+  require_accurate_laps: true
+  use_quicklaps_only: true
+  exclude_pit_in_out: true
+  exclude_safety_car: true
+  exclude_yellow_flags: true
+  min_valid_laps_per_driver: 3
+
+features:
+  metrics:
+    - braking_point_distance
+    - max_deceleration
+    - min_apex_speed
+    - max_throttle_rate
+    - throttle_application_point
+    - apex_speed_loss
+  standardization: "zscore"  # 'zscore' or 'robust'
+  normalization_method: "relative_to_session_mean"
+
+dimensionality_reduction:
+  pca:
+    n_components: 2
+    variance_threshold: 0.85
+  tsne:
+    n_components: 2
+    perplexity: 5
+    n_iter: 1000
+    random_state: 42
+
+clustering:
+  algorithms:
+    - kmeans
+    - agglomerative
+    - gmm
+    - dbscan
+  kmeans:
+    k_range: [2, 7]
+    default_k: 3
+    init: "k-means++"
+    n_init: 20
+  gmm:
+    n_components_range: [2, 6]
+    covariance_type: "full"
+  evaluation_metrics:
+    - silhouette_score
+    - davies_bouldin
+    - calinski_harabasz
+
+paths:
+  results_data: "results/data"
+  results_figures: "results/figures"
+  results_reports: "results/reports"
+
