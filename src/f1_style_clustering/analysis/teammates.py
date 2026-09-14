@@ -80,14 +80,20 @@ def compute_intra_team_deltas(
         val2 = v2[feat]
         diff = delta[feat]
 
-        if "ApexSpeed" in feat:
+        if "ApexSpeed" in feat or "apex_speed" in feat:
             interp = f"{driver_1} carries higher apex speed" if diff > 0 else f"{driver_2} carries higher apex speed"
-        elif "BrakingDist" in feat:
+        elif "BrakingDist" in feat or "brake_point" in feat:
             interp = f"{driver_1} brakes earlier" if diff > 0 else f"{driver_2} brakes deeper/later"
         elif "MaxDecel" in feat:
             interp = f"{driver_1} hits brakes harder" if diff > 0 else f"{driver_2} hits brakes harder"
-        elif "ThrottleRate" in feat:
+        elif "ThrottleRate" in feat or "throttle_attack" in feat:
             interp = f"{driver_1} more aggressive on throttle" if diff > 0 else f"{driver_2} more progressive on throttle"
+        elif "trail_brake" in feat:
+            interp = f"{driver_1} trails the brake more" if diff > 0 else f"{driver_2} trails the brake more"
+        elif "coast_frac" in feat:
+            interp = f"{driver_1} coasts more" if diff > 0 else f"{driver_2} coasts more"
+        elif "full_throttle" in feat:
+            interp = f"{driver_1} spends more time at full throttle" if diff > 0 else f"{driver_2} spends more time at full throttle"
         else:
             interp = f"Delta = {diff:.3f}"
 

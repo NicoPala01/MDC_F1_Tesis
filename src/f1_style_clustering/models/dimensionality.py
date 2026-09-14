@@ -45,6 +45,43 @@ def perform_pca(
     return df_pca, pca, summary
 
 
+def pca_for_clustering(
+    df_standardized: pd.DataFrame,
+    variance_threshold: float = 0.85,
+    max_features_direct: int = 8,
+    force: bool = False,
+    random_state: int = 42,
+):
+    """PCA as the clustering *fit space* when needed, not display-only 2D.
+
+    If the feature count is ≤ ``max_features_direct`` (Pipeline B: 6–8) and
+    ``force`` is False, the scaled features are used directly.
+    """
+    n_features = df_standardized.shape[1]
+    if n_features <= max_features_direct and not force:
+        return df_standardized.copy(), None, {
+            "used": False,
+            "n_components": n_features,
+            "cumulative_variance": 1.0,
+            "variance_threshold": variance_threshold,
+        }
+
+    n_samples = len(df_standardized)
+    max_components = min(n_features, n_samples)
+    pca_probe = PCA(n_components=min(max_components, n_features), random_state=random_state)
+    pca_probe.fit(df_standardized)
+    cum = np.cumsum(pca_probe.explained_variance_ratio_)
+    n_keep = int(np.searchsorted(cum, variance_threshold) + 1)
+    n_keep = max(2, min(n_keep, max_components))
+
+    df_pca, pca_model, summary = perform_pca(
+        df_standardized, n_components=n_keep, random_state=random_state
+    )
+    summary["used"] = True
+    summary["variance_threshold"] = variance_threshold
+    return df_pca, pca_model, summary
+
+
 def compute_pca_loadings(
     pca_model: PCA,
     feature_names: list,

@@ -91,3 +91,65 @@ def find_optimal_k(
     df_eval = pd.DataFrame(results)
     return df_eval
 
+
+def select_k_rule_based(
+    df_features: pd.DataFrame,
+    k_min: int = 2,
+    k_max: int = 7,
+    silhouette_threshold: float = 0.25,
+    min_cluster_size: int = 3,
+    random_state: int = 42,
+    n_init: int = 20,
+):
+    """Choose k by sweep: max silhouette if ≥ threshold, else min Davies-Bouldin.
+
+    Candidate k must produce clusters of size ≥ ``min_cluster_size`` (typically 3).
+    Returns ``(k_star, eval_df, rule)`` where rule is ``'silhouette'`` or
+    ``'davies_bouldin'``.
+    """
+    n_samples = len(df_features)
+    k_max_eff = min(int(k_max), max(int(k_min), n_samples - 1))
+    k_min_eff = min(int(k_min), k_max_eff)
+    if k_max_eff < 2 or n_samples < 2:
+        empty = pd.DataFrame(columns=["k", "inertia", "silhouette", "davies_bouldin",
+                                      "calinski_harabasz", "min_cluster_size", "valid"])
+        return max(2, k_min_eff), empty, "silhouette"
+
+    results = []
+    for k in range(k_min_eff, k_max_eff + 1):
+        kmeans = KMeans(
+            n_clusters=k,
+            init="k-means++",
+            n_init=n_init,
+            random_state=random_state,
+        )
+        labels = kmeans.fit_predict(df_features)
+        sizes = pd.Series(labels).value_counts()
+        metrics = evaluate_clustering(df_features, labels, kmeans)
+        valid = bool(sizes.min() >= min_cluster_size) if len(sizes) else False
+        results.append({
+            "k": k,
+            "inertia": metrics.inertia,
+            "silhouette": metrics.silhouette,
+            "davies_bouldin": metrics.davies_bouldin,
+            "calinski_harabasz": metrics.calinski_harabasz,
+            "min_cluster_size": int(sizes.min()) if len(sizes) else 0,
+            "valid": valid,
+        })
+
+    df_eval = pd.DataFrame(results)
+    pool = df_eval[df_eval["valid"]]
+    if pool.empty:
+        pool = df_eval.dropna(subset=["davies_bouldin"])
+
+    sil_ok = pool["silhouette"].notna()
+    best_sil = float(pool.loc[sil_ok, "silhouette"].max()) if sil_ok.any() else np.nan
+    if pd.notna(best_sil) and best_sil >= silhouette_threshold:
+        k_star = int(pool.loc[pool["silhouette"].idxmax(), "k"])
+        rule = "silhouette"
+    else:
+        k_star = int(pool.loc[pool["davies_bouldin"].idxmin(), "k"])
+        rule = "davies_bouldin"
+
+    return k_star, df_eval, rule
+

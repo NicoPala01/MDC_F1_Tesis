@@ -1,25 +1,54 @@
 """Feature engineering, Zone of Interest (ZOI) extraction, and preprocessing."""
 
-from .zoi import extract_circuit_zones, get_corner_fragments
+from .zoi import (
+    classify_speed_typology,
+    disjoint_zone_bounds,
+    extract_circuit_zones,
+    get_corner_fragments,
+    in_distance_window,
+    map_typology_to_bucket,
+)
 from .metrics import (
-    get_braking_point,
+    get_apex_speed,
+    get_brake_point_relative,
     get_braking_distance_to_apex,
+    get_braking_point,
+    get_coast_frac,
+    get_full_throttle_frac,
+    get_kinematic_apex_distance,
     get_max_deceleration,
-    get_min_apex_speed,
     get_max_throttle_rate,
+    get_min_apex_speed,
     get_throttle_application_point,
+    get_throttle_attack,
+    get_throttle_onset_relative,
+    get_trail_brake_frac,
     get_trail_braking_score,
+    is_brake_on,
+    spatial_fraction,
 )
 from .aggregators import (
-    extract_lap_features,
-    extract_driver_session_features,
+    CORE_STYLE_FEATURES,
+    build_pipeline_b_feature_matrix,
     build_session_feature_matrix,
+    extract_driver_session_features,
+    extract_lap_features,
+    extract_style_features_from_telemetry,
+    aggregate_driver_style_features,
 )
-from .preprocessor import normalize_relative_to_mean, standardize_features
+from .preprocessor import (
+    normalize_relative_to_mean,
+    normalize_typology_session_median,
+    standardize_features,
+)
 
 __all__ = [
     "extract_circuit_zones",
     "get_corner_fragments",
+    "disjoint_zone_bounds",
+    "in_distance_window",
+    "map_typology_to_bucket",
+    "classify_speed_typology",
     "get_braking_point",
     "get_braking_distance_to_apex",
     "get_max_deceleration",
@@ -27,10 +56,25 @@ __all__ = [
     "get_max_throttle_rate",
     "get_throttle_application_point",
     "get_trail_braking_score",
+    "is_brake_on",
+    "spatial_fraction",
+    "get_kinematic_apex_distance",
+    "get_apex_speed",
+    "get_brake_point_relative",
+    "get_trail_brake_frac",
+    "get_throttle_attack",
+    "get_coast_frac",
+    "get_full_throttle_frac",
+    "get_throttle_onset_relative",
+    "CORE_STYLE_FEATURES",
     "extract_lap_features",
     "extract_driver_session_features",
     "build_session_feature_matrix",
+    "build_pipeline_b_feature_matrix",
+    "extract_style_features_from_telemetry",
+    "aggregate_driver_style_features",
     "normalize_relative_to_mean",
+    "normalize_typology_session_median",
     "standardize_features",
 ]
 

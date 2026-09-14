@@ -1,4 +1,13 @@
 # Pipeline Configuration for F1 Driving Style Clustering (Thesis)
+# Main path: Pipeline B (committee-approved)
+
+pipeline:
+  name: B
+  description: >
+    per-lap features → typology×session relative normalisation → median
+    aggregation per driver → optional PCA in the fit space → K-means with
+    rule-based k → mutually exclusive archetypes on 6–8 features.
+  # Pipeline C (lap clustering) is an appendix stub only — not the main path.
 
 general:
   season: 2025
@@ -8,8 +17,14 @@ general:
   random_state: 42
 
 data_filtering:
+  # FastF1 canonical: pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status green
   require_accurate_laps: true
-  use_quicklaps_only: true
+  exclude_box_laps: true
+  exclude_deleted_laps: true
+  green_flag_only: true
+  # pick_quicklaps is an explicit "push mode", not the default definition of clean
+  push_mode: false
+  use_quicklaps_only: false
   exclude_pit_in_out: true
   exclude_safety_car: true
   exclude_yellow_flags: true
@@ -17,18 +32,27 @@ data_filtering:
 
 features:
   metrics:
-    - braking_point_distance
-    - max_deceleration
-    - min_apex_speed
-    - max_throttle_rate
-    - throttle_application_point
-    - apex_speed_loss
-  standardization: "zscore"  # 'zscore' or 'robust'
-  normalization_method: "relative_to_session_mean"
+    - brake_point_rel
+    - trail_brake_frac
+    - apex_speed_rel
+    - throttle_attack
+    - coast_frac
+    - full_throttle_frac
+    - throttle_onset_rel   # optional; window includes pre-apex
+    # brake_point_iqr is computed after driver aggregation
+  include_throttle_onset: true
+  include_brake_point_iqr: true
+  # Deprioritized / removed as style features: gear-change rate, raw MaxDecel spikes,
+  # one column per numbered corner (p ≫ n).
+  standardization: "robust"  # 'zscore' or 'robust'
+  normalization_unit: "typology_session_median"
+  aggregation: "median"  # 'median' (default) or 'mean' (robustness / sensitivity switch)
 
 dimensionality_reduction:
   pca:
-    n_components: 2
+    # Use PCA as clustering *input* only when needed (auto: skip if ≤ 8 features)
+    use_as_clustering_input: auto
+    n_components: null
     variance_threshold: 0.85
   tsne:
     n_components: 2
@@ -41,10 +65,16 @@ clustering:
     - kmeans
     - agglomerative
     - gmm
-    - dbscan
+    - dbscan          # optional outlier prefilter only — not the main partition
+  use_rule_based_k: true
+  # No hard-coded K_OPTIMAL=3 as the only path. default_k is unused when rule-based.
+  default_k: null
+  min_cluster_size: 3
+  silhouette_threshold: 0.25
+  dbscan_prefilter: false
+  seed_stability_n: 10
   kmeans:
     k_range: [2, 7]
-    default_k: 3
     init: "k-means++"
     n_init: 20
   gmm:
@@ -59,4 +89,3 @@ paths:
   results_data: "results/data"
   results_figures: "results/figures"
   results_reports: "results/reports"
-

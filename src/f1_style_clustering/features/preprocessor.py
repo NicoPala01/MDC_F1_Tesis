@@ -12,7 +12,15 @@ def separate_metadata(
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Separate numeric feature columns from driver/session metadata columns."""
     if metadata_cols is None:
-        metadata_cols = ["Team", "LapsCount", "Driver", "Session", "Year"]
+        metadata_cols = [
+            "Team",
+            "LapsCount",
+            "n_laps",
+            "Driver",
+            "Session",
+            "Year",
+            "aggregator",
+        ]
 
     meta_present = [col for col in metadata_cols if col in df.columns]
     df_meta = df[meta_present].copy()
@@ -47,6 +55,37 @@ def normalize_relative_to_mean(
     df_normalized = df_filled - col_means
 
     return df_normalized, df_meta
+
+
+def normalize_typology_session_median(
+    df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+    typology_col: str = "typology",
+) -> pd.DataFrame:
+    """Subtract the session × typology median so features are relative style.
+
+    One input table is assumed to be a single session. This is the Pipeline B
+    primary normalisation unit — not raw circuit-only, not per-numbered-corner
+    z-scores that reinflate p.
+    """
+    if df.empty:
+        return df.copy()
+    if typology_col not in df.columns:
+        raise ValueError(f"Expected typology column '{typology_col}' for Pipeline B normalisation.")
+
+    out = df.copy()
+    if feature_cols is None:
+        feature_cols = [
+            c
+            for c in out.select_dtypes(include=[np.number]).columns
+            if c not in {"LapNumber", "n_laps", "LapsCount", "corner_number"}
+        ]
+
+    out[feature_cols] = out[feature_cols].replace([np.inf, -np.inf], np.nan)
+
+    medians = out.groupby(typology_col)[feature_cols].transform("median")
+    out[feature_cols] = out[feature_cols] - medians
+    return out
 
 
 def standardize_features(

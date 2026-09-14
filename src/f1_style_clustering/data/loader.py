@@ -89,9 +89,14 @@ def prepare_lap_telemetry(lap: Lap) -> Optional[pd.DataFrame]:
         telemetry["ThrottleDelta"] = telemetry["Throttle"].diff()
         telemetry["ThrottleRate"] = telemetry["ThrottleDelta"] / telemetry["TimeDelta"]
 
-        # Smooth noisy sensor spikes if needed
+        # Smooth noisy sensor spikes (used by Pipeline B throttle_attack p95)
         telemetry["Acceleration"] = telemetry["Acceleration"].replace([np.inf, -np.inf], np.nan)
         telemetry["ThrottleRate"] = telemetry["ThrottleRate"].replace([np.inf, -np.inf], np.nan)
+        telemetry["ThrottleRate_smooth"] = (
+            telemetry["ThrottleRate"].rolling(window=5, center=True, min_periods=1).median()
+        )
+        if "ThrottleRate_smooth" in telemetry.columns:
+            telemetry["ThrottleRate"] = telemetry["ThrottleRate_smooth"]
 
         return telemetry
 

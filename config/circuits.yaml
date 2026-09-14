@@ -1,4 +1,5 @@
 # Formula 1 Circuit and Corner Typology Configuration
+# Wired into Pipeline B ZOI extraction (no longer a dead YAML file).
 
 corner_speed_classification:
   slow:
@@ -12,8 +13,24 @@ corner_speed_classification:
     description: "High-speed sweepers and high lateral-G sections"
     speed_threshold_min_kmh: 205
 
+# Map circuit-specific YAML typology strings → Pipeline B buckets (slow|medium|fast)
+typology_buckets:
+  heavy_braking_chicane: slow
+  medium_chicane: medium
+  high_speed_chicane: fast
+  long_medium_fast_entry: medium
+  slow_technical: slow
+  ultra_high_speed: fast
+  high_speed_s_curves: fast
+  fast_entry_heavy_braking: medium
+  hard_braking_medium_slow: slow
+  extreme_slow_hairpin: slow
+  downhill_braking_chicane: slow
+  fast_chicane: fast
+
 default_zoi_offsets:
-  # Distance offsets (in meters) relative to corner apex distance from FastF1 circuit_info
+  # Distance offsets (in meters) relative to corner apex distance from FastF1 circuit_info.
+  # Pipeline B uses these as disjoint windows: braking | apex | exit, with track wrap-around.
   braking:
     pre_apex_meters: 350
     post_apex_meters: 0

@@ -3,13 +3,34 @@
 **Tesis de Maestría en Ciencia de Datos — Universidad Austral**  
 **Autor:** Nicolás Palavecino  
 **Tutor:** Ezequiel Nuske  
-**Rama:** `refactor/ag-version`
+**Rama:** `refactor/pipeline-b-typology-median` (Pipeline B; base `refactor/ag-version`)
 
 ---
 
 ## 🏎️ Descripción del Proyecto
 
 Este repositorio contiene la arquitectura de software, algoritmos y notebooks de investigación aplicados a la clasificación objetiva de estilos de conducción de pilotos de Fórmula 1 mediante técnicas de **Aprendizaje No Supervisado (Clustering)** e **Ingeniería de Características** sobre señales de telemetría de alta frecuencia (**FastF1**).
+
+### Pipeline B (camino principal)
+
+El clustering **no** se hace sobre una matriz frágil de una columna por curva numerada. El camino aprobado por el comité es:
+
+**features por vuelta** → **normalización relativa tipología × sesión** (restar la mediana del grid) → **agregación mediana por piloto** (`n_laps`) → **PCA opcional en el espacio de ajuste** (umbral de varianza ~0.80–0.85; con 6–8 features se clusteriza directo sobre RobustScaler) → **K-means++ con k por reglas** (barrido; silueta ≥ 0.25 o si no mínimo Davies-Bouldin; tamaño mínimo de clúster ≥ 3) → **nombres de arquetipo mutuamente excluyentes** sobre esas 6–8 features (el radar usa el mismo espacio).
+
+Features (calidad > forzar 10), en ZOI disjuntas (frenado | vértice | salida), preferentemente por (piloto × vuelta × tipología slow/medium/fast):
+
+1. `brake_point_rel`
+2. `trail_brake_frac` (fracción espacial con `Brake==True`; en FastF1 `Brake` es bool)
+3. `apex_speed_rel` (mín. Speed en ventana de apex; apex cinemático = argmin Speed)
+4. `throttle_attack` (p95 ThrottleRate en salida, suavizado)
+5. `coast_frac`
+6. `full_throttle_frac`
+7. `throttle_onset_rel` (opcional; la ventana incluye pre-apex)
+8. `brake_point_iqr` (opcional, post-agregación)
+
+`config/circuits.yaml` alimenta las ZOI (offsets, wrap-around en T1/última curva, buckets de tipología). `pick_quicklaps` es un **push mode** explícito, no el filtro canónico por defecto (`pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status` verde). Media vs mediana es un switch de sensibilidad sobre la misma matriz.
+
+Pipeline C (clustering por vuelta) queda como stub de apéndice y **no** reemplaza este camino.
 
 ### Objetivos Principales
 1. **Caracterización Objetiva**: Desplazar la subjetividad de etiquetas tradicionales (*"agresivo"*, *"suave"*, *"técnico"*) por vectores cuantitativos reproducibles (Puntos de frenado normalizados, velocidad en vértice, tasa de aceleración, *trail braking*).
@@ -63,13 +84,14 @@ MDC_F1_Tesis/
 │   └── archive/                       # Notebooks exploratorios preexistentes archivados
 │
 ├── scripts/
-│   ├── run_pipeline.py                # Pipeline CLI ejecutable de punta a punta
+│   ├── run_pipeline.py                # Pipeline B CLI (tipología × mediana, k por reglas)
 │   ├── generate_notebooks.py          # Generador/actualizador de notebooks
 │   └── export_results.py              # Exportador de reportes ejecutivos
 │
 └── tests/                             # Suite de pruebas unitarias automatizadas (pytest)
     ├── test_features.py               # Tests para métricas cinemáticas y preprocesamiento
-    └── test_models.py                 # Tests para PCA, t-SNE, K-Means, GMM y Teammates
+    ├── test_models.py                 # Tests para PCA, t-SNE, K-Means, GMM y Teammates
+    └── test_pipeline_b.py             # Tests Pipeline B (ZOI, filtros, k, namer; sin red FastF1)
 ```
 
 ---
@@ -106,7 +128,11 @@ python -m pip install -e ".[dev]"
 Para ejecutar la ingesta, ingeniería de características, reducción dimensional, clustering, análisis de *teammates* y generación de gráficos:
 
 ```bash
-# Ejemplo: Temporada 2025 - Gran Premio de Italia (Carrera) con k=3 clústeres
+# Pipeline B: k se elige por reglas salvo --k-clusters
+python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R
+
+# Sensibilidad media vs mediana (misma matriz) y override de k
+python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --aggregator mean
 python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --k-clusters 3
 ```
 
@@ -124,7 +150,7 @@ jupyter lab
 # o jupyter notebook
 ```
 - **`01_data_acquisition_and_exploration.ipynb`**: Carga y validación de vueltas de telemetría.
-- **`02_feature_engineering_and_zoi.ipynb`**: Extracción de Zonas de Interés (ZOI) y cálculo de Z-scores.
-- **`03_dimensionality_reduction_pca_tsne.ipynb`**: PCA, loadings factoriales y t-SNE.
-- **`04_driver_clustering_and_archetypes.ipynb`**: K-Means, GMM, métricas de silueta y radares de estilo.
-- **`05_teammate_and_strategy_applications.ipynb`**: Comparación intra-equipo y matrices de compatibilidad.
+- **`02_feature_engineering_and_zoi.ipynb`**: ZOI disjuntas, features Pipeline B y normalización tipología×sesión.
+- **`03_dimensionality_reduction_pca_tsne.ipynb`**: PCA como espacio de ajuste (umbral de varianza) y t-SNE para visualización.
+- **`04_driver_clustering_and_archetypes.ipynb`**: K-means++ con k por reglas, arquetipos mutuamente excluyentes, radar 6–8.
+- **`05_teammate_and_strategy_applications.ipynb`**: Comparación intra-equipo sobre el mismo espacio de features.

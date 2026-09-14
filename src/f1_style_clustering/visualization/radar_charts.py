@@ -27,7 +27,8 @@ def plot_cluster_radar_chart(
         matplotlib Figure object.
     """
     if features is None:
-        features = list(cluster_profiles.columns[:6])
+        from ..analysis.archetypes import radar_feature_list
+        features = radar_feature_list(cluster_profiles)
 
     df_subset = cluster_profiles[features].copy()
     num_vars = len(features)
@@ -74,7 +75,8 @@ def plot_driver_radar_comparison(
     Compare 2 or more drivers on a radar chart in standardized Z-score space.
     """
     if features is None:
-        features = list(df_standardized.columns[:6])
+        from ..analysis.archetypes import radar_feature_list
+        features = radar_feature_list(df_standardized)
 
     num_vars = len(features)
     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()

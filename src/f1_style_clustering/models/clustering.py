@@ -134,3 +134,48 @@ def fit_clustering_model(
     else:
         raise ValueError(f"Unknown clustering algorithm: {algorithm}. Supported: kmeans, agglomerative, gmm, dbscan")
 
+
+def kmeans_seed_stability(
+    df_features: pd.DataFrame,
+    n_clusters: int,
+    n_seeds: int = 10,
+    base_seed: int = 42,
+    n_init: int = 20,
+):
+    """Mean pairwise Adjusted Rand Index of K-means++ across random seeds."""
+    from sklearn.metrics import adjusted_rand_score
+
+    label_runs = []
+    for i in range(int(n_seeds)):
+        labels, _ = fit_kmeans(
+            df_features,
+            n_clusters=n_clusters,
+            random_state=base_seed + i,
+            n_init=n_init,
+        )
+        label_runs.append(labels.to_numpy())
+
+    if len(label_runs) < 2:
+        return 1.0, 0.0
+
+    scores = []
+    for i in range(len(label_runs)):
+        for j in range(i + 1, len(label_runs)):
+            scores.append(float(adjusted_rand_score(label_runs[i], label_runs[j])))
+    return float(np.mean(scores)), float(np.std(scores))
+
+
+def dbscan_prefilter_outliers(
+    df_features: pd.DataFrame,
+    eps: float = 1.5,
+    min_samples: int = 3,
+):
+    """Optional DBSCAN outlier prefilter. Not the main partition (Pipeline B uses K-means)."""
+    labels, _ = fit_dbscan(df_features, eps=eps, min_samples=min_samples)
+    inlier_mask = labels != -1
+    # If DBSCAN labels everything noise, keep the original matrix.
+    if not bool(inlier_mask.any()):
+        return df_features.copy(), pd.Series(True, index=df_features.index, name="inlier")
+    inliers = df_features.loc[inlier_mask]
+    return inliers, inlier_mask
+
