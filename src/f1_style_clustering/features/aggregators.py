@@ -2,10 +2,14 @@
 
 Pipeline B
 ----------
-per-lap features on disjoint ZOIs
+per-lap features on disjoint ZOIs (one zone per YAML key_corners group)
   → typology × session median normalisation
-  → median (or mean) aggregation per driver
+  → collapse to (Driver × Lap × typology) — median within typology per lap
+  → median (or mean) across laps per driver
   → 6–8 style features (+ optional brake_point_iqr)
+
+Turn_N / FastF1 Number is diagnostic only and must not weight the cluster
+matrix (no Number inflation).
 
 Legacy per-numbered-corner wide matrices are retained as
 ``build_session_feature_matrix_legacy`` for appendix comparisons only.
@@ -39,7 +43,15 @@ from .zoi import (
     classify_speed_typology,
     extract_circuit_zones,
     get_corner_fragments,
+    in_distance_window,
+    resolve_selected_corners,
 )
+
+# Distance wrap for optional last-Xm trail tail (mirrors zoi._wrap).
+def _wrap_distance(value: float, track_length: Optional[float]) -> float:
+    if track_length is None or track_length <= 0:
+        return float(value)
+    return float(value % track_length)
 
 CORE_STYLE_FEATURES: List[str] = [
     "brake_point_rel",
@@ -68,12 +80,45 @@ def _concat_fragments(*parts: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(nonempty, ignore_index=True)
 
 
+def trail_brake_fragment(
+    apex: pd.DataFrame,
+    braking: Optional[pd.DataFrame] = None,
+    last_braking_m: Optional[float] = None,
+    track_length: Optional[float] = None,
+    apex_start: Optional[float] = None,
+) -> pd.DataFrame:
+    """Apex ZOI, optionally concatenated with the last ``last_braking_m`` of braking.
+
+    Default (``last_braking_m`` is None/≤0): apex only — not braking ∪ apex.
+    """
+    if last_braking_m is None or last_braking_m <= 0 or braking is None or braking.empty:
+        return apex if apex is not None else pd.DataFrame()
+    if apex_start is None or "Distance" not in braking.columns:
+        return apex if apex is not None else pd.DataFrame()
+    tail_start = _wrap_distance(float(apex_start) - float(last_braking_m), track_length)
+    mask = in_distance_window(
+        braking["Distance"],
+        tail_start,
+        float(apex_start),
+        track_length,
+        start_inclusive=True,
+        end_inclusive=False,
+    )
+    tail = braking.loc[mask]
+    return _concat_fragments(tail, apex)
+
+
 def extract_style_features_from_telemetry(
     telemetry: pd.DataFrame,
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
+    trail_last_braking_m: Optional[float] = None,
 ) -> List[Dict[str, Any]]:
-    """Compute Pipeline B features per corner on one lap of telemetry."""
+    """Compute Pipeline B features per ZOI on one lap of telemetry.
+
+    ``trail_brake_frac`` is the spatial Brake==True fraction on the **apex ZOI
+    only** (optional last Xm of braking via ``trail_last_braking_m``).
+    """
     rows: List[Dict[str, Any]] = []
     if telemetry is None or telemetry.empty:
         return rows
@@ -95,13 +140,25 @@ def extract_style_features_from_telemetry(
             kinematic_apex = get_kinematic_apex_distance(_concat_fragments(braking, apex, exit_z))
         apex_ref = kinematic_apex if pd.notna(kinematic_apex) else official_apex
 
-        trail_window = _concat_fragments(braking, apex)
+        apex_start = None
+        if "apex" in zone_info:
+            apex_start = zone_info["apex"][0]
+        trail_window = trail_brake_fragment(
+            apex,
+            braking=braking,
+            last_braking_m=trail_last_braking_m,
+            track_length=track_length,
+            apex_start=apex_start,
+        )
         corner_window = _concat_fragments(braking, apex, exit_z)
         onset_window = corner_window  # must allow pre-apex samples
 
         row: Dict[str, Any] = {
             "corner": corner_name,
             "corner_number": zone_info.get("corner_number"),
+            "corner_numbers": zone_info.get("corner_numbers"),
+            "yaml_zone_name": zone_info.get("yaml_zone_name", corner_name),
+            "zone_source": zone_info.get("zone_source"),
             "typology": zone_info.get("typology"),
             "brake_point_rel": get_brake_point_relative(braking, apex_ref, track_length),
             "trail_brake_frac": get_trail_brake_frac(trail_window, track_length),
@@ -197,12 +254,57 @@ def aggregate_driver_style_features(
     return aggregated
 
 
+def collapse_to_driver_lap_typology(
+    long_df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+) -> pd.DataFrame:
+    """Median within (Driver × Lap × typology). Turn_N is diagnostic only.
+
+    Stops FastF1 Number inflation: two slow chicane Numbers on the same lap
+    contribute one typology observation, not two cluster-matrix weights.
+    """
+    if long_df.empty:
+        return long_df.copy()
+
+    df = long_df.copy()
+    if feature_cols is None:
+        feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in df.columns]
+
+    group_keys = [k for k in ("Driver", "LapNumber", "typology") if k in df.columns]
+    if "Driver" not in group_keys:
+        raise ValueError("long_df must contain a Driver column")
+    if len(group_keys) == 1:
+        grouped = df.groupby(group_keys, dropna=False)
+        out = grouped[feature_cols].median()
+        out["n_zones"] = grouped.size()
+        return out.reset_index() if out.index.name or isinstance(out.index, pd.MultiIndex) else out
+
+    grouped = df.groupby(group_keys, dropna=False)
+    out = grouped[feature_cols].median()
+    out["n_zones"] = grouped.size()
+    out = out.reset_index()
+
+    # Diagnostic only — must not re-enter the cluster-matrix group keys.
+    if "corner" in df.columns:
+        out["corner"] = grouped["corner"].agg("first").to_numpy()
+    if "corner_number" in df.columns:
+        out["corner_number"] = grouped["corner_number"].agg("first").to_numpy()
+    if "yaml_zone_name" in df.columns:
+        out["yaml_zone_name"] = grouped["yaml_zone_name"].agg("first").to_numpy()
+    if "zone_source" in df.columns:
+        out["zone_source"] = grouped["zone_source"].agg("first").to_numpy()
+    if "Team" in df.columns:
+        out["Team"] = grouped["Team"].agg("first").to_numpy()
+    out["unit"] = "driver_lap_typology"
+    return out
+
+
 def extract_lap_style_rows(
     lap: Lap,
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
 ) -> List[Dict[str, Any]]:
-    """Pipeline B per-lap rows (one per corner). Prefers get_car_data().add_distance()."""
+    """Pipeline B per-lap rows (one per ZOI / key_corners group). Prefers get_car_data().add_distance()."""
     telemetry = prepare_lap_telemetry(lap)
     if telemetry is None or telemetry.empty:
         return []
@@ -227,9 +329,12 @@ def build_long_style_table(
     min_valid_laps: int = 3,
     include_throttle_onset: bool = True,
 ) -> pd.DataFrame:
-    """Build the long (driver × lap × corner) Pipeline B table before aggregation."""
+    """Build the long (driver × lap × zone) Pipeline B table before aggregation."""
     if analysis_zones is None:
-        analysis_zones = extract_circuit_zones(session, circuit_config=circuit_config)
+        selected, _source = resolve_selected_corners(session, circuit_config)
+        analysis_zones = extract_circuit_zones(
+            session, circuit_config=circuit_config, selected_corners=selected
+        )
 
     driver_list = drivers or list(session.drivers)
     records: List[Dict[str, Any]] = []
@@ -283,8 +388,15 @@ def build_pipeline_b_feature_matrix(
     include_brake_point_iqr: bool = True,
     selected_corners: Optional[List[int]] = None,
 ) -> pd.DataFrame:
-    """End-to-end Pipeline B driver matrix (relative 6–8 style features)."""
+    """End-to-end Pipeline B driver matrix (relative 6–8 style features).
+
+    Cluster-matrix unit: median within (Driver × Lap × typology), then median
+    across those rows per driver. Turn_N does not weight the matrix.
+    """
     if analysis_zones is None:
+        selected, _source = resolve_selected_corners(session, circuit_config)
+        if selected_corners is None:
+            selected_corners = selected
         analysis_zones = extract_circuit_zones(
             session, circuit_config=circuit_config, selected_corners=selected_corners
         )
@@ -303,9 +415,11 @@ def build_pipeline_b_feature_matrix(
 
     feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in long_df.columns]
     long_rel = normalize_typology_session_median(long_df, feature_cols=feature_cols)
+    # Turn_N / FastF1 Number is diagnostic only from here on.
+    lap_typ = collapse_to_driver_lap_typology(long_rel, feature_cols=feature_cols)
 
     return aggregate_driver_style_features(
-        long_rel,
+        lap_typ,
         method=aggregation,
         include_brake_point_iqr=include_brake_point_iqr,
         min_valid_laps=min_valid_laps,

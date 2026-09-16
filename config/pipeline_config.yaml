@@ -4,9 +4,10 @@
 pipeline:
   name: B
   description: >
-    per-lap features → typology×session relative normalisation → median
-    aggregation per driver → optional PCA in the fit space → K-means with
-    rule-based k → mutually exclusive archetypes on 6–8 features.
+    per-lap features → (Driver × Lap × typology) median → driver median
+    aggregation → optional PCA in the fit space → K-means with
+    rule-based k (valid min_cluster_size pool only) → mutually exclusive
+    if/elif archetypes on the same fit space.
   # Pipeline C (lap clustering) is an appendix stub only — not the main path.
 
 general:
@@ -47,6 +48,8 @@ features:
   standardization: "robust"  # 'zscore' or 'robust'
   normalization_unit: "typology_session_median"
   aggregation: "median"  # 'median' (default) or 'mean' (robustness / sensitivity switch)
+  # Cluster matrix unit: median within (Driver × Lap × typology), then median across laps.
+  # Turn_N / FastF1 Number is diagnostic only and must not inflate the matrix.
 
 dimensionality_reduction:
   pca:
@@ -67,6 +70,8 @@ clustering:
     - gmm
     - dbscan          # optional outlier prefilter only — not the main partition
   use_rule_based_k: true
+  # k is chosen only from candidates with min_cluster_size; empty pool aborts (never fit invalid k).
+  # Seed-stability mean ARI is the tie-break. No driver-level bootstrap in this pass.
   # No hard-coded K_OPTIMAL=3 as the only path. default_k is unused when rule-based.
   default_k: null
   min_cluster_size: 3

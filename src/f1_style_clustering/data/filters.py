@@ -6,14 +6,21 @@ Pipeline B uses FastF1 canonical picks:
 
 ``pick_quicklaps`` is an explicit *push mode*, not the default definition of a
 clean lap.
+
+Canonical ``pick_*`` methods fail closed: if a required method is missing the
+filter raises ``MissingCanonicalPickError`` instead of silently skipping.
 """
 
-from typing import Any, List, Optional, Union
+from typing import Any, Optional
 
 import pandas as pd
 from fastf1.core import Laps, Session
 
 GREEN_TRACK_STATUS = "1"
+
+
+class MissingCanonicalPickError(ValueError):
+    """Raised when a required FastF1 pick_* method is absent (fail-closed)."""
 
 
 def _as_laps(source: Any):
@@ -27,16 +34,17 @@ def _as_laps(source: Any):
     return source
 
 
-def _pick(laps, method: str, *args, **kwargs):
+def _require_pick(laps, method: str, *args, **kwargs):
+    """Call a canonical pick_* method or fail closed (no silent skip)."""
     fn = getattr(laps, method, None)
-    if fn is None or laps is None:
+    if fn is None:
+        raise MissingCanonicalPickError(
+            f"Required FastF1 method {method}() is missing on {type(laps).__name__}; "
+            "fail-closed (no silent skip)."
+        )
+    if getattr(laps, "empty", False):
         return laps
-    try:
-        if getattr(laps, "empty", False):
-            return laps
-        return fn(*args, **kwargs)
-    except Exception:
-        return laps
+    return fn(*args, **kwargs)
 
 
 def filter_canonical_laps(
@@ -65,9 +73,9 @@ def filter_canonical_laps(
 
     if driver is not None:
         if hasattr(laps, "pick_drivers"):
-            laps = _pick(laps, "pick_drivers", driver)
+            laps = laps.pick_drivers(driver)
         elif hasattr(laps, "pick_driver"):
-            laps = _pick(laps, "pick_driver", driver)
+            laps = laps.pick_driver(driver)
         elif hasattr(laps, "__getitem__") and "Driver" in getattr(laps, "columns", []):
             try:
                 laps = laps[laps["Driver"] == driver]
@@ -75,40 +83,23 @@ def filter_canonical_laps(
                 pass
 
     if require_accurate:
-        laps = _pick(laps, "pick_accurate")
+        laps = _require_pick(laps, "pick_accurate")
 
     if exclude_box:
-        laps = _pick(laps, "pick_wo_box")
-        # Fallback if pick_wo_box is unavailable
-        if not hasattr(laps, "pick_wo_box"):
-            df = getattr(laps, "_df", None)
-            if df is None and isinstance(laps, pd.DataFrame):
-                df = laps
-            if df is not None:
-                if "PitInTime" in df.columns:
-                    df = df[df["PitInTime"].isna()]
-                if "PitOutTime" in df.columns:
-                    df = df[df["PitOutTime"].isna()]
-                laps = df
+        laps = _require_pick(laps, "pick_wo_box")
 
     if exclude_deleted:
-        laps = _pick(laps, "pick_not_deleted")
+        laps = _require_pick(laps, "pick_not_deleted")
 
     if green_only:
-        if hasattr(laps, "pick_track_status"):
-            laps = _pick(laps, "pick_track_status", GREEN_TRACK_STATUS, how="equals")
-        else:
-            df = laps if isinstance(laps, pd.DataFrame) else getattr(laps, "_df", None)
-            if df is not None and "TrackStatus" in df.columns:
-                mask = df["TrackStatus"].astype(str).str.fullmatch(r"1+")
-                laps = df[mask]
+        laps = _require_pick(laps, "pick_track_status", GREEN_TRACK_STATUS, how="equals")
 
     if push_mode:
-        laps = _pick(laps, "pick_quicklaps")
+        laps = _require_pick(laps, "pick_quicklaps")
 
     if compound is not None:
         if hasattr(laps, "pick_compounds"):
-            laps = _pick(laps, "pick_compounds", compound)
+            laps = laps.pick_compounds(compound)
         elif hasattr(laps, "__getitem__") and "Compound" in getattr(laps, "columns", []):
             laps = laps[laps["Compound"].str.upper() == compound.upper()]
 

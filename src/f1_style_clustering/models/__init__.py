@@ -10,7 +10,7 @@ from .clustering import (
     kmeans_seed_stability,
     dbscan_prefilter_outliers,
 )
-from .evaluation import evaluate_clustering, find_optimal_k, select_k_rule_based, ClusteringMetrics
+from .evaluation import evaluate_clustering, find_optimal_k, select_k_rule_based, ClusteringMetrics, InvalidKPoolError
 
 __all__ = [
     "perform_pca",
@@ -28,5 +28,6 @@ __all__ = [
     "find_optimal_k",
     "select_k_rule_based",
     "ClusteringMetrics",
+    "InvalidKPoolError",
 ]
 

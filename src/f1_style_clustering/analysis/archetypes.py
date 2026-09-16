@@ -1,7 +1,11 @@
 """Driver driving style archetype characterization and profile generation.
 
-Pipeline B names archetypes with mutually exclusive rules on the aggregated
-6–8 style features / centroids — not the top-2 of a ~60-column wide matrix.
+Pipeline B names archetypes with mutually exclusive if/elif rules on the
+centroids in the **same space as the K-means fit** (6–8 style features,
+including ``brake_point_iqr`` when it was in the fit, or PCs if --pca-fit).
+
+Greedy score matching and legacy top-2 wide-column names are not used on
+the B path.
 """
 
 from typing import Dict, List, Optional
@@ -43,24 +47,57 @@ def characterize_clusters(
     return cluster_profiles
 
 
-def _pipeline_b_scores(row: pd.Series) -> Dict[str, float]:
-    """Score a centroid against mutually exclusive Pipeline B archetypes."""
-    bp = float(row["brake_point_rel"]) if "brake_point_rel" in row.index and pd.notna(row["brake_point_rel"]) else 0.0
-    tb = float(row["trail_brake_frac"]) if "trail_brake_frac" in row.index and pd.notna(row["trail_brake_frac"]) else 0.0
-    ax = float(row["apex_speed_rel"]) if "apex_speed_rel" in row.index and pd.notna(row["apex_speed_rel"]) else 0.0
-    th = float(row["throttle_attack"]) if "throttle_attack" in row.index and pd.notna(row["throttle_attack"]) else 0.0
-    co = float(row["coast_frac"]) if "coast_frac" in row.index and pd.notna(row["coast_frac"]) else 0.0
-    ft = float(row["full_throttle_frac"]) if "full_throttle_frac" in row.index and pd.notna(row["full_throttle_frac"]) else 0.0
-    on = float(row["throttle_onset_rel"]) if "throttle_onset_rel" in row.index and pd.notna(row["throttle_onset_rel"]) else 0.0
+def _g(row: pd.Series, col: str, default: float = 0.0) -> float:
+    if col not in row.index or pd.isna(row[col]):
+        return default
+    return float(row[col])
 
-    return {
-        "Late Braker (V-Shape)": -bp + 0.6 * tb - 0.3 * ax,
-        "Momentum Keeper (U-Shape)": ax - 0.5 * tb - 0.2 * co,
-        "Exit / Traction Specialist": th + 0.5 * ft - 0.35 * on,
-        "Coast-and-Carry": co - 0.4 * ft - 0.2 * th,
-        "Early Conservative Braker": bp - 0.5 * tb - 0.2 * ax,
-        "Adaptive / Balanced": -abs(bp) - abs(ax) - abs(th) - 0.3 * abs(co),
-    }
+
+def _exclusive_style_name(row: pd.Series) -> str:
+    """Mutually exclusive if/elif on 6–8 fit-space centroids (signs after relative+scale)."""
+    bp = _g(row, "brake_point_rel")
+    tb = _g(row, "trail_brake_frac")
+    ax = _g(row, "apex_speed_rel")
+    th = _g(row, "throttle_attack")
+    co = _g(row, "coast_frac")
+    ft = _g(row, "full_throttle_frac")
+    on = _g(row, "throttle_onset_rel")
+    has_iqr = "brake_point_iqr" in row.index
+    iqr = _g(row, "brake_point_iqr") if has_iqr else None
+
+    if bp < 0 and tb > 0:
+        return "Late Braker (V-Shape)"
+    elif bp > 0 and tb <= 0:
+        return "Early Conservative Braker"
+    elif ax > 0 and tb <= 0:
+        return "Momentum Keeper (U-Shape)"
+    elif th > 0 and (ft > 0 or on < 0):
+        return "Exit / Traction Specialist"
+    elif co > 0 and ft <= 0:
+        return "Coast-and-Carry"
+    elif has_iqr and iqr is not None and iqr > 0:
+        return "Adaptive / Balanced"
+    else:
+        return "Adaptive / Balanced"
+
+
+def _exclusive_pc_name(row: pd.Series) -> str:
+    """Mutually exclusive if/elif on PC centroids when K-means was fit in PCA space."""
+    pc1 = _g(row, "PC1")
+    pc2 = _g(row, "PC2")
+    pc3 = _g(row, "PC3")
+    if pc1 < 0 and pc2 <= 0:
+        return "Late Braker (V-Shape)"
+    elif pc1 > 0 and pc2 <= 0:
+        return "Early Conservative Braker"
+    elif pc2 > 0 and pc1 >= 0:
+        return "Momentum Keeper (U-Shape)"
+    elif pc2 > 0 and pc1 < 0:
+        return "Exit / Traction Specialist"
+    elif pc3 > 0:
+        return "Coast-and-Carry"
+    else:
+        return "Adaptive / Balanced"
 
 
 def _is_pipeline_b_profile(cluster_profiles: pd.DataFrame) -> bool:
@@ -69,48 +106,64 @@ def _is_pipeline_b_profile(cluster_profiles: pd.DataFrame) -> bool:
     return needed.issubset(cols)
 
 
+def _is_pc_profile(cluster_profiles: pd.DataFrame) -> bool:
+    cols = [str(c) for c in cluster_profiles.columns]
+    return len(cols) > 0 and all(c.startswith("PC") for c in cols)
+
+
+def _unique_assign(names_in_order: Dict[int, str]) -> Dict[int, str]:
+    """Enforce uniqueness: colliding if/elif labels get a cluster-id suffix."""
+    assigned: Dict[int, str] = {}
+    used = set()
+    leftover_labels = [lab for lab in ARCHETYPE_LABELS]
+    for cid, name in names_in_order.items():
+        if name not in used:
+            assigned[cid] = name
+            used.add(name)
+            continue
+        suffix = f"{name} #{cid}"
+        if suffix not in used:
+            assigned[cid] = suffix
+            used.add(suffix)
+            continue
+        unused = [lab for lab in leftover_labels if lab not in used]
+        assigned[cid] = unused[0] if unused else f"Cluster {cid}: Residual Style"
+        used.add(assigned[cid])
+    return assigned
+
+
 def assign_archetype_names(
     cluster_profiles: pd.DataFrame,
 ) -> Dict[int, str]:
-    """Mutually exclusive archetype names; each cluster gets a unique label."""
+    """Mutually exclusive archetype names on the K-means fit space; unique labels."""
     if cluster_profiles.empty:
         return {}
 
-    if _is_pipeline_b_profile(cluster_profiles):
-        score_table = {cid: _pipeline_b_scores(row) for cid, row in cluster_profiles.iterrows()}
-        assigned: Dict[int, str] = {}
-        used = set()
-        # Greedy unique matching: highest remaining (cluster, label) score.
-        pairs = []
-        for cid, scores in score_table.items():
-            for label, score in scores.items():
-                pairs.append((score, cid, label))
-        pairs.sort(reverse=True, key=lambda t: t[0])
-        for score, cid, label in pairs:
-            if cid in assigned or label in used:
-                continue
-            assigned[cid] = label
-            used.add(label)
-            if len(assigned) == len(cluster_profiles):
-                break
-        # Safety: leftover clusters get unused labels, then numbered fallback.
-        leftovers = [cid for cid in cluster_profiles.index if cid not in assigned]
-        unused_labels = [lab for lab in ARCHETYPE_LABELS if lab not in used]
-        for cid in leftovers:
-            if unused_labels:
-                assigned[cid] = unused_labels.pop(0)
-            else:
-                assigned[cid] = f"Cluster {cid}: Residual Style"
-        return assigned
+    raw: Dict[int, str] = {}
+    if _is_pipeline_b_profile(cluster_profiles) or _is_pc_profile(cluster_profiles):
+        namer = _exclusive_pc_name if _is_pc_profile(cluster_profiles) else _exclusive_style_name
+        for cid, row in cluster_profiles.iterrows():
+            raw[int(cid)] = namer(row)
+        return _unique_assign(raw)
 
-    # Fallback for legacy wide matrices: unique names, still not "top-2 of 60" collisions.
+    # Legacy wide matrices only (appendix). Not the Pipeline B path.
+    return _legacy_wide_names(cluster_profiles)
+
+
+def _legacy_wide_names(cluster_profiles: pd.DataFrame) -> Dict[int, str]:
     archetype_names: Dict[int, str] = {}
     used = set()
     for cluster_id, row in cluster_profiles.iterrows():
+        cid = int(cluster_id)
         top_positive_features = row.nlargest(min(2, len(row))).index.tolist()
         has_high_apex = any("ApexSpeed" in str(f) or "apex_speed" in str(f) for f in top_positive_features)
-        has_late_brake = any("BrakingDist" in str(f) or "brake_point" in str(f) for f in row.nsmallest(min(2, len(row))).index)
-        has_fast_throttle = any("ThrottleRate" in str(f) or "throttle_attack" in str(f) for f in top_positive_features)
+        has_late_brake = any(
+            "BrakingDist" in str(f) or "brake_point" in str(f)
+            for f in row.nsmallest(min(2, len(row))).index
+        )
+        has_fast_throttle = any(
+            "ThrottleRate" in str(f) or "throttle_attack" in str(f) for f in top_positive_features
+        )
 
         if has_late_brake and not has_high_apex:
             name = "Late Braker (V-Shape)"
@@ -121,14 +174,14 @@ def assign_archetype_names(
         else:
             name = "Adaptive / Balanced"
         if name in used:
-            name = f"{name} #{cluster_id}"
+            name = f"{name} #{cid}"
         used.add(name)
-        archetype_names[cluster_id] = name
+        archetype_names[cid] = name
     return archetype_names
 
 
 def radar_feature_list(df_features: pd.DataFrame) -> List[str]:
-    """Features that radar charts must share with the Pipeline B fit space."""
+    """Features that radar charts must share with the Pipeline B style space."""
     present = [c for c in PIPELINE_B_FEATURES if c in df_features.columns]
     if present:
         # Prefer the core 6; include optionals when present.
@@ -149,7 +202,9 @@ def get_driver_archetype_summary(
 
     df_summary = pd.DataFrame(index=df_features.index)
     df_summary["Cluster"] = cluster_labels
-    df_summary["Archetype"] = cluster_labels.map(archetype_map).fillna("Unassigned / Outlier")
+    df_summary["Archetype"] = cluster_labels.map(
+        lambda x: archetype_map.get(int(x), "Unassigned / Outlier") if pd.notna(x) else "Unassigned / Outlier"
+    )
 
     if df_meta is not None:
         for col in ["Team", "LapsCount", "n_laps"]:

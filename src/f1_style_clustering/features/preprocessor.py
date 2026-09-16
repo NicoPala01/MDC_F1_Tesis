@@ -20,6 +20,13 @@ def separate_metadata(
             "Session",
             "Year",
             "aggregator",
+            "n_zones",
+            "unit",
+            "corner",
+            "corner_number",
+            "typology",
+            "yaml_zone_name",
+            "zone_source",
         ]
 
     meta_present = [col for col in metadata_cols if col in df.columns]
@@ -130,4 +137,20 @@ def standardize_features(
     )
 
     return df_standardized, df_meta, scaler
+
+
+def residualize_team_tyre_features(
+    df_features: pd.DataFrame,
+    df_meta: Optional[pd.DataFrame] = None,
+    team_col: str = "Team",
+    compound_col: Optional[str] = None,
+) -> pd.DataFrame:
+    """Hook for Team/tyre residualization (deferred — committee out of scope this pass).
+
+    Identity transform with ``attrs['team_tyre_residualized'] = False`` so the
+    call site is obvious when this is implemented later.
+    """
+    out = df_features.copy()
+    out.attrs["team_tyre_residualized"] = False
+    return out
 

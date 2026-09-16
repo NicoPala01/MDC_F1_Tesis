@@ -41,7 +41,10 @@ default_zoi_offsets:
     pre_apex_meters: 0
     post_apex_meters: 250
 
-# Specific benchmark circuits and predefined key zones of interest (ZOIs)
+# When the session event matches a benchmark, Pipeline B uses ONLY these
+# key_corners groups as ZOIs (one zone per entry, not one per FastF1 Number).
+# Unmatched circuits use the speed-threshold fallback in extract_circuit_zones;
+# key_corners does not govern that path.
 benchmark_circuits:
   monza:
     official_name: "Autodromo Nazionale Monza"

@@ -2,11 +2,13 @@
 
 from .zoi import (
     classify_speed_typology,
+    clip_and_merge_zones,
     disjoint_zone_bounds,
     extract_circuit_zones,
     get_corner_fragments,
     in_distance_window,
     map_typology_to_bucket,
+    resolve_selected_corners,
 )
 from .metrics import (
     get_apex_speed,
@@ -31,14 +33,17 @@ from .aggregators import (
     CORE_STYLE_FEATURES,
     build_pipeline_b_feature_matrix,
     build_session_feature_matrix,
+    collapse_to_driver_lap_typology,
     extract_driver_session_features,
     extract_lap_features,
     extract_style_features_from_telemetry,
     aggregate_driver_style_features,
+    trail_brake_fragment,
 )
 from .preprocessor import (
     normalize_relative_to_mean,
     normalize_typology_session_median,
+    residualize_team_tyre_features,
     standardize_features,
 )
 
@@ -49,6 +54,8 @@ __all__ = [
     "in_distance_window",
     "map_typology_to_bucket",
     "classify_speed_typology",
+    "resolve_selected_corners",
+    "clip_and_merge_zones",
     "get_braking_point",
     "get_braking_distance_to_apex",
     "get_max_deceleration",
@@ -73,8 +80,11 @@ __all__ = [
     "build_pipeline_b_feature_matrix",
     "extract_style_features_from_telemetry",
     "aggregate_driver_style_features",
+    "collapse_to_driver_lap_typology",
+    "trail_brake_fragment",
     "normalize_relative_to_mean",
     "normalize_typology_session_median",
+    "residualize_team_tyre_features",
     "standardize_features",
 ]
 

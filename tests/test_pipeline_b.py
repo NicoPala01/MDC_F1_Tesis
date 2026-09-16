@@ -8,11 +8,14 @@ import pandas as pd
 import pytest
 
 from f1_style_clustering.features.zoi import (
+    clip_and_merge_zones,
     disjoint_zone_bounds,
+    extract_circuit_zones,
     in_distance_window,
     get_corner_fragments,
     map_typology_to_bucket,
     classify_speed_typology,
+    resolve_selected_corners,
 )
 from f1_style_clustering.features.metrics import (
     is_brake_on,
@@ -34,12 +37,14 @@ from f1_style_clustering.features.aggregators import (
     CORE_STYLE_FEATURES,
     extract_style_features_from_telemetry,
     aggregate_driver_style_features,
+    collapse_to_driver_lap_typology,
 )
 from f1_style_clustering.data.filters import (
+    MissingCanonicalPickError,
     filter_canonical_laps,
     apply_min_valid_laps,
 )
-from f1_style_clustering.models.evaluation import select_k_rule_based
+from f1_style_clustering.models.evaluation import InvalidKPoolError, select_k_rule_based
 from f1_style_clustering.models.dimensionality import pca_for_clustering
 from f1_style_clustering.models.clustering import kmeans_seed_stability, dbscan_prefilter_outliers
 from f1_style_clustering.analysis.archetypes import assign_archetype_names
@@ -414,7 +419,7 @@ def test_rule_based_k_uses_silhouette_when_above_threshold():
     ]
     X = pd.DataFrame(np.vstack(blobs), columns=["f1", "f2"])
     k_star, eval_df, rule = select_k_rule_based(
-        X, k_min=2, k_max=5, silhouette_threshold=0.25, min_cluster_size=3
+        X, k_min=2, k_max=5, silhouette_threshold=0.25, min_cluster_size=3, n_seeds=3
     )
     assert k_star == 3
     assert rule == "silhouette"
@@ -423,22 +428,27 @@ def test_rule_based_k_uses_silhouette_when_above_threshold():
 
 def test_rule_based_k_falls_back_to_min_davies_bouldin():
     rng = np.random.default_rng(1)
-    # Overlapping cloud: silhouette will be weak
-    X = pd.DataFrame(rng.normal(size=(18, 2)), columns=["f1", "f2"])
+    # Mildly overlapping blobs so silhouette stays below 0.95 but sizes stay ≥ 3.
+    blobs = [
+        rng.normal(loc=[0, 0], scale=1.1, size=(9, 2)),
+        rng.normal(loc=[1.4, 0], scale=1.1, size=(9, 2)),
+    ]
+    X = pd.DataFrame(np.vstack(blobs), columns=["f1", "f2"])
     k_star, eval_df, rule = select_k_rule_based(
         X,
         k_min=2,
         k_max=4,
         silhouette_threshold=0.95,  # force DB fallback
         min_cluster_size=3,
+        n_seeds=3,
     )
     assert rule == "davies_bouldin"
     assert k_star in set(eval_df["k"])
     pool = eval_df[eval_df["valid"]]
-    if pool.empty:
-        pool = eval_df.dropna(subset=["davies_bouldin"])
-    chosen = pool.nsmallest(1, "davies_bouldin")["k"].iloc[0]
-    assert k_star == int(chosen)
+    assert not pool.empty
+    min_db = pool["davies_bouldin"].min()
+    tied = pool[np.isclose(pool["davies_bouldin"].astype(float), float(min_db))]
+    assert k_star in set(tied["k"].astype(int))
 
 
 def test_pca_for_clustering_skipped_when_few_features():
@@ -510,8 +520,236 @@ def test_archetype_namer_unique_on_pipeline_b_features():
     # Must not be "top-2 of ~60 columns" style names only
     joined = " ".join(names.values()).lower()
     assert "late" in joined or "momentum" in joined or "exit" in joined or "v-shape" in joined
+    assert names[0] == "Late Braker (V-Shape)"
+    assert names[1] == "Early Conservative Braker"
+
+
+def test_namer_elif_exclusive_on_fit_space_includes_iqr():
+    """if/elif on the 6–8 fit features including brake_point_iqr; uniqueness enforced."""
+    profiles = pd.DataFrame(
+        {
+            "brake_point_rel": [-1.5, 1.2, 0.0, 0.0],
+            "trail_brake_frac": [0.9, -0.5, 0.0, 0.0],
+            "apex_speed_rel": [-0.4, -0.2, 1.4, 0.0],
+            "throttle_attack": [0.1, 0.0, -0.2, 0.0],
+            "coast_frac": [0.0, 0.0, -0.3, 0.0],
+            "full_throttle_frac": [0.0, 0.2, -0.1, 0.0],
+            "brake_point_iqr": [0.1, 0.2, 0.2, 1.8],
+        },
+        index=[0, 1, 2, 3],
+    )
+    names = assign_archetype_names(profiles)
+    assert names[0] == "Late Braker (V-Shape)"
+    assert names[1] == "Early Conservative Braker"
+    assert names[2] == "Momentum Keeper (U-Shape)"
+    assert names[3] == "Adaptive / Balanced"
+    assert len(set(names.values())) == 4
+
+
+def test_namer_elif_on_pca_fit_space():
+    profiles = pd.DataFrame(
+        {"PC1": [-1.0, 1.2, 0.4], "PC2": [-0.2, -0.3, 1.1]},
+        index=[0, 1, 2],
+    )
+    names = assign_archetype_names(profiles)
+    assert names[0] == "Late Braker (V-Shape)"
+    assert names[1] == "Early Conservative Braker"
+    assert names[2] == "Momentum Keeper (U-Shape)"
+    assert len(set(names.values())) == 3
 
 
 def test_pipeline_c_stub_is_not_main_path():
     with pytest.raises(NotImplementedError, match="appendix"):
         cluster_laps_pipeline_c(pd.DataFrame())
+
+
+# ---------------------------------------------------------------------------
+# key_corners grouping / YAML ownership / overlap clip
+# ---------------------------------------------------------------------------
+
+class _Event:
+    def __init__(self, name):
+        self.EventName = name
+        self._name = name
+
+    def __getitem__(self, key):
+        if key == "EventName":
+            return self._name
+        raise KeyError(key)
+
+
+class _FakeCircuitSession:
+    def __init__(self, event_name, corners_df):
+        self.event = _Event(event_name)
+        self._corners = corners_df
+        self.laps = None
+
+    def get_circuit_info(self):
+        return type("CI", (), {"corners": self._corners})()
+
+
+def test_key_corners_groups_one_zone_per_yaml_entry():
+    corners = pd.DataFrame(
+        {
+            "Number": [1, 2, 4, 5, 8, 9, 10, 11],
+            "Distance": [200.0, 280.0, 800.0, 880.0, 1600.0, 1680.0, 1760.0, 2400.0],
+        }
+    )
+    session = _FakeCircuitSession("Italian Grand Prix", corners)
+    circuits = load_circuit_config()
+    selected, source = resolve_selected_corners(session, circuits)
+    assert source == "key_corners"
+    assert set(selected) == {1, 2, 4, 5, 8, 9, 10, 11}
+
+    zones = extract_circuit_zones(
+        session, circuit_config=circuits, selected_corners=selected, track_length=5800.0
+    )
+    assert len(zones) == 4
+    assert "T1_Variante_del_Rettifilo" in zones
+    assert "Turn_1" not in zones
+    t1 = zones["T1_Variante_del_Rettifilo"]
+    assert t1["corner_numbers"] == [1, 2]
+    assert t1["typology"] == "slow"
+    assert t1["zone_source"] == "key_corners"
+    assert t1["apex_distance"] == pytest.approx(200.0)
+    assert t1["apex_distance_last"] == pytest.approx(280.0)
+    # One zone covers the chicane group, not one per FastF1 Number.
+    assert "T8_Variante_Ascari" in zones
+    assert zones["T8_Variante_Ascari"]["corner_numbers"] == [8, 9, 10]
+
+
+def test_unknown_circuit_uses_speed_threshold_fallback_not_key_corners():
+    corners = pd.DataFrame({"Number": [1, 2, 3], "Distance": [100.0, 400.0, 900.0]})
+    session = _FakeCircuitSession("Japanese Grand Prix", corners)
+    circuits = load_circuit_config()
+    selected, source = resolve_selected_corners(session, circuits)
+    assert source == "speed_threshold_fallback"
+    assert selected is None
+
+    zones = extract_circuit_zones(
+        session, circuit_config=circuits, selected_corners=selected, track_length=5000.0
+    )
+    assert len(zones) == 3
+    assert all(z["zone_source"] == "speed_threshold_fallback" for z in zones.values())
+    assert all(z.get("typology") is None for z in zones.values())
+    assert "Turn_1" in zones
+    assert "T1_Variante_del_Rettifilo" not in zones
+
+
+def test_clip_and_merge_overlapping_apex_windows():
+    zones = {
+        "Turn_1": {
+            **disjoint_zone_bounds(100.0, 80.0, 60.0, 60.0, 100.0, track_length=None),
+            "apex_distance": 100.0,
+            "corner_number": 1,
+            "corner_numbers": [1],
+            "yaml_zone_name": "Turn_1",
+        },
+        "Turn_2": {
+            **disjoint_zone_bounds(150.0, 80.0, 60.0, 60.0, 100.0, track_length=None),
+            "apex_distance": 150.0,
+            "corner_number": 2,
+            "corner_numbers": [2],
+            "yaml_zone_name": "Turn_2",
+        },
+    }
+    # Apex windows 40–160 and 90–210 overlap → merge along Distance.
+    merged = clip_and_merge_zones(zones, track_length=None)
+    assert len(merged) == 1
+    only = next(iter(merged.values()))
+    assert set(only["corner_numbers"]) == {1, 2}
+
+
+def test_collapse_driver_lap_typology_does_not_inflate_by_corner_number():
+    long_df = pd.DataFrame(
+        {
+            "Driver": ["VER"] * 3,
+            "LapNumber": [1, 1, 1],
+            "typology": ["slow", "slow", "fast"],
+            "corner": ["Turn_1", "Turn_2", "Turn_8"],
+            "corner_number": [1, 2, 8],
+            "brake_point_rel": [10.0, 20.0, 100.0],
+            "trail_brake_frac": [0.1, 0.3, 0.5],
+            "apex_speed_rel": [1.0, 3.0, 9.0],
+            "throttle_attack": [1.0, 1.0, 1.0],
+            "coast_frac": [0.0, 0.0, 0.0],
+            "full_throttle_frac": [0.4, 0.4, 0.4],
+        }
+    )
+    collapsed = collapse_to_driver_lap_typology(long_df)
+    assert len(collapsed) == 2
+    by_typ = collapsed.set_index("typology")
+    assert by_typ.loc["slow", "brake_point_rel"] == pytest.approx(15.0)
+    assert by_typ.loc["fast", "brake_point_rel"] == pytest.approx(100.0)
+    assert int(by_typ.loc["slow", "n_zones"]) == 2
+
+    agg = aggregate_driver_style_features(collapsed, method="median")
+    # Median of {15, 100} = 57.5, not median of {10, 20, 100} = 20 (Number inflation).
+    assert agg.loc["VER", "brake_point_rel"] == pytest.approx(57.5)
+
+
+def test_trail_brake_frac_apex_only_early_braker_neq_late_trail():
+    """Early braker who releases before the apex is not a late trailer."""
+    distances = np.linspace(100.0, 500.0, 81)
+    speed = 200.0 - np.abs(distances - 300.0) * 0.4
+    throttle = np.where(distances >= 340.0, 80.0, 0.0)
+
+    def _tel(brake_from, brake_to):
+        brake = (distances >= brake_from) & (distances <= brake_to)
+        return pd.DataFrame(
+            {
+                "Distance": distances,
+                "Speed": speed,
+                "Brake": brake,
+                "Throttle": throttle,
+                "TimeDelta": np.full(len(distances), 0.05),
+                "ThrottleRate": 0.0,
+            }
+        )
+
+    zones = {
+        "T1": {
+            **disjoint_zone_bounds(300.0, 200.0, 60.0, 60.0, 150.0, track_length=None),
+            "apex_distance": 300.0,
+            "typology": "slow",
+            "track_length": None,
+            "corner_number": 1,
+        }
+    }
+    early = extract_style_features_from_telemetry(_tel(150.0, 230.0), zones)[0]
+    late = extract_style_features_from_telemetry(_tel(180.0, 330.0), zones)[0]
+
+    assert early["trail_brake_frac"] == pytest.approx(0.0, abs=0.05)
+    assert late["trail_brake_frac"] > 0.25
+    assert early["trail_brake_frac"] < late["trail_brake_frac"] - 0.2
+    assert early["brake_point_rel"] > late["brake_point_rel"]
+
+
+def test_select_k_aborts_when_valid_pool_empty():
+    rng = np.random.default_rng(0)
+    X = pd.DataFrame(rng.normal(size=(5, 2)), columns=["a", "b"])
+    with pytest.raises(InvalidKPoolError, match="min_cluster_size"):
+        select_k_rule_based(
+            X, k_min=2, k_max=4, min_cluster_size=3, n_seeds=2
+        )
+
+
+def test_missing_canonical_pick_fails_closed():
+    class _LapsWithoutAccurate:
+        def __init__(self, df):
+            self._df = df
+            self.empty = False
+            self.columns = df.columns
+
+        def pick_wo_box(self):
+            return self
+
+        def pick_not_deleted(self):
+            return self
+
+        def pick_track_status(self, *args, **kwargs):
+            return self
+
+    df = _fake_laps_table()._df
+    with pytest.raises(MissingCanonicalPickError, match="pick_accurate"):
+        filter_canonical_laps(_LapsWithoutAccurate(df), require_accurate=True)

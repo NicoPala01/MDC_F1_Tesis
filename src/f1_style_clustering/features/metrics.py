@@ -227,7 +227,11 @@ def get_trail_brake_frac(
     fragment: pd.DataFrame,
     track_length: Optional[float] = None,
 ) -> float:
-    """Spatial fraction of the fragment with Brake == True."""
+    """Spatial fraction of the fragment with Brake == True.
+
+    Pipeline B passes the **apex ZOI only** (not braking ∪ apex). An optional
+    last-Xm tail of the braking window may be concatenated by the caller.
+    """
     if fragment is None or fragment.empty or "Brake" not in fragment.columns:
         return np.nan
     return spatial_fraction(fragment, is_brake_on(fragment["Brake"]), track_length)
