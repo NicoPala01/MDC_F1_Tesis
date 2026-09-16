@@ -10,8 +10,10 @@ def compare_teammates(
     df_meta: pd.DataFrame,
 ) -> pd.DataFrame:
     """
-    Compare driving style features between teammates (drivers belonging to the same team).
-    Since teammates drive identical car hardware, this comparison isolates pure driver style divergence.
+    Compare observable telemetry profiles between teammates (same constructor
+    entry). This does **not** identify identical cars or isolate a causal human
+    factor: FastF1 does not provide fuel load or car setup, and Team/Compound/
+    TyreLife residualization is incomplete.
 
     Args:
         df_features: Standardized or normalized features DataFrame (indexed by driver code).

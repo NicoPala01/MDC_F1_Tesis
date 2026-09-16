@@ -15,7 +15,7 @@ Legacy per-numbered-corner wide matrices are retained as
 ``build_session_feature_matrix_legacy`` for appendix comparisons only.
 """
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Sequence
 
 import pandas as pd
 from fastf1.core import Lap, Session
@@ -70,7 +70,16 @@ POST_AGGREGATION_FEATURES: List[str] = [
     "brake_point_iqr",
 ]
 
-METADATA_COLS: List[str] = ["Team", "n_laps", "LapsCount", "aggregator"]
+METADATA_COLS: List[str] = [
+    "Team",
+    "n_laps",
+    "LapsCount",
+    "aggregator",
+    "Compound",
+    "TyreLife",
+    "Stint",
+    "FreshTyre",
+]
 
 
 def _concat_fragments(*parts: pd.DataFrame) -> pd.DataFrame:
@@ -251,6 +260,13 @@ def aggregate_driver_style_features(
         team = df.groupby("Driver")["Team"].agg(lambda s: s.dropna().iloc[0] if s.dropna().shape[0] else "Unknown")
         aggregated["Team"] = team
 
+    if "Compound" in df.columns:
+        aggregated["Compound"] = df.groupby("Driver")["Compound"].agg(
+            lambda s: s.dropna().mode().iloc[0] if s.dropna().shape[0] else pd.NA
+        )
+    if "TyreLife" in df.columns:
+        aggregated["TyreLife"] = df.groupby("Driver")["TyreLife"].median()
+
     return aggregated
 
 
@@ -295,8 +311,33 @@ def collapse_to_driver_lap_typology(
         out["zone_source"] = grouped["zone_source"].agg("first").to_numpy()
     if "Team" in df.columns:
         out["Team"] = grouped["Team"].agg("first").to_numpy()
+    if "Compound" in df.columns:
+        out["Compound"] = grouped["Compound"].agg(
+            lambda s: s.dropna().mode().iloc[0] if s.dropna().shape[0] else pd.NA
+        ).to_numpy()
+    if "TyreLife" in df.columns:
+        out["TyreLife"] = grouped["TyreLife"].median().to_numpy()
     out["unit"] = "driver_lap_typology"
     return out
+
+
+def _optional_lap_value(lap: Any, key: str):
+    """Read a FastF1 lap field when present; never invent values."""
+    try:
+        if hasattr(lap, "get"):
+            val = lap.get(key)
+            if val is not None:
+                return val
+        contains = False
+        try:
+            contains = key in lap
+        except Exception:
+            contains = key in getattr(lap, "index", [])
+        if contains:
+            return lap[key]
+    except Exception:
+        return None
+    return None
 
 
 def extract_lap_style_rows(
@@ -363,9 +404,15 @@ def build_long_style_table(
             rows = extract_lap_style_rows(
                 lap, analysis_zones, include_throttle_onset=include_throttle_onset
             )
+            compound = _optional_lap_value(lap, "Compound")
+            tyre_life = _optional_lap_value(lap, "TyreLife")
             for row in rows:
                 row["Driver"] = drv_abbr
                 row["Team"] = team_name
+                if compound is not None and not (isinstance(compound, float) and pd.isna(compound)):
+                    row["Compound"] = compound
+                if tyre_life is not None and not (isinstance(tyre_life, float) and pd.isna(tyre_life)):
+                    row["TyreLife"] = tyre_life
                 records.append(row)
 
     if not records:
@@ -387,11 +434,16 @@ def build_pipeline_b_feature_matrix(
     include_throttle_onset: bool = True,
     include_brake_point_iqr: bool = True,
     selected_corners: Optional[List[int]] = None,
+    extra_aggregations: Optional[Sequence[str]] = None,
 ) -> pd.DataFrame:
     """End-to-end Pipeline B driver matrix (relative 6–8 style features).
 
     Cluster-matrix unit: median within (Driver × Lap × typology), then median
     across those rows per driver. Turn_N does not weight the matrix.
+
+    ``extra_aggregations`` (e.g. ``('mean',)``) re-aggregates the same
+    typology×session table without re-extracting telemetry. Extra matrices are
+    stored on ``result.attrs['extra_aggregations']``.
     """
     if analysis_zones is None:
         selected, _source = resolve_selected_corners(session, circuit_config)
@@ -418,13 +470,28 @@ def build_pipeline_b_feature_matrix(
     # Turn_N / FastF1 Number is diagnostic only from here on.
     lap_typ = collapse_to_driver_lap_typology(long_rel, feature_cols=feature_cols)
 
-    return aggregate_driver_style_features(
+    primary = aggregate_driver_style_features(
         lap_typ,
         method=aggregation,
         include_brake_point_iqr=include_brake_point_iqr,
         min_valid_laps=min_valid_laps,
         feature_cols=feature_cols,
     )
+    extras: Dict[str, pd.DataFrame] = {}
+    for extra in extra_aggregations or []:
+        extra_method = str(extra).lower()
+        if extra_method == str(aggregation).lower():
+            continue
+        extras[extra_method] = aggregate_driver_style_features(
+            lap_typ,
+            method=extra_method,
+            include_brake_point_iqr=include_brake_point_iqr,
+            min_valid_laps=min_valid_laps,
+            feature_cols=feature_cols,
+        )
+    if extras:
+        primary.attrs["extra_aggregations"] = extras
+    return primary
 
 
 # ---------------------------------------------------------------------------

@@ -41,6 +41,7 @@ from .aggregators import (
     trail_brake_fragment,
 )
 from .preprocessor import (
+    confounding_declaration,
     normalize_relative_to_mean,
     normalize_typology_session_median,
     residualize_team_tyre_features,
@@ -85,6 +86,7 @@ __all__ = [
     "normalize_relative_to_mean",
     "normalize_typology_session_median",
     "residualize_team_tyre_features",
+    "confounding_declaration",
     "standardize_features",
 ]
 

@@ -31,6 +31,9 @@ def run_single_session_pipeline(
     aggregation: str = None,
     push_mode: bool = None,
     use_pca_fit: bool = False,
+    driver_bootstrap: bool = True,
+    compare_aggregators: bool = True,
+    residualize: bool = True,
 ):
     print(f"\n{'='*70}")
     print("F1 DRIVING STYLE CLUSTERING — PIPELINE B")
@@ -66,6 +69,9 @@ def run_single_session_pipeline(
         aggregation=aggregation,
         push_mode=push_mode,
         use_pca_fit=use_pca_fit if use_pca_fit else None,
+        driver_bootstrap=driver_bootstrap,
+        compare_aggregators=compare_aggregators,
+        residualize=residualize,
     )
     if result.get("error"):
         print(f"ERROR: {result['error']}")
@@ -95,6 +101,28 @@ def run_single_session_pipeline(
     print(f"      k={k_used} via rule '{k_rule}' | silhouette={metrics.silhouette:.3f} | DB={metrics.davies_bouldin:.3f}")
     ari = result["seed_stability"]
     print(f"      Seed stability mean ARI: {ari['mean_ari']:.3f} (±{ari['std_ari']:.3f})")
+    boot = result.get("driver_bootstrap") or {}
+    if boot:
+        n_eff = boot.get("n_eff", boot.get("n_drivers"))
+        method = boot.get("method", "bootstrap")
+        print(
+            f"      Driver {method} (n_eff={n_eff}) mean ARI: "
+            f"{boot.get('mean_ari', float('nan')):.3f} (±{boot.get('std_ari', float('nan')):.3f})"
+        )
+        conc = boot.get("mean_profile_concordance")
+        if conc is not None and conc == conc:
+            print(f"      Driver {method} profile concordance: {conc:.3f}")
+    mm = result.get("mean_median_ari")
+    if mm is not None and mm == mm:
+        mm_k = (result.get("mean_median") or {}).get("k", k_used)
+        print(f"      Mean vs median ΔARI (aligned k={mm_k}): {float(mm):.3f}")
+    decl = result.get("confounding_declaration") or {}
+    resid = decl.get("residualized_when_present") or decl.get("residualized_covariates") or []
+    print(
+        "      Confounding: residualized="
+        f"{resid if resid else '[]'}; fuel load and car setup are not in FastF1. "
+        "Clusters are perfiles/patrones observables, not causal styles."
+    )
 
     raw_csv = data_dir / f"features_raw_{season}_{event_slug}_{session_type}.csv"
     df_raw.to_csv(raw_csv)
@@ -171,11 +199,33 @@ def main():
         action="store_true",
         help="Force PCA (variance_threshold from YAML) as the clustering fit space.",
     )
+    parser.add_argument(
+        "--no-driver-bootstrap",
+        action="store_true",
+        help="Skip driver-level bootstrap/LOO stability (n_eff ≈ n_drivers).",
+    )
+    parser.add_argument(
+        "--mean-median-ari",
+        action="store_true",
+        default=None,
+        help="Force mean-vs-median ΔARI (already on by default).",
+    )
+    parser.add_argument(
+        "--no-mean-median-ari",
+        action="store_true",
+        help="Skip dual-run mean vs median aggregation ARI.",
+    )
+    parser.add_argument(
+        "--no-residualize",
+        action="store_true",
+        help="Skip Team/Compound/TyreLife residualization (declaration still printed).",
+    )
     parser.add_argument("--output-dir", type=str, default="results", help="Directory to store results and figures")
     parser.add_argument("--no-plots", action="store_true", help="Disable figure rendering and export")
 
     args = parser.parse_args()
 
+    compare_aggregators = False if args.no_mean_median_ari else True
     run_single_session_pipeline(
         season=args.season,
         grand_prix=args.circuit,
@@ -186,6 +236,9 @@ def main():
         aggregation=args.aggregator,
         push_mode=True if args.push_mode else None,
         use_pca_fit=args.pca_fit,
+        driver_bootstrap=not args.no_driver_bootstrap,
+        compare_aggregators=compare_aggregators,
+        residualize=not args.no_residualize,
     )
 
 

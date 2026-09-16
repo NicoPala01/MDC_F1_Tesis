@@ -210,3 +210,40 @@ def select_k_rule_based(
         rule = "davies_bouldin"
 
     return k_star, df_eval, rule
+
+
+def mean_median_kmeans_ari(
+    df_median: pd.DataFrame,
+    df_mean: pd.DataFrame,
+    n_clusters: int,
+    random_state: int = 42,
+    n_init: int = 20,
+) -> Dict[str, Any]:
+    """ARI between K-means labelings of median- vs mean-aggregated features.
+
+    Same k (aligned); common driver index and shared numeric columns.
+    This is a sensitivity check, not a validation against a held-out compound.
+    """
+    from sklearn.metrics import adjusted_rand_score
+
+    from .clustering import fit_kmeans
+
+    if df_median is None or df_mean is None or df_median.empty or df_mean.empty:
+        return {"ari": float("nan"), "k": int(n_clusters), "n_drivers": 0}
+
+    common = df_median.index.intersection(df_mean.index)
+    cols = [c for c in df_median.columns if c in df_mean.columns]
+    a = df_median.loc[common, cols].select_dtypes(include=[np.number])
+    b = df_mean.loc[common, cols].select_dtypes(include=[np.number])
+    shared = [c for c in a.columns if c in b.columns]
+    a = a[shared]
+    b = b[shared]
+    n = int(len(common))
+    k = int(n_clusters)
+    if n < 2 or k < 2 or a.shape[1] == 0 or n < k:
+        return {"ari": float("nan"), "k": k, "n_drivers": n}
+
+    labels_med, _ = fit_kmeans(a, n_clusters=k, random_state=random_state, n_init=n_init)
+    labels_mean, _ = fit_kmeans(b, n_clusters=k, random_state=random_state, n_init=n_init)
+    ari = float(adjusted_rand_score(labels_med, labels_mean))
+    return {"ari": ari, "k": k, "n_drivers": n, "labels_median": labels_med, "labels_mean": labels_mean}

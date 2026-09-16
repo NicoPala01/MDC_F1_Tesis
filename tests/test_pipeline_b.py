@@ -44,9 +44,22 @@ from f1_style_clustering.data.filters import (
     filter_canonical_laps,
     apply_min_valid_laps,
 )
-from f1_style_clustering.models.evaluation import InvalidKPoolError, select_k_rule_based
+from f1_style_clustering.models.evaluation import (
+    InvalidKPoolError,
+    mean_median_kmeans_ari,
+    select_k_rule_based,
+)
 from f1_style_clustering.models.dimensionality import pca_for_clustering
-from f1_style_clustering.models.clustering import kmeans_seed_stability, dbscan_prefilter_outliers
+from f1_style_clustering.models.clustering import (
+    dbscan_prefilter_outliers,
+    kmeans_driver_bootstrap_stability,
+    kmeans_seed_stability,
+)
+from f1_style_clustering.features.preprocessor import (
+    confounding_declaration,
+    residualize_team_tyre_features,
+    separate_metadata,
+)
 from f1_style_clustering.analysis.archetypes import assign_archetype_names
 from f1_style_clustering.analysis.pipeline_c import cluster_laps_pipeline_c
 from f1_style_clustering.config import load_config, load_circuit_config
@@ -753,3 +766,125 @@ def test_missing_canonical_pick_fails_closed():
     df = _fake_laps_table()._df
     with pytest.raises(MissingCanonicalPickError, match="pick_accurate"):
         filter_canonical_laps(_LapsWithoutAccurate(df), require_accurate=True)
+
+
+# ---------------------------------------------------------------------------
+# Sigma statistical validation (driver bootstrap, ΔARI, residualization)
+# ---------------------------------------------------------------------------
+
+def _two_blob_driver_features(n_per_blob=8, seed=11):
+    rng = np.random.default_rng(seed)
+    X = pd.DataFrame(
+        np.vstack(
+            [
+                rng.normal(0, 0.2, size=(n_per_blob, 3)),
+                rng.normal(5, 0.2, size=(n_per_blob, 3)),
+            ]
+        ),
+        columns=["brake_point_rel", "apex_speed_rel", "throttle_attack"],
+        index=[f"D{i:02d}" for i in range(2 * n_per_blob)],
+    )
+    return X
+
+
+def test_driver_bootstrap_returns_finite_ari():
+    """Leave-one-out / resample *drivers* (n_eff ≈ n_drivers), not seeds only."""
+    X = _two_blob_driver_features()
+    result = kmeans_driver_bootstrap_stability(X, n_clusters=2, n_boot=None, random_state=0)
+    assert np.isfinite(result["mean_ari"])
+    assert np.isfinite(result["std_ari"])
+    assert result["std_ari"] >= 0.0
+    assert result["n_eff"] == len(X)
+    assert result["n_eff"] == result.get("n_drivers", result["n_eff"])
+    assert -1.0 <= result["mean_ari"] <= 1.0
+    seed_mean, seed_std = kmeans_seed_stability(X, n_clusters=2, n_seeds=4)
+    assert np.isfinite(seed_mean)
+    assert seed_std >= 0.0
+
+
+def test_driver_loo_stability_returns_finite_ari():
+    X = _two_blob_driver_features(n_per_blob=6)
+    result = kmeans_driver_bootstrap_stability(
+        X, n_clusters=2, method="loo", random_state=1
+    )
+    assert np.isfinite(result["mean_ari"])
+    assert result["n_eff"] == len(X)
+    assert result["method"] == "loo"
+
+
+def test_mean_vs_median_kmeans_ari_is_numeric():
+    """Same session/filters; median vs mean aggregation; ARI with aligned k."""
+    rng = np.random.default_rng(7)
+    rows = []
+    for i in range(12):
+        driver = f"D{i:02d}"
+        centre = 0.0 if i < 6 else 8.0
+        vals = rng.normal(centre, 0.4, size=5)
+        if i % 2 == 0:
+            vals = np.array([*vals[:4], vals[3] + 25.0])
+        for lap, v in enumerate(vals):
+            rows.append(
+                {
+                    "Driver": driver,
+                    "LapNumber": lap,
+                    "typology": "slow",
+                    "brake_point_rel": float(v),
+                    "trail_brake_frac": 0.2 + 0.01 * i,
+                    "apex_speed_rel": centre + 0.1 * lap,
+                    "throttle_attack": 5.0,
+                    "coast_frac": 0.1,
+                    "full_throttle_frac": 0.4,
+                }
+            )
+    long_df = pd.DataFrame(rows)
+    med = aggregate_driver_style_features(long_df, method="median")
+    mean = aggregate_driver_style_features(long_df, method="mean")
+    numeric = [
+        c
+        for c in med.columns
+        if c not in ("Team", "n_laps", "LapsCount", "aggregator", "Compound", "TyreLife")
+    ]
+    result = mean_median_kmeans_ari(med[numeric], mean[numeric], n_clusters=2)
+    assert "ari" in result
+    assert np.isfinite(result["ari"])
+    assert -1.0 <= result["ari"] <= 1.0
+    assert result["k"] == 2
+
+
+def test_residualize_or_declaration_does_not_crash():
+    """Team FE when present; declaration always lists residual confounders."""
+    df = pd.DataFrame(
+        {
+            "brake_point_rel": [10.0, 14.0, 0.0, 4.0, 1.0],
+            "apex_speed_rel": [1.0, 3.0, 2.0, 4.0, 0.5],
+        },
+        index=["A", "B", "C", "D", "E"],
+    )
+    meta = pd.DataFrame(
+        {
+            "Team": ["T1", "T1", "T2", "T2", "T3"],
+            "Compound": ["SOFT", "SOFT", "MEDIUM", "HARD", "SOFT"],
+            "TyreLife": [5.0, 8.0, 12.0, 4.0, 6.0],
+        },
+        index=df.index,
+    )
+    out = residualize_team_tyre_features(df, meta)
+    assert out.shape == df.shape
+    assert list(out.columns) == list(df.columns)
+    assert not out.isna().any().any()
+    decl = out.attrs.get("confounding_declaration") or confounding_declaration()
+    assert "fuel" in str(decl).lower()
+    assert "setup" in str(decl).lower()
+    # Singleton T3 is not absorbed; T1 teammate-relative around team mean.
+    assert out.loc["A", "brake_point_rel"] == pytest.approx(-2.0, abs=1.5)
+
+    empty_meta = residualize_team_tyre_features(df, None)
+    assert empty_meta.shape == df.shape
+    decl2 = empty_meta.attrs.get("confounding_declaration") or confounding_declaration()
+    assert decl2 is not None
+
+    numeric, meta_sep = separate_metadata(
+        pd.concat([df, meta], axis=1)
+    )
+    residualize_team_tyre_features(numeric, meta_sep)
+    _ = confounding_declaration()

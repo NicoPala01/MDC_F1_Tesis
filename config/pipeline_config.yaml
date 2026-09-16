@@ -50,6 +50,7 @@ features:
   aggregation: "median"  # 'median' (default) or 'mean' (robustness / sensitivity switch)
   # Cluster matrix unit: median within (Driver × Lap × typology), then median across laps.
   # Turn_N / FastF1 Number is diagnostic only and must not inflate the matrix.
+  residualize_team_tyre: true  # Team FE; Compound/TyreLife when present. Fuel/setup absent.
 
 dimensionality_reduction:
   pca:
@@ -71,13 +72,17 @@ clustering:
     - dbscan          # optional outlier prefilter only — not the main partition
   use_rule_based_k: true
   # k is chosen only from candidates with min_cluster_size; empty pool aborts (never fit invalid k).
-  # Seed-stability mean ARI is the tie-break. No driver-level bootstrap in this pass.
+  # Seed-stability mean ARI is the tie-break. Driver-level bootstrap/LOO is additional (n_eff ≈ n_drivers).
   # No hard-coded K_OPTIMAL=3 as the only path. default_k is unused when rule-based.
   default_k: null
   min_cluster_size: 3
   silhouette_threshold: 0.25
   dbscan_prefilter: false
   seed_stability_n: 10
+  driver_bootstrap: true
+  driver_bootstrap_n: null   # null → n_drivers
+  driver_bootstrap_method: bootstrap  # bootstrap | loo
+  compare_aggregators: true  # mean vs median ΔARI, aligned k; not Medium-as-validation
   kmeans:
     k_range: [2, 7]
     init: "k-means++"

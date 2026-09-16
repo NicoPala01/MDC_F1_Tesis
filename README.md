@@ -1,23 +1,31 @@
-# Los datos al volante: Clasificación de pilotos de Fórmula 1 mediante clustering de estilos de conducción
+# Los datos al volante: Clasificación de pilotos de Fórmula 1 mediante clustering de perfiles observables
 
 **Tesis de Maestría en Ciencia de Datos — Universidad Austral**  
 **Autor:** Nicolás Palavecino  
 **Tutor:** Ezequiel Nuske  
-**Rama:** `refactor/pipeline-b-typology-median` (Pipeline B; base `refactor/ag-version`)
+**Rama de trabajo:** `new-method` (Pipeline B; no causal)
 
 ---
 
-## 🏎️ Descripción del Proyecto
+## Descripción del Proyecto
 
-Este repositorio contiene la arquitectura de software, algoritmos y notebooks de investigación aplicados a la clasificación objetiva de estilos de conducción de pilotos de Fórmula 1 mediante técnicas de **Aprendizaje No Supervisado (Clustering)** e **Ingeniería de Características** sobre señales de telemetría de alta frecuencia (**FastF1**).
+Este repositorio contiene la arquitectura de software, algoritmos y notebooks de investigación para **describir perfiles / patrones observables** de telemetría de pilotos de Fórmula 1 mediante **clustering no supervisado** e **ingeniería de características** sobre señales de alta frecuencia (**FastF1**).
+
+Los clústeres **no** son estilos causales. No se identifican autos idénticos, sinergia de neumáticos, *fit* auto–piloto ni decisiones de *scouting*/contratación. FastF1 **no** aporta carga de combustible ni *setup*; Team / Compound / TyreLife se residualizan cuando existen en el grano disponible y el resto se declara como confusor.
 
 ### Pipeline B (camino principal)
 
-El clustering **no** se hace sobre una matriz frágil de una columna por curva numerada. El camino aprobado por el comité es:
+El clustering **no** se hace sobre una matriz frágil de una columna por curva numerada. El camino de método es:
 
-**features por vuelta** → **normalización relativa tipología × sesión** (restar la mediana del grid) → **agregación mediana por piloto** (`n_laps`) → **PCA opcional en el espacio de ajuste** (umbral de varianza ~0.80–0.85; con 6–8 features se clusteriza directo sobre RobustScaler) → **K-means++ con k por reglas** (barrido; silueta ≥ 0.25 o si no mínimo Davies-Bouldin; tamaño mínimo de clúster ≥ 3) → **nombres de arquetipo mutuamente excluyentes** sobre esas 6–8 features (el radar usa el mismo espacio).
+**features por vuelta** → **normalización relativa tipología × sesión** (restar la mediana del grid por *slow/medium/fast*) → **agregación mediana por piloto** (`n_laps`; la media es un switch de sensibilidad) → **residualización Team (FE / *teammate-relative*) y Compound/TyreLife si hay columnas** → **espacio de ajuste**: 6–8 features con RobustScaler, o PCA de ajuste si se fuerza / hay más columnas (el PCA 2D es **solo visualización**) → **K-means++ con k por reglas** (solo el *pool* con `min_cluster_size`; silueta ≥ 0.25 o si no mínimo Davies-Bouldin) → **nombres de arquetipo mutuamente excluyentes** sobre el **mismo** espacio de ajuste.
 
-Features (calidad > forzar 10), en ZOI disjuntas (frenado | vértice | salida), preferentemente por (piloto × vuelta × tipología slow/medium/fast):
+Estabilidad adicional (no sustituye la de semillas):
+
+- **Seed stability:** ARI medio entre inicializaciones K-means++.
+- **Driver bootstrap / LOO:** re-muestreo o leave-one-out de **pilotos** (`n_eff ≈ n_drivers`), re-ajuste con el mismo `k_used`, ARI medio/std (y concordancia de perfiles opcional).
+- **ΔARI mediana vs media:** misma sesión/filtros, *k* alineado; **no** es validación con compuesto Medium.
+
+Features (calidad > forzar 10), en ZOI disjuntas (frenado | vértice | salida), unidad (piloto × vuelta × tipología):
 
 1. `brake_point_rel`
 2. `trail_brake_frac` (fracción espacial con `Brake==True`; en FastF1 `Brake` es bool)
@@ -28,77 +36,79 @@ Features (calidad > forzar 10), en ZOI disjuntas (frenado | vértice | salida), 
 7. `throttle_onset_rel` (opcional; la ventana incluye pre-apex)
 8. `brake_point_iqr` (opcional, post-agregación)
 
-`config/circuits.yaml` alimenta las ZOI (offsets, wrap-around en T1/última curva, buckets de tipología). `pick_quicklaps` es un **push mode** explícito, no el filtro canónico por defecto (`pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status` verde). Media vs mediana es un switch de sensibilidad sobre la misma matriz.
+`config/circuits.yaml` alimenta las ZOI (offsets, wrap-around en T1/última curva, buckets de tipología). `pick_quicklaps` es **solo push mode** (`--push-mode`), no el filtro canónico (`pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status` verde).
 
 Pipeline C (clustering por vuelta) queda como stub de apéndice y **no** reemplaza este camino.
 
-### Objetivos Principales
-1. **Caracterización Objetiva**: Desplazar la subjetividad de etiquetas tradicionales (*"agresivo"*, *"suave"*, *"técnico"*) por vectores cuantitativos reproducibles (Puntos de frenado normalizados, velocidad en vértice, tasa de aceleración, *trail braking*).
-2. **Comparación Intra-Equipo (*Teammates*)**: Comparar pilotos con monoplazas técnicamente idénticos para aislar el factor humano y orientar configuraciones (*setups*) personalizadas.
-3. **Optimización del Desarrollo y Sinergia de Neumáticos**: Evaluar la compatibilidad del monoplaza y la gestión térmica/degradación de gomas según el estilo del piloto.
-4. **Scouting y Compatibilidad**: Marco analítico para evaluar contrataciones alineadas a la filosofía técnica de la escudería.
+### Qué hace (y qué no hace) este pipeline
+
+1. **Perfiles observables:** vectores cuantitativos reproducibles (punto de frenado relativo, velocidad en vértice, *trail braking*, ataque de acelerador) para describir patrones en telemetría de una sesión.
+2. **Comparación intra-equipo:** distancias entre compañeros sobre el mismo espacio de features. Es descriptiva; **no** aísla un factor humano causal (el hardware no está identificado como idéntico; faltan *setup* y combustible).
+3. **Sensibilidad estadística:** mediana vs media (ΔARI), bootstrap de pilotos, residualización parcial Team/Compound/TyreLife. **No** hay validación por compuesto Medium.
+4. **Trabajo futuro (sin soporte actual):** estrategia de carrera, *scouting*/contratación, *car–driver fit*, sinergia de neumáticos. Esas aplicaciones no están identificadas en este código.
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 MDC_F1_Tesis/
 ├── pyproject.toml                     # Configuración de paquete Python y dependencias (uv / pip)
 ├── requirements.txt                   # Congelado de dependencias
 ├── config/
-│   ├── circuits.yaml                  # Definición de tipologías de curva y circuitos de prueba
-│   └── pipeline_config.yaml           # Parámetros del pipeline (filtros, ZOI, clustering)
+│   ├── circuits.yaml                  # Tipologías de curva, ZOI y circuitos
+│   └── pipeline_config.yaml           # Filtros, agregación mediana, k por reglas, bootstrap
 │
 ├── src/
 │   └── f1_style_clustering/           # Paquete Python modular principal
-│       ├── config.py                  # Gestor de configuraciones YAML
+│       ├── config.py
+│       ├── pipeline.py                # Orquestador Pipeline B + ΔARI + bootstrap + declaración
 │       ├── data/
 │       │   ├── loader.py              # Ingesta FastF1, cache y derivadas cinemáticas
-│       │   └── filters.py             # Filtrado de vueltas limpias (quicklaps, banderas, outlaps)
+│       │   └── filters.py             # Canónico verde; pick_quicklaps = push_mode
 │       ├── features/
-│       │   ├── zoi.py                 # Extracción de Zonas de Interés (Braking, Apex, Exit)
-│       │   ├── metrics.py             # Cálculo de métricas (BrakingDist, Decel, ApexSpeed, ThrottleRate)
-│       │   ├── aggregators.py         # Agregación por piloto y matrices de sesión
-│       │   └── preprocessor.py        # Normalización respecto a media y estandarización Z-score
+│       │   ├── zoi.py                 # Zonas de Interés disjuntas (Braking, Apex, Exit)
+│       │   ├── metrics.py             # Métricas Pipeline B (relativas, trail espacial)
+│       │   ├── aggregators.py         # Unidad tipología × sesión; mediana/media por piloto
+│       │   └── preprocessor.py        # Tipología×sesión, residualización Team/tyre, RobustScaler
 │       ├── models/
-│       │   ├── dimensionality.py      # PCA (varianza explicada, loadings) y t-SNE
-│       │   ├── clustering.py          # K-Means, Clustering Jerárquico, GMM, DBSCAN
-│       │   └── evaluation.py          # Silueta, Inercia / Codo, Davies-Bouldin, Calinski-Harabasz
+│       │   ├── dimensionality.py      # PCA de ajuste (umbral) vs PCA 2D de gráfico
+│       │   ├── clustering.py          # K-Means++ ; seed stability + driver bootstrap/LOO
+│       │   └── evaluation.py          # Silueta, DB, k por reglas, mean_median_kmeans_ari
 │       ├── analysis/
-│       │   ├── archetypes.py          # Caracterización y perfilado de clústeres
-│       │   ├── teammates.py           # Comparación de compañeros de equipo (hardware idéntico)
-│       │   └── tire_synergy.py        # Correlación estilo vs degradación de neumáticos en carrera
+│       │   ├── archetypes.py          # Namer if/elif sobre el espacio de ajuste
+│       │   ├── teammates.py           # Distancias intra-equipo (descriptivo, no causal)
+│       │   └── tire_synergy.py        # Exploratorio; no es validación del clustering
 │       └── visualization/
-│           ├── telemetry_plots.py     # Trazas sincronizadas multicanal (Velocidad, Freno, Throttle)
-│           ├── radar_charts.py        # Gráficos de radar para arquetipos de estilo
-│           ├── cluster_plots.py       # Scatter 2D/3D (PCA, t-SNE) y curvas de validación (Codo/Silueta)
-│           └── corner_maps.py         # Visualización de trazadas y vértices de circuito
+│           ├── telemetry_plots.py
+│           ├── radar_charts.py        # Radar = mismas 6–8 features de ajuste
+│           ├── cluster_plots.py       # Scatter PCA 2D de visualización
+│           └── corner_maps.py
 │
-├── notebooks/                         # Serie de notebooks reproducibles paso a paso
+├── notebooks/                         # Serie paso a paso (perfiles observables)
 │   ├── 01_data_acquisition_and_exploration.ipynb
 │   ├── 02_feature_engineering_and_zoi.ipynb
 │   ├── 03_dimensionality_reduction_pca_tsne.ipynb
 │   ├── 04_driver_clustering_and_archetypes.ipynb
 │   ├── 05_teammate_and_strategy_applications.ipynb
-│   └── archive/                       # Notebooks exploratorios preexistentes archivados
+│   └── archive/
 │
 ├── scripts/
-│   ├── run_pipeline.py                # Pipeline B CLI (tipología × mediana, k por reglas)
-│   ├── generate_notebooks.py          # Generador/actualizador de notebooks
-│   └── export_results.py              # Exportador de reportes ejecutivos
+│   ├── run_pipeline.py                # CLI Pipeline B (bootstrap y ΔARI por defecto)
+│   ├── generate_notebooks.py
+│   └── export_results.py
 │
-└── tests/                             # Suite de pruebas unitarias automatizadas (pytest)
-    ├── test_features.py               # Tests para métricas cinemáticas y preprocesamiento
-    ├── test_models.py                 # Tests para PCA, t-SNE, K-Means, GMM y Teammates
-    └── test_pipeline_b.py             # Tests Pipeline B (ZOI, filtros, k, namer; sin red FastF1)
+└── tests/                             # pytest sintético (sin red FastF1; README no requerido)
+    ├── test_features.py
+    ├── test_models.py
+    └── test_pipeline_b.py
 ```
 
 ---
 
-## ⚙️ Instalación y Configuración del Entorno
+## Instalación y Configuración del Entorno
 
-El proyecto es totalmente compatible tanto con **`uv`** (recomendado por rendimiento) como con **`pip`**.
+El proyecto es compatible tanto con **`uv`** (recomendado) como con **`pip`**.
 
 ### Opción 1: Con `uv` (Recomendada)
 ```bash
@@ -122,35 +132,52 @@ python -m pip install -e ".[dev]"
 
 ---
 
-## 🚀 Ejecución del Pipeline
+## Ejecución del Pipeline
 
 ### 1. Ejecutar Pipeline Completo (CLI)
-Para ejecutar la ingesta, ingeniería de características, reducción dimensional, clustering, análisis de *teammates* y generación de gráficos:
+
+Ingesta FastF1, features Pipeline B, clustering, bootstrap de pilotos, ΔARI mediana/media y gráficos. **No** descarga resultados inventados: hace falta cache/red FastF1 para una sesión real.
 
 ```bash
-# Pipeline B: k se elige por reglas salvo --k-clusters
+# Pipeline B: k por reglas; mediana por defecto; bootstrap de pilotos y ΔARI ON
 python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R
 
-# Sensibilidad media vs mediana (misma matriz) y override de k
+# Sensibilidad media (misma sesión/filtros; k del run primario se alinea en ΔARI)
 python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --aggregator mean
-python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --k-clusters 3
+
+# Override de k; push mode = pick_quicklaps (no es el filtro canónico)
+python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --k-clusters 3 --push-mode
+
+# PCA como espacio de ajuste (distinto del PCA 2D de los plots)
+python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R --pca-fit
+
+# Apagar checks Sigma (siguen existiendo seed stability)
+python scripts/run_pipeline.py --season 2025 --circuit "Italian Grand Prix" --session R \
+  --no-driver-bootstrap --no-mean-median-ari --no-residualize
 ```
 
-Los resultados numéricos (`.csv`) y figuras de alta resolución (`.png`) se guardarán en la carpeta `results/`.
+Salida esperada en consola (además de silueta / Davies-Bouldin / seed ARI):
+
+- `Driver bootstrap (n_eff=…) mean ARI: …`
+- `Mean vs median ΔARI (aligned k=…): …`
+- `Confounding: residualized=[…]; fuel load and car setup are not in FastF1.`
+
+Los CSV y figuras van a `results/`. No hay *hold-out* Medium como validación.
 
 ### 2. Ejecutar la Suite de Pruebas Unitarias
 ```bash
 python -m pytest -v
 ```
 
+Las pruebas son **sintéticas** (sin descargas FastF1). El README no forma parte de pytest.
+
 ### 3. Explorar en Jupyter Notebooks
-Inicia Jupyter y navega por la serie ordenada:
 ```bash
 jupyter lab
 # o jupyter notebook
 ```
 - **`01_data_acquisition_and_exploration.ipynb`**: Carga y validación de vueltas de telemetría.
 - **`02_feature_engineering_and_zoi.ipynb`**: ZOI disjuntas, features Pipeline B y normalización tipología×sesión.
-- **`03_dimensionality_reduction_pca_tsne.ipynb`**: PCA como espacio de ajuste (umbral de varianza) y t-SNE para visualización.
-- **`04_driver_clustering_and_archetypes.ipynb`**: K-means++ con k por reglas, arquetipos mutuamente excluyentes, radar 6–8.
-- **`05_teammate_and_strategy_applications.ipynb`**: Comparación intra-equipo sobre el mismo espacio de features.
+- **`03_dimensionality_reduction_pca_tsne.ipynb`**: PCA de **ajuste** (umbral de varianza) vs PCA/t-SNE de **visualización**.
+- **`04_driver_clustering_and_archetypes.ipynb`**: K-means++ con k por reglas, arquetipos, radar 6–8, bootstrap.
+- **`05_teammate_and_strategy_applications.ipynb`**: Comparación intra-equipo descriptiva (no estrategia causal).

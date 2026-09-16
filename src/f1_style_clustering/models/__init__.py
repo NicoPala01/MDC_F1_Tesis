@@ -8,9 +8,17 @@ from .clustering import (
     fit_dbscan,
     fit_clustering_model,
     kmeans_seed_stability,
+    kmeans_driver_bootstrap_stability,
     dbscan_prefilter_outliers,
 )
-from .evaluation import evaluate_clustering, find_optimal_k, select_k_rule_based, ClusteringMetrics, InvalidKPoolError
+from .evaluation import (
+    evaluate_clustering,
+    find_optimal_k,
+    select_k_rule_based,
+    mean_median_kmeans_ari,
+    ClusteringMetrics,
+    InvalidKPoolError,
+)
 
 __all__ = [
     "perform_pca",
@@ -23,10 +31,12 @@ __all__ = [
     "fit_dbscan",
     "fit_clustering_model",
     "kmeans_seed_stability",
+    "kmeans_driver_bootstrap_stability",
     "dbscan_prefilter_outliers",
     "evaluate_clustering",
     "find_optimal_k",
     "select_k_rule_based",
+    "mean_median_kmeans_ari",
     "ClusteringMetrics",
     "InvalidKPoolError",
 ]

@@ -1,8 +1,9 @@
 """Statistical normalization, imputation, and standardization for clustering."""
 
-from typing import Tuple, Optional, List
+from typing import Tuple, Optional, List, Dict, Any
 import pandas as pd
 import numpy as np
+from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler, RobustScaler
 
 
@@ -27,6 +28,10 @@ def separate_metadata(
             "typology",
             "yaml_zone_name",
             "zone_source",
+            "Compound",
+            "TyreLife",
+            "Stint",
+            "FreshTyre",
         ]
 
     meta_present = [col for col in metadata_cols if col in df.columns]
@@ -139,18 +144,159 @@ def standardize_features(
     return df_standardized, df_meta, scaler
 
 
+def confounding_declaration(
+    residualized_covariates: Optional[List[str]] = None,
+    skipped_covariates: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """Explicit statement of what is (and is not) residualized.
+
+    Clusters are observable telemetry profiles/patterns, not causal styles.
+    FastF1 does not provide fuel load or car setup, so those remain confounders.
+    """
+    return {
+        "interpretation": (
+            "Clusters describe perfiles / patrones observables in telemetry, "
+            "not causal driving styles. Not fuel-free and not setup-free."
+        ),
+        "residualized_when_present": list(residualized_covariates or []),
+        "skipped": list(skipped_covariates or []),
+        "not_available_in_fastf1": ["fuel_load", "car_setup"],
+        "handling": {
+            "Team": (
+                "categorical FE / teammate-relative for teams with >=2 drivers "
+                "in the matrix at this grain"
+            ),
+            "Compound": (
+                "categorical FE when present at this grain "
+                "(mode if carried through driver aggregation)"
+            ),
+            "TyreLife": (
+                "linear covariate when present at this grain "
+                "(median if carried through driver aggregation)"
+            ),
+        },
+        "not_claimed": [
+            "fuel-corrected style",
+            "setup-free style",
+            "identical cars identified",
+            "Medium compound as validation",
+        ],
+    }
+
+
+def _categorical_dummies(series: pd.Series, name: str, min_group: int = 2) -> Tuple[pd.DataFrame, Optional[str]]:
+    """Dummy-encode levels with at least ``min_group`` observations (drop_first)."""
+    counts = series.dropna().value_counts()
+    keep = counts[counts >= min_group].index
+    if len(keep) < 2:
+        reason = f"{name} (need ≥2 levels with n≥{min_group})"
+        return pd.DataFrame(index=series.index), reason
+    clipped = series.where(series.isin(keep), other=np.nan)
+    dummies = pd.get_dummies(clipped, prefix=name, drop_first=True, dtype=float)
+    if dummies.shape[1] == 0:
+        return pd.DataFrame(index=series.index), f"{name} (no dummy columns)"
+    return dummies, None
+
+
 def residualize_team_tyre_features(
     df_features: pd.DataFrame,
     df_meta: Optional[pd.DataFrame] = None,
     team_col: str = "Team",
     compound_col: Optional[str] = None,
+    tyre_life_col: Optional[str] = "TyreLife",
 ) -> pd.DataFrame:
-    """Hook for Team/tyre residualization (deferred — committee out of scope this pass).
+    """Residualize numeric style features against Team / Compound / TyreLife.
 
-    Identity transform with ``attrs['team_tyre_residualized'] = False`` so the
-    call site is obvious when this is implemented later.
+    Honest FastF1 grain:
+    - Team first: categorical FE / teammate-relative (subtract team mean when
+      the team has ≥2 drivers in this matrix). Singletons are not absorbed.
+    - Compound / TyreLife: OLS on the Team-residuals only if columns exist.
+    - Fuel load and car setup are not in FastF1 and are **not** residualized.
+
+    See ``confounding_declaration`` on the returned frame's attrs.
     """
     out = df_features.copy()
-    out.attrs["team_tyre_residualized"] = False
+    used: List[str] = []
+    skipped: List[str] = []
+
+    if out.empty:
+        decl = confounding_declaration(used, skipped)
+        out.attrs["team_tyre_residualized"] = False
+        out.attrs["residualized_covariates"] = used
+        out.attrs["confounding_declaration"] = decl
+        return out
+
+    meta = pd.DataFrame(index=out.index)
+    if df_meta is not None and not df_meta.empty:
+        meta = df_meta.reindex(out.index)
+
+    if compound_col is None and "Compound" in meta.columns:
+        compound_col = "Compound"
+    if tyre_life_col is None and "TyreLife" in meta.columns:
+        tyre_life_col = "TyreLife"
+
+    numeric_cols = list(out.select_dtypes(include=[np.number]).columns)
+    Y = out[numeric_cols].replace([np.inf, -np.inf], np.nan)
+    Y = Y.apply(lambda col: col.fillna(col.median())) if numeric_cols else Y
+
+    if team_col and team_col in meta.columns and numeric_cols:
+        teams = meta[team_col]
+        counts = teams.dropna().value_counts()
+        eligible = counts[counts >= 2].index
+        if len(eligible):
+            group_means = Y.groupby(teams).transform("mean")
+            mask = teams.isin(eligible)
+            Y.loc[mask, numeric_cols] = Y.loc[mask, numeric_cols] - group_means.loc[mask, numeric_cols]
+            used.append("Team")
+        else:
+            skipped.append("Team (need ≥2 drivers in at least one team)")
+    else:
+        skipped.append("Team (column absent at this grain)")
+
+    parts: List[pd.DataFrame] = []
+    if compound_col and compound_col in meta.columns:
+        dummies, reason = _categorical_dummies(meta[compound_col], "Compound")
+        if reason:
+            skipped.append(reason)
+        elif dummies.shape[1]:
+            parts.append(dummies)
+            used.append("Compound")
+    elif compound_col:
+        skipped.append("Compound (column absent at this grain)")
+
+    if tyre_life_col and tyre_life_col in meta.columns:
+        life = pd.to_numeric(meta[tyre_life_col], errors="coerce")
+        if life.notna().sum() >= 3 and float(life.var(skipna=True) or 0.0) > 0:
+            life_filled = life.fillna(life.median())
+            parts.append(pd.DataFrame({tyre_life_col: life_filled}, index=out.index))
+            used.append("TyreLife")
+        else:
+            skipped.append("TyreLife (insufficient variance or n)")
+    elif tyre_life_col:
+        skipped.append("TyreLife (column absent at this grain)")
+
+    if parts and numeric_cols:
+        X = pd.concat(parts, axis=1).astype(float)
+        X = X.reindex(out.index).fillna(0.0)
+        if X.shape[1] >= max(1, len(out) - 1):
+            skipped.append("OLS design too wide vs n; skipped Compound/TyreLife")
+            used = [u for u in used if u == "Team"]
+        else:
+            model = LinearRegression(fit_intercept=True)
+            Xn = X.to_numpy(dtype=float)
+            for col in numeric_cols:
+                y = Y[col].to_numpy(dtype=float)
+                if not np.isfinite(y).all() or float(np.nanstd(y)) == 0:
+                    continue
+                model.fit(Xn, y)
+                Y[col] = y - model.predict(Xn)
+
+    if numeric_cols:
+        out[numeric_cols] = Y[numeric_cols]
+
+    decl = confounding_declaration(used, skipped)
+    out.attrs["team_tyre_residualized"] = bool(used)
+    out.attrs["residualized_covariates"] = used
+    out.attrs["confounding_declaration"] = decl
     return out
 
