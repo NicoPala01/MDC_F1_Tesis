@@ -32,6 +32,7 @@ def separate_metadata(
             "TyreLife",
             "Stint",
             "FreshTyre",
+            "residual_reference",
         ]
 
     meta_present = [col for col in metadata_cols if col in df.columns]
@@ -158,8 +159,9 @@ def confounding_declaration(
         "not_available_in_fastf1": ["fuel_load", "car_setup"],
         "handling": {
             "Team": (
-                "categorical FE / teammate-relative for teams with >=2 drivers "
-                "in the matrix at this grain"
+                "categorical FE / teammate-relative (subtract team mean) for teams "
+                "with >=2 drivers in the matrix at this grain; singletons subtract "
+                "the session/grid mean of drivers in this matrix"
             ),
             "Compound": (
                 "categorical FE when present at this grain "
@@ -204,20 +206,25 @@ def residualize_team_tyre_features(
 
     Honest FastF1 grain:
     - Team first: categorical FE / teammate-relative (subtract team mean when
-      the team has ≥2 drivers in this matrix). Singletons are not absorbed.
+      the team has ≥2 drivers in this matrix). Singletons (DNF/DNS/min laps)
+      subtract the session/grid mean of drivers in this matrix instead of
+      staying in raw units.
     - Compound / TyreLife: OLS on the Team-residuals only if columns exist.
     - Fuel load and car setup are not in FastF1 and are **not** residualized.
 
     See ``confounding_declaration`` on the returned frame's attrs.
+    ``residual_reference`` is a per-driver Series of ``team`` / ``session`` / ``none``.
     """
     out = df_features.copy()
     used: List[str] = []
     skipped: List[str] = []
+    residual_reference = pd.Series("none", index=out.index, dtype=object)
 
     if out.empty:
         decl = confounding_declaration(used, skipped)
         out.attrs["team_tyre_residualized"] = False
         out.attrs["residualized_covariates"] = used
+        out.attrs["residual_reference"] = residual_reference
         out.attrs["confounding_declaration"] = decl
         return out
 
@@ -238,13 +245,21 @@ def residualize_team_tyre_features(
         teams = meta[team_col]
         counts = teams.dropna().value_counts()
         eligible = counts[counts >= 2].index
-        if len(eligible):
+        mask = teams.isin(eligible)
+        grid_means = Y[numeric_cols].mean()
+        if mask.any():
             group_means = Y.groupby(teams).transform("mean")
-            mask = teams.isin(eligible)
             Y.loc[mask, numeric_cols] = Y.loc[mask, numeric_cols] - group_means.loc[mask, numeric_cols]
+            residual_reference.loc[mask] = "team"
             used.append("Team")
-        else:
-            skipped.append("Team (need ≥2 drivers in at least one team)")
+        singleton_mask = ~mask
+        if singleton_mask.any():
+            Y.loc[singleton_mask, numeric_cols] = (
+                Y.loc[singleton_mask, numeric_cols] - grid_means
+            )
+            residual_reference.loc[singleton_mask] = "session"
+            if "Team" not in used:
+                used.append("Team")
     else:
         skipped.append("Team (column absent at this grain)")
 
@@ -292,6 +307,7 @@ def residualize_team_tyre_features(
     decl = confounding_declaration(used, skipped)
     out.attrs["team_tyre_residualized"] = bool(used)
     out.attrs["residualized_covariates"] = used
+    out.attrs["residual_reference"] = residual_reference
     out.attrs["confounding_declaration"] = decl
     return out
 

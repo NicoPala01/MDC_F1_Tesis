@@ -76,7 +76,12 @@ def run_single_session(
         teammates_df = compare_teammates(df_scaled, df_meta)
         if not teammates_df.empty:
             teammates_df.to_csv(dest / "teammates.csv", index=False)
-            print(teammates_df[["Team", "Driver_1", "Driver_2", "Style_Euclidean_Distance"]])
+            print_cols = [
+                c
+                for c in ["Team", "Driver_1", "Driver_2", "Style_Euclidean_Distance", "Status"]
+                if c in teammates_df.columns
+            ]
+            print(teammates_df[print_cols])
 
     print(f"wrote {dest}")
     return result

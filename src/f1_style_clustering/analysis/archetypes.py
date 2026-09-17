@@ -197,7 +197,7 @@ def get_driver_archetype_summary(
     )
 
     if df_meta is not None:
-        for col in ["Team", "LapsCount", "n_laps"]:
+        for col in ["Team", "LapsCount", "n_laps", "residual_reference"]:
             if col in df_meta.columns:
                 df_summary[col] = df_meta[col]
         if "n_laps" not in df_summary.columns and "LapsCount" in df_summary.columns:

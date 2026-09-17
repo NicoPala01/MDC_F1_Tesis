@@ -85,5 +85,27 @@ def test_teammates_comparison(sample_standardized_features):
     )
 
     pairs = compare_teammates(sample_standardized_features, df_meta)
-    assert len(pairs) >= 4
+    ok = pairs[pairs["Status"] == "ok"]
+    missing = pairs[pairs["Status"] == "teammate_missing"]
+    assert len(ok) >= 4
     assert "Style_Euclidean_Distance" in pairs.columns
+    assert set(missing["Team"]) == {"Aston Martin", "Williams"}
+    assert missing["Driver_2"].eq("").all()
+    assert missing["Style_Euclidean_Distance"].isna().all()
+
+
+def test_compare_teammates_singleton_row():
+    df = pd.DataFrame(
+        {"apex_speed_rel": [1.0, 2.0, 0.5]},
+        index=["BOR", "HUL", "ALB"],
+    )
+    meta = pd.DataFrame({"Team": ["Kick Sauber", "Kick Sauber", "Williams"]}, index=df.index)
+    pairs = compare_teammates(df, meta)
+    assert not pairs.empty
+    sauber = pairs[pairs["Team"] == "Kick Sauber"].iloc[0]
+    assert sauber["Status"] == "ok"
+    williams = pairs[pairs["Team"] == "Williams"].iloc[0]
+    assert williams["Status"] == "teammate_missing"
+    assert williams["Driver_1"] == "ALB"
+    assert williams["Driver_2"] == ""
+    assert pd.isna(williams["Style_Euclidean_Distance"])

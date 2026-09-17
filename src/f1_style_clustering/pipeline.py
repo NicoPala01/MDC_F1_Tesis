@@ -54,6 +54,10 @@ def _prepare_scaled_fit_space(
             "team_tyre_residualized": bool(df_numeric.attrs.get("team_tyre_residualized", False)),
             "residualized_covariates": list(df_numeric.attrs.get("residualized_covariates") or []),
         }
+        ref = df_numeric.attrs.get("residual_reference")
+        if ref is not None:
+            df_meta = df_meta.copy() if not df_meta.empty else pd.DataFrame(index=df_numeric.index)
+            df_meta["residual_reference"] = pd.Series(ref).reindex(df_meta.index)
 
     df_scaled, df_meta_s, scaler = standardize_features(df_numeric, scaler_type=scaler_type)
     if not df_meta.empty:

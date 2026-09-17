@@ -47,11 +47,24 @@ def compare_teammates(
                 "Driver_1": d1,
                 "Driver_2": d2,
                 "Style_Euclidean_Distance": dist,
+                "Status": "ok",
             }
             # Add specific corner/phase feature deltas
             for feat in df_features.columns:
                 pair_row[f"Delta_{feat}"] = delta_vec[feat]
 
+            comparisons.append(pair_row)
+        elif len(team_drivers) == 1:
+            d1 = team_drivers[0]
+            pair_row = {
+                "Team": team,
+                "Driver_1": d1,
+                "Driver_2": "",
+                "Style_Euclidean_Distance": np.nan,
+                "Status": "teammate_missing",
+            }
+            for feat in df_features.columns:
+                pair_row[f"Delta_{feat}"] = np.nan
             comparisons.append(pair_row)
 
     df_pairs = pd.DataFrame(comparisons)

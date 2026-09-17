@@ -62,6 +62,7 @@ from f1_style_clustering.features.preprocessor import (
 )
 from f1_style_clustering.analysis.archetypes import assign_archetype_names
 from f1_style_clustering.config import load_config, load_circuit_config
+from f1_style_clustering.pipeline import cluster_driver_matrix
 
 
 # ---------------------------------------------------------------------------
@@ -869,8 +870,12 @@ def test_residualize_or_declaration_does_not_crash():
     decl = out.attrs.get("confounding_declaration") or confounding_declaration()
     assert "fuel" in str(decl).lower()
     assert "setup" in str(decl).lower()
-    # Singleton T3 is not absorbed; T1 teammate-relative around team mean.
+    # Singleton T3 uses session/grid mean; T1 stays teammate-relative around team mean.
     assert out.loc["A", "brake_point_rel"] == pytest.approx(-2.0, abs=1.5)
+    ref = out.attrs.get("residual_reference")
+    assert ref is not None
+    assert ref.loc["A"] == "team"
+    assert ref.loc["E"] == "session"
 
     empty_meta = residualize_team_tyre_features(df, None)
     assert empty_meta.shape == df.shape
@@ -882,3 +887,88 @@ def test_residualize_or_declaration_does_not_crash():
     )
     residualize_team_tyre_features(numeric, meta_sep)
     _ = confounding_declaration()
+    assert (empty_meta.attrs["residual_reference"] == "none").all()
+
+
+def test_residualize_singleton_uses_session_mean():
+    """Pairs center on team mean; leftover teammate centers on the grid mean."""
+    df = pd.DataFrame(
+        {
+            "brake_point_rel": [10.0, 14.0, 1.0],
+            "apex_speed_rel": [2.0, 4.0, 0.0],
+        },
+        index=["A", "B", "E"],
+    )
+    meta = pd.DataFrame({"Team": ["T1", "T1", "T3"]}, index=df.index)
+    out = residualize_team_tyre_features(df, meta)
+    assert out.shape == df.shape
+    assert not out.isna().any().any()
+    assert out.loc["A", "brake_point_rel"] == pytest.approx(-2.0)
+    assert out.loc["B", "brake_point_rel"] == pytest.approx(2.0)
+    grid_brake = float(df["brake_point_rel"].mean())
+    assert out.loc["E", "brake_point_rel"] == pytest.approx(1.0 - grid_brake)
+    grid_apex = float(df["apex_speed_rel"].mean())
+    assert out.loc["E", "apex_speed_rel"] == pytest.approx(0.0 - grid_apex)
+    ref = out.attrs["residual_reference"]
+    assert list(ref.loc[["A", "B"]]) == ["team", "team"]
+    assert ref.loc["E"] == "session"
+    handling = out.attrs["confounding_declaration"]["handling"]["Team"]
+    assert "session/grid mean" in handling
+
+
+def test_residualize_all_singletons_centers_on_grid():
+    df = pd.DataFrame({"x": [1.0, 3.0, 5.0]}, index=["A", "B", "C"])
+    meta = pd.DataFrame({"Team": ["T1", "T2", "T3"]}, index=df.index)
+    out = residualize_team_tyre_features(df, meta)
+    assert out["x"].to_list() == pytest.approx([-2.0, 0.0, 2.0])
+    assert (out.attrs["residual_reference"] == "session").all()
+    assert "Team" in out.attrs["residualized_covariates"]
+
+
+def test_cluster_keeps_singleton_driver_with_residual_reference():
+    """DNF teammate must not drop the finisher from K-means."""
+    rng = np.random.default_rng(0)
+    rows = []
+    index = []
+    for i, drv in enumerate(["A", "B", "C", "D", "E", "F", "G", "H", "I"]):
+        center = (
+            np.array([-1.5, 1.0, 0.0, 0.0, 0.0, 0.0])
+            if i < 5
+            else np.array([1.5, -1.0, 0.0, 0.0, 0.0, 0.0])
+        )
+        rows.append(center + rng.normal(0, 0.05, size=6))
+        index.append(drv)
+    df = pd.DataFrame(
+        rows,
+        index=index,
+        columns=list(CORE_STYLE_FEATURES[:6]),
+    )
+    df["Team"] = ["T1", "T1", "T2", "T2", "T3", "T3", "T4", "T4", "T5"]
+    cfg = {
+        "features": {"standardization": "robust", "residualize_team_tyre": True, "aggregation": "median"},
+        "clustering": {
+            "use_rule_based_k": False,
+            "min_cluster_size": 3,
+            "kmeans": {"k_range": [2, 3], "n_init": 10, "default_k": 2},
+            "seed_stability_n": 3,
+            "driver_bootstrap": False,
+            "compare_aggregators": False,
+            "dbscan_prefilter": False,
+        },
+        "dimensionality_reduction": {"pca": {"use_as_clustering_input": "auto", "variance_threshold": 0.85}},
+        "general": {"random_state": 0},
+    }
+    result = cluster_driver_matrix(
+        df,
+        config=cfg,
+        k_clusters=2,
+        residualize=True,
+        driver_bootstrap=False,
+        compare_aggregators=False,
+    )
+    assert not result.get("error")
+    assert "I" in result["cluster_labels"].index
+    assert len(result["cluster_labels"]) == 9
+    assert result["df_meta"].loc["I", "residual_reference"] == "session"
+    assert result["df_meta"].loc["A", "residual_reference"] == "team"
+    assert result["df_summary"].loc["I", "residual_reference"] == "session"
