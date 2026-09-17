@@ -15,13 +15,19 @@ Circuito de prueba: **Monza** (`Italian Grand Prix`). El resto de la temporada u
 
 ## Instalación
 
+Desde la raíz del repo (no desde `scripts/`). El paquete vive en `src/`; hay que instalarlo en el entorno activo:
+
 ```bash
-uv venv
-source .venv/bin/activate
-uv pip install -e ".[dev]"
+python -m pip install -e ".[dev]"
 ```
 
-o `python -m pip install -e ".[dev]"`.
+En PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev]"
+```
 
 ## Corrida
 
