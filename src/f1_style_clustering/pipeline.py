@@ -1,4 +1,4 @@
-"""Pipeline B orchestrator: typology×session relative style clustering."""
+"""Session and season clustering: relative style features → K-means → archetypes."""
 
 from typing import Any, Dict, Optional, Tuple
 
@@ -11,7 +11,7 @@ from .analysis.archetypes import (
     radar_feature_list,
 )
 from .config import load_circuit_config, load_config
-from .features.aggregators import build_pipeline_b_feature_matrix
+from .features.aggregators import build_feature_matrix
 from .features.preprocessor import (
     confounding_declaration,
     residualize_team_tyre_features,
@@ -73,44 +73,28 @@ def _prepare_scaled_fit_space(
     return df_scaled, df_meta_s, fit_space, pca_model, pca_info, inlier_mask, scaler, resid_info
 
 
-def run_pipeline_b(
-    session,
+def cluster_driver_matrix(
+    df_raw: pd.DataFrame,
     config: Optional[Dict[str, Any]] = None,
-    circuit_config: Optional[Dict[str, Any]] = None,
     k_clusters: Optional[int] = None,
     aggregation: Optional[str] = None,
-    push_mode: Optional[bool] = None,
     use_pca_fit: Optional[bool] = None,
     dbscan_prefilter: Optional[bool] = None,
     driver_bootstrap: Optional[bool] = None,
     compare_aggregators: Optional[bool] = None,
     residualize: Optional[bool] = None,
+    extras: Optional[Dict[str, pd.DataFrame]] = None,
+    analysis_zones: Optional[Dict[str, Any]] = None,
+    zone_source: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Run committee Pipeline B on a loaded FastF1 session.
-
-    per-lap features → (Driver × Lap × typology) median → driver median/mean
-    → optional Team/Compound/TyreLife residualization → optional PCA fit space
-    → K-means++ with rule-based k (valid pool only)
-    → mutually exclusive if/elif archetypes on the same fit space.
-
-    Additional Sigma checks (do not replace seed stability):
-    driver-level bootstrap/LOO ARI, and mean-vs-median ΔARI with aligned k.
-    """
+    """K-means++ on an already-built driver feature matrix."""
     cfg = config if config is not None else load_config()
-    circuits = circuit_config if circuit_config is not None else load_circuit_config()
-
-    filt = cfg.get("data_filtering") or {}
     feat_cfg = cfg.get("features") or {}
     clus_cfg = cfg.get("clustering") or {}
     pca_cfg = (cfg.get("dimensionality_reduction") or {}).get("pca") or {}
 
     agg = aggregation or feat_cfg.get("aggregation", "median")
-    push = filt.get("push_mode", False) if push_mode is None else push_mode
-    min_laps = int(filt.get("min_valid_laps_per_driver", 3))
-    include_onset = bool(feat_cfg.get("include_throttle_onset", True))
-    include_iqr = bool(feat_cfg.get("include_brake_point_iqr", True))
     scaler_type = str(feat_cfg.get("standardization", "robust"))
-
     do_bootstrap = bool(clus_cfg.get("driver_bootstrap", True)) if driver_bootstrap is None else bool(driver_bootstrap)
     do_compare = (
         bool(clus_cfg.get("compare_aggregators", True)) if compare_aggregators is None else bool(compare_aggregators)
@@ -119,34 +103,16 @@ def run_pipeline_b(
         bool(feat_cfg.get("residualize_team_tyre", True)) if residualize is None else bool(residualize)
     )
 
-    selected_corners, zone_source = resolve_selected_corners(session, circuits)
-    analysis_zones = extract_circuit_zones(
-        session, circuit_config=circuits, selected_corners=selected_corners
-    )
-
-    extra_aggs = None
-    if do_compare:
-        other = "mean" if str(agg).lower() != "mean" else "median"
-        extra_aggs = (other,)
-
-    df_raw = build_pipeline_b_feature_matrix(
-        session,
-        analysis_zones=analysis_zones,
-        aggregation=agg,
-        circuit_config=circuits,
-        push_mode=push,
-        min_valid_laps=min_laps,
-        include_throttle_onset=include_onset,
-        include_brake_point_iqr=include_iqr,
-        extra_aggregations=extra_aggs,
-    )
-    extras = dict(df_raw.attrs.get("extra_aggregations") or {}) if not df_raw.empty else {}
-    if df_raw.empty:
+    if df_raw is None or df_raw.empty:
         return {
-            "df_raw": df_raw,
+            "df_raw": df_raw if df_raw is not None else pd.DataFrame(),
             "error": "No valid driver features could be extracted.",
             "confounding_declaration": confounding_declaration(),
         }
+
+    extras = dict(extras or {})
+    if not extras:
+        extras = dict(df_raw.attrs.get("extra_aggregations") or {})
 
     prefilter = clus_cfg.get("dbscan_prefilter", False) if dbscan_prefilter is None else dbscan_prefilter
     variance_threshold = float(pca_cfg.get("variance_threshold", 0.85))
@@ -213,7 +179,6 @@ def run_pipeline_b(
     )
     metrics = evaluate_clustering(fit_space, cluster_labels, km_model)
 
-    # Namer uses the SAME space as the K-means fit (6–8 features, or PCs if --pca-fit).
     namer_space = fit_space.reindex(cluster_labels.index)
     profiles = characterize_clusters(namer_space, cluster_labels)
     archetype_names = assign_archetype_names(profiles)
@@ -266,7 +231,6 @@ def run_pipeline_b(
                 random_state=seed,
                 n_init=n_init,
             )
-            # Drop bulky label series from the pipeline dict; keep numeric ARI.
             mean_median = {
                 "ari": mean_median.get("ari"),
                 "k": mean_median.get("k", k_used),
@@ -294,7 +258,7 @@ def run_pipeline_b(
         "archetype_names": archetype_names,
         "df_summary": df_summary,
         "radar_features": radar_feature_list(df_scaled),
-        "analysis_zones": analysis_zones,
+        "analysis_zones": analysis_zones or {},
         "zone_source": zone_source,
         "seed_stability": {"mean_ari": mean_ari, "std_ari": std_ari},
         "driver_bootstrap": driver_stability,
@@ -306,3 +270,75 @@ def run_pipeline_b(
         "scaler": scaler,
         "km_model": km_model,
     }
+
+
+def run_pipeline(
+    session,
+    config: Optional[Dict[str, Any]] = None,
+    circuit_config: Optional[Dict[str, Any]] = None,
+    k_clusters: Optional[int] = None,
+    aggregation: Optional[str] = None,
+    push_mode: Optional[bool] = None,
+    use_pca_fit: Optional[bool] = None,
+    dbscan_prefilter: Optional[bool] = None,
+    driver_bootstrap: Optional[bool] = None,
+    compare_aggregators: Optional[bool] = None,
+    residualize: Optional[bool] = None,
+) -> Dict[str, Any]:
+    """Extract per-lap ZOI features, aggregate to one vector per driver, cluster."""
+    cfg = config if config is not None else load_config()
+    circuits = circuit_config if circuit_config is not None else load_circuit_config()
+
+    filt = cfg.get("data_filtering") or {}
+    feat_cfg = cfg.get("features") or {}
+
+    agg = aggregation or feat_cfg.get("aggregation", "median")
+    push = filt.get("push_mode", False) if push_mode is None else push_mode
+    min_laps = int(filt.get("min_valid_laps_per_driver", 3))
+    include_onset = bool(feat_cfg.get("include_throttle_onset", True))
+    include_iqr = bool(feat_cfg.get("include_brake_point_iqr", True))
+
+    do_compare = compare_aggregators
+    if do_compare is None:
+        do_compare = bool((cfg.get("clustering") or {}).get("compare_aggregators", True))
+
+    selected_corners, zone_source = resolve_selected_corners(session, circuits)
+    analysis_zones = extract_circuit_zones(
+        session, circuit_config=circuits, selected_corners=selected_corners
+    )
+
+    extra_aggs = None
+    if do_compare:
+        other = "mean" if str(agg).lower() != "mean" else "median"
+        extra_aggs = (other,)
+
+    df_raw = build_feature_matrix(
+        session,
+        analysis_zones=analysis_zones,
+        aggregation=agg,
+        circuit_config=circuits,
+        push_mode=push,
+        min_valid_laps=min_laps,
+        include_throttle_onset=include_onset,
+        include_brake_point_iqr=include_iqr,
+        extra_aggregations=extra_aggs,
+    )
+    extras = dict(df_raw.attrs.get("extra_aggregations") or {}) if not df_raw.empty else {}
+
+    result = cluster_driver_matrix(
+        df_raw,
+        config=cfg,
+        k_clusters=k_clusters,
+        aggregation=agg,
+        use_pca_fit=use_pca_fit,
+        dbscan_prefilter=dbscan_prefilter,
+        driver_bootstrap=driver_bootstrap,
+        compare_aggregators=do_compare,
+        residualize=residualize,
+        extras=extras,
+        analysis_zones=analysis_zones,
+        zone_source=zone_source,
+    )
+    result["analysis_zones"] = analysis_zones
+    result["zone_source"] = zone_source
+    return result

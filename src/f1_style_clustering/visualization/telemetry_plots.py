@@ -2,13 +2,11 @@
 
 from typing import List, Optional
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import fastf1.plotting
-from fastf1.core import Session, Lap
+from fastf1.core import Session
 
 from ..data.loader import prepare_lap_telemetry
-from ..features.zoi import get_corner_fragments
 
 
 def plot_corner_telemetry_comparison(
@@ -75,8 +73,10 @@ def plot_corner_telemetry_comparison(
         except Exception:
             continue
 
-    # Mark apex vertical line
     for ax in axes:
+        ax.axvspan(corner_zone["braking"][0], corner_zone["braking"][1], color="#d55e00", alpha=0.08)
+        ax.axvspan(corner_zone["apex"][0], corner_zone["apex"][1], color="#0072b2", alpha=0.10)
+        ax.axvspan(corner_zone["exit"][0], corner_zone["exit"][1], color="#009e73", alpha=0.08)
         ax.axvline(apex_dist, color="white", linestyle="--", alpha=0.6, label="Apex" if ax == axes[0] else "")
         ax.grid(True, linestyle=":", alpha=0.4)
 

@@ -1,14 +1,9 @@
-"""Filtering and validation utilities for clean, representative telemetry laps.
-
-Pipeline B uses FastF1 canonical picks:
+"""Canonical FastF1 lap filters.
 
     pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status('1')
 
-``pick_quicklaps`` is an explicit *push mode*, not the default definition of a
-clean lap.
-
-Canonical ``pick_*`` methods fail closed: if a required method is missing the
-filter raises ``MissingCanonicalPickError`` instead of silently skipping.
+``pick_quicklaps`` is opt-in push mode. Missing ``pick_*`` methods raise
+``MissingCanonicalPickError``.
 """
 
 from typing import Any, Optional
@@ -57,18 +52,7 @@ def filter_canonical_laps(
     green_only: bool = True,
     compound: Optional[str] = None,
 ) -> Any:
-    """Apply FastF1 canonical style filters (Pipeline B).
-
-    Args:
-        source: FastF1 Session, Laps, or a test double exposing pick_* methods.
-        driver: Optional driver code.
-        push_mode: If True, also apply pick_quicklaps (not the default "clean" set).
-        require_accurate: pick_accurate().
-        exclude_box: pick_wo_box() (in/out laps).
-        exclude_deleted: pick_not_deleted() (track limits).
-        green_only: pick_track_status('1') green-flag laps only.
-        compound: Optional tyre compound filter.
-    """
+    """Apply FastF1 canonical lap filters."""
     laps = _as_laps(source)
 
     if driver is not None:
@@ -150,7 +134,7 @@ def filter_clean_laps(
     compound: Optional[str] = None,
     push_mode: Optional[bool] = None,
 ) -> Laps:
-    """Filter session laps. Defaults follow Pipeline B (quicklaps is opt-in push mode)."""
+    """Filter session laps. ``pick_quicklaps`` is opt-in push mode."""
     use_push = bool(push_mode) if push_mode is not None else bool(quick_laps_only)
     return filter_canonical_laps(
         session,

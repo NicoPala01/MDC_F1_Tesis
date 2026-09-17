@@ -1,16 +1,9 @@
-"""Zone of Interest (ZOI) extraction with disjoint windows and track wrap-around.
+"""Zone of Interest extraction with disjoint windows and track wrap-around.
 
-Pipeline B ownership
---------------------
 ``config/circuits.yaml`` owns ZOIs when the session event matches a
-``benchmark_circuits`` entry: one zone per ``key_corners`` group (not one
-per FastF1 corner ``Number``). Chicane groups (e.g. Monza T1 = [1, 2]) are
-a single analysis unit.
-
-If there is no benchmark match, a **speed-threshold fallback** builds one
-zone per FastF1 ``Number`` and typology is filled later from
-``corner_speed_classification``. That path does **not** pretend
-``key_corners`` governs the circuit.
+``benchmark_circuits`` entry: one zone per ``key_corners`` group.
+Unmatched events use one zone per FastF1 ``Number`` and fill typology later
+from speed thresholds.
 """
 
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -248,10 +241,9 @@ def _corner_yaml_overrides(
     corner_number: int,
     circuit_config: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    """Return per-corner typology / window overrides from benchmark key_corners.
+    """Per-corner typology / window overrides from benchmark key_corners.
 
-    Diagnostic helper for the fallback/legacy Number path. Pipeline B grouping
-    uses ``_zones_from_key_corners`` instead of per-Number overrides.
+    Fallback Number path helper. Grouped ZOIs use ``_zones_from_key_corners``.
     """
     if not benchmark:
         return {}

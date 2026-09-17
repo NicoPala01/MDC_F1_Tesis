@@ -1,14 +1,12 @@
-"""Domain analysis modules: driver archetypes, teammate comparisons, and tire synergy."""
+"""Archetype naming and teammate comparisons."""
 
 from .archetypes import (
-    characterize_clusters,
     assign_archetype_names,
+    characterize_clusters,
     get_driver_archetype_summary,
     radar_feature_list,
 )
 from .teammates import compare_teammates, compute_intra_team_deltas
-from .tire_synergy import analyze_stint_degradation, correlate_style_with_degradation
-from .pipeline_c import cluster_laps_pipeline_c
 
 __all__ = [
     "characterize_clusters",
@@ -17,8 +15,4 @@ __all__ = [
     "radar_feature_list",
     "compare_teammates",
     "compute_intra_team_deltas",
-    "analyze_stint_degradation",
-    "correlate_style_with_degradation",
-    "cluster_laps_pipeline_c",
 ]
-

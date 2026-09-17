@@ -132,42 +132,6 @@ def plot_pca_biplot(
     return fig
 
 
-def plot_tsne_clusters(
-    df_tsne: pd.DataFrame,
-    cluster_labels: pd.Series,
-    title: str = "t-SNE Embedding of Driver Telemetry Patterns",
-    figsize: tuple = (10, 8),
-) -> plt.Figure:
-    """Plot 2D t-SNE manifold with driver labels."""
-    fig, ax = plt.subplots(figsize=figsize)
-
-    plot_df = df_tsne.copy()
-    plot_df["Cluster"] = cluster_labels
-
-    sns.scatterplot(
-        data=plot_df,
-        x="TSNE1",
-        y="TSNE2",
-        hue="Cluster",
-        palette="tab10",
-        s=170,
-        alpha=0.9,
-        edgecolor="black",
-        ax=ax,
-    )
-
-    for drv in plot_df.index:
-        ax.annotate(str(drv), (plot_df.loc[drv, "TSNE1"] + 0.3, plot_df.loc[drv, "TSNE2"] + 0.3), fontsize=9)
-
-    ax.set_title(title, fontsize=13, fontweight="bold")
-    ax.set_xlabel("t-SNE Component 1", fontsize=11)
-    ax.set_ylabel("t-SNE Component 2", fontsize=11)
-    ax.grid(True, linestyle="--", alpha=0.5)
-    plt.tight_layout()
-
-    return fig
-
-
 def plot_optimal_k_evaluation(
     df_eval: pd.DataFrame,
     figsize: tuple = (12, 5),

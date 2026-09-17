@@ -1,10 +1,9 @@
-"""Dimensionality reduction techniques: PCA and t-SNE."""
+"""PCA for clustering fit space and 2D visualization."""
 
 from typing import Tuple, Optional, Dict, Any
 import pandas as pd
 import numpy as np
 from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 
 
 def perform_pca(
@@ -54,7 +53,7 @@ def pca_for_clustering(
 ):
     """PCA as the clustering *fit space* when needed, not display-only 2D.
 
-    If the feature count is ≤ ``max_features_direct`` (Pipeline B: 6–8) and
+    If the feature count is ≤ ``max_features_direct`` (6–8) and
     ``force`` is False, the scaled features are used directly.
     """
     n_features = df_standardized.shape[1]
@@ -106,46 +105,4 @@ def compute_pca_loadings(
         columns=col_names,
     )
     return df_loadings
-
-
-def perform_tsne(
-    df_standardized: pd.DataFrame,
-    n_components: int = 2,
-    perplexity: float = 5.0,
-    n_iter: int = 1000,
-    random_state: int = 42,
-) -> Tuple[pd.DataFrame, TSNE]:
-    """
-    Perform t-Distributed Stochastic Neighbor Embedding (t-SNE) for non-linear manifold projection.
-
-    Args:
-        df_standardized: Standardized telemetry feature DataFrame.
-        n_components: Dimensions of embedded space (2 for 2D plot).
-        perplexity: Balance between local and global data topology.
-        n_iter: Maximum number of iterations.
-        random_state: Random state seed.
-
-    Returns:
-        Tuple of (df_tsne, tsne_model).
-    """
-    # Adjust perplexity if sample size is very small
-    n_samples = len(df_standardized)
-    effective_perplexity = min(perplexity, max(1.0, (n_samples - 1) / 3.0))
-
-    tsne = TSNE(
-        n_components=n_components,
-        perplexity=effective_perplexity,
-        max_iter=n_iter,
-        random_state=random_state,
-    )
-    tsne_results = tsne.fit_transform(df_standardized)
-
-    col_names = [f"TSNE{i+1}" for i in range(n_components)]
-    df_tsne = pd.DataFrame(
-        data=tsne_results,
-        columns=col_names,
-        index=df_standardized.index,
-    )
-
-    return df_tsne, tsne
 

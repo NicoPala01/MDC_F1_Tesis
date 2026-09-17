@@ -1,5 +1,4 @@
-# Formula 1 Circuit and Corner Typology Configuration
-# Wired into Pipeline B ZOI extraction (no longer a dead YAML file).
+# Circuit corner typology and ZOI windows.
 
 corner_speed_classification:
   slow:
@@ -13,7 +12,7 @@ corner_speed_classification:
     description: "High-speed sweepers and high lateral-G sections"
     speed_threshold_min_kmh: 205
 
-# Map circuit-specific YAML typology strings → Pipeline B buckets (slow|medium|fast)
+# Map circuit-specific YAML typology strings → slow|medium|fast buckets.
 typology_buckets:
   heavy_braking_chicane: slow
   medium_chicane: medium
@@ -30,7 +29,7 @@ typology_buckets:
 
 default_zoi_offsets:
   # Distance offsets (in meters) relative to corner apex distance from FastF1 circuit_info.
-  # Pipeline B uses these as disjoint windows: braking | apex | exit, with track wrap-around.
+  # Disjoint windows: braking | apex | exit, with track wrap-around.
   braking:
     pre_apex_meters: 350
     post_apex_meters: 0
@@ -41,10 +40,9 @@ default_zoi_offsets:
     pre_apex_meters: 0
     post_apex_meters: 250
 
-# When the session event matches a benchmark, Pipeline B uses ONLY these
-# key_corners groups as ZOIs (one zone per entry, not one per FastF1 Number).
-# Unmatched circuits use the speed-threshold fallback in extract_circuit_zones;
-# key_corners does not govern that path.
+# Benchmark events use ONLY these key_corners groups as ZOIs
+# (one zone per entry, not one per FastF1 Number).
+# Unmatched circuits use the speed-threshold fallback in extract_circuit_zones.
 benchmark_circuits:
   monza:
     official_name: "Autodromo Nazionale Monza"

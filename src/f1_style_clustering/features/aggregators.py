@@ -1,19 +1,4 @@
-"""Aggregators to construct driver-level feature matrices (Pipeline B).
-
-Pipeline B
-----------
-per-lap features on disjoint ZOIs (one zone per YAML key_corners group)
-  → typology × session median normalisation
-  → collapse to (Driver × Lap × typology) — median within typology per lap
-  → median (or mean) across laps per driver
-  → 6–8 style features (+ optional brake_point_iqr)
-
-Turn_N / FastF1 Number is diagnostic only and must not weight the cluster
-matrix (no Number inflation).
-
-Legacy per-numbered-corner wide matrices are retained as
-``build_session_feature_matrix_legacy`` for appendix comparisons only.
-"""
+"""Build driver-level style feature matrices from per-lap ZOI telemetry."""
 
 from typing import Any, Dict, List, Optional, Sequence
 
@@ -25,18 +10,12 @@ from ..data.loader import prepare_lap_telemetry
 from .metrics import (
     get_apex_speed,
     get_brake_point_relative,
-    get_braking_distance_to_apex,
     get_coast_frac,
     get_full_throttle_frac,
     get_kinematic_apex_distance,
-    get_max_deceleration,
-    get_max_throttle_rate,
-    get_min_apex_speed,
-    get_throttle_application_point,
     get_throttle_attack,
     get_throttle_onset_relative,
     get_trail_brake_frac,
-    get_trail_braking_score,
 )
 from .preprocessor import normalize_typology_session_median
 from .zoi import (
@@ -123,7 +102,7 @@ def extract_style_features_from_telemetry(
     include_throttle_onset: bool = True,
     trail_last_braking_m: Optional[float] = None,
 ) -> List[Dict[str, Any]]:
-    """Compute Pipeline B features per ZOI on one lap of telemetry.
+    """Compute style features per ZOI on one lap of telemetry.
 
     ``trail_brake_frac`` is the spatial Brake==True fraction on the **apex ZOI
     only** (optional last Xm of braking via ``trail_last_braking_m``).
@@ -345,7 +324,7 @@ def extract_lap_style_rows(
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
 ) -> List[Dict[str, Any]]:
-    """Pipeline B per-lap rows (one per ZOI / key_corners group). Prefers get_car_data().add_distance()."""
+    """Per-lap rows (one per ZOI / key_corners group)."""
     telemetry = prepare_lap_telemetry(lap)
     if telemetry is None or telemetry.empty:
         return []
@@ -370,7 +349,7 @@ def build_long_style_table(
     min_valid_laps: int = 3,
     include_throttle_onset: bool = True,
 ) -> pd.DataFrame:
-    """Build the long (driver × lap × zone) Pipeline B table before aggregation."""
+    """Build the long (driver × lap × zone) table before aggregation."""
     if analysis_zones is None:
         selected, _source = resolve_selected_corners(session, circuit_config)
         analysis_zones = extract_circuit_zones(
@@ -423,7 +402,7 @@ def build_long_style_table(
     return long_df
 
 
-def build_pipeline_b_feature_matrix(
+def build_feature_matrix(
     session: Session,
     analysis_zones: Optional[Dict[str, Dict[str, Any]]] = None,
     drivers: Optional[List[str]] = None,
@@ -436,7 +415,7 @@ def build_pipeline_b_feature_matrix(
     selected_corners: Optional[List[int]] = None,
     extra_aggregations: Optional[Sequence[str]] = None,
 ) -> pd.DataFrame:
-    """End-to-end Pipeline B driver matrix (relative 6–8 style features).
+    """Driver matrix of relative 6–8 style features.
 
     Cluster-matrix unit: median within (Driver × Lap × typology), then median
     across those rows per driver. Turn_N does not weight the matrix.
@@ -492,184 +471,3 @@ def build_pipeline_b_feature_matrix(
     if extras:
         primary.attrs["extra_aggregations"] = extras
     return primary
-
-
-# ---------------------------------------------------------------------------
-# Legacy wide (per-numbered-corner) path — not the main clustering input
-# ---------------------------------------------------------------------------
-
-def extract_lap_features(
-    lap: Lap,
-    analysis_zones: Dict[str, Dict[str, Any]],
-) -> Optional[Dict[str, float]]:
-    """Legacy per-corner wide features. Prefer ``extract_lap_style_rows`` (Pipeline B)."""
-    telemetry = prepare_lap_telemetry(lap)
-    if telemetry is None or telemetry.empty:
-        return None
-
-    lap_data: Dict[str, float] = {}
-
-    for corner_name, zone_info in analysis_zones.items():
-        try:
-            fragments = get_corner_fragments(telemetry, zone_info)
-            apex_dist = fragments["apex_distance"]
-
-            lap_data[f"{corner_name}_BrakingDistToApex"] = get_braking_distance_to_apex(
-                fragments["braking"], apex_dist
-            )
-            lap_data[f"{corner_name}_MaxDecel"] = get_max_deceleration(fragments["braking"])
-            lap_data[f"{corner_name}_MinApexSpeed"] = get_min_apex_speed(fragments["apex"])
-            lap_data[f"{corner_name}_MaxThrottleRate"] = get_max_throttle_rate(fragments["exit"])
-            lap_data[f"{corner_name}_ThrottlePoint"] = get_throttle_application_point(
-                fragments["exit"], apex_dist
-            )
-            lap_data[f"{corner_name}_TrailBraking"] = get_trail_braking_score(fragments["apex"])
-        except Exception:
-            continue
-
-    return lap_data
-
-
-def extract_driver_session_features(
-    session: Session,
-    driver_code: str,
-    analysis_zones: Dict[str, Dict[str, Any]],
-    aggregation: str = "median",
-    quick_laps_only: bool = False,
-    push_mode: Optional[bool] = None,
-    min_valid_laps: int = 1,
-) -> Optional[Dict[str, Any]]:
-    """Legacy driver aggregation over the wide per-corner feature set."""
-    use_push = bool(push_mode) if push_mode is not None else bool(quick_laps_only)
-    driver_laps = filter_canonical_laps(
-        session,
-        driver=driver_code,
-        push_mode=use_push,
-        require_accurate=True,
-    )
-
-    if driver_laps is None or getattr(driver_laps, "empty", True):
-        return None
-    if min_valid_laps and len(driver_laps) < min_valid_laps:
-        return None
-
-    laps_features_list = []
-    for _, lap in driver_laps.iterlaps():
-        features = extract_lap_features(lap, analysis_zones)
-        if features:
-            laps_features_list.append(features)
-
-    if not laps_features_list:
-        return None
-
-    df_driver_laps = pd.DataFrame(laps_features_list)
-
-    if aggregation == "median":
-        aggregated = df_driver_laps.median(skipna=True)
-    else:
-        aggregated = df_driver_laps.mean(skipna=True)
-
-    result = aggregated.to_dict()
-    result["Driver"] = driver_code
-    result["LapsCount"] = len(df_driver_laps)
-    result["n_laps"] = len(df_driver_laps)
-
-    try:
-        team_name = driver_laps["Team"].iloc[0] if "Team" in driver_laps.columns else "Unknown"
-        result["Team"] = team_name
-    except Exception:
-        result["Team"] = "Unknown"
-
-    return result
-
-
-def build_session_feature_matrix_legacy(
-    session: Session,
-    analysis_zones: Optional[Dict[str, Dict[str, Any]]] = None,
-    drivers: Optional[List[str]] = None,
-    aggregation: str = "median",
-    selected_corners: Optional[List[int]] = None,
-    circuit_config: Optional[Dict[str, Any]] = None,
-    push_mode: bool = False,
-    min_valid_laps: int = 3,
-) -> pd.DataFrame:
-    """Legacy p≫n wide matrix (one column per numbered corner). Not Pipeline B."""
-    if analysis_zones is None:
-        analysis_zones = extract_circuit_zones(
-            session, selected_corners=selected_corners, circuit_config=circuit_config
-        )
-
-    driver_list = drivers or list(session.drivers)
-    all_driver_features = []
-
-    for driver_code in driver_list:
-        try:
-            drv_info = session.get_driver(driver_code)
-            drv_abbr = drv_info["Abbreviation"] if "Abbreviation" in drv_info else str(driver_code)
-        except Exception:
-            drv_abbr = str(driver_code)
-
-        drv_features = extract_driver_session_features(
-            session=session,
-            driver_code=drv_abbr,
-            analysis_zones=analysis_zones,
-            aggregation=aggregation,
-            push_mode=push_mode,
-            min_valid_laps=min_valid_laps,
-        )
-        if drv_features:
-            all_driver_features.append(drv_features)
-
-    if not all_driver_features:
-        return pd.DataFrame()
-
-    df_features = pd.DataFrame(all_driver_features)
-    if "Driver" in df_features.columns:
-        df_features = df_features.set_index("Driver")
-    return df_features
-
-
-def build_session_feature_matrix(
-    session: Session,
-    analysis_zones: Optional[Dict[str, Dict[str, Any]]] = None,
-    drivers: Optional[List[str]] = None,
-    aggregation: str = "median",
-    selected_corners: Optional[List[int]] = None,
-    circuit_config: Optional[Dict[str, Any]] = None,
-    push_mode: bool = False,
-    min_valid_laps: int = 3,
-    include_throttle_onset: bool = True,
-    include_brake_point_iqr: bool = True,
-    pipeline: str = "B",
-) -> pd.DataFrame:
-    """Build the session driver matrix. Default ``pipeline='B'`` is the main path."""
-    if str(pipeline).upper() == "C":
-        # Intentionally not implemented as the main path.
-        from ..analysis.pipeline_c import cluster_laps_pipeline_c
-
-        cluster_laps_pipeline_c(pd.DataFrame())
-
-    if str(pipeline).upper() == "LEGACY":
-        return build_session_feature_matrix_legacy(
-            session,
-            analysis_zones=analysis_zones,
-            drivers=drivers,
-            aggregation=aggregation,
-            selected_corners=selected_corners,
-            circuit_config=circuit_config,
-            push_mode=push_mode,
-            min_valid_laps=min_valid_laps,
-        )
-
-    return build_pipeline_b_feature_matrix(
-        session,
-        analysis_zones=analysis_zones,
-        drivers=drivers,
-        aggregation=aggregation,
-        circuit_config=circuit_config,
-        push_mode=push_mode,
-        min_valid_laps=min_valid_laps,
-        include_throttle_onset=include_throttle_onset,
-        include_brake_point_iqr=include_brake_point_iqr,
-        selected_corners=selected_corners,
-    )

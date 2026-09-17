@@ -1,6 +1,6 @@
-"""Unit tests for Pipeline B (typology×session median → driver aggregation).
+"""Unit tests for typology×session median → driver aggregation.
 
-These tests use synthetic telemetry only — no FastF1 network downloads.
+Synthetic telemetry only — no FastF1 network downloads.
 """
 
 import numpy as np
@@ -61,7 +61,6 @@ from f1_style_clustering.features.preprocessor import (
     separate_metadata,
 )
 from f1_style_clustering.analysis.archetypes import assign_archetype_names
-from f1_style_clustering.analysis.pipeline_c import cluster_laps_pipeline_c
 from f1_style_clustering.config import load_config, load_circuit_config
 
 
@@ -173,9 +172,8 @@ def _fake_laps_table():
 # Config
 # ---------------------------------------------------------------------------
 
-def test_pipeline_config_is_pipeline_b():
+def test_pipeline_config_defaults():
     cfg = load_config()
-    assert cfg["pipeline"]["name"] == "B"
     assert cfg["features"]["aggregation"] == "median"
     assert cfg["features"]["normalization_unit"] == "typology_session_median"
     assert cfg["data_filtering"]["push_mode"] is False
@@ -515,7 +513,7 @@ def test_dbscan_is_prefilter_not_main_partition():
 # Archetype namer
 # ---------------------------------------------------------------------------
 
-def test_archetype_namer_unique_on_pipeline_b_features():
+def test_archetype_namer_unique_on_style_features():
     profiles = pd.DataFrame(
         {
             "brake_point_rel": [-1.2, 1.1, 0.0],
@@ -570,10 +568,6 @@ def test_namer_elif_on_pca_fit_space():
     assert names[2] == "Momentum Keeper (U-Shape)"
     assert len(set(names.values())) == 3
 
-
-def test_pipeline_c_stub_is_not_main_path():
-    with pytest.raises(NotImplementedError, match="appendix"):
-        cluster_laps_pipeline_c(pd.DataFrame())
 
 
 # ---------------------------------------------------------------------------

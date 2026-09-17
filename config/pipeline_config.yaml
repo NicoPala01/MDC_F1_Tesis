@@ -1,29 +1,18 @@
-# Pipeline Configuration for F1 Driving Style Clustering (Thesis)
-# Main path: Pipeline B (committee-approved)
-
-pipeline:
-  name: B
-  description: >
-    per-lap features → (Driver × Lap × typology) median → driver median
-    aggregation → optional PCA in the fit space → K-means with
-    rule-based k (valid min_cluster_size pool only) → mutually exclusive
-    if/elif archetypes on the same fit space.
-  # Pipeline C (lap clustering) is an appendix stub only — not the main path.
+# F1 driving-style clustering
 
 general:
   season: 2025
-  default_session_type: "R"  # R for Race, Q for Qualifying, FP2 for Practice
+  default_session_type: "R"
   cache_dir: "cache"
   enable_fastf1_cache: true
   random_state: 42
+  min_races_season: 8
 
 data_filtering:
-  # FastF1 canonical: pick_accurate ∩ pick_wo_box ∩ pick_not_deleted ∩ pick_track_status green
   require_accurate_laps: true
   exclude_box_laps: true
   exclude_deleted_laps: true
   green_flag_only: true
-  # pick_quicklaps is an explicit "push mode", not the default definition of clean
   push_mode: false
   use_quicklaps_only: false
   exclude_pit_in_out: true
@@ -39,63 +28,36 @@ features:
     - throttle_attack
     - coast_frac
     - full_throttle_frac
-    - throttle_onset_rel   # optional; window includes pre-apex
-    # brake_point_iqr is computed after driver aggregation
+    - throttle_onset_rel
   include_throttle_onset: true
   include_brake_point_iqr: true
-  # Deprioritized / removed as style features: gear-change rate, raw MaxDecel spikes,
-  # one column per numbered corner (p ≫ n).
-  standardization: "robust"  # 'zscore' or 'robust'
+  standardization: "robust"
   normalization_unit: "typology_session_median"
-  aggregation: "median"  # 'median' (default) or 'mean' (robustness / sensitivity switch)
-  # Cluster matrix unit: median within (Driver × Lap × typology), then median across laps.
-  # Turn_N / FastF1 Number is diagnostic only and must not inflate the matrix.
-  residualize_team_tyre: true  # Team FE; Compound/TyreLife when present. Fuel/setup absent.
+  aggregation: "median"
+  residualize_team_tyre: true
 
 dimensionality_reduction:
   pca:
-    # Use PCA as clustering *input* only when needed (auto: skip if ≤ 8 features)
     use_as_clustering_input: auto
     n_components: null
     variance_threshold: 0.85
-  tsne:
-    n_components: 2
-    perplexity: 5
-    n_iter: 1000
-    random_state: 42
 
 clustering:
-  algorithms:
-    - kmeans
-    - agglomerative
-    - gmm
-    - dbscan          # optional outlier prefilter only — not the main partition
   use_rule_based_k: true
-  # k is chosen only from candidates with min_cluster_size; empty pool aborts (never fit invalid k).
-  # Seed-stability mean ARI is the tie-break. Driver-level bootstrap/LOO is additional (n_eff ≈ n_drivers).
-  # No hard-coded K_OPTIMAL=3 as the only path. default_k is unused when rule-based.
   default_k: null
   min_cluster_size: 3
   silhouette_threshold: 0.25
   dbscan_prefilter: false
   seed_stability_n: 10
   driver_bootstrap: true
-  driver_bootstrap_n: null   # null → n_drivers
-  driver_bootstrap_method: bootstrap  # bootstrap | loo
-  compare_aggregators: true  # mean vs median ΔARI, aligned k; not Medium-as-validation
+  driver_bootstrap_n: null
+  driver_bootstrap_method: bootstrap
+  compare_aggregators: true
   kmeans:
     k_range: [2, 7]
     init: "k-means++"
     n_init: 20
-  gmm:
-    n_components_range: [2, 6]
-    covariance_type: "full"
   evaluation_metrics:
     - silhouette_score
     - davies_bouldin
     - calinski_harabasz
-
-paths:
-  results_data: "results/data"
-  results_figures: "results/figures"
-  results_reports: "results/reports"

@@ -188,7 +188,7 @@ def get_trail_braking_score(
 
 
 # ---------------------------------------------------------------------------
-# Pipeline B style metrics (6–8 features on disjoint ZOIs)
+# Style metrics (6–8 features on disjoint ZOIs)
 # ---------------------------------------------------------------------------
 
 THROTTLE_COAST_MAX = 5.0
@@ -229,8 +229,7 @@ def get_trail_brake_frac(
 ) -> float:
     """Spatial fraction of the fragment with Brake == True.
 
-    Pipeline B passes the **apex ZOI only** (not braking ∪ apex). An optional
-    last-Xm tail of the braking window may be concatenated by the caller.
+    Callers pass the apex ZOI (optionally concatenated with a last-Xm braking tail).
     """
     if fragment is None or fragment.empty or "Brake" not in fragment.columns:
         return np.nan

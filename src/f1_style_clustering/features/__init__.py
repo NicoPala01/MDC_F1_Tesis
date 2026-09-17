@@ -1,14 +1,13 @@
-"""Feature engineering, Zone of Interest (ZOI) extraction, and preprocessing."""
+"""Feature engineering, ZOI extraction, and preprocessing."""
 
-from .zoi import (
-    classify_speed_typology,
-    clip_and_merge_zones,
-    disjoint_zone_bounds,
-    extract_circuit_zones,
-    get_corner_fragments,
-    in_distance_window,
-    map_typology_to_bucket,
-    resolve_selected_corners,
+from .aggregators import (
+    CORE_STYLE_FEATURES,
+    aggregate_driver_style_features,
+    build_feature_matrix,
+    build_long_style_table,
+    collapse_to_driver_lap_typology,
+    extract_style_features_from_telemetry,
+    trail_brake_fragment,
 )
 from .metrics import (
     get_apex_speed,
@@ -29,23 +28,22 @@ from .metrics import (
     is_brake_on,
     spatial_fraction,
 )
-from .aggregators import (
-    CORE_STYLE_FEATURES,
-    build_pipeline_b_feature_matrix,
-    build_session_feature_matrix,
-    collapse_to_driver_lap_typology,
-    extract_driver_session_features,
-    extract_lap_features,
-    extract_style_features_from_telemetry,
-    aggregate_driver_style_features,
-    trail_brake_fragment,
-)
 from .preprocessor import (
     confounding_declaration,
     normalize_relative_to_mean,
     normalize_typology_session_median,
     residualize_team_tyre_features,
     standardize_features,
+)
+from .zoi import (
+    classify_speed_typology,
+    clip_and_merge_zones,
+    disjoint_zone_bounds,
+    extract_circuit_zones,
+    get_corner_fragments,
+    in_distance_window,
+    map_typology_to_bucket,
+    resolve_selected_corners,
 )
 
 __all__ = [
@@ -75,10 +73,8 @@ __all__ = [
     "get_full_throttle_frac",
     "get_throttle_onset_relative",
     "CORE_STYLE_FEATURES",
-    "extract_lap_features",
-    "extract_driver_session_features",
-    "build_session_feature_matrix",
-    "build_pipeline_b_feature_matrix",
+    "build_feature_matrix",
+    "build_long_style_table",
     "extract_style_features_from_telemetry",
     "aggregate_driver_style_features",
     "collapse_to_driver_lap_typology",
@@ -89,4 +85,3 @@ __all__ = [
     "confounding_declaration",
     "standardize_features",
 ]
-

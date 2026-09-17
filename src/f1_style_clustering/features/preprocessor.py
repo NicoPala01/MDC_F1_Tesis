@@ -74,16 +74,11 @@ def normalize_typology_session_median(
     feature_cols: Optional[List[str]] = None,
     typology_col: str = "typology",
 ) -> pd.DataFrame:
-    """Subtract the session × typology median so features are relative style.
-
-    One input table is assumed to be a single session. This is the Pipeline B
-    primary normalisation unit — not raw circuit-only, not per-numbered-corner
-    z-scores that reinflate p.
-    """
+    """Subtract the session × typology median so features are relative style."""
     if df.empty:
         return df.copy()
     if typology_col not in df.columns:
-        raise ValueError(f"Expected typology column '{typology_col}' for Pipeline B normalisation.")
+        raise ValueError(f"Expected typology column '{typology_col}' for typology×session normalisation.")
 
     out = df.copy()
     if feature_cols is None:

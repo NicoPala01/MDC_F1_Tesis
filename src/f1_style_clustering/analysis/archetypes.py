@@ -1,18 +1,10 @@
-"""Driver driving style archetype characterization and profile generation.
-
-Pipeline B names archetypes with mutually exclusive if/elif rules on the
-centroids in the **same space as the K-means fit** (6–8 style features,
-including ``brake_point_iqr`` when it was in the fit, or PCs if --pca-fit).
-
-Greedy score matching and legacy top-2 wide-column names are not used on
-the B path.
-"""
+"""Mutually exclusive archetype names on the K-means fit space."""
 
 from typing import Dict, List, Optional
 
 import pandas as pd
 
-PIPELINE_B_FEATURES = [
+STYLE_FEATURES = [
     "brake_point_rel",
     "trail_brake_frac",
     "apex_speed_rel",
@@ -100,7 +92,7 @@ def _exclusive_pc_name(row: pd.Series) -> str:
         return "Adaptive / Balanced"
 
 
-def _is_pipeline_b_profile(cluster_profiles: pd.DataFrame) -> bool:
+def _is_style_profile(cluster_profiles: pd.DataFrame) -> bool:
     cols = set(cluster_profiles.columns)
     needed = {"brake_point_rel", "apex_speed_rel", "trail_brake_frac"}
     return needed.issubset(cols)
@@ -140,13 +132,12 @@ def assign_archetype_names(
         return {}
 
     raw: Dict[int, str] = {}
-    if _is_pipeline_b_profile(cluster_profiles) or _is_pc_profile(cluster_profiles):
+    if _is_style_profile(cluster_profiles) or _is_pc_profile(cluster_profiles):
         namer = _exclusive_pc_name if _is_pc_profile(cluster_profiles) else _exclusive_style_name
         for cid, row in cluster_profiles.iterrows():
             raw[int(cid)] = namer(row)
         return _unique_assign(raw)
 
-    # Legacy wide matrices only (appendix). Not the Pipeline B path.
     return _legacy_wide_names(cluster_profiles)
 
 
@@ -181,11 +172,10 @@ def _legacy_wide_names(cluster_profiles: pd.DataFrame) -> Dict[int, str]:
 
 
 def radar_feature_list(df_features: pd.DataFrame) -> List[str]:
-    """Features that radar charts must share with the Pipeline B style space."""
-    present = [c for c in PIPELINE_B_FEATURES if c in df_features.columns]
+    """Features that radar charts must share with the clustering style space."""
+    present = [c for c in STYLE_FEATURES if c in df_features.columns]
     if present:
-        # Prefer the core 6; include optionals when present.
-        core = [c for c in PIPELINE_B_FEATURES[:6] if c in present]
+        core = [c for c in STYLE_FEATURES[:6] if c in present]
         extra = [c for c in present if c not in core]
         return core + extra
     return list(df_features.columns[:6])
