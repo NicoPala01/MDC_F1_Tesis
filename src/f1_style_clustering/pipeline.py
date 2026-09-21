@@ -1,5 +1,7 @@
-"""Session and season clustering: relative style features → K-means → archetypes."""
+"""Session clustering: relative style features per lap → K-means → driver profiles."""
 
+import copy
+import math
 from typing import Any, Dict, Optional, Tuple
 
 import pandas as pd
@@ -10,8 +12,12 @@ from .analysis.archetypes import (
     get_driver_archetype_summary,
     radar_feature_list,
 )
+from .analysis.lap_distribution import (
+    build_lap_distribution_reports,
+    teammates_from_distribution,
+)
 from .config import load_circuit_config, load_config
-from .features.aggregators import build_feature_matrix
+from .features.aggregators import CORE_STYLE_FEATURES, OPTIONAL_STYLE_FEATURES, build_lap_style_matrix
 from .features.preprocessor import (
     confounding_declaration,
     residualize_team_tyre_features,
@@ -276,6 +282,13 @@ def cluster_driver_matrix(
     }
 
 
+def _lap_min_cluster_size(n_laps: int) -> int:
+    """A lap class must cover at least 5% of the session, and at least 3 laps."""
+    if n_laps <= 0:
+        return 3
+    return max(3, int(math.ceil(0.05 * n_laps)))
+
+
 def run_pipeline(
     session,
     config: Optional[Dict[str, Any]] = None,
@@ -289,60 +302,107 @@ def run_pipeline(
     compare_aggregators: Optional[bool] = None,
     residualize: Optional[bool] = None,
 ) -> Dict[str, Any]:
-    """Extract per-lap ZOI features, aggregate to one vector per driver, cluster."""
+    """Classify every lap, then set each driver's profile to the modal class.
+
+    ``aggregation``, ``driver_bootstrap`` and ``compare_aggregators`` stay in
+    the signature for the CLI. The profile is the distribution of lap classes,
+    so those driver-vector options are not applied.
+    """
+    del aggregation, driver_bootstrap, compare_aggregators
     cfg = config if config is not None else load_config()
     circuits = circuit_config if circuit_config is not None else load_circuit_config()
 
     filt = cfg.get("data_filtering") or {}
     feat_cfg = cfg.get("features") or {}
 
-    agg = aggregation or feat_cfg.get("aggregation", "median")
     push = filt.get("push_mode", False) if push_mode is None else push_mode
     min_laps = int(filt.get("min_valid_laps_per_driver", 3))
     include_onset = bool(feat_cfg.get("include_throttle_onset", True))
-    include_iqr = bool(feat_cfg.get("include_brake_point_iqr", True))
-
-    do_compare = compare_aggregators
-    if do_compare is None:
-        do_compare = bool((cfg.get("clustering") or {}).get("compare_aggregators", True))
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
     analysis_zones = extract_circuit_zones(
         session, circuit_config=circuits, selected_corners=selected_corners
     )
 
-    extra_aggs = None
-    if do_compare:
-        other = "mean" if str(agg).lower() != "mean" else "median"
-        extra_aggs = (other,)
-
-    df_raw = build_feature_matrix(
+    df_raw = build_lap_style_matrix(
         session,
         analysis_zones=analysis_zones,
-        aggregation=agg,
         circuit_config=circuits,
         push_mode=push,
         min_valid_laps=min_laps,
         include_throttle_onset=include_onset,
-        include_brake_point_iqr=include_iqr,
-        extra_aggregations=extra_aggs,
     )
-    extras = dict(df_raw.attrs.get("extra_aggregations") or {}) if not df_raw.empty else {}
+    if df_raw is None or df_raw.empty:
+        return {
+            "df_raw": df_raw if df_raw is not None else pd.DataFrame(),
+            "error": "No complete laps could be classified.",
+            "confounding_declaration": confounding_declaration(),
+            "analysis_zones": analysis_zones,
+            "zone_source": zone_source,
+        }
 
-    result = cluster_driver_matrix(
-        df_raw,
-        config=cfg,
-        k_clusters=k_clusters,
-        aggregation=agg,
-        use_pca_fit=use_pca_fit,
-        dbscan_prefilter=dbscan_prefilter,
-        driver_bootstrap=driver_bootstrap,
-        compare_aggregators=do_compare,
-        residualize=residualize,
-        extras=extras,
-        analysis_zones=analysis_zones,
-        zone_source=zone_source,
+    lap_typ = df_raw.attrs.get("lap_typology")
+    feature_cols = list(df_raw.attrs.get("feature_cols") or [])
+    if not feature_cols:
+        feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in (lap_typ.columns if lap_typ is not None else [])]
+
+    cfg_lap = copy.deepcopy(cfg)
+    clus = cfg_lap.setdefault("clustering", {})
+    min_size = _lap_min_cluster_size(len(df_raw))
+    clus["min_cluster_size"] = min_size
+    clus["driver_bootstrap"] = False
+    clus["compare_aggregators"] = False
+
+    try:
+        result = cluster_driver_matrix(
+            df_raw,
+            config=cfg_lap,
+            k_clusters=k_clusters,
+            use_pca_fit=use_pca_fit,
+            dbscan_prefilter=dbscan_prefilter,
+            driver_bootstrap=False,
+            compare_aggregators=False,
+            residualize=residualize,
+            extras={},
+            analysis_zones=analysis_zones,
+            zone_source=zone_source,
+        )
+    except InvalidKPoolError:
+        clus["min_cluster_size"] = 3
+        min_size = 3
+        result = cluster_driver_matrix(
+            df_raw,
+            config=cfg_lap,
+            k_clusters=k_clusters,
+            use_pca_fit=use_pca_fit,
+            dbscan_prefilter=dbscan_prefilter,
+            driver_bootstrap=False,
+            compare_aggregators=False,
+            residualize=residualize,
+            extras={},
+            analysis_zones=analysis_zones,
+            zone_source=zone_source,
+        )
+
+    if result.get("error"):
+        result["analysis_zones"] = analysis_zones
+        result["zone_source"] = zone_source
+        return result
+
+    classifications, distribution, profiles = build_lap_distribution_reports(
+        result.get("cluster_labels"),
+        result.get("archetype_names") or {},
+        result.get("df_meta") if result.get("df_meta") is not None else pd.DataFrame(),
+        lap_typ=lap_typ if isinstance(lap_typ, pd.DataFrame) else None,
+        feature_cols=feature_cols,
     )
+    result["lap_classifications"] = classifications
+    result["driver_lap_distribution"] = distribution
+    result["driver_profiles"] = profiles
+    result["df_summary"] = profiles
+    result["teammates"] = teammates_from_distribution(distribution)
+    result["n_drivers_profiled"] = int(profiles.shape[0]) if profiles is not None else 0
+    result["lap_min_cluster_size"] = min_size
     result["analysis_zones"] = analysis_zones
     result["zone_source"] = zone_source
     return result

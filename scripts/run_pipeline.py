@@ -9,7 +9,6 @@ _SRC = _ROOT / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
-from f1_style_clustering.analysis.teammates import compare_teammates
 from f1_style_clustering.config import load_circuit_config, load_config
 from f1_style_clustering.data.loader import enable_cache, load_session
 from f1_style_clustering.pipeline import run_pipeline
@@ -45,7 +44,7 @@ def run_single_session(
     enable_cache(cache_dir)
     session = load_session(year=year, grand_prix=event_name, session_type=session_type)
 
-    print("[2] ZOIs → per-lap features → driver vectors → K-means")
+    print("[2] ZOIs → features por vuelta → clasificación de vueltas → perfil modal")
     result = run_pipeline(
         session,
         config=cfg,
@@ -67,21 +66,17 @@ def run_single_session(
     print_pipeline_summary(result, str(dest))
 
     df_summary = result["df_summary"]
-    cols = [c for c in ["Cluster", "Archetype", "Team", "n_laps"] if c in df_summary.columns]
+    cols = [c for c in ["Cluster", "Archetype", "Team", "n_laps", "modal_fraction"] if c in df_summary.columns]
     print(df_summary[cols] if cols else df_summary)
 
-    df_scaled = result["df_scaled"]
-    df_meta = result["df_meta"]
-    if df_meta is not None and "Team" in df_meta.columns:
-        teammates_df = compare_teammates(df_scaled, df_meta)
-        if not teammates_df.empty:
-            teammates_df.to_csv(dest / "teammates.csv", index=False)
-            print_cols = [
-                c
-                for c in ["Team", "Driver_1", "Driver_2", "Style_Euclidean_Distance", "Status"]
-                if c in teammates_df.columns
-            ]
-            print(teammates_df[print_cols])
+    teammates_df = result.get("teammates")
+    if teammates_df is not None and not getattr(teammates_df, "empty", True):
+        print_cols = [
+            c
+            for c in ["Team", "Driver_1", "Driver_2", "Style_Euclidean_Distance", "Status"]
+            if c in teammates_df.columns
+        ]
+        print(teammates_df[print_cols])
 
     print(f"wrote {dest}")
     return result

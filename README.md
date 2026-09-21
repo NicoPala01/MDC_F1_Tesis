@@ -8,8 +8,8 @@ Clustering no supervisado de **perfiles observables** de telemetría FastF1. Los
 
 ## Qué calcula
 
-1. **Por carrera:** vueltas canónicas → ventanas ZOI (frenado | vértice | salida) → features por fragmento → mediana relativa a la grilla por tipología → un vector por piloto → K-means++ (k por reglas) → arquetipo.
-2. **Temporada:** el mismo análisis en cada GP 2025 (sesión `R`). El perfil de temporada es la **mediana** de esos vectores. Un segundo clustering nombra la tendencia; `stability.csv` mide cuántas carreras coinciden con ese arquetipo.
+1. **Por carrera:** vueltas canónicas → ventanas ZOI en las curvas clave (frenado | vértice | salida) → features por fragmento, relativas a la mediana de la sesión por tipología → **un vector por vuelta** → K-means++ de las vueltas. El perfil del piloto es la **clase modal**: la que concentra más vueltas suyas. `driver_lap_distribution.csv` es el reparto.
+2. **Temporada:** el mismo análisis en cada GP. La tendencia de temporada es el arquetipo modal más frecuente entre las carreras. `stability.csv` mide en cuántas el piloto coincide con esa tendencia. No hay un segundo clustering de vectores medianos.
 
 Circuito de prueba: **Monza** (`Italian Grand Prix`). El resto de la temporada usa `key_corners` si el evento está en `config/circuits.yaml`; si no, fallback por curva FastF1 y colapso a slow/medium/fast.
 
@@ -39,9 +39,16 @@ python scripts/run_pipeline.py --smoke
 python scripts/run_pipeline.py --season 2025
 ```
 
-Salida: `results/2025/italian_grand_prix/` y `results/2025/season/`.
+Salida: `results/2025/italian_grand_prix/` (`lap_classifications.csv`, `driver_lap_distribution.csv`, `driver_profiles.csv`) y `results/2025/season/`.
 
 Un GP suelto: `python scripts/run_pipeline.py --circuit "British Grand Prix"`.
+
+Tablero (circuito y piloto, distribución y perfil del GP):
+
+```bash
+python -m pip install -e ".[dashboard]"
+streamlit run app/dashboard.py
+```
 
 Tests (sintéticos, sin red): `python -m pytest -v`.
 
@@ -50,6 +57,6 @@ Tests (sintéticos, sin red): `python -m pytest -v`.
 Ejecutar en orden con cache FastF1 local. El 04 solo lee resultados del CLI de temporada.
 
 - `01_monza_laps_and_zoi.ipynb` — filtro, mapa ZOI, telemetría partida
-- `02_monza_lap_profiles.ipynb` — tabla larga → vector piloto
-- `03_monza_clustering.ipynb` — k, asignaciones, PCA, radar
-- `04_season_results.ipynb` — arquetipo global y heatmap piloto × GP
+- `02_monza_lap_profiles.ipynb` — tabla larga de features por zona
+- `03_monza_clustering.ipynb` — exploración de k, PCA y radar
+- `04_season_results.ipynb` — tendencia modal por GP y heatmap piloto × GP

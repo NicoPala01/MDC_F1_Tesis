@@ -15,9 +15,11 @@ def separate_metadata(
     if metadata_cols is None:
         metadata_cols = [
             "Team",
+            "FullName",
             "LapsCount",
             "n_laps",
             "Driver",
+            "LapNumber",
             "Session",
             "Year",
             "aggregator",

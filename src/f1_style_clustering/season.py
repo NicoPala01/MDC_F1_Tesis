@@ -1,4 +1,4 @@
-"""Season runner: per-race clustering plus a global driver-tendency profile."""
+"""Season runner: per-race lap profiles, season tendency = modal GP archetype."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ import pandas as pd
 from .config import load_circuit_config, load_config
 from .data.loader import enable_cache, get_season_events, load_session
 from .models.dimensionality import compute_pca_loadings
-from .pipeline import cluster_driver_matrix, run_pipeline
+from .pipeline import run_pipeline
 from .visualization.cluster_plots import (
     plot_optimal_k_evaluation,
     plot_pca_biplot,
@@ -96,6 +96,18 @@ def write_session_outputs(
         df_raw.to_csv(dest / "features_raw.csv")
     if df_summary is not None and hasattr(df_summary, "to_csv"):
         df_summary.to_csv(dest / "driver_summary.csv")
+    for key, filename in (
+        ("lap_classifications", "lap_classifications.csv"),
+        ("driver_lap_distribution", "driver_lap_distribution.csv"),
+        ("driver_profiles", "driver_profiles.csv"),
+        ("teammates", "teammates.csv"),
+    ):
+        table = result.get(key)
+        if table is None or not hasattr(table, "to_csv") or getattr(table, "empty", True):
+            continue
+        if key == "driver_profiles" and table.index.name == "Driver" and "Driver" not in table.columns:
+            table = table.reset_index()
+        table.to_csv(dest / filename, index=False)
     df_scaled = result.get("df_scaled")
     if df_scaled is not None and hasattr(df_scaled, "to_csv"):
         df_scaled.to_csv(dest / "features_scaled.csv")
@@ -223,6 +235,44 @@ def season_stability(
     return out
 
 
+def season_modal_summary(
+    archetype_by_race: pd.DataFrame,
+    per_race_summaries: Dict[str, pd.DataFrame],
+    min_races: int,
+) -> pd.DataFrame:
+    """Season profile = the archetype that shows up most often across Grands Prix."""
+    if archetype_by_race is None or archetype_by_race.empty:
+        return pd.DataFrame()
+    rows = []
+    for driver in archetype_by_race.index:
+        values = archetype_by_race.loc[driver].dropna()
+        n = int(values.shape[0])
+        if n < int(min_races):
+            continue
+        mode = values.mode().iloc[0] if not values.empty else pd.NA
+        team = pd.NA
+        full_name = pd.NA
+        for summary in per_race_summaries.values():
+            if summary is None or getattr(summary, "empty", True) or driver not in summary.index:
+                continue
+            if "Team" in summary.columns and pd.notna(summary.loc[driver, "Team"]):
+                team = summary.loc[driver, "Team"]
+            if "FullName" in summary.columns and pd.notna(summary.loc[driver, "FullName"]):
+                full_name = summary.loc[driver, "FullName"]
+        rows.append(
+            {
+                "Driver": driver,
+                "FullName": full_name,
+                "Team": team,
+                "n_races": n,
+                "Archetype": mode,
+            }
+        )
+    if not rows:
+        return pd.DataFrame()
+    return pd.DataFrame(rows).set_index("Driver")
+
+
 def print_pipeline_summary(result: Dict[str, Any], heading: str) -> None:
     if result.get("error"):
         print(f"{heading}: ERROR {result['error']}")
@@ -230,8 +280,10 @@ def print_pipeline_summary(result: Dict[str, Any], heading: str) -> None:
     metrics = result.get("metrics")
     sil = getattr(metrics, "silhouette", float("nan")) if metrics is not None else float("nan")
     db = getattr(metrics, "davies_bouldin", float("nan")) if metrics is not None else float("nan")
+    n_drivers = result.get("n_drivers_profiled")
+    driver_bit = f" drivers={n_drivers}" if n_drivers is not None else ""
     print(
-        f"{heading}: n={len(result.get('df_raw', []))} k={result.get('k_used')} "
+        f"{heading}: n={len(result.get('df_raw', []))}{driver_bit} k={result.get('k_used')} "
         f"rule={result.get('k_rule')} silhouette={sil:.3f} DB={db:.3f} "
         f"zones={result.get('zone_source')}"
     )
@@ -256,7 +308,7 @@ def run_season_pipeline(
     load_session_fn=None,
     run_pipeline_fn=None,
 ) -> Dict[str, Any]:
-    """Run the session pipeline on every race, then cluster season-median vectors."""
+    """Run the session pipeline on every race. Season tendency is the modal GP archetype."""
     cfg = config if config is not None else load_config()
     circuits = circuit_config if circuit_config is not None else load_circuit_config()
     cache_dir = (cfg.get("general") or {}).get("cache_dir", "cache")
@@ -269,7 +321,6 @@ def run_season_pipeline(
     run_fn = run_pipeline_fn or run_pipeline
     event_names = list(events) if events is not None else iter_race_event_names(year)
 
-    per_race_raws: Dict[str, pd.DataFrame] = {}
     per_race_summaries: Dict[str, pd.DataFrame] = {}
     per_race_results: Dict[str, Dict[str, Any]] = {}
     failures: List[Dict[str, str]] = []
@@ -302,45 +353,44 @@ def run_season_pipeline(
 
         dest = session_output_dir(output_dir, year, name)
         write_session_outputs(result, dest, save_plots=save_plots)
-        per_race_raws[name] = result["df_raw"]
         per_race_summaries[name] = result["df_summary"]
         per_race_results[name] = result
         print_pipeline_summary(result, f"  {event_slug(name)}")
 
-    season_matrix = build_season_driver_matrix(per_race_raws, min_races=min_races)
-    season_result: Dict[str, Any] = {}
     by_race = archetype_by_race_table(per_race_summaries)
+    summary = season_modal_summary(by_race, per_race_summaries, min_races=min_races)
     stability = pd.DataFrame()
-    if not season_matrix.empty:
-        season_result = cluster_driver_matrix(
-            season_matrix,
-            config=cfg,
-            k_clusters=k_clusters,
-            aggregation=aggregation,
-            use_pca_fit=use_pca_fit,
-            driver_bootstrap=driver_bootstrap,
-            compare_aggregators=False,
-            residualize=residualize,
-            extras=None,
-            zone_source="season_median",
-        )
-        if not season_result.get("error"):
-            stability = season_stability(by_race, season_result["df_summary"])
-            season_dest = season_output_dir(output_dir, year)
-            season_dest.mkdir(parents=True, exist_ok=True)
-            season_matrix.to_csv(season_dest / "driver_matrix.csv")
-            season_result["df_summary"].to_csv(season_dest / "driver_summary.csv")
-            by_race.to_csv(season_dest / "archetype_by_race.csv")
-            stability.to_csv(season_dest / "stability.csv")
-            write_session_outputs(season_result, season_dest, save_plots=save_plots)
-            print_pipeline_summary(season_result, f"[season {year} global]")
+    if summary.empty:
+        season_result = {
+            "df_summary": summary,
+            "error": "No drivers met min_races for a season profile.",
+            "zone_source": "season_modal",
+        }
+    else:
+        stability = season_stability(by_race, summary)
+        stability = stability.loc[stability.index.isin(summary.index)]
+        season_result = {
+            "df_summary": summary,
+            "df_raw": summary,
+            "k_used": None,
+            "k_rule": "modal_race_archetype",
+            "zone_source": "season_modal",
+            "n_drivers_profiled": int(summary.shape[0]),
+        }
+        season_dest = season_output_dir(output_dir, year)
+        season_dest.mkdir(parents=True, exist_ok=True)
+        summary.to_csv(season_dest / "driver_summary.csv")
+        summary.reset_index().to_csv(season_dest / "driver_profiles.csv", index=False)
+        by_race.to_csv(season_dest / "archetype_by_race.csv")
+        stability.to_csv(season_dest / "stability.csv")
+        print_pipeline_summary(season_result, f"[season {year} modal]")
 
     return {
         "year": year,
         "events": event_names,
         "per_race": per_race_results,
         "failures": failures,
-        "season_matrix": season_matrix,
+        "season_matrix": summary,
         "season_result": season_result,
         "archetype_by_race": by_race,
         "stability": stability,

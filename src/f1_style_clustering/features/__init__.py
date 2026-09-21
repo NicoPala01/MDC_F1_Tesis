@@ -4,9 +4,11 @@ from .aggregators import (
     CORE_STYLE_FEATURES,
     aggregate_driver_style_features,
     build_feature_matrix,
+    build_lap_style_matrix,
     build_long_style_table,
     collapse_to_driver_lap_typology,
     extract_style_features_from_telemetry,
+    lap_vectors_from_typology,
     trail_brake_fragment,
 )
 from .metrics import (
@@ -74,7 +76,9 @@ __all__ = [
     "get_throttle_onset_relative",
     "CORE_STYLE_FEATURES",
     "build_feature_matrix",
+    "build_lap_style_matrix",
     "build_long_style_table",
+    "lap_vectors_from_typology",
     "extract_style_features_from_telemetry",
     "aggregate_driver_style_features",
     "collapse_to_driver_lap_typology",

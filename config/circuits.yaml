@@ -42,6 +42,7 @@ default_zoi_offsets:
 
 # Benchmark events use ONLY these key_corners groups as ZOIs
 # (one zone per entry, not one per FastF1 Number).
+# Por ahora se miden estas curvas clave. Más adelante se amplían para cubrir cada curva.
 # Unmatched circuits use the speed-threshold fallback in extract_circuit_zones.
 benchmark_circuits:
   monza:

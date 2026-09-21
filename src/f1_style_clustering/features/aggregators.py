@@ -290,6 +290,8 @@ def collapse_to_driver_lap_typology(
         out["zone_source"] = grouped["zone_source"].agg("first").to_numpy()
     if "Team" in df.columns:
         out["Team"] = grouped["Team"].agg("first").to_numpy()
+    if "FullName" in df.columns:
+        out["FullName"] = grouped["FullName"].agg("first").to_numpy()
     if "Compound" in df.columns:
         out["Compound"] = grouped["Compound"].agg(
             lambda s: s.dropna().mode().iloc[0] if s.dropna().shape[0] else pd.NA
@@ -298,6 +300,123 @@ def collapse_to_driver_lap_typology(
         out["TyreLife"] = grouped["TyreLife"].median().to_numpy()
     out["unit"] = "driver_lap_typology"
     return out
+
+
+def _flatten_typology_columns(columns, feature_cols: List[str]) -> List[str]:
+    """Name pivot columns ``{typology}__{feature}``."""
+    if isinstance(columns, pd.MultiIndex):
+        names = []
+        for key in columns.to_list():
+            feat, typ = key[0], key[1]
+            names.append(f"{typ}__{feat}")
+        return names
+    feat = feature_cols[0] if len(feature_cols) == 1 else "value"
+    return [f"{typ}__{feat}" for typ in columns]
+
+
+def lap_vectors_from_typology(
+    lap_typ: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+) -> pd.DataFrame:
+    """One row per complete lap. Columns are ``{typology}__{feature}``.
+
+    A lap that misses any typology present in the table, or any feature value,
+    is dropped. Corner identity stays inside the typology block.
+    """
+    if lap_typ is None or lap_typ.empty:
+        return pd.DataFrame()
+    df = lap_typ.copy()
+    for key in ("Driver", "LapNumber", "typology"):
+        if key not in df.columns:
+            raise ValueError(f"lap_typ must contain {key}")
+    if feature_cols is None:
+        feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in df.columns]
+    if not feature_cols:
+        return pd.DataFrame()
+
+    wide = df.pivot_table(
+        index=["Driver", "LapNumber"],
+        columns="typology",
+        values=feature_cols,
+        aggfunc="median",
+    )
+    wide.columns = _flatten_typology_columns(wide.columns, feature_cols)
+    wide = wide.dropna(axis=0, how="any")
+    if wide.empty:
+        return pd.DataFrame()
+
+    meta_cols = [c for c in ("Team", "FullName", "Compound") if c in df.columns]
+    if meta_cols:
+        meta = (
+            df.groupby(["Driver", "LapNumber"], dropna=False)[meta_cols]
+            .agg(lambda s: s.dropna().iloc[0] if s.dropna().shape[0] else pd.NA)
+        )
+        wide = wide.join(meta, how="left")
+    if "TyreLife" in df.columns:
+        tyre = df.groupby(["Driver", "LapNumber"], dropna=False)["TyreLife"].median()
+        wide = wide.join(tyre.rename("TyreLife"), how="left")
+
+    wide = wide.reset_index()
+    wide.index = (
+        wide["Driver"].astype(str) + " L" + wide["LapNumber"].map(lambda v: str(int(v)) if pd.notna(v) else "na")
+    )
+    wide.index.name = "LapId"
+    wide["unit"] = "driver_lap"
+    return wide
+
+
+def build_lap_style_matrix(
+    session: Session,
+    analysis_zones: Optional[Dict[str, Dict[str, Any]]] = None,
+    drivers: Optional[List[str]] = None,
+    circuit_config: Optional[Dict[str, Any]] = None,
+    push_mode: bool = False,
+    min_valid_laps: int = 3,
+    include_throttle_onset: bool = True,
+    selected_corners: Optional[List[int]] = None,
+) -> pd.DataFrame:
+    """Relative style vector per lap, after dropping incomplete laps and short stints.
+
+    The pre-pivot typology table is kept on ``attrs['lap_typology']`` so driver
+    metrics can be the median of the original style features.
+    """
+    if analysis_zones is None:
+        selected, _source = resolve_selected_corners(session, circuit_config)
+        if selected_corners is None:
+            selected_corners = selected
+        analysis_zones = extract_circuit_zones(
+            session, circuit_config=circuit_config, selected_corners=selected_corners
+        )
+
+    long_df = build_long_style_table(
+        session,
+        analysis_zones=analysis_zones,
+        drivers=drivers,
+        circuit_config=circuit_config,
+        push_mode=push_mode,
+        min_valid_laps=min_valid_laps,
+        include_throttle_onset=include_throttle_onset,
+    )
+    if long_df.empty:
+        return pd.DataFrame()
+
+    feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in long_df.columns]
+    long_rel = normalize_typology_session_median(long_df, feature_cols=feature_cols)
+    lap_typ = collapse_to_driver_lap_typology(long_rel, feature_cols=feature_cols)
+    vectors = lap_vectors_from_typology(lap_typ, feature_cols=feature_cols)
+    if vectors.empty:
+        return pd.DataFrame()
+
+    if min_valid_laps and min_valid_laps > 1 and "Driver" in vectors.columns:
+        counts = vectors.groupby("Driver").size()
+        keep = counts[counts >= min_valid_laps].index
+        vectors = vectors[vectors["Driver"].isin(keep)]
+        if vectors.empty:
+            return pd.DataFrame()
+
+    vectors.attrs["lap_typology"] = lap_typ
+    vectors.attrs["feature_cols"] = feature_cols
+    return vectors
 
 
 def _optional_lap_value(lap: Any, key: str):
@@ -363,8 +482,10 @@ def build_long_style_table(
         try:
             drv_info = session.get_driver(driver_code)
             drv_abbr = drv_info["Abbreviation"] if "Abbreviation" in drv_info else str(driver_code)
+            full_name = drv_info["FullName"] if "FullName" in drv_info and drv_info["FullName"] else drv_abbr
         except Exception:
             drv_abbr = str(driver_code)
+            full_name = drv_abbr
 
         driver_laps = filter_canonical_laps(session, driver=drv_abbr, push_mode=push_mode)
         if driver_laps is None or getattr(driver_laps, "empty", True):
@@ -387,6 +508,7 @@ def build_long_style_table(
             tyre_life = _optional_lap_value(lap, "TyreLife")
             for row in rows:
                 row["Driver"] = drv_abbr
+                row["FullName"] = full_name
                 row["Team"] = team_name
                 if compound is not None and not (isinstance(compound, float) and pd.isna(compound)):
                     row["Compound"] = compound

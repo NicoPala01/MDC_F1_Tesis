@@ -6,6 +6,7 @@ from .archetypes import (
     get_driver_archetype_summary,
     radar_feature_list,
 )
+from .lap_distribution import build_lap_distribution_reports, teammates_from_distribution
 from .teammates import compare_teammates, compute_intra_team_deltas
 
 __all__ = [
@@ -15,4 +16,6 @@ __all__ = [
     "radar_feature_list",
     "compare_teammates",
     "compute_intra_team_deltas",
+    "build_lap_distribution_reports",
+    "teammates_from_distribution",
 ]
