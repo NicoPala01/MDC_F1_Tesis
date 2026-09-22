@@ -597,33 +597,53 @@ class _FakeCircuitSession:
 
 
 def test_key_corners_groups_one_zone_per_yaml_entry():
+    # Approximate FastF1 apex distances (m) so ±60 m apex windows stay disjoint.
     corners = pd.DataFrame(
         {
-            "Number": [1, 2, 4, 5, 8, 9, 10, 11],
-            "Distance": [200.0, 280.0, 800.0, 880.0, 1600.0, 1680.0, 1760.0, 2400.0],
+            "Number": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            "Distance": [
+                907.0,
+                964.0,
+                1478.0,
+                2125.0,
+                2177.0,
+                2536.0,
+                2856.0,
+                3926.0,
+                4017.0,
+                4119.0,
+                5206.0,
+            ],
         }
     )
     session = _FakeCircuitSession("Italian Grand Prix", corners)
     circuits = load_circuit_config()
     selected, source = resolve_selected_corners(session, circuits)
     assert source == "key_corners"
-    assert set(selected) == {1, 2, 4, 5, 8, 9, 10, 11}
+    assert set(selected) == set(range(1, 12))
 
     zones = extract_circuit_zones(
-        session, circuit_config=circuits, selected_corners=selected, track_length=5800.0
+        session, circuit_config=circuits, selected_corners=selected, track_length=5793.0
     )
-    assert len(zones) == 4
+    assert len(zones) == 7
     assert "T1_Variante_del_Rettifilo" in zones
     assert "Turn_1" not in zones
     t1 = zones["T1_Variante_del_Rettifilo"]
     assert t1["corner_numbers"] == [1, 2]
     assert t1["typology"] == "slow"
     assert t1["zone_source"] == "key_corners"
-    assert t1["apex_distance"] == pytest.approx(200.0)
-    assert t1["apex_distance_last"] == pytest.approx(280.0)
+    assert t1["apex_distance"] == pytest.approx(907.0)
+    assert t1["apex_distance_last"] == pytest.approx(964.0)
     # One zone covers the chicane group, not one per FastF1 Number.
     assert "T8_Variante_Ascari" in zones
     assert zones["T8_Variante_Ascari"]["corner_numbers"] == [8, 9, 10]
+    assert zones["T3_Curva_Grande"]["corner_numbers"] == [3]
+    assert zones["T3_Curva_Grande"]["typology"] == "fast"
+    assert zones["T6_Curva_di_Lesmo"]["corner_numbers"] == [6]
+    assert zones["T6_Curva_di_Lesmo"]["typology"] == "medium"
+    assert zones["T7_Seconda_di_Lesmo"]["corner_numbers"] == [7]
+    assert zones["T7_Seconda_di_Lesmo"]["typology"] == "medium"
+    assert set(n for z in zones.values() for n in z["corner_numbers"]) == set(range(1, 12))
 
 
 def test_unknown_circuit_uses_speed_threshold_fallback_not_key_corners():
