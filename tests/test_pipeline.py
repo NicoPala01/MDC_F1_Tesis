@@ -62,7 +62,7 @@ from f1_style_clustering.features.preprocessor import (
 )
 from f1_style_clustering.analysis.archetypes import assign_archetype_names
 from f1_style_clustering.config import load_config, load_circuit_config
-from f1_style_clustering.pipeline import cluster_driver_matrix
+from f1_style_clustering.pipeline import _prepare_scaled_fit_space, cluster_driver_matrix
 
 
 # ---------------------------------------------------------------------------
@@ -180,6 +180,30 @@ def test_pipeline_config_defaults():
     assert cfg["data_filtering"]["push_mode"] is False
     assert cfg["clustering"]["use_rule_based_k"] is True
     assert cfg["clustering"].get("default_k") in (None, "auto", "rule")
+    assert cfg["features"]["residualize_team_tyre"] is False
+    assert cfg["features"]["include_throttle_onset"] is False
+
+
+def test_default_clustering_matrix_keeps_team_offset():
+    """Team/compound/tyre-life are not removed before the clustered matrix."""
+    df = pd.DataFrame(
+        {
+            "brake_point_rel": [0.0, 0.0, 0.0, 10.0, 10.0, 10.0],
+            "Team": ["A", "A", "A", "B", "B", "B"],
+            "Compound": ["SOFT"] * 6,
+            "TyreLife": [1, 2, 3, 1, 2, 3],
+        },
+        index=[f"D{i}" for i in range(6)],
+    )
+    scaled, _meta, *_rest = _prepare_scaled_fit_space(
+        df,
+        scaler_type="robust",
+        residualize=bool(load_config()["features"]["residualize_team_tyre"]),
+        prefilter=False,
+        variance_threshold=0.85,
+        force_pca=False,
+    )
+    assert scaled.loc["D0", "brake_point_rel"] < scaled.loc["D3", "brake_point_rel"]
 
 
 def test_circuits_yaml_has_typology_buckets_and_zoi_offsets():

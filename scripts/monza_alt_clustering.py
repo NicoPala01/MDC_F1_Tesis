@@ -1,7 +1,9 @@
 """K-medians, DBSCAN, and t-SNE on the Monza 2025 lap matrix.
 
-Uses the same scaled laps as the race pipeline (onset off, fast throttle
-attack removed, residualized, robust-scaled). Does not fit K-means.
+Alternative reading of the Monza laps (onset off, fast throttle attack
+removed). This script still residualizes Team, Compound and TyreLife so it
+reproduces the k-medians already on the branch. The main race pipeline does
+not. Does not fit K-means.
 """
 
 import json
@@ -124,7 +126,7 @@ def build_scaled_matrix() -> tuple:
     scaled, meta, _fit, _pca, pca_info, *_rest = _prepare_scaled_fit_space(
         raw,
         scaler_type=str((cfg.get("features") or {}).get("standardization", "robust")),
-        residualize=bool((cfg.get("features") or {}).get("residualize_team_tyre", True)),
+        residualize=True,
         prefilter=False,
         variance_threshold=float(
             ((cfg.get("dimensionality_reduction") or {}).get("pca") or {}).get("variance_threshold", 0.85)

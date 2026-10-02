@@ -110,7 +110,7 @@ def cluster_driver_matrix(
         bool(clus_cfg.get("compare_aggregators", True)) if compare_aggregators is None else bool(compare_aggregators)
     )
     do_residualize = (
-        bool(feat_cfg.get("residualize_team_tyre", True)) if residualize is None else bool(residualize)
+        bool(feat_cfg.get("residualize_team_tyre", False)) if residualize is None else bool(residualize)
     )
 
     if df_raw is None or df_raw.empty:

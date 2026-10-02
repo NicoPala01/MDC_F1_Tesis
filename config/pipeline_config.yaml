@@ -34,7 +34,11 @@ features:
   standardization: "robust"
   normalization_unit: "typology_session_median"
   aggregation: "median"
-  residualize_team_tyre: true
+  # Off on the clustered matrix. Team/compound/tyre-life controls do not hold:
+  # the team cut counts laps, the regression is not a joint fixed effect, and an
+  # additive dummy misses that a later brake is easier on soft and moves with wear.
+  # The typology×session median above stays; that is the style vector.
+  residualize_team_tyre: false
 
 dimensionality_reduction:
   pca:

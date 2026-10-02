@@ -33,7 +33,7 @@ def run_single_session(
     use_pca_fit=None,
     driver_bootstrap=True,
     compare_aggregators=True,
-    residualize=True,
+    residualize=None,
 ):
     cfg = load_config()
     circuits = load_circuit_config()
@@ -107,7 +107,7 @@ def main():
         use_pca_fit=args.pca_fit,
         driver_bootstrap=not args.no_driver_bootstrap,
         compare_aggregators=not args.no_mean_median_ari,
-        residualize=not args.no_residualize,
+        residualize=False if args.no_residualize else None,
         save_plots=not args.no_plots,
         output_dir=args.output_dir,
     )
