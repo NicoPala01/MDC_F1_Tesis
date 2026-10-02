@@ -910,6 +910,24 @@ def test_residualize_or_declaration_does_not_crash():
     assert (empty_meta.attrs["residual_reference"] == "none").all()
 
 
+def test_residualize_survives_dataframe_stored_in_attrs():
+    """lap_typology lives on the matrix attrs; pandas 2.3 must still group by team."""
+    df = pd.DataFrame(
+        {"brake_point_rel": [10.0, 14.0, 0.0, 4.0]},
+        index=["A", "B", "C", "D"],
+    )
+    meta = pd.DataFrame({"Team": ["T1", "T1", "T2", "T2"]}, index=df.index)
+    nested = pd.DataFrame({"throttle_onset_rel": [1.0]})
+    df.attrs["lap_typology"] = nested
+    meta.attrs["lap_typology"] = nested
+    out = residualize_team_tyre_features(df, meta)
+    assert "throttle_onset_rel" not in out.columns
+    assert out.loc["A", "brake_point_rel"] == pytest.approx(-2.0)
+    assert out.loc["B", "brake_point_rel"] == pytest.approx(2.0)
+    assert "lap_typology" in df.attrs
+    assert "lap_typology" in meta.attrs
+
+
 def test_residualize_singleton_uses_session_mean():
     """Pairs center on team mean; leftover teammate centers on the grid mean."""
     df = pd.DataFrame(

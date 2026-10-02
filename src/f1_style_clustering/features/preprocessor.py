@@ -197,6 +197,24 @@ def _categorical_dummies(series: pd.Series, name: str, min_group: int = 2) -> Tu
     return dummies, None
 
 
+def _without_nested_frame_attrs(frame: pd.DataFrame) -> pd.DataFrame:
+    """Replace attrs so groupby can format a non-label grouper.
+
+    Pandas 2.3 compares ``attrs`` with ``==`` while building the KeyError for
+    ``DataFrame.groupby(series)``. A DataFrame or Series stored in attrs makes
+    that comparison raise, and the team-mean residual never runs. Style
+    columns are left as they are. The caller's attrs dict is not mutated.
+    """
+    nested = [
+        key
+        for key, value in frame.attrs.items()
+        if isinstance(value, (pd.DataFrame, pd.Series))
+    ]
+    if nested:
+        frame.attrs = {key: value for key, value in frame.attrs.items() if key not in nested}
+    return frame
+
+
 def residualize_team_tyre_features(
     df_features: pd.DataFrame,
     df_meta: Optional[pd.DataFrame] = None,
@@ -217,7 +235,7 @@ def residualize_team_tyre_features(
     See ``confounding_declaration`` on the returned frame's attrs.
     ``residual_reference`` is a per-driver Series of ``team`` / ``session`` / ``none``.
     """
-    out = df_features.copy()
+    out = _without_nested_frame_attrs(df_features.copy())
     used: List[str] = []
     skipped: List[str] = []
     residual_reference = pd.Series("none", index=out.index, dtype=object)
@@ -232,7 +250,7 @@ def residualize_team_tyre_features(
 
     meta = pd.DataFrame(index=out.index)
     if df_meta is not None and not df_meta.empty:
-        meta = df_meta.reindex(out.index)
+        meta = _without_nested_frame_attrs(df_meta.reindex(out.index))
 
     if compound_col is None and "Compound" in meta.columns:
         compound_col = "Compound"
