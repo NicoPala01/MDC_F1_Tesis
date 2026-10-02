@@ -29,7 +29,7 @@ features:
     - coast_frac
     - full_throttle_frac
     - throttle_onset_rel
-  include_throttle_onset: true
+  include_throttle_onset: false
   include_brake_point_iqr: true
   standardization: "robust"
   normalization_unit: "typology_session_median"
