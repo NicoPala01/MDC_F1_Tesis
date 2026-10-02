@@ -1,12 +1,125 @@
-# Monza 2025 (carrera): onset apagado, sin throttle attack en fast
+# Monza 2025 (carrera): onset apagado, sin residualizar equipo ni neumático
 
 Corrida: `python scripts/run_pipeline.py --year 2025 --circuit "Italian Grand Prix" --session R`.
 
-`include_throttle_onset` sigue en false. `fast__throttle_attack` salió de la matriz de vueltas. Siguen `slow__throttle_attack`, `medium__throttle_attack`, `brake_point_rel` y `trail_brake_frac` en las tres tipologías.
+`include_throttle_onset` está en false. `fast__throttle_attack` no entra a la matriz. `fast__full_throttle_frac` se queda. La resta de la mediana de sesión por tipología se queda. `residualize_team_tyre` está en false: Team, Compound y TyreLife no se residualizan antes del clustering. `residualize_team_tyre_features` sigue en el código para quien la llame a propósito.
 
-El CLI volvió a terminar con `InvalidKPoolError`. No hay k elegido ni clase modal ni fracción por piloto.
+## Clustering principal
 
-## Matriz de esta corrida
+842 vueltas, 19 pilotos (el auto 27 no entra: FastF1 marcó todas sus vueltas como inaccurate; HUL no está). 17 columnas de estilo. La única zona slow es T1 Variante del Rettifilo (curvas 1 y 2).
+
+El escalado robusto usa esas 17, sin residualizar. PCA: 9 componentes, varianza acumulada 0.8744 (0.2408, 0.1598, 0.1090, 0.0932, 0.0762, 0.0577, 0.0534, 0.0461, 0.0382). El ajuste es ese espacio de 842×9. `team_tyre_residualized` queda en false.
+
+El piso de tamaño es `ceil(0.05 × 842) = 43`. Con ese piso, k=2 a k=5 son válidos. La silueta más alta del pool es 0.2326, debajo de 0.25, así que la regla elige el Davies-Bouldin mínimo. k=2 tiene 1.8228 y k=5 tiene 1.8254. Queda **k=2**, regla `davies_bouldin`. El reintento con mínimo 3 no corre: el pool de 43 vueltas ya tiene k válidos. Silueta del ajuste 0.2326, Davies-Bouldin 1.8228. Tamaños: clase 0 = 556, clase 1 = 286.
+
+| k | tamaño mínimo | tamaños | silueta | Davies-Bouldin | entra al pool |
+| --- | ---: | --- | ---: | ---: | --- |
+| 2 | 286 | 556, 286 | 0.2326 | 1.8228 | sí |
+| 3 | 227 | 341, 274, 227 | 0.1292 | 1.9331 | sí |
+| 4 | 102 | 305, 249, 186, 102 | 0.1274 | 2.0493 | sí |
+| 5 | 46 | 291, 239, 179, 87, 46 | 0.1375 | 1.8254 | sí |
+| 6 | 42 | 251, 225, 139, 102, 83, 42 | 0.1295 | 1.7695 | no |
+| 7 | 2 | 251, 224, 139, 101, 83, 42, 2 | 0.1348 | 1.5612 | no |
+
+`assign_archetype_names` escribe "Exit / Traction Specialist" en la clase 0 y "Early Conservative Braker" en la clase 1. Abajo las clases van por id.
+
+### Compuesto y vida del neumático
+
+| clase | n | HARD | MEDIUM | SOFT | vida mediana |
+| --- | ---: | --- | --- | --- | ---: |
+| 0 | 556 | 295 (0.531) | 246 (0.442) | 15 (0.027) | 19 |
+| 1 | 286 | 144 (0.503) | 135 (0.472) | 7 (0.024) | 11 |
+
+La mezcla de compuesto es parecida. La vida mediana no: 19 vueltas en la clase 0 y 11 en la clase 1.
+
+### Clase modal
+
+| piloto | clase | vueltas | fracción |
+| --- | ---: | --- | ---: |
+| ALB | 0 | 25/38 | 0.6579 |
+| ALO | 1 | 14/19 | 0.7368 |
+| ANT | 0 | 24/42 | 0.5714 |
+| BEA | 0 | 27/47 | 0.5745 |
+| BOR | 0 | 33/46 | 0.7174 |
+| COL | 0 | 32/43 | 0.7442 |
+| GAS | 0 | 32/45 | 0.7111 |
+| HAD | 1 | 25/47 | 0.5319 |
+| HAM | 0 | 40/48 | 0.8333 |
+| LAW | 1 | 24/47 | 0.5106 |
+| LEC | 0 | 42/46 | 0.9130 |
+| NOR | 0 | 44/48 | 0.9167 |
+| OCO | 0 | 26/47 | 0.5532 |
+| PIA | 0 | 41/47 | 0.8723 |
+| RUS | 0 | 34/45 | 0.7556 |
+| SAI | 0 | 29/46 | 0.6304 |
+| STR | 1 | 40/46 | 0.8696 |
+| TSU | 0 | 25/48 | 0.5208 |
+| VER | 0 | 46/47 | 0.9787 |
+
+Vueltas por piloto y clase:
+
+| piloto | clase 0 | clase 1 | total |
+| --- | ---: | ---: | ---: |
+| ALB | 25 | 13 | 38 |
+| ALO | 5 | 14 | 19 |
+| ANT | 24 | 18 | 42 |
+| BEA | 27 | 20 | 47 |
+| BOR | 33 | 13 | 46 |
+| COL | 32 | 11 | 43 |
+| GAS | 32 | 13 | 45 |
+| HAD | 22 | 25 | 47 |
+| HAM | 40 | 8 | 48 |
+| LAW | 23 | 24 | 47 |
+| LEC | 42 | 4 | 46 |
+| NOR | 44 | 4 | 48 |
+| OCO | 26 | 21 | 47 |
+| PIA | 41 | 6 | 47 |
+| RUS | 34 | 11 | 45 |
+| SAI | 29 | 17 | 46 |
+| STR | 6 | 40 | 46 |
+| TSU | 25 | 23 | 48 |
+| VER | 46 | 1 | 47 |
+| total | 556 | 286 | 842 |
+
+HAM, LEC, NOR y PIA quedan los cuatro en la clase 0. El clustering no se movió para separarlos.
+
+## Contrastes, aparte del clustering
+
+`slow__brake_point_rel` ya está restado de la mediana de sesión de Rettifilo. Más chico o más negativo es frenar más tarde que esa mediana. Estos números son la mediana de las vueltas. No entran al selector de k.
+
+### Hamilton y Leclerc
+
+Ninguno tiene vuelta en SOFT en estas 842. Hamilton: 35 MEDIUM y 13 HARD. Leclerc: 29 MEDIUM y 17 HARD.
+
+| compuesto | HAM | n | LEC | n |
+| --- | ---: | ---: | ---: | ---: |
+| HARD | −4.32 | 13 | −21.45 | 17 |
+| MEDIUM | −1.72 | 35 | −11.40 | 29 |
+| todas | −1.80 | 48 | −13.69 | 46 |
+
+Leclerc queda más tarde que Hamilton dentro de HARD y dentro de MEDIUM. La brecha no sale de que uno use más el blando. El baseline de Hamilton más tarde que Leclerc no es lo que mide esta corrida.
+
+### Norris y Piastri
+
+Norris: 43 MEDIUM y 5 SOFT. Piastri: 41 MEDIUM y 6 SOFT.
+
+| compuesto | NOR | n | PIA | n |
+| --- | ---: | ---: | ---: | ---: |
+| MEDIUM | −5.82 | 43 | 2.91 | 41 |
+| SOFT | −24.08 | 5 | −2.15 | 6 |
+| todas | −8.93 | 48 | 1.76 | 47 |
+
+Norris queda más tarde que Piastri en MEDIUM, que es casi todo el stint de los dos, y también en las pocas vueltas de SOFT. El contraste contra el compañero se ve.
+
+### Verstappen
+
+Mediana −2.17 en 47 vueltas. HARD −13.03 (12 vueltas), MEDIUM −1.81 (35). Esos números no confirman ni desmienten.
+
+## Corrida anterior: matriz residualizada
+
+Esa corrida residualizaba Team, Compound y TyreLife antes del K-means. El CLI terminó con `InvalidKPoolError`. No hubo k elegido. Las k-medianas, el DBSCAN y el t-SNE de más abajo son esa matriz residualizada, no el k=2 de arriba.
+
+## Matriz de esa corrida
 
 842 vueltas, 19 pilotos (el auto 27 no entra: FastF1 marcó todas sus vueltas como inaccurate; HUL no está). **17 columnas de estilo.** No hay `throttle_onset` ni `fast__throttle_attack`. Sí están `fast__brake_point_rel` y `fast__trail_brake_frac`.
 
