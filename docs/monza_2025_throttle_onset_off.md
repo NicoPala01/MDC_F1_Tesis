@@ -125,3 +125,65 @@ Percentiles de esa distancia: p50 3.1095, p90 4.4906, p95 6.1379, p99 22.0324, m
 ### t-SNE
 
 2D, perplexity **30**, `random_state=42`, init PCA, 1000 iteraciones. Color = etiqueta de k-medianas con k=4. Las cruces negras son las 23 vueltas de ruido DBSCAN. Figura: `docs/monza_2025_tsne.png`.
+
+## Qué hay dentro de las clases 0, 1 y 3
+
+Medianas de las 17 columnas en las mismas etiquetas de k-medianas k=4 (390, 294 y 138 vueltas). La clase 2 (20 vueltas) no es la moda de ningún piloto y no entra en las tablas.
+
+Las columnas crudas ya están restadas de la mediana de la sesión por tipología. `brake_point_rel` es metros del onset de frenado al ápice (positivo = frenó antes que esa mediana). `apex_speed_rel` es km/h. Las fracciones son diferencia de fracción espacial. `throttle_attack` es el p95 de la tasa de acelerador, en las mismas unidades relativas.
+
+Una columna separa las tres clases si el rango de esas tres medianas crudas es al menos la mitad del IQR de la columna en las 842 vueltas. Por debajo de 0.25 IQR, o si las tres medianas son iguales, queda casi igual.
+
+### Residualizado (lo que entra al escalado robusto y después a k-medianas)
+
+K-medianas no vio estos números en crudo: vio el escalado robusto de esta residualización (Team, Compound, TyreLife). Dentro de una columna, el orden de las clases no cambia con ese escalado. El rango en unidades de IQR es el de la columna `escalado` de la corrida anterior: donde el IQR residual es chico, un salto residual chico se vuelve grande.
+
+| columna | 0 | 1 | 3 |
+| --- | ---: | ---: | ---: |
+| slow__brake_point_rel | 9.73 | −13.83 | −0.93 |
+| medium__brake_point_rel | 4.71 | −6.36 | −1.94 |
+| fast__brake_point_rel | 6.24 | −10.56 | −3.54 |
+| slow__trail_brake_frac | −0.0065 | 0.0088 | −0.0040 |
+| medium__trail_brake_frac | 0.0049 | 0.0117 | 0.0086 |
+| fast__trail_brake_frac | −0.0045 | 0.0044 | 0.0012 |
+| slow__apex_speed_rel | −0.43 | 1.50 | 1.15 |
+| medium__apex_speed_rel | −3.42 | 4.95 | 1.03 |
+| fast__apex_speed_rel | −2.13 | 2.70 | 0.71 |
+| slow__coast_frac | 0.0022 | −0.0092 | −0.0058 |
+| medium__coast_frac | 0.0053 | −0.0092 | −0.0028 |
+| fast__coast_frac | 0.0019 | −0.0057 | −0.0028 |
+| slow__throttle_attack | 0.47 | −1.57 | −2.35 |
+| medium__throttle_attack | 0.0007 | −0.0115 | −0.5755 |
+| slow__full_throttle_frac | 0.0136 | 0.0089 | 0.0294 |
+| medium__full_throttle_frac | 0.0000 | 0.0001 | 0.0010 |
+| fast__full_throttle_frac | −0.0007 | 0.0012 | 0.0013 |
+
+En este espacio el salto más grande, en IQR residuales, es `medium__throttle_attack` (0.58 de rango, IQR 0.122, unas 4.7 veces el IQR): la clase 3 queda en −0.58 y las otras dos cerca de 0. `medium__full_throttle_frac` es el siguiente (1.4 IQR) con las tres medianas residuales casi en cero. Esas dos no se ven en las medianas crudas de abajo.
+
+### Crudo, antes de residualizar y de escalar
+
+| columna | 0 | 1 | 3 | rango / IQR |
+| --- | ---: | ---: | ---: | ---: |
+| slow__brake_point_rel | 13.35 | −9.36 | −6.09 | 0.78 |
+| medium__brake_point_rel | 6.65 | −5.26 | −1.41 | 0.76 |
+| fast__brake_point_rel | 8.47 | −7.46 | −0.68 | 0.68 |
+| slow__trail_brake_frac | −0.0178 | 0.0041 | 0.0185 | 0.48 |
+| medium__trail_brake_frac | −0.0048 | −0.0006 | 0.0071 | 0.10 |
+| fast__trail_brake_frac | 0.0927 | 0.1019 | 0.1052 | 0.47 |
+| slow__apex_speed_rel | −1.0 | 1.0 | 1.0 | 0.67 |
+| medium__apex_speed_rel | −4.5 | 5.0 | 5.0 | 0.86 |
+| fast__apex_speed_rel | −25.0 | −19.5 | −19.0 | 0.92 |
+| slow__coast_frac | 0.0234 | −0.0052 | −0.0155 | 0.62 |
+| medium__coast_frac | 0.0116 | −0.0045 | −0.0122 | 0.58 |
+| fast__coast_frac | 0.0139 | 0.0067 | 0.0000 | 0.71 |
+| slow__throttle_attack | 1.14 | −2.37 | −0.52 | 0.21 |
+| medium__throttle_attack | 0 | 0 | 0 | — |
+| slow__full_throttle_frac | −0.0082 | 0.0367 | 0.0205 | 0.55 |
+| medium__full_throttle_frac | 0 | 0 | 0 | — |
+| fast__full_throttle_frac | 0 | 0 | 0 | — |
+
+Separan en crudo (rango ≥ 0.5 IQR): el punto de frenado y la velocidad de ápice en slow, medium y fast, el coast en las tres tipologías, y `slow__full_throttle_frac`. La clase 0 frena antes y pasa más lento el ápice que la 1. La 3 se parece a la 1 en ápice (medium 5.0 y 5.0 km/h, fast −19.0 y −19.5, slow 1.0 y 1.0) y queda entre las dos en el frenado, más cerca de la mediana de la sesión en medium (−1.41 m) y fast (−0.68 m).
+
+Casi iguales: `medium__throttle_attack`, `medium__full_throttle_frac` y `fast__full_throttle_frac` tienen mediana cruda 0 en las tres clases (la clase 3 es 0 en las 138 vueltas de `medium__throttle_attack`). `medium__trail_brake_frac` (0.10 IQR) y `slow__throttle_attack` (0.21 IQR) tampoco separan. El trail braking de slow y fast queda justo debajo del corte (0.48 y 0.47 IQR).
+
+Los valores crudos distintos de cero de `medium__throttle_attack` están en la clase 2 (mediana 3.07 en esas 20 vueltas), no en la moda de los pilotos.
