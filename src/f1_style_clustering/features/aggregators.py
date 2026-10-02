@@ -45,6 +45,12 @@ OPTIONAL_STYLE_FEATURES: List[str] = [
     "throttle_onset_rel",
 ]
 
+# Fast-corner throttle attack is near-constant on this matrix and isolates one lap.
+# Slow and medium throttle attack stay. Brake point and trail braking stay.
+LAP_MATRIX_DROP_COLUMNS: List[str] = [
+    "fast__throttle_attack",
+]
+
 POST_AGGREGATION_FEATURES: List[str] = [
     "brake_point_iqr",
 ]
@@ -341,6 +347,9 @@ def lap_vectors_from_typology(
         aggfunc="median",
     )
     wide.columns = _flatten_typology_columns(wide.columns, feature_cols)
+    drop_cols = [c for c in LAP_MATRIX_DROP_COLUMNS if c in wide.columns]
+    if drop_cols:
+        wide = wide.drop(columns=drop_cols)
     wide = wide.dropna(axis=0, how="any")
     if wide.empty:
         return pd.DataFrame()

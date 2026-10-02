@@ -49,10 +49,37 @@ def test_lap_vectors_drop_incomplete_laps_and_name_typology_blocks():
     assert set(wide["LapNumber"]) == {1}
     assert "slow__brake_point_rel" in wide.columns
     assert "fast__brake_point_rel" in wide.columns
+    assert "fast__trail_brake_frac" in wide.columns
+    assert "slow__throttle_attack" in wide.columns
+    assert "fast__throttle_attack" not in wide.columns
     ver = wide.set_index("Driver").loc["VER"]
     assert ver["slow__brake_point_rel"] == pytest.approx(10.0)
     assert ver["fast__brake_point_rel"] == pytest.approx(2.0)
     assert "HAM L3" not in wide.index
+
+
+def test_fast_throttle_attack_dropped_slow_and_medium_kept():
+    rows = []
+    for typ, attack in (("slow", 1.0), ("medium", 2.0), ("fast", 9.0)):
+        rows.append(
+            {
+                "Driver": "VER",
+                "LapNumber": 1,
+                "typology": typ,
+                "brake_point_rel": 4.0,
+                "trail_brake_frac": 0.3,
+                "apex_speed_rel": 1.0,
+                "throttle_attack": attack,
+                "coast_frac": 0.1,
+                "full_throttle_frac": 0.2,
+            }
+        )
+    wide = lap_vectors_from_typology(pd.DataFrame(rows))
+    assert "fast__throttle_attack" not in wide.columns
+    assert wide.loc[wide.index[0], "slow__throttle_attack"] == pytest.approx(1.0)
+    assert wide.loc[wide.index[0], "medium__throttle_attack"] == pytest.approx(2.0)
+    assert "fast__brake_point_rel" in wide.columns
+    assert "fast__trail_brake_frac" in wide.columns
 
 
 def test_driver_profile_is_the_modal_lap_class():
