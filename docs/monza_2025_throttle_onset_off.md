@@ -1,39 +1,50 @@
-# Monza 2025 (carrera) con throttle onset apagado
+# Monza 2025 (carrera): onset apagado, sin throttle attack en fast
 
 Corrida: `python scripts/run_pipeline.py --year 2025 --circuit "Italian Grand Prix" --session R`.
 
-El CLI terminó con error. No eligió k y no escribió perfiles. No hay clase modal ni fracción por piloto.
+`include_throttle_onset` sigue en false. `fast__throttle_attack` salió de la matriz de vueltas. Siguen `slow__throttle_attack`, `medium__throttle_attack`, `brake_point_rel` y `trail_brake_frac` en las tres tipologías.
 
-## Flag y columnas
+El CLI volvió a terminar con `InvalidKPoolError`. No hay k elegido ni clase modal ni fracción por piloto.
 
-`features.include_throttle_onset` está en false. `get_throttle_onset_relative` sigue en el código y no se llama.
+## Matriz de esta corrida
 
-La matriz de vueltas tiene 842 filas y 19 pilotos. `feature_cols` son las seis métricas de siempre, sin `throttle_onset_rel`:
+842 vueltas, 19 pilotos (el auto 27 no entra: FastF1 marcó todas sus vueltas como inaccurate; HUL no está). **17 columnas de estilo.** No hay `throttle_onset` ni `fast__throttle_attack`. Sí están `fast__brake_point_rel` y `fast__trail_brake_frac`.
 
-- brake_point_rel
-- trail_brake_frac
-- apex_speed_rel
-- throttle_attack
-- coast_frac
-- full_throttle_frac
+El escalado usa esas 17. PCA: 3 componentes, varianza acumulada 0.9094 (0.4644, 0.3156, 0.1294).
 
-Esas seis se parten en slow / medium / fast. Quedan **18 columnas de estilo**. Ninguna se llama `throttle_onset`. El frame completo tiene 25 columnas (las 18 más Driver, LapNumber, Team, FullName, Compound, TyreLife, unit). Tras quitar metadata, el escalado usa esas 18. Como son más de 8, el ajuste entra a PCA: 3 componentes, varianza acumulada 0.9034 (0.6537, 0.1386, 0.1110). Zonas: `key_corners`, 7 grupos.
+## Por qué el selector rechaza todos los k
 
-El auto 27 no entra: FastF1 marcó todas sus vueltas como inaccurate. En la matriz no está HUL.
+Pide un clúster de al menos `ceil(0.05 * 842) = 43` vueltas y, si el pool queda vacío, reintenta con mínimo 3. Los dos intentos fallan. Davies-Bouldin no elige k: solo se usa si algún k válido tiene silueta bajo 0.25.
 
-## Por qué no hay k
-
-El selector pide un clúster de al menos el 5% de las vueltas (`ceil(0.05 * 842) = 43`) y, si eso deja el pool vacío, reintenta con mínimo 3. Los dos intentos lanzan `InvalidKPoolError`. Davies-Bouldin no se usa: solo entra si algún k válido queda por debajo del umbral de silueta 0.25, y aquí no hay k válido.
-
-La tabla es el mismo K-means++ que usa el selector (`n_init=20`, `random_state=42`) sobre el espacio de ajuste. El CLI no la guarda porque aborta antes. El clúster más chico tiene tamaño 1 en todos los k.
+La tabla es el mismo K-means++ del selector (`n_init=20`, `random_state=42`) sobre el espacio de ajuste. El CLI no la escribe.
 
 | k | tamaño mínimo | tamaños | silueta | Davies-Bouldin |
 | --- | ---: | --- | ---: | ---: |
-| 2 | 1 | 841, 1 | 0.9869 | 0.0076 |
-| 3 | 1 | 840, 1, 1 | 0.9738 | 0.0128 |
-| 4 | 1 | 838, 2, 1, 1 | 0.9607 | 0.1315 |
-| 5 | 1 | 822, 16, 2, 1, 1 | 0.8352 | 0.2339 |
-| 6 | 1 | 681, 141, 16, 2, 1, 1 | 0.5117 | 0.3620 |
-| 7 | 1 | 598, 141, 83, 16, 2, 1, 1 | 0.6064 | 0.3447 |
+| 2 | 2 | 840, 2 | 0.9722 | 0.1526 |
+| 3 | 2 | 836, 4, 2 | 0.9552 | 0.5504 |
+| 4 | 2 | 817, 19, 4, 2 | 0.8604 | 0.6189 |
+| 5 | 1 | 817, 19, 3, 2, 1 | 0.8614 | 0.3535 |
+| 6 | 1 | 676, 141, 19, 3, 2, 1 | 0.6231 | 0.4299 |
+| 7 | 1 | 676, 141, 19, 2, 2, 1, 1 | 0.6237 | 0.3046 |
 
-La silueta alta no es una separación de estilos. `fast__throttle_attack` vale 0 en 841 vueltas y 1.5625 solo en ALB, vuelta 49. El IQR crudo es 0. Después de residualizar Team, Compound y TyreLife el IQR baja a 0.004394 y el escalado robusto lleva esa vuelta a 350.65. Su PC1 es 372.13. K-means va aislando esa vuelta y otras puntas; el selector las rechaza.
+En k=2, 3 y 4 el clúster chico es ALB vuelta 49 y ALO vuelta 16. En k≥5 aparece además un clúster de una sola vuelta (HAM vuelta 31).
+
+## Columna que se dispara
+
+`fast__full_throttle_frac`. IQR crudo 0. Es 0 en 840 vueltas. Las otras dos:
+
+| vuelta | valor crudo | residual (Team, Compound, TyreLife) | escalado robusto |
+| --- | ---: | ---: | ---: |
+| ALB 49 | −0.37992026 | −0.37357873 | −128.265926 |
+| ALO 16 | −0.50000000 | −0.49080328 | −168.395776 |
+
+El IQR después de residualizar es 0.002921. Esas dos vueltas son el clúster de tamaño 2, por debajo del mínimo 3.
+
+Las dos puntas siguientes, que no se tocaron:
+
+- `medium__throttle_attack`: 0 en 801 de 842 vueltas, IQR crudo 0. HAM vuelta 31 vale 13.428571 en crudo y 103.438545 escalado.
+- `medium__full_throttle_frac`: 0 en 838 vueltas, IQR crudo 0. PIA vuelta 34 vale −0.071666788 en crudo y −100.204659 escalado.
+
+## Corrida anterior
+
+Antes de sacar `fast__throttle_attack`, esa columna era 0 en 841 de 842 vueltas y 1.5625 solo en ALB vuelta 49. El escalado robusto la llevaba a 350.65 y todos los k tenían un clúster de tamaño 1. Esa hipótesis se confirma con la matriz de esa corrida. Quitarla no alcanza: el selector sigue sin pool válido.
