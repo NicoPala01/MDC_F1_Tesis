@@ -92,6 +92,33 @@ Clase modal de cada piloto (vueltas en esa clase / vueltas suyas). Nadie tiene l
 | TSU | 0 | 48/48 | 1.0000 |
 | VER | 1 | 45/47 | 0.9574 |
 
+Las etiquetas por vuelta no estaban guardadas. Se rehicieron las k-medianas con los mismos ajustes (L1, 20 arranques, `random_state=42`, k=4). El costo L1 vuelve a ser 8931.28, los tamaños 390 / 294 / 20 / 138, y la clase modal de cada piloto coincide con la tabla de arriba.
+
+Vueltas de cada piloto en cada clase:
+
+| piloto | clase 0 | clase 1 | clase 2 | clase 3 | total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ALB | 15 | 23 | 0 | 0 | 38 |
+| ALO | 2 | 17 | 0 | 0 | 19 |
+| ANT | 22 | 20 | 0 | 0 | 42 |
+| BEA | 20 | 26 | 1 | 0 | 47 |
+| BOR | 24 | 22 | 0 | 0 | 46 |
+| COL | 15 | 27 | 1 | 0 | 43 |
+| GAS | 39 | 6 | 0 | 0 | 45 |
+| HAD | 28 | 19 | 0 | 0 | 47 |
+| HAM | 6 | 4 | 12 | 26 | 48 |
+| LAW | 38 | 9 | 0 | 0 | 47 |
+| LEC | 0 | 0 | 0 | 46 | 46 |
+| NOR | 0 | 6 | 1 | 41 | 48 |
+| OCO | 42 | 5 | 0 | 0 | 47 |
+| PIA | 12 | 5 | 5 | 25 | 47 |
+| RUS | 16 | 29 | 0 | 0 | 45 |
+| SAI | 20 | 26 | 0 | 0 | 46 |
+| STR | 41 | 5 | 0 | 0 | 46 |
+| TSU | 48 | 0 | 0 | 0 | 48 |
+| VER | 2 | 45 | 0 | 0 | 47 |
+| total | 390 | 294 | 20 | 138 | 842 |
+
 ### DBSCAN
 
 Métrica euclídea sobre las mismas 17 columnas escaladas. `min_samples = 2 × 17 = 34`. `eps` es la rodilla geométrica de la distancia al vecino 34 (contando el propio punto), ordenada de mayor a menor. Cae en el índice 33, `eps = 7.572039`.
