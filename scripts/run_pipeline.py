@@ -69,6 +69,10 @@ def run_single_session(
     cols = [c for c in ["Cluster", "Archetype", "Team", "n_laps", "modal_fraction"] if c in df_summary.columns]
     print(df_summary[cols] if cols else df_summary)
 
+    by_class = result.get("driver_laps_by_class")
+    if by_class is not None and not getattr(by_class, "empty", True):
+        print(by_class.to_string(index=False))
+
     teammates_df = result.get("teammates")
     if teammates_df is not None and not getattr(teammates_df, "empty", True):
         print_cols = [

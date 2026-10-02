@@ -119,6 +119,44 @@ def build_lap_distribution_reports(
     return classifications.reset_index(drop=True), distribution.reset_index(drop=True), profiles
 
 
+def driver_laps_by_class(classifications: pd.DataFrame) -> pd.DataFrame:
+    """One row per driver, one column per class id in this session, plus totals.
+
+    Class columns follow the ids present in ``classifications``. A later run
+    with a different k gets a different number of columns. Drivers with no
+    laps in a class get 0. The last row is the column totals.
+    """
+    empty = pd.DataFrame(columns=["piloto", "total"])
+    if classifications is None or getattr(classifications, "empty", True):
+        return empty
+    if "Driver" not in classifications.columns or "Cluster" not in classifications.columns:
+        return empty
+
+    frame = classifications.dropna(subset=["Driver", "Cluster"]).copy()
+    if frame.empty:
+        return empty
+    frame["Cluster"] = frame["Cluster"].astype(int)
+    class_ids = sorted(set(int(v) for v in frame["Cluster"].unique()))
+    counts = (
+        frame.groupby(["Driver", "Cluster"], dropna=False)
+        .size()
+        .unstack(fill_value=0)
+        .reindex(columns=class_ids, fill_value=0)
+    )
+    counts = counts.rename(columns={cid: f"clase {cid}" for cid in class_ids})
+    counts = counts.sort_index()
+    class_cols = [f"clase {cid}" for cid in class_ids]
+    counts["total"] = counts[class_cols].sum(axis=1)
+    for col in class_cols + ["total"]:
+        counts[col] = counts[col].astype(int)
+    counts.index.name = "piloto"
+    table = counts.reset_index()
+    totals = {"piloto": "total"}
+    for col in class_cols + ["total"]:
+        totals[col] = int(table[col].sum())
+    return pd.concat([table, pd.DataFrame([totals])], ignore_index=True)
+
+
 def teammates_from_distribution(distribution: pd.DataFrame) -> pd.DataFrame:
     """Euclidean distance between teammates' lap-class fraction vectors."""
     if distribution is None or getattr(distribution, "empty", True):

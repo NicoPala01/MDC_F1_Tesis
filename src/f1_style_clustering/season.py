@@ -99,6 +99,7 @@ def write_session_outputs(
     for key, filename in (
         ("lap_classifications", "lap_classifications.csv"),
         ("driver_lap_distribution", "driver_lap_distribution.csv"),
+        ("driver_laps_by_class", "driver_laps_by_class.csv"),
         ("driver_profiles", "driver_profiles.csv"),
         ("teammates", "teammates.csv"),
     ):

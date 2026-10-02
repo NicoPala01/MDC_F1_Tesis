@@ -14,6 +14,7 @@ from .analysis.archetypes import (
 )
 from .analysis.lap_distribution import (
     build_lap_distribution_reports,
+    driver_laps_by_class,
     teammates_from_distribution,
 )
 from .config import load_circuit_config, load_config
@@ -398,6 +399,7 @@ def run_pipeline(
     )
     result["lap_classifications"] = classifications
     result["driver_lap_distribution"] = distribution
+    result["driver_laps_by_class"] = driver_laps_by_class(classifications)
     result["driver_profiles"] = profiles
     result["df_summary"] = profiles
     result["teammates"] = teammates_from_distribution(distribution)

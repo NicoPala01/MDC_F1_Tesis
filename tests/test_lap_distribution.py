@@ -8,6 +8,7 @@ import pytest
 from f1_style_clustering.analysis.dashboard_data import discover_sessions, metric_table
 from f1_style_clustering.analysis.lap_distribution import (
     build_lap_distribution_reports,
+    driver_laps_by_class,
     teammates_from_distribution,
 )
 from f1_style_clustering.features.aggregators import lap_vectors_from_typology
@@ -125,6 +126,58 @@ def test_driver_profile_is_the_modal_lap_class():
     assert profiles.loc["VER", "brake_point_rel"] == pytest.approx(4.0)
     assert distribution["fraction"].sum() == pytest.approx(1.0)
     assert bool(distribution.loc[distribution["is_modal"], "is_modal"].iloc[0])
+
+
+def _class_table(cluster_ids, drivers):
+    labels = pd.Series(cluster_ids, index=[f"L{i}" for i in range(len(cluster_ids))], name="Cluster")
+    meta = pd.DataFrame(
+        {
+            "Driver": drivers,
+            "FullName": drivers,
+            "Team": ["Team"] * len(drivers),
+            "LapNumber": list(range(1, len(drivers) + 1)),
+        },
+        index=labels.index,
+    )
+    classifications, _, _ = build_lap_distribution_reports(labels, {}, meta)
+    return driver_laps_by_class(classifications)
+
+
+def test_laps_by_class_columns_follow_fit_k():
+    """Class columns are the ids of that fit. k=4 is four columns, not a fixed pair."""
+    two = _class_table([0, 0, 1], ["VER", "VER", "HAM"])
+    two_cols = [c for c in two.columns if str(c).startswith("clase ")]
+    assert two_cols == ["clase 0", "clase 1"]
+    assert list(two["piloto"]) == ["HAM", "VER", "total"]
+    assert int(two.loc[two["piloto"] == "HAM", "clase 0"].iloc[0]) == 0
+    assert int(two.loc[two["piloto"] == "total", "total"].iloc[0]) == 3
+
+    four = _class_table([0, 1, 2, 3, 3], ["VER", "HAM", "LEC", "NOR", "NOR"])
+    four_cols = [c for c in four.columns if str(c).startswith("clase ")]
+    assert four_cols == ["clase 0", "clase 1", "clase 2", "clase 3"]
+    assert len(four_cols) == 4
+    assert int(four.loc[four["piloto"] == "total", "clase 3"].iloc[0]) == 2
+    assert int(four.loc[four["piloto"] == "total", "total"].iloc[0]) == 5
+
+    other = _class_table([5, 5, 8], ["VER", "HAM", "HAM"])
+    other_cols = [c for c in other.columns if str(c).startswith("clase ")]
+    assert other_cols == ["clase 5", "clase 8"]
+    assert "clase 0" not in other.columns
+    assert int(other.loc[other["piloto"] == "VER", "clase 8"].iloc[0]) == 0
+
+
+def test_session_output_writes_laps_by_class(tmp_path: Path):
+    table = _class_table([0, 1, 2, 2], ["VER", "HAM", "LEC", "LEC"])
+    write_session_outputs(
+        {"driver_laps_by_class": table},
+        tmp_path,
+        save_plots=False,
+    )
+    saved = pd.read_csv(tmp_path / "driver_laps_by_class.csv")
+    class_cols = [c for c in saved.columns if str(c).startswith("clase ")]
+    assert class_cols == ["clase 0", "clase 1", "clase 2"]
+    assert saved.iloc[-1]["piloto"] == "total"
+    assert int(saved.iloc[-1]["total"]) == 4
 
 
 def test_teammate_distance_uses_lap_fractions():

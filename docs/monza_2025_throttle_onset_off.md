@@ -56,7 +56,7 @@ La mezcla de compuesto es parecida. La vida mediana no: 19 vueltas en la clase 0
 | TSU | 0 | 25/48 | 0.5208 |
 | VER | 0 | 46/47 | 0.9787 |
 
-Vueltas por piloto y clase:
+Vueltas por piloto y clase. El pipeline arma esta tabla con las clases de la sesión y la escribe en `driver_laps_by_class.csv`. El número de columnas de clase es el k de esa corrida.
 
 | piloto | clase 0 | clase 1 | total |
 | --- | ---: | ---: | ---: |
