@@ -1,0 +1,74 @@
+{
+  "base7": [
+    "fast__apex_speed_rel",
+    "medium__apex_speed_rel",
+    "fast__coast_frac",
+    "medium__coast_frac",
+    "slow__coast_frac",
+    "medium__trail_brake_frac",
+    "slow__trail_brake_frac"
+  ],
+  "analogue7": [
+    "T8__apex_speed_rel",
+    "T11__apex_speed_rel",
+    "T8__coast_frac",
+    "T11__coast_frac",
+    "T1__coast_frac",
+    "T6__trail_brake_frac",
+    "T1__trail_brake_frac"
+  ],
+  "expand": [
+    "T3__apex_speed_rel",
+    "T8__apex_speed_rel",
+    "T4__apex_speed_rel",
+    "T6__apex_speed_rel",
+    "T7__apex_speed_rel",
+    "T11__apex_speed_rel",
+    "T8__coast_frac",
+    "T4__coast_frac",
+    "T6__coast_frac",
+    "T7__coast_frac",
+    "T11__coast_frac",
+    "T1__coast_frac",
+    "T4__trail_brake_frac",
+    "T6__trail_brake_frac",
+    "T7__trail_brake_frac",
+    "T1__trail_brake_frac"
+  ],
+  "strict7": [
+    "T6__trail_brake_frac",
+    "T6__coast_frac",
+    "T7__coast_frac",
+    "T6__throttle_attack",
+    "T7__trail_brake_frac",
+    "T6__full_throttle_frac",
+    "T4__trail_brake_frac"
+  ],
+  "strict_dense": [
+    "T6__coast_frac",
+    "T7__coast_frac",
+    "T7__trail_brake_frac",
+    "T4__trail_brake_frac",
+    "T6__trail_brake_frac",
+    "T1__trail_brake_frac"
+  ],
+  "cons5": [
+    "T7__coast_frac__roll_mad5",
+    "T7__coast_frac__roll_iqr5",
+    "T11__coast_frac__roll_mad5",
+    "T6__coast_frac__roll_mad5",
+    "T6__coast_frac__roll_iqr5"
+  ],
+  "base7+cons3": [
+    "fast__apex_speed_rel",
+    "medium__apex_speed_rel",
+    "fast__coast_frac",
+    "medium__coast_frac",
+    "slow__coast_frac",
+    "medium__trail_brake_frac",
+    "slow__trail_brake_frac",
+    "T7__coast_frac__roll_mad5",
+    "T7__coast_frac__roll_iqr5",
+    "T11__coast_frac__roll_mad5"
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "ds_m": 2.0,
+  "pos_win_samples": 11,
+  "pos_win_m": 22.0,
+  "curv_win_samples": 31,
+  "curv_win_m": 62.0,
+  "speed_win_m": 30.0,
+  "polyorder": 3,
+  "max_offset_m": 12.0,
+  "reference_length_m": 5761.26566525739,
+  "n_laps": 842,
+  "projection_reject_frac": 0.0,
+  "brake_distance_vs_reference_median_m": 4.0003623989011885,
+  "brake_distance_vs_reference_p90_m": 12.000582671283064,
+  "zones": {
+    "T1": {
+      "typology": "slow",
+      "sign_left_positive_kappa": 1.0,
+      "s_first_m": 894.4735827226488,
+      "s_last_m": 950.6372946564745,
+      "kappa_peak_ref_1_per_m": 0.03820171199466,
+      "marker_offset_m": {
+        "1": 0.16500748030461826,
+        "2": -0.3814522984667647
+      },
+      "peak_lat_g": 1.9178130982949875,
+      "min_radius": 28.573708570649142,
+      "line_width": 0.3487434344013767,
+      "apex_offset_std": 0.0818514554521459,
+      "path_delta": -2.3501562676639196,
+      "traffic_frac": 0.5415676959619953,
+      "apex_late": 3.89362034064834,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 1.0,
+      "speed_drop_kmh": 140.57157220160587,
+      "chord_swing_m": 45.51464470424774
+    },
+    "T3": {
+      "typology": "fast",
+      "sign_left_positive_kappa": -1.0,
+      "s_first_m": 1464.6616425287523,
+      "s_last_m": 1464.6616425287523,
+      "kappa_peak_ref_1_per_m": -0.003746920489207859,
+      "marker_offset_m": {
+        "3": 0.12330490653552008
+      },
+      "peak_lat_g": 2.846727873993065,
+      "min_radius": 242.83788094143688,
+      "line_width": 0.7127015875699345,
+      "apex_offset_std": 0.3528844226459251,
+      "path_delta": -2.0308308070788144,
+      "traffic_frac": 0.15914489311163896,
+      "apex_late": -52.432924097489376,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 0.0011876484560570072,
+      "speed_drop_kmh": 12.761233174080202,
+      "chord_swing_m": 53.23341026145962
+    },
+    "T4": {
+      "typology": "medium",
+      "sign_left_positive_kappa": 1.0,
+      "s_first_m": 2111.232615889751,
+      "s_last_m": 2162.7631072440076,
+      "kappa_peak_ref_1_per_m": 0.02162751299843851,
+      "marker_offset_m": {
+        "4": -0.19432143018269626,
+        "5": 0.4211645577533149
+      },
+      "peak_lat_g": 2.000227831247813,
+      "min_radius": 49.16258408709895,
+      "line_width": 0.4424090286710547,
+      "apex_offset_std": 0.12251268040057349,
+      "path_delta": -1.906086566734416,
+      "traffic_frac": 0.44655581947743467,
+      "apex_late": 15.807152854071091,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 1.0,
+      "speed_drop_kmh": 98.47366104612631,
+      "chord_swing_m": 46.504806186636316
+    },
+    "T6": {
+      "typology": "medium",
+      "sign_left_positive_kappa": -1.0,
+      "s_first_m": 2522.144971562341,
+      "s_last_m": 2522.144971562341,
+      "kappa_peak_ref_1_per_m": -0.01231887719944271,
+      "marker_offset_m": {
+        "6": 0.33121196575333794
+      },
+      "peak_lat_g": 3.7709705670867804,
+      "min_radius": 78.14492450665259,
+      "line_width": 0.7521265559438708,
+      "apex_offset_std": 0.15592350845885142,
+      "path_delta": -2.114098957907231,
+      "traffic_frac": 0.30403800475059384,
+      "apex_late": 7.630684249809747,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 0.998812351543943,
+      "speed_drop_kmh": 27.581256260993882,
+      "chord_swing_m": 106.7135371133568
+    },
+    "T7": {
+      "typology": "medium",
+      "sign_left_positive_kappa": -1.0,
+      "s_first_m": 2841.132900936697,
+      "s_last_m": 2841.132900936697,
+      "kappa_peak_ref_1_per_m": -0.014497583363099482,
+      "marker_offset_m": {
+        "7": 0.25628956615362153
+      },
+      "peak_lat_g": 3.5072957358826944,
+      "min_radius": 68.75857472235336,
+      "line_width": 0.5729629852601308,
+      "apex_offset_std": 0.14609190033978176,
+      "path_delta": -1.8244008991959504,
+      "traffic_frac": 0.3194774346793349,
+      "apex_late": 11.978915084823939,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 1.0,
+      "speed_drop_kmh": 52.4684790257987,
+      "chord_swing_m": 84.41801107571794
+    },
+    "T8": {
+      "typology": "fast",
+      "sign_left_positive_kappa": 1.0,
+      "s_first_m": 3910.930538385232,
+      "s_last_m": 4103.44469964702,
+      "kappa_peak_ref_1_per_m": 0.015724047673683732,
+      "marker_offset_m": {
+        "8": -0.33207949659118763,
+        "9": 0.1679165953525517,
+        "10": -0.21700598049414394
+      },
+      "peak_lat_g": 4.424000509645952,
+      "min_radius": 69.10083017314224,
+      "line_width": 0.999389150253476,
+      "apex_offset_std": 0.09423887361403152,
+      "path_delta": -2.627199827894003,
+      "traffic_frac": 0.32066508313539194,
+      "apex_late": 18.15462562402763,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 1.0,
+      "speed_drop_kmh": 83.80392643764392,
+      "chord_swing_m": 98.0649952959911
+    },
+    "T11": {
+      "typology": "medium",
+      "sign_left_positive_kappa": -1.0,
+      "s_first_m": 5190.6235884604785,
+      "s_last_m": 5190.6235884604785,
+      "kappa_peak_ref_1_per_m": -0.012810714465925637,
+      "marker_offset_m": {
+        "11": 0.29591743230541856
+      },
+      "peak_lat_g": 3.8118157080743535,
+      "min_radius": 75.81636822045994,
+      "line_width": 0.9686670700234218,
+      "apex_offset_std": 0.20912587442550853,
+      "path_delta": -2.1447562702663845,
+      "traffic_frac": 0.2814726840855107,
+      "apex_late": -40.20904229307689,
+      "coverage_apex": 1.0,
+      "apex_interior_frac": 0.9608076009501187,
+      "speed_drop_kmh": 32.84699683554247,
+      "chord_swing_m": 249.72322126199208
+    }
+  },
+  "plot_pair": [
+    "ALO",
+    "STR"
+  ],
+  "traffic_sensitivity": {
+    "T1__apex_late": {
+      "omega2_all": 0.02689336279271407,
+      "omega2_no_traffic": 0.10698813971343042,
+      "clean_frac": 0.4584323040380047
+    },
+    "T8__apex_late": {
+      "omega2_all": 0.07361875286084704,
+      "omega2_no_traffic": 0.042989314242257264,
+      "clean_frac": 0.6793349168646081
+    },
+    "T11__apex_late": {
+      "omega2_all": 0.09184419872282855,
+      "omega2_no_traffic": 0.10954313819275462,
+      "clean_frac": 0.7206427688504327
+    },
+    "T4__apex_late": {
+      "omega2_all": 0.005834729955051255,
+      "omega2_no_traffic": -0.0034685638263064543,
+      "clean_frac": 0.5534441805225653
+    },
+    "T6__apex_late": {
+      "omega2_all": 0.09114978484420012,
+      "omega2_no_traffic": 0.10821261414747867,
+      "clean_frac": 0.6967895362663495
+    },
+    "T7__apex_late": {
+      "omega2_all": 0.10166219760807503,
+      "omega2_no_traffic": 0.10580098648965705,
+      "clean_frac": 0.6805225653206651
+    },
+    "T1__apex_vs_curv": {
+      "omega2_all": 0.029666532214493155,
+      "omega2_no_traffic": 0.06327369142663923,
+      "clean_frac": 0.4584323040380047
+    },
+    "T8__apex_vs_curv": {
+      "omega2_all": 0.05112968932895338,
+      "omega2_no_traffic": 0.010667831801570778,
+      "clean_frac": 0.6793349168646081
+    },
+    "T11__apex_vs_curv": {
+      "omega2_all": 0.04985858703238504,
+      "omega2_no_traffic": 0.052644039602022755,
+      "clean_frac": 0.7206427688504327
+    },
+    "T4__apex_vs_curv": {
+      "omega2_all": 0.008320348973328543,
+      "omega2_no_traffic": 0.010525892634514146,
+      "clean_frac": 0.5534441805225653
+    },
+    "T6__apex_vs_curv": {
+      "omega2_all": 0.01677119398195809,
+      "omega2_no_traffic": 0.0055206223708656535,
+      "clean_frac": 0.6967895362663495
+    },
+    "T7__apex_vs_curv": {
+      "omega2_all": 0.012603216403119982,
+      "omega2_no_traffic": 0.06159445410601852,
+      "clean_frac": 0.6805225653206651
+    },
+    "T1__apex_offset": {
+      "omega2_all": 0.012312359117285218,
+      "omega2_no_traffic": 0.0046353218903659385,
+      "clean_frac": 0.4584323040380047
+    },
+    "T8__apex_offset": {
+      "omega2_all": 0.051464485860550344,
+      "omega2_no_traffic": 0.02733596080329276,
+      "clean_frac": 0.6793349168646081
+    },
+    "T11__apex_offset": {
+      "omega2_all": -0.0009251657131236842,
+      "omega2_no_traffic": -0.0030843517856160513,
+      "clean_frac": 0.7185273159144893
+    },
+    "T4__apex_offset": {
+      "omega2_all": -0.0007278025942802643,
+      "omega2_no_traffic": -0.0031648489745736822,
+      "clean_frac": 0.5534441805225653
+    },
+    "T6__apex_offset": {
+      "omega2_all": 0.007991550244126521,
+      "omega2_no_traffic": 0.010071229927922263,
+      "clean_frac": 0.6959619952494062
+    },
+    "T7__apex_offset": {
+      "omega2_all": -0.006351063167236467,
+      "omega2_no_traffic": -0.009615863582988318,
+      "clean_frac": 0.6805225653206651
+    }
+  },
+  "definitions": {
+    "apex_offset": "median signed lateral offset (m, left of reference > 0) within \u00b110 m of min speed in the apex window",
+    "entry_offset": "median signed offset on the fixed band [s_first-100, s_first-40] m",
+    "exit_offset": "median signed offset on the fixed band [s_last+30, s_last+110] m",
+    "brake_offset": "median signed offset within \u00b18 m of brake onset",
+    "line_width": "max(n) - min(n) over braking\u2192exit, samples with |n|\u226412 m",
+    "inside_*": "offset multiplied by the sign of reference curvature at the zone's |\u03ba| peak; >0 is inside that kink",
+    "apex_late": "station(min speed) \u2212 station(nearest geometric corner), m; >0 is a late apex",
+    "min_radius": "1 / p95(|\u03ba|) in the apex window, m",
+    "peak_lat_g": "p95(|v^2 \u03ba|) / 9.81 in the apex window",
+    "path_delta": "smoothed driven arc length minus reference span over the zone, m; <0 is a shorter path"
+  }
+}
