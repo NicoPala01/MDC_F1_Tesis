@@ -192,6 +192,7 @@ def cluster_driver_matrix(
 
     namer_space = fit_space.reindex(cluster_labels.index)
     profiles = characterize_clusters(namer_space, cluster_labels)
+    style_profiles = characterize_clusters(df_scaled.reindex(cluster_labels.index), cluster_labels)
     archetype_names = assign_archetype_names(profiles)
     df_summary = get_driver_archetype_summary(namer_space, cluster_labels, df_meta_s)
 
@@ -266,9 +267,10 @@ def cluster_driver_matrix(
         "eval_df": eval_df,
         "metrics": metrics,
         "profiles": profiles,
+        "style_profiles": style_profiles,
         "archetype_names": archetype_names,
         "df_summary": df_summary,
-        "radar_features": radar_feature_list(df_scaled),
+        "radar_features": radar_feature_list(style_profiles),
         "analysis_zones": analysis_zones or {},
         "zone_source": zone_source,
         "seed_stability": {"mean_ari": mean_ari, "std_ari": std_ari},

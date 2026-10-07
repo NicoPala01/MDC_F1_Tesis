@@ -29,6 +29,15 @@ def plot_cluster_radar_chart(
     if features is None:
         from ..analysis.archetypes import radar_feature_list
         features = radar_feature_list(cluster_profiles)
+    features = [f for f in features if f in cluster_profiles.columns]
+    if not features:
+        features = [
+            c
+            for c in cluster_profiles.select_dtypes(include="number").columns
+            if c != "Cluster"
+        ][:6]
+    if not features:
+        raise ValueError("radar chart has no numeric features")
 
     df_subset = cluster_profiles[features].copy()
     num_vars = len(features)

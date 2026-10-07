@@ -135,11 +135,24 @@ def write_session_outputs(
             fig = plot_optimal_k_evaluation(eval_df)
             fig.savefig(fig_dir / "optimal_k.png", dpi=160)
             plt.close(fig)
-        profiles = result.get("profiles")
-        radar_features = result.get("radar_features")
-        if profiles is not None and radar_features:
+        radar_source = result.get("style_profiles")
+        if radar_source is None or getattr(radar_source, "empty", True):
+            radar_source = result.get("profiles")
+        radar_features = [
+            c
+            for c in (result.get("radar_features") or [])
+            if radar_source is not None and c in getattr(radar_source, "columns", [])
+        ]
+        if radar_source is not None and not radar_features:
+            numeric = [
+                c
+                for c in radar_source.select_dtypes(include="number").columns
+                if c != "Cluster"
+            ]
+            radar_features = numeric[:6]
+        if radar_source is not None and radar_features:
             fig = plot_cluster_radar_chart(
-                profiles, features=radar_features, archetype_names=archetypes
+                radar_source, features=radar_features, archetype_names=archetypes
             )
             fig.savefig(fig_dir / "radar_archetypes.png", dpi=160)
             plt.close(fig)

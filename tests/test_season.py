@@ -13,6 +13,7 @@ from f1_style_clustering.season import (
     run_season_pipeline,
     season_stability,
     session_output_dir,
+    write_session_outputs,
 )
 
 
@@ -217,3 +218,35 @@ def test_run_season_pipeline_with_injected_session_results(tmp_path):
     assert (tmp_path / "results" / "2025" / "italian_grand_prix" / "features_raw.csv").exists()
     assert (tmp_path / "results" / "2025" / "season" / "stability.csv").exists()
     assert "agreement" in out["stability"].columns
+
+
+def test_radar_uses_style_profiles_when_fit_space_is_pca(tmp_path):
+    """PCA centroids do not carry typology columns; the radar must still save."""
+    style = pd.DataFrame(
+        {
+            "slow__brake_point_rel": [-1.0, -0.8, 1.1, 0.9],
+            "slow__apex_speed_rel": [0.4, 0.2, -0.5, -0.3],
+            "fast__full_throttle_frac": [0.1, 0.0, -0.2, -0.1],
+        },
+        index=["L1", "L2", "L3", "L4"],
+    )
+    labels = pd.Series([0, 0, 1, 1], index=style.index, name="Cluster")
+    result = {
+        "df_summary": pd.DataFrame(
+            {"Cluster": [0, 1], "Archetype": ["Late Braker (V-Shape)", "Early Conservative Braker"]},
+            index=["VER", "HAM"],
+        ),
+        "profiles": pd.DataFrame({"PC1": [-0.6, 0.7], "PC2": [0.2, -0.1]}, index=[0, 1]),
+        "style_profiles": style.groupby(labels).mean(numeric_only=True),
+        "radar_features": list(style.columns),
+        "archetype_names": {0: "Late Braker (V-Shape)", 1: "Early Conservative Braker"},
+        "eval_df": pd.DataFrame(),
+    }
+    dest = write_session_outputs(result, tmp_path / "monza", save_plots=True)
+    assert (dest / "figures" / "radar_archetypes.png").exists()
+
+    mismatched = dict(result)
+    mismatched["style_profiles"] = None
+    mismatched["radar_features"] = ["slow__brake_point_rel"]
+    dest_pc = write_session_outputs(mismatched, tmp_path / "pca_only", save_plots=True)
+    assert (dest_pc / "figures" / "radar_archetypes.png").exists()
