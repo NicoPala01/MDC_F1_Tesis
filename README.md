@@ -61,7 +61,34 @@ python scripts/monza_separation_benchmark.py            # escribe results/2025/i
 python scripts/monza_separation_benchmark.py --quick    # sólo z-score, tres algoritmos
 ```
 
-Código: `features/screening.py` (ICC, casi-constantes, bloques), `models/separation.py` (métricas), `models/alternatives.py` (algoritmos y benchmark). El camino K-means de `pipeline.py` no cambia.
+Código: `features/screening.py` (ICC, casi-constantes, bloques), `models/separation.py` (métricas), `models/alternatives.py` (algoritmos y benchmark).
+
+## Métricas de telemetría y normalización
+
+`docs/metricas_telemetria.md` evalúa cada métrica por lo que necesita una métrica de estilo: que separe a compañeros de equipo (mismo auto), que dé el mismo orden en las dos mitades de la carrera, y que no siga al compuesto, a la vida del neumático ni al número de vuelta. Hallazgo principal: con la mediana de sesión, las clases de Monza separan primera y segunda mitad de carrera, porque la velocidad de ápice y el punto de frenado siguen el combustible. Restar la mediana del campo en la misma vuelta lo corrige.
+
+Opciones en `config/pipeline_config.yaml` (todas apagadas por defecto):
+
+```yaml
+features:
+  standardization: "zscore"
+  lap_synchronous: true              # mediana del campo en la misma vuelta
+  within_driver_tyre_effects: true   # compuesto y vida del neumático, estimados dentro de cada piloto
+  extended_metrics: true             # liberación de freno → pleno, ápice → pleno, modulación, lift-and-coast
+  feature_screening:
+    drop_near_constant: true
+    min_icc: 0.25
+```
+
+Las métricas extendidas van al perfil del piloto (`driver_extended_profile`), no a la matriz del K-means.
+
+```bash
+python scripts/export_lap_telemetry.py                        # telemetría de las vueltas canónicas en cache/derived/
+python scripts/evaluate_candidate_features.py candidatas.csv  # puntaje de columnas nuevas (Driver, LapNumber, ...)
+python experiments/telemetry_candidates/integrated/run.py     # comparación de normalizaciones y conjuntos
+```
+
+Los cinco estudios por familia (frenada, trazada X/Y, acelerador y marcha, normalización, granularidad y consistencia) están en `experiments/telemetry_candidates/<familia>/REPORT.md`.
 
 ## Notebooks
 
