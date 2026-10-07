@@ -196,3 +196,32 @@ def test_builders_carry_extended_columns_only_in_the_lap_matrix(monkeypatch):
     assert "include_extended" not in seen
     assert not drivers.empty
     assert not any("release_to_full" in str(c) for c in drivers.columns)
+
+
+def test_within_driver_effects_leave_zero_iqr_columns(race_laps):
+    laps = race_laps.copy()
+    laps["fast__full_throttle_frac"] = 0.0
+    laps.loc[laps.index[:3], "fast__full_throttle_frac"] = -0.4
+    out = remove_within_driver_effects(laps, ["fast__full_throttle_frac"], numeric=("LapNumber",))
+    assert out["fast__full_throttle_frac"].equals(laps["fast__full_throttle_frac"])
+    assert "fast__full_throttle_frac" not in out.attrs["within_driver_coefs"]
+
+
+def test_pipeline_helpers_split_extended_and_screen(race_laps):
+    from f1_style_clustering.pipeline import _normalize_lap_matrix, _screen_lap_matrix
+
+    laps = race_laps.copy()
+    laps["Team"] = laps["Driver"]
+    laps["slow__coast_frac"] = laps["Driver"].map({"A": 0.1, "B": 0.0, "C": -0.1}) + 0.001 * laps["LapNumber"] % 3
+    laps["fast__full_throttle_frac"] = 0.0
+    laps["medium__release_to_full_s"] = 1.0 + 0.01 * laps["LapNumber"]
+    out, extended, info = _normalize_lap_matrix(laps, lap_sync=True, tyre_fe=False)
+    assert info["lap_synchronous"] and not info["within_driver_tyre_effects"]
+    assert "medium__release_to_full_s" not in out.columns
+    assert list(extended.columns[-1:]) == ["medium__release_to_full_s"]
+    screened, sinfo = _screen_lap_matrix(out, {"drop_near_constant": True, "min_icc": 0.25})
+    assert "fast__full_throttle_frac" in sinfo["dropped_near_constant"]
+    assert "fast__full_throttle_frac" not in screened.columns
+    assert "slow__coast_frac" in sinfo["kept"]
+    untouched, uinfo = _screen_lap_matrix(out, {})
+    assert untouched.shape == out.shape and uinfo["min_icc"] is None

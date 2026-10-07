@@ -48,6 +48,11 @@ features:
   # Time-domain throttle and lift metrics per zone (EXTENDED_STYLE_FEATURES).
   # Reported per lap and per driver; not part of the clustered matrix.
   extended_metrics: false
+  # Clustered columns: drop the ones that are zero on >90% of laps and keep
+  # those whose ICC(1) by driver is at least min_icc (null = keep all).
+  feature_screening:
+    drop_near_constant: false
+    min_icc: null
 
 dimensionality_reduction:
   pca:

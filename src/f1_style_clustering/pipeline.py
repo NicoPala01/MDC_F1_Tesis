@@ -32,6 +32,7 @@ from .features.preprocessor import (
     separate_metadata,
     standardize_features,
 )
+from .features.screening import near_constant_columns, select_features_by_icc
 from .features.zoi import extract_circuit_zones, resolve_selected_corners
 from .models.clustering import (
     dbscan_prefilter_outliers,
@@ -331,6 +332,7 @@ def run_pipeline(
     include_extended = bool(feat_cfg.get("extended_metrics", False))
     lap_sync = bool(feat_cfg.get("lap_synchronous", False))
     tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", False))
+    screening = feat_cfg.get("feature_screening") or {}
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
     analysis_zones = extract_circuit_zones(
@@ -356,6 +358,7 @@ def run_pipeline(
         }
 
     df_raw, extended_laps, normalization = _normalize_lap_matrix(df_raw, lap_sync, tyre_fe)
+    df_raw, normalization["screening"] = _screen_lap_matrix(df_raw, screening)
 
     lap_typ = df_raw.attrs.get("lap_typology")
     feature_cols = list(df_raw.attrs.get("feature_cols") or [])
@@ -430,6 +433,24 @@ def run_pipeline(
     return result
 
 
+def _screen_lap_matrix(df_raw: pd.DataFrame, screening: Dict[str, Any]) -> Tuple[pd.DataFrame, Dict[str, Any]]:
+    """Drop near-constant style columns and keep those with ICC(1) by driver ≥ ``min_icc``."""
+    style_cols = [c for c in df_raw.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(df_raw[c])]
+    info: Dict[str, Any] = {"dropped_near_constant": [], "min_icc": None, "kept": style_cols}
+    keep = list(style_cols)
+    if screening.get("drop_near_constant"):
+        constant = near_constant_columns(df_raw, keep)
+        keep = [c for c in keep if c not in constant]
+        info["dropped_near_constant"] = constant
+    min_icc = screening.get("min_icc")
+    if min_icc is not None and "Driver" in df_raw.columns:
+        keep = select_features_by_icc(df_raw, keep, min_icc=float(min_icc))
+        info["min_icc"] = float(min_icc)
+    info["kept"] = keep
+    dropped = [c for c in style_cols if c not in keep]
+    return (df_raw.drop(columns=dropped) if dropped else df_raw), info
+
+
 def _normalize_lap_matrix(
     df_raw: pd.DataFrame,
     lap_sync: bool,
@@ -443,6 +464,7 @@ def _normalize_lap_matrix(
     """
     style_cols = [c for c in df_raw.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(df_raw[c])]
     info: Dict[str, Any] = {"unit": "typology_session_median", "lap_synchronous": False, "within_driver_tyre_effects": False}
+    ext_cols = [c for c in style_cols if any(str(c).endswith("__" + e) for e in EXTENDED_STYLE_FEATURES)]
     out = df_raw
     if lap_sync:
         out = normalize_lap_synchronous(out, style_cols)
@@ -450,7 +472,6 @@ def _normalize_lap_matrix(
     if tyre_fe:
         out = remove_within_driver_effects(out, style_cols)
         info.update(within_driver_tyre_effects=True, within_driver_coefs=out.attrs.get("within_driver_coefs"))
-    ext_cols = [c for c in style_cols if any(str(c).endswith("__" + e) for e in EXTENDED_STYLE_FEATURES)]
     if not ext_cols:
         return out, None, info
     keep = [c for c in ("Driver", "LapNumber", "Team", "Compound", "TyreLife") if c in out.columns]

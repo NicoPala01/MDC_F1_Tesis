@@ -168,6 +168,10 @@ def remove_within_driver_effects(
     team levels stay; unlike ``residualize_team_tyre_features``, no team mean
     is removed. Compound levels with fewer than ``min_group`` rows are not
     dummy-coded. Coefficients are stored in ``attrs['within_driver_coefs']``.
+
+    Columns with zero IQR are left as they are: an additive adjustment would
+    turn a spike-and-zeros column into a continuous one with a near-zero IQR,
+    which a robust scaler then blows up.
     """
     if df.empty or driver_col not in df.columns:
         return df.copy()
@@ -199,7 +203,7 @@ def remove_within_driver_effects(
     for col in feature_cols:
         y = pd.to_numeric(out[col], errors="coerce")
         ok = y.notna().to_numpy()
-        if ok.sum() <= X.shape[1] + 1:
+        if ok.sum() <= X.shape[1] + 1 or float(y.quantile(0.75) - y.quantile(0.25)) == 0.0:
             continue
         yd = (y - y.groupby(drivers).transform("mean")).to_numpy()
         beta, *_ = np.linalg.lstsq(Xd[ok], yd[ok], rcond=None)
