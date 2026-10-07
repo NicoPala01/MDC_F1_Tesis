@@ -52,6 +52,17 @@ streamlit run app/dashboard.py
 
 Tests (sintéticos, sin red): `python -m pytest -v`.
 
+## Separación: algoritmos y métricas alternativas
+
+`docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap.
+
+```bash
+python scripts/monza_separation_benchmark.py            # escribe results/2025/italian_grand_prix/separation/
+python scripts/monza_separation_benchmark.py --quick    # sólo z-score, tres algoritmos
+```
+
+Código: `features/screening.py` (ICC, casi-constantes, bloques), `models/separation.py` (métricas), `models/alternatives.py` (algoritmos y benchmark). El camino K-means de `pipeline.py` no cambia.
+
 ## Notebooks
 
 Ejecutar en orden con cache FastF1 local. El 04 solo lee resultados del CLI de temporada.
