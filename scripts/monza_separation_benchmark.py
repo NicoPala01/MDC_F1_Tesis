@@ -177,7 +177,9 @@ def main() -> None:
         f"icc>={args.min_icc}|zscore|lap|direct": scale(raw, selected, "zscore"),
         f"icc>={args.min_icc}|zscore|block{args.block_size}|direct": scale(block_median_matrix(raw, style, block_size=args.block_size), selected, "zscore"),
     }
-    reference["all|robust|lap|pca"] = pca_for_clustering(pd.DataFrame(reference["all|robust|lap|pca"]), variance_threshold=var_thr, max_features_direct=0)[0].to_numpy()
+    reference["all|robust|lap|pca"] = pca_for_clustering(
+        pd.DataFrame(reference["all|robust|lap|pca"]), variance_threshold=var_thr, max_features_direct=0
+    )[0].to_numpy()
     for name, X in reference.items():
         gap_df = gap_statistic(X, k_range=range(1, args.k_max + 2), n_refs=10, random_state=0)
         ps_df = prediction_strength_sweep(X, k_range=range(2, args.k_max + 1), n_splits=5, random_state=0)

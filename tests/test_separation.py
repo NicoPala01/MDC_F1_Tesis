@@ -146,7 +146,11 @@ def test_partition_report_fields(three_blobs):
     X, truth = three_blobs
     meta = pd.DataFrame({"Driver": np.repeat(list("ABCDEF"), 20), "Compound": "MEDIUM"})
     report = partition_report(X, truth, meta=meta, fit_predict=make_fit_predict("kmeans", 3, random_state=0), n_perm=3)
-    for key in ("k", "n_noise", "min_size", "sizes", "silhouette", "davies_bouldin", "calinski_harabasz", "dunn", "null_silhouette", "silhouette_gap", "ami_driver"):
+    expected = (
+        "k", "n_noise", "min_size", "sizes", "silhouette", "davies_bouldin", "calinski_harabasz",
+        "dunn", "null_silhouette", "silhouette_gap", "ami_driver",
+    )
+    for key in expected:
         assert key in report
     assert report["k"] == 3 and report["min_size"] == 40
     degenerate = partition_report(X, np.zeros(len(X), dtype=int))
