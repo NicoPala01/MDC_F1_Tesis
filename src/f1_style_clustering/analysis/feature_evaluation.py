@@ -220,7 +220,8 @@ def score_features(
     """One row per feature: ICC, team / teammate / lap shares, reliability, confounders, redundancy.
 
     ``recommended`` is True when the feature is not near-constant, teammates
-    differ (``omega2_driver_in_team`` ≥ 0.03 and p < 0.01), the driver ranking
+    differ (``omega2_driver_in_team`` ≥ 0.03 and p < 0.01), the car does not
+    carry most of it (``share_team`` < 0.5), the driver ranking
     holds across halves (Spearman-Brown ≥ 0.7), compound explains < 5 % of the
     within-driver variance beyond chance (``omega2_compound_within``), and |ρ| with every existing column is < 0.8.
     """
@@ -257,6 +258,7 @@ def score_features(
         (out["zero_frac"] <= 0.9)
         & (out["coverage"] >= 0.9)
         & (out["omega2_driver_in_team"].fillna(-1) >= 0.03)
+        & (out["share_team"].fillna(1) < 0.5)
         & (out["p_driver_in_team"].fillna(1) < 0.01)
         & (out["spearman_brown"].fillna(0) >= 0.7)
         & (out["omega2_compound_within"].fillna(0) < 0.05)
@@ -296,7 +298,8 @@ def clustering_gain(
     Rows with any missing value in the union are dropped from both fits so the
     comparison uses the same laps. Columns: feature set, k, silhouette, null,
     gap, prediction strength, bootstrap ARI, AMI with driver / compound,
-    teammate split rate.
+    teammate split rate, and the race-phase leakage ``lap_span`` /
+    ``tyre_life_span`` (largest minus smallest per-class median).
     """
     union = list(dict.fromkeys(list(base_cols) + list(extra_cols)))
     frame = df.dropna(subset=union).reset_index(drop=True)
@@ -333,5 +336,16 @@ def clustering_gain(
                 "ami_driver": float(adjusted_mutual_info_score(drivers, labels)),
                 "ami_compound": float(adjusted_mutual_info_score(compound, labels)) if compound is not None else np.nan,
                 "teammate_split_rate": teammate_split_rate(labels, drivers, teams),
+                **phase_leakage(frame, labels),
             })
     return pd.DataFrame(rows)
+
+
+def phase_leakage(frame: pd.DataFrame, labels: np.ndarray) -> Dict[str, float]:
+    """Spread of per-class median LapNumber and TyreLife; large means classes are race phases."""
+    out = {"lap_span": np.nan, "tyre_life_span": np.nan}
+    for col, key in (("LapNumber", "lap_span"), ("TyreLife", "tyre_life_span")):
+        if col in frame.columns:
+            med = pd.to_numeric(frame[col], errors="coerce").groupby(np.asarray(labels)).median()
+            out[key] = float(med.max() - med.min()) if len(med) > 1 else np.nan
+    return out

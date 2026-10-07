@@ -18,9 +18,16 @@ from .analysis.lap_distribution import (
     teammates_from_distribution,
 )
 from .config import load_circuit_config, load_config
-from .features.aggregators import CORE_STYLE_FEATURES, OPTIONAL_STYLE_FEATURES, build_lap_style_matrix
+from .features.aggregators import (
+    CORE_STYLE_FEATURES,
+    EXTENDED_STYLE_FEATURES,
+    OPTIONAL_STYLE_FEATURES,
+    build_lap_style_matrix,
+)
 from .features.preprocessor import (
     confounding_declaration,
+    normalize_lap_synchronous,
+    remove_within_driver_effects,
     residualize_team_tyre_features,
     separate_metadata,
     standardize_features,
@@ -321,6 +328,9 @@ def run_pipeline(
     push = filt.get("push_mode", False) if push_mode is None else push_mode
     min_laps = int(filt.get("min_valid_laps_per_driver", 3))
     include_onset = bool(feat_cfg.get("include_throttle_onset", True))
+    include_extended = bool(feat_cfg.get("extended_metrics", False))
+    lap_sync = bool(feat_cfg.get("lap_synchronous", False))
+    tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", False))
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
     analysis_zones = extract_circuit_zones(
@@ -334,6 +344,7 @@ def run_pipeline(
         push_mode=push,
         min_valid_laps=min_laps,
         include_throttle_onset=include_onset,
+        include_extended=include_extended,
     )
     if df_raw is None or df_raw.empty:
         return {
@@ -343,6 +354,8 @@ def run_pipeline(
             "analysis_zones": analysis_zones,
             "zone_source": zone_source,
         }
+
+    df_raw, extended_laps, normalization = _normalize_lap_matrix(df_raw, lap_sync, tyre_fe)
 
     lap_typ = df_raw.attrs.get("lap_typology")
     feature_cols = list(df_raw.attrs.get("feature_cols") or [])
@@ -409,4 +422,38 @@ def run_pipeline(
     result["lap_min_cluster_size"] = min_size
     result["analysis_zones"] = analysis_zones
     result["zone_source"] = zone_source
+    result["normalization"] = normalization
+    if extended_laps is not None:
+        result["extended_lap_metrics"] = extended_laps
+        ext_cols = [c for c in extended_laps.columns if "__" in c]
+        result["driver_extended_profile"] = extended_laps.groupby("Driver")[ext_cols].median()
     return result
+
+
+def _normalize_lap_matrix(
+    df_raw: pd.DataFrame,
+    lap_sync: bool,
+    tyre_fe: bool,
+) -> Tuple[pd.DataFrame, Optional[pd.DataFrame], Dict[str, Any]]:
+    """Optional lap-synchronous centring and within-driver tyre effects; split off extended metrics.
+
+    Extended metrics (``EXTENDED_STYLE_FEATURES``) separate teammates well but are
+    noisy per lap and do not improve the lap partition, so they are returned as a
+    per-lap table for the driver profiles and kept out of the clustered matrix.
+    """
+    style_cols = [c for c in df_raw.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(df_raw[c])]
+    info: Dict[str, Any] = {"unit": "typology_session_median", "lap_synchronous": False, "within_driver_tyre_effects": False}
+    out = df_raw
+    if lap_sync:
+        out = normalize_lap_synchronous(out, style_cols)
+        info.update(lap_synchronous=True, unit="typology_session_median+lap_synchronous")
+    if tyre_fe:
+        out = remove_within_driver_effects(out, style_cols)
+        info.update(within_driver_tyre_effects=True, within_driver_coefs=out.attrs.get("within_driver_coefs"))
+    ext_cols = [c for c in style_cols if any(str(c).endswith("__" + e) for e in EXTENDED_STYLE_FEATURES)]
+    if not ext_cols:
+        return out, None, info
+    keep = [c for c in ("Driver", "LapNumber", "Team", "Compound", "TyreLife") if c in out.columns]
+    extended = pd.DataFrame(out[keep + ext_cols]).copy()
+    extended.attrs = {}
+    return out.drop(columns=ext_cols), extended, info

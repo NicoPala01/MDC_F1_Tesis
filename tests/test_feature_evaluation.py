@@ -8,6 +8,7 @@ from f1_style_clustering.analysis.feature_evaluation import (
     clustering_gain,
     confounder_association,
     nested_variance_shares,
+    phase_leakage,
     redundancy,
     score_features,
     split_half_reliability,
@@ -58,16 +59,18 @@ def test_nested_shares_degenerate():
 
 
 def test_split_half_reliability(laps):
-    good = split_half_reliability(laps["teammate"].to_numpy(), laps["Driver"].to_numpy(), laps["LapNumber"].to_numpy(), laps["Team"].to_numpy())
-    bad = split_half_reliability(laps["noise"].to_numpy(), laps["Driver"].to_numpy(), laps["LapNumber"].to_numpy(), laps["Team"].to_numpy())
+    keys = (laps["Driver"].to_numpy(), laps["LapNumber"].to_numpy(), laps["Team"].to_numpy())
+    good = split_half_reliability(laps["teammate"].to_numpy(), *keys)
+    bad = split_half_reliability(laps["noise"].to_numpy(), *keys)
     assert good["spearman_brown"] > 0.95
     assert good["teammate_sign_agreement"] == 1.0 and good["n_teams_compared"] == 3
     assert bad["spearman_brown"] < good["spearman_brown"]
 
 
 def test_confounder_association_flags_tyre(laps):
-    tyre = confounder_association(laps["tyre"].to_numpy(), laps["Driver"].to_numpy(), laps["Compound"].to_numpy(), laps["TyreLife"].to_numpy(), laps["LapNumber"].to_numpy())
-    clean = confounder_association(laps["teammate"].to_numpy(), laps["Driver"].to_numpy(), laps["Compound"].to_numpy(), laps["TyreLife"].to_numpy(), laps["LapNumber"].to_numpy())
+    keys = (laps["Driver"].to_numpy(), laps["Compound"].to_numpy(), laps["TyreLife"].to_numpy(), laps["LapNumber"].to_numpy())
+    tyre = confounder_association(laps["tyre"].to_numpy(), *keys)
+    clean = confounder_association(laps["teammate"].to_numpy(), *keys)
     assert tyre["rho_tyre_life_within"] > 0.9
     assert abs(clean["rho_tyre_life_within"]) < 0.3
     assert clean["omega2_compound_within"] < 0.05
@@ -89,6 +92,23 @@ def test_score_features_recommends_teammate_signal_only(laps):
     assert {"share_team", "omega2_driver_in_team", "spearman_brown", "max_abs_rho_existing"} <= set(scores.columns)
 
 
+def test_phase_leakage_flags_race_phase_classes():
+    frame = pd.DataFrame({"LapNumber": np.arange(1, 41), "TyreLife": np.tile(np.arange(1, 21), 2)})
+    phase = phase_leakage(frame, (frame["LapNumber"] > 20).astype(int).to_numpy())
+    mixed = phase_leakage(frame, (frame["LapNumber"] % 2).to_numpy())
+    assert phase["lap_span"] == 20.0 and mixed["lap_span"] == 1.0
+    assert phase["tyre_life_span"] == 0.0
+
+
+def test_car_fingerprint_is_not_recommended(laps):
+    laps = laps.copy()
+    laps["mostly_car"] = laps["car_only"] + 0.6 * laps["teammate"]
+    scores = score_features(laps, ["mostly_car", "teammate"]).set_index("feature")
+    assert scores.loc["mostly_car", "share_team"] > 0.5
+    assert scores.loc["mostly_car", "omega2_driver_in_team"] >= 0.03
+    assert not scores.loc["mostly_car", "recommended"]
+
+
 def test_teammate_split_rate():
     labels = np.array([0, 0, 1, 1, 0, 0])
     drivers = np.array(["A", "A", "B", "B", "C", "C"])
@@ -99,7 +119,7 @@ def test_teammate_split_rate():
 def test_clustering_gain_runs(laps):
     gain = clustering_gain(laps, ["car_only", "noise"], ["teammate"], k_range=(2, 3), n_perm=2, n_boot=2)
     assert set(gain["set"]) == {"base", "base+extra"}
-    assert {"silhouette_gap", "prediction_strength", "ami_driver", "teammate_split_rate"} <= set(gain.columns)
+    assert {"silhouette_gap", "prediction_strength", "ami_driver", "teammate_split_rate", "lap_span"} <= set(gain.columns)
     with_extra = gain[gain["set"] == "base+extra"]["ami_driver"].max()
     base = gain[gain["set"] == "base"]["ami_driver"].max()
     assert with_extra > base

@@ -2,20 +2,28 @@
 
 from typing import Any, Dict, List, Optional, Sequence
 
+import numpy as np
 import pandas as pd
 from fastf1.core import Lap, Session
 
 from ..data.filters import filter_canonical_laps
 from ..data.loader import prepare_lap_telemetry
 from .metrics import (
+    LIFT_LOOKBACK_M,
     get_apex_speed,
+    get_apex_to_full_throttle_time,
     get_brake_point_relative,
     get_coast_frac,
     get_full_throttle_frac,
     get_kinematic_apex_distance,
+    get_lift_before_brake_time,
+    get_release_to_full_throttle_time,
     get_throttle_attack,
+    get_throttle_excess_variation,
     get_throttle_onset_relative,
     get_trail_brake_frac,
+    order_along_track,
+    zone_is_active,
 )
 from .preprocessor import normalize_typology_session_median
 from .zoi import (
@@ -43,6 +51,15 @@ CORE_STYLE_FEATURES: List[str] = [
 
 OPTIONAL_STYLE_FEATURES: List[str] = [
     "throttle_onset_rel",
+]
+
+# Time-domain throttle and lift metrics (docs/metricas_telemetria.md). NaN on
+# zones taken flat out, so a typology block is the median of the active zones.
+EXTENDED_STYLE_FEATURES: List[str] = [
+    "release_to_full_s",
+    "apex_to_full_s",
+    "throttle_excess_tv",
+    "lift_coast_s",
 ]
 
 # Fast-corner throttle attack is near-constant on this matrix and isolates one lap.
@@ -102,16 +119,52 @@ def trail_brake_fragment(
     return _concat_fragments(tail, apex)
 
 
+def extended_zone_features(
+    telemetry: pd.DataFrame,
+    zone_info: Dict[str, Any],
+    braking: pd.DataFrame,
+    apex: pd.DataFrame,
+    exit_z: pd.DataFrame,
+    apex_ref: float,
+    track_length: Optional[float],
+    lookback_m: float = LIFT_LOOKBACK_M,
+) -> Dict[str, float]:
+    """``EXTENDED_STYLE_FEATURES`` for one zone of one lap; all NaN on a flat-out zone."""
+    out = {name: np.nan for name in EXTENDED_STYLE_FEATURES}
+    corner = _concat_fragments(braking, apex, exit_z)
+    if not zone_is_active(_concat_fragments(braking, apex)):
+        return out
+    b0 = float(zone_info["braking"][0])
+    window = order_along_track(corner, b0, track_length)
+    if pd.notna(apex_ref) and not window.empty:
+        apex_pos = float(apex_ref) - b0
+        if track_length:
+            apex_pos %= track_length
+        out["release_to_full_s"] = get_release_to_full_throttle_time(window, apex_pos)
+        out["apex_to_full_s"] = get_apex_to_full_throttle_time(window, apex_pos)
+    apex_exit = order_along_track(_concat_fragments(apex, exit_z), float(zone_info["apex"][0]), track_length)
+    out["throttle_excess_tv"] = get_throttle_excess_variation(apex_exit, track_length)
+    look_start = _wrap_distance(b0 - float(lookback_m), track_length)
+    look_mask = in_distance_window(
+        telemetry["Distance"], look_start, b0, track_length, start_inclusive=True, end_inclusive=False
+    )
+    lift_window = order_along_track(_concat_fragments(telemetry.loc[look_mask], braking), look_start, track_length)
+    out["lift_coast_s"] = get_lift_before_brake_time(lift_window, float(lookback_m))
+    return out
+
+
 def extract_style_features_from_telemetry(
     telemetry: pd.DataFrame,
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
     trail_last_braking_m: Optional[float] = None,
+    include_extended: bool = False,
 ) -> List[Dict[str, Any]]:
     """Compute style features per ZOI on one lap of telemetry.
 
     ``trail_brake_frac`` is the spatial Brake==True fraction on the **apex ZOI
     only** (optional last Xm of braking via ``trail_last_braking_m``).
+    ``include_extended`` adds ``EXTENDED_STYLE_FEATURES``.
     """
     rows: List[Dict[str, Any]] = []
     if telemetry is None or telemetry.empty:
@@ -164,6 +217,12 @@ def extract_style_features_from_telemetry(
         if include_throttle_onset:
             row["throttle_onset_rel"] = get_throttle_onset_relative(
                 onset_window, apex_ref, track_length
+            )
+        if include_extended:
+            row.update(
+                extended_zone_features(
+                    telemetry, zone_info, braking, apex, exit_z, apex_ref, track_length
+                )
             )
         rows.append(row)
 
@@ -383,6 +442,7 @@ def build_lap_style_matrix(
     min_valid_laps: int = 3,
     include_throttle_onset: bool = True,
     selected_corners: Optional[List[int]] = None,
+    include_extended: bool = False,
 ) -> pd.DataFrame:
     """Relative style vector per lap, after dropping incomplete laps and short stints.
 
@@ -405,11 +465,14 @@ def build_lap_style_matrix(
         push_mode=push_mode,
         min_valid_laps=min_valid_laps,
         include_throttle_onset=include_throttle_onset,
+        include_extended=include_extended,
     )
     if long_df.empty:
         return pd.DataFrame()
 
-    feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in long_df.columns]
+    feature_cols = [
+        c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES + EXTENDED_STYLE_FEATURES if c in long_df.columns
+    ]
     long_rel = normalize_typology_session_median(long_df, feature_cols=feature_cols)
     lap_typ = collapse_to_driver_lap_typology(long_rel, feature_cols=feature_cols)
     vectors = lap_vectors_from_typology(lap_typ, feature_cols=feature_cols)
@@ -451,13 +514,17 @@ def extract_lap_style_rows(
     lap: Lap,
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
+    include_extended: bool = False,
 ) -> List[Dict[str, Any]]:
     """Per-lap rows (one per ZOI / key_corners group)."""
     telemetry = prepare_lap_telemetry(lap)
     if telemetry is None or telemetry.empty:
         return []
     rows = extract_style_features_from_telemetry(
-        telemetry, analysis_zones, include_throttle_onset=include_throttle_onset
+        telemetry,
+        analysis_zones,
+        include_throttle_onset=include_throttle_onset,
+        include_extended=include_extended,
     )
     try:
         lap_number = int(lap["LapNumber"]) if "LapNumber" in lap else None
@@ -476,6 +543,7 @@ def build_long_style_table(
     push_mode: bool = False,
     min_valid_laps: int = 3,
     include_throttle_onset: bool = True,
+    include_extended: bool = False,
 ) -> pd.DataFrame:
     """Build the long (driver × lap × zone) table before aggregation."""
     if analysis_zones is None:
@@ -511,7 +579,10 @@ def build_long_style_table(
 
         for _, lap in driver_laps.iterlaps():
             rows = extract_lap_style_rows(
-                lap, analysis_zones, include_throttle_onset=include_throttle_onset
+                lap,
+                analysis_zones,
+                include_throttle_onset=include_throttle_onset,
+                include_extended=include_extended,
             )
             compound = _optional_lap_value(lap, "Compound")
             tyre_life = _optional_lap_value(lap, "TyreLife")

@@ -39,6 +39,15 @@ features:
   # additive dummy misses that a later brake is easier on soft and moves with wear.
   # The typology×session median above stays; that is the style vector.
   residualize_team_tyre: false
+  # Subtract the field median of the same lap (fuel burn, track evolution). With
+  # it off, Monza 2025 classes split early vs late laps (docs/metricas_telemetria.md).
+  lap_synchronous: false
+  # After lap-synchronous centring: remove Compound / TyreLife slopes estimated
+  # within driver (driver and team levels are kept).
+  within_driver_tyre_effects: false
+  # Time-domain throttle and lift metrics per zone (EXTENDED_STYLE_FEATURES).
+  # Reported per lap and per driver; not part of the clustered matrix.
+  extended_metrics: false
 
 dimensionality_reduction:
   pca:
