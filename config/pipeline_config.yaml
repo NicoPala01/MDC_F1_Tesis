@@ -1,0 +1,67 @@
+# F1 driving-style clustering
+
+general:
+  season: 2025
+  default_session_type: "R"
+  cache_dir: "cache"
+  enable_fastf1_cache: true
+  random_state: 42
+  min_races_season: 8
+
+data_filtering:
+  require_accurate_laps: true
+  exclude_box_laps: true
+  exclude_deleted_laps: true
+  green_flag_only: true
+  push_mode: false
+  use_quicklaps_only: false
+  exclude_pit_in_out: true
+  exclude_safety_car: true
+  exclude_yellow_flags: true
+  min_valid_laps_per_driver: 3
+
+features:
+  metrics:
+    - brake_point_rel
+    - trail_brake_frac
+    - apex_speed_rel
+    - throttle_attack
+    - coast_frac
+    - full_throttle_frac
+    - throttle_onset_rel
+  include_throttle_onset: false
+  include_brake_point_iqr: true
+  standardization: "robust"
+  normalization_unit: "typology_session_median"
+  aggregation: "median"
+  # Off on the clustered matrix. Team/compound/tyre-life controls do not hold:
+  # the team cut counts laps, the regression is not a joint fixed effect, and an
+  # additive dummy misses that a later brake is easier on soft and moves with wear.
+  # The typology×session median above stays; that is the style vector.
+  residualize_team_tyre: false
+
+dimensionality_reduction:
+  pca:
+    use_as_clustering_input: auto
+    n_components: null
+    variance_threshold: 0.85
+
+clustering:
+  use_rule_based_k: true
+  default_k: null
+  min_cluster_size: 3
+  silhouette_threshold: 0.25
+  dbscan_prefilter: false
+  seed_stability_n: 10
+  driver_bootstrap: true
+  driver_bootstrap_n: null
+  driver_bootstrap_method: bootstrap
+  compare_aggregators: true
+  kmeans:
+    k_range: [2, 7]
+    init: "k-means++"
+    n_init: 20
+  evaluation_metrics:
+    - silhouette_score
+    - davies_bouldin
+    - calinski_harabasz

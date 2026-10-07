@@ -1,0 +1,126 @@
+# Circuit corner typology and ZOI windows.
+
+corner_speed_classification:
+  slow:
+    description: "Low-speed corners, chicanes, and tight hairpins"
+    speed_threshold_max_kmh: 125
+  medium:
+    description: "Medium-speed technical corners"
+    speed_threshold_min_kmh: 125
+    speed_threshold_max_kmh: 205
+  fast:
+    description: "High-speed sweepers and high lateral-G sections"
+    speed_threshold_min_kmh: 205
+
+# Map circuit-specific YAML typology strings → slow|medium|fast buckets.
+typology_buckets:
+  heavy_braking_chicane: slow
+  medium_chicane: medium
+  medium_speed: medium
+  high_speed_chicane: fast
+  long_medium_fast_entry: medium
+  slow_technical: slow
+  ultra_high_speed: fast
+  high_speed_s_curves: fast
+  fast_entry_heavy_braking: medium
+  hard_braking_medium_slow: slow
+  extreme_slow_hairpin: slow
+  downhill_braking_chicane: slow
+  fast_chicane: fast
+
+default_zoi_offsets:
+  # Distance offsets (in meters) relative to corner apex distance from FastF1 circuit_info.
+  # Disjoint windows: braking | apex | exit, with track wrap-around.
+  braking:
+    pre_apex_meters: 350
+    post_apex_meters: 0
+  apex:
+    pre_apex_meters: 60
+    post_apex_meters: 60
+  exit:
+    pre_apex_meters: 0
+    post_apex_meters: 250
+
+# Benchmark events use ONLY these key_corners groups as ZOIs
+# (one zone per entry, not one per FastF1 Number).
+# Monza cubre las 11 curvas FastF1. Las chicanas siguen agrupadas en una zona por maniobra.
+# Unmatched circuits use the speed-threshold fallback in extract_circuit_zones.
+benchmark_circuits:
+  monza:
+    official_name: "Autodromo Nazionale Monza"
+    event_name: "Italian Grand Prix"
+    downforce_level: "very_low"
+    type: "power_heavy_braking"
+    key_corners:
+      T1_Variante_del_Rettifilo:
+        corner_numbers: [1, 2]
+        typology: "heavy_braking_chicane"
+        braking_distance_window: 350
+        exit_distance_window: 250
+      T3_Curva_Grande:
+        corner_numbers: [3]
+        typology: "ultra_high_speed"
+        braking_distance_window: 180
+        exit_distance_window: 200
+      T4_Variante_della_Roggia:
+        corner_numbers: [4, 5]
+        typology: "medium_chicane"
+        braking_distance_window: 300
+        exit_distance_window: 250
+      T6_Curva_di_Lesmo:
+        corner_numbers: [6]
+        typology: "medium_speed"
+        braking_distance_window: 220
+      T7_Seconda_di_Lesmo:
+        corner_numbers: [7]
+        typology: "medium_speed"
+        braking_distance_window: 200
+      T8_Variante_Ascari:
+        corner_numbers: [8, 9, 10]
+        typology: "high_speed_chicane"
+        braking_distance_window: 280
+        exit_distance_window: 260
+      T11_Curva_Parabolica_Alboreto:
+        corner_numbers: [11]
+        typology: "long_medium_fast_entry"
+        braking_distance_window: 320
+        exit_distance_window: 300
+
+  silverstone:
+    official_name: "Silverstone Circuit"
+    event_name: "British Grand Prix"
+    downforce_level: "high"
+    type: "high_speed_aerodynamic"
+    key_corners:
+      T3_Village_The_Loop:
+        corner_numbers: [3, 4]
+        typology: "slow_technical"
+      T9_Copse:
+        corner_numbers: [9]
+        typology: "ultra_high_speed"
+      Maggotts_Becketts_Chapel:
+        corner_numbers: [10, 11, 12, 13, 14]
+        typology: "high_speed_s_curves"
+      T16_Stowe:
+        corner_numbers: [15]
+        typology: "fast_entry_heavy_braking"
+
+  monaco:
+    official_name: "Circuit de Monaco"
+    event_name: "Monaco Grand Prix"
+    downforce_level: "maximum"
+    type: "low_speed_mechanical_grip"
+    key_corners:
+      T1_Sainte_Devote:
+        corner_numbers: [1]
+        typology: "hard_braking_medium_slow"
+      T6_Grand_Hotel_Hairpin:
+        corner_numbers: [6]
+        typology: "extreme_slow_hairpin"
+      T10_Nouvelle_Chicane:
+        corner_numbers: [10, 11]
+        typology: "downhill_braking_chicane"
+      T15_Swimming_Pool:
+        corner_numbers: [15, 16]
+        typology: "fast_chicane"
+
