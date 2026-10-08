@@ -67,20 +67,21 @@ Código: `features/screening.py` (ICC, casi-constantes, bloques), `models/separa
 
 `docs/metricas_telemetria.md` evalúa cada métrica por lo que necesita una métrica de estilo: que separe a compañeros de equipo (mismo auto), que dé el mismo orden en las dos mitades de la carrera, y que no siga al compuesto, a la vida del neumático ni al número de vuelta. Hallazgo principal: con la mediana de sesión, las clases de Monza separan primera y segunda mitad de carrera, porque la velocidad de ápice y el punto de frenado siguen el combustible. Restar la mediana del campo en la misma vuelta lo corrige.
 
-Opciones en `config/pipeline_config.yaml` (todas apagadas por defecto):
+La normalización por vuelta sincronizada es la configuración principal. Valores por defecto en `config/pipeline_config.yaml`:
 
 ```yaml
 features:
-  standardization: "zscore"
   lap_synchronous: true              # mediana del campo en la misma vuelta
   within_driver_tyre_effects: true   # compuesto y vida del neumático, estimados dentro de cada piloto
-  extended_metrics: true             # liberación de freno → pleno, ápice → pleno, modulación, lift-and-coast
-  feature_screening:
-    drop_near_constant: true
-    min_icc: 0.25
+  extended_metrics: false            # liberación de freno → pleno, ápice → pleno, modulación, lift-and-coast
+  feature_screening:                 # variante evaluada; la corrida principal usa las 17 columnas
+    drop_near_constant: false
+    min_icc: null
 ```
 
-Las métricas extendidas van al perfil del piloto (`driver_extended_profile`), no a la matriz del K-means.
+Resultado de Monza 2025 con esa configuración: `docs/monza_2025_throttle_onset_off.md` (k=3 por Davies-Bouldin). La corrida anterior, sólo con la mediana de sesión, separaba fase de carrera.
+
+Con `extended_metrics: true`, las métricas extendidas van al perfil del piloto (`driver_extended_profile`), no a la matriz del K-means.
 
 ```bash
 python scripts/export_lap_telemetry.py                        # telemetría de las vueltas canónicas en cache/derived/

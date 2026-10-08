@@ -226,13 +226,13 @@ Clase 0: ápice lento, más coast, menos trail braking (LAW 0.96, TSU 0.96, STR 
 
 Compuesto por clase: MEDIUM 0.34 / 0.41 / 0.63. McLaren corrió casi toda la carrera con MEDIUM y SOFT, así que en la clase 2 el compuesto no se puede separar del piloto: el efecto fijo de neumático sólo se estima con pilotos que usaron más de un compuesto.
 
-`run_pipeline` con esa configuración en `config/pipeline_config.yaml` (`lap_synchronous`, `within_driver_tyre_effects`, `feature_screening: {drop_near_constant: true, min_icc: 0.25}`, `standardization: zscore`) se queda con 9 columnas (el ICC sobre la matriz normalizada agrega `fast__brake_point_rel` y `slow__full_throttle_frac`), elige k=3 por Davies-Bouldin (1.56; silueta 0.195 bajo el umbral 0.25), estabilidad entre semillas 0.985, tamaños 295 / 293 / 250 y vuelta mediana por clase 27 / 22 / 26.
+La variante completa de `run_pipeline` (`lap_synchronous`, `within_driver_tyre_effects`, `feature_screening: {drop_near_constant: true, min_icc: 0.25}`, `standardization: zscore`) se queda con 9 columnas (el ICC sobre la matriz normalizada agrega `fast__brake_point_rel` y `slow__full_throttle_frac`), elige k=3 por Davies-Bouldin (1.56; silueta 0.195 bajo el umbral 0.25), estabilidad entre semillas 0.985, tamaños 295 / 293 / 250 y vuelta mediana por clase 27 / 22 / 26.
 
 ## Recomendación
 
-1. Activar `features.lap_synchronous: true` y `features.within_driver_tyre_effects: true`. Sin eso, en Monza las clases son primera mitad contra segunda mitad de carrera.
-2. Activar `features.feature_screening` (`drop_near_constant: true`, `min_icc: 0.25`) y `standardization: zscore`. Sin el screening, el ajuste de neumático sobre las columnas casi constantes rompe el escalado robusto.
-3. Activar `features.extended_metrics: true` y usar `driver_extended_profile` (mediana por piloto) para describir a cada piloto y compararlo con su compañero. No meterlas en la matriz del K-means.
+1. `features.lap_synchronous` y `features.within_driver_tyre_effects` ya están en true por defecto. Sin eso, en Monza las clases son primera mitad contra segunda mitad de carrera. La corrida principal con esa configuración (17 columnas, escalado robusto, el mismo algoritmo) está en `docs/monza_2025_throttle_onset_off.md`: k=3 por Davies-Bouldin, silueta 0.133, Davies-Bouldin 1.986, tamaños 349 / 266 / 227, vuelta mediana por clase 26 / 27 / 24.
+2. `features.feature_screening` (`drop_near_constant: true`, `min_icc: 0.25`) con `standardization: zscore` es una variante evaluada, no la configuración principal (resultado en la sección anterior). El ajuste de neumático deja intactas las columnas con IQR 0, así que sin el screening el escalado robusto ya no aísla vueltas.
+3. `features.extended_metrics` queda en false por defecto. Encenderlo da `driver_extended_profile` (mediana por piloto) para describir a cada piloto y compararlo con su compañero. Esas métricas no van a la matriz del K-means.
 4. Reportar siempre `lap_span` y la AMI con el compuesto junto a la silueta: una partición que mejora la silueta separando fases de carrera no es una partición de estilo.
 5. Siguiente paso con más señal pendiente: el ápice tardío por proyección X/Y (`experiments/telemetry_candidates/line/extract.py`). Es la métrica con menos redundancia (|ρ| 0.13) y necesita la línea de referencia, no la `Distance` integrada.
 
