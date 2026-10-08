@@ -182,6 +182,11 @@ def test_pipeline_config_defaults():
     assert cfg["clustering"].get("default_k") in (None, "auto", "rule")
     assert cfg["features"]["residualize_team_tyre"] is False
     assert cfg["features"]["include_throttle_onset"] is False
+    assert cfg["features"]["lap_synchronous"] is True
+    assert cfg["features"]["within_driver_tyre_effects"] is True
+    assert cfg["features"]["extended_metrics"] is False
+    assert cfg["features"]["feature_screening"] == {"drop_near_constant": False, "min_icc": None}
+    assert cfg["features"]["standardization"] == "robust"
 
 
 def test_default_clustering_matrix_keeps_team_offset():

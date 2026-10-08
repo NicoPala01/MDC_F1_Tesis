@@ -225,3 +225,22 @@ def test_pipeline_helpers_split_extended_and_screen(race_laps):
     assert "slow__coast_frac" in sinfo["kept"]
     untouched, uinfo = _screen_lap_matrix(out, {})
     assert untouched.shape == out.shape and uinfo["min_icc"] is None
+
+
+def test_default_config_centres_laps_and_keeps_all_clustered_columns(race_laps):
+    from f1_style_clustering.config import load_config
+    from f1_style_clustering.pipeline import _normalize_lap_matrix, _screen_lap_matrix
+
+    feat = load_config()["features"]
+    laps = race_laps.copy()
+    laps["Team"] = laps["Driver"]
+    laps["fast__full_throttle_frac"] = 0.0
+    out, extended, info = _normalize_lap_matrix(laps, feat["lap_synchronous"], feat["within_driver_tyre_effects"])
+    assert info["lap_synchronous"] and info["within_driver_tyre_effects"]
+    assert info["unit"] == "typology_session_median+lap_synchronous"
+    assert extended is None
+    assert abs(np.corrcoef(out["LapNumber"], out["medium__apex_speed_rel"])[0, 1]) < 0.3
+    screened, sinfo = _screen_lap_matrix(out, feat["feature_screening"])
+    assert screened.shape == out.shape
+    assert sinfo["dropped_near_constant"] == [] and sinfo["min_icc"] is None
+    assert "fast__full_throttle_frac" in sinfo["kept"]
