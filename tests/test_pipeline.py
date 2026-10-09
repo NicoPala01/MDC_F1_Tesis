@@ -587,15 +587,14 @@ def test_namer_elif_exclusive_on_fit_space_includes_iqr():
     assert len(set(names.values())) == 4
 
 
-def test_namer_elif_on_pca_fit_space():
+def test_namer_gives_no_style_name_on_pca_fit_space():
+    """A principal component's sign is arbitrary, so PC centroids get no braking/apex name."""
     profiles = pd.DataFrame(
         {"PC1": [-1.0, 1.2, 0.4], "PC2": [-0.2, -0.3, 1.1]},
         index=[0, 1, 2],
     )
     names = assign_archetype_names(profiles)
-    assert names[0] == "Late Braker (V-Shape)"
-    assert names[1] == "Early Conservative Braker"
-    assert names[2] == "Momentum Keeper (U-Shape)"
+    assert all(n.startswith("No dominant trait") for n in names.values())
     assert len(set(names.values())) == 3
 
 

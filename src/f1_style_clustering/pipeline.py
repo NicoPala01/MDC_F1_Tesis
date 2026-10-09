@@ -7,9 +7,10 @@ from typing import Any, Dict, Optional, Tuple
 import pandas as pd
 
 from .analysis.archetypes import (
-    assign_archetype_names,
     characterize_clusters,
+    class_trait_scores,
     get_driver_archetype_summary,
+    name_classes_from_medians,
     radar_feature_list,
 )
 from .analysis.lap_distribution import (
@@ -201,8 +202,12 @@ def cluster_driver_matrix(
     namer_space = fit_space.reindex(cluster_labels.index)
     profiles = characterize_clusters(namer_space, cluster_labels)
     style_profiles = characterize_clusters(df_scaled.reindex(cluster_labels.index), cluster_labels)
-    archetype_names = assign_archetype_names(profiles)
-    df_summary = get_driver_archetype_summary(namer_space, cluster_labels, df_meta_s)
+    # Names come from the style values that entered the scaler, never from PCA axes.
+    style_values = pd.DataFrame(
+        scaler.inverse_transform(df_scaled.to_numpy()), index=df_scaled.index, columns=df_scaled.columns
+    ).reindex(cluster_labels.index)
+    archetype_names = name_classes_from_medians(style_values, cluster_labels)
+    df_summary = get_driver_archetype_summary(namer_space, cluster_labels, df_meta_s, archetype_map=archetype_names)
 
     mean_ari, std_ari = kmeans_seed_stability(
         fit_space,
@@ -277,6 +282,7 @@ def cluster_driver_matrix(
         "profiles": profiles,
         "style_profiles": style_profiles,
         "archetype_names": archetype_names,
+        "class_trait_scores": class_trait_scores(style_values, cluster_labels),
         "df_summary": df_summary,
         "radar_features": radar_feature_list(style_profiles),
         "analysis_zones": analysis_zones or {},
