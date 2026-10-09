@@ -88,7 +88,8 @@ def name_classes_from_medians(
     ``features`` are the style values in their own units (the lap matrix that
     entered the scaler), not PCA components. A class is named by its
     ``max_traits`` largest ``class_trait_scores`` in absolute value that reach
-    ``min_effect`` IQR, with the direction word from ``TRAIT_WORDS``. A class
+    ``min_effect`` IQR, with the direction word from ``TRAIT_WORDS``, written in
+    the order of ``TRAIT_WORDS`` (season tendencies compare names). A class
     with no metric at ``min_effect`` gets ``UNNAMED``. When two classes get the
     same name, further qualifying traits are added; if they still collide, the
     class id is appended.
@@ -97,16 +98,19 @@ def name_classes_from_medians(
     if scores.empty:
         return {}
 
-    def traits(cid: int) -> List[str]:
+    order = list(TRAIT_WORDS)
+
+    def traits(cid: int) -> List[tuple]:
         row = scores.loc[cid].dropna()
         row = row[row.abs() >= float(min_effect)]
         ordered = row.reindex(row.abs().sort_values(ascending=False).index)
-        return [TRAIT_WORDS[m][0 if s > 0 else 1] for m, s in ordered.items()]
+        return [(m, TRAIT_WORDS[m][0 if s > 0 else 1]) for m, s in ordered.items()]
 
-    def label(words: List[str]) -> str:
-        if not words:
+    def label(selected: List[tuple]) -> str:
+        if not selected:
             return UNNAMED
-        text = " + ".join(words)
+        # Written in a fixed metric order so the same traits give the same name in every race.
+        text = " + ".join(word for _m, word in sorted(selected, key=lambda mw: order.index(mw[0])))
         return text[0].upper() + text[1:]
 
     ranked = {int(cid): traits(int(cid)) for cid in scores.index}

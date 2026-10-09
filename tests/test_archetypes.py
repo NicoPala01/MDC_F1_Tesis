@@ -117,6 +117,14 @@ def test_legacy_namer_gives_no_name_on_pca_centroids():
     assert names == {0: f"{UNNAMED} (class 0)", 1: f"{UNNAMED} (class 1)", 2: f"{UNNAMED} (class 2)"}
 
 
+def test_same_traits_give_the_same_name_whatever_their_ranking():
+    coast_first, labels_a = _laps({0: {"coast_frac": 1.4, "trail_brake_frac": -0.7}, 1: {}, 2: {"coast_frac": -1.0}})
+    trail_first, labels_b = _laps({0: {"coast_frac": 0.7, "trail_brake_frac": -1.4}, 1: {}, 2: {"coast_frac": -1.0}})
+    a = name_classes_from_medians(_style(coast_first), labels_a)[0]
+    b = name_classes_from_medians(_style(trail_first), labels_b)[0]
+    assert a == b == "Less trail braking + more coasting"
+
+
 def test_names_use_no_driver_identity():
     df, labels = _laps(MONZA_LIKE)
     shuffled = df.copy()
