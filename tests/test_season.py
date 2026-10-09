@@ -330,3 +330,20 @@ def test_season_classes_split_race_phase_without_lap_synchronous(monkeypatch, tm
     )
     spans = [_class_lap_span(r) for r in out["per_race"].values()]
     assert min(spans) >= 10.0
+
+
+def test_config_without_normalization_keys_uses_the_lap_synchronous_default(monkeypatch):
+    from f1_style_clustering import pipeline as pipeline_mod
+    from f1_style_clustering.config import load_config
+
+    monkeypatch.setattr(pipeline_mod, "resolve_selected_corners", lambda session, circuits: (None, "synthetic"))
+    monkeypatch.setattr(pipeline_mod, "extract_circuit_zones", lambda session, **kw: {})
+    monkeypatch.setattr(pipeline_mod, "build_lap_style_matrix", lambda session, **kw: _synthetic_lap_matrix(1))
+    cfg = load_config()
+    cfg["clustering"]["seed_stability_n"] = 2
+    for key in ("lap_synchronous", "within_driver_tyre_effects", "extended_metrics", "feature_screening"):
+        cfg["features"].pop(key)
+    result = pipeline_mod.run_pipeline({"seed": 1}, config=cfg, circuit_config={})
+    assert result["normalization"]["lap_synchronous"] is True
+    assert result["normalization"]["within_driver_tyre_effects"] is True
+    assert _class_lap_span(result) <= 3.0

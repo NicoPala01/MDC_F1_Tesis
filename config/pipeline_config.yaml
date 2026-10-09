@@ -32,6 +32,7 @@ features:
   include_throttle_onset: false
   include_brake_point_iqr: true
   standardization: "robust"
+  # First stage. lap_synchronous below adds the same-lap field median on top.
   normalization_unit: "typology_session_median"
   aggregation: "median"
   # Off on the clustered matrix. Team/compound/tyre-life controls do not hold:

@@ -336,8 +336,9 @@ def run_pipeline(
     min_laps = int(filt.get("min_valid_laps_per_driver", 3))
     include_onset = bool(feat_cfg.get("include_throttle_onset", True))
     include_extended = bool(feat_cfg.get("extended_metrics", False))
-    lap_sync = bool(feat_cfg.get("lap_synchronous", False))
-    tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", False))
+    # Same defaults as config/pipeline_config.yaml, so a config without the keys is not silently session-median.
+    lap_sync = bool(feat_cfg.get("lap_synchronous", True))
+    tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", True))
     screening = feat_cfg.get("feature_screening") or {}
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
