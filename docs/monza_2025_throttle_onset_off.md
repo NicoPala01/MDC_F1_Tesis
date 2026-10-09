@@ -23,7 +23,22 @@ PCA: 10 componentes, varianza acumulada 0.8775. El piso de tamaño es `ceil(0.05
 
 La separación es débil. En el mismo espacio de 10 componentes, el K-means k=3 sobre las columnas permutadas una por una da silueta 0.121 (5 permutaciones), contra 0.133 observada. AMI de las clases con el piloto: 0.229 (0.053 en la corrida anterior). AMI con el compuesto: 0.035. En 5 de los 9 equipos con dos pilotos, los compañeros tienen clases modales distintas.
 
-`assign_archetype_names` escribe "Momentum Keeper (U-Shape)" en la clase 0, "Exit / Traction Specialist" en la 1 y "Late Braker (V-Shape)" en la 2. El nombre de la clase 2 no coincide con sus medianas: es la clase que frena antes (tabla de abajo). Abajo las clases van por id.
+Nombres de clase (`name_classes_from_medians`): para cada métrica, la mediana de la clase menos la mediana de todas las vueltas, en unidades de IQR, promediada entre tipologías. Las columnas con IQR 0 (`fast__full_throttle_frac`, `medium__full_throttle_frac`, `medium__throttle_attack`) no cuentan. El nombre son los dos rasgos de mayor valor absoluto que llegan a 0.25 IQR, escritos en un orden fijo de métricas. No usa la identidad de los pilotos.
+
+| métrica | 0 | 1 | 2 |
+| --- | ---: | ---: | ---: |
+| brake_point_rel | −0.31 | 0.24 | 0.30 |
+| apex_speed_rel | 0.42 | −0.08 | −0.52 |
+| trail_brake_frac | −0.07 | 0.45 | −0.32 |
+| coast_frac | 0.02 | −0.38 | 0.61 |
+| throttle_attack | −0.14 | 0.65 | −0.14 |
+| full_throttle_frac | 0.11 | −0.64 | 0.05 |
+
+- Clase 0: "Late braking + high apex speed".
+- Clase 1: "Sharper throttle pickup + less full throttle on exit". Las dos métricas salen sólo de Rettifilo: en las otras tipologías esas columnas tienen IQR 0. Su tercer rasgo es más trail braking (0.45).
+- Clase 2: "Low apex speed + more coasting". Su tercer rasgo es frenar antes que el campo (0.30).
+
+Antes de este cambio, `assign_archetype_names` nombraba con los signos de PC1 y PC2 del espacio de ajuste. El signo de una componente principal es arbitrario, y así la clase 2, que frena antes, salía como "Late Braker (V-Shape)". Las clases y sus tamaños no cambian; sólo el nombre.
 
 ### Fase de carrera, compuesto y vida del neumático
 
@@ -140,6 +155,10 @@ Verstappen: mediana −6.86 en 47 vueltas; HARD −0.32 (12), MEDIUM −7.67 (35
 
 La nota anterior y el PR #7 dan como baseline que Hamilton frena más tarde que Leclerc. Esta corrida no lo reproduce: mide lo contrario en los dos compuestos, igual que la corrida con mediana de sesión. Para Norris contra Piastri, el repo registra a Norris más tarde como contraste visible; esta corrida mide lo mismo, con una brecha mayor en MEDIUM (12.7 m contra 8.7 m). Ningún parámetro se movió para acercarse a esas expectativas.
 
+## Corridas de temporada
+
+`python scripts/run_pipeline.py --season 2025` corre cada carrera con esta misma configuración por defecto. Sus resultados cambian respecto de las corridas con mediana de sesión por dos motivos: cada carrera se normaliza por vuelta sincronizada, y la tendencia de temporada (el nombre de clase más frecuente entre carreras) compara ahora nombres que salen de las medianas, no de los signos de PCA. Las salidas de temporada anteriores no son comparables con las nuevas.
+
 ## Corrida anterior: mediana de sesión (separaba fase de carrera)
 
 Misma matriz y mismo algoritmo, con `lap_synchronous` y `within_driver_tyre_effects` en false. El k=2 de esa corrida reparte las vueltas por momento de la carrera: la vuelta mediana es 33.5 en la clase 0 y 12 en la clase 1, la vida mediana 19 y 11, y la pertenencia a clase correlaciona −0.56 con el número de vuelta. AMI con el piloto: 0.053. La velocidad de ápice y el punto de frenado siguen la carga de combustible dentro de cada piloto (ρ +0.78 y −0.5 con el número de vuelta, `docs/metricas_telemetria.md`), y restar una mediana de sesión, que es una constante, no lo saca. Los números siguen abajo como registro.
@@ -161,7 +180,7 @@ El piso de tamaño es `ceil(0.05 × 842) = 43`. Con ese piso, k=2 a k=5 son vál
 | 6 | 42 | 251, 225, 139, 102, 83, 42 | 0.1295 | 1.7695 | no |
 | 7 | 2 | 251, 224, 139, 101, 83, 42, 2 | 0.1348 | 1.5612 | no |
 
-`assign_archetype_names` escribe "Exit / Traction Specialist" en la clase 0 y "Early Conservative Braker" en la clase 1. Abajo las clases van por id.
+En esa corrida, el namer anterior (signos de PCA) escribía "Exit / Traction Specialist" en la clase 0 y "Early Conservative Braker" en la clase 1. Abajo las clases van por id.
 
 #### Compuesto y vida del neumático
 

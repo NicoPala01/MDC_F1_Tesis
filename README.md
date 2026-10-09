@@ -4,12 +4,12 @@ Tesis de Maestría en Ciencia de Datos — Universidad Austral
 Autor: Nicolás Palavecino  
 Tutor: Ezequiel Nuske
 
-Clustering no supervisado de **perfiles observables** de telemetría FastF1. Los clústeres describen patrones de una sesión; no aíslan estilo causal (FastF1 no trae carga de combustible ni setup). Team / Compound / TyreLife se residualizan cuando existen.
+Clustering no supervisado de **perfiles observables** de telemetría FastF1. Los clústeres describen patrones de una sesión; no aíslan estilo causal (FastF1 no trae carga de combustible ni setup). El equipo no se residualiza; el efecto de compuesto y vida del neumático se estima dentro de cada piloto y se resta.
 
 ## Qué calcula
 
-1. **Por carrera:** vueltas canónicas → ventanas ZOI en las curvas clave (frenado | vértice | salida) → features por fragmento, relativas a la mediana de la sesión por tipología → **un vector por vuelta** → K-means++ de las vueltas. El perfil del piloto es la **clase modal**: la que concentra más vueltas suyas. `driver_lap_distribution.csv` es el reparto.
-2. **Temporada:** el mismo análisis en cada GP. La tendencia de temporada es el arquetipo modal más frecuente entre las carreras. `stability.csv` mide en cuántas el piloto coincide con esa tendencia. No hay un segundo clustering de vectores medianos.
+1. **Por carrera:** vueltas canónicas → ventanas ZOI en las curvas clave (frenado | vértice | salida) → features por fragmento, relativas a la mediana de la sesión por tipología y a la mediana del campo en la misma vuelta → **un vector por vuelta** → K-means++ de las vueltas. El perfil del piloto es la **clase modal**: la que concentra más vueltas suyas. `driver_lap_distribution.csv` es el reparto. Cada clase se nombra por los dos rasgos cuya mediana más se aparta de la sesión (`name_classes_from_medians`).
+2. **Temporada:** el mismo análisis en cada GP. La tendencia de temporada es el nombre de clase más frecuente entre las carreras. `stability.csv` mide en cuántas el piloto coincide con esa tendencia. No hay un segundo clustering de vectores medianos.
 
 Circuito de prueba: **Monza** (`Italian Grand Prix`). El resto de la temporada usa `key_corners` si el evento está en `config/circuits.yaml`; si no, fallback por curva FastF1 y colapso a slow/medium/fast.
 
@@ -35,11 +35,13 @@ python -m pip install -e ".[dev]"
 # Monza 2025, una sesión
 python scripts/run_pipeline.py --smoke
 
-# Todas las carreras 2025 + clustering global
+# Todas las carreras 2025 + tendencia modal de temporada
 python scripts/run_pipeline.py --season 2025
 ```
 
-Salida: `results/2025/italian_grand_prix/` (`lap_classifications.csv`, `driver_lap_distribution.csv`, `driver_profiles.csv`) y `results/2025/season/`.
+Salida: `results/2025/italian_grand_prix/` (`lap_classifications.csv`, `driver_lap_distribution.csv`, `driver_laps_by_class.csv`, `driver_profiles.csv`) y `results/2025/season/`. De `results/` sólo se versiona `driver_laps_by_class.csv`.
+
+Las corridas de temporada usan la misma configuración por defecto que Monza: normalización por vuelta sincronizada y nombres de clase desde las medianas. Sus resultados cambian respecto de las corridas anteriores (mediana de sesión y nombres por signos de PCA) y no son comparables con ellas.
 
 Un GP suelto: `python scripts/run_pipeline.py --circuit "British Grand Prix"`.
 
