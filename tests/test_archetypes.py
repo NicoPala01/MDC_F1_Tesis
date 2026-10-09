@@ -2,7 +2,6 @@
 
 import numpy as np
 import pandas as pd
-import pytest
 
 from f1_style_clustering.analysis.archetypes import (
     UNNAMED,

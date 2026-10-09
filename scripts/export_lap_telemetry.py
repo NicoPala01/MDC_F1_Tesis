@@ -2,7 +2,9 @@
 
 Writes, under ``cache/derived/<year>_<event_slug>_<session>/`` (gitignored):
 
-- ``lap_matrix.csv``: the pipeline lap × style matrix (Driver, LapNumber, 17 style columns, metadata).
+- ``lap_matrix.csv``: the lap × style matrix from ``build_lap_style_matrix`` (Driver, LapNumber, 17 style
+  columns, metadata), relative to the session median per typology; ``run_pipeline`` then applies the
+  lap-synchronous centring and tyre effects on top.
 - ``car.pkl``: ``prepare_lap_telemetry`` per lap (car data at native ~4 Hz, Distance, Acceleration,
   ThrottleRate), with ``Driver`` and ``LapNumber`` columns. Same samples the pipeline uses.
 - ``tel.pkl``: ``lap.get_telemetry()`` per lap (car + position merged and interpolated: X, Y, Z,
