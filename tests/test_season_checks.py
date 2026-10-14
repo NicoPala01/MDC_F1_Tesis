@@ -260,6 +260,20 @@ def test_filter_definitions_and_speed_scaled_guard():
     assert allows_speed_scaled_trial("speed_threshold_fallback", "Hungarian Grand Prix") is True
 
 
+def test_precomputed_silhouette_matches_the_point_score():
+    from sklearn.cluster import KMeans
+    from sklearn.metrics import silhouette_score
+
+    from f1_style_clustering.analysis.round2 import _silhouettes_and_labels
+
+    rng = np.random.default_rng(0)
+    arr = rng.normal(size=(36, 4))
+    fit = pd.DataFrame(arr, columns=["a", "b", "c", "d"])
+    scores, _labels = _silhouettes_and_labels(fit, [2], chosen_k=2, random_state=0, n_init=2)
+    labels = KMeans(n_clusters=2, init="k-means++", n_init=2, random_state=0).fit_predict(arr)
+    assert scores[2] == pytest.approx(float(silhouette_score(arr, labels)))
+
+
 def test_column_null_bundle_reports_percentile_and_names():
     rng = np.random.default_rng(0)
     block = np.vstack(

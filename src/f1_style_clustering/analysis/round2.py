@@ -13,7 +13,7 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
+from sklearn.metrics import pairwise_distances, silhouette_score
 
 from ..features.aggregators import build_lap_style_matrix
 from ..features.brake_windows import apply_speed_scaled_windows
@@ -215,6 +215,8 @@ def _silhouettes_and_labels(
     out: Dict[int, float] = {}
     labels_chosen = None
     n = arr.shape[0]
+    # One Euclidean matrix for every k. Same silhouette as scoring each k on the points.
+    distances = pairwise_distances(arr) if n >= 2 else None
     for k in ks:
         k = int(k)
         if k < 2 or k >= n:
@@ -224,7 +226,7 @@ def _silhouettes_and_labels(
         if len(np.unique(labels)) < 2:
             out[k] = float("nan")
             continue
-        out[k] = float(silhouette_score(arr, labels))
+        out[k] = float(silhouette_score(distances, labels, metric="precomputed"))
         if chosen_k is not None and k == int(chosen_k):
             labels_chosen = labels
     return out, labels_chosen
