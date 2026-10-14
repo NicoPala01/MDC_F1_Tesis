@@ -1,0 +1,582 @@
+{
+  "base7_session": [
+    {
+      "k": 2,
+      "silhouette_energy": 0.41551853234353553,
+      "bootstrap_ari": 0.45660641486088477,
+      "teammate_split_rate": 0.3333333333333333,
+      "sizes": [
+        12,
+        7
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "COL",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "ALB",
+          "BEA",
+          "BOR",
+          "GAS",
+          "HAM",
+          "LEC",
+          "NOR",
+          "OCO",
+          "PIA",
+          "RUS",
+          "SAI",
+          "VER"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "silhouette_energy": 0.30810433818841326,
+      "bootstrap_ari": 0.6030425770522332,
+      "teammate_split_rate": 0.4444444444444444,
+      "sizes": [
+        11,
+        7,
+        1
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "COL",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "ALB",
+          "BEA",
+          "BOR",
+          "GAS",
+          "HAM",
+          "LEC",
+          "NOR",
+          "PIA",
+          "RUS",
+          "SAI",
+          "VER"
+        ],
+        "2": [
+          "OCO"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "silhouette_energy": 0.3296110636994798,
+      "bootstrap_ari": 0.455848248450171,
+      "teammate_split_rate": 0.4444444444444444,
+      "sizes": [
+        8,
+        7,
+        3,
+        1
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "COL",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "2": [
+          "ALB",
+          "BEA",
+          "BOR",
+          "GAS",
+          "HAM",
+          "LEC",
+          "RUS",
+          "SAI"
+        ],
+        "3": [
+          "OCO"
+        ]
+      }
+    }
+  ],
+  "base7_lapsync": [
+    {
+      "k": 2,
+      "silhouette_energy": 0.3337177246461703,
+      "bootstrap_ari": 0.2000568695817261,
+      "teammate_split_rate": 0.2222222222222222,
+      "sizes": [
+        10,
+        9
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "ALB",
+          "BEA",
+          "HAM",
+          "LEC",
+          "NOR",
+          "OCO",
+          "PIA",
+          "RUS",
+          "SAI",
+          "VER"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "silhouette_energy": 0.38783797718799556,
+      "bootstrap_ari": 0.24853217298894242,
+      "teammate_split_rate": 0.2222222222222222,
+      "sizes": [
+        9,
+        7,
+        3
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "2": [
+          "ALB",
+          "BEA",
+          "HAM",
+          "LEC",
+          "OCO",
+          "RUS",
+          "SAI"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "silhouette_energy": 0.29319613049928755,
+      "bootstrap_ari": 0.39141674797970727,
+      "teammate_split_rate": 0.3333333333333333,
+      "sizes": [
+        8,
+        7,
+        3,
+        1
+      ],
+      "members": {
+        "0": [
+          "ALO",
+          "ANT",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "STR",
+          "TSU"
+        ],
+        "1": [
+          "LAW"
+        ],
+        "2": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "3": [
+          "ALB",
+          "BEA",
+          "HAM",
+          "LEC",
+          "OCO",
+          "RUS",
+          "SAI"
+        ]
+      }
+    }
+  ],
+  "base7_lapsync_tyrefe": [
+    {
+      "k": 2,
+      "silhouette_energy": 0.36242412997013185,
+      "bootstrap_ari": 0.018469404750227826,
+      "teammate_split_rate": 0.1111111111111111,
+      "sizes": [
+        16,
+        3
+      ],
+      "members": {
+        "0": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "1": [
+          "ALB",
+          "ALO",
+          "ANT",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "HAM",
+          "LAW",
+          "LEC",
+          "OCO",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "silhouette_energy": 0.4122743963365445,
+      "bootstrap_ari": 0.5852873659219024,
+      "teammate_split_rate": 0.3333333333333333,
+      "sizes": [
+        11,
+        5,
+        3
+      ],
+      "members": {
+        "0": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "1": [
+          "ANT",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "2": [
+          "ALB",
+          "ALO",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAM",
+          "LEC",
+          "OCO",
+          "RUS",
+          "SAI"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "silhouette_energy": 0.32632344299246024,
+      "bootstrap_ari": 0.6477117821118491,
+      "teammate_split_rate": 0.4444444444444444,
+      "sizes": [
+        10,
+        5,
+        3,
+        1
+      ],
+      "members": {
+        "0": [
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "1": [
+          "ANT",
+          "HAD",
+          "LAW",
+          "STR",
+          "TSU"
+        ],
+        "2": [
+          "ALB",
+          "ALO",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAM",
+          "LEC",
+          "RUS",
+          "SAI"
+        ],
+        "3": [
+          "OCO"
+        ]
+      }
+    }
+  ],
+  "base7_lapsync+new3": [
+    {
+      "k": 2,
+      "silhouette_energy": 0.38139748799325557,
+      "bootstrap_ari": 0.8944444444444445,
+      "teammate_split_rate": 0.1111111111111111,
+      "sizes": [
+        18,
+        1
+      ],
+      "members": {
+        "0": [
+          "ALB",
+          "ALO",
+          "ANT",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "HAM",
+          "LAW",
+          "LEC",
+          "NOR",
+          "PIA",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU",
+          "VER"
+        ],
+        "1": [
+          "OCO"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "silhouette_energy": 0.2854761613605071,
+      "bootstrap_ari": 0.18012563784722013,
+      "teammate_split_rate": 0.2222222222222222,
+      "sizes": [
+        12,
+        6,
+        1
+      ],
+      "members": {
+        "0": [
+          "BEA",
+          "HAM",
+          "LEC",
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "1": [
+          "ALB",
+          "ALO",
+          "ANT",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "LAW",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU"
+        ],
+        "2": [
+          "OCO"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "silhouette_energy": 0.21268466466622035,
+      "bootstrap_ari": 0.31458081843553065,
+      "teammate_split_rate": 0.4444444444444444,
+      "sizes": [
+        10,
+        6,
+        2,
+        1
+      ],
+      "members": {
+        "0": [
+          "BEA",
+          "HAM",
+          "LEC",
+          "NOR",
+          "PIA",
+          "VER"
+        ],
+        "1": [
+          "ANT",
+          "LAW"
+        ],
+        "2": [
+          "ALB",
+          "ALO",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU"
+        ],
+        "3": [
+          "OCO"
+        ]
+      }
+    }
+  ],
+  "v2": [
+    {
+      "k": 2,
+      "silhouette_energy": 0.2570035654492211,
+      "bootstrap_ari": 0.7874021909233176,
+      "teammate_split_rate": 0.1111111111111111,
+      "sizes": [
+        18,
+        1
+      ],
+      "members": {
+        "0": [
+          "ALB",
+          "ALO",
+          "ANT",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "HAM",
+          "LAW",
+          "LEC",
+          "NOR",
+          "PIA",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU",
+          "VER"
+        ],
+        "1": [
+          "OCO"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "silhouette_energy": 0.20877026898962353,
+      "bootstrap_ari": 0.4506502773926776,
+      "teammate_split_rate": 0.3333333333333333,
+      "sizes": [
+        16,
+        2,
+        1
+      ],
+      "members": {
+        "0": [
+          "ANT",
+          "LAW"
+        ],
+        "1": [
+          "ALB",
+          "ALO",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "HAM",
+          "LEC",
+          "NOR",
+          "PIA",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU",
+          "VER"
+        ],
+        "2": [
+          "OCO"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "silhouette_energy": 0.1843064135356558,
+      "bootstrap_ari": 0.5172589811612789,
+      "teammate_split_rate": 0.5555555555555556,
+      "sizes": [
+        14,
+        2,
+        2,
+        1
+      ],
+      "members": {
+        "0": [
+          "ANT",
+          "LAW"
+        ],
+        "1": [
+          "NOR",
+          "VER"
+        ],
+        "2": [
+          "ALB",
+          "ALO",
+          "BEA",
+          "BOR",
+          "COL",
+          "GAS",
+          "HAD",
+          "HAM",
+          "LEC",
+          "PIA",
+          "RUS",
+          "SAI",
+          "STR",
+          "TSU"
+        ],
+        "3": [
+          "OCO"
+        ]
+      }
+    }
+  ]
+}

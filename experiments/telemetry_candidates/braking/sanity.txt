@@ -1,0 +1,90 @@
+# Braking-dynamics sanity
+
+T1 peak deceleration (positive m/s² and g), all laps with a primary event:
+  n=842 median=41.67 m/s² (4.25 g)  p10=3.44 g  p90=5.49 g
+Median peak_decel (g) and brake_effort (g) by zone:
+  T1: peak 4.25 g (n=842)  effort 2.08 g  duration 3.04 s  stabs median 2.0  traffic_50 0.17  lift_s 0.00
+  T11: peak 3.42 g (n=841)  effort 1.62 g  duration 1.44 s  stabs median 1.0  traffic_50 0.14  lift_s 0.00
+  T3: peak nan g (n=0)  effort nan g  duration nan s  stabs median nan  traffic_50 0.00  lift_s nan
+  T4: peak 4.25 g (n=842)  effort 2.37 g  duration 2.40 s  stabs median 1.0  traffic_50 0.19  lift_s 0.00
+  T6: peak 1.86 g (n=839)  effort 0.98 g  duration 0.96 s  stabs median 1.0  traffic_50 0.23  lift_s 0.00
+  T7: peak 2.73 g (n=835)  effort 1.37 g  duration 0.92 s  stabs median 1.0  traffic_50 0.23  lift_s 0.00
+  T8: peak 4.07 g (n=841)  effort 2.15 g  duration 1.36 s  stabs median 1.0  traffic_50 0.15  lift_s 0.00
+
+Worked example VER lap 10, T1 (no traffic lookup):
+  peak_decel = 39.185  (4.00 g)
+  peak_decel_med3 = 39.185  (4.00 g)
+  mean_decel = 21.513  (2.19 g)
+  brake_effort = 19.902  (2.03 g)
+  brake_duration_s = 2.719
+  brake_duration_m = 120.149
+  entry_speed = 307.000
+  speed_drop_ratio = 0.238
+  brake_attack_s = 0.160
+  decel_first_0_5 = 35.652  (3.64 g)
+  frontload_ratio = 1.943
+  release_to_apex_m = 52.222
+  release_to_apex_s = 2.440
+  lift_coast_s = 0.280
+  lift_coast_m = 23.878
+  brake_stabs = 1.000
+
+Fraction of zone-rows with a finite value:
+  peak_decel: 0.855
+  peak_decel_med3: 0.855
+  mean_decel: 0.855
+  brake_effort: 0.855
+  brake_duration_s: 0.855
+  brake_duration_m: 0.855
+  brake_on_time_s: 0.857
+  entry_speed: 0.855
+  speed_drop_ratio: 0.855
+  brake_attack_s: 0.855
+  attack_frac: 0.855
+  decel_first_0_5: 0.848
+  frontload_ratio: 0.763
+  frontload_speed_frac: 0.841
+  release_to_apex_m: 0.857
+  release_to_apex_s: 0.857
+  release_speed: 0.857
+  lift_coast_s: 0.854
+  lift_coast_m: 0.854
+  brake_stabs: 0.857
+
+slip_r2 T1 entry_speed 0.158
+slip_r2 T1 peak_decel 0.024
+slip_r2 T1 brake_effort 0.002
+slip_r2 T1 brake_duration_s 0.258
+slip_r2 T1 release_to_apex_m 0.004
+slip_r2 T11 entry_speed 0.044
+slip_r2 T11 peak_decel 0.016
+slip_r2 T11 brake_effort 0.013
+slip_r2 T11 brake_duration_s 0.237
+slip_r2 T11 release_to_apex_m 0.002
+slip_r2 T3 entry_speed nan
+slip_r2 T3 peak_decel nan
+slip_r2 T3 brake_effort nan
+slip_r2 T3 brake_duration_s nan
+slip_r2 T3 release_to_apex_m nan
+slip_r2 T4 entry_speed 0.011
+slip_r2 T4 peak_decel 0.040
+slip_r2 T4 brake_effort 0.183
+slip_r2 T4 brake_duration_s 0.250
+slip_r2 T4 release_to_apex_m 0.000
+slip_r2 T6 entry_speed 0.055
+slip_r2 T6 peak_decel 0.034
+slip_r2 T6 brake_effort 0.004
+slip_r2 T6 brake_duration_s 0.124
+slip_r2 T6 release_to_apex_m 0.003
+slip_r2 T7 entry_speed 0.041
+slip_r2 T7 peak_decel 0.001
+slip_r2 T7 brake_effort 0.000
+slip_r2 T7 brake_duration_s 0.086
+slip_r2 T7 release_to_apex_m 0.027
+slip_r2 T8 entry_speed 0.150
+slip_r2 T8 peak_decel 0.000
+slip_r2 T8 brake_effort 0.000
+slip_r2 T8 brake_duration_s 0.270
+slip_r2 T8 release_to_apex_m 0.007
+
+Sampling: peak_decel is the steepest car-sample Δv/Δt on the primary brake run (Δt in [0.12, 0.50] s), with steps steeper than 8 g dropped. A Savitzky–Golay derivative on tel.pkl cannot exceed this: get_telemetry linearly interpolates the same ~4 Hz speed channel, so the interpolated slope between car samples equals the car finite difference.

@@ -32,6 +32,7 @@ features:
   include_throttle_onset: false
   include_brake_point_iqr: true
   standardization: "robust"
+  # First stage. lap_synchronous below adds the same-lap field median on top.
   normalization_unit: "typology_session_median"
   aggregation: "median"
   # Off on the clustered matrix. Team/compound/tyre-life controls do not hold:
@@ -39,6 +40,21 @@ features:
   # additive dummy misses that a later brake is easier on soft and moves with wear.
   # The typology×session median above stays; that is the style vector.
   residualize_team_tyre: false
+  # Subtract the field median of the same lap (fuel burn, track evolution). With
+  # only the session median, Monza 2025 classes split early vs late laps
+  # (docs/metricas_telemetria.md).
+  lap_synchronous: true
+  # After lap-synchronous centring: remove Compound / TyreLife slopes estimated
+  # within driver (driver and team levels are kept).
+  within_driver_tyre_effects: true
+  # Time-domain throttle and lift metrics per zone (EXTENDED_STYLE_FEATURES).
+  # Reported per lap and per driver; not part of the clustered matrix.
+  extended_metrics: false
+  # Clustered columns: drop the ones that are zero on >90% of laps and keep
+  # those whose ICC(1) by driver is at least min_icc (null = keep all).
+  feature_screening:
+    drop_near_constant: false
+    min_icc: null
 
 dimensionality_reduction:
   pca:

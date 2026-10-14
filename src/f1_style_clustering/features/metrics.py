@@ -1,6 +1,6 @@
 """Mathematical metrics calculation for F1 driving style feature engineering."""
 
-from typing import Optional, Union
+from typing import Optional, Tuple, Union
 import pandas as pd
 import numpy as np
 
@@ -287,6 +287,175 @@ def get_full_throttle_frac(
         return np.nan
     full = fragment["Throttle"].fillna(0) >= throttle_min
     return spatial_fraction(fragment, full, track_length)
+
+
+THROTTLE_PICKUP = 10.0
+LIFT_LOOKBACK_M = 100.0
+
+
+def order_along_track(
+    fragment: pd.DataFrame,
+    start: float,
+    track_length: Optional[float] = None,
+) -> pd.DataFrame:
+    """Sort a window by metres from ``start`` and add ``pos`` (m) and ``t`` (s).
+
+    ``t`` integrates distance over the mean speed of each step instead of
+    reading ``Time``, so a window that crosses the start/finish line keeps a
+    monotone clock. Speed is floored at 1 m/s.
+    """
+    if fragment is None or fragment.empty or "Distance" not in fragment.columns:
+        return pd.DataFrame()
+    out = fragment.copy()
+    pos = out["Distance"].to_numpy(dtype=float) - float(start)
+    if track_length is not None and track_length > 0:
+        pos = np.mod(pos, track_length)
+    out["pos"] = pos
+    out = out.sort_values("pos", kind="stable").reset_index(drop=True)
+    if "Speed" in out.columns:
+        v = np.maximum(out["Speed"].to_numpy(dtype=float) / 3.6, 1.0)
+        step = np.diff(out["pos"].to_numpy(dtype=float))
+        v_mid = 0.5 * (v[:-1] + v[1:])
+        out["t"] = np.concatenate([[0.0], np.cumsum(step / v_mid)])
+    return out
+
+
+def zone_is_active(window: pd.DataFrame, pickup: float = THROTTLE_PICKUP) -> bool:
+    """A corner where the driver brakes or closes the throttle. Flat-out zones are not."""
+    if window is None or window.empty:
+        return False
+    braked = "Brake" in window.columns and bool(is_brake_on(window["Brake"]).any())
+    lifted = "Throttle" in window.columns and float(window["Throttle"].min()) <= pickup
+    return braked or lifted
+
+
+def _apex_index(window: pd.DataFrame, apex_pos: float) -> Optional[int]:
+    if window.empty or not np.isfinite(apex_pos):
+        return None
+    pos = window["pos"].to_numpy(dtype=float)
+    return int(np.argmin(np.abs(pos - apex_pos)))
+
+
+def _upward_crossing_time(t: np.ndarray, y: np.ndarray, start: int, level: float) -> Tuple[float, int]:
+    """Interpolated time of the first crossing of ``level`` at or after ``start``; index of the first sample above."""
+    if y[start] >= level:
+        return float(t[start]), int(start)
+    for i in range(start, len(y) - 1):
+        if y[i] < level <= y[i + 1]:
+            frac = (level - y[i]) / (y[i + 1] - y[i]) if y[i + 1] != y[i] else 0.0
+            return float(t[i] + frac * (t[i + 1] - t[i])), int(i + 1)
+    return float("nan"), -1
+
+
+def get_apex_to_full_throttle_time(
+    window: pd.DataFrame,
+    apex_pos: float,
+    throttle_full: float = THROTTLE_FULL_MIN,
+) -> float:
+    """Seconds from the kinematic apex to Throttle ≥ ``throttle_full`` (interpolated).
+
+    ``window`` comes from ``order_along_track`` over braking ∪ apex ∪ exit.
+    NaN when full throttle is not reached inside the window.
+    """
+    i = _apex_index(window, apex_pos)
+    if i is None or "Throttle" not in window.columns:
+        return np.nan
+    t = window["t"].to_numpy(dtype=float)
+    thr = window["Throttle"].fillna(0).to_numpy(dtype=float)
+    t_full, _ = _upward_crossing_time(t, thr, i, throttle_full)
+    return float(t_full - t[i]) if np.isfinite(t_full) else np.nan
+
+
+def get_release_to_full_throttle_time(
+    window: pd.DataFrame,
+    apex_pos: float,
+    throttle_full: float = THROTTLE_FULL_MIN,
+) -> float:
+    """Seconds from the last Brake sample to Throttle ≥ ``throttle_full`` after the apex.
+
+    The gap the driver leaves between releasing the brake and committing to
+    full power. NaN when the car does not brake before reaching full throttle.
+    """
+    i = _apex_index(window, apex_pos)
+    if i is None or "Throttle" not in window.columns or "Brake" not in window.columns:
+        return np.nan
+    t = window["t"].to_numpy(dtype=float)
+    thr = window["Throttle"].fillna(0).to_numpy(dtype=float)
+    brake = is_brake_on(window["Brake"]).to_numpy()
+    t_full, f = _upward_crossing_time(t, thr, i, throttle_full)
+    if not np.isfinite(t_full):
+        return np.nan
+    before = np.flatnonzero(brake[: f + 1])
+    if before.size == 0:
+        return np.nan
+    return float(max(t_full - t[int(before[-1])], 0.0))
+
+
+def get_throttle_excess_variation(
+    fragment: pd.DataFrame,
+    track_length: Optional[float] = None,
+) -> float:
+    """Throttle travel beyond a monotone path, per metre (%/m).
+
+    ``(Σ|ΔThrottle| − |Throttle_end − Throttle_start|) / length``: zero when the
+    pedal only moves one way; grows with each correction or partial lift.
+    """
+    if fragment is None or len(fragment) < 2 or "Throttle" not in fragment.columns:
+        return np.nan
+    dist = fragment["Distance"].to_numpy(dtype=float)
+    steps = np.diff(dist)
+    if track_length is not None and track_length > 0:
+        steps = np.where(steps < 0, steps + track_length, steps)
+    length = float(np.abs(steps).sum())
+    if length <= 1.0:
+        return np.nan
+    thr = fragment["Throttle"].fillna(0).to_numpy(dtype=float)
+    excess = float(np.abs(np.diff(thr)).sum() - abs(thr[-1] - thr[0]))
+    return max(excess, 0.0) / length
+
+
+def get_lift_before_brake_time(
+    window: pd.DataFrame,
+    braking_start_pos: float,
+    throttle_full: float = THROTTLE_FULL_MIN,
+    throttle_coast: float = THROTTLE_COAST_MAX,
+) -> float:
+    """Seconds between lifting off full throttle and the brake onset (lift-and-coast).
+
+    ``window`` comes from ``order_along_track`` over the braking window plus a
+    lookback before it. The onset is the first Brake sample at or after
+    ``braking_start_pos``. The search stops at an earlier brake application.
+    0 when the driver goes from throttle to brake without a coast sample;
+    NaN when there is no onset or no full-throttle sample in the lookback.
+    """
+    if window is None or window.empty or "Brake" not in window.columns or "Throttle" not in window.columns:
+        return np.nan
+    pos = window["pos"].to_numpy(dtype=float)
+    t = window["t"].to_numpy(dtype=float)
+    thr = window["Throttle"].fillna(0).to_numpy(dtype=float)
+    brake = is_brake_on(window["Brake"]).to_numpy()
+    onsets = np.flatnonzero(brake & (pos >= braking_start_pos))
+    if onsets.size == 0:
+        return np.nan
+    onset = int(onsets[0])
+    earlier = np.flatnonzero(brake[:onset])
+    lo = int(earlier[-1]) + 1 if earlier.size else 0
+    full = np.flatnonzero(thr[lo:onset] >= throttle_full)
+    if full.size == 0:
+        return np.nan
+    last_full = lo + int(full[-1])
+    coast = np.flatnonzero(thr[last_full + 1 : onset] <= throttle_coast)
+    if coast.size == 0:
+        return 0.0
+    return float(t[onset] - t[last_full + 1 + int(coast[0])])
+
+
+def get_min_gear(fragment: pd.DataFrame) -> float:
+    """Lowest gear in the window (descriptive; bimodal at most corners)."""
+    if fragment is None or fragment.empty or "nGear" not in fragment.columns:
+        return np.nan
+    gears = pd.to_numeric(fragment["nGear"], errors="coerce").dropna()
+    return float(gears.min()) if not gears.empty else np.nan
 
 
 def get_throttle_onset_relative(

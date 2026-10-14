@@ -39,8 +39,11 @@ cache/
 *.ff1pkl
 fastf1_http_cache.sqlite
 
-# Pipeline outputs
-results/
+# Pipeline outputs. driver_laps_by_class.csv is versioned; git cannot re-include a file
+# under an ignored directory, so the directories themselves stay un-ignored.
+results/**
+!results/**/
+!results/**/driver_laps_by_class.csv
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

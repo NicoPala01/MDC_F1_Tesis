@@ -2,6 +2,8 @@
 
 Pregunta: ¿se pueden separar mejor las vueltas de Monza 2025 que con el K-means++ del pipeline (silueta 0.2326 en k=2, DB 1.82, regla `davies_bouldin`)? Se probaron otros conjuntos de features, otras unidades de muestra, otros algoritmos y otras métricas sobre la misma matriz: 842 vueltas, 19 pilotos, 17 columnas de estilo, onset apagado, sin residualizar equipo ni neumático (`docs/monza_2025_throttle_onset_off.md`).
 
+> **Corrección (ver `docs/metricas_telemetria.md`).** Las particiones de este documento usan la normalización por mediana de sesión, y separan fase de carrera: en el k=3 recomendado abajo la vuelta mediana por clase es 15 / 22 / 38, y en el k=2 del pipeline 33.5 / 12. La velocidad de ápice y el punto de frenado siguen la carga de combustible dentro de cada piloto. Con la normalización por vuelta sincronizada, en estas 7 columnas las clases quedan en la misma fase (vuelta mediana 22 / 27 / 28), la AMI con el piloto sube de 0.197 a 0.258–0.279 y HAM y LEC siguen juntos, con NOR, PIA y VER en otra clase. En la corrida principal del pipeline (17 columnas, `docs/monza_2025_throttle_onset_off.md`) no: HAM y LEC quedan en clases distintas y NOR, PIA y VER en la misma. Las conclusiones sobre algoritmos (ninguno supera a K-means sobre las mismas columnas; HDBSCAN, cuantiles y UMAP no ayudan) y sobre la selección por ICC siguen valiendo.
+
 Script: `python scripts/monza_separation_benchmark.py`. Escribe `separation_benchmark.csv`, `feature_icc.csv`, `k_selectors.json` y `driver_energy_clusters.json` en `results/2025/italian_grand_prix/separation/`. Código: `features/screening.py`, `models/separation.py`, `models/alternatives.py`. El camino K-means de `pipeline.py` no se tocó.
 
 ## Resumen
@@ -200,4 +202,4 @@ El nulo mide la silueta que el algoritmo saca de las marginales. Para métodos q
 4. Para el perfil del piloto, usar la clase modal de los bloques de 5 vueltas o de las vueltas: dan la misma clase en 18 de 19. Los bloques estabilizan la silueta; las vueltas conservan el conteo por clase.
 5. `confounder_leakage` como tabla fija de cada corrida: AMI con compuesto ≈ 0 es la evidencia de que la partición no es neumático.
 
-Esto es un camino opcional al lado del pipeline, no un reemplazo: `pipeline.py` sigue ajustando K-means sobre las 17 columnas con la regla silueta / Davies-Bouldin. Para que una corrida de temporada lo use habría que exponer `min_icc`, `block_size` y el selector de k en `config/pipeline_config.yaml` y pasar el resultado por `build_lap_distribution_reports`.
+La selección por ICC ya está en el pipeline (`features.feature_screening`), junto con la normalización por vuelta sincronizada que corrige la fuga de fase de carrera (`features.lap_synchronous`, `features.within_driver_tyre_effects`). La normalización y el ajuste de neumático están encendidos por defecto; la selección por ICC sigue apagada. El resultado de Monza con la configuración por defecto está en `docs/monza_2025_throttle_onset_off.md`.

@@ -7,9 +7,10 @@ from typing import Any, Dict, Optional, Tuple
 import pandas as pd
 
 from .analysis.archetypes import (
-    assign_archetype_names,
     characterize_clusters,
+    class_trait_scores,
     get_driver_archetype_summary,
+    name_classes_from_medians,
     radar_feature_list,
 )
 from .analysis.lap_distribution import (
@@ -18,13 +19,21 @@ from .analysis.lap_distribution import (
     teammates_from_distribution,
 )
 from .config import load_circuit_config, load_config
-from .features.aggregators import CORE_STYLE_FEATURES, OPTIONAL_STYLE_FEATURES, build_lap_style_matrix
+from .features.aggregators import (
+    CORE_STYLE_FEATURES,
+    EXTENDED_STYLE_FEATURES,
+    OPTIONAL_STYLE_FEATURES,
+    build_lap_style_matrix,
+)
 from .features.preprocessor import (
     confounding_declaration,
+    normalize_lap_synchronous,
+    remove_within_driver_effects,
     residualize_team_tyre_features,
     separate_metadata,
     standardize_features,
 )
+from .features.screening import near_constant_columns, select_features_by_icc
 from .features.zoi import extract_circuit_zones, resolve_selected_corners
 from .models.clustering import (
     dbscan_prefilter_outliers,
@@ -193,8 +202,12 @@ def cluster_driver_matrix(
     namer_space = fit_space.reindex(cluster_labels.index)
     profiles = characterize_clusters(namer_space, cluster_labels)
     style_profiles = characterize_clusters(df_scaled.reindex(cluster_labels.index), cluster_labels)
-    archetype_names = assign_archetype_names(profiles)
-    df_summary = get_driver_archetype_summary(namer_space, cluster_labels, df_meta_s)
+    # Names come from the style values that entered the scaler, never from PCA axes.
+    style_values = pd.DataFrame(
+        scaler.inverse_transform(df_scaled.to_numpy()), index=df_scaled.index, columns=df_scaled.columns
+    ).reindex(cluster_labels.index)
+    archetype_names = name_classes_from_medians(style_values, cluster_labels)
+    df_summary = get_driver_archetype_summary(namer_space, cluster_labels, df_meta_s, archetype_map=archetype_names)
 
     mean_ari, std_ari = kmeans_seed_stability(
         fit_space,
@@ -269,6 +282,7 @@ def cluster_driver_matrix(
         "profiles": profiles,
         "style_profiles": style_profiles,
         "archetype_names": archetype_names,
+        "class_trait_scores": class_trait_scores(style_values, cluster_labels),
         "df_summary": df_summary,
         "radar_features": radar_feature_list(style_profiles),
         "analysis_zones": analysis_zones or {},
@@ -321,6 +335,11 @@ def run_pipeline(
     push = filt.get("push_mode", False) if push_mode is None else push_mode
     min_laps = int(filt.get("min_valid_laps_per_driver", 3))
     include_onset = bool(feat_cfg.get("include_throttle_onset", True))
+    include_extended = bool(feat_cfg.get("extended_metrics", False))
+    # Same defaults as config/pipeline_config.yaml, so a config without the keys is not silently session-median.
+    lap_sync = bool(feat_cfg.get("lap_synchronous", True))
+    tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", True))
+    screening = feat_cfg.get("feature_screening") or {}
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
     analysis_zones = extract_circuit_zones(
@@ -334,6 +353,7 @@ def run_pipeline(
         push_mode=push,
         min_valid_laps=min_laps,
         include_throttle_onset=include_onset,
+        include_extended=include_extended,
     )
     if df_raw is None or df_raw.empty:
         return {
@@ -343,6 +363,9 @@ def run_pipeline(
             "analysis_zones": analysis_zones,
             "zone_source": zone_source,
         }
+
+    df_raw, extended_laps, normalization = _normalize_lap_matrix(df_raw, lap_sync, tyre_fe)
+    df_raw, normalization["screening"] = _screen_lap_matrix(df_raw, screening)
 
     lap_typ = df_raw.attrs.get("lap_typology")
     feature_cols = list(df_raw.attrs.get("feature_cols") or [])
@@ -409,4 +432,56 @@ def run_pipeline(
     result["lap_min_cluster_size"] = min_size
     result["analysis_zones"] = analysis_zones
     result["zone_source"] = zone_source
+    result["normalization"] = normalization
+    if extended_laps is not None:
+        result["extended_lap_metrics"] = extended_laps
+        ext_cols = [c for c in extended_laps.columns if "__" in c]
+        result["driver_extended_profile"] = extended_laps.groupby("Driver")[ext_cols].median()
     return result
+
+
+def _screen_lap_matrix(df_raw: pd.DataFrame, screening: Dict[str, Any]) -> Tuple[pd.DataFrame, Dict[str, Any]]:
+    """Drop near-constant style columns and keep those with ICC(1) by driver ≥ ``min_icc``."""
+    style_cols = [c for c in df_raw.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(df_raw[c])]
+    info: Dict[str, Any] = {"dropped_near_constant": [], "min_icc": None, "kept": style_cols}
+    keep = list(style_cols)
+    if screening.get("drop_near_constant"):
+        constant = near_constant_columns(df_raw, keep)
+        keep = [c for c in keep if c not in constant]
+        info["dropped_near_constant"] = constant
+    min_icc = screening.get("min_icc")
+    if min_icc is not None and "Driver" in df_raw.columns:
+        keep = select_features_by_icc(df_raw, keep, min_icc=float(min_icc))
+        info["min_icc"] = float(min_icc)
+    info["kept"] = keep
+    dropped = [c for c in style_cols if c not in keep]
+    return (df_raw.drop(columns=dropped) if dropped else df_raw), info
+
+
+def _normalize_lap_matrix(
+    df_raw: pd.DataFrame,
+    lap_sync: bool,
+    tyre_fe: bool,
+) -> Tuple[pd.DataFrame, Optional[pd.DataFrame], Dict[str, Any]]:
+    """Optional lap-synchronous centring and within-driver tyre effects; split off extended metrics.
+
+    Extended metrics (``EXTENDED_STYLE_FEATURES``) separate teammates well but are
+    noisy per lap and do not improve the lap partition, so they are returned as a
+    per-lap table for the driver profiles and kept out of the clustered matrix.
+    """
+    style_cols = [c for c in df_raw.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(df_raw[c])]
+    info: Dict[str, Any] = {"unit": "typology_session_median", "lap_synchronous": False, "within_driver_tyre_effects": False}
+    ext_cols = [c for c in style_cols if any(str(c).endswith("__" + e) for e in EXTENDED_STYLE_FEATURES)]
+    out = df_raw
+    if lap_sync:
+        out = normalize_lap_synchronous(out, style_cols)
+        info.update(lap_synchronous=True, unit="typology_session_median+lap_synchronous")
+    if tyre_fe:
+        out = remove_within_driver_effects(out, style_cols)
+        info.update(within_driver_tyre_effects=True, within_driver_coefs=out.attrs.get("within_driver_coefs"))
+    if not ext_cols:
+        return out, None, info
+    keep = [c for c in ("Driver", "LapNumber", "Team", "Compound", "TyreLife") if c in out.columns]
+    extended = pd.DataFrame(out[keep + ext_cols]).copy()
+    extended.attrs = {}
+    return out.drop(columns=ext_cols), extended, info

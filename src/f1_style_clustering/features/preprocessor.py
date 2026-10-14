@@ -98,6 +98,122 @@ def normalize_typology_session_median(
     return out
 
 
+def normalize_lap_synchronous(
+    df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+    lap_col: str = "LapNumber",
+    min_count: int = 8,
+    max_window: int = 3,
+    by: Optional[str] = None,
+) -> pd.DataFrame:
+    """Subtract the field median of the same lap from each feature.
+
+    Fuel burn and track evolution move every car together, lap by lap; a
+    session-wide median cannot remove that, so classes end up splitting early
+    and late laps. The reference for lap ``L`` is the median over all rows with
+    ``|LapNumber − L| ≤ w``, where ``w`` is the smallest window in
+    ``0..max_window`` holding at least ``min_count`` rows. Driver differences
+    within the same lap are kept.
+
+    ``by`` (e.g. ``"Compound"``) restricts the reference to rows of the same
+    group, so cars on different tyres at the same lap are not compared. With
+    ``max_window`` reached and fewer than ``min_count`` rows in the group, the
+    reference falls back to the whole field of that window.
+    """
+    if df.empty or lap_col not in df.columns:
+        return df.copy()
+    out = df.copy()
+    if feature_cols is None:
+        feature_cols = [c for c in out.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(out[c])]
+    feature_cols = [c for c in feature_cols if c in out.columns]
+    if not feature_cols:
+        return out
+    laps = pd.to_numeric(out[lap_col], errors="coerce").to_numpy()
+    groups = out[by].astype(str).to_numpy() if by and by in out.columns else np.full(len(out), "", dtype=object)
+    values = out[feature_cols].replace([np.inf, -np.inf], np.nan).to_numpy(dtype=float)
+    reference = np.full_like(values, np.nan)
+    windows: Dict[int, int] = {}
+    for lap in np.unique(laps[np.isfinite(laps)]):
+        for grp in np.unique(groups[laps == lap]):
+            target = (laps == lap) & (groups == grp)
+            for w in range(int(max_window) + 1):
+                near = np.abs(laps - lap) <= w
+                pool = near & (groups == grp)
+                if pool.sum() >= int(min_count):
+                    break
+            else:
+                pool = near
+            with np.errstate(all="ignore"):
+                reference[target] = np.nanmedian(values[pool], axis=0)
+            windows[int(lap)] = max(windows.get(int(lap), 0), int(w))
+    out[feature_cols] = values - reference
+    # A dict, not a Series: pandas compares attrs inside groupby (see _without_nested_frame_attrs).
+    out.attrs["lap_sync_window"] = windows
+    return out
+
+
+def remove_within_driver_effects(
+    df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+    driver_col: str = "Driver",
+    categorical: Tuple[str, ...] = ("Compound",),
+    numeric: Tuple[str, ...] = ("TyreLife",),
+    min_group: int = 5,
+) -> pd.DataFrame:
+    """Remove compound / tyre-life effects estimated *within* each driver.
+
+    For each feature, ``y ~ driver FE + covariates`` is fitted by demeaning y
+    and the covariates per driver (one slope set shared by the field). Only
+    the centred covariate part ``(X − mean X) β`` is subtracted, so driver and
+    team levels stay; unlike ``residualize_team_tyre_features``, no team mean
+    is removed. Compound levels with fewer than ``min_group`` rows are not
+    dummy-coded. Coefficients are stored in ``attrs['within_driver_coefs']``.
+
+    Columns with zero IQR are left as they are: an additive adjustment would
+    turn a spike-and-zeros column into a continuous one with a near-zero IQR,
+    which a robust scaler then blows up.
+    """
+    if df.empty or driver_col not in df.columns:
+        return df.copy()
+    saved_attrs = dict(df.attrs)
+    out = df.copy()
+    out.attrs = {}
+    if feature_cols is None:
+        feature_cols = [c for c in out.columns if "__" in str(c) and pd.api.types.is_numeric_dtype(out[c])]
+    feature_cols = [c for c in feature_cols if c in out.columns]
+    parts = []
+    for col in categorical:
+        if col in out.columns:
+            dummies, _reason = _categorical_dummies(out[col], col, min_group=min_group)
+            if dummies.shape[1]:
+                parts.append(dummies.fillna(0.0))
+    for col in numeric:
+        if col in out.columns:
+            vals = pd.to_numeric(out[col], errors="coerce")
+            if vals.notna().sum() >= 3 and float(vals.var(skipna=True) or 0.0) > 0:
+                parts.append(pd.DataFrame({col: vals.fillna(vals.median())}, index=out.index))
+    if not parts or not feature_cols:
+        out.attrs = saved_attrs
+        return out
+    X = pd.concat(parts, axis=1).astype(float)
+    drivers = out[driver_col].astype(str)
+    Xd = (X - X.groupby(drivers).transform("mean")).to_numpy()
+    Xc = (X - X.mean()).to_numpy()
+    coefs: Dict[str, Dict[str, float]] = {}
+    for col in feature_cols:
+        y = pd.to_numeric(out[col], errors="coerce")
+        ok = y.notna().to_numpy()
+        if ok.sum() <= X.shape[1] + 1 or float(y.quantile(0.75) - y.quantile(0.25)) == 0.0:
+            continue
+        yd = (y - y.groupby(drivers).transform("mean")).to_numpy()
+        beta, *_ = np.linalg.lstsq(Xd[ok], yd[ok], rcond=None)
+        adjusted = y.to_numpy(dtype=float) - Xc @ beta
+        out[col] = np.where(ok, adjusted, np.nan)
+        coefs[col] = {name: float(b) for name, b in zip(X.columns, beta)}
+    out.attrs = {**saved_attrs, "within_driver_coefs": coefs}
+    return out
+
+
 def standardize_features(
     df_features: pd.DataFrame,
     scaler_type: str = "zscore",
