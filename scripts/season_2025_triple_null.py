@@ -86,8 +86,18 @@ def _measure(frame: pd.DataFrame, config: dict, teams: pd.Series, label: str) ->
         drivers=drivers,
         teams=teams,
     )
+    measured["column_shares"] = shares.to_dict(orient="records")
+    measured["iqr_fast_full_throttle_frac"] = iqr
+    measured["zero_iqr_columns"] = shares.loc[shares["zero_iqr"], "column"].tolist() if not shares.empty else []
+    return measured
+
+
+def _sensitivity(frame: pd.DataFrame, config: dict, teams: pd.Series, label: str) -> dict:
+    numeric, drivers = _numeric(frame)
+    if numeric.shape[0] < 4 or numeric.shape[1] < 2:
+        return {"error": f"matrix {numeric.shape[0]}x{numeric.shape[1]}"}
     print(f"  {label} sensibilidad sin IQR 0", flush=True)
-    sensitivity = run_without_zero_iqr(
+    return run_without_zero_iqr(
         numeric,
         config,
         n_replicates=N_REPLICATES,
@@ -96,10 +106,6 @@ def _measure(frame: pd.DataFrame, config: dict, teams: pd.Series, label: str) ->
         drivers=drivers,
         teams=teams,
     )
-    measured["column_shares"] = shares.to_dict(orient="records")
-    measured["iqr_fast_full_throttle_frac"] = iqr
-    measured["zero_iqr_sensitivity"] = sensitivity
-    return measured
 
 
 def _edge_block(session, zones, config: dict) -> dict:
@@ -142,40 +148,59 @@ def measure_event(event: str, year: int, config: dict, circuits: dict, dest: Pat
         run_hungary_filter_check(session, config, circuits, dest)
 
     if not payload.get("null_done"):
-        prepared = prepare_style_matrix(session, config, circuits, exclude_columns=excluded, speed_scaled=False)
-        frame = prepared["frame"]
-        payload = {
-            "event": event,
-            "year": year,
-            "n_replicates": N_REPLICATES,
-            "exclude_columns": excluded,
-            "zone_source": prepared["zone_source"],
-            "speed_scaled_trial": allows_speed_scaled_trial(str(prepared["zone_source"]), event),
-            "n_after_driver_filter": prepared["n_after_driver_filter"],
-            "dropna": {
-                "n_before": (prepared["dropna"] or {}).get("n_before"),
-                "n_dropped": (prepared["dropna"] or {}).get("n_dropped"),
-                "n_after": (prepared["dropna"] or {}).get("n_after"),
-                "excluded_columns": (prepared["dropna"] or {}).get("excluded_columns"),
-            },
-            "statistic": "silhouette at select_k_rule_based; name score is the max across typologies",
-            "structure_rule": "real silhouette strictly above the 95th percentile of each of the three nulls",
-        }
-        lap_typ = prepared["lap_typ"] if isinstance(prepared["lap_typ"], pd.DataFrame) else pd.DataFrame()
-        payload["dropout"] = dropout_contrast(session.laps, lap_typ, prepared["dropna"] or {}).to_dict(orient="records")
-        if frame is not None and not frame.empty:
-            keep_cols = [c for c in ("Driver", "LapNumber") if c in frame.columns] + style_columns(frame)
-            frame[keep_cols].to_csv(dest / f"{slug}_matrix.csv", index=False)
-            payload["measured"] = _measure(frame, config, teams, slug)
-            payload["reference_columns"] = _reference_rows(payload["measured"].get("column_shares") or [])
-        else:
-            payload["measured"] = {"error": "empty matrix"}
-        if event == "Italian Grand Prix":
+        prepared = None
+        frame = None
+        if not payload.get("core_done"):
+            prepared = prepare_style_matrix(session, config, circuits, exclude_columns=excluded, speed_scaled=False)
+            frame = prepared["frame"]
+            payload = {
+                "event": event,
+                "year": year,
+                "n_replicates": N_REPLICATES,
+                "exclude_columns": excluded,
+                "zone_source": prepared["zone_source"],
+                "speed_scaled_trial": allows_speed_scaled_trial(str(prepared["zone_source"]), event),
+                "n_after_driver_filter": prepared["n_after_driver_filter"],
+                "dropna": {
+                    "n_before": (prepared["dropna"] or {}).get("n_before"),
+                    "n_dropped": (prepared["dropna"] or {}).get("n_dropped"),
+                    "n_after": (prepared["dropna"] or {}).get("n_after"),
+                    "excluded_columns": (prepared["dropna"] or {}).get("excluded_columns"),
+                },
+                "statistic": "silhouette at select_k_rule_based; name score is the max across typologies",
+                "structure_rule": "real silhouette strictly above the 95th percentile of each of the three nulls",
+            }
+            lap_typ = prepared["lap_typ"] if isinstance(prepared["lap_typ"], pd.DataFrame) else pd.DataFrame()
+            payload["dropout"] = dropout_contrast(session.laps, lap_typ, prepared["dropna"] or {}).to_dict(orient="records")
+            if frame is not None and not frame.empty:
+                keep_cols = [c for c in ("Driver", "LapNumber") if c in frame.columns] + style_columns(frame)
+                frame[keep_cols].to_csv(dest / f"{slug}_matrix.csv", index=False)
+                payload["measured"] = _measure(frame, config, teams, slug)
+                payload["reference_columns"] = _reference_rows(payload["measured"].get("column_shares") or [])
+            else:
+                payload["measured"] = {"error": "empty matrix"}
+            payload["core_done"] = True
+            _write(path, payload)
+        if not payload.get("sensitivity_done"):
+            if frame is None and (dest / f"{slug}_matrix.csv").exists():
+                frame = pd.read_csv(dest / f"{slug}_matrix.csv")
+            if frame is not None and not frame.empty and not (payload.get("measured") or {}).get("error"):
+                payload.setdefault("measured", {})["zero_iqr_sensitivity"] = _sensitivity(frame, config, teams, slug)
+            else:
+                payload.setdefault("measured", {})["zero_iqr_sensitivity"] = {"skipped": "no matrix"}
+            payload["sensitivity_done"] = True
+            _write(path, payload)
+        if event == "Italian Grand Prix" and not payload.get("monza_done"):
             print("  Monza con la columna, y fracciones antes de la mediana de sesión", flush=True)
+            if prepared is None:
+                prepared = prepare_style_matrix(session, config, circuits, exclude_columns=excluded, speed_scaled=False)
             included = prepare_style_matrix(session, config, circuits, exclude_columns=[], speed_scaled=False)
             included_frame = included["frame"]
             if included_frame is not None and not included_frame.empty:
                 payload["monza_with_column"] = _measure(included_frame, config, teams, "monza-con-columna")
+                payload["monza_with_column"]["zero_iqr_sensitivity"] = _sensitivity(
+                    included_frame, config, teams, "monza-con-columna"
+                )
                 payload["monza_with_column"]["zone_source"] = included["zone_source"]
                 payload["monza_with_column_reference"] = _reference_rows(
                     payload["monza_with_column"].get("column_shares") or []
@@ -197,6 +222,8 @@ def measure_event(event: str, year: int, config: dict, circuits: dict, dest: Pat
                 "reference_columns": _reference_rows(prenorm.to_dict(orient="records")),
             }
             payload["speed_scaled_trial"] = False
+            payload["monza_done"] = True
+            _write(path, payload)
         payload["null_done"] = True
         _write(path, payload)
 
