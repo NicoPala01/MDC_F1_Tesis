@@ -382,11 +382,16 @@ def _flatten_typology_columns(columns, feature_cols: List[str]) -> List[str]:
 def lap_vectors_from_typology(
     lap_typ: pd.DataFrame,
     feature_cols: Optional[List[str]] = None,
+    exclude_columns: Optional[Sequence[str]] = None,
 ) -> pd.DataFrame:
     """One row per complete lap. Columns are ``{typology}__{feature}``.
 
     A lap that misses any typology present in the table, or any feature value,
     is dropped. Corner identity stays inside the typology block.
+
+    ``exclude_columns`` are removed before that drop. The single-race default
+    passes none. The season runner passes ``season.exclude_columns`` so a
+    column that is not measurable on every race does not discard the lap.
     """
     if lap_typ is None or lap_typ.empty:
         return pd.DataFrame()
@@ -407,11 +412,28 @@ def lap_vectors_from_typology(
     )
     wide.columns = _flatten_typology_columns(wide.columns, feature_cols)
     drop_cols = [c for c in LAP_MATRIX_DROP_COLUMNS if c in wide.columns]
+    excluded = [c for c in (exclude_columns or []) if c in wide.columns and c not in drop_cols]
+    drop_cols = drop_cols + excluded
     if drop_cols:
         wide = wide.drop(columns=drop_cols)
-    wide = wide.dropna(axis=0, how="any")
+    missing = wide.isna().any(axis=1) if len(wide.columns) else pd.Series(False, index=wide.index)
+    dropped_laps = [
+        {"Driver": str(idx[0]), "LapNumber": idx[1]}
+        for idx in wide.index[missing]
+    ]
+    dropna_report = {
+        "n_before": int(len(wide)),
+        "n_dropped": int(missing.sum()) if len(missing) else 0,
+        "n_after": int((~missing).sum()) if len(missing) else 0,
+        "excluded_columns": list(excluded),
+        "dropped_laps": dropped_laps,
+    }
+    wide = wide.loc[~missing] if len(wide) else wide
     if wide.empty:
-        return pd.DataFrame()
+        empty = wide.reset_index()
+        empty.attrs["lap_dropna"] = dropna_report
+        return empty
+    wide.attrs["lap_dropna"] = dropna_report
 
     meta_cols = [c for c in ("Team", "FullName", "Compound") if c in df.columns]
     if meta_cols:
@@ -430,6 +452,7 @@ def lap_vectors_from_typology(
     )
     wide.index.name = "LapId"
     wide["unit"] = "driver_lap"
+    wide.attrs["lap_dropna"] = dropna_report
     return wide
 
 
@@ -443,6 +466,7 @@ def build_lap_style_matrix(
     include_throttle_onset: bool = True,
     selected_corners: Optional[List[int]] = None,
     include_extended: bool = False,
+    exclude_columns: Optional[Sequence[str]] = None,
 ) -> pd.DataFrame:
     """Relative style vector per lap, after dropping incomplete laps and short stints.
 
@@ -475,17 +499,30 @@ def build_lap_style_matrix(
     ]
     long_rel = normalize_typology_session_median(long_df, feature_cols=feature_cols)
     lap_typ = collapse_to_driver_lap_typology(long_rel, feature_cols=feature_cols)
-    vectors = lap_vectors_from_typology(lap_typ, feature_cols=feature_cols)
+    vectors = lap_vectors_from_typology(
+        lap_typ, feature_cols=feature_cols, exclude_columns=exclude_columns
+    )
+    dropna_report = dict(vectors.attrs.get("lap_dropna") or {})
     if vectors.empty:
-        return pd.DataFrame()
+        vectors.attrs["lap_dropna"] = dropna_report
+        vectors.attrs["n_after_driver_filter"] = 0
+        vectors.attrs["lap_typology"] = lap_typ
+        vectors.attrs["feature_cols"] = feature_cols
+        return vectors
 
     if min_valid_laps and min_valid_laps > 1 and "Driver" in vectors.columns:
         counts = vectors.groupby("Driver").size()
         keep = counts[counts >= min_valid_laps].index
-        vectors = vectors[vectors["Driver"].isin(keep)]
+        vectors = vectors[vectors["Driver"].isin(keep)].copy()
         if vectors.empty:
-            return pd.DataFrame()
+            vectors.attrs["lap_dropna"] = dropna_report
+            vectors.attrs["n_after_driver_filter"] = 0
+            vectors.attrs["lap_typology"] = lap_typ
+            vectors.attrs["feature_cols"] = feature_cols
+            return vectors
 
+    vectors.attrs["lap_dropna"] = dropna_report
+    vectors.attrs["n_after_driver_filter"] = int(len(vectors))
     vectors.attrs["lap_typology"] = lap_typ
     vectors.attrs["feature_cols"] = feature_cols
     return vectors

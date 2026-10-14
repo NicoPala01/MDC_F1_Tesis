@@ -8,6 +8,14 @@ general:
   random_state: 42
   min_races_season: 8
 
+# Solo la temporada. Una columna entra si se puede medir igual en todas las
+# carreras. fast__brake_point_rel no se mide en la tipología fast de varios
+# circuitos con fallback, y dropna(how="any") se lleva la vuelta. Una carrera
+# suelta no lee esta lista: el default de Monza conserva la columna.
+season:
+  exclude_columns:
+    - fast__brake_point_rel
+
 data_filtering:
   require_accurate_laps: true
   exclude_box_laps: true
@@ -61,8 +69,13 @@ features:
   vector_unit: typology
   zone_brake_min_coverage: 0.95
   # Off. Multiplies each zone's pre-apex braking metres by (entry speed / ref)^2.
+  # The trial runs only on speed-threshold fallback races, never on Monza.
   speed_scaled_windows: false
   speed_scaled_ref_kmh: 300
+  # Off. On the matrix that enters the scaler, drop a lap when any style column
+  # with IQR > 0 has |value - median| / IQR > 10. The same 10 is used on every
+  # race. IQR 0 flags nobody. A single race and the season default leave this off.
+  column_outlier_trim: false
 
 dimensionality_reduction:
   pca:

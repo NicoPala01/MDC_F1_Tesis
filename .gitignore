@@ -54,6 +54,9 @@ results/**
 .coverage
 htmlcov/
 
+# Per-race measurement dumps from the 2025 round. Summaries live in docs.
+docs/season_2025/runs/
+
 # Scratch & Temporary Notes
 scratch/
 notas tesis.txt
