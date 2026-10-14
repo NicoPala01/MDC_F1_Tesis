@@ -80,3 +80,25 @@ El acuerdo de cada piloto con su nombre modal está en `docs/season_2025/stabili
 «No dominant trait» es el texto de `name_classes_from_medians` cuando ningún rasgo de la clase llega a 0.25 IQR. En Mónaco la silueta es 0.736 y k=2, y aun así los 20 perfiles modales reciben ese texto: la clase que concentra las vueltas de cada piloto no llegó al umbral de nombre.
 
 Tablas: `docs/season_2025/archetype_by_race.csv`, `driver_summary.csv`, `driver_profiles.csv`, `stability.csv`. Las salidas crudas de cada GP quedaron en `results/2025/` y no se versionan, salvo `driver_laps_by_class.csv`, que el repo ya trata aparte. El cache tampoco se versiona.
+
+## Predicciones a priori del baseline (2026-10-14)
+
+Esta sección se escribió el 2026-10-14, antes de evaluar estas dos predicciones. No tiene los números de esa evaluación. No cambia el K-means, el RobustScaler, el PCA automático, la regla de k ni las columnas del vector.
+
+Las dos predicciones son de Monza 2025 R. Lesmo 1, Lesmo 2 y la Parabólica están en esa carrera, y el baseline de Hamilton contra Leclerc que ya está en el repo también.
+
+`slow__brake_point_rel` es la columna del vector de la carrera suelta, la que entra al escalador: mediana de sesión de la tipología, mediana del campo en la misma vuelta, y ajuste de compuesto y vida dentro del piloto. Un valor más chico es un inicio de frenada más cerca del ápice.
+
+**(a)** En vueltas de aire limpio, y dentro de un mismo compuesto, la mediana de `slow__brake_point_rel` de Hamilton es menor que la de Leclerc.
+
+Aire limpio, definido antes de medir: en la zona slow, el mínimo de `DistanceToDriverAhead` en los 150 m anteriores al onset. Si no hay un auto adelante, la vuelta es aire limpio. Si ese mínimo es menor que 50 m, no lo es. El corte de 50 m es el que el repo ya usa para tráfico. Una vuelta sin onset en la zona slow no entra. No se imputa la frenada y no se usa una columna `braked`.
+
+El contraste se hace por compuesto, solo en los compuestos que los dos pilotos tienen. No se mezclan compuestos.
+
+**(b)** Leclerc suelta el freno más cerca del ápice que Hamilton en Lesmo 1, Lesmo 2 y la Parabólica, como un solo diagnóstico. La distancia es la de la muestra en la que el freno pasa de puesto a suelto, medida hasta el ápice, en la ventana de frenada que el pipeline ya usa en cada una de esas tres curvas. Por vuelta se toma la mediana de las curvas que tienen suelta. Una curva sin suelta no se imputa y no entra en esa mediana. Si ninguna de las tres tiene suelta, la vuelta no entra. El veredicto es uno solo, sobre esa mediana, no tres tests.
+
+El bootstrap es el mismo en (a) y en (b): 2000 remuestreos de las vueltas de cada piloto por separado, con reposición, semilla 42. El intervalo de cada piloto es el percentil 2.5 y el 97.5 de su mediana. Son dos intervalos. No es el intervalo de la diferencia.
+
+Regla de lectura, fijada antes de ver los intervalos: se confirma si los dos intervalos no se tocan y la dirección es la de la predicción. Se contradice si no se tocan y la dirección es la opuesta. En cualquier otro caso no hay evidencia. Para (a) la dirección predicha es Hamilton entero por debajo de Leclerc. Para (b) es Leclerc entero por debajo de Hamilton.
+
+Norris contra Piastri usa el mismo cálculo en (a) y en (b). Queda como exploratorio: no confirma ni contradice el baseline.
