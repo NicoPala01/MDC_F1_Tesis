@@ -102,3 +102,31 @@ El bootstrap es el mismo en (a) y en (b): 2000 remuestreos de las vueltas de cad
 Regla de lectura, fijada antes de ver los intervalos: se confirma si los dos intervalos no se tocan y la dirección es la de la predicción. Se contradice si no se tocan y la dirección es la opuesta. En cualquier otro caso no hay evidencia. Para (a) la dirección predicha es Hamilton entero por debajo de Leclerc. Para (b) es Leclerc entero por debajo de Hamilton.
 
 Norris contra Piastri usa el mismo cálculo en (a) y en (b). Queda como exploratorio: no confirma ni contradice el baseline.
+
+## Evaluación de esas predicciones
+
+Esta sección se escribió después del texto de arriba, con la corrida `python scripts/monza_baseline_predictions.py` sobre Monza 2025 R. No cambia esas reglas. El vector es el de la carrera suelta, así que `slow__brake_point_rel` entra al escalador. La zona slow de Monza es la Variante del Rettifilo. De las vueltas de Hamilton, Leclerc, Norris y Piastri que están en esa matriz, 173 quedan en aire limpio y 16 no. Ninguna se fue por falta de onset en la zona slow.
+
+**(a)** Cada intervalo es el percentil 2.5 y el 97.5 de la mediana del piloto, 2000 remuestreos con reposición, semilla 42, un generador por piloto. Un valor más chico sigue siendo un inicio más cerca del ápice.
+
+| compuesto | piloto | n | mediana | intervalo |
+| --- | --- | ---: | ---: | --- |
+| MEDIUM | Hamilton | 30 | −0,78 | −6,28 a 3,82 |
+| MEDIUM | Leclerc | 27 | −10,42 | −19,91 a −5,66 |
+| HARD | Hamilton | 11 | 1,25 | −9,15 a 7,69 |
+| HARD | Leclerc | 17 | −10,60 | −20,05 a −4,83 |
+
+En MEDIUM el intervalo de Hamilton llega hasta 3,82 y el de Leclerc hasta −5,66: se pisan. En HARD el de Hamilton llega hasta −9,15 y el de Leclerc hasta −4,83: también se pisan. En los dos compuestos no hay evidencia. No comparten SOFT, así que ese compuesto no entra.
+
+Norris contra Piastri, el mismo cálculo, sin lectura de baseline. En MEDIUM, Norris (n=43, mediana −12,03, intervalo −16,06 a −2,95) queda entero por debajo de Piastri (n=36, mediana 1,05, intervalo −1,50 a 4,09). En SOFT, Norris (n=4, mediana −17,31, intervalo −19,99 a −3,44) queda entero por debajo de Piastri (n=5, mediana 9,65, intervalo 3,02 a 23,48). No comparten HARD. Eso no confirma ni contradice el baseline.
+
+**(b)** Distancia de la última suelta al ápice, en metros, mediana de Lesmo 1, Lesmo 2 y la Parabólica. Las tres curvas están en las ventanas del pipeline. Un valor más chico es una suelta más cerca del ápice.
+
+| piloto | n con suelta | mediana | intervalo |
+| --- | ---: | ---: | --- |
+| Leclerc | 44 | 79,18 | 74,83 a 81,55 |
+| Hamilton | 45 | 79,93 | 77,16 a 82,38 |
+
+Los intervalos se pisan. No hay evidencia. De las vueltas canónicas, Hamilton tiene 49 y Leclerc 48; las que no entran no tienen suelta en ninguna de las tres curvas.
+
+Norris (n=48, mediana 82,00, intervalo 78,06 a 85,51) y Piastri (n=48, mediana 85,19, intervalo 83,51 a 88,75) también se pisan. Sigue siendo exploratorio.
