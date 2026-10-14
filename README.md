@@ -62,6 +62,8 @@ Tests (sintéticos, sin red): `python -m pytest -v`.
 
 `docs/compuesto_monza_2025.md` reporta, sobre la misma corrida por defecto, la fracción de compuesto por clase, el reajuste dentro de MEDIUM y de HARD, y el contraste HAM−LEC y NOR−PIA en `slow__brake_point_rel` con un intervalo bootstrap. No cambia el ajuste.
 
+`docs/temporada_2025.md` es la corrida `python scripts/run_pipeline.py --season 2025` con esa misma configuración: 18 de 24 carreras entran, y la tendencia modal de los 20 pilotos que llegan a 8 carreras es «No dominant trait».
+
 `docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap. Ese nulo permuta las componentes ya calculadas; el de `docs/separacion_nulo_monza_2025.md` permuta las columnas y vuelve a ajustar escalador y PCA.
 
 ```bash
