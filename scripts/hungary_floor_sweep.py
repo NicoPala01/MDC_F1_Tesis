@@ -20,9 +20,13 @@ from f1_style_clustering.config import load_config
 
 def main() -> None:
     runs = Path(sys.argv[1] if len(sys.argv) > 1 else "docs/season_2025/runs")
-    null_path = runs / "hungarian_grand_prix.json"
     matrix_path = runs / "hungarian_grand_prix_included_matrix.csv"
-    if not null_path.exists():
+    candidates = [
+        runs / "hungarian_grand_prix_triple.json",
+        runs / "hungarian_grand_prix.json",
+    ]
+    null_path = next((path for path in candidates if path.exists()), None)
+    if null_path is None:
         sys.exit("El barrido espera el nulo de Hungría.")
     null_payload = json.loads(null_path.read_text(encoding="utf-8"))
     if not null_payload.get("null_done"):
