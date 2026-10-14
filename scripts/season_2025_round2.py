@@ -123,6 +123,7 @@ def measure_event(event: str, year: int, config: dict, circuits: dict, dest: Pat
             print(f"[skip] {event}", flush=True)
             return
     print(f"[race] {event}", flush=True)
+    dest.mkdir(parents=True, exist_ok=True)
     cache = (config.get("general") or {}).get("cache_dir", "cache")
     session = load_session(year=year, grand_prix=event, session_type="R", cache_dir=cache)
     teams = teams_from_results_frame(getattr(session, "results", None))
