@@ -24,7 +24,9 @@ from .features.aggregators import (
     EXTENDED_STYLE_FEATURES,
     OPTIONAL_STYLE_FEATURES,
     build_lap_style_matrix,
+    build_zone_style_matrix,
 )
+from .features.brake_windows import apply_speed_scaled_windows
 from .features.preprocessor import (
     confounding_declaration,
     normalize_lap_synchronous,
@@ -345,16 +347,39 @@ def run_pipeline(
     analysis_zones = extract_circuit_zones(
         session, circuit_config=circuits, selected_corners=selected_corners
     )
+    # Off by default. Scales the braking window with approach speed; the 350 m windows stay.
+    if bool(feat_cfg.get("speed_scaled_windows", False)):
+        analysis_zones = apply_speed_scaled_windows(
+            session,
+            analysis_zones,
+            ref_kmh=float(feat_cfg.get("speed_scaled_ref_kmh", 300.0)),
+            push_mode=push,
+            min_valid_laps=min_laps,
+        )
+        zone_source = f"{zone_source}+speed_scaled_windows"
 
-    df_raw = build_lap_style_matrix(
-        session,
-        analysis_zones=analysis_zones,
-        circuit_config=circuits,
-        push_mode=push,
-        min_valid_laps=min_laps,
-        include_throttle_onset=include_onset,
-        include_extended=include_extended,
-    )
+    vector_unit = str(feat_cfg.get("vector_unit", "typology")).lower()
+    if vector_unit == "zone":
+        df_raw = build_zone_style_matrix(
+            session,
+            analysis_zones=analysis_zones,
+            circuit_config=circuits,
+            push_mode=push,
+            min_valid_laps=min_laps,
+            include_throttle_onset=include_onset,
+            include_extended=include_extended,
+            min_brake_coverage=float(feat_cfg.get("zone_brake_min_coverage", 0.95)),
+        )
+    else:
+        df_raw = build_lap_style_matrix(
+            session,
+            analysis_zones=analysis_zones,
+            circuit_config=circuits,
+            push_mode=push,
+            min_valid_laps=min_laps,
+            include_throttle_onset=include_onset,
+            include_extended=include_extended,
+        )
     if df_raw is None or df_raw.empty:
         return {
             "df_raw": df_raw if df_raw is not None else pd.DataFrame(),
@@ -364,6 +389,7 @@ def run_pipeline(
             "zone_source": zone_source,
         }
 
+    zone_report = dict(df_raw.attrs.get("zone_vector") or {})
     df_raw, extended_laps, normalization = _normalize_lap_matrix(df_raw, lap_sync, tyre_fe)
     df_raw, normalization["screening"] = _screen_lap_matrix(df_raw, screening)
 
@@ -433,6 +459,8 @@ def run_pipeline(
     result["analysis_zones"] = analysis_zones
     result["zone_source"] = zone_source
     result["normalization"] = normalization
+    if zone_report:
+        result["zone_vector"] = zone_report
     if extended_laps is not None:
         result["extended_lap_metrics"] = extended_laps
         ext_cols = [c for c in extended_laps.columns if "__" in c]

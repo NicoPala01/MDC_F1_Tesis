@@ -55,6 +55,14 @@ features:
   feature_screening:
     drop_near_constant: false
     min_icc: null
+  # typology: one block per slow/medium/fast. zone: one block per corner.
+  # zone is off. Brake columns that are missing on too many laps are left out
+  # of that vector so dropna(how="any") does not discard the lap.
+  vector_unit: typology
+  zone_brake_min_coverage: 0.95
+  # Off. Multiplies each zone's pre-apex braking metres by (entry speed / ref)^2.
+  speed_scaled_windows: false
+  speed_scaled_ref_kmh: 300
 
 dimensionality_reduction:
   pca:

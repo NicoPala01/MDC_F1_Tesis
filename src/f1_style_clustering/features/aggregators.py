@@ -673,3 +673,207 @@ def build_feature_matrix(
     if extras:
         primary.attrs["extra_aggregations"] = extras
     return primary
+
+
+BRAKE_VECTOR_FEATURES = ("brake_point_rel", "trail_brake_frac")
+
+
+def _zone_session_median(
+    long_df: pd.DataFrame,
+    feature_cols: Sequence[str],
+    zone_col: str = "corner",
+) -> pd.DataFrame:
+    """Subtract the session median of each zone. The typology median is not used."""
+    out = long_df.copy()
+    present = [c for c in feature_cols if c in out.columns]
+    if not present or zone_col not in out.columns:
+        return out
+    out[present] = out[present].replace([np.inf, -np.inf], np.nan)
+    medians = out.groupby(zone_col)[present].transform("median")
+    out[present] = out[present] - medians
+    return out
+
+
+def lap_vectors_from_zones(
+    long_df: pd.DataFrame,
+    feature_cols: Optional[List[str]] = None,
+    zone_col: str = "corner",
+    min_brake_coverage: float = 0.95,
+    brake_features: Optional[Sequence[str]] = None,
+) -> pd.DataFrame:
+    """One row per lap, one feature block per zone.
+
+    ``dropna(how="any")`` on a brake column that is missing for a whole zone
+    (Curva Grande) or for a slice of laps (Lesmo 2) would drop those laps.
+    Brake columns below ``min_brake_coverage`` are left out. If some laps in
+    that zone do brake and some do not, ``{zone}__braked`` is 1 or 0. No brake
+    distance is invented for a lap that did not brake. A non-brake column that
+    is entirely missing is left out as well; other columns still use dropna.
+    """
+    empty = pd.DataFrame()
+    if long_df is None or long_df.empty:
+        empty.attrs["zone_vector"] = {
+            "naive_complete_laps": 0,
+            "n_laps": 0,
+            "omitted_columns": [],
+            "brake_coverage": {},
+            "min_brake_coverage": float(min_brake_coverage),
+        }
+        return empty
+    df = long_df.copy()
+    for key in ("Driver", "LapNumber", zone_col):
+        if key not in df.columns:
+            raise ValueError(f"long table must contain {key}")
+    if feature_cols is None:
+        feature_cols = [c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES if c in df.columns]
+    feature_cols = [c for c in feature_cols if c in df.columns]
+    brakes = list(brake_features or BRAKE_VECTOR_FEATURES)
+    if not feature_cols:
+        return empty
+
+    coverage: Dict[str, float] = {}
+    omitted: List[str] = []
+    kept_parts: List[pd.Series] = []
+    naive_parts: List[pd.Series] = []
+    zones = list(dict.fromkeys(df[zone_col].dropna().astype(str)))
+
+    for feat in feature_cols:
+        wide = df.pivot_table(
+            index=["Driver", "LapNumber"],
+            columns=zone_col,
+            values=feat,
+            aggfunc="median",
+            dropna=False,
+        )
+        wide.columns = [str(c) for c in wide.columns]
+        for zone in zones:
+            if zone not in wide.columns:
+                continue
+            series = wide[zone]
+            name = f"{zone}__{feat}"
+            finite = float(series.notna().mean()) if len(series) else 0.0
+            if feat == "brake_point_rel":
+                coverage[zone] = finite
+            naive_parts.append(series.rename(name))
+            if feat in brakes and finite < float(min_brake_coverage):
+                omitted.append(name)
+                continue
+            if feat not in brakes and finite == 0.0:
+                omitted.append(name)
+                continue
+            kept_parts.append(series.rename(name))
+
+    if "brake_point_rel" in feature_cols:
+        wide_bp = df.pivot_table(
+            index=["Driver", "LapNumber"],
+            columns=zone_col,
+            values="brake_point_rel",
+            aggfunc="median",
+            dropna=False,
+        )
+        wide_bp.columns = [str(c) for c in wide_bp.columns]
+        for zone in zones:
+            finite = coverage.get(zone, 0.0)
+            if zone not in wide_bp.columns:
+                continue
+            if 0.02 <= finite < float(min_brake_coverage):
+                kept_parts.append(wide_bp[zone].notna().astype(float).rename(f"{zone}__braked"))
+
+    def _finish(parts: List[pd.Series]) -> pd.DataFrame:
+        if not parts:
+            return pd.DataFrame()
+        wide = pd.concat(parts, axis=1)
+        return wide.dropna(axis=0, how="any")
+
+    naive = _finish(naive_parts)
+    kept = _finish(kept_parts)
+    report = {
+        "naive_complete_laps": int(len(naive)),
+        "n_laps": int(len(kept)),
+        "omitted_columns": omitted,
+        "brake_coverage": coverage,
+        "min_brake_coverage": float(min_brake_coverage),
+        "braked_columns": [c for c in kept.columns if str(c).endswith("__braked")] if not kept.empty else [],
+    }
+    if kept.empty:
+        out = pd.DataFrame()
+        out.attrs["zone_vector"] = report
+        return out
+
+    meta_cols = [c for c in ("Team", "FullName", "Compound") if c in df.columns]
+    if meta_cols:
+        meta = df.groupby(["Driver", "LapNumber"], dropna=False)[meta_cols].agg(
+            lambda s: s.dropna().iloc[0] if s.dropna().shape[0] else pd.NA
+        )
+        kept = kept.join(meta, how="left")
+    if "TyreLife" in df.columns:
+        tyre = df.groupby(["Driver", "LapNumber"], dropna=False)["TyreLife"].median()
+        kept = kept.join(tyre.rename("TyreLife"), how="left")
+
+    kept = kept.reset_index()
+    kept.index = (
+        kept["Driver"].astype(str) + " L" + kept["LapNumber"].map(lambda v: str(int(v)) if pd.notna(v) else "na")
+    )
+    kept.index.name = "LapId"
+    kept["unit"] = "driver_lap_zone"
+    kept.attrs["zone_vector"] = report
+    return kept
+
+
+def build_zone_style_matrix(
+    session: Session,
+    analysis_zones: Optional[Dict[str, Dict[str, Any]]] = None,
+    drivers: Optional[List[str]] = None,
+    circuit_config: Optional[Dict[str, Any]] = None,
+    push_mode: bool = False,
+    min_valid_laps: int = 3,
+    include_throttle_onset: bool = True,
+    include_extended: bool = False,
+    min_brake_coverage: float = 0.95,
+) -> pd.DataFrame:
+    """Lap vectors with one block per zone. Off unless ``vector_unit: zone``.
+
+    Same long table as the typology matrix. The session median is taken inside
+    the zone, and zones are not collapsed into slow/medium/fast.
+    """
+    if analysis_zones is None:
+        selected, _source = resolve_selected_corners(session, circuit_config)
+        analysis_zones = extract_circuit_zones(
+            session, circuit_config=circuit_config, selected_corners=selected
+        )
+    long_df = build_long_style_table(
+        session,
+        analysis_zones=analysis_zones,
+        drivers=drivers,
+        circuit_config=circuit_config,
+        push_mode=push_mode,
+        min_valid_laps=min_valid_laps,
+        include_throttle_onset=include_throttle_onset,
+        include_extended=include_extended,
+    )
+    if long_df.empty:
+        return pd.DataFrame()
+    feature_cols = [
+        c for c in CORE_STYLE_FEATURES + OPTIONAL_STYLE_FEATURES + EXTENDED_STYLE_FEATURES if c in long_df.columns
+    ]
+    long_rel = _zone_session_median(long_df, feature_cols)
+    vectors = lap_vectors_from_zones(
+        long_rel,
+        feature_cols=feature_cols,
+        min_brake_coverage=min_brake_coverage,
+    )
+    if vectors.empty:
+        return vectors
+    if min_valid_laps and min_valid_laps > 1 and "Driver" in vectors.columns:
+        counts = vectors.groupby("Driver").size()
+        keep = counts[counts >= min_valid_laps].index
+        report = dict(vectors.attrs.get("zone_vector") or {})
+        vectors = vectors[vectors["Driver"].isin(keep)]
+        if vectors.empty:
+            out = pd.DataFrame()
+            out.attrs["zone_vector"] = report
+            return out
+        vectors.attrs["zone_vector"] = report
+    vectors.attrs["lap_typology"] = long_rel
+    vectors.attrs["feature_cols"] = feature_cols
+    return vectors
