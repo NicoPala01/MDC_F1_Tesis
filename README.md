@@ -56,7 +56,9 @@ Tests (sintéticos, sin red): `python -m pytest -v`.
 
 ## Separación: algoritmos y métricas alternativas
 
-`docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap.
+`docs/separacion_nulo_monza_2025.md` mide, en la matriz por defecto de Monza 2025 (normalización por vuelta sincronizada), la silueta del K-means para k de 2 a 7 contra 200 permutaciones de columnas, con el percentil de la silueta real. También compara la misma tabla sin las columnas de IQR 0. El algoritmo por defecto no cambia.
+
+`docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap. Ese nulo permuta las componentes ya calculadas; el de `docs/separacion_nulo_monza_2025.md` permuta las columnas y vuelve a ajustar escalador y PCA.
 
 ```bash
 python scripts/monza_separation_benchmark.py            # escribe results/2025/italian_grand_prix/separation/
