@@ -1,0 +1,10 @@
+Cluster,Archetype,Compound,n,n_class,n_compound,frac_of_class,frac_of_compound
+0,Late braking + high apex speed,HARD,131,349,439,0.3753581661891118,0.2984054669703872
+0,Late braking + high apex speed,MEDIUM,207,349,381,0.5931232091690545,0.5433070866141733
+0,Late braking + high apex speed,SOFT,11,349,22,0.03151862464183381,0.5
+1,Sharper throttle pickup + less full throttle on exit,HARD,155,266,439,0.5827067669172933,0.3530751708428246
+1,Sharper throttle pickup + less full throttle on exit,MEDIUM,107,266,381,0.40225563909774437,0.28083989501312334
+1,Sharper throttle pickup + less full throttle on exit,SOFT,4,266,22,0.015037593984962405,0.18181818181818182
+2,Low apex speed + more coasting,HARD,153,227,439,0.6740088105726872,0.34851936218678814
+2,Low apex speed + more coasting,MEDIUM,67,227,381,0.29515418502202645,0.17585301837270342
+2,Low apex speed + more coasting,SOFT,7,227,22,0.030837004405286344,0.3181818181818182
