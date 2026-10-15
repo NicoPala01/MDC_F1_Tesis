@@ -102,3 +102,39 @@ clustering:
     - silhouette_score
     - davies_bouldin
     - calinski_harabasz
+
+# Comparación experimental. El camino default no lee este bloque:
+# clustering.kmeans sigue en k de 2 a 7 y n_init 20.
+clustering_models:
+  k_min: 2
+  k_max: 10
+  random_state: 42
+  n_replicates: 50
+  n_bootstrap: 20
+  low_membership: 0.8
+  min_class_floor: 3
+  min_class_fraction: 0.05
+  hdbscan_min_fixed: 15
+  hdbscan_min_fraction: 0.05
+  dominance_share: 0.5
+  iqr_eps: 1.0e-8
+  kmeans_n_init: 10
+  kmedians_n_init: 5
+  kmedians_max_iter: 40
+  kmedoids_n_init: 3
+  kmedoids_max_iter: 30
+  gmm_n_init: 2
+  spectral_neighbors: 10
+  fuzzy_m: 2.0
+  fuzzy_n_init: 3
+  fuzzy_max_iter: 100
+  methods:
+    - kmeans
+    - kmedians
+    - kmedoids
+    - gmm
+    - ward
+    - average
+    - spectral
+    - hdbscan
+    - fuzzy_cmeans
