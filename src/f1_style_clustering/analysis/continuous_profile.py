@@ -706,6 +706,32 @@ def render_report(payload: dict) -> str:
                     f"percentil de la distancia {_fmt(teammates.get('percentile'), 1)}, más cerca que el nulo: {closer}."
                 )
                 lines.append("")
+    closer_names = []
+    not_closer_names = []
+    for race in races:
+        if not race.get("n_components"):
+            continue
+        name = race.get("name") or race.get("event")
+        if (race.get("teammates") or {}).get("closer"):
+            closer_names.append(name)
+        else:
+            not_closer_names.append(name)
+    if races:
+        components = [int(race.get("n_components") or 0) for race in races]
+        lines.append(
+            f"Componentes retenidos: mínimo {min(components)}, máximo {max(components)}, "
+            f"en {len(races)} carreras."
+        )
+        n_closer = len(closer_names)
+        lines.append(
+            f"Compañeros más cerca que el nulo en {n_closer} "
+            f"{'carrera' if n_closer == 1 else 'carreras'}: "
+            + (", ".join(closer_names) if closer_names else "ninguna")
+            + "."
+        )
+        if not_closer_names:
+            lines.append("No lo están en: " + ", ".join(not_closer_names) + ".")
+        lines.append("")
     summary = payload.get("congruence_summary") or {}
     lines.append("### Congruencia de Tucker entre GP")
     lines.append("")
@@ -726,19 +752,25 @@ def render_report(payload: dict) -> str:
     lines.append("### Predicciones a priori")
     lines.append("")
     baseline = payload.get("baseline") or {}
+    air = baseline.get("clean_air") or {}
+    if air:
+        lines.append(
+            f"Aire limpio en la matriz de la carrera suelta: {air.get('n_clean')} vueltas. "
+            f"No lo son: {air.get('n_not_clean')}. Sin onset en la zona slow: {air.get('n_excluded_no_onset')}."
+        )
     brake = (baseline.get("brake_point") or {}) if isinstance(baseline, dict) else {}
     compounds = brake.get("compounds") or []
-    if not compounds and not (baseline.get("release") or {}):
+    release_block = baseline.get("release") or {}
+    if not compounds and not release_block:
         lines.append("No se midieron en esta corrida.")
     for compound in compounds:
         contrast = compound.get("HAM_LEC") or {}
-        if not contrast:
-            continue
-        lines.append(
-            f"(a) {compound.get('compound')}: {_reading(contrast.get('reading'))}. "
-            f"Hamilton {_interval_cell(contrast.get('left'))}. "
-            f"Leclerc {_interval_cell(contrast.get('right'))}."
-        )
+        if contrast:
+            lines.append(
+                f"(a) {compound.get('compound')}: {_reading(contrast.get('reading'))}. "
+                f"Hamilton {_interval_cell(contrast.get('left'))}. "
+                f"Leclerc {_interval_cell(contrast.get('right'))}."
+            )
         exploratory = compound.get("NOR_PIA")
         if exploratory:
             lines.append(
@@ -746,12 +778,19 @@ def render_report(payload: dict) -> str:
                 f"Norris {_interval_cell(exploratory.get('left'))}. "
                 f"Piastri {_interval_cell(exploratory.get('right'))}."
             )
-    release = (baseline.get("release") or {}).get("HAM_LEC") or {}
+    release = release_block.get("HAM_LEC") or {}
     if release:
         lines.append(
             f"(b) {_reading(release.get('reading'))}. "
             f"Leclerc {_interval_cell(release.get('left'))}. "
             f"Hamilton {_interval_cell(release.get('right'))}."
+        )
+    release_exploratory = release_block.get("NOR_PIA") or {}
+    if release_exploratory:
+        lines.append(
+            "Norris contra Piastri en la suelta, exploratorio: "
+            f"Norris {_interval_cell(release_exploratory.get('left'))}. "
+            f"Piastri {_interval_cell(release_exploratory.get('right'))}."
         )
     lines.append("")
     return "\n".join(lines)

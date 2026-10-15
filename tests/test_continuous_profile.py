@@ -319,6 +319,41 @@ def test_report_keeps_the_declared_rule_apart_from_measured_numbers():
     assert "reputación" not in text.split("## Medido", 1)[1].lower()
 
 
+def test_exploratory_pair_is_printed_when_the_baseline_pair_is_absent():
+    payload = {
+        "races": [],
+        "congruence_summary": {"n_pairs": 0, "median": None},
+        "baseline": {
+            "clean_air": {"n_clean": 173, "n_not_clean": 16, "n_excluded_no_onset": 0},
+            "brake_point": {
+                "compounds": [
+                    {
+                        "compound": "SOFT",
+                        "NOR_PIA": {
+                            "reading": "exploratory",
+                            "left": {"n": 4, "median": -17.3, "low": -20.0, "high": -3.4},
+                            "right": {"n": 5, "median": 9.6, "low": 3.0, "high": 23.5},
+                        },
+                    }
+                ]
+            },
+            "release": {
+                "NOR_PIA": {
+                    "reading": "exploratory",
+                    "left": {"n": 48, "median": 82.0, "low": 78.1, "high": 85.5},
+                    "right": {"n": 48, "median": 85.2, "low": 83.5, "high": 88.8},
+                }
+            },
+        },
+    }
+    text = render_report(payload)
+    assert "SOFT" in text
+    assert "173" in text
+    assert "Norris" in text
+    assert "Piastri" in text
+    assert "exploratorio" in text
+
+
 def test_kmeans_stays_the_default_and_the_season_vector_is_unchanged():
     source = inspect.getsource(pipeline_mod)
     assert "continuous_profile" not in source
