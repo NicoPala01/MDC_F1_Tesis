@@ -44,7 +44,7 @@ Los candidatos son `covariance_type` `full` y `diag`, en ese orden, y K de 1 a 7
 
 La ganancia es el BIC del mejor K=1 convergido menos el BIC elegido. Si el elegido es K=1, la ganancia es 0. La entropía es la media, sobre las vueltas, de la entropía de Shannon de la posterior, en nats. `0 log 0` vale 0. Con K=1 la entropía es 0. La fracción incierta es la fracción de vueltas cuya posterior máxima es estrictamente menor que 0.8. El 0.8 no cuenta. Con K=1 esa fracción es 0. El ARI compara el argmax de la posterior con las etiquetas del K-means default sobre la misma matriz normalizada, con el bootstrap y la comparación de agregadores apagados. Si el argmax empata, se queda el primer componente. Si el K-means no elige k, el ARI no se define. El ARI no se calcula en las réplicas del nulo.
 
-Los nulos son el gaussiano y la cópula del PR 11, 50 réplicas. La semilla del gaussiano es 43 y la de la cópula es 44. El gaussiano se sortea sobre la matriz ya escalada que ve el GMM y no se vuelve a escalar. Por construcción favorece K=1: es una nube elíptica. La cópula se sortea sobre las columnas antes del escalador y después se vuelve a ajustar el RobustScaler. Una columna apilada en un valor sigue apilada. Sirve para ver si un K mayor que 1 solo está modelando marginales no gaussianas. En cada réplica se repite la misma selección por BIC. Se reporta la fracción de réplicas finitas con K mayor que 1, y si la ganancia real es estrictamente mayor que el percentil 95 de esas ganancias. El percentil usa el cuantil lineal de numpy. Superar los dos nulos es la conjunción de esas dos lecturas, la misma regla del nulo triple, no un tercer estadístico.
+Los nulos son el gaussiano y la cópula del PR 11, 50 réplicas. La semilla del gaussiano es 43 y la de la cópula es 44. El gaussiano se sortea sobre la matriz ya escalada que ve el GMM y no se vuelve a escalar. Por construcción favorece K=1: es una nube elíptica. La cópula se sortea sobre las columnas antes del escalador y después se vuelve a ajustar el RobustScaler. Una columna apilada en un valor sigue apilada. Sirve para ver si un K mayor que 1 solo está modelando marginales no gaussianas. En cada réplica se repite la misma selección por BIC. Se reporta la fracción de réplicas finitas con K mayor que 1, y si la ganancia real es estrictamente mayor que el percentil 95 de esas ganancias. Ese umbral es el cuantil lineal de numpy. Al lado se imprime otro número: el porcentaje de réplicas finitas con ganancia menor o igual que la real. No son el mismo cálculo. Superar el nulo usa el cuantil. Superar los dos nulos es la conjunción de esas dos lecturas, la misma regla del nulo triple, no un tercer estadístico.
 
 Si un GP queda con K mayor que 1, la componente se describe por su media y su covarianza en el espacio escalado. La frase nombra la feature de mayor media absoluta y la de mayor varianza. Si la covarianza es `full`, también nombra el par de features con la covarianza fuera de la diagonal de mayor valor absoluto. No se reordenan las componentes. Las vueltas de cada piloto se cuentan con la suma de la posterior y con el argmax. No se usa la reputación de los pilotos para nombrar una componente.
 """
@@ -678,6 +678,39 @@ def render_report(payload: dict) -> str:
     else:
         lines.append("La ganancia no supera el percentil 95 de los dos nulos en ninguna carrera.")
     lines.append("")
+    gauss_above = []
+    for race in races:
+        frac = (race.get("gaussian") or {}).get("frac_k_above_1")
+        if frac is None or not np.isfinite(float(frac)) or float(frac) <= 0.0:
+            continue
+        gauss_above.append(f"{race.get('name')} ({_fmt(frac)})")
+    if gauss_above:
+        lines.append("El nulo gaussiano elige K mayor que 1 en: " + ", ".join(gauss_above) + ".")
+    else:
+        lines.append("El nulo gaussiano no elige K mayor que 1 en ninguna réplica.")
+    lines.append("")
+    at_cap = [str(race.get("name")) for race in races if race.get("k") is not None and int(race.get("k")) == K_MAX]
+    if at_cap:
+        lines.append(
+            f"K={K_MAX} es el máximo de la grilla. Lo eligen: " + ", ".join(at_cap) + ". La grilla no mira por encima de ese K."
+        )
+        lines.append("")
+    disagreements = []
+    for race in races:
+        for key, label in (("gaussian", "gaussiano"), ("gaussian_copula", "cópula")):
+            null = race.get(key) or {}
+            percentile = null.get("percentile")
+            beats = null.get("beats_p95")
+            if percentile is None or beats is None or not np.isfinite(float(percentile)):
+                continue
+            if bool(beats) != bool(float(percentile) > 95.0):
+                disagreements.append(f"{race.get('name')} ({label}, percentil {_fmt(percentile, 1)})")
+    if disagreements:
+        lines.append(
+            "El cuantil lineal y el percentil no coinciden en: " + ", ".join(disagreements) + ". "
+            "La columna `supera p95` usa el cuantil."
+        )
+        lines.append("")
     for race in races:
         lines.extend(_race_section(race))
     return "\n".join(lines)
