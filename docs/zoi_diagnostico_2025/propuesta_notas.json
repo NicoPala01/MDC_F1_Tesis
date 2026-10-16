@@ -1,0 +1,2279 @@
+[
+  {
+    "key": "australian",
+    "official_name": "Albert Park GP Circuit",
+    "event_name": "Australian Grand Prix",
+    "notas": [
+      "T1: velocidad de ápice 127 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T4: velocidad de ápice 119 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T5: casi sin frenada (24 inicios en 547 fragmentos); ventana 120 m",
+      "T8: casi sin frenada (5 inicios en 547 fragmentos); ventana 120 m",
+      "T14: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 130 m y el caso sigue pendiente",
+      "T4: quedan 24 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T14: quedan 47 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 250
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 80
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 109,
+        "exit_distance_window": 250
+      },
+      "T6_T7": {
+        "corner_numbers": [
+          6,
+          7
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 109,
+        "exit_distance_window": 250
+      },
+      "T9_T10": {
+        "corner_numbers": [
+          9,
+          10
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 165
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 104
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 80
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "chinese",
+    "official_name": "Shanghai International Circuit",
+    "event_name": "Chinese Grand Prix",
+    "notas": [
+      "T3: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 100 m y el caso sigue pendiente",
+      "T4: casi sin frenada (9 inicios en 942 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (0 inicios en 942 fragmentos); ventana 120 m",
+      "T13: casi sin frenada (7 inicios en 942 fragmentos); ventana 120 m",
+      "T13: velocidad de ápice 198 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T2: quedan 66 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T3: quedan 42 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T4: quedan 39 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T6: quedan 4 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 80
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 195
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 111
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T9_T10": {
+        "corner_numbers": [
+          9,
+          10
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T11_T12": {
+        "corner_numbers": [
+          11,
+          12
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 95
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T14_T15": {
+        "corner_numbers": [
+          14,
+          15
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 157
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "japanese",
+    "official_name": "Suzuka Circuit",
+    "event_name": "Japanese Grand Prix",
+    "notas": [
+      "T2: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 90 m y el caso sigue pendiente",
+      "T3: casi sin frenada (5 inicios en 989 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (10 inicios en 989 fragmentos); ventana 120 m",
+      "T5: velocidad de ápice 198 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T7: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 270 m y el caso sigue pendiente",
+      "T9: velocidad de ápice 130 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T10: casi sin frenada (9 inicios en 989 fragmentos); ventana 120 m",
+      "T12: casi sin frenada (17 inicios en 989 fragmentos); ventana 120 m",
+      "T13: velocidad de ápice 205 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T15: casi sin frenada (1 inicios en 989 fragmentos); ventana 120 m",
+      "T18: casi sin frenada (8 inicios en 989 fragmentos); ventana 120 m",
+      "T2: quedan 43 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T5: quedan 23 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T6: quedan 3 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 49 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T9: quedan 29 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T11: quedan 65 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T14: quedan 34 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T18: quedan 29 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 90,
+        "exit_distance_window": 142
+      },
+      "T3_T4": {
+        "corner_numbers": [
+          3,
+          4
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 270,
+        "exit_distance_window": 250
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 192
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 138
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 239
+      },
+      "T16_T17": {
+        "corner_numbers": [
+          16,
+          17
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "bahrain",
+    "official_name": "Bahrain International Circuit",
+    "event_name": "Bahrain Grand Prix",
+    "notas": [
+      "T5: casi sin frenada (4 inicios en 924 fragmentos); ventana 120 m",
+      "T13: velocidad de ápice 119 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T13: quedan 52 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2_T3": {
+        "corner_numbers": [
+          1,
+          2,
+          3
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 152
+      },
+      "T5_T6_T7": {
+        "corner_numbers": [
+          5,
+          6,
+          7
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 98
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 158
+      },
+      "T9_T10": {
+        "corner_numbers": [
+          9,
+          10
+        ],
+        "braking_distance_window": 220,
+        "exit_distance_window": 250
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 220,
+        "exit_distance_window": 203
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 80
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 250
+      },
+      "T14_T15": {
+        "corner_numbers": [
+          14,
+          15
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "saudi_arabian",
+    "official_name": "Jeddah Corniche Circuit",
+    "event_name": "Saudi Arabian Grand Prix",
+    "notas": [
+      "T3: casi sin frenada (16 inicios en 798 fragmentos); ventana 120 m",
+      "T6: casi sin frenada (6 inicios en 798 fragmentos); ventana 120 m",
+      "T6: velocidad de ápice 208 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T9: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 110 m y el caso sigue pendiente",
+      "T9: velocidad de ápice 202 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T14: casi sin frenada (11 inicios en 798 fragmentos); ventana 120 m",
+      "T15: casi sin frenada (1 inicios en 798 fragmentos); ventana 120 m",
+      "T18: casi sin frenada (2 inicios en 798 fragmentos); ventana 120 m",
+      "T19: casi sin frenada (0 inicios en 798 fragmentos); ventana 120 m",
+      "T20: casi sin frenada (0 inicios en 798 fragmentos); ventana 120 m",
+      "T21: casi sin frenada (2 inicios en 798 fragmentos); ventana 120 m",
+      "T24: casi sin frenada (14 inicios en 798 fragmentos); ventana 120 m",
+      "T25: casi sin frenada (1 inicios en 798 fragmentos); ventana 120 m",
+      "T26: casi sin frenada (0 inicios en 798 fragmentos); ventana 120 m",
+      "T3: quedan 46 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T6: quedan 46 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T9: quedan 47 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T16: quedan 76 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T24: quedan 31 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 201
+      },
+      "T4_T5": {
+        "corner_numbers": [
+          4,
+          5
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T6_T7_T8": {
+        "corner_numbers": [
+          6,
+          7,
+          8
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T9_T10_T11_T12": {
+        "corner_numbers": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 193
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 117,
+        "exit_distance_window": 80
+      },
+      "T16_T17": {
+        "corner_numbers": [
+          16,
+          17
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 103
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 90
+      },
+      "T19": {
+        "corner_numbers": [
+          19
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 85
+      },
+      "T20": {
+        "corner_numbers": [
+          20
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T21": {
+        "corner_numbers": [
+          21
+        ],
+        "braking_distance_window": 105,
+        "exit_distance_window": 109
+      },
+      "T22_T23": {
+        "corner_numbers": [
+          22,
+          23
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 80
+      },
+      "T24": {
+        "corner_numbers": [
+          24
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 169
+      },
+      "T25": {
+        "corner_numbers": [
+          25
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 243
+      },
+      "T26": {
+        "corner_numbers": [
+          26
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 199
+      },
+      "T27": {
+        "corner_numbers": [
+          27
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "miami",
+    "official_name": "Miami International Autodrome",
+    "event_name": "Miami Grand Prix",
+    "notas": [
+      "T5: casi sin frenada (35 inicios en 857 fragmentos); ventana 120 m",
+      "T5: velocidad de ápice 210 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T6: casi sin frenada (9 inicios en 857 fragmentos); ventana 120 m",
+      "T7: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 90 m y el caso sigue pendiente",
+      "T9: casi sin frenada (4 inicios en 857 fragmentos); ventana 120 m",
+      "T10: casi sin frenada (1 inicios en 857 fragmentos); ventana 120 m",
+      "T12: casi sin frenada (12 inicios en 857 fragmentos); ventana 120 m",
+      "T13: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 90 m y el caso sigue pendiente",
+      "T18: casi sin frenada (11 inicios en 857 fragmentos); ventana 120 m",
+      "T19: casi sin frenada (0 inicios en 857 fragmentos); ventana 120 m",
+      "T5: quedan 49 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T6: quedan 25 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 46 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T12: quedan 54 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T13: quedan 49 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T18: quedan 28 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2_T3": {
+        "corner_numbers": [
+          1,
+          2,
+          3
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T7_T8": {
+        "corner_numbers": [
+          7,
+          8
+        ],
+        "braking_distance_window": 90,
+        "exit_distance_window": 250
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 155
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T13_T14_T15_T16": {
+        "corner_numbers": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "braking_distance_window": 90,
+        "exit_distance_window": 250
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 80
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T19": {
+        "corner_numbers": [
+          19
+        ],
+        "braking_distance_window": 119,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "emilia_romagna",
+    "official_name": "Autodromo Internazionale Enzo e Dino Ferrari",
+    "event_name": "Emilia Romagna Grand Prix",
+    "notas": [
+      "T1: casi sin frenada (1 inicios en 939 fragmentos); ventana 120 m",
+      "T4: casi sin frenada (5 inicios en 939 fragmentos); ventana 120 m",
+      "T4: velocidad de ápice 202 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T5: casi sin frenada (46 inicios en 939 fragmentos); ventana 120 m",
+      "T5: velocidad de ápice 204 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T8: casi sin frenada (20 inicios en 939 fragmentos); ventana 120 m",
+      "T10: casi sin frenada (0 inicios en 939 fragmentos); ventana 120 m",
+      "T16: casi sin frenada (0 inicios en 939 fragmentos); ventana 120 m",
+      "T18: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 100 m y el caso sigue pendiente",
+      "T19: casi sin frenada (7 inicios en 939 fragmentos); ventana 120 m",
+      "T4: quedan 44 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T10: quedan 42 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T17: quedan 46 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T18: quedan 40 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T2_T3": {
+        "corner_numbers": [
+          2,
+          3
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 250
+      },
+      "T5_T6": {
+        "corner_numbers": [
+          5,
+          6
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 163
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 104
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 154
+      },
+      "T11_T12_T13": {
+        "corner_numbers": [
+          11,
+          12,
+          13
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 250
+      },
+      "T14_T15": {
+        "corner_numbers": [
+          14,
+          15
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 187
+      },
+      "T19": {
+        "corner_numbers": [
+          19
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "spanish",
+    "official_name": "Circuit de Barcelona-Catalunya",
+    "event_name": "Spanish Grand Prix",
+    "notas": [
+      "T1: velocidad de ápice 129 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T3: casi sin frenada (40 inicios en 980 fragmentos); ventana 120 m",
+      "T3: velocidad de ápice 204 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T4: velocidad de ápice 128 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T6: casi sin frenada (0 inicios en 980 fragmentos); ventana 120 m",
+      "T11: casi sin frenada (34 inicios en 980 fragmentos); ventana 120 m",
+      "T13: casi sin frenada (27 inicios en 980 fragmentos); ventana 120 m",
+      "T6: quedan 4 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 37 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T11: quedan 28 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T12: quedan 85 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 142
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 224
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T7_T8": {
+        "corner_numbers": [
+          7,
+          8
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 128
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 80
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 164
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 136
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "canadian",
+    "official_name": "Circuit Gilles-Villeneuve",
+    "event_name": "Canadian Grand Prix",
+    "notas": [
+      "T3: velocidad de ápice 130 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T5: casi sin frenada (1 inicios en 1154 fragmentos); ventana 120 m",
+      "T8: velocidad de ápice 121 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T12: casi sin frenada (34 inicios en 1154 fragmentos); ventana 120 m",
+      "T13: velocidad de ápice 123 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 250
+      },
+      "T3_T4": {
+        "corner_numbers": [
+          3,
+          4
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 85
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 105
+      },
+      "T6_T7": {
+        "corner_numbers": [
+          6,
+          7
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T8_T9": {
+        "corner_numbers": [
+          8,
+          9
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 250
+      },
+      "T10_T11": {
+        "corner_numbers": [
+          10,
+          11
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T13_T14": {
+        "corner_numbers": [
+          13,
+          14
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "austrian",
+    "official_name": "Red Bull Ring",
+    "event_name": "Austrian Grand Prix",
+    "notas": [
+      "T1: velocidad de ápice 122 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T2: casi sin frenada (6 inicios en 984 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (5 inicios en 984 fragmentos); ventana 120 m",
+      "T8: casi sin frenada (1 inicios en 984 fragmentos); ventana 120 m",
+      "T5: quedan 2 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 250
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 123
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 169
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 180
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 80
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 117,
+        "exit_distance_window": 250
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 81
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "belgian",
+    "official_name": "Circuit de Spa-Francorchamps",
+    "event_name": "Belgian Grand Prix",
+    "notas": [
+      "T2: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 660 m y el caso sigue pendiente",
+      "T7: casi sin frenada (24 inicios en 734 fragmentos); ventana 120 m",
+      "T11: casi sin frenada (7 inicios en 734 fragmentos); ventana 120 m",
+      "T13: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 120 m y el caso sigue pendiente",
+      "T15: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 220 m y el caso sigue pendiente",
+      "T17: casi sin frenada (3 inicios en 734 fragmentos); ventana 120 m",
+      "T2: quedan 44 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 21 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T13: quedan 49 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T15: quedan 46 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 80
+      },
+      "T2_T3_T4": {
+        "corner_numbers": [
+          2,
+          3,
+          4
+        ],
+        "braking_distance_window": 660,
+        "exit_distance_window": 250
+      },
+      "T5_T6": {
+        "corner_numbers": [
+          5,
+          6
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 80
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 219
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 133
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 132
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 178
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 220,
+        "exit_distance_window": 89
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 630,
+        "exit_distance_window": 155
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T18_T19": {
+        "corner_numbers": [
+          18,
+          19
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "hungarian",
+    "official_name": "Hungaroring",
+    "event_name": "Hungarian Grand Prix",
+    "notas": [
+      "FastF1 repite el Number 1, 12. `key_corners` se queda con la primera distancia y el fallback pisa `Turn_N` y se queda con la última. No se escribe ficha para no mover el ápice sin cambiar el algoritmo."
+    ],
+    "key_corners": null
+  },
+  {
+    "key": "dutch",
+    "official_name": "Circuit Zandvoort",
+    "event_name": "Dutch Grand Prix",
+    "notas": [
+      "T2: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 270 m y el caso sigue pendiente",
+      "T3: velocidad de ápice 126 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T4: casi sin frenada (26 inicios en 998 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (0 inicios en 998 fragmentos); ventana 120 m",
+      "T6: casi sin frenada (0 inicios en 998 fragmentos); ventana 120 m",
+      "T14: casi sin frenada (5 inicios en 998 fragmentos); ventana 120 m",
+      "T2: quedan 49 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T3: quedan 19 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T6: quedan 38 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 80
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 270,
+        "exit_distance_window": 80
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 101
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 92
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 103
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 193
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 92
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 115
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 250
+      },
+      "T11_T12": {
+        "corner_numbers": [
+          11,
+          12
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 193
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 159
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "azerbaijan",
+    "official_name": "Baku City Circuit",
+    "event_name": "Azerbaijan Grand Prix",
+    "notas": [
+      "T13: casi sin frenada (31 inicios en 796 fragmentos); ventana 120 m",
+      "T14: casi sin frenada (11 inicios en 796 fragmentos); ventana 120 m",
+      "T17: casi sin frenada (5 inicios en 796 fragmentos); ventana 120 m",
+      "T17: velocidad de ápice 212 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T18: casi sin frenada (1 inicios en 796 fragmentos); ventana 120 m",
+      "T19: casi sin frenada (0 inicios en 796 fragmentos); ventana 120 m",
+      "T20: casi sin frenada (30 inicios en 796 fragmentos); ventana 120 m",
+      "T15: quedan 35 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T19: quedan 26 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 204
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 250
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 103
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 201
+      },
+      "T5_T6": {
+        "corner_numbers": [
+          5,
+          6
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 238
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 97
+      },
+      "T8_T9_T10_T11_T12": {
+        "corner_numbers": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 250
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 95
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 212
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 80
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 117,
+        "exit_distance_window": 122
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T19": {
+        "corner_numbers": [
+          19
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 188
+      },
+      "T20": {
+        "corner_numbers": [
+          20
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "singapore",
+    "official_name": "Marina Bay Street Circuit",
+    "event_name": "Singapore Grand Prix",
+    "notas": [
+      "T1: velocidad de ápice 128 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T4: casi sin frenada (13 inicios en 1106 fragmentos); ventana 120 m",
+      "T6: casi sin frenada (3 inicios en 1106 fragmentos); ventana 120 m",
+      "T9: velocidad de ápice 124 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T10: velocidad de ápice 130 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T15: casi sin frenada (1 inicios en 1106 fragmentos); ventana 120 m",
+      "T4: quedan 21 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T9: quedan 7 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T11: quedan 30 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T13: quedan 55 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2_T3": {
+        "corner_numbers": [
+          1,
+          2,
+          3
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 80
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 127
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 202
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 109
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 80
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 80
+      },
+      "T11_T12": {
+        "corner_numbers": [
+          11,
+          12
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 250
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 112
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T16_T17": {
+        "corner_numbers": [
+          16,
+          17
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 145
+      },
+      "T18_T19": {
+        "corner_numbers": [
+          18,
+          19
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "united_states",
+    "official_name": "Circuit of the Americas",
+    "event_name": "United States Grand Prix",
+    "notas": [
+      "T2: casi sin frenada (15 inicios en 898 fragmentos); ventana 120 m",
+      "T3: casi sin frenada (6 inicios en 898 fragmentos); ventana 120 m",
+      "T6: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 90 m y el caso sigue pendiente",
+      "T6: velocidad de ápice 211 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T10: casi sin frenada (14 inicios en 898 fragmentos); ventana 120 m",
+      "T16: casi sin frenada (23 inicios en 898 fragmentos); ventana 120 m",
+      "T16: velocidad de ápice 203 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T17: casi sin frenada (39 inicios en 898 fragmentos); ventana 120 m",
+      "T18: casi sin frenada (1 inicios en 898 fragmentos); ventana 120 m",
+      "T6: quedan 41 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T8: quedan 36 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T15: quedan 34 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T17: quedan 58 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T18: quedan 37 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 134
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 140
+      },
+      "T3_T4_T5": {
+        "corner_numbers": [
+          3,
+          4,
+          5
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 90,
+        "exit_distance_window": 129
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T8_T9": {
+        "corner_numbers": [
+          8,
+          9
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 116,
+        "exit_distance_window": 246
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 250
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 93
+      },
+      "T13_T14": {
+        "corner_numbers": [
+          13,
+          14
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 115,
+        "exit_distance_window": 80
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T18": {
+        "corner_numbers": [
+          18
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 130
+      },
+      "T19": {
+        "corner_numbers": [
+          19
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 152
+      },
+      "T20": {
+        "corner_numbers": [
+          20
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "mexico_city",
+    "official_name": "Autódromo Hermanos Rodríguez",
+    "event_name": "Mexico City Grand Prix",
+    "notas": [
+      "T6: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 100 m y el caso sigue pendiente",
+      "T7: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 280 m y el caso sigue pendiente",
+      "T12: velocidad de ápice 123 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T6: quedan 44 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 41 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T10: quedan 7 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T13: quedan 9 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2_T3": {
+        "corner_numbers": [
+          1,
+          2,
+          3
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 250
+      },
+      "T4_T5": {
+        "corner_numbers": [
+          4,
+          5
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 80
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T7_T8_T9": {
+        "corner_numbers": [
+          7,
+          8,
+          9
+        ],
+        "braking_distance_window": 280,
+        "exit_distance_window": 80
+      },
+      "T10_T11": {
+        "corner_numbers": [
+          10,
+          11
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T13_T14_T15_T16_T17": {
+        "corner_numbers": [
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "sao_paulo",
+    "official_name": "Autódromo José Carlos Pace",
+    "event_name": "São Paulo Grand Prix",
+    "notas": [
+      "T3: casi sin frenada (24 inicios en 1032 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (16 inicios en 1032 fragmentos); ventana 120 m",
+      "T5: velocidad de ápice 205 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T6: velocidad de ápice 206 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T7: casi sin frenada (38 inicios en 1032 fragmentos); ventana 120 m",
+      "T9: más de la mitad de los inicios caen antes del ápice anterior; la frenada queda en 100 m y el caso sigue pendiente",
+      "T11: casi sin frenada (28 inicios en 1032 fragmentos); ventana 120 m",
+      "T14: casi sin frenada (0 inicios en 1032 fragmentos); ventana 120 m",
+      "T15: casi sin frenada (0 inicios en 1032 fragmentos); ventana 120 m",
+      "T7: quedan 38 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T8: quedan 33 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T9: quedan 50 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 80
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 116,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 102,
+        "exit_distance_window": 250
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 80
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 154
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 92
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 140
+      },
+      "T12_T13": {
+        "corner_numbers": [
+          12,
+          13
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 146
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "las_vegas",
+    "official_name": "Las Vegas Strip Circuit",
+    "event_name": "Las Vegas Grand Prix",
+    "notas": [
+      "T3: velocidad de ápice 198 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T6: casi sin frenada (5 inicios en 760 fragmentos); ventana 120 m",
+      "T10: casi sin frenada (11 inicios en 760 fragmentos); ventana 120 m",
+      "T13: casi sin frenada (8 inicios en 759 fragmentos); ventana 120 m",
+      "T17: casi sin frenada (18 inicios en 760 fragmentos); ventana 120 m",
+      "T3: quedan 21 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T7: quedan 38 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T9: quedan 52 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T12: quedan 53 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1_T2": {
+        "corner_numbers": [
+          1,
+          2
+        ],
+        "braking_distance_window": 170,
+        "exit_distance_window": 80
+      },
+      "T3_T4": {
+        "corner_numbers": [
+          3,
+          4
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 250
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 143
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T7_T8": {
+        "corner_numbers": [
+          7,
+          8
+        ],
+        "braking_distance_window": 180,
+        "exit_distance_window": 80
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 95
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 80
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 250
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T14_T15_T16": {
+        "corner_numbers": [
+          14,
+          15,
+          16
+        ],
+        "braking_distance_window": 200,
+        "exit_distance_window": 250
+      },
+      "T17": {
+        "corner_numbers": [
+          17
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "qatar",
+    "official_name": "Qatar Grand Prix",
+    "event_name": "Qatar Grand Prix",
+    "notas": [
+      "T3: casi sin frenada (0 inicios en 904 fragmentos); ventana 120 m",
+      "T5: casi sin frenada (29 inicios en 904 fragmentos); ventana 120 m",
+      "T7: velocidad de ápice 131 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T8: casi sin frenada (17 inicios en 904 fragmentos); ventana 120 m",
+      "T8: velocidad de ápice 211 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T11: casi sin frenada (4 inicios en 904 fragmentos); ventana 120 m",
+      "T5: quedan 27 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T13: quedan 17 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 210,
+        "exit_distance_window": 157
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 87
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 80
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 158
+      },
+      "T6": {
+        "corner_numbers": [
+          6
+        ],
+        "braking_distance_window": 150,
+        "exit_distance_window": 235
+      },
+      "T7": {
+        "corner_numbers": [
+          7
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 80
+      },
+      "T8_T9": {
+        "corner_numbers": [
+          8,
+          9
+        ],
+        "braking_distance_window": 115,
+        "exit_distance_window": 87
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 205
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 165
+      },
+      "T12": {
+        "corner_numbers": [
+          12
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 80
+      },
+      "T13": {
+        "corner_numbers": [
+          13
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 83
+      },
+      "T14": {
+        "corner_numbers": [
+          14
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 184
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 110,
+        "exit_distance_window": 250
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      }
+    }
+  },
+  {
+    "key": "abu_dhabi",
+    "official_name": "Yas Marina Circuit",
+    "event_name": "Abu Dhabi Grand Prix",
+    "notas": [
+      "T2: casi sin frenada (9 inicios en 1044 fragmentos); ventana 120 m",
+      "T3: casi sin frenada (17 inicios en 1044 fragmentos); ventana 120 m",
+      "T4: casi sin frenada (30 inicios en 1044 fragmentos); ventana 120 m",
+      "T8: casi sin frenada (16 inicios en 1044 fragmentos); ventana 120 m",
+      "T8: velocidad de ápice 210 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T10: casi sin frenada (15 inicios en 1044 fragmentos); ventana 120 m",
+      "T11: casi sin frenada (39 inicios en 1044 fragmentos); ventana 120 m",
+      "T11: velocidad de ápice 206 km/h, a menos de 8 km/h de un corte; el cubo queda para la sesión",
+      "T15: casi sin frenada (38 inicios en 1044 fragmentos); ventana 120 m",
+      "T11: quedan 23 m de solape con la zona anterior después de acortar salida y frenada hasta el piso",
+      "T12: quedan 95 m de solape con la zona anterior después de acortar salida y frenada hasta el piso"
+    ],
+    "key_corners": {
+      "T1": {
+        "corner_numbers": [
+          1
+        ],
+        "braking_distance_window": 130,
+        "exit_distance_window": 124
+      },
+      "T2": {
+        "corner_numbers": [
+          2
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 89
+      },
+      "T3": {
+        "corner_numbers": [
+          3
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 81
+      },
+      "T4": {
+        "corner_numbers": [
+          4
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 228
+      },
+      "T5": {
+        "corner_numbers": [
+          5
+        ],
+        "braking_distance_window": 160,
+        "exit_distance_window": 250
+      },
+      "T6_T7": {
+        "corner_numbers": [
+          6,
+          7
+        ],
+        "braking_distance_window": 190,
+        "exit_distance_window": 89
+      },
+      "T8": {
+        "corner_numbers": [
+          8
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 250
+      },
+      "T9": {
+        "corner_numbers": [
+          9
+        ],
+        "braking_distance_window": 240,
+        "exit_distance_window": 207
+      },
+      "T10": {
+        "corner_numbers": [
+          10
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 80
+      },
+      "T11": {
+        "corner_numbers": [
+          11
+        ],
+        "braking_distance_window": 100,
+        "exit_distance_window": 80
+      },
+      "T12_T13_T14": {
+        "corner_numbers": [
+          12,
+          13,
+          14
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 159
+      },
+      "T15": {
+        "corner_numbers": [
+          15
+        ],
+        "braking_distance_window": 120,
+        "exit_distance_window": 87
+      },
+      "T16": {
+        "corner_numbers": [
+          16
+        ],
+        "braking_distance_window": 140,
+        "exit_distance_window": 250
+      }
+    }
+  }
+]

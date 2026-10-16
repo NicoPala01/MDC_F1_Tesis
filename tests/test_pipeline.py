@@ -676,7 +676,7 @@ def test_key_corners_groups_one_zone_per_yaml_entry():
 
 def test_unknown_circuit_uses_speed_threshold_fallback_not_key_corners():
     corners = pd.DataFrame({"Number": [1, 2, 3], "Distance": [100.0, 400.0, 900.0]})
-    session = _FakeCircuitSession("Japanese Grand Prix", corners)
+    session = _FakeCircuitSession("Imaginary Grand Prix", corners)
     circuits = load_circuit_config()
     selected, source = resolve_selected_corners(session, circuits)
     assert source == "speed_threshold_fallback"

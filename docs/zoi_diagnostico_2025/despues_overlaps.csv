@@ -1,0 +1,153 @@
+event,zone_a,zone_b,wrapped,span_overlap,apex_overlap
+Abu Dhabi Grand Prix,T1,T2,False,True,False
+Abu Dhabi Grand Prix,T3,T4,False,True,False
+Abu Dhabi Grand Prix,T4,T5,False,True,False
+Abu Dhabi Grand Prix,T9,T10,False,True,False
+Abu Dhabi Grand Prix,T10,T11,False,True,False
+Abu Dhabi Grand Prix,T11,T12_T13_T14,False,True,False
+Abu Dhabi Grand Prix,T12_T13_T14,T15,False,True,False
+Abu Dhabi Grand Prix,T15,T16,False,True,False
+Australian Grand Prix,T3,T4,False,True,False
+Australian Grand Prix,T4,T5,False,True,False
+Australian Grand Prix,T6_T7,T8,False,True,False
+Australian Grand Prix,T11,T12,False,True,False
+Australian Grand Prix,T13,T14,False,True,False
+Austrian Grand Prix,T4,T5,False,True,False
+Austrian Grand Prix,T7,T8,False,True,False
+Austrian Grand Prix,T9,T10,False,True,False
+Azerbaijan Grand Prix,T1,T2,False,True,False
+Azerbaijan Grand Prix,T4,T5_T6,False,True,False
+Azerbaijan Grand Prix,T13,T14,False,True,False
+Azerbaijan Grand Prix,T14,T15,False,True,False
+Azerbaijan Grand Prix,T16,T17,False,True,False
+Azerbaijan Grand Prix,T17,T18,False,True,False
+Azerbaijan Grand Prix,T18,T19,False,True,False
+Bahrain Grand Prix,T4,T5_T6_T7,False,True,False
+Bahrain Grand Prix,T5_T6_T7,T8,False,True,False
+Bahrain Grand Prix,T11,T12,False,True,False
+Bahrain Grand Prix,T12,T13,False,True,False
+Belgian Grand Prix,T1,T2_T3_T4,False,True,False
+Belgian Grand Prix,T5_T6,T7,False,True,False
+Belgian Grand Prix,T7,T8,False,True,False
+Belgian Grand Prix,T8,T9,False,True,False
+Belgian Grand Prix,T10,T11,False,True,False
+Belgian Grand Prix,T12,T13,False,True,False
+Belgian Grand Prix,T13,T14,False,True,False
+Belgian Grand Prix,T14,T15,False,True,False
+Belgian Grand Prix,T16,T17,False,True,False
+British Grand Prix,T9_Copse,Maggotts_Becketts_Chapel,False,True,False
+Canadian Grand Prix,T5,T6_T7,False,True,False
+Chinese Grand Prix,T1,T2,False,True,False
+Chinese Grand Prix,T2,T3,False,True,False
+Chinese Grand Prix,T3,T4,False,True,False
+Chinese Grand Prix,T4,T5,False,True,False
+Chinese Grand Prix,T5,T6,False,True,False
+Chinese Grand Prix,T7,T8,False,True,False
+Chinese Grand Prix,T8,T9_T10,False,True,False
+Chinese Grand Prix,T11_T12,T13,False,True,False
+Dutch Grand Prix,T1,T2,False,True,False
+Dutch Grand Prix,T2,T3,False,True,False
+Dutch Grand Prix,T3,T4,False,True,False
+Dutch Grand Prix,T4,T5,False,True,False
+Dutch Grand Prix,T5,T6,False,True,False
+Dutch Grand Prix,T6,T7,False,True,False
+Dutch Grand Prix,T11_T12,T13,False,True,False
+Dutch Grand Prix,T13,T14,False,True,False
+Emilia Romagna Grand Prix,T2_T3,T4,False,True,False
+Emilia Romagna Grand Prix,T5_T6,T7,False,True,False
+Emilia Romagna Grand Prix,T8,T9,False,True,False
+Emilia Romagna Grand Prix,T9,T10,False,True,False
+Emilia Romagna Grand Prix,T16,T17,False,True,False
+Emilia Romagna Grand Prix,T17,T18,False,True,False
+Hungarian Grand Prix,Turn_1,Turn_2,False,True,False
+Hungarian Grand Prix,Turn_2,Turn_3,False,True,False
+Hungarian Grand Prix,Turn_3,Turn_4,False,True,False
+Hungarian Grand Prix,Turn_4,Turn_5,False,True,False
+Hungarian Grand Prix,Turn_5,Turn_6,False,True,False
+Hungarian Grand Prix,Turn_6,Turn_7,False,True,True
+Hungarian Grand Prix,Turn_7,Turn_8,False,True,False
+Hungarian Grand Prix,Turn_8,Turn_9,False,True,False
+Hungarian Grand Prix,Turn_9,Turn_10,False,True,False
+Hungarian Grand Prix,Turn_10,Turn_11,False,True,False
+Hungarian Grand Prix,Turn_11,Turn_12,False,True,False
+Hungarian Grand Prix,Turn_12,Turn_13,False,True,False
+Hungarian Grand Prix,Turn_13,Turn_14,False,True,False
+Italian Grand Prix,T4_Variante_della_Roggia,T6_Curva_di_Lesmo,False,True,False
+Italian Grand Prix,T6_Curva_di_Lesmo,T7_Seconda_di_Lesmo,False,True,False
+Japanese Grand Prix,T1,T2,False,True,False
+Japanese Grand Prix,T3_T4,T5,False,True,False
+Japanese Grand Prix,T5,T6,False,True,False
+Japanese Grand Prix,T6,T7,False,True,False
+Japanese Grand Prix,T8,T9,False,True,False
+Japanese Grand Prix,T9,T10,False,True,False
+Japanese Grand Prix,T10,T11,False,True,False
+Japanese Grand Prix,T13,T14,False,True,False
+Japanese Grand Prix,T16_T17,T18,False,True,False
+Las Vegas Grand Prix,T1_T2,T3_T4,False,True,False
+Las Vegas Grand Prix,T5,T6,False,True,False
+Las Vegas Grand Prix,T6,T7_T8,False,True,False
+Las Vegas Grand Prix,T7_T8,T9,False,True,False
+Las Vegas Grand Prix,T10,T11,False,True,False
+Las Vegas Grand Prix,T11,T12,False,True,False
+Mexico City Grand Prix,T4_T5,T6,False,True,False
+Mexico City Grand Prix,T6,T7_T8_T9,False,True,False
+Mexico City Grand Prix,T7_T8_T9,T10_T11,False,True,False
+Mexico City Grand Prix,T12,T13_T14_T15_T16_T17,False,True,False
+Miami Grand Prix,T4,T5,False,True,False
+Miami Grand Prix,T5,T6,False,True,False
+Miami Grand Prix,T6,T7_T8,False,True,False
+Miami Grand Prix,T9,T10,False,True,False
+Miami Grand Prix,T11,T12,False,True,False
+Miami Grand Prix,T12,T13_T14_T15_T16,False,True,False
+Miami Grand Prix,T17,T18,False,True,False
+Miami Grand Prix,T18,T19,False,True,False
+Monaco Grand Prix,T10_Nouvelle_Chicane,T15_Swimming_Pool,False,True,False
+Qatar Grand Prix,T4,T5,False,True,False
+Qatar Grand Prix,T5,T6,False,True,False
+Qatar Grand Prix,T7,T8_T9,False,True,False
+Qatar Grand Prix,T8_T9,T10,False,True,False
+Qatar Grand Prix,T12,T13,False,True,False
+Qatar Grand Prix,T13,T14,False,True,False
+Qatar Grand Prix,T14,T15,False,True,False
+Saudi Arabian Grand Prix,T1_T2,T3,False,True,False
+Saudi Arabian Grand Prix,T4_T5,T6_T7_T8,False,True,False
+Saudi Arabian Grand Prix,T6_T7_T8,T9_T10_T11_T12,False,True,False
+Saudi Arabian Grand Prix,T13,T14,False,True,False
+Saudi Arabian Grand Prix,T15,T16_T17,False,True,False
+Saudi Arabian Grand Prix,T16_T17,T18,False,True,False
+Saudi Arabian Grand Prix,T20,T21,False,True,False
+Saudi Arabian Grand Prix,T22_T23,T24,False,True,False
+Saudi Arabian Grand Prix,T24,T25,False,True,False
+Saudi Arabian Grand Prix,T26,T27,False,True,False
+Singapore Grand Prix,T1_T2_T3,T4,False,True,False
+Singapore Grand Prix,T6,T7,False,True,False
+Singapore Grand Prix,T7,T8,False,True,False
+Singapore Grand Prix,T8,T9,False,True,False
+Singapore Grand Prix,T10,T11_T12,False,True,False
+Singapore Grand Prix,T11_T12,T13,False,True,False
+Singapore Grand Prix,T14,T15,False,True,False
+Singapore Grand Prix,T16_T17,T18_T19,False,True,False
+Spanish Grand Prix,T1_T2,T3,False,True,False
+Spanish Grand Prix,T4,T5,False,True,False
+Spanish Grand Prix,T5,T6,False,True,False
+Spanish Grand Prix,T6,T7_T8,False,True,False
+Spanish Grand Prix,T7_T8,T9,False,True,False
+Spanish Grand Prix,T10,T11,False,True,False
+Spanish Grand Prix,T11,T12,False,True,False
+São Paulo Grand Prix,T4,T5,False,True,False
+São Paulo Grand Prix,T6,T7,False,True,False
+São Paulo Grand Prix,T7,T8,False,True,False
+São Paulo Grand Prix,T8,T9,False,True,False
+São Paulo Grand Prix,T9,T10,False,True,False
+São Paulo Grand Prix,T11,T12_T13,False,True,False
+São Paulo Grand Prix,T12_T13,T14,False,True,False
+United States Grand Prix,T1,T2,False,True,False
+United States Grand Prix,T2,T3_T4_T5,False,True,False
+United States Grand Prix,T3_T4_T5,T6,False,True,False
+United States Grand Prix,T7,T8_T9,False,True,False
+United States Grand Prix,T10,T11,False,True,False
+United States Grand Prix,T12,T13_T14,False,True,False
+United States Grand Prix,T13_T14,T15,False,True,False
+United States Grand Prix,T16,T17,False,True,False
+United States Grand Prix,T17,T18,False,True,False
+United States Grand Prix,T19,T20,False,True,False

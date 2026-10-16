@@ -1,0 +1,169 @@
+{
+  "australian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-australia",
+    "parrafos": [
+      "Brembo llama al circuito Albert Park GP Circuit y le da 5,278 km. Índice de dificultad 3 sobre 5. En una vuelta el freno se usa menos de 8,5 s (11 % de la carrera). Cuenta siete frenadas: 4 altas, 2 medias y 1 leve.",
+      "La curva que Brembo llama turn 11 baja de 317 km/h a 133 km/h. El pedal carga 153 kg, la desaceleración es de 4,8 g, el tramo dura 1,8 s y cubre 96 m. La potencia de frenado que publican es 2.508 kW."
+    ]
+  },
+  "chinese": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-cina",
+    "parrafos": [
+      "Brembo llama al circuito Shanghai International Circuit y le da 5,451 km. Índice 3. Hay tres frenadas altas, separadas por al menos una leve. En una vuelta el freno se usa 16,6 s (18 % de la carrera, en la redacción de la ficha).",
+      "La curva que Brembo llama Turn 14 está después de una recta de 1,2 km. El auto llega a 318 km/h y baja a 72 km/h (pierde 246 km/h) en 2,66 s y 113 m. Pedal 174 kg, 4,7 g, potencia 2.450 kW."
+    ]
+  },
+  "japanese": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-japan",
+    "parrafos": [
+      "Brembo llama al circuito Suzuka Circuit y le da 5,807 km. Índice 1, el más bajo del campeonato en esa ficha: 10 s de freno por vuelta, 11 % del tiempo de vuelta. Frenadas: 2 altas, 4 medias y 2 leves.",
+      "La curva que Brembo llama Corner 16 baja de 303 km/h a 103 km/h en 2,17 s y 106 m, con 166 kg y 4,5 g. Potencia 2.360 kW. La ficha dice que se llega a fondo desde la 130R."
+    ]
+  },
+  "bahrain": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-bahrein",
+    "parrafos": [
+      "Brembo llama al circuito Bahrain International Circuit y le da 5,412 km. Índice 4. En una vuelta el freno se usa 15,8 s (18 % de la carrera). En cinco curvas la desaceleración es de al menos 4,1 g y el freno dura más de 2 s. Cuenta 4 frenadas altas, 3 medias y 1 leve.",
+      "La primera curva, después de una recta de 1,1 km, llega a 313 km/h y baja a 66 km/h en 2,89 s y 124 m, con 4,2 g, 133 kg y 2.112 kW."
+    ]
+  },
+  "saudi_arabian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-saudi-arabia",
+    "parrafos": [
+      "Brembo llama al circuito Jeddah Corniche Circuit, le da 6,174 km y dice que tiene 27 curvas y tres zonas de DRS. Índice 4. Cuenta 8 frenadas, 6 de ellas altas. El freno se usa más de 11 s por vuelta.",
+      "La primera curva baja de 317 km/h a 110 km/h en 122 m y 2,47 s, con 159 kg, 4,4 g y 2.339 kW."
+    ]
+  },
+  "miami": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-miami",
+    "parrafos": [
+      "Brembo llama al circuito Miami International Autodrome y le da 5,412 km. Índice 3. De 8 frenadas, 3 son altas y están separadas. El freno se usa menos de 14,5 s por vuelta y solo 4 frenadas piden más de 65 m.",
+      "La curva que Brembo llama Turn 17 baja de 319 km/h a 76 km/h en 2,81 s y 121 m, con 4,6 g, 169 kg y 2.462 kW."
+    ]
+  },
+  "emilia_romagna": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-imola",
+    "parrafos": [
+      "Brembo llama al circuito Autodromo Internazionale Enzo e Dino Ferrari y le da 4,909 km. Índice 3. Hay 9 frenadas y solo una pide al menos 90 m de desaceleración. El freno se usa menos de 10,5 s: 3 altas, 4 medias y 2 leves.",
+      "La curva que Brembo llama turn 17 (Rivazza) baja de 292 km/h a 122 km/h en 2,09 s y 105 m, con 4,1 g, 145 kg y 2.026 kW."
+    ]
+  },
+  "monaco": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-monaco",
+    "parrafos": [
+      "Brembo llama al circuito Circuit de Monaco y le da 3,337 km. Índice 3. Quince frenadas por vuelta: 2 altas, 6 medias y 7 leves. El freno se usa 19 s, el 27 % del tiempo de vuelta.",
+      "La curva que Brembo llama Turn 10, la chicana después del túnel, baja de 290 km/h a 96 km/h en 2,06 s y 91 m."
+    ]
+  },
+  "spanish": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-spagna",
+    "parrafos": [
+      "Brembo llama al circuito Circuit de Barcelona-Catalunya y le da 4,657 km. Índice 2. Seis frenadas por vuelta, 11,5 s en total: 3 altas, 2 medias y 1 leve.",
+      "La curva que Brembo llama Turn 10 baja de 310 km/h a 106 km/h en 2,46 s y 125 m."
+    ]
+  },
+  "canadian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-canada",
+    "parrafos": [
+      "Brembo llama al circuito Circuit Gilles-Villeneuve y le da 4,361 km. Índice 4. Seis frenadas altas y dos leves. Cinco piden más de 80 m y en cuatro la desaceleración es de al menos 5 g. El freno se usa poco menos de 12,5 s por vuelta.",
+      "La curva que Brembo llama Turn 10 baja de 292 km/h a 69 km/h en 2,82 s y 107 m."
+    ]
+  },
+  "austrian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-austria",
+    "parrafos": [
+      "Brembo llama al circuito Red Bull Ring y le da 4,318 km. Índice 3. Seis frenadas por vuelta y una carga total de pedal de poco menos de 650 kg.",
+      "La curva que Brembo llama Turn 3 baja de 306 km/h a 78 km/h en 2,58 s y 112 m, con 4,6 g, 142 kg y 2.355 kW."
+    ]
+  },
+  "british": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-uk",
+    "parrafos": [
+      "Brembo llama al circuito Silverstone Circuit y le da 5,891 km. Índice 1. Ocho frenadas por vuelta, 11 s en total.",
+      "La curva que Brembo llama Turn 3 baja de 295 km/h a 130 km/h en 2,33 s y 115 m."
+    ]
+  },
+  "belgian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-belgium",
+    "parrafos": [
+      "Brembo llama al circuito Circuit de Spa-Francorchamps y le da 7,004 km. Índice 4. Cinco frenadas altas, una media y dos leves.",
+      "La curva que Brembo llama Turn 5, al final de la recta de Kemmel, baja de 327 km/h a 176 km/h en 1,48 s y 93 m."
+    ]
+  },
+  "hungarian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-hungary",
+    "parrafos": [
+      "Brembo llama al circuito Hungaroring y le da 4,381 km. Índice 3. El freno está activo el 20 % de la vuelta. Diez frenadas: 2 altas, 4 medias y 4 leves.",
+      "La curva que Brembo llama Turn 1 es la única donde el auto pasa de 300 km/h: llega a 307 km/h y baja a 95 km/h en 2,65 s y 122 m, con 4,4 g, 156 kg y 2.243 kW."
+    ]
+  },
+  "dutch": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-dutch",
+    "parrafos": [
+      "Brembo llama al circuito Zandvoort Circuit y le da 4,259 km. Índice 2. Nueve frenadas: 6 leves, 2 altas y 1 media.",
+      "La curva que Brembo llama Turn 1 baja de 315 km/h a 124 km/h en 2,29 s y 119 m."
+    ]
+  },
+  "italian": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-monza",
+    "parrafos": [
+      "Brembo llama al circuito Autodromo Nazionale Monza y le da 5.793 m. Índice 5. Siete frenadas por vuelta, cinco de ellas altas.",
+      "La curva que Brembo llama Turn 1 (Rettifilo) baja de 337 km/h a 89 km/h en 2,75 s y 129 m."
+    ]
+  },
+  "azerbaijan": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-baku",
+    "parrafos": [
+      "La ficha escribe «the 6.003-meter-long Baku City Circuit». No se reinterpreta la unidad. Índice 4. El freno se usa 12 veces por vuelta durante casi 20,5 s. Siete frenadas altas, 2 medias y 3 leves.",
+      "La curva que Brembo llama Turn 1 baja de 329 km/h a 119 km/h en 2,12 s y 108 m, con 5 g. El pedal llega a 176 kg y la potencia a 2.758 kW. La ficha dice que la desaceleración de Turn 3 también es de 5 g."
+    ]
+  },
+  "singapore": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-singapore",
+    "parrafos": [
+      "La ficha escribe «the 4.940-meter Marina Bay Street Circuit». No se reinterpreta la unidad. Índice 4. Once frenadas, más de 17 s: 5 altas, 3 medias y 3 leves. En 7 curvas la desaceleración pasa de 4 g y el pedal de 125 kg.",
+      "La curva que Brembo llama Turn 7 (Memorial) baja de 308 km/h a 128 km/h en 1,9 s y 96 m, con 4,9 g y 151 kg. La potencia que publican en esa ficha llega a 2.542 kW."
+    ]
+  },
+  "united_states": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-usa",
+    "parrafos": [
+      "Brembo llama al circuito Circuit of the Americas y le da 5.513 m. Índice 3. Nueve frenadas y 16,5 s de freno: 3 altas, 4 medias y 2 leves. En cinco puntos el freno dura más de 2 s.",
+      "La curva que Brembo llama Turn 12 baja de 312 km/h a 92 km/h en 2,72 s y 126 m. La ficha agrega 4,2 g (un poco menos que los 4,3 g de Turn 1), 130 kg y 2.131 kW."
+    ]
+  },
+  "mexico_city": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-messico",
+    "parrafos": [
+      "Brembo llama al circuito Autódromo Hermanos Rodríguez y le da 4.304 m. Índice 4. La ficha lo atribuye a la altura y a la menor refrigeración, y no publica en ese párrafo el conteo de frenadas.",
+      "La curva que Brembo llama Turn 1 baja de 342 km/h a 112 km/h en 2,68 s y 141 m."
+    ]
+  },
+  "sao_paulo": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-san-paolo",
+    "parrafos": [
+      "Brembo llama al circuito Autódromo José Carlos Pace y le da 4,309 km. Índice 3. El freno se usa menos de 12 s por vuelta. La ficha no da el conteo de frenadas en ese párrafo.",
+      "La curva que Brembo llama Turn 1 baja de 325 km/h a 123 km/h en 2,39 s y 126 m."
+    ]
+  },
+  "las_vegas": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-las-vegas",
+    "parrafos": [
+      "Brembo llama al circuito Las Vegas Strip Circuit y le da 6,201 km. Índice 3. Siete frenadas y 14,5 s de freno. En https://www.brembo.com/en/motorsport/formula1/2025-numbers dice que la frenada de Turn 14 de Verstappen, de 350 km/h a 102 km/h en 143 m, fue la más larga de la temporada.",
+      "La curva que Brembo llama Turn 14 baja de 350 km/h a 102 km/h en 2,74 s y 143 m."
+    ]
+  },
+  "qatar": {
+    "url": null,
+    "parrafos": [
+      "No hay ficha Brembo citada. La URL indexada `https://www.brembo.com/en/motorsport/formula1/facts-formula1-gp-las-qatar` respondió 404 el 16 de octubre de 2026, y las variantes con Lusail o Qatar en el path de 2025 también. El largo oficial y las frenadas de Brembo quedan vacíos."
+    ]
+  },
+  "abu_dhabi": {
+    "url": "https://www.brembo.com/en/motorsport/formula1/2025/facts-formula1-gp-las-abu-dhabi",
+    "parrafos": [
+      "Brembo llama al circuito Yas Marina Circuit y le da 5.281 m. Índice 3. Nueve frenadas: 4 altas y 2 medias. Solo en dos curvas el freno dura al menos 2 s, y en toda la vuelta queda activo menos de 13 s.",
+      "La curva que Brembo llama Turn 6 baja de 321 km/h a 78 km/h en 2,67 s y 114 m, con 4,7 g, 148 kg y 2.403 kW."
+    ]
+  }
+}
