@@ -27,11 +27,14 @@ from .metrics import (
 )
 from .preprocessor import normalize_typology_session_median
 from .zoi import (
+    WindowSampling,
     classify_speed_typology,
     extract_circuit_zones,
     get_corner_fragments,
     in_distance_window,
     resolve_selected_corners,
+    session_event_name,
+    warn_undersampled_windows,
 )
 
 # Distance wrap for optional last-Xm trail tail (mirrors zoi._wrap).
@@ -552,11 +555,14 @@ def extract_lap_style_rows(
     analysis_zones: Dict[str, Dict[str, Any]],
     include_throttle_onset: bool = True,
     include_extended: bool = False,
+    sampling: Optional[WindowSampling] = None,
 ) -> List[Dict[str, Any]]:
     """Per-lap rows (one per ZOI / key_corners group)."""
     telemetry = prepare_lap_telemetry(lap)
     if telemetry is None or telemetry.empty:
         return []
+    if sampling is not None:
+        sampling.add_lap(telemetry, analysis_zones)
     rows = extract_style_features_from_telemetry(
         telemetry,
         analysis_zones,
@@ -591,6 +597,7 @@ def build_long_style_table(
 
     driver_list = drivers or list(session.drivers)
     records: List[Dict[str, Any]] = []
+    sampling = WindowSampling()
 
     for driver_code in driver_list:
         try:
@@ -620,6 +627,7 @@ def build_long_style_table(
                 analysis_zones,
                 include_throttle_onset=include_throttle_onset,
                 include_extended=include_extended,
+                sampling=sampling,
             )
             compound = _optional_lap_value(lap, "Compound")
             tyre_life = _optional_lap_value(lap, "TyreLife")
@@ -633,6 +641,11 @@ def build_long_style_table(
                     row["TyreLife"] = tyre_life
                 records.append(row)
 
+    warn_undersampled_windows(
+        session_event_name(session) or "circuito desconocido",
+        analysis_zones,
+        sampling,
+    )
     if not records:
         return pd.DataFrame()
 

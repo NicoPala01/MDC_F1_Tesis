@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import logging
 from pathlib import Path
 
 import numpy as np
@@ -11,7 +12,13 @@ import pandas as pd
 import pytest
 
 from f1_style_clustering.config import load_circuit_config
-from f1_style_clustering.features.zoi import key_corner_numbers
+from f1_style_clustering.features.zoi import (
+    WindowSampling,
+    expected_sample_count,
+    key_corner_numbers,
+    warn_undersampled_windows,
+    windows_below_sample_floor,
+)
 
 _ROOT = Path(__file__).resolve().parents[1]
 _SPEC = importlib.util.spec_from_file_location(
@@ -440,3 +447,246 @@ def test_measured_distances_leave_no_overlap_after_clip():
         # Una curva listada en dos zonas se fusionaría o se pisaría sin querer.
         listed = [n for zone in before.values() for n in zone.get("corner_numbers") or []]
         assert len(listed) == len(set(listed)), key
+
+
+# Δt mediano del car_data de OpenF1 en las 1154 vueltas canónicas de Canadá
+# 2025 (carrera). La media del mismo Δt es 0,270 s. Las velocidades son las
+# medianas medidas en esas vueltas: frenada cerca de T5 (224 km/h, se usa
+# 220), ápice 150 km/h, salida de T3_T4 205 km/h. La salida de T5, que es
+# rápida, se mide aparte a 254 km/h. 3·v·Δt pide 44,0 m, 30,0 m, 41,0 m y
+# 50,8 m en ese orden.
+CAR_DATA_DT_S = 0.240
+REFERENCE_SPEED_KMH = {
+    "braking": 220.0,
+    "apex": 150.0,
+    "exit": 205.0,
+}
+CANADA_EXIT_SPEED_KMH = {("T5", "exit"): 254.0}
+
+
+def _zones_after_clip(event: str, part: pd.DataFrame, circuits: dict):
+    track = float(part["track_length"].iloc[0])
+    corners = pd.DataFrame(
+        {
+            "Number": part["corner_number"].astype(int),
+            "Distance": part["distance_m"].astype(float),
+        }
+    )
+    _before, after = diag.zones_before_and_after(corners, event, circuits, track, None)
+    return after
+
+
+def _short_windows(measured: pd.DataFrame | None = None) -> set[tuple[str, str, str]]:
+    if measured is None:
+        measured = pd.read_csv(_ROOT / "docs" / "zoi_diagnostico_2025" / "baseline_corners.csv")
+    circuits = load_circuit_config()
+    found: set[tuple[str, str, str]] = set()
+    for event, part in measured.groupby("event", sort=True):
+        after = _zones_after_clip(str(event), part, circuits)
+        overrides = CANADA_EXIT_SPEED_KMH if event == "Canadian Grand Prix" else None
+        for zone, window, _length, _needed in windows_below_sample_floor(
+            after,
+            dt_s=CAR_DATA_DT_S,
+            speed_kmh_by_window=REFERENCE_SPEED_KMH,
+            speed_overrides=overrides,
+        ):
+            found.add((str(event), zone, window))
+    return found
+
+
+KNOWN_SHORT_WINDOWS = frozenset({
+    ('Abu Dhabi Grand Prix', 'T10', 'exit'),
+    ('Abu Dhabi Grand Prix', 'T11', 'braking'),
+    ('Abu Dhabi Grand Prix', 'T12_T13_T14', 'braking'),
+    ('Abu Dhabi Grand Prix', 'T15', 'exit'),
+    ('Abu Dhabi Grand Prix', 'T2', 'exit'),
+    ('Abu Dhabi Grand Prix', 'T3', 'exit'),
+    ('Abu Dhabi Grand Prix', 'T6_T7', 'exit'),
+    ('Australian Grand Prix', 'T3', 'exit'),
+    ('Australian Grand Prix', 'T4', 'braking'),
+    ('Australian Grand Prix', 'T4', 'exit'),
+    ('Australian Grand Prix', 'T6_T7', 'exit'),
+    ('Austrian Grand Prix', 'T4', 'exit'),
+    ('Austrian Grand Prix', 'T5', 'braking'),
+    ('Austrian Grand Prix', 'T7', 'exit'),
+    ('Austrian Grand Prix', 'T9', 'exit'),
+    ('Azerbaijan Grand Prix', 'T13', 'exit'),
+    ('Azerbaijan Grand Prix', 'T14', 'exit'),
+    ('Azerbaijan Grand Prix', 'T16', 'exit'),
+    ('Azerbaijan Grand Prix', 'T18', 'exit'),
+    ('Azerbaijan Grand Prix', 'T19', 'braking'),
+    ('Azerbaijan Grand Prix', 'T7', 'exit'),
+    ('Azerbaijan Grand Prix', 'T8_T9_T10_T11_T12', 'braking'),
+    ('Bahrain Grand Prix', 'T5_T6_T7', 'exit'),
+    ('Belgian Grand Prix', 'T13', 'braking'),
+    ('Belgian Grand Prix', 'T15', 'exit'),
+    ('Belgian Grand Prix', 'T5_T6', 'exit'),
+    ('Belgian Grand Prix', 'T7', 'braking'),
+    ('Canadian Grand Prix', 'T3_T4', 'exit'),
+    ('Canadian Grand Prix', 'T5', 'exit'),
+    ('Chinese Grand Prix', 'T11_T12', 'exit'),
+    ('Chinese Grand Prix', 'T3', 'braking'),
+    ('Chinese Grand Prix', 'T3', 'exit'),
+    ('Chinese Grand Prix', 'T4', 'braking'),
+    ('Chinese Grand Prix', 'T5', 'exit'),
+    ('Chinese Grand Prix', 'T8', 'exit'),
+    ('Dutch Grand Prix', 'T2', 'exit'),
+    ('Dutch Grand Prix', 'T3', 'braking'),
+    ('Dutch Grand Prix', 'T3', 'exit'),
+    ('Dutch Grand Prix', 'T4', 'exit'),
+    ('Dutch Grand Prix', 'T5', 'exit'),
+    ('Dutch Grand Prix', 'T6', 'braking'),
+    ('Dutch Grand Prix', 'T8', 'exit'),
+    ('Emilia Romagna Grand Prix', 'T10', 'braking'),
+    ('Emilia Romagna Grand Prix', 'T11_T12_T13', 'braking'),
+    ('Emilia Romagna Grand Prix', 'T18', 'braking'),
+    ('Emilia Romagna Grand Prix', 'T4', 'braking'),
+    ('Hungarian Grand Prix', 'Turn_13', 'exit'),
+    ('Hungarian Grand Prix', 'Turn_4', 'exit'),
+    ('Japanese Grand Prix', 'T13', 'exit'),
+    ('Japanese Grand Prix', 'T14', 'braking'),
+    ('Japanese Grand Prix', 'T16_T17', 'exit'),
+    ('Japanese Grand Prix', 'T18', 'braking'),
+    ('Japanese Grand Prix', 'T2', 'braking'),
+    ('Japanese Grand Prix', 'T3_T4', 'exit'),
+    ('Japanese Grand Prix', 'T5', 'braking'),
+    ('Japanese Grand Prix', 'T5', 'exit'),
+    ('Japanese Grand Prix', 'T8', 'braking'),
+    ('Japanese Grand Prix', 'T8', 'exit'),
+    ('Japanese Grand Prix', 'T9', 'braking'),
+    ('Las Vegas Grand Prix', 'T10', 'exit'),
+    ('Las Vegas Grand Prix', 'T1_T2', 'exit'),
+    ('Las Vegas Grand Prix', 'T6', 'exit'),
+    ('Las Vegas Grand Prix', 'T9', 'braking'),
+    ('Mexico City Grand Prix', 'T12', 'exit'),
+    ('Mexico City Grand Prix', 'T13_T14_T15_T16_T17', 'braking'),
+    ('Mexico City Grand Prix', 'T6', 'braking'),
+    ('Mexico City Grand Prix', 'T7_T8_T9', 'exit'),
+    ('Miami Grand Prix', 'T12', 'braking'),
+    ('Miami Grand Prix', 'T13_T14_T15_T16', 'braking'),
+    ('Miami Grand Prix', 'T17', 'exit'),
+    ('Miami Grand Prix', 'T18', 'braking'),
+    ('Miami Grand Prix', 'T18', 'exit'),
+    ('Miami Grand Prix', 'T5', 'braking'),
+    ('Miami Grand Prix', 'T5', 'exit'),
+    ('Miami Grand Prix', 'T6', 'braking'),
+    ('Miami Grand Prix', 'T7_T8', 'braking'),
+    ('Qatar Grand Prix', 'T12', 'exit'),
+    ('Qatar Grand Prix', 'T13', 'exit'),
+    ('Qatar Grand Prix', 'T2', 'exit'),
+    ('Qatar Grand Prix', 'T4', 'exit'),
+    ('Qatar Grand Prix', 'T5', 'braking'),
+    ('Qatar Grand Prix', 'T7', 'exit'),
+    ('Qatar Grand Prix', 'T8_T9', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T14', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T16_T17', 'braking'),
+    ('Saudi Arabian Grand Prix', 'T18', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T19', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T20', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T22_T23', 'exit'),
+    ('Saudi Arabian Grand Prix', 'T24', 'braking'),
+    ('Saudi Arabian Grand Prix', 'T3', 'braking'),
+    ('Saudi Arabian Grand Prix', 'T6_T7_T8', 'braking'),
+    ('Saudi Arabian Grand Prix', 'T9_T10_T11_T12', 'braking'),
+    ('Singapore Grand Prix', 'T10', 'exit'),
+    ('Singapore Grand Prix', 'T11_T12', 'braking'),
+    ('Singapore Grand Prix', 'T1_T2_T3', 'exit'),
+    ('Singapore Grand Prix', 'T4', 'braking'),
+    ('Singapore Grand Prix', 'T8', 'exit'),
+    ('Spanish Grand Prix', 'T10', 'exit'),
+    ('Spanish Grand Prix', 'T11', 'braking'),
+    ('Spanish Grand Prix', 'T12', 'braking'),
+    ('Spanish Grand Prix', 'T5', 'exit'),
+    ('Spanish Grand Prix', 'T6', 'braking'),
+    ('Spanish Grand Prix', 'T6', 'exit'),
+    ('São Paulo Grand Prix', 'T10', 'exit'),
+    ('São Paulo Grand Prix', 'T1_T2', 'exit'),
+    ('São Paulo Grand Prix', 'T4', 'exit'),
+    ('São Paulo Grand Prix', 'T5', 'braking'),
+    ('São Paulo Grand Prix', 'T6', 'exit'),
+    ('São Paulo Grand Prix', 'T7', 'braking'),
+    ('São Paulo Grand Prix', 'T7', 'exit'),
+    ('São Paulo Grand Prix', 'T8', 'braking'),
+    ('São Paulo Grand Prix', 'T9', 'braking'),
+    ('United States Grand Prix', 'T12', 'exit'),
+    ('United States Grand Prix', 'T13_T14', 'exit'),
+    ('United States Grand Prix', 'T15', 'exit'),
+    ('United States Grand Prix', 'T17', 'braking'),
+    ('United States Grand Prix', 'T17', 'exit'),
+    ('United States Grand Prix', 'T18', 'braking'),
+    ('United States Grand Prix', 'T6', 'braking'),
+    ('United States Grand Prix', 'T7', 'exit'),
+    ('United States Grand Prix', 'T8_T9', 'braking'),
+    ('United States Grand Prix', 'T8_T9', 'exit'),
+})
+
+
+def test_expected_samples_are_length_over_speed_and_dt():
+    # 205 km/h y 0,240 s recorren 41,0 m en tres muestras.
+    assert expected_sample_count(41.0, 205.0, CAR_DATA_DT_S) == pytest.approx(3.0, abs=0.01)
+    assert expected_sample_count(25.0, 205.0, CAR_DATA_DT_S) < 3.0
+    assert expected_sample_count(44.8, 254.0, CAR_DATA_DT_S) < 3.0
+
+
+def test_short_window_warning_names_circuit_zone_window_and_samples(caplog):
+    zones = {
+        "T3_T4": {
+            "braking": (0.0, 200.0),
+            "apex": (200.0, 320.0),
+            "exit": (320.0, 345.0),
+            "track_length": 5000.0,
+        }
+    }
+    step = 205.0 / 3.6 * CAR_DATA_DT_S
+    distance = np.arange(0.0, 500.0, step)
+    frame = pd.DataFrame(
+        {
+            "Distance": distance,
+            "Speed": np.full(distance.shape, 205.0),
+            "Time": np.arange(distance.shape[0]) * CAR_DATA_DT_S,
+            "Brake": np.zeros(distance.shape[0]),
+            "Throttle": np.full(distance.shape, 100.0),
+            "nGear": np.full(distance.shape[0], 4.0),
+        }
+    )
+    sampling = WindowSampling()
+    sampling.add_lap(frame, zones)
+    with caplog.at_level(logging.WARNING, logger="f1_style_clustering.features.zoi"):
+        messages = warn_undersampled_windows("Canadian Grand Prix", zones, sampling)
+    assert len(messages) == 1
+    text = messages[0]
+    assert "Canadian Grand Prix" in text
+    assert "T3_T4" in text
+    assert "exit" in text
+    assert "L_ef=25.0 m" in text
+    assert "muestras esperadas=" in text
+    assert "mediana de muestras por vuelta=" in text
+    assert text in caplog.text
+
+
+@pytest.mark.xfail(
+    strict=True,
+    reason=(
+        "La salida efectiva de T3_T4 queda en 25 m y la de T5 en 44,8 m, "
+        "debajo de 3·v·Δt (41 m y 51 m). Correr la frenada siguiente hasta "
+        "su p95+15 no alcanza, y no se fusionan las zonas. Decisión pendiente."
+    ),
+)
+def test_canada_exit_windows_cover_three_car_data_samples():
+    short = _short_windows()
+    assert ("Canadian Grand Prix", "T3_T4", "exit") not in short
+    assert ("Canadian Grand Prix", "T5", "exit") not in short
+
+
+def test_short_windows_are_the_pending_set_and_nothing_else():
+    """El piso 3·v·Δt se recorre en los 24 circuitos.
+
+    Las ventanas de este conjunto quedan cortas con las velocidades de
+    referencia y no se retocan en este cambio. Canadá está adentro: T3_T4
+    y T5 no se pudieron alargar sin pisar la curva siguiente. Una ventana
+    nueva que caiga del piso, o una de esta lista que deje de estar corta,
+    tiene que romper el test.
+    """
+    assert _short_windows() == KNOWN_SHORT_WINDOWS
+
+

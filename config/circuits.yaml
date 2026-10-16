@@ -592,6 +592,19 @@ benchmark_circuits:
         corner_numbers: [1, 2]
         braking_distance_window: 150
         exit_distance_window: 250
+      # Salida efectiva = exit_distance_window − 60 m, porque el tramo
+      # arranca donde termina el ápice (zoi.group_zone_bounds). Con el
+      # car_data de la carrera 2025 la salida de T3_T4 queda en 25 m
+      # (831,5–856,5) y la de T5 en 44,8 m. Hacen falta unos 41 m y 51 m
+      # para 3·v·Δt (v 205 y 254 km/h, Δt mediano 0,240 s). El lugar
+      # saldría de correr el inicio de la frenada siguiente, y solo hasta
+      # su p95+15. T5 tiene un solo inicio de esta curva a 118 m
+      # (p95+15 = 133 m) y la ventana ya está en 120 m: no hay lugar, y
+      # las dos ventanas ya se tocan. T6_T7 tiene p95 99,8 m (n=1002),
+      # piso 115 m contra los 120 m actuales: alcanzan unos 5 m y la
+      # salida de T5 llegaría a 50 m, todavía debajo de 51 m (o de 57 m
+      # si se usa la media de Δt, 0,270 s). No se fusionan las zonas.
+      # Decisión pendiente para Nicolás.
       T3_T4:
         corner_numbers: [3, 4]
         braking_distance_window: 120

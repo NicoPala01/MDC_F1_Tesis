@@ -77,6 +77,12 @@ Después de las ventanas de esta ficha: 28,58 % en el borde o afuera (21 en el b
 | T1_T2 | 1, 2 | 150 | 250 |
 | T3_T4 | 3, 4 | 120 | 85 |
 | T5 | 5 | 120 | 105 |
+
+La salida del YAML se mide desde el ápice, y la ventana efectiva arranca 60 m después, donde termina el ápice. En T3_T4 eso deja 25 m (831,5 m a 856,5 m). En T5 deja 44,8 m después del clip contra T6_T7. Con el car_data de OpenF1 de la carrera 2025, alineado a la distancia del archivo por la velocidad, Δt mediano es 0,240 s (la media del mismo Δt es 0,270 s). La velocidad mediana en la salida es 205 km/h en T3_T4 y 254 km/h en T5, así que 3·v·Δt pide unos 41 m y unos 51 m. Esas dos salidas no llegan.
+
+El lugar para alargarlas saldría de correr el inicio de la frenada de la zona siguiente, solo hasta el p95+15 m de los inicios de esa curva. T5 tiene un solo inicio de esta curva, a 118 m (p95+15 = 133 m), y la frenada ya está en 120 m: no sobra nada y la salida de T3_T4 ya toca esa frenada. T6_T7 tiene p95 99,8 m en 1002 inicios, piso 115 m contra 120 m actuales. Eso alarga la salida de T5 unos 5 m, hasta 50 m, y sigue por debajo de 51 m. Con la media de Δt el piso de T5 sube a unos 57 m, que es el rango de 55-60 m, y tampoco entra. No se fusionan T3_T4 con T5 ni T5 con T6_T7. Queda como decisión pendiente.
+
+En esas 1154 vueltas canónicas la salida de T3_T4 tiene 0 muestras en 36 vueltas, 1 en 459, 2 en 611 y 3 en 48. `spatial_fraction` pide dos muestras, así que `full_throttle_frac` de T3_T4 queda vacío en 495 vueltas. T5 queda vacío en 101. T3_T4 es la única zona media, así que en la matriz de temporada (sin `fast__brake_point_rel`) el dropna saca 525 vueltas: 495 traen `medium__full_throttle_frac` vacío y 30 más se van solo por `medium__brake_point_rel`. El informe de `becb274`, con `add_distance()` en vez de esta alineación, contaba 546 vueltas y 543 por `medium__full_throttle_frac`. Los metros no se movieron, así que el dropna de después es el mismo.
 | T6_T7 | 6, 7 | 120 | 250 |
 | T8_T9 | 8, 9 | 180 | 250 |
 | T10_T11 | 10, 11 | 160 | 250 |
