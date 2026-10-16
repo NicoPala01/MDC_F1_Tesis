@@ -1,0 +1,456 @@
+event,carrera,Driver,FullName,Team,Cluster,Archetype,n_laps,modal_fraction
+Abu Dhabi Grand Prix,Abu Dabi,ALB,Alexander Albon,Williams,0,No dominant trait,50,1.0
+Abu Dhabi Grand Prix,Abu Dabi,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,55,1.0
+Abu Dhabi Grand Prix,Abu Dabi,ANT,Kimi Antonelli,Mercedes,1,Early braking + sharper throttle pickup,52,0.5192307692307693
+Abu Dhabi Grand Prix,Abu Dabi,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,54,1.0
+Abu Dhabi Grand Prix,Abu Dabi,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,53,1.0
+Abu Dhabi Grand Prix,Abu Dabi,COL,Franco Colapinto,Alpine,0,No dominant trait,49,0.9795918367346939
+Abu Dhabi Grand Prix,Abu Dabi,GAS,Pierre Gasly,Alpine,0,No dominant trait,48,1.0
+Abu Dhabi Grand Prix,Abu Dabi,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,51,1.0
+Abu Dhabi Grand Prix,Abu Dabi,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,50,1.0
+Abu Dhabi Grand Prix,Abu Dabi,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,50,1.0
+Abu Dhabi Grand Prix,Abu Dabi,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,52,1.0
+Abu Dhabi Grand Prix,Abu Dabi,LEC,Charles Leclerc,Ferrari,0,No dominant trait,51,1.0
+Abu Dhabi Grand Prix,Abu Dabi,NOR,Lando Norris,McLaren,0,No dominant trait,53,1.0
+Abu Dhabi Grand Prix,Abu Dabi,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,53,1.0
+Abu Dhabi Grand Prix,Abu Dabi,PIA,Oscar Piastri,McLaren,0,No dominant trait,54,1.0
+Abu Dhabi Grand Prix,Abu Dabi,RUS,George Russell,Mercedes,0,No dominant trait,55,1.0
+Abu Dhabi Grand Prix,Abu Dabi,SAI,Carlos Sainz,Williams,0,No dominant trait,54,1.0
+Abu Dhabi Grand Prix,Abu Dabi,STR,Lance Stroll,Aston Martin,0,No dominant trait,54,1.0
+Abu Dhabi Grand Prix,Abu Dabi,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,53,1.0
+Abu Dhabi Grand Prix,Abu Dabi,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,53,1.0
+Australian Grand Prix,Australia,ALB,Alexander Albon,Williams,1,No dominant trait,34,0.9705882352941176
+Australian Grand Prix,Australia,ALO,Fernando Alonso,Aston Martin,1,No dominant trait,25,0.92
+Australian Grand Prix,Australia,ANT,Andrea Kimi Antonelli,Mercedes,1,No dominant trait,33,0.9696969696969697
+Australian Grand Prix,Australia,BEA,Oliver Bearman,Haas F1 Team,1,No dominant trait,32,0.96875
+Australian Grand Prix,Australia,BOR,Gabriel Bortoleto,Kick Sauber,1,No dominant trait,27,0.9629629629629629
+Australian Grand Prix,Australia,GAS,Pierre Gasly,Alpine,1,No dominant trait,32,1.0
+Australian Grand Prix,Australia,HAM,Lewis Hamilton,Ferrari,1,No dominant trait,34,0.9411764705882353
+Australian Grand Prix,Australia,HUL,Nico Hulkenberg,Kick Sauber,1,No dominant trait,34,0.9705882352941176
+Australian Grand Prix,Australia,LAW,Liam Lawson,Red Bull Racing,1,No dominant trait,27,1.0
+Australian Grand Prix,Australia,LEC,Charles Leclerc,Ferrari,1,No dominant trait,34,1.0
+Australian Grand Prix,Australia,NOR,Lando Norris,McLaren,1,No dominant trait,35,1.0
+Australian Grand Prix,Australia,OCO,Esteban Ocon,Haas F1 Team,1,No dominant trait,32,0.875
+Australian Grand Prix,Australia,PIA,Oscar Piastri,McLaren,1,No dominant trait,33,0.9696969696969697
+Australian Grand Prix,Australia,RUS,George Russell,Mercedes,1,No dominant trait,34,1.0
+Australian Grand Prix,Australia,STR,Lance Stroll,Aston Martin,1,No dominant trait,34,1.0
+Australian Grand Prix,Australia,TSU,Yuki Tsunoda,Racing Bulls,1,No dominant trait,34,1.0
+Australian Grand Prix,Australia,VER,Max Verstappen,Red Bull Racing,1,No dominant trait,33,1.0
+Austrian Grand Prix,Austria,ALB,Alexander Albon,Williams,0,Sharper throttle pickup,9,0.5555555555555556
+Austrian Grand Prix,Austria,ALO,Fernando Alonso,Aston Martin,1,No dominant trait,62,0.8870967741935484
+Austrian Grand Prix,Austria,BEA,Oliver Bearman,Haas F1 Team,1,No dominant trait,59,0.864406779661017
+Austrian Grand Prix,Austria,BOR,Gabriel Bortoleto,Kick Sauber,1,No dominant trait,61,0.9672131147540983
+Austrian Grand Prix,Austria,COL,Franco Colapinto,Alpine,1,No dominant trait,60,0.55
+Austrian Grand Prix,Austria,GAS,Pierre Gasly,Alpine,1,No dominant trait,61,0.639344262295082
+Austrian Grand Prix,Austria,HAD,Isack Hadjar,Racing Bulls,1,No dominant trait,63,0.8888888888888888
+Austrian Grand Prix,Austria,HAM,Lewis Hamilton,Ferrari,1,No dominant trait,61,0.7213114754098361
+Austrian Grand Prix,Austria,HUL,Nico Hulkenberg,Kick Sauber,1,No dominant trait,61,0.8852459016393442
+Austrian Grand Prix,Austria,LAW,Liam Lawson,Racing Bulls,1,No dominant trait,64,1.0
+Austrian Grand Prix,Austria,LEC,Charles Leclerc,Ferrari,1,No dominant trait,61,0.8032786885245902
+Austrian Grand Prix,Austria,NOR,Lando Norris,McLaren,1,No dominant trait,61,0.9508196721311475
+Austrian Grand Prix,Austria,OCO,Esteban Ocon,Haas F1 Team,1,No dominant trait,60,0.85
+Austrian Grand Prix,Austria,PIA,Oscar Piastri,McLaren,1,No dominant trait,60,0.8166666666666667
+Austrian Grand Prix,Austria,RUS,George Russell,Mercedes,1,No dominant trait,62,0.8225806451612904
+Austrian Grand Prix,Austria,STR,Lance Stroll,Aston Martin,1,No dominant trait,60,1.0
+Austrian Grand Prix,Austria,TSU,Yuki Tsunoda,Red Bull Racing,1,No dominant trait,59,0.8813559322033898
+Azerbaijan Grand Prix,Azerbaiyán,ALB,Alexander Albon,Williams,3,Early braking + low apex speed,42,0.5714285714285714
+Azerbaijan Grand Prix,Azerbaiyán,ALO,Fernando Alonso,Aston Martin,3,Early braking + low apex speed,42,0.38095238095238093
+Azerbaijan Grand Prix,Azerbaiyán,ANT,Kimi Antonelli,Mercedes,1,High apex speed + less trail braking,43,0.8372093023255814
+Azerbaijan Grand Prix,Azerbaiyán,BEA,Oliver Bearman,Haas F1 Team,3,Early braking + low apex speed,42,0.47619047619047616
+Azerbaijan Grand Prix,Azerbaiyán,BOR,Gabriel Bortoleto,Kick Sauber,4,Late braking + more trail braking,42,0.47619047619047616
+Azerbaijan Grand Prix,Azerbaiyán,COL,Franco Colapinto,Alpine,4,Late braking + more trail braking,42,0.5714285714285714
+Azerbaijan Grand Prix,Azerbaiyán,GAS,Pierre Gasly,Alpine,3,Early braking + low apex speed,41,0.6341463414634146
+Azerbaijan Grand Prix,Azerbaiyán,HAD,Isack Hadjar,Racing Bulls,4,Late braking + more trail braking,42,0.6904761904761905
+Azerbaijan Grand Prix,Azerbaiyán,HAM,Lewis Hamilton,Ferrari,2,More trail braking + less coasting,42,0.8571428571428571
+Azerbaijan Grand Prix,Azerbaiyán,HUL,Nico Hulkenberg,Kick Sauber,3,Early braking + low apex speed,42,0.42857142857142855
+Azerbaijan Grand Prix,Azerbaiyán,LAW,Liam Lawson,Racing Bulls,5,More coasting,41,0.8780487804878049
+Azerbaijan Grand Prix,Azerbaiyán,LEC,Charles Leclerc,Ferrari,2,More trail braking + less coasting,42,0.7142857142857143
+Azerbaijan Grand Prix,Azerbaiyán,NOR,Lando Norris,McLaren,3,Early braking + low apex speed,42,0.42857142857142855
+Azerbaijan Grand Prix,Azerbaiyán,OCO,Esteban Ocon,Haas F1 Team,2,More trail braking + less coasting,44,0.6363636363636364
+Azerbaijan Grand Prix,Azerbaiyán,RUS,George Russell,Mercedes,1,High apex speed + less trail braking,41,0.6829268292682927
+Azerbaijan Grand Prix,Azerbaiyán,SAI,Carlos Sainz,Williams,4,Late braking + more trail braking,41,0.6341463414634146
+Azerbaijan Grand Prix,Azerbaiyán,STR,Lance Stroll,Aston Martin,5,More coasting,42,0.38095238095238093
+Azerbaijan Grand Prix,Azerbaiyán,TSU,Yuki Tsunoda,Red Bull Racing,5,More coasting,41,0.3170731707317073
+Azerbaijan Grand Prix,Azerbaiyán,VER,Max Verstappen,Red Bull Racing,4,Late braking + more trail braking,42,0.8809523809523809
+Bahrain Grand Prix,Baréin,ALB,Alexander Albon,Williams,0,No dominant trait,50,0.6
+Bahrain Grand Prix,Baréin,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,49,0.5510204081632653
+Bahrain Grand Prix,Baréin,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,45,0.8
+Bahrain Grand Prix,Baréin,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,48,0.8958333333333334
+Bahrain Grand Prix,Baréin,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,50,1.0
+Bahrain Grand Prix,Baréin,DOO,Jack Doohan,Alpine,0,No dominant trait,44,1.0
+Bahrain Grand Prix,Baréin,GAS,Pierre Gasly,Alpine,0,No dominant trait,48,0.9583333333333334
+Bahrain Grand Prix,Baréin,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,45,0.8888888888888888
+Bahrain Grand Prix,Baréin,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,49,0.9183673469387755
+Bahrain Grand Prix,Baréin,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,47,0.8297872340425532
+Bahrain Grand Prix,Baréin,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,49,0.8367346938775511
+Bahrain Grand Prix,Baréin,LEC,Charles Leclerc,Ferrari,0,No dominant trait,49,0.9591836734693877
+Bahrain Grand Prix,Baréin,NOR,Lando Norris,McLaren,0,No dominant trait,48,0.625
+Bahrain Grand Prix,Baréin,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,48,0.8541666666666666
+Bahrain Grand Prix,Baréin,PIA,Oscar Piastri,McLaren,0,No dominant trait,49,0.7959183673469388
+Bahrain Grand Prix,Baréin,RUS,George Russell,Mercedes,0,No dominant trait,30,0.7666666666666667
+Bahrain Grand Prix,Baréin,SAI,Carlos Sainz,Williams,0,No dominant trait,35,0.9142857142857143
+Bahrain Grand Prix,Baréin,STR,Lance Stroll,Aston Martin,0,No dominant trait,49,0.7959183673469388
+Bahrain Grand Prix,Baréin,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,47,0.5531914893617021
+Bahrain Grand Prix,Baréin,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,45,0.9777777777777777
+Belgian Grand Prix,Bélgica,ALB,Alexander Albon,Williams,2,Low apex speed + less full throttle on exit,37,0.5675675675675675
+Belgian Grand Prix,Bélgica,ALO,Fernando Alonso,Aston Martin,2,Low apex speed + less full throttle on exit,35,0.7428571428571429
+Belgian Grand Prix,Bélgica,ANT,Kimi Antonelli,Mercedes,2,Low apex speed + less full throttle on exit,35,0.9714285714285714
+Belgian Grand Prix,Bélgica,BEA,Oliver Bearman,Haas F1 Team,1,Less coasting + more full throttle on exit,38,0.5789473684210527
+Belgian Grand Prix,Bélgica,BOR,Gabriel Bortoleto,Kick Sauber,2,Low apex speed + less full throttle on exit,37,0.4594594594594595
+Belgian Grand Prix,Bélgica,COL,Franco Colapinto,Alpine,2,Low apex speed + less full throttle on exit,34,0.5588235294117647
+Belgian Grand Prix,Bélgica,GAS,Pierre Gasly,Alpine,1,Less coasting + more full throttle on exit,37,0.4594594594594595
+Belgian Grand Prix,Bélgica,HAD,Isack Hadjar,Racing Bulls,0,More coasting,33,0.9090909090909091
+Belgian Grand Prix,Bélgica,HAM,Lewis Hamilton,Ferrari,1,Less coasting + more full throttle on exit,38,0.4473684210526316
+Belgian Grand Prix,Bélgica,HUL,Nico Hulkenberg,Kick Sauber,1,Less coasting + more full throttle on exit,36,0.6388888888888888
+Belgian Grand Prix,Bélgica,LAW,Liam Lawson,Racing Bulls,0,More coasting,38,0.8421052631578947
+Belgian Grand Prix,Bélgica,LEC,Charles Leclerc,Ferrari,1,Less coasting + more full throttle on exit,38,1.0
+Belgian Grand Prix,Bélgica,NOR,Lando Norris,McLaren,0,More coasting,37,0.918918918918919
+Belgian Grand Prix,Bélgica,OCO,Esteban Ocon,Haas F1 Team,2,Low apex speed + less full throttle on exit,38,0.5
+Belgian Grand Prix,Bélgica,PIA,Oscar Piastri,McLaren,0,More coasting,38,0.9473684210526315
+Belgian Grand Prix,Bélgica,RUS,George Russell,Mercedes,0,More coasting,38,0.6052631578947368
+Belgian Grand Prix,Bélgica,SAI,Carlos Sainz,Williams,1,Less coasting + more full throttle on exit,34,0.7647058823529411
+Belgian Grand Prix,Bélgica,STR,Lance Stroll,Aston Martin,0,More coasting,38,0.6842105263157895
+Belgian Grand Prix,Bélgica,TSU,Yuki Tsunoda,Red Bull Racing,0,More coasting,37,0.6486486486486487
+Belgian Grand Prix,Bélgica,VER,Max Verstappen,Red Bull Racing,1,Less coasting + more full throttle on exit,38,0.5789473684210527
+British Grand Prix,Gran Bretaña,ALB,Alexander Albon,Williams,0,No dominant trait,31,0.9032258064516129
+British Grand Prix,Gran Bretaña,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,28,1.0
+British Grand Prix,Gran Bretaña,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,3,1.0
+British Grand Prix,Gran Bretaña,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,28,0.8571428571428571
+British Grand Prix,Gran Bretaña,GAS,Pierre Gasly,Alpine,0,No dominant trait,27,1.0
+British Grand Prix,Gran Bretaña,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,3,1.0
+British Grand Prix,Gran Bretaña,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,27,0.9629629629629629
+British Grand Prix,Gran Bretaña,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,29,1.0
+British Grand Prix,Gran Bretaña,LEC,Charles Leclerc,Ferrari,0,No dominant trait,29,1.0
+British Grand Prix,Gran Bretaña,NOR,Lando Norris,McLaren,0,No dominant trait,29,1.0
+British Grand Prix,Gran Bretaña,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,32,0.78125
+British Grand Prix,Gran Bretaña,PIA,Oscar Piastri,McLaren,0,No dominant trait,28,1.0
+British Grand Prix,Gran Bretaña,RUS,George Russell,Mercedes,0,No dominant trait,29,1.0
+British Grand Prix,Gran Bretaña,SAI,Carlos Sainz,Williams,0,No dominant trait,28,0.9285714285714286
+British Grand Prix,Gran Bretaña,STR,Lance Stroll,Aston Martin,1,Early braking,27,0.5555555555555556
+British Grand Prix,Gran Bretaña,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,28,0.8214285714285714
+British Grand Prix,Gran Bretaña,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,28,0.9285714285714286
+Canadian Grand Prix,Canadá,ALB,Alexander Albon,Williams,1,Early braking + less trail braking,21,0.5714285714285714
+Canadian Grand Prix,Canadá,ALO,Fernando Alonso,Aston Martin,1,Early braking + less trail braking,33,0.5454545454545454
+Canadian Grand Prix,Canadá,ANT,Kimi Antonelli,Mercedes,0,More trail braking,27,0.8148148148148148
+Canadian Grand Prix,Canadá,BEA,Oliver Bearman,Haas F1 Team,1,Early braking + less trail braking,27,0.7037037037037037
+Canadian Grand Prix,Canadá,BOR,Gabriel Bortoleto,Kick Sauber,1,Early braking + less trail braking,29,0.9655172413793104
+Canadian Grand Prix,Canadá,COL,Franco Colapinto,Alpine,0,More trail braking,32,0.78125
+Canadian Grand Prix,Canadá,GAS,Pierre Gasly,Alpine,0,More trail braking,28,0.6785714285714286
+Canadian Grand Prix,Canadá,HAD,Isack Hadjar,Racing Bulls,1,Early braking + less trail braking,29,0.8620689655172413
+Canadian Grand Prix,Canadá,HAM,Lewis Hamilton,Ferrari,0,More trail braking,31,0.7741935483870968
+Canadian Grand Prix,Canadá,HUL,Nico Hulkenberg,Kick Sauber,1,Early braking + less trail braking,34,0.8235294117647058
+Canadian Grand Prix,Canadá,LAW,Liam Lawson,Racing Bulls,1,Early braking + less trail braking,31,0.8387096774193549
+Canadian Grand Prix,Canadá,LEC,Charles Leclerc,Ferrari,0,More trail braking,35,0.8857142857142857
+Canadian Grand Prix,Canadá,NOR,Lando Norris,McLaren,0,More trail braking,36,0.6388888888888888
+Canadian Grand Prix,Canadá,OCO,Esteban Ocon,Haas F1 Team,0,More trail braking,31,0.8387096774193549
+Canadian Grand Prix,Canadá,PIA,Oscar Piastri,McLaren,0,More trail braking,28,0.6428571428571429
+Canadian Grand Prix,Canadá,RUS,George Russell,Mercedes,0,More trail braking,30,0.8
+Canadian Grand Prix,Canadá,SAI,Carlos Sainz,Williams,1,Early braking + less trail braking,30,0.7333333333333333
+Canadian Grand Prix,Canadá,STR,Lance Stroll,Aston Martin,1,Early braking + less trail braking,34,0.7941176470588235
+Canadian Grand Prix,Canadá,TSU,Yuki Tsunoda,Red Bull Racing,1,Early braking + less trail braking,32,0.6875
+Canadian Grand Prix,Canadá,VER,Max Verstappen,Red Bull Racing,0,More trail braking,30,0.9333333333333333
+Chinese Grand Prix,China,ALB,Alexander Albon,Williams,0,No dominant trait (class 0),50,0.72
+Chinese Grand Prix,China,ANT,Kimi Antonelli,Mercedes,0,No dominant trait (class 0),51,0.7843137254901961
+Chinese Grand Prix,China,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait (class 0),50,0.8
+Chinese Grand Prix,China,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait (class 0),50,0.68
+Chinese Grand Prix,China,DOO,Jack Doohan,Alpine,0,No dominant trait (class 0),49,0.8163265306122449
+Chinese Grand Prix,China,GAS,Pierre Gasly,Alpine,0,No dominant trait (class 0),50,0.62
+Chinese Grand Prix,China,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait (class 0),47,0.7872340425531915
+Chinese Grand Prix,China,HAM,Lewis Hamilton,Ferrari,0,No dominant trait (class 0),49,0.8163265306122449
+Chinese Grand Prix,China,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait (class 0),49,0.5918367346938775
+Chinese Grand Prix,China,LAW,Liam Lawson,Red Bull Racing,0,No dominant trait (class 0),48,0.6666666666666666
+Chinese Grand Prix,China,LEC,Charles Leclerc,Ferrari,0,No dominant trait (class 0),51,0.803921568627451
+Chinese Grand Prix,China,NOR,Lando Norris,McLaren,0,No dominant trait (class 0),51,0.6862745098039216
+Chinese Grand Prix,China,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait (class 0),50,0.7
+Chinese Grand Prix,China,PIA,Oscar Piastri,McLaren,0,No dominant trait (class 0),51,0.6862745098039216
+Chinese Grand Prix,China,RUS,George Russell,Mercedes,0,No dominant trait (class 0),51,0.6666666666666666
+Chinese Grand Prix,China,SAI,Carlos Sainz,Williams,0,No dominant trait (class 0),50,0.82
+Chinese Grand Prix,China,STR,Lance Stroll,Aston Martin,0,No dominant trait (class 0),50,0.62
+Chinese Grand Prix,China,TSU,Yuki Tsunoda,Racing Bulls,0,No dominant trait (class 0),44,0.7954545454545454
+Chinese Grand Prix,China,VER,Max Verstappen,Red Bull Racing,0,No dominant trait (class 0),51,0.7254901960784313
+Dutch Grand Prix,Países Bajos,ALB,Alexander Albon,Williams,2,Sharper throttle pickup + less full throttle on exit,55,0.5636363636363636
+Dutch Grand Prix,Países Bajos,ALO,Fernando Alonso,Aston Martin,3,More trail braking + less coasting,49,0.5714285714285714
+Dutch Grand Prix,Países Bajos,ANT,Kimi Antonelli,Mercedes,0,Early braking + less trail braking,53,0.2830188679245283
+Dutch Grand Prix,Países Bajos,BEA,Oliver Bearman,Haas F1 Team,0,Early braking + less trail braking,53,0.33962264150943394
+Dutch Grand Prix,Países Bajos,BOR,Gabriel Bortoleto,Kick Sauber,3,More trail braking + less coasting,49,0.673469387755102
+Dutch Grand Prix,Países Bajos,COL,Franco Colapinto,Alpine,3,More trail braking + less coasting,49,0.3469387755102041
+Dutch Grand Prix,Países Bajos,GAS,Pierre Gasly,Alpine,0,Early braking + less trail braking,52,0.6346153846153846
+Dutch Grand Prix,Países Bajos,HAD,Isack Hadjar,Racing Bulls,4,High apex speed + more coasting,55,0.8181818181818182
+Dutch Grand Prix,Países Bajos,HAM,Lewis Hamilton,Ferrari,3,More trail braking + less coasting,21,0.9523809523809523
+Dutch Grand Prix,Países Bajos,HUL,Nico Hulkenberg,Kick Sauber,0,Early braking + less trail braking,49,0.6122448979591837
+Dutch Grand Prix,Países Bajos,LAW,Liam Lawson,Racing Bulls,1,Late braking + more full throttle on exit,52,0.46153846153846156
+Dutch Grand Prix,Países Bajos,LEC,Charles Leclerc,Ferrari,3,More trail braking + less coasting,41,0.7804878048780488
+Dutch Grand Prix,Países Bajos,NOR,Lando Norris,McLaren,4,High apex speed + more coasting,51,0.8431372549019608
+Dutch Grand Prix,Países Bajos,OCO,Esteban Ocon,Haas F1 Team,3,More trail braking + less coasting,53,0.6981132075471698
+Dutch Grand Prix,Países Bajos,PIA,Oscar Piastri,McLaren,4,High apex speed + more coasting,55,0.7818181818181819
+Dutch Grand Prix,Países Bajos,RUS,George Russell,Mercedes,4,High apex speed + more coasting,54,0.48148148148148145
+Dutch Grand Prix,Países Bajos,SAI,Carlos Sainz,Williams,3,More trail braking + less coasting,50,0.48
+Dutch Grand Prix,Países Bajos,STR,Lance Stroll,Aston Martin,4,High apex speed + more coasting,51,0.6274509803921569
+Dutch Grand Prix,Países Bajos,TSU,Yuki Tsunoda,Red Bull Racing,0,Early braking + less trail braking,51,0.7254901960784313
+Dutch Grand Prix,Países Bajos,VER,Max Verstappen,Red Bull Racing,4,High apex speed + more coasting,55,0.9090909090909091
+Emilia Romagna Grand Prix,Emilia-Romaña,ALB,Alexander Albon,Williams,0,No dominant trait,49,0.7755102040816326
+Emilia Romagna Grand Prix,Emilia-Romaña,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,47,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,40,0.975
+Emilia Romagna Grand Prix,Emilia-Romaña,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,48,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,48,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,COL,Franco Colapinto,Alpine,0,No dominant trait,48,0.7083333333333334
+Emilia Romagna Grand Prix,Emilia-Romaña,GAS,Pierre Gasly,Alpine,0,No dominant trait,46,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,50,0.96
+Emilia Romagna Grand Prix,Emilia-Romaña,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,50,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,49,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,48,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,LEC,Charles Leclerc,Ferrari,0,No dominant trait,48,0.9791666666666666
+Emilia Romagna Grand Prix,Emilia-Romaña,NOR,Lando Norris,McLaren,0,No dominant trait,50,0.96
+Emilia Romagna Grand Prix,Emilia-Romaña,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,25,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,PIA,Oscar Piastri,McLaren,0,No dominant trait,49,1.0
+Emilia Romagna Grand Prix,Emilia-Romaña,RUS,George Russell,Mercedes,0,No dominant trait,48,0.9583333333333334
+Emilia Romagna Grand Prix,Emilia-Romaña,SAI,Carlos Sainz,Williams,0,No dominant trait,48,0.9791666666666666
+Emilia Romagna Grand Prix,Emilia-Romaña,STR,Lance Stroll,Aston Martin,0,No dominant trait,47,0.9574468085106383
+Emilia Romagna Grand Prix,Emilia-Romaña,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,50,0.98
+Emilia Romagna Grand Prix,Emilia-Romaña,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,51,1.0
+Hungarian Grand Prix,Hungría,ALB,Alexander Albon,Williams,0,No dominant trait,63,0.9682539682539683
+Hungarian Grand Prix,Hungría,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,67,0.9850746268656716
+Hungarian Grand Prix,Hungría,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,65,0.6307692307692307
+Hungarian Grand Prix,Hungría,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,43,1.0
+Hungarian Grand Prix,Hungría,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,67,0.7014925373134329
+Hungarian Grand Prix,Hungría,COL,Franco Colapinto,Alpine,0,No dominant trait,62,0.9354838709677419
+Hungarian Grand Prix,Hungría,GAS,Pierre Gasly,Alpine,0,No dominant trait,64,0.921875
+Hungarian Grand Prix,Hungría,HAD,Isack Hadjar,Racing Bulls,1,Softer throttle pickup + more full throttle on exit,66,0.5909090909090909
+Hungarian Grand Prix,Hungría,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,65,1.0
+Hungarian Grand Prix,Hungría,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,61,0.7704918032786885
+Hungarian Grand Prix,Hungría,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,67,0.5074626865671642
+Hungarian Grand Prix,Hungría,LEC,Charles Leclerc,Ferrari,0,No dominant trait,65,0.9538461538461539
+Hungarian Grand Prix,Hungría,NOR,Lando Norris,McLaren,0,No dominant trait,66,0.8484848484848485
+Hungarian Grand Prix,Hungría,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,66,0.9090909090909091
+Hungarian Grand Prix,Hungría,PIA,Oscar Piastri,McLaren,0,No dominant trait,65,0.9230769230769231
+Hungarian Grand Prix,Hungría,RUS,George Russell,Mercedes,0,No dominant trait,64,0.921875
+Hungarian Grand Prix,Hungría,SAI,Carlos Sainz,Williams,0,No dominant trait,63,0.9206349206349206
+Hungarian Grand Prix,Hungría,STR,Lance Stroll,Aston Martin,0,No dominant trait,67,0.9104477611940298
+Hungarian Grand Prix,Hungría,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,64,0.90625
+Hungarian Grand Prix,Hungría,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,65,0.8615384615384616
+Italian Grand Prix,Italia,ALB,Alexander Albon,Williams,0,No dominant trait (class 0),38,0.9473684210526315
+Italian Grand Prix,Italia,ALO,Fernando Alonso,Aston Martin,0,No dominant trait (class 0),20,1.0
+Italian Grand Prix,Italia,ANT,Kimi Antonelli,Mercedes,0,No dominant trait (class 0),46,1.0
+Italian Grand Prix,Italia,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait (class 0),49,0.7346938775510204
+Italian Grand Prix,Italia,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait (class 0),48,0.9791666666666666
+Italian Grand Prix,Italia,COL,Franco Colapinto,Alpine,0,No dominant trait (class 0),45,0.9777777777777777
+Italian Grand Prix,Italia,GAS,Pierre Gasly,Alpine,0,No dominant trait (class 0),45,0.9777777777777777
+Italian Grand Prix,Italia,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait (class 0),48,0.8958333333333334
+Italian Grand Prix,Italia,HAM,Lewis Hamilton,Ferrari,0,No dominant trait (class 0),49,0.9795918367346939
+Italian Grand Prix,Italia,LAW,Liam Lawson,Racing Bulls,0,No dominant trait (class 0),48,0.9791666666666666
+Italian Grand Prix,Italia,LEC,Charles Leclerc,Ferrari,0,No dominant trait (class 0),48,0.9791666666666666
+Italian Grand Prix,Italia,NOR,Lando Norris,McLaren,0,No dominant trait (class 0),49,0.9795918367346939
+Italian Grand Prix,Italia,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait (class 0),48,0.9375
+Italian Grand Prix,Italia,PIA,Oscar Piastri,McLaren,0,No dominant trait (class 0),49,1.0
+Italian Grand Prix,Italia,RUS,George Russell,Mercedes,0,No dominant trait (class 0),48,1.0
+Italian Grand Prix,Italia,SAI,Carlos Sainz,Williams,0,No dominant trait (class 0),47,0.9148936170212766
+Italian Grand Prix,Italia,STR,Lance Stroll,Aston Martin,0,No dominant trait (class 0),47,1.0
+Italian Grand Prix,Italia,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait (class 0),48,0.9791666666666666
+Italian Grand Prix,Italia,VER,Max Verstappen,Red Bull Racing,0,No dominant trait (class 0),48,1.0
+Japanese Grand Prix,Japón,ALB,Alexander Albon,Williams,6,Sharper throttle pickup + less full throttle on exit,50,0.6
+Japanese Grand Prix,Japón,ALO,Fernando Alonso,Aston Martin,4,No dominant trait,50,0.5
+Japanese Grand Prix,Japón,ANT,Kimi Antonelli,Mercedes,4,No dominant trait,48,0.5625
+Japanese Grand Prix,Japón,BEA,Oliver Bearman,Haas F1 Team,4,No dominant trait,50,0.4
+Japanese Grand Prix,Japón,BOR,Gabriel Bortoleto,Kick Sauber,5,Low apex speed + more trail braking,50,0.38
+Japanese Grand Prix,Japón,DOO,Jack Doohan,Alpine,0,Early braking + less full throttle on exit,50,0.56
+Japanese Grand Prix,Japón,GAS,Pierre Gasly,Alpine,2,Softer throttle pickup + more full throttle on exit,49,0.7959183673469388
+Japanese Grand Prix,Japón,HAD,Isack Hadjar,Racing Bulls,4,No dominant trait,50,0.56
+Japanese Grand Prix,Japón,HAM,Lewis Hamilton,Ferrari,3,More trail braking + less coasting,50,0.92
+Japanese Grand Prix,Japón,HUL,Nico Hulkenberg,Kick Sauber,4,No dominant trait,50,0.44
+Japanese Grand Prix,Japón,LAW,Liam Lawson,Racing Bulls,0,Early braking + less full throttle on exit,50,0.58
+Japanese Grand Prix,Japón,LEC,Charles Leclerc,Ferrari,3,More trail braking + less coasting,50,0.76
+Japanese Grand Prix,Japón,NOR,Lando Norris,McLaren,1,Early braking + more coasting,49,0.5918367346938775
+Japanese Grand Prix,Japón,OCO,Esteban Ocon,Haas F1 Team,5,Low apex speed + more trail braking,50,0.8
+Japanese Grand Prix,Japón,PIA,Oscar Piastri,McLaren,1,Early braking + more coasting,50,0.4
+Japanese Grand Prix,Japón,RUS,George Russell,Mercedes,2,Softer throttle pickup + more full throttle on exit,49,0.46938775510204084
+Japanese Grand Prix,Japón,SAI,Carlos Sainz,Williams,5,Low apex speed + more trail braking,48,0.6875
+Japanese Grand Prix,Japón,STR,Lance Stroll,Aston Martin,1,Early braking + more coasting,47,0.851063829787234
+Japanese Grand Prix,Japón,TSU,Yuki Tsunoda,Red Bull Racing,2,Softer throttle pickup + more full throttle on exit,49,0.5918367346938775
+Japanese Grand Prix,Japón,VER,Max Verstappen,Red Bull Racing,0,Early braking + less full throttle on exit,50,0.24
+Las Vegas Grand Prix,Las Vegas,ALB,Alexander Albon,Williams,3,Less trail braking + more coasting,25,0.4
+Las Vegas Grand Prix,Las Vegas,ALO,Fernando Alonso,Aston Martin,2,Low apex speed + more coasting,28,0.5714285714285714
+Las Vegas Grand Prix,Las Vegas,BEA,Oliver Bearman,Haas F1 Team,4,No dominant trait,36,0.4722222222222222
+Las Vegas Grand Prix,Las Vegas,COL,Franco Colapinto,Alpine,0,Early braking + less coasting,4,0.25
+Las Vegas Grand Prix,Las Vegas,GAS,Pierre Gasly,Alpine,3,Less trail braking + more coasting,6,1.0
+Las Vegas Grand Prix,Las Vegas,HAD,Isack Hadjar,Racing Bulls,3,Less trail braking + more coasting,11,0.36363636363636365
+Las Vegas Grand Prix,Las Vegas,HAM,Lewis Hamilton,Ferrari,0,Early braking + less coasting,42,0.5952380952380952
+Las Vegas Grand Prix,Las Vegas,HUL,Nico Hulkenberg,Kick Sauber,3,Less trail braking + more coasting,37,0.40540540540540543
+Las Vegas Grand Prix,Las Vegas,LAW,Liam Lawson,Racing Bulls,2,Low apex speed + more coasting,9,0.5555555555555556
+Las Vegas Grand Prix,Las Vegas,LEC,Charles Leclerc,Ferrari,1,Late braking + more trail braking + less coasting,38,0.7368421052631579
+Las Vegas Grand Prix,Las Vegas,OCO,Esteban Ocon,Haas F1 Team,3,Less trail braking + more coasting,42,0.35714285714285715
+Las Vegas Grand Prix,Las Vegas,PIA,Oscar Piastri,McLaren,3,Less trail braking + more coasting,4,0.5
+Las Vegas Grand Prix,Las Vegas,SAI,Carlos Sainz,Williams,0,Early braking + less coasting,43,0.3953488372093023
+Las Vegas Grand Prix,Las Vegas,TSU,Yuki Tsunoda,Red Bull Racing,6,Low apex speed + less trail braking,15,0.4666666666666667
+Mexico City Grand Prix,Ciudad de México,ALB,Alexander Albon,Williams,0,No dominant trait,63,0.6984126984126984
+Mexico City Grand Prix,Ciudad de México,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,28,0.6428571428571429
+Mexico City Grand Prix,Ciudad de México,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,59,0.7796610169491526
+Mexico City Grand Prix,Ciudad de México,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,61,0.7540983606557377
+Mexico City Grand Prix,Ciudad de México,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,64,0.65625
+Mexico City Grand Prix,Ciudad de México,COL,Franco Colapinto,Alpine,0,No dominant trait,62,0.6774193548387096
+Mexico City Grand Prix,Ciudad de México,GAS,Pierre Gasly,Alpine,0,No dominant trait,62,0.6451612903225806
+Mexico City Grand Prix,Ciudad de México,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,63,0.7777777777777778
+Mexico City Grand Prix,Ciudad de México,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,59,0.6440677966101694
+Mexico City Grand Prix,Ciudad de México,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,21,0.6666666666666666
+Mexico City Grand Prix,Ciudad de México,LEC,Charles Leclerc,Ferrari,0,No dominant trait,62,0.6935483870967742
+Mexico City Grand Prix,Ciudad de México,NOR,Lando Norris,McLaren,0,No dominant trait,63,0.6825396825396826
+Mexico City Grand Prix,Ciudad de México,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,64,0.75
+Mexico City Grand Prix,Ciudad de México,PIA,Oscar Piastri,McLaren,0,No dominant trait,61,0.6721311475409836
+Mexico City Grand Prix,Ciudad de México,RUS,George Russell,Mercedes,0,No dominant trait,61,0.7377049180327869
+Mexico City Grand Prix,Ciudad de México,SAI,Carlos Sainz,Williams,0,No dominant trait,38,0.6052631578947368
+Mexico City Grand Prix,Ciudad de México,STR,Lance Stroll,Aston Martin,0,No dominant trait,61,0.7049180327868853
+Mexico City Grand Prix,Ciudad de México,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,64,0.546875
+Mexico City Grand Prix,Ciudad de México,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,63,0.6190476190476191
+Miami Grand Prix,Miami,ALB,Alexander Albon,Williams,0,Late braking + less trail braking,6,0.3333333333333333
+Miami Grand Prix,Miami,ALO,Fernando Alonso,Aston Martin,4,Early braking + low apex speed,14,0.35714285714285715
+Miami Grand Prix,Miami,ANT,Kimi Antonelli,Mercedes,1,Less trail braking + more coasting,11,0.5454545454545454
+Miami Grand Prix,Miami,BEA,Oliver Bearman,Haas F1 Team,2,Early braking,5,0.6
+Miami Grand Prix,Miami,BOR,Gabriel Bortoleto,Kick Sauber,3,More trail braking + less coasting,6,0.6666666666666666
+Miami Grand Prix,Miami,GAS,Pierre Gasly,Alpine,2,Early braking,12,0.5833333333333334
+Miami Grand Prix,Miami,HAD,Isack Hadjar,Racing Bulls,1,Less trail braking + more coasting,7,0.5714285714285714
+Miami Grand Prix,Miami,HAM,Lewis Hamilton,Ferrari,3,More trail braking + less coasting,13,0.5384615384615384
+Miami Grand Prix,Miami,HUL,Nico Hulkenberg,Kick Sauber,2,Early braking,14,0.35714285714285715
+Miami Grand Prix,Miami,LAW,Liam Lawson,Racing Bulls,1,Less trail braking + more coasting,6,0.5
+Miami Grand Prix,Miami,LEC,Charles Leclerc,Ferrari,3,More trail braking + less coasting,11,0.8181818181818182
+Miami Grand Prix,Miami,NOR,Lando Norris,McLaren,1,Less trail braking + more coasting,11,0.8181818181818182
+Miami Grand Prix,Miami,OCO,Esteban Ocon,Haas F1 Team,3,More trail braking + less coasting,9,0.7777777777777778
+Miami Grand Prix,Miami,PIA,Oscar Piastri,McLaren,2,Early braking,16,0.6875
+Miami Grand Prix,Miami,RUS,George Russell,Mercedes,0,Late braking + less trail braking,16,0.75
+Miami Grand Prix,Miami,SAI,Carlos Sainz,Williams,4,Early braking + low apex speed,10,0.4
+Miami Grand Prix,Miami,STR,Lance Stroll,Aston Martin,1,Less trail braking + more coasting,13,0.46153846153846156
+Miami Grand Prix,Miami,TSU,Yuki Tsunoda,Red Bull Racing,0,Late braking + less trail braking,12,0.5
+Miami Grand Prix,Miami,VER,Max Verstappen,Red Bull Racing,0,Late braking + less trail braking,11,0.5454545454545454
+Monaco Grand Prix,Mónaco,ALB,Alexander Albon,Williams,3,High apex speed + more full throttle on exit,63,0.5079365079365079
+Monaco Grand Prix,Mónaco,ALO,Fernando Alonso,Aston Martin,3,High apex speed + more full throttle on exit,26,0.6538461538461539
+Monaco Grand Prix,Mónaco,ANT,Kimi Antonelli,Mercedes,1,Sharper throttle pickup + less full throttle on exit,60,0.5666666666666667
+Monaco Grand Prix,Mónaco,BEA,Oliver Bearman,Haas F1 Team,1,Sharper throttle pickup + less full throttle on exit,63,0.6507936507936508
+Monaco Grand Prix,Mónaco,BOR,Gabriel Bortoleto,Kick Sauber,1,Sharper throttle pickup + less full throttle on exit,63,0.6666666666666666
+Monaco Grand Prix,Mónaco,COL,Franco Colapinto,Alpine,1,Sharper throttle pickup + less full throttle on exit,63,0.3968253968253968
+Monaco Grand Prix,Mónaco,GAS,Pierre Gasly,Alpine,1,Sharper throttle pickup + less full throttle on exit,3,1.0
+Monaco Grand Prix,Mónaco,HAD,Isack Hadjar,Racing Bulls,3,High apex speed + more full throttle on exit,64,0.578125
+Monaco Grand Prix,Mónaco,HAM,Lewis Hamilton,Ferrari,3,High apex speed + more full throttle on exit,64,0.5625
+Monaco Grand Prix,Mónaco,HUL,Nico Hulkenberg,Kick Sauber,1,Sharper throttle pickup + less full throttle on exit,61,0.47540983606557374
+Monaco Grand Prix,Mónaco,LAW,Liam Lawson,Racing Bulls,1,Sharper throttle pickup + less full throttle on exit,64,0.4375
+Monaco Grand Prix,Mónaco,LEC,Charles Leclerc,Ferrari,3,High apex speed + more full throttle on exit,64,0.703125
+Monaco Grand Prix,Mónaco,NOR,Lando Norris,McLaren,3,High apex speed + more full throttle on exit,65,0.6
+Monaco Grand Prix,Mónaco,OCO,Esteban Ocon,Haas F1 Team,1,Sharper throttle pickup + less full throttle on exit,64,0.4375
+Monaco Grand Prix,Mónaco,PIA,Oscar Piastri,McLaren,3,High apex speed + more full throttle on exit,65,0.6923076923076923
+Monaco Grand Prix,Mónaco,RUS,George Russell,Mercedes,1,Sharper throttle pickup + less full throttle on exit,59,0.6440677966101694
+Monaco Grand Prix,Mónaco,SAI,Carlos Sainz,Williams,1,Sharper throttle pickup + less full throttle on exit,63,0.5238095238095238
+Monaco Grand Prix,Mónaco,STR,Lance Stroll,Aston Martin,0,Less trail braking + more coasting,62,0.8064516129032258
+Monaco Grand Prix,Mónaco,TSU,Yuki Tsunoda,Red Bull Racing,0,Less trail braking + more coasting,65,0.8461538461538461
+Monaco Grand Prix,Mónaco,VER,Max Verstappen,Red Bull Racing,3,High apex speed + more full throttle on exit,64,0.640625
+Qatar Grand Prix,Catar,ALB,Alexander Albon,Williams,0,No dominant trait,47,1.0
+Qatar Grand Prix,Catar,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,50,1.0
+Qatar Grand Prix,Catar,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,48,1.0
+Qatar Grand Prix,Catar,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,32,1.0
+Qatar Grand Prix,Catar,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,50,1.0
+Qatar Grand Prix,Catar,COL,Franco Colapinto,Alpine,0,No dominant trait,48,1.0
+Qatar Grand Prix,Catar,GAS,Pierre Gasly,Alpine,0,No dominant trait,48,0.9791666666666666
+Qatar Grand Prix,Catar,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,46,1.0
+Qatar Grand Prix,Catar,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,49,1.0
+Qatar Grand Prix,Catar,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,5,1.0
+Qatar Grand Prix,Catar,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,49,1.0
+Qatar Grand Prix,Catar,LEC,Charles Leclerc,Ferrari,0,No dominant trait,49,0.9795918367346939
+Qatar Grand Prix,Catar,NOR,Lando Norris,McLaren,0,No dominant trait,46,1.0
+Qatar Grand Prix,Catar,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,49,0.9795918367346939
+Qatar Grand Prix,Catar,PIA,Oscar Piastri,McLaren,0,No dominant trait,47,1.0
+Qatar Grand Prix,Catar,RUS,George Russell,Mercedes,0,No dominant trait,46,1.0
+Qatar Grand Prix,Catar,SAI,Carlos Sainz,Williams,0,No dominant trait,50,1.0
+Qatar Grand Prix,Catar,STR,Lance Stroll,Aston Martin,0,No dominant trait,45,0.9777777777777777
+Qatar Grand Prix,Catar,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,48,1.0
+Qatar Grand Prix,Catar,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,50,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,ALB,Alexander Albon,Williams,0,No dominant trait,44,0.9772727272727273
+Saudi Arabian Grand Prix,Arabia Saudita,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,44,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,44,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,45,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,44,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,DOO,Jack Doohan,Alpine,0,No dominant trait,44,0.9772727272727273
+Saudi Arabian Grand Prix,Arabia Saudita,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,43,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,44,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,44,0.9772727272727273
+Saudi Arabian Grand Prix,Arabia Saudita,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,43,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,LEC,Charles Leclerc,Ferrari,0,No dominant trait,45,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,NOR,Lando Norris,McLaren,0,No dominant trait,44,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,47,0.9787234042553191
+Saudi Arabian Grand Prix,Arabia Saudita,PIA,Oscar Piastri,McLaren,0,No dominant trait,45,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,RUS,George Russell,Mercedes,0,No dominant trait,45,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,SAI,Carlos Sainz,Williams,0,No dominant trait,45,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,STR,Lance Stroll,Aston Martin,0,No dominant trait,43,1.0
+Saudi Arabian Grand Prix,Arabia Saudita,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,45,0.9777777777777777
+Singapore Grand Prix,Singapur,ALB,Alexander Albon,Williams,5,Late braking + less trail braking,55,0.509090909090909
+Singapore Grand Prix,Singapur,ALO,Fernando Alonso,Aston Martin,2,More coasting,57,0.40350877192982454
+Singapore Grand Prix,Singapur,ANT,Kimi Antonelli,Mercedes,5,Late braking + less trail braking,55,0.2545454545454545
+Singapore Grand Prix,Singapur,BEA,Oliver Bearman,Haas F1 Team,3,Late braking,55,0.3090909090909091
+Singapore Grand Prix,Singapur,BOR,Gabriel Bortoleto,Kick Sauber,6,More trail braking + less coasting,56,0.6428571428571429
+Singapore Grand Prix,Singapur,COL,Franco Colapinto,Alpine,4,More trail braking + sharper throttle pickup,54,0.4074074074074074
+Singapore Grand Prix,Singapur,GAS,Pierre Gasly,Alpine,0,No dominant trait,53,0.4339622641509434
+Singapore Grand Prix,Singapur,HAD,Isack Hadjar,Racing Bulls,3,Late braking,56,0.3392857142857143
+Singapore Grand Prix,Singapur,HAM,Lewis Hamilton,Ferrari,6,More trail braking + less coasting,53,0.4716981132075472
+Singapore Grand Prix,Singapur,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,55,0.2909090909090909
+Singapore Grand Prix,Singapur,LAW,Liam Lawson,Racing Bulls,2,More coasting,56,0.4107142857142857
+Singapore Grand Prix,Singapur,LEC,Charles Leclerc,Ferrari,6,More trail braking + less coasting,56,0.5178571428571429
+Singapore Grand Prix,Singapur,NOR,Lando Norris,McLaren,1,Early braking + high apex speed,56,0.6607142857142857
+Singapore Grand Prix,Singapur,OCO,Esteban Ocon,Haas F1 Team,6,More trail braking + less coasting,54,0.5370370370370371
+Singapore Grand Prix,Singapur,PIA,Oscar Piastri,McLaren,1,Early braking + high apex speed,57,0.8245614035087719
+Singapore Grand Prix,Singapur,RUS,George Russell,Mercedes,3,Late braking,57,0.5087719298245614
+Singapore Grand Prix,Singapur,SAI,Carlos Sainz,Williams,4,More trail braking + sharper throttle pickup,55,0.4
+Singapore Grand Prix,Singapur,STR,Lance Stroll,Aston Martin,2,More coasting,55,0.6545454545454545
+Singapore Grand Prix,Singapur,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,56,0.32142857142857145
+Singapore Grand Prix,Singapur,VER,Max Verstappen,Red Bull Racing,3,Late braking,55,0.4909090909090909
+Spanish Grand Prix,España,ALB,Alexander Albon,Williams,0,Early braking + less full throttle on exit,21,0.7619047619047619
+Spanish Grand Prix,España,ALO,Fernando Alonso,Aston Martin,3,Less trail braking + more full throttle on exit,53,0.4528301886792453
+Spanish Grand Prix,España,ANT,Kimi Antonelli,Mercedes,2,High apex speed + more coasting,46,0.4782608695652174
+Spanish Grand Prix,España,BEA,Oliver Bearman,Haas F1 Team,0,Early braking + less full throttle on exit,52,0.5192307692307693
+Spanish Grand Prix,España,BOR,Gabriel Bortoleto,Kick Sauber,1,Low apex speed + softer throttle pickup,54,0.6296296296296297
+Spanish Grand Prix,España,COL,Franco Colapinto,Alpine,5,More coasting + less full throttle on exit,52,0.7307692307692307
+Spanish Grand Prix,España,GAS,Pierre Gasly,Alpine,5,More coasting + less full throttle on exit,54,0.4074074074074074
+Spanish Grand Prix,España,HAD,Isack Hadjar,Racing Bulls,3,Less trail braking + more full throttle on exit,54,0.46296296296296297
+Spanish Grand Prix,España,HAM,Lewis Hamilton,Ferrari,4,More trail braking + less coasting,55,0.8363636363636363
+Spanish Grand Prix,España,HUL,Nico Hulkenberg,Kick Sauber,5,More coasting + less full throttle on exit,54,0.46296296296296297
+Spanish Grand Prix,España,LAW,Liam Lawson,Racing Bulls,3,Less trail braking + more full throttle on exit,53,0.5471698113207547
+Spanish Grand Prix,España,LEC,Charles Leclerc,Ferrari,4,More trail braking + less coasting,55,0.7818181818181819
+Spanish Grand Prix,España,NOR,Lando Norris,McLaren,2,High apex speed + more coasting,55,0.6727272727272727
+Spanish Grand Prix,España,OCO,Esteban Ocon,Haas F1 Team,4,More trail braking + less coasting,54,0.42592592592592593
+Spanish Grand Prix,España,PIA,Oscar Piastri,McLaren,2,High apex speed + more coasting,55,0.7272727272727273
+Spanish Grand Prix,España,RUS,George Russell,Mercedes,2,High apex speed + more coasting,55,0.4727272727272727
+Spanish Grand Prix,España,SAI,Carlos Sainz,Williams,0,Early braking + less full throttle on exit,54,0.42592592592592593
+Spanish Grand Prix,España,TSU,Yuki Tsunoda,Red Bull Racing,3,Less trail braking + more full throttle on exit,52,0.3269230769230769
+Spanish Grand Prix,España,VER,Max Verstappen,Red Bull Racing,2,High apex speed + more coasting,52,0.75
+São Paulo Grand Prix,São Paulo,ALB,Alexander Albon,Williams,2,More trail braking + sharper throttle pickup,59,0.3559322033898305
+São Paulo Grand Prix,São Paulo,ALO,Fernando Alonso,Aston Martin,6,More trail braking + less coasting,59,0.3050847457627119
+São Paulo Grand Prix,São Paulo,ANT,Kimi Antonelli,Mercedes,5,High apex speed + sharper throttle pickup,59,0.423728813559322
+São Paulo Grand Prix,São Paulo,BEA,Oliver Bearman,Haas F1 Team,5,High apex speed + sharper throttle pickup,59,0.4915254237288136
+São Paulo Grand Prix,São Paulo,COL,Franco Colapinto,Alpine,4,Late braking + more coasting,59,0.7457627118644068
+São Paulo Grand Prix,São Paulo,GAS,Pierre Gasly,Alpine,0,Low apex speed + more full throttle on exit,59,0.3559322033898305
+São Paulo Grand Prix,São Paulo,HAD,Isack Hadjar,Racing Bulls,0,Low apex speed + more full throttle on exit,58,0.27586206896551724
+São Paulo Grand Prix,São Paulo,HAM,Lewis Hamilton,Ferrari,2,More trail braking + sharper throttle pickup,24,0.4583333333333333
+São Paulo Grand Prix,São Paulo,HUL,Nico Hulkenberg,Kick Sauber,0,Low apex speed + more full throttle on exit,61,0.3114754098360656
+São Paulo Grand Prix,São Paulo,LAW,Liam Lawson,Racing Bulls,3,Softer throttle pickup + more full throttle on exit,61,0.6721311475409836
+São Paulo Grand Prix,São Paulo,NOR,Lando Norris,McLaren,1,Less trail braking + more coasting,59,0.3559322033898305
+São Paulo Grand Prix,São Paulo,OCO,Esteban Ocon,Haas F1 Team,6,More trail braking + less coasting,60,0.55
+São Paulo Grand Prix,São Paulo,PIA,Oscar Piastri,McLaren,5,High apex speed + sharper throttle pickup,59,0.3898305084745763
+São Paulo Grand Prix,São Paulo,RUS,George Russell,Mercedes,5,High apex speed + sharper throttle pickup,57,0.40350877192982454
+São Paulo Grand Prix,São Paulo,SAI,Carlos Sainz,Williams,2,More trail braking + sharper throttle pickup,58,0.5689655172413793
+São Paulo Grand Prix,São Paulo,STR,Lance Stroll,Aston Martin,1,Less trail braking + more coasting,58,0.7586206896551724
+São Paulo Grand Prix,São Paulo,TSU,Yuki Tsunoda,Red Bull Racing,4,Late braking + more coasting,58,0.46551724137931033
+São Paulo Grand Prix,São Paulo,VER,Max Verstappen,Red Bull Racing,3,Softer throttle pickup + more full throttle on exit,59,0.4745762711864407
+United States Grand Prix,Estados Unidos,ALB,Alexander Albon,Williams,0,No dominant trait,47,0.7872340425531915
+United States Grand Prix,Estados Unidos,ALO,Fernando Alonso,Aston Martin,0,No dominant trait,48,1.0
+United States Grand Prix,Estados Unidos,ANT,Kimi Antonelli,Mercedes,0,No dominant trait,46,0.9565217391304348
+United States Grand Prix,Estados Unidos,BEA,Oliver Bearman,Haas F1 Team,0,No dominant trait,48,1.0
+United States Grand Prix,Estados Unidos,BOR,Gabriel Bortoleto,Kick Sauber,0,No dominant trait,43,0.9534883720930233
+United States Grand Prix,Estados Unidos,COL,Franco Colapinto,Alpine,0,No dominant trait,47,0.9787234042553191
+United States Grand Prix,Estados Unidos,GAS,Pierre Gasly,Alpine,0,No dominant trait,47,1.0
+United States Grand Prix,Estados Unidos,HAD,Isack Hadjar,Racing Bulls,0,No dominant trait,47,0.9361702127659575
+United States Grand Prix,Estados Unidos,HAM,Lewis Hamilton,Ferrari,0,No dominant trait,44,0.9545454545454546
+United States Grand Prix,Estados Unidos,HUL,Nico Hulkenberg,Kick Sauber,0,No dominant trait,50,0.86
+United States Grand Prix,Estados Unidos,LAW,Liam Lawson,Racing Bulls,0,No dominant trait,49,1.0
+United States Grand Prix,Estados Unidos,LEC,Charles Leclerc,Ferrari,0,No dominant trait,47,0.9574468085106383
+United States Grand Prix,Estados Unidos,NOR,Lando Norris,McLaren,0,No dominant trait,45,0.9777777777777777
+United States Grand Prix,Estados Unidos,OCO,Esteban Ocon,Haas F1 Team,0,No dominant trait,48,0.9791666666666666
+United States Grand Prix,Estados Unidos,PIA,Oscar Piastri,McLaren,0,No dominant trait,45,0.8888888888888888
+United States Grand Prix,Estados Unidos,RUS,George Russell,Mercedes,0,No dominant trait,49,0.9795918367346939
+United States Grand Prix,Estados Unidos,SAI,Carlos Sainz,Williams,0,No dominant trait,4,1.0
+United States Grand Prix,Estados Unidos,STR,Lance Stroll,Aston Martin,0,No dominant trait,48,1.0
+United States Grand Prix,Estados Unidos,TSU,Yuki Tsunoda,Red Bull Racing,0,No dominant trait,48,1.0
+United States Grand Prix,Estados Unidos,VER,Max Verstappen,Red Bull Racing,0,No dominant trait,48,1.0
