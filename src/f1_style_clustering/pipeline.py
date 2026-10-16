@@ -2,10 +2,11 @@
 
 import copy
 import math
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, Optional, Sequence, Tuple
 
 import pandas as pd
 
+from .analysis.season_checks import trim_column_outliers
 from .analysis.archetypes import (
     characterize_clusters,
     class_trait_scores,
@@ -24,7 +25,9 @@ from .features.aggregators import (
     EXTENDED_STYLE_FEATURES,
     OPTIONAL_STYLE_FEATURES,
     build_lap_style_matrix,
+    build_zone_style_matrix,
 )
+from .features.brake_windows import apply_speed_scaled_windows
 from .features.preprocessor import (
     confounding_declaration,
     normalize_lap_synchronous,
@@ -318,12 +321,17 @@ def run_pipeline(
     driver_bootstrap: Optional[bool] = None,
     compare_aggregators: Optional[bool] = None,
     residualize: Optional[bool] = None,
+    exclude_columns: Optional[Sequence[str]] = None,
 ) -> Dict[str, Any]:
     """Classify every lap, then set each driver's profile to the modal class.
 
     ``aggregation``, ``driver_bootstrap`` and ``compare_aggregators`` stay in
     the signature for the CLI. The profile is the distribution of lap classes,
     so those driver-vector options are not applied.
+
+    ``exclude_columns`` is None on a single race, so the Monza default keeps
+    every style column. The season runner passes ``season.exclude_columns``.
+    Those names are dropped before ``dropna``, not after.
     """
     del aggregation, driver_bootstrap, compare_aggregators
     cfg = config if config is not None else load_config()
@@ -340,21 +348,49 @@ def run_pipeline(
     lap_sync = bool(feat_cfg.get("lap_synchronous", True))
     tyre_fe = bool(feat_cfg.get("within_driver_tyre_effects", True))
     screening = feat_cfg.get("feature_screening") or {}
+    # None: single-race default. Do not read season.exclude_columns here.
+    excluded = [str(c) for c in exclude_columns] if exclude_columns else []
 
     selected_corners, zone_source = resolve_selected_corners(session, circuits)
     analysis_zones = extract_circuit_zones(
         session, circuit_config=circuits, selected_corners=selected_corners
     )
+    # Off by default. Scales the braking window with approach speed; the 350 m windows stay.
+    if bool(feat_cfg.get("speed_scaled_windows", False)):
+        analysis_zones = apply_speed_scaled_windows(
+            session,
+            analysis_zones,
+            ref_kmh=float(feat_cfg.get("speed_scaled_ref_kmh", 300.0)),
+            push_mode=push,
+            min_valid_laps=min_laps,
+        )
+        zone_source = f"{zone_source}+speed_scaled_windows"
 
-    df_raw = build_lap_style_matrix(
-        session,
-        analysis_zones=analysis_zones,
-        circuit_config=circuits,
-        push_mode=push,
-        min_valid_laps=min_laps,
-        include_throttle_onset=include_onset,
-        include_extended=include_extended,
-    )
+    vector_unit = str(feat_cfg.get("vector_unit", "typology")).lower()
+    if vector_unit == "zone":
+        df_raw = build_zone_style_matrix(
+            session,
+            analysis_zones=analysis_zones,
+            circuit_config=circuits,
+            push_mode=push,
+            min_valid_laps=min_laps,
+            include_throttle_onset=include_onset,
+            include_extended=include_extended,
+            min_brake_coverage=float(feat_cfg.get("zone_brake_min_coverage", 0.95)),
+        )
+    else:
+        df_raw = build_lap_style_matrix(
+            session,
+            analysis_zones=analysis_zones,
+            circuit_config=circuits,
+            push_mode=push,
+            min_valid_laps=min_laps,
+            include_throttle_onset=include_onset,
+            include_extended=include_extended,
+            exclude_columns=excluded,
+        )
+    dropna_report = dict(df_raw.attrs.get("lap_dropna") or {}) if df_raw is not None else {}
+    n_after_driver = df_raw.attrs.get("n_after_driver_filter") if df_raw is not None else 0
     if df_raw is None or df_raw.empty:
         return {
             "df_raw": df_raw if df_raw is not None else pd.DataFrame(),
@@ -362,10 +398,28 @@ def run_pipeline(
             "confounding_declaration": confounding_declaration(),
             "analysis_zones": analysis_zones,
             "zone_source": zone_source,
+            "lap_dropna": dropna_report,
+            "exclude_columns": excluded,
+            "n_after_driver_filter": int(n_after_driver or 0),
         }
 
+    zone_report = dict(df_raw.attrs.get("zone_vector") or {})
     df_raw, extended_laps, normalization = _normalize_lap_matrix(df_raw, lap_sync, tyre_fe)
+    df_raw.attrs["lap_dropna"] = dropna_report
     df_raw, normalization["screening"] = _screen_lap_matrix(df_raw, screening)
+    df_raw, outlier_trim = _apply_column_outlier_trim(df_raw, feat_cfg)
+    if df_raw is None or df_raw.empty:
+        return {
+            "df_raw": df_raw if df_raw is not None else pd.DataFrame(),
+            "error": "No laps left after the declared column-outlier trim.",
+            "confounding_declaration": confounding_declaration(),
+            "analysis_zones": analysis_zones,
+            "zone_source": zone_source,
+            "lap_dropna": dropna_report,
+            "exclude_columns": excluded,
+            "n_after_driver_filter": int(n_after_driver or 0),
+            "column_outlier_trim": outlier_trim,
+        }
 
     lap_typ = df_raw.attrs.get("lap_typology")
     feature_cols = list(df_raw.attrs.get("feature_cols") or [])
@@ -430,14 +484,41 @@ def run_pipeline(
     result["teammates"] = teammates_from_distribution(distribution)
     result["n_drivers_profiled"] = int(profiles.shape[0]) if profiles is not None else 0
     result["lap_min_cluster_size"] = min_size
+    result["lap_dropna"] = dropna_report
+    result["exclude_columns"] = excluded
+    result["column_outlier_trim"] = outlier_trim
+    result["n_after_driver_filter"] = int(n_after_driver or len(df_raw))
     result["analysis_zones"] = analysis_zones
     result["zone_source"] = zone_source
     result["normalization"] = normalization
+    if zone_report:
+        result["zone_vector"] = zone_report
     if extended_laps is not None:
         result["extended_lap_metrics"] = extended_laps
         ext_cols = [c for c in extended_laps.columns if "__" in c]
         result["driver_extended_profile"] = extended_laps.groupby("Driver")[ext_cols].median()
     return result
+
+
+def _apply_column_outlier_trim(
+    df_raw: pd.DataFrame,
+    feat_cfg: Dict[str, Any],
+) -> Tuple[pd.DataFrame, Optional[Dict[str, Any]]]:
+    """Drop column outliers only when ``features.column_outlier_trim`` is true.
+
+    The threshold is the one declared in ``season_checks`` (10). The default
+    path leaves the frame unchanged.
+    """
+    if not bool((feat_cfg or {}).get("column_outlier_trim", False)):
+        return df_raw, None
+    kept, info = trim_column_outliers(df_raw)
+    for key, value in df_raw.attrs.items():
+        kept.attrs[key] = value
+    detail = info.get("columns")
+    if isinstance(detail, pd.DataFrame):
+        info = dict(info)
+        info["columns"] = detail.to_dict(orient="records")
+    return kept, info
 
 
 def _screen_lap_matrix(df_raw: pd.DataFrame, screening: Dict[str, Any]) -> Tuple[pd.DataFrame, Dict[str, Any]]:

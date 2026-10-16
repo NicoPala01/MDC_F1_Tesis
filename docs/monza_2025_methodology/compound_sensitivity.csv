@@ -1,0 +1,3 @@
+compound,n_laps,min_cluster_size,reached,k_used,k_rule,silhouette,davies_bouldin,n_components,cumulative_variance,sizes,names
+MEDIUM,381,20,True,2,davies_bouldin,0.1953217891397109,2.2180119351406136,9,0.8532973194035888,"{0: 121, 1: 260}","{0: 'Sharper throttle pickup + less full throttle on exit', 1: 'No dominant trait'}"
+HARD,439,22,True,3,davies_bouldin,0.15941731585543883,1.8194494771155647,9,0.8649106934578898,"{0: 143, 1: 129, 2: 167}","{0: 'Low apex speed + more coasting', 1: 'Sharper throttle pickup + less full throttle on exit', 2: 'Late braking + high apex speed'}"

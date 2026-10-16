@@ -1,0 +1,1445 @@
+carrera,feature,componente,carga
+Australia,fast__apex_speed_rel,PC1,-0.2644000819091197
+Australia,fast__apex_speed_rel,PC2,0.09200589070475226
+Australia,fast__apex_speed_rel,PC3,0.20735092373464897
+Australia,medium__apex_speed_rel,PC1,-0.3006914852095474
+Australia,medium__apex_speed_rel,PC2,0.08265052884303763
+Australia,medium__apex_speed_rel,PC3,0.5048042038501194
+Australia,slow__apex_speed_rel,PC1,-0.22902398132733284
+Australia,slow__apex_speed_rel,PC2,0.14318497128532023
+Australia,slow__apex_speed_rel,PC3,0.30432305932604037
+Australia,medium__brake_point_rel,PC1,0.15986445721829998
+Australia,medium__brake_point_rel,PC2,0.16998235319158347
+Australia,medium__brake_point_rel,PC3,0.17072864208111077
+Australia,slow__brake_point_rel,PC1,0.06995597962579375
+Australia,slow__brake_point_rel,PC2,0.17055547631482862
+Australia,slow__brake_point_rel,PC3,-0.04899477540412927
+Australia,fast__coast_frac,PC1,0.0
+Australia,fast__coast_frac,PC2,5.551115123125783e-17
+Australia,fast__coast_frac,PC3,1.1102230246251565e-16
+Australia,medium__coast_frac,PC1,-0.22119799635583454
+Australia,medium__coast_frac,PC2,0.35370487491729125
+Australia,medium__coast_frac,PC3,-0.08598135532871168
+Australia,slow__coast_frac,PC1,-0.26046240507299306
+Australia,slow__coast_frac,PC2,0.4153574602404655
+Australia,slow__coast_frac,PC3,-0.1091615331228638
+Australia,fast__full_throttle_frac,PC1,-0.0001974204557605489
+Australia,fast__full_throttle_frac,PC2,-0.00029340226891084775
+Australia,fast__full_throttle_frac,PC3,0.002857887693494408
+Australia,medium__full_throttle_frac,PC1,-0.014726576199599578
+Australia,medium__full_throttle_frac,PC2,-0.011860037128245302
+Australia,medium__full_throttle_frac,PC3,-0.00032651774692202994
+Australia,slow__full_throttle_frac,PC1,-0.2817396567533337
+Australia,slow__full_throttle_frac,PC2,-0.2698936682578702
+Australia,slow__full_throttle_frac,PC3,0.43378045317516545
+Australia,medium__throttle_attack,PC1,0.5835078995036758
+Australia,medium__throttle_attack,PC2,0.5981382950529857
+Australia,medium__throttle_attack,PC3,0.3016495363017982
+Australia,slow__throttle_attack,PC1,-0.18980124623165723
+Australia,slow__throttle_attack,PC2,0.2189727655746918
+Australia,slow__throttle_attack,PC3,0.16223303746183784
+Australia,fast__trail_brake_frac,PC1,0.004924182403663761
+Australia,fast__trail_brake_frac,PC2,-0.004978016181572428
+Australia,fast__trail_brake_frac,PC3,0.0072405806651555955
+Australia,medium__trail_brake_frac,PC1,0.375912689867617
+Australia,medium__trail_brake_frac,PC2,-0.32374108698319665
+Australia,medium__trail_brake_frac,PC3,0.24182498812317224
+Australia,slow__trail_brake_frac,PC1,0.2063269651100796
+Australia,slow__trail_brake_frac,PC2,-0.15828720128510526
+Australia,slow__trail_brake_frac,PC3,0.44123744964059014
+China,fast__apex_speed_rel,PC1,0.007228249644573812
+China,fast__apex_speed_rel,PC2,0.028787231252772154
+China,medium__apex_speed_rel,PC1,-0.00817630821418026
+China,medium__apex_speed_rel,PC2,0.02569094406247218
+China,slow__apex_speed_rel,PC1,-0.006375167541032775
+China,slow__apex_speed_rel,PC2,0.12071588306612908
+China,medium__brake_point_rel,PC1,-0.011712393796477935
+China,medium__brake_point_rel,PC2,0.08011132840372863
+China,slow__brake_point_rel,PC1,0.013169185744504213
+China,slow__brake_point_rel,PC2,0.12791588047387772
+China,fast__coast_frac,PC1,0.0003976954735337408
+China,fast__coast_frac,PC2,-0.0007893294317521283
+China,medium__coast_frac,PC1,-0.04697344362505013
+China,medium__coast_frac,PC2,-0.0439153437431867
+China,slow__coast_frac,PC1,-0.041448169309318925
+China,slow__coast_frac,PC2,-0.09733722952727092
+China,fast__full_throttle_frac,PC1,0.029560028372928177
+China,fast__full_throttle_frac,PC2,-0.020743225626633652
+China,medium__full_throttle_frac,PC1,-0.001011044562522431
+China,medium__full_throttle_frac,PC2,-0.008352983625489358
+China,slow__full_throttle_frac,PC1,0.9926012168062899
+China,slow__full_throttle_frac,PC2,-0.00030368227067472563
+China,medium__throttle_attack,PC1,0.027766031547102096
+China,medium__throttle_attack,PC2,0.8065036136959208
+China,slow__throttle_attack,PC1,-0.08244706534571417
+China,slow__throttle_attack,PC2,0.46738194757297996
+China,fast__trail_brake_frac,PC1,-7.692438402060837e-05
+China,fast__trail_brake_frac,PC2,9.938028590872313e-05
+China,medium__trail_brake_frac,PC1,0.03767201516365947
+China,medium__trail_brake_frac,PC2,0.15104899653744647
+China,slow__trail_brake_frac,PC1,0.02203147457161849
+China,slow__trail_brake_frac,PC2,0.23988541668800525
+Japón,fast__apex_speed_rel,PC1,-0.0014836960289567047
+Japón,fast__apex_speed_rel,PC2,0.137244557150221
+Japón,fast__apex_speed_rel,PC3,0.3903946956117238
+Japón,fast__apex_speed_rel,PC4,0.2531884708415937
+Japón,fast__apex_speed_rel,PC5,-0.11776457795380814
+Japón,fast__apex_speed_rel,PC6,-0.16902294888537572
+Japón,medium__apex_speed_rel,PC1,0.001767272979375385
+Japón,medium__apex_speed_rel,PC2,-0.05057785420815197
+Japón,medium__apex_speed_rel,PC3,0.32600231590144185
+Japón,medium__apex_speed_rel,PC4,0.22672288798289147
+Japón,medium__apex_speed_rel,PC5,0.5385294203007215
+Japón,medium__apex_speed_rel,PC6,0.19315658788127849
+Japón,slow__apex_speed_rel,PC1,0.004436941956321156
+Japón,slow__apex_speed_rel,PC2,0.11968632587204905
+Japón,slow__apex_speed_rel,PC3,0.3359488299977021
+Japón,slow__apex_speed_rel,PC4,0.3368408438350404
+Japón,slow__apex_speed_rel,PC5,0.1782354708603706
+Japón,slow__apex_speed_rel,PC6,-0.144658550438662
+Japón,medium__brake_point_rel,PC1,-0.00965018516914747
+Japón,medium__brake_point_rel,PC2,0.14455477902102526
+Japón,medium__brake_point_rel,PC3,-0.028744837607298176
+Japón,medium__brake_point_rel,PC4,0.36024345158940724
+Japón,medium__brake_point_rel,PC5,-0.18620144471399633
+Japón,medium__brake_point_rel,PC6,0.5744609317627409
+Japón,slow__brake_point_rel,PC1,2.9778201843846877e-06
+Japón,slow__brake_point_rel,PC2,0.022251303680471114
+Japón,slow__brake_point_rel,PC3,-0.3572607686501909
+Japón,slow__brake_point_rel,PC4,0.026428568328453365
+Japón,slow__brake_point_rel,PC5,-0.1624749565759883
+Japón,slow__brake_point_rel,PC6,0.4434604848933064
+Japón,fast__coast_frac,PC1,-0.007557718482784359
+Japón,fast__coast_frac,PC2,0.576243740160774
+Japón,fast__coast_frac,PC3,-0.020650534471277345
+Japón,fast__coast_frac,PC4,-0.04599290718373375
+Japón,fast__coast_frac,PC5,-0.07474349934517434
+Japón,fast__coast_frac,PC6,0.008776176816674352
+Japón,medium__coast_frac,PC1,-0.0058389786135847116
+Japón,medium__coast_frac,PC2,0.5804416289615808
+Japón,medium__coast_frac,PC3,-0.043654721583677156
+Japón,medium__coast_frac,PC4,0.0011792511489573513
+Japón,medium__coast_frac,PC5,-0.11309928165853737
+Japón,medium__coast_frac,PC6,0.07923949620643876
+Japón,slow__coast_frac,PC1,-0.0027282339554478554
+Japón,slow__coast_frac,PC2,0.3505311132360139
+Japón,slow__coast_frac,PC3,0.05134142987321649
+Japón,slow__coast_frac,PC4,-0.06907792232496998
+Japón,slow__coast_frac,PC5,0.09308829740572375
+Japón,slow__coast_frac,PC6,-0.22777205183257937
+Japón,fast__full_throttle_frac,PC1,0.01427867809048483
+Japón,fast__full_throttle_frac,PC2,-0.1776593298199371
+Japón,fast__full_throttle_frac,PC3,0.461607706980103
+Japón,fast__full_throttle_frac,PC4,0.1140543731456079
+Japón,fast__full_throttle_frac,PC5,-0.26380525472940813
+Japón,fast__full_throttle_frac,PC6,0.2270069368862418
+Japón,medium__full_throttle_frac,PC1,0.014027773220029283
+Japón,medium__full_throttle_frac,PC2,-0.034911695750154084
+Japón,medium__full_throttle_frac,PC3,0.4044170421431554
+Japón,medium__full_throttle_frac,PC4,-0.3495013695819404
+Japón,medium__full_throttle_frac,PC5,-0.33027693246000256
+Japón,medium__full_throttle_frac,PC6,0.25205517195712746
+Japón,slow__full_throttle_frac,PC1,0.9994630849357251
+Japón,slow__full_throttle_frac,PC2,0.01053537564046049
+Japón,slow__full_throttle_frac,PC3,-0.020928926838482634
+Japón,slow__full_throttle_frac,PC4,0.01792104596343416
+Japón,slow__full_throttle_frac,PC5,0.004509729629742318
+Japón,slow__full_throttle_frac,PC6,-0.0017356282232821529
+Japón,medium__throttle_attack,PC1,-0.012947501425155274
+Japón,medium__throttle_attack,PC2,0.03897579567064212
+Japón,medium__throttle_attack,PC3,-0.25159886691218314
+Japón,medium__throttle_attack,PC4,0.46141347333940436
+Japón,medium__throttle_attack,PC5,-0.12649287935955675
+Japón,medium__throttle_attack,PC6,-0.2622667427327708
+Japón,slow__throttle_attack,PC1,0.007459285037685273
+Japón,slow__throttle_attack,PC2,0.05835236562168665
+Japón,slow__throttle_attack,PC3,0.1583264716494723
+Japón,slow__throttle_attack,PC4,0.10212541748040893
+Japón,slow__throttle_attack,PC5,-0.5283287309380453
+Japón,slow__throttle_attack,PC6,-0.2920119693918084
+Japón,fast__trail_brake_frac,PC1,-7.684368432914634e-05
+Japón,fast__trail_brake_frac,PC2,-0.006722937873045776
+Japón,fast__trail_brake_frac,PC3,-0.011847500780670314
+Japón,fast__trail_brake_frac,PC4,-0.00884682096610382
+Japón,fast__trail_brake_frac,PC5,-0.005887115261275634
+Japón,fast__trail_brake_frac,PC6,0.010818763738981538
+Japón,medium__trail_brake_frac,PC1,-0.002265927586411172
+Japón,medium__trail_brake_frac,PC2,-0.31688634895890083
+Japón,medium__trail_brake_frac,PC3,-0.1152405472445498
+Japón,medium__trail_brake_frac,PC4,0.07488602056084107
+Japón,medium__trail_brake_frac,PC5,-0.3155899640062984
+Japón,medium__trail_brake_frac,PC6,-0.22783703143917267
+Japón,slow__trail_brake_frac,PC1,-0.015088755327151237
+Japón,slow__trail_brake_frac,PC2,-0.11300208628915
+Japón,slow__trail_brake_frac,PC3,-0.12712341842668867
+Japón,slow__trail_brake_frac,PC4,0.5188153016583944
+Japón,slow__trail_brake_frac,PC5,-0.05270050814728799
+Japón,slow__trail_brake_frac,PC6,0.08454894445993104
+Baréin,fast__apex_speed_rel,PC1,-0.06995559016102218
+Baréin,fast__apex_speed_rel,PC2,-0.19913509789377307
+Baréin,fast__apex_speed_rel,PC3,0.34877375681022404
+Baréin,fast__apex_speed_rel,PC4,-0.09504345551804101
+Baréin,fast__apex_speed_rel,PC5,-0.20949333037600143
+Baréin,medium__apex_speed_rel,PC1,-0.18686824823849757
+Baréin,medium__apex_speed_rel,PC2,0.2273191506670774
+Baréin,medium__apex_speed_rel,PC3,0.11576685721430734
+Baréin,medium__apex_speed_rel,PC4,-0.4303881547063416
+Baréin,medium__apex_speed_rel,PC5,-0.08107368013591429
+Baréin,slow__apex_speed_rel,PC1,-0.37048198930414483
+Baréin,slow__apex_speed_rel,PC2,0.7334520883346842
+Baréin,slow__apex_speed_rel,PC3,0.14080616641356875
+Baréin,slow__apex_speed_rel,PC4,-0.23112483715050583
+Baréin,slow__apex_speed_rel,PC5,-0.0259162631767153
+Baréin,medium__brake_point_rel,PC1,-0.055439859535504635
+Baréin,medium__brake_point_rel,PC2,0.29505518470925346
+Baréin,medium__brake_point_rel,PC3,-0.003813271928750166
+Baréin,medium__brake_point_rel,PC4,0.5810530161997509
+Baréin,medium__brake_point_rel,PC5,-0.13988547712381638
+Baréin,slow__brake_point_rel,PC1,-0.09536115720210205
+Baréin,slow__brake_point_rel,PC2,0.30729267557115497
+Baréin,slow__brake_point_rel,PC3,0.013109400051740506
+Baréin,slow__brake_point_rel,PC4,0.48848289235657233
+Baréin,slow__brake_point_rel,PC5,-0.012551535106821879
+Baréin,fast__coast_frac,PC1,0.27537398252628953
+Baréin,fast__coast_frac,PC2,0.20450143887712313
+Baréin,fast__coast_frac,PC3,-0.2839385518482092
+Baréin,fast__coast_frac,PC4,-0.13616840932550878
+Baréin,fast__coast_frac,PC5,0.177225341738022
+Baréin,medium__coast_frac,PC1,0.24363582247239798
+Baréin,medium__coast_frac,PC2,0.20071226683172308
+Baréin,medium__coast_frac,PC3,-0.26590516099028677
+Baréin,medium__coast_frac,PC4,-0.11730990976264025
+Baréin,medium__coast_frac,PC5,0.0535343706295732
+Baréin,slow__coast_frac,PC1,0.27118487423513243
+Baréin,slow__coast_frac,PC2,0.20216292299339134
+Baréin,slow__coast_frac,PC3,-0.29483005875274876
+Baréin,slow__coast_frac,PC4,-0.1502688237272776
+Baréin,slow__coast_frac,PC5,0.1950538178958046
+Baréin,fast__full_throttle_frac,PC1,-0.10951182128389336
+Baréin,fast__full_throttle_frac,PC2,-0.019679373471835584
+Baréin,fast__full_throttle_frac,PC3,0.4210873209215741
+Baréin,fast__full_throttle_frac,PC4,-0.10311808236811171
+Baréin,fast__full_throttle_frac,PC5,-0.15890106725167583
+Baréin,medium__full_throttle_frac,PC1,0.4153463303712427
+Baréin,medium__full_throttle_frac,PC2,0.13101711776821984
+Baréin,medium__full_throttle_frac,PC3,0.570726196107277
+Baréin,medium__full_throttle_frac,PC4,-0.036181874149297626
+Baréin,medium__full_throttle_frac,PC5,0.5371917807240564
+Baréin,slow__full_throttle_frac,PC1,0.3275348564473889
+Baréin,slow__full_throttle_frac,PC2,0.04962770777114547
+Baréin,slow__full_throttle_frac,PC3,0.16005598994016396
+Baréin,slow__full_throttle_frac,PC4,0.08196942438681212
+Baréin,slow__full_throttle_frac,PC5,-0.23432029640755456
+Baréin,medium__throttle_attack,PC1,-0.2169344526510502
+Baréin,medium__throttle_attack,PC2,-0.10232295026734836
+Baréin,medium__throttle_attack,PC3,-0.2551637789365238
+Baréin,medium__throttle_attack,PC4,-0.09323984118068966
+Baréin,medium__throttle_attack,PC5,-0.058924345790044755
+Baréin,slow__throttle_attack,PC1,-0.27150798871290577
+Baréin,slow__throttle_attack,PC2,-0.07971133568826518
+Baréin,slow__throttle_attack,PC3,-0.11133566358878949
+Baréin,slow__throttle_attack,PC4,-0.1654393269113265
+Baréin,slow__throttle_attack,PC5,0.19338199921892993
+Baréin,fast__trail_brake_frac,PC1,-0.004085926197047575
+Baréin,fast__trail_brake_frac,PC2,0.011345541868378054
+Baréin,fast__trail_brake_frac,PC3,0.00035082061245508974
+Baréin,fast__trail_brake_frac,PC4,0.0083326902478065
+Baréin,fast__trail_brake_frac,PC5,0.00405722401761129
+Baréin,medium__trail_brake_frac,PC1,-0.3173079220443505
+Baréin,medium__trail_brake_frac,PC2,-0.07299881754244032
+Baréin,medium__trail_brake_frac,PC3,0.02286838535926712
+Baréin,medium__trail_brake_frac,PC4,0.25683599332336987
+Baréin,medium__trail_brake_frac,PC5,0.5559637118579277
+Baréin,slow__trail_brake_frac,PC1,-0.29794145064369687
+Baréin,slow__trail_brake_frac,PC2,-0.15478919868455032
+Baréin,slow__trail_brake_frac,PC3,-0.0016109425317324705
+Baréin,slow__trail_brake_frac,PC4,-0.020792311194852746
+Baréin,slow__trail_brake_frac,PC5,0.3716320413121814
+Arabia Saudita,fast__apex_speed_rel,PC1,0.20450017632041526
+Arabia Saudita,fast__apex_speed_rel,PC2,0.39067181332075224
+Arabia Saudita,fast__apex_speed_rel,PC3,0.5207361381523331
+Arabia Saudita,fast__apex_speed_rel,PC4,0.6408412576492204
+Arabia Saudita,fast__apex_speed_rel,PC5,-0.0007746036503901619
+Arabia Saudita,medium__apex_speed_rel,PC1,0.192656322901602
+Arabia Saudita,medium__apex_speed_rel,PC2,0.035867373328024
+Arabia Saudita,medium__apex_speed_rel,PC3,-0.22982673416603044
+Arabia Saudita,medium__apex_speed_rel,PC4,0.028762228264174725
+Arabia Saudita,medium__apex_speed_rel,PC5,-0.34502992437017793
+Arabia Saudita,slow__apex_speed_rel,PC1,0.11977791629702919
+Arabia Saudita,slow__apex_speed_rel,PC2,0.06374254555295882
+Arabia Saudita,slow__apex_speed_rel,PC3,-0.49364426051800997
+Arabia Saudita,slow__apex_speed_rel,PC4,0.17013859189619998
+Arabia Saudita,slow__apex_speed_rel,PC5,-0.34561552966390807
+Arabia Saudita,medium__brake_point_rel,PC1,-0.18077939517844374
+Arabia Saudita,medium__brake_point_rel,PC2,0.19732507581232364
+Arabia Saudita,medium__brake_point_rel,PC3,-0.15254187688961499
+Arabia Saudita,medium__brake_point_rel,PC4,-0.09567982243154874
+Arabia Saudita,medium__brake_point_rel,PC5,0.2565847044833285
+Arabia Saudita,slow__brake_point_rel,PC1,-0.20927699442137873
+Arabia Saudita,slow__brake_point_rel,PC2,0.00436848265810238
+Arabia Saudita,slow__brake_point_rel,PC3,0.3360467039259916
+Arabia Saudita,slow__brake_point_rel,PC4,-0.36549544917393484
+Arabia Saudita,slow__brake_point_rel,PC5,0.30743201626073474
+Arabia Saudita,fast__coast_frac,PC1,0.0037911952500719053
+Arabia Saudita,fast__coast_frac,PC2,-0.38249966591717544
+Arabia Saudita,fast__coast_frac,PC3,-0.10122233873978367
+Arabia Saudita,fast__coast_frac,PC4,0.3024293154022176
+Arabia Saudita,fast__coast_frac,PC5,0.2817309060733005
+Arabia Saudita,medium__coast_frac,PC1,0.02053742381239779
+Arabia Saudita,medium__coast_frac,PC2,-0.36414182290599156
+Arabia Saudita,medium__coast_frac,PC3,-0.07807500914590211
+Arabia Saudita,medium__coast_frac,PC4,0.23966796086364228
+Arabia Saudita,medium__coast_frac,PC5,0.23655467963909016
+Arabia Saudita,slow__coast_frac,PC1,-0.008252351930945307
+Arabia Saudita,slow__coast_frac,PC2,-0.306752714329193
+Arabia Saudita,slow__coast_frac,PC3,-0.09296495777188378
+Arabia Saudita,slow__coast_frac,PC4,0.39798611730133787
+Arabia Saudita,slow__coast_frac,PC5,0.3059086169200268
+Arabia Saudita,fast__full_throttle_frac,PC1,0.42236385395493775
+Arabia Saudita,fast__full_throttle_frac,PC2,0.11584611737864262
+Arabia Saudita,fast__full_throttle_frac,PC3,-0.08218150318658604
+Arabia Saudita,fast__full_throttle_frac,PC4,-0.009489906766229636
+Arabia Saudita,fast__full_throttle_frac,PC5,0.04816336809558825
+Arabia Saudita,medium__full_throttle_frac,PC1,0.7043107733018082
+Arabia Saudita,medium__full_throttle_frac,PC2,0.1273175779007686
+Arabia Saudita,medium__full_throttle_frac,PC3,-0.05327980175659001
+Arabia Saudita,medium__full_throttle_frac,PC4,-0.26710673795429934
+Arabia Saudita,medium__full_throttle_frac,PC5,0.4316152525211605
+Arabia Saudita,slow__full_throttle_frac,PC1,0.3605115089908735
+Arabia Saudita,slow__full_throttle_frac,PC2,-0.2839534916646209
+Arabia Saudita,slow__full_throttle_frac,PC3,0.1643868985652213
+Arabia Saudita,slow__full_throttle_frac,PC4,-0.10680717907259475
+Arabia Saudita,slow__full_throttle_frac,PC5,-0.15730510690601646
+Arabia Saudita,medium__throttle_attack,PC1,-0.05228184986431098
+Arabia Saudita,medium__throttle_attack,PC2,0.11017904814388287
+Arabia Saudita,medium__throttle_attack,PC3,-0.285323982764666
+Arabia Saudita,medium__throttle_attack,PC4,0.03393605986762649
+Arabia Saudita,medium__throttle_attack,PC5,0.18655840034944415
+Arabia Saudita,slow__throttle_attack,PC1,-0.048420866282437296
+Arabia Saudita,slow__throttle_attack,PC2,0.14480812294377762
+Arabia Saudita,slow__throttle_attack,PC3,-0.35756244071087934
+Arabia Saudita,slow__throttle_attack,PC4,0.03359410346863009
+Arabia Saudita,slow__throttle_attack,PC5,0.2880280581910982
+Arabia Saudita,fast__trail_brake_frac,PC1,-0.0
+Arabia Saudita,fast__trail_brake_frac,PC2,-0.0
+Arabia Saudita,fast__trail_brake_frac,PC3,-0.0
+Arabia Saudita,fast__trail_brake_frac,PC4,-1.6940658945086007e-21
+Arabia Saudita,fast__trail_brake_frac,PC5,-0.0
+Arabia Saudita,medium__trail_brake_frac,PC1,-0.12091635024751116
+Arabia Saudita,medium__trail_brake_frac,PC2,0.39621846022784796
+Arabia Saudita,medium__trail_brake_frac,PC3,-0.10465714183168154
+Arabia Saudita,medium__trail_brake_frac,PC4,0.07707689370025386
+Arabia Saudita,medium__trail_brake_frac,PC5,0.1854841711111525
+Arabia Saudita,slow__trail_brake_frac,PC1,-0.07497989748730989
+Arabia Saudita,slow__trail_brake_frac,PC2,0.3601522425526895
+Arabia Saudita,slow__trail_brake_frac,PC3,-0.11966180002802124
+Arabia Saudita,slow__trail_brake_frac,PC4,0.1358103230763526
+Arabia Saudita,slow__trail_brake_frac,PC5,0.08196395708805969
+Miami,fast__apex_speed_rel,PC1,0.0125759530330352
+Miami,fast__apex_speed_rel,PC2,-0.10767172302912119
+Miami,fast__apex_speed_rel,PC3,0.19794126347542218
+Miami,fast__apex_speed_rel,PC4,0.12421308638530851
+Miami,medium__apex_speed_rel,PC1,0.30106691731647206
+Miami,medium__apex_speed_rel,PC2,-0.2729276737851507
+Miami,medium__apex_speed_rel,PC3,0.40824786514559186
+Miami,medium__apex_speed_rel,PC4,-0.1718688335936463
+Miami,slow__apex_speed_rel,PC1,-0.13514517251932717
+Miami,slow__apex_speed_rel,PC2,-0.1714325361853917
+Miami,slow__apex_speed_rel,PC3,0.2361798540891767
+Miami,slow__apex_speed_rel,PC4,0.4332791357619958
+Miami,medium__brake_point_rel,PC1,0.15946095525941034
+Miami,medium__brake_point_rel,PC2,-0.420676305737004
+Miami,medium__brake_point_rel,PC3,0.44940609349699157
+Miami,medium__brake_point_rel,PC4,-0.5052049249738532
+Miami,slow__brake_point_rel,PC1,0.19813643530472363
+Miami,slow__brake_point_rel,PC2,-0.06811912446400875
+Miami,slow__brake_point_rel,PC3,-0.14546793692988752
+Miami,slow__brake_point_rel,PC4,0.17346258990396457
+Miami,fast__coast_frac,PC1,-0.2883728088592967
+Miami,fast__coast_frac,PC2,-0.12691299084839713
+Miami,fast__coast_frac,PC3,0.11878394651084187
+Miami,fast__coast_frac,PC4,0.13499328809447564
+Miami,medium__coast_frac,PC1,-0.29149516149010113
+Miami,medium__coast_frac,PC2,-0.13058625566845353
+Miami,medium__coast_frac,PC3,0.12048187734674512
+Miami,medium__coast_frac,PC4,0.13670697209182317
+Miami,slow__coast_frac,PC1,-0.2842819726985729
+Miami,slow__coast_frac,PC2,-0.128322244467013
+Miami,slow__coast_frac,PC3,0.11452035184737133
+Miami,slow__coast_frac,PC4,0.14292321432148328
+Miami,fast__full_throttle_frac,PC1,-0.05278017777589644
+Miami,fast__full_throttle_frac,PC2,0.7432880705029012
+Miami,fast__full_throttle_frac,PC3,0.623798940593039
+Miami,fast__full_throttle_frac,PC4,0.016587303917447078
+Miami,medium__full_throttle_frac,PC1,0.2336054466981803
+Miami,medium__full_throttle_frac,PC2,0.1935465729894147
+Miami,medium__full_throttle_frac,PC3,0.02978312794873184
+Miami,medium__full_throttle_frac,PC4,-0.03677835100504784
+Miami,slow__full_throttle_frac,PC1,0.4823485286174971
+Miami,slow__full_throttle_frac,PC2,-0.13331783457329602
+Miami,slow__full_throttle_frac,PC3,0.18794485642345432
+Miami,slow__full_throttle_frac,PC4,0.5644226848404007
+Miami,medium__throttle_attack,PC1,-0.20657530017482326
+Miami,medium__throttle_attack,PC2,-0.17715622174957796
+Miami,medium__throttle_attack,PC3,0.1686535921832878
+Miami,medium__throttle_attack,PC4,0.18668638339438812
+Miami,slow__throttle_attack,PC1,-0.4020690627080122
+Miami,slow__throttle_attack,PC2,-0.05100656412623082
+Miami,slow__throttle_attack,PC3,0.07454988398532131
+Miami,slow__throttle_attack,PC4,-0.22420096068423193
+Miami,fast__trail_brake_frac,PC1,0.00826385994442664
+Miami,fast__trail_brake_frac,PC2,0.005261989408133979
+Miami,fast__trail_brake_frac,PC3,-0.007194053282975314
+Miami,fast__trail_brake_frac,PC4,-0.007462942908309732
+Miami,medium__trail_brake_frac,PC1,-0.0
+Miami,medium__trail_brake_frac,PC2,-0.0
+Miami,medium__trail_brake_frac,PC3,-0.0
+Miami,medium__trail_brake_frac,PC4,-0.0
+Miami,slow__trail_brake_frac,PC1,0.28790174986299255
+Miami,slow__trail_brake_frac,PC2,0.10755632760569797
+Miami,slow__trail_brake_frac,PC3,-0.11881052258031172
+Miami,slow__trail_brake_frac,PC4,-0.13880476655446855
+Emilia-Romaña,fast__apex_speed_rel,PC1,0.01231071774328069
+Emilia-Romaña,medium__apex_speed_rel,PC1,0.021333138443195
+Emilia-Romaña,slow__apex_speed_rel,PC1,0.003461462937095796
+Emilia-Romaña,medium__brake_point_rel,PC1,0.0017184312963441255
+Emilia-Romaña,slow__brake_point_rel,PC1,-0.008586923273497889
+Emilia-Romaña,fast__coast_frac,PC1,-6.926587151230025e-06
+Emilia-Romaña,medium__coast_frac,PC1,-0.01473487689186858
+Emilia-Romaña,slow__coast_frac,PC1,-0.016275848995024277
+Emilia-Romaña,fast__full_throttle_frac,PC1,-0.0009731799650948866
+Emilia-Romaña,medium__full_throttle_frac,PC1,-0.011078468576862266
+Emilia-Romaña,slow__full_throttle_frac,PC1,-0.16334488311638304
+Emilia-Romaña,medium__throttle_attack,PC1,0.9849456937537368
+Emilia-Romaña,slow__throttle_attack,PC1,0.040170611171627124
+Emilia-Romaña,fast__trail_brake_frac,PC1,0.0
+Emilia-Romaña,medium__trail_brake_frac,PC1,0.0005062210449815945
+Emilia-Romaña,slow__trail_brake_frac,PC1,0.016895835373761027
+Mónaco,fast__apex_speed_rel,PC1,0.25773107240611354
+Mónaco,fast__apex_speed_rel,PC2,0.17260886438512837
+Mónaco,fast__apex_speed_rel,PC3,-0.31271231849220305
+Mónaco,slow__apex_speed_rel,PC1,0.27273553923361216
+Mónaco,slow__apex_speed_rel,PC2,0.10204958265255497
+Mónaco,slow__apex_speed_rel,PC3,-0.3550158645104076
+Mónaco,slow__brake_point_rel,PC1,-0.20765473791309225
+Mónaco,slow__brake_point_rel,PC2,-0.12861188318818045
+Mónaco,slow__brake_point_rel,PC3,0.6626969488450196
+Mónaco,fast__coast_frac,PC1,-0.19215748587264905
+Mónaco,fast__coast_frac,PC2,-0.472773304593146
+Mónaco,fast__coast_frac,PC3,-0.2798821885967308
+Mónaco,slow__coast_frac,PC1,-0.11536725147079455
+Mónaco,slow__coast_frac,PC2,-0.29759081715196384
+Mónaco,slow__coast_frac,PC3,-0.2343461484557762
+Mónaco,fast__full_throttle_frac,PC1,0.34220211604364625
+Mónaco,fast__full_throttle_frac,PC2,0.10986375113300993
+Mónaco,fast__full_throttle_frac,PC3,-0.07134285059321553
+Mónaco,slow__full_throttle_frac,PC1,0.6115140704588322
+Mónaco,slow__full_throttle_frac,PC2,-0.06896912166328734
+Mónaco,slow__full_throttle_frac,PC3,0.10569501143496392
+Mónaco,slow__throttle_attack,PC1,-0.41844678429963356
+Mónaco,slow__throttle_attack,PC2,0.7288183441206139
+Mónaco,slow__throttle_attack,PC3,-0.17186154666048348
+Mónaco,fast__trail_brake_frac,PC1,0.2705268144913941
+Mónaco,fast__trail_brake_frac,PC2,0.17978553709856582
+Mónaco,fast__trail_brake_frac,PC3,0.28390197687598334
+Mónaco,slow__trail_brake_frac,PC1,0.1627919299146103
+Mónaco,slow__trail_brake_frac,PC2,0.22550022726652263
+Mónaco,slow__trail_brake_frac,PC3,0.278131942687782
+España,fast__apex_speed_rel,PC1,0.05247178675064267
+España,fast__apex_speed_rel,PC2,0.3255282591985794
+España,fast__apex_speed_rel,PC3,-0.02020735926571762
+España,fast__apex_speed_rel,PC4,0.018179739748460263
+España,fast__apex_speed_rel,PC5,0.08656370530677093
+España,medium__apex_speed_rel,PC1,0.23040701428737817
+España,medium__apex_speed_rel,PC2,0.27285607253819294
+España,medium__apex_speed_rel,PC3,-0.08464302950712785
+España,medium__apex_speed_rel,PC4,0.40387460213892645
+España,medium__apex_speed_rel,PC5,-0.10798844163528995
+España,slow__apex_speed_rel,PC1,0.21746446502415298
+España,slow__apex_speed_rel,PC2,0.20317976439626895
+España,slow__apex_speed_rel,PC3,-0.1282599647777346
+España,slow__apex_speed_rel,PC4,0.3512736935149789
+España,slow__apex_speed_rel,PC5,-0.04648138189073954
+España,medium__brake_point_rel,PC1,0.007331158372779563
+España,medium__brake_point_rel,PC2,-0.19649311160618088
+España,medium__brake_point_rel,PC3,0.4083748374380691
+España,medium__brake_point_rel,PC4,-0.037712351413821066
+España,medium__brake_point_rel,PC5,0.045622543552052246
+España,slow__brake_point_rel,PC1,-0.03801867301099816
+España,slow__brake_point_rel,PC2,-0.056253182789872146
+España,slow__brake_point_rel,PC3,0.2618837969977462
+España,slow__brake_point_rel,PC4,-0.39967976166423125
+España,slow__brake_point_rel,PC5,-0.2308524376905872
+España,fast__coast_frac,PC1,0.5913662139810412
+España,fast__coast_frac,PC2,-0.007850256168673504
+España,fast__coast_frac,PC3,0.49609750572347133
+España,fast__coast_frac,PC4,-0.041632164028326576
+España,fast__coast_frac,PC5,-0.2555925090204856
+España,medium__coast_frac,PC1,0.43499155236677084
+España,medium__coast_frac,PC2,-0.2580926869065095
+España,medium__coast_frac,PC3,-0.28946590460379623
+España,medium__coast_frac,PC4,-0.1212631887143823
+España,medium__coast_frac,PC5,0.10003111379163052
+España,slow__coast_frac,PC1,0.4276171999344086
+España,slow__coast_frac,PC2,-0.23051176331087853
+España,slow__coast_frac,PC3,-0.2114411834429514
+España,slow__coast_frac,PC4,-0.10499413645969276
+España,slow__coast_frac,PC5,0.02828841018343019
+España,fast__full_throttle_frac,PC1,-0.00825548067821584
+España,fast__full_throttle_frac,PC2,0.0116116603817608
+España,fast__full_throttle_frac,PC3,-0.003718205570269199
+España,fast__full_throttle_frac,PC4,-0.008889792029255786
+España,fast__full_throttle_frac,PC5,0.0030325889625753893
+España,medium__full_throttle_frac,PC1,0.14191277964657162
+España,medium__full_throttle_frac,PC2,0.5142904882607483
+España,medium__full_throttle_frac,PC3,-0.01888373608339267
+España,medium__full_throttle_frac,PC4,-0.3685079489636887
+España,medium__full_throttle_frac,PC5,-0.09379181911856692
+España,slow__full_throttle_frac,PC1,-0.03186042721523948
+España,slow__full_throttle_frac,PC2,0.5833097401726104
+España,slow__full_throttle_frac,PC3,0.10274812365772644
+España,slow__full_throttle_frac,PC4,-0.10318608427325503
+España,slow__full_throttle_frac,PC5,0.1512266831443459
+España,medium__throttle_attack,PC1,-0.0488122560877256
+España,medium__throttle_attack,PC2,-0.06199758187973318
+España,medium__throttle_attack,PC3,0.3650318430077782
+España,medium__throttle_attack,PC4,0.18077127196290613
+España,medium__throttle_attack,PC5,0.725200534737227
+España,slow__throttle_attack,PC1,0.24940006754576047
+España,slow__throttle_attack,PC2,0.06766586362777567
+España,slow__throttle_attack,PC3,0.32747051307503533
+España,slow__throttle_attack,PC4,-0.04475559854320249
+España,slow__throttle_attack,PC5,0.2249112155921761
+España,fast__trail_brake_frac,PC1,-0.01491446093048994
+España,fast__trail_brake_frac,PC2,0.0021288001176093556
+España,fast__trail_brake_frac,PC3,0.007932733449136134
+España,fast__trail_brake_frac,PC4,0.005264980090532634
+España,fast__trail_brake_frac,PC5,-0.0017832872859768819
+España,medium__trail_brake_frac,PC1,-0.2920951022019521
+España,medium__trail_brake_frac,PC2,-0.05777219734083937
+España,medium__trail_brake_frac,PC3,0.2979376374959096
+España,medium__trail_brake_frac,PC4,0.0736911083575421
+España,medium__trail_brake_frac,PC5,-0.4292084252841729
+España,slow__trail_brake_frac,PC1,0.047262504832663206
+España,slow__trail_brake_frac,PC2,-0.008454799267962236
+España,slow__trail_brake_frac,PC3,0.1605313258368473
+España,slow__trail_brake_frac,PC4,0.5812656658856371
+España,slow__trail_brake_frac,PC5,-0.2340446858335753
+Canadá,fast__apex_speed_rel,PC1,-0.06009779323560868
+Canadá,fast__apex_speed_rel,PC2,-0.17836701146585085
+Canadá,fast__apex_speed_rel,PC3,-0.07500459431528048
+Canadá,fast__apex_speed_rel,PC4,0.5766296940564829
+Canadá,medium__apex_speed_rel,PC1,0.0002936212837218401
+Canadá,medium__apex_speed_rel,PC2,0.3091150738534195
+Canadá,medium__apex_speed_rel,PC3,0.30177112311839044
+Canadá,medium__apex_speed_rel,PC4,0.10255223416198922
+Canadá,slow__apex_speed_rel,PC1,0.009427881348501763
+Canadá,slow__apex_speed_rel,PC2,0.3118633604292518
+Canadá,slow__apex_speed_rel,PC3,0.5205029338339934
+Canadá,slow__apex_speed_rel,PC4,0.04868784350872681
+Canadá,medium__brake_point_rel,PC1,0.017221667628104297
+Canadá,medium__brake_point_rel,PC2,-0.2979448771187742
+Canadá,medium__brake_point_rel,PC3,-0.20513747226836662
+Canadá,medium__brake_point_rel,PC4,-0.1920172419127135
+Canadá,slow__brake_point_rel,PC1,0.02276591356209966
+Canadá,slow__brake_point_rel,PC2,-0.3945227568050871
+Canadá,slow__brake_point_rel,PC3,-0.2635792860043265
+Canadá,slow__brake_point_rel,PC4,-0.01791238987536927
+Canadá,fast__coast_frac,PC1,-1.410295363673105e-05
+Canadá,fast__coast_frac,PC2,-0.00017143716789105764
+Canadá,fast__coast_frac,PC3,8.619939806508536e-05
+Canadá,fast__coast_frac,PC4,-0.0005603888343338761
+Canadá,medium__coast_frac,PC1,0.00042762838474306964
+Canadá,medium__coast_frac,PC2,-0.3406439700353774
+Canadá,medium__coast_frac,PC3,0.48187715418258775
+Canadá,medium__coast_frac,PC4,-0.15413756502818637
+Canadá,slow__coast_frac,PC1,-0.0011146169205866
+Canadá,slow__coast_frac,PC2,-0.3132816991716721
+Canadá,slow__coast_frac,PC3,0.47133964978469195
+Canadá,slow__coast_frac,PC4,-0.19724907871859979
+Canadá,fast__full_throttle_frac,PC1,0.00021085299236813616
+Canadá,fast__full_throttle_frac,PC2,0.0023482783395588724
+Canadá,fast__full_throttle_frac,PC3,-0.000532048084864115
+Canadá,fast__full_throttle_frac,PC4,0.002911115555057726
+Canadá,medium__full_throttle_frac,PC1,-0.028713289957520666
+Canadá,medium__full_throttle_frac,PC2,0.45719627504918486
+Canadá,medium__full_throttle_frac,PC3,-0.13358712676900483
+Canadá,medium__full_throttle_frac,PC4,0.18821074652642958
+Canadá,slow__full_throttle_frac,PC1,-0.005833627388305152
+Canadá,slow__full_throttle_frac,PC2,0.0013847837623870182
+Canadá,slow__full_throttle_frac,PC3,4.7486631497790914e-05
+Canadá,slow__full_throttle_frac,PC4,0.004353607099488026
+Canadá,medium__throttle_attack,PC1,-0.011120404819634258
+Canadá,medium__throttle_attack,PC2,0.09166166580696868
+Canadá,medium__throttle_attack,PC3,-0.007660125259580937
+Canadá,medium__throttle_attack,PC4,0.13965186456948517
+Canadá,slow__throttle_attack,PC1,0.9946215532280333
+Canadá,slow__throttle_attack,PC2,-0.005712681420841887
+Canadá,slow__throttle_attack,PC3,0.004881679821234856
+Canadá,slow__throttle_attack,PC4,0.08926406670669218
+Canadá,fast__trail_brake_frac,PC1,0.00020711195666287734
+Canadá,fast__trail_brake_frac,PC2,-0.00043221619745839173
+Canadá,fast__trail_brake_frac,PC3,-0.0006164823218643882
+Canadá,fast__trail_brake_frac,PC4,0.0005128359448946259
+Canadá,medium__trail_brake_frac,PC1,0.015138240849473987
+Canadá,medium__trail_brake_frac,PC2,0.20565622120506663
+Canadá,medium__trail_brake_frac,PC3,-0.2072143010659328
+Canadá,medium__trail_brake_frac,PC4,-0.46674142936986207
+Canadá,slow__trail_brake_frac,PC1,0.07070749979924779
+Canadá,slow__trail_brake_frac,PC2,0.23875965483694458
+Canadá,slow__trail_brake_frac,PC3,-0.07481074855764751
+Canadá,slow__trail_brake_frac,PC4,-0.5234349021399902
+Austria,fast__apex_speed_rel,PC1,0.22475608432456345
+Austria,fast__apex_speed_rel,PC2,0.18981502495575722
+Austria,fast__apex_speed_rel,PC3,-0.28225009230378484
+Austria,fast__apex_speed_rel,PC4,-0.15786379964102962
+Austria,medium__apex_speed_rel,PC1,0.062076586800367865
+Austria,medium__apex_speed_rel,PC2,0.5526706952189347
+Austria,medium__apex_speed_rel,PC3,-0.16071395588503604
+Austria,medium__apex_speed_rel,PC4,-0.17672434943008064
+Austria,slow__apex_speed_rel,PC1,-0.022769921656094236
+Austria,slow__apex_speed_rel,PC2,0.3942898153739108
+Austria,slow__apex_speed_rel,PC3,-0.1661958362003275
+Austria,slow__apex_speed_rel,PC4,-0.4472043706675542
+Austria,medium__brake_point_rel,PC1,-0.0787633813310124
+Austria,medium__brake_point_rel,PC2,-0.0632379181868272
+Austria,medium__brake_point_rel,PC3,0.037870615816986676
+Austria,medium__brake_point_rel,PC4,-0.12562068991444242
+Austria,slow__brake_point_rel,PC1,-0.030193842343515673
+Austria,slow__brake_point_rel,PC2,-0.4412652417441406
+Austria,slow__brake_point_rel,PC3,0.10458624781969215
+Austria,slow__brake_point_rel,PC4,-0.03125927609918436
+Austria,fast__coast_frac,PC1,-8.133222239148943e-05
+Austria,fast__coast_frac,PC2,-0.0011817554595735151
+Austria,fast__coast_frac,PC3,-0.00011837507496736788
+Austria,fast__coast_frac,PC4,-0.00031094144208297647
+Austria,medium__coast_frac,PC1,0.05663592921455682
+Austria,medium__coast_frac,PC2,-0.25791766378229564
+Austria,medium__coast_frac,PC3,-0.2584687306189266
+Austria,medium__coast_frac,PC4,-0.2615913422999711
+Austria,slow__coast_frac,PC1,0.033715731787042826
+Austria,slow__coast_frac,PC2,-0.19044714806313684
+Austria,slow__coast_frac,PC3,-0.29438335011020456
+Austria,slow__coast_frac,PC4,-0.3480326691467507
+Austria,fast__full_throttle_frac,PC1,0.02667490287928569
+Austria,fast__full_throttle_frac,PC2,0.1111586101547292
+Austria,fast__full_throttle_frac,PC3,0.012347805770202362
+Austria,fast__full_throttle_frac,PC4,0.01213341678992294
+Austria,medium__full_throttle_frac,PC1,0.8795081008405808
+Austria,medium__full_throttle_frac,PC2,0.02893280339164257
+Austria,medium__full_throttle_frac,PC3,0.37789748101833537
+Austria,medium__full_throttle_frac,PC4,-0.02234827505103599
+Austria,slow__full_throttle_frac,PC1,0.08501511045450875
+Austria,slow__full_throttle_frac,PC2,0.25407892204740784
+Austria,slow__full_throttle_frac,PC3,-0.35954826015841135
+Austria,slow__full_throttle_frac,PC4,0.6063715694250622
+Austria,medium__throttle_attack,PC1,-0.2979525035289825
+Austria,medium__throttle_attack,PC2,0.11540830395452711
+Austria,medium__throttle_attack,PC3,0.14629203019582326
+Austria,medium__throttle_attack,PC4,-0.017929774932329605
+Austria,slow__throttle_attack,PC1,-0.10958864179818792
+Austria,slow__throttle_attack,PC2,0.07608185927813194
+Austria,slow__throttle_attack,PC3,0.36986261249366587
+Austria,slow__throttle_attack,PC4,-0.3356395239864935
+Austria,fast__trail_brake_frac,PC1,-0.00017539539131324625
+Austria,fast__trail_brake_frac,PC2,-8.761810127403929e-05
+Austria,fast__trail_brake_frac,PC3,0.00032863352054830313
+Austria,fast__trail_brake_frac,PC4,0.00030522865259499876
+Austria,medium__trail_brake_frac,PC1,-0.15028792680118164
+Austria,medium__trail_brake_frac,PC2,0.17654900953698704
+Austria,medium__trail_brake_frac,PC3,0.3182371856848335
+Austria,medium__trail_brake_frac,PC4,0.22684284696422402
+Austria,slow__trail_brake_frac,PC1,-0.1697278150791505
+Austria,slow__trail_brake_frac,PC2,0.2711591595328905
+Austria,slow__trail_brake_frac,PC3,0.41150465497700683
+Austria,slow__trail_brake_frac,PC4,-0.06910084901066003
+Gran Bretaña,fast__apex_speed_rel,PC1,-0.0623223387676359
+Gran Bretaña,fast__apex_speed_rel,PC2,0.2621814680589931
+Gran Bretaña,fast__apex_speed_rel,PC3,-0.37339228480364095
+Gran Bretaña,fast__apex_speed_rel,PC4,0.23284096522655795
+Gran Bretaña,fast__apex_speed_rel,PC5,-0.408750148072679
+Gran Bretaña,fast__apex_speed_rel,PC6,0.08822113401129682
+Gran Bretaña,medium__apex_speed_rel,PC1,-0.0988112254570771
+Gran Bretaña,medium__apex_speed_rel,PC2,0.07616315764082186
+Gran Bretaña,medium__apex_speed_rel,PC3,-0.296091114164641
+Gran Bretaña,medium__apex_speed_rel,PC4,0.20519384087325104
+Gran Bretaña,medium__apex_speed_rel,PC5,-0.12871942379138512
+Gran Bretaña,medium__apex_speed_rel,PC6,0.38602355386337645
+Gran Bretaña,slow__apex_speed_rel,PC1,0.033662226227787806
+Gran Bretaña,slow__apex_speed_rel,PC2,0.06380568665751317
+Gran Bretaña,slow__apex_speed_rel,PC3,-0.21838830261491168
+Gran Bretaña,slow__apex_speed_rel,PC4,0.3026723944397897
+Gran Bretaña,slow__apex_speed_rel,PC5,-0.15191348000036833
+Gran Bretaña,slow__apex_speed_rel,PC6,-0.3026911513117729
+Gran Bretaña,medium__brake_point_rel,PC1,0.08955034492876751
+Gran Bretaña,medium__brake_point_rel,PC2,-0.09569344615293805
+Gran Bretaña,medium__brake_point_rel,PC3,0.26657866589853524
+Gran Bretaña,medium__brake_point_rel,PC4,-0.09278805932676727
+Gran Bretaña,medium__brake_point_rel,PC5,0.06331023476637826
+Gran Bretaña,medium__brake_point_rel,PC6,-0.33525836704097134
+Gran Bretaña,slow__brake_point_rel,PC1,0.9752082045489161
+Gran Bretaña,slow__brake_point_rel,PC2,0.13702119848131974
+Gran Bretaña,slow__brake_point_rel,PC3,-0.11449660584489528
+Gran Bretaña,slow__brake_point_rel,PC4,0.0066652957104648
+Gran Bretaña,slow__brake_point_rel,PC5,0.06124776726598408
+Gran Bretaña,slow__brake_point_rel,PC6,0.0917591179661069
+Gran Bretaña,fast__coast_frac,PC1,0.0038118663675646295
+Gran Bretaña,fast__coast_frac,PC2,-0.12586839303934874
+Gran Bretaña,fast__coast_frac,PC3,-0.08868097006291985
+Gran Bretaña,fast__coast_frac,PC4,0.34651354077590524
+Gran Bretaña,fast__coast_frac,PC5,0.3634002227799245
+Gran Bretaña,fast__coast_frac,PC6,0.16234516282939618
+Gran Bretaña,medium__coast_frac,PC1,-0.035077232357575004
+Gran Bretaña,medium__coast_frac,PC2,-0.17553142297933244
+Gran Bretaña,medium__coast_frac,PC3,-0.08138379676811212
+Gran Bretaña,medium__coast_frac,PC4,0.2986711031586478
+Gran Bretaña,medium__coast_frac,PC5,0.24511307967158238
+Gran Bretaña,medium__coast_frac,PC6,0.200108459252143
+Gran Bretaña,slow__coast_frac,PC1,0.011156397801945385
+Gran Bretaña,slow__coast_frac,PC2,-0.10426021824163598
+Gran Bretaña,slow__coast_frac,PC3,-0.1716343644541344
+Gran Bretaña,slow__coast_frac,PC4,0.3551647988023423
+Gran Bretaña,slow__coast_frac,PC5,0.15621717091030823
+Gran Bretaña,slow__coast_frac,PC6,-0.35793978997874487
+Gran Bretaña,fast__full_throttle_frac,PC1,0.044779089686502724
+Gran Bretaña,fast__full_throttle_frac,PC2,0.3638892220877888
+Gran Bretaña,fast__full_throttle_frac,PC3,0.5889795733917285
+Gran Bretaña,fast__full_throttle_frac,PC4,0.39562190019659904
+Gran Bretaña,fast__full_throttle_frac,PC5,-0.4432779415111347
+Gran Bretaña,fast__full_throttle_frac,PC6,0.03590943347213766
+Gran Bretaña,medium__full_throttle_frac,PC1,-0.020573641449212872
+Gran Bretaña,medium__full_throttle_frac,PC2,0.07161339492901164
+Gran Bretaña,medium__full_throttle_frac,PC3,0.29687883145583255
+Gran Bretaña,medium__full_throttle_frac,PC4,0.15072548431959326
+Gran Bretaña,medium__full_throttle_frac,PC5,0.20002607431357933
+Gran Bretaña,medium__full_throttle_frac,PC6,0.43829187948452175
+Gran Bretaña,slow__full_throttle_frac,PC1,-0.14906736445418792
+Gran Bretaña,slow__full_throttle_frac,PC2,0.8169163818547998
+Gran Bretaña,slow__full_throttle_frac,PC3,-0.1370411359141334
+Gran Bretaña,slow__full_throttle_frac,PC4,-0.11261544505840418
+Gran Bretaña,slow__full_throttle_frac,PC5,0.47155379609319636
+Gran Bretaña,slow__full_throttle_frac,PC6,-0.08160851893703988
+Gran Bretaña,medium__throttle_attack,PC1,-0.006349390812711762
+Gran Bretaña,medium__throttle_attack,PC2,-0.06481105436307497
+Gran Bretaña,medium__throttle_attack,PC3,-0.26949788859627694
+Gran Bretaña,medium__throttle_attack,PC4,-0.021698800167803584
+Gran Bretaña,medium__throttle_attack,PC5,-0.2045376918046581
+Gran Bretaña,medium__throttle_attack,PC6,0.1681048202967336
+Gran Bretaña,slow__throttle_attack,PC1,0.009646607670182113
+Gran Bretaña,slow__throttle_attack,PC2,-0.135117815512092
+Gran Bretaña,slow__throttle_attack,PC3,-0.06423316923961009
+Gran Bretaña,slow__throttle_attack,PC4,-0.040894723708678415
+Gran Bretaña,slow__throttle_attack,PC5,-0.013257802708987167
+Gran Bretaña,slow__throttle_attack,PC6,0.2011179061552806
+Gran Bretaña,fast__trail_brake_frac,PC1,0.002097433566664385
+Gran Bretaña,fast__trail_brake_frac,PC2,0.07640387927530078
+Gran Bretaña,fast__trail_brake_frac,PC3,-0.09475142832809781
+Gran Bretaña,fast__trail_brake_frac,PC4,-0.36875144938718085
+Gran Bretaña,fast__trail_brake_frac,PC5,-0.19737792953428235
+Gran Bretaña,fast__trail_brake_frac,PC6,-0.035366402730385514
+Gran Bretaña,medium__trail_brake_frac,PC1,-0.0027036165956651516
+Gran Bretaña,medium__trail_brake_frac,PC2,0.05076503260920238
+Gran Bretaña,medium__trail_brake_frac,PC3,-0.22435379527330926
+Gran Bretaña,medium__trail_brake_frac,PC4,-0.2014138734101336
+Gran Bretaña,medium__trail_brake_frac,PC5,-0.1700143368423095
+Gran Bretaña,medium__trail_brake_frac,PC6,-0.03650659556724835
+Gran Bretaña,slow__trail_brake_frac,PC1,-0.0021924328438227576
+Gran Bretaña,slow__trail_brake_frac,PC2,0.012820210975107632
+Gran Bretaña,slow__trail_brake_frac,PC3,0.0849319216033386
+Gran Bretaña,slow__trail_brake_frac,PC4,-0.31207748045130157
+Gran Bretaña,slow__trail_brake_frac,PC5,-0.015178701734079786
+Gran Bretaña,slow__trail_brake_frac,PC6,0.40608176410911095
+Bélgica,fast__apex_speed_rel,PC1,0.7449492202440177
+Bélgica,fast__apex_speed_rel,PC2,-0.04066204107827994
+Bélgica,fast__apex_speed_rel,PC3,-0.30094030165280417
+Bélgica,fast__apex_speed_rel,PC4,0.20375521430921284
+Bélgica,medium__apex_speed_rel,PC1,0.4305974115477539
+Bélgica,medium__apex_speed_rel,PC2,-0.07268996587960255
+Bélgica,medium__apex_speed_rel,PC3,0.05214554900541814
+Bélgica,medium__apex_speed_rel,PC4,-0.054542163903102035
+Bélgica,slow__apex_speed_rel,PC1,0.25378289186178443
+Bélgica,slow__apex_speed_rel,PC2,-0.3165491028353489
+Bélgica,slow__apex_speed_rel,PC3,0.010438065180427277
+Bélgica,slow__apex_speed_rel,PC4,-0.19717738351366804
+Bélgica,medium__brake_point_rel,PC1,0.01902270319289378
+Bélgica,medium__brake_point_rel,PC2,-0.18032536609310537
+Bélgica,medium__brake_point_rel,PC3,0.6475260089225323
+Bélgica,medium__brake_point_rel,PC4,0.06219131524544862
+Bélgica,slow__brake_point_rel,PC1,-0.13570800041108086
+Bélgica,slow__brake_point_rel,PC2,0.016241408377824222
+Bélgica,slow__brake_point_rel,PC3,0.08820705813377554
+Bélgica,slow__brake_point_rel,PC4,0.6637450100873179
+Bélgica,fast__coast_frac,PC1,-0.0
+Bélgica,fast__coast_frac,PC2,8.326672684688674e-17
+Bélgica,fast__coast_frac,PC3,-2.7755575615628914e-17
+Bélgica,fast__coast_frac,PC4,-0.0
+Bélgica,medium__coast_frac,PC1,0.10280309344122582
+Bélgica,medium__coast_frac,PC2,-0.2496801688522282
+Bélgica,medium__coast_frac,PC3,0.36886576077788136
+Bélgica,medium__coast_frac,PC4,-0.06805490989580508
+Bélgica,slow__coast_frac,PC1,0.1199753804697092
+Bélgica,slow__coast_frac,PC2,-0.35788100522395816
+Bélgica,slow__coast_frac,PC3,0.30073503721531364
+Bélgica,slow__coast_frac,PC4,-0.16549473150915178
+Bélgica,fast__full_throttle_frac,PC1,0.0003755386168389774
+Bélgica,fast__full_throttle_frac,PC2,0.000103440611136105
+Bélgica,fast__full_throttle_frac,PC3,-0.00017033596626216227
+Bélgica,fast__full_throttle_frac,PC4,-0.0006407456099647294
+Bélgica,medium__full_throttle_frac,PC1,0.13519262528263337
+Bélgica,medium__full_throttle_frac,PC2,0.36012204091244926
+Bélgica,medium__full_throttle_frac,PC3,0.010386118483580589
+Bélgica,medium__full_throttle_frac,PC4,-0.48619331618213557
+Bélgica,slow__full_throttle_frac,PC1,0.22838175056576648
+Bélgica,slow__full_throttle_frac,PC2,0.45584658184386334
+Bélgica,slow__full_throttle_frac,PC3,0.09940524637872604
+Bélgica,slow__full_throttle_frac,PC4,0.16753043413830324
+Bélgica,medium__throttle_attack,PC1,0.035943173656804495
+Bélgica,medium__throttle_attack,PC2,-0.307124734835912
+Bélgica,medium__throttle_attack,PC3,-0.1586419139074427
+Bélgica,medium__throttle_attack,PC4,0.369787843721608
+Bélgica,slow__throttle_attack,PC1,0.01979646695946352
+Bélgica,slow__throttle_attack,PC2,-0.3546744083423153
+Bélgica,slow__throttle_attack,PC3,-0.21568280274955132
+Bélgica,slow__throttle_attack,PC4,-0.04988955693978521
+Bélgica,fast__trail_brake_frac,PC1,-0.0027629600570353986
+Bélgica,fast__trail_brake_frac,PC2,0.0014057155937220972
+Bélgica,fast__trail_brake_frac,PC3,0.0004328010652520933
+Bélgica,fast__trail_brake_frac,PC4,0.0012976123909593906
+Bélgica,medium__trail_brake_frac,PC1,-0.2473628797870219
+Bélgica,medium__trail_brake_frac,PC2,-0.1730534430399214
+Bélgica,medium__trail_brake_frac,PC3,-0.28192302418927645
+Bélgica,medium__trail_brake_frac,PC4,-0.1451482425180477
+Bélgica,slow__trail_brake_frac,PC1,-0.13481256855073218
+Bélgica,slow__trail_brake_frac,PC2,-0.28654214533654104
+Bélgica,slow__trail_brake_frac,PC3,-0.3031113381620899
+Bélgica,slow__trail_brake_frac,PC4,-0.12422704385795492
+Hungría,fast__apex_speed_rel,PC1,0.14803414630880066
+Hungría,medium__apex_speed_rel,PC1,0.09541652344017904
+Hungría,slow__apex_speed_rel,PC1,0.010654488820396648
+Hungría,medium__brake_point_rel,PC1,-0.051746146988734996
+Hungría,slow__brake_point_rel,PC1,-0.056408954641795725
+Hungría,fast__coast_frac,PC1,-0.010472752422234258
+Hungría,medium__coast_frac,PC1,-0.021599053605824273
+Hungría,slow__coast_frac,PC1,-0.029987420512858135
+Hungría,fast__full_throttle_frac,PC1,0.7243658547979217
+Hungría,medium__full_throttle_frac,PC1,0.561948587702442
+Hungría,slow__full_throttle_frac,PC1,0.34399817840917163
+Hungría,medium__throttle_attack,PC1,-0.04457570850429022
+Hungría,slow__throttle_attack,PC1,0.007478548742723658
+Hungría,fast__trail_brake_frac,PC1,-0.004355603660218404
+Hungría,medium__trail_brake_frac,PC1,-0.02369468571217341
+Hungría,slow__trail_brake_frac,PC1,0.0090993432361204
+Países Bajos,fast__apex_speed_rel,PC1,-0.3785569143027523
+Países Bajos,fast__apex_speed_rel,PC2,0.020547511303199283
+Países Bajos,fast__apex_speed_rel,PC3,0.33283341583037684
+Países Bajos,fast__apex_speed_rel,PC4,0.024993223770994874
+Países Bajos,medium__apex_speed_rel,PC1,0.26730780484474764
+Países Bajos,medium__apex_speed_rel,PC2,-0.24974322161317278
+Países Bajos,medium__apex_speed_rel,PC3,-0.18942053786906954
+Países Bajos,medium__apex_speed_rel,PC4,-0.3436943726405824
+Países Bajos,slow__apex_speed_rel,PC1,0.27496646968859123
+Países Bajos,slow__apex_speed_rel,PC2,-0.23741216937415846
+Países Bajos,slow__apex_speed_rel,PC3,-0.23664389915973846
+Países Bajos,slow__apex_speed_rel,PC4,-0.13738019674812285
+Países Bajos,medium__brake_point_rel,PC1,0.24913338147987774
+Países Bajos,medium__brake_point_rel,PC2,0.06149184486047129
+Países Bajos,medium__brake_point_rel,PC3,-0.06389705801532748
+Países Bajos,medium__brake_point_rel,PC4,0.392203165085062
+Países Bajos,slow__brake_point_rel,PC1,-0.05171109896035263
+Países Bajos,slow__brake_point_rel,PC2,0.057966566429451964
+Países Bajos,slow__brake_point_rel,PC3,0.15983209288625833
+Países Bajos,slow__brake_point_rel,PC4,0.5826646818126587
+Países Bajos,fast__coast_frac,PC1,0.20463460509470885
+Países Bajos,fast__coast_frac,PC2,-0.3716063800997721
+Países Bajos,fast__coast_frac,PC3,-0.03811975885649201
+Países Bajos,fast__coast_frac,PC4,0.11260134211900706
+Países Bajos,medium__coast_frac,PC1,0.2169911354372197
+Países Bajos,medium__coast_frac,PC2,-0.38057501979967545
+Países Bajos,medium__coast_frac,PC3,0.024091901964226173
+Países Bajos,medium__coast_frac,PC4,0.1841731049176202
+Países Bajos,slow__coast_frac,PC1,0.10358916578930655
+Países Bajos,slow__coast_frac,PC2,-0.3612312304931599
+Países Bajos,slow__coast_frac,PC3,0.08733256887452484
+Países Bajos,slow__coast_frac,PC4,0.17494996275214564
+Países Bajos,fast__full_throttle_frac,PC1,-0.06329055996822593
+Países Bajos,fast__full_throttle_frac,PC2,-0.0650733531704173
+Países Bajos,fast__full_throttle_frac,PC3,0.15043776755423277
+Países Bajos,fast__full_throttle_frac,PC4,-0.2697127702215836
+Países Bajos,medium__full_throttle_frac,PC1,-0.12706196912299464
+Países Bajos,medium__full_throttle_frac,PC2,-0.06036298420512746
+Países Bajos,medium__full_throttle_frac,PC3,-0.09837437040809445
+Países Bajos,medium__full_throttle_frac,PC4,-0.14928662426111133
+Países Bajos,slow__full_throttle_frac,PC1,-0.11272814285742445
+Países Bajos,slow__full_throttle_frac,PC2,-0.21354831159254728
+Países Bajos,slow__full_throttle_frac,PC3,0.14655629268177967
+Países Bajos,slow__full_throttle_frac,PC4,-0.3310691122644336
+Países Bajos,medium__throttle_attack,PC1,0.6417713546312642
+Países Bajos,medium__throttle_attack,PC2,0.3185331088934793
+Países Bajos,medium__throttle_attack,PC3,0.6447737482216328
+Países Bajos,medium__throttle_attack,PC4,-0.18353617565846864
+Países Bajos,slow__throttle_attack,PC1,0.2747023455924388
+Países Bajos,slow__throttle_attack,PC2,0.13435374408276834
+Países Bajos,slow__throttle_attack,PC3,-0.29620511741886746
+Países Bajos,slow__throttle_attack,PC4,0.18947964614158871
+Países Bajos,fast__trail_brake_frac,PC1,-0.0
+Países Bajos,fast__trail_brake_frac,PC2,-0.0
+Países Bajos,fast__trail_brake_frac,PC3,0.0
+Países Bajos,fast__trail_brake_frac,PC4,-0.0
+Países Bajos,medium__trail_brake_frac,PC1,0.007694914596736962
+Países Bajos,medium__trail_brake_frac,PC2,0.46251745782568127
+Países Bajos,medium__trail_brake_frac,PC3,-0.2616492937965406
+Países Bajos,medium__trail_brake_frac,PC4,-0.08111941441857601
+Países Bajos,slow__trail_brake_frac,PC1,0.15796466762021716
+Países Bajos,slow__trail_brake_frac,PC2,0.2708611902980486
+Países Bajos,slow__trail_brake_frac,PC3,-0.36377603046343887
+Países Bajos,slow__trail_brake_frac,PC4,-0.10507999298765107
+Italia,fast__apex_speed_rel,PC1,0.171138954454895
+Italia,fast__apex_speed_rel,PC2,0.3884544533257042
+Italia,fast__apex_speed_rel,PC3,-0.14725277876460335
+Italia,fast__apex_speed_rel,PC4,-0.1384127361281402
+Italia,fast__apex_speed_rel,PC5,0.018689106767686564
+Italia,medium__apex_speed_rel,PC1,0.15797565862902366
+Italia,medium__apex_speed_rel,PC2,0.36660483648159875
+Italia,medium__apex_speed_rel,PC3,-0.18118375856374003
+Italia,medium__apex_speed_rel,PC4,-0.05454088523299683
+Italia,medium__apex_speed_rel,PC5,-0.04098547195174382
+Italia,slow__apex_speed_rel,PC1,-0.005697134607845271
+Italia,slow__apex_speed_rel,PC2,0.33793975832009576
+Italia,slow__apex_speed_rel,PC3,-0.35617442660290527
+Italia,slow__apex_speed_rel,PC4,0.19619551627698711
+Italia,slow__apex_speed_rel,PC5,0.7033578861414644
+Italia,medium__brake_point_rel,PC1,-0.13195757784395312
+Italia,medium__brake_point_rel,PC2,-0.2833445357180867
+Italia,medium__brake_point_rel,PC3,0.1612912826558374
+Italia,medium__brake_point_rel,PC4,-0.2299125070318124
+Italia,medium__brake_point_rel,PC5,0.21679451517801923
+Italia,slow__brake_point_rel,PC1,-0.2658163608426909
+Italia,slow__brake_point_rel,PC2,-0.36957344481144294
+Italia,slow__brake_point_rel,PC3,0.1215672486270873
+Italia,slow__brake_point_rel,PC4,-0.29519104049722733
+Italia,slow__brake_point_rel,PC5,0.5261311376825165
+Italia,fast__coast_frac,PC1,0.20129706385884497
+Italia,fast__coast_frac,PC2,-0.21638690738675637
+Italia,fast__coast_frac,PC3,0.07150815537627019
+Italia,fast__coast_frac,PC4,0.31352264527573015
+Italia,fast__coast_frac,PC5,-0.0650996087694438
+Italia,medium__coast_frac,PC1,0.23257591716016798
+Italia,medium__coast_frac,PC2,-0.2498354375804627
+Italia,medium__coast_frac,PC3,0.10528293639706741
+Italia,medium__coast_frac,PC4,0.16242177465697977
+Italia,medium__coast_frac,PC5,0.1080574714690471
+Italia,slow__coast_frac,PC1,0.23742811002311887
+Italia,slow__coast_frac,PC2,-0.15185111284719008
+Italia,slow__coast_frac,PC3,0.15712733889712172
+Italia,slow__coast_frac,PC4,0.5374736298727237
+Italia,slow__coast_frac,PC5,0.018039337299854415
+Italia,fast__full_throttle_frac,PC1,0.00010161824517039061
+Italia,fast__full_throttle_frac,PC2,0.0002745360440727087
+Italia,fast__full_throttle_frac,PC3,-0.0009206881215735941
+Italia,fast__full_throttle_frac,PC4,-0.000626507640204319
+Italia,fast__full_throttle_frac,PC5,-0.0004843319853364867
+Italia,medium__full_throttle_frac,PC1,8.406982595199688e-05
+Italia,medium__full_throttle_frac,PC2,-4.167608688139323e-05
+Italia,medium__full_throttle_frac,PC3,-9.193849238167928e-05
+Italia,medium__full_throttle_frac,PC4,0.00013000242331250982
+Italia,medium__full_throttle_frac,PC5,6.16862326088237e-05
+Italia,slow__full_throttle_frac,PC1,0.5390247263221503
+Italia,slow__full_throttle_frac,PC2,0.1910840367127664
+Italia,slow__full_throttle_frac,PC3,0.4543820122827091
+Italia,slow__full_throttle_frac,PC4,-0.4299596224745175
+Italia,slow__full_throttle_frac,PC5,0.15006181076418382
+Italia,medium__throttle_attack,PC1,-0.07123627763727859
+Italia,medium__throttle_attack,PC2,0.04398540393174259
+Italia,medium__throttle_attack,PC3,-0.016076084623677874
+Italia,medium__throttle_attack,PC4,-0.05614558412472202
+Italia,medium__throttle_attack,PC5,-0.022089532466934594
+Italia,slow__throttle_attack,PC1,-0.332530877206002
+Italia,slow__throttle_attack,PC2,-0.0062571334980061535
+Italia,slow__throttle_attack,PC3,-0.1953907313129519
+Italia,slow__throttle_attack,PC4,0.14672881782788078
+Italia,slow__throttle_attack,PC5,-0.0384305925881072
+Italia,fast__trail_brake_frac,PC1,-0.302377168390894
+Italia,fast__trail_brake_frac,PC2,0.40503581303227093
+Italia,fast__trail_brake_frac,PC3,0.6811310300957686
+Italia,fast__trail_brake_frac,PC4,0.3462966740120015
+Italia,fast__trail_brake_frac,PC5,0.13735848565289638
+Italia,medium__trail_brake_frac,PC1,-0.36695797748136383
+Italia,medium__trail_brake_frac,PC2,0.1950154496311786
+Italia,medium__trail_brake_frac,PC3,0.1473956627894805
+Italia,medium__trail_brake_frac,PC4,-0.03655053273253449
+Italia,medium__trail_brake_frac,PC5,-0.03192401044937983
+Italia,slow__trail_brake_frac,PC1,-0.2727236803886895
+Italia,slow__trail_brake_frac,PC2,0.10373140863420277
+Italia,slow__trail_brake_frac,PC3,0.07989772242742144
+Italia,slow__trail_brake_frac,PC4,-0.2345573337018081
+Italia,slow__trail_brake_frac,PC5,-0.3447242713954464
+Azerbaiyán,fast__apex_speed_rel,PC1,-0.022098641792984798
+Azerbaiyán,slow__apex_speed_rel,PC1,-0.0037595041118127135
+Azerbaiyán,slow__brake_point_rel,PC1,0.029948129053659095
+Azerbaiyán,fast__coast_frac,PC1,-8.459660690807905e-06
+Azerbaiyán,slow__coast_frac,PC1,-0.03797992235830608
+Azerbaiyán,fast__full_throttle_frac,PC1,-0.11182506231114546
+Azerbaiyán,slow__full_throttle_frac,PC1,-0.008236111389482487
+Azerbaiyán,slow__throttle_attack,PC1,0.9895309615717969
+Azerbaiyán,fast__trail_brake_frac,PC1,0.0
+Azerbaiyán,slow__trail_brake_frac,PC1,0.07357954302045243
+Singapur,fast__apex_speed_rel,PC1,-0.013409849026103777
+Singapur,fast__apex_speed_rel,PC2,0.15597067389566607
+Singapur,fast__apex_speed_rel,PC3,0.6057420000608431
+Singapur,fast__apex_speed_rel,PC4,-0.09086313595358132
+Singapur,medium__apex_speed_rel,PC1,-0.023516409207691852
+Singapur,medium__apex_speed_rel,PC2,-0.10162656269172823
+Singapur,medium__apex_speed_rel,PC3,-0.40554087466870686
+Singapur,medium__apex_speed_rel,PC4,-0.2006059488305221
+Singapur,slow__apex_speed_rel,PC1,0.019547183832390305
+Singapur,slow__apex_speed_rel,PC2,0.05827401858083336
+Singapur,slow__apex_speed_rel,PC3,-0.49707906414354447
+Singapur,slow__apex_speed_rel,PC4,-0.0316120056598687
+Singapur,medium__brake_point_rel,PC1,0.01548307572017395
+Singapur,medium__brake_point_rel,PC2,-0.16396002663275733
+Singapur,medium__brake_point_rel,PC3,0.15702535989982389
+Singapur,medium__brake_point_rel,PC4,0.6869740125025717
+Singapur,slow__brake_point_rel,PC1,-0.006637266869880305
+Singapur,slow__brake_point_rel,PC2,-0.25376818205180823
+Singapur,slow__brake_point_rel,PC3,0.15694381426828682
+Singapur,slow__brake_point_rel,PC4,0.36829991712462384
+Singapur,fast__coast_frac,PC1,1.6304461343848034e-05
+Singapur,fast__coast_frac,PC2,0.0009618801234206697
+Singapur,fast__coast_frac,PC3,-0.0010322915083370704
+Singapur,fast__coast_frac,PC4,0.0010084955429510549
+Singapur,medium__coast_frac,PC1,0.016439229327093127
+Singapur,medium__coast_frac,PC2,0.3957949804679848
+Singapur,medium__coast_frac,PC3,-0.19712594719182028
+Singapur,medium__coast_frac,PC4,0.3612343107270979
+Singapur,slow__coast_frac,PC1,0.016686306450116872
+Singapur,slow__coast_frac,PC2,0.5085741557816092
+Singapur,slow__coast_frac,PC3,-0.19497161286144532
+Singapur,slow__coast_frac,PC4,0.35117190458678993
+Singapur,fast__full_throttle_frac,PC1,-0.0005573103039851288
+Singapur,fast__full_throttle_frac,PC2,0.00021146992723123102
+Singapur,fast__full_throttle_frac,PC3,0.0026135384885509283
+Singapur,fast__full_throttle_frac,PC4,-0.006187510950556902
+Singapur,medium__full_throttle_frac,PC1,-0.011334284381401723
+Singapur,medium__full_throttle_frac,PC2,0.00022411618595604435
+Singapur,medium__full_throttle_frac,PC3,-0.0013146471268609555
+Singapur,medium__full_throttle_frac,PC4,-0.007495852558464828
+Singapur,slow__full_throttle_frac,PC1,-0.01740228966734439
+Singapur,slow__full_throttle_frac,PC2,0.03126168958698408
+Singapur,slow__full_throttle_frac,PC3,-0.06543388013258913
+Singapur,slow__full_throttle_frac,PC4,-0.14919158791594225
+Singapur,medium__throttle_attack,PC1,0.9987681940581413
+Singapur,medium__throttle_attack,PC2,-0.011543514945221163
+Singapur,medium__throttle_attack,PC3,0.014339791923921609
+Singapur,medium__throttle_attack,PC4,-0.029796657860661303
+Singapur,slow__throttle_attack,PC1,0.008742969230511074
+Singapur,slow__throttle_attack,PC2,-0.2191081822602395
+Singapur,slow__throttle_attack,PC3,-0.20775909909638418
+Singapur,slow__throttle_attack,PC4,0.17892518674892305
+Singapur,fast__trail_brake_frac,PC1,0.0
+Singapur,fast__trail_brake_frac,PC2,-0.0
+Singapur,fast__trail_brake_frac,PC3,0.0
+Singapur,fast__trail_brake_frac,PC4,-0.0
+Singapur,medium__trail_brake_frac,PC1,0.002306059153659002
+Singapur,medium__trail_brake_frac,PC2,-0.4751883440372664
+Singapur,medium__trail_brake_frac,PC3,0.00012858441415928591
+Singapur,medium__trail_brake_frac,PC4,-0.0038391315333605076
+Singapur,slow__trail_brake_frac,PC1,0.0011500398077811148
+Singapur,slow__trail_brake_frac,PC2,-0.4247856946439667
+Singapur,slow__trail_brake_frac,PC3,-0.21841252793605279
+Singapur,slow__trail_brake_frac,PC4,0.1839601750976275
+Estados Unidos,fast__apex_speed_rel,PC1,0.0529203653306675
+Estados Unidos,fast__apex_speed_rel,PC2,-0.17765881731287725
+Estados Unidos,fast__apex_speed_rel,PC3,-0.18948800292462395
+Estados Unidos,fast__apex_speed_rel,PC4,0.4986165292652802
+Estados Unidos,fast__apex_speed_rel,PC5,0.2238596154619097
+Estados Unidos,medium__apex_speed_rel,PC1,0.08706717073582013
+Estados Unidos,medium__apex_speed_rel,PC2,-0.08442108985623172
+Estados Unidos,medium__apex_speed_rel,PC3,0.3333325250580269
+Estados Unidos,medium__apex_speed_rel,PC4,0.41822562898222604
+Estados Unidos,medium__apex_speed_rel,PC5,-0.0851202780797282
+Estados Unidos,slow__apex_speed_rel,PC1,0.07609668977160693
+Estados Unidos,slow__apex_speed_rel,PC2,-0.04670823073579931
+Estados Unidos,slow__apex_speed_rel,PC3,0.4460857176289324
+Estados Unidos,slow__apex_speed_rel,PC4,0.3842009863903683
+Estados Unidos,slow__apex_speed_rel,PC5,-0.06839854521041482
+Estados Unidos,medium__brake_point_rel,PC1,-0.03598641638583833
+Estados Unidos,medium__brake_point_rel,PC2,0.23938989352263865
+Estados Unidos,medium__brake_point_rel,PC3,0.2017132087824984
+Estados Unidos,medium__brake_point_rel,PC4,-0.2652960085320763
+Estados Unidos,medium__brake_point_rel,PC5,-0.4273862937995103
+Estados Unidos,slow__brake_point_rel,PC1,-0.04239880776937432
+Estados Unidos,slow__brake_point_rel,PC2,0.03599595708189832
+Estados Unidos,slow__brake_point_rel,PC3,-0.002020868681500151
+Estados Unidos,slow__brake_point_rel,PC4,-0.20474171487218312
+Estados Unidos,slow__brake_point_rel,PC5,0.47863064006518147
+Estados Unidos,fast__coast_frac,PC1,-0.0908743483794405
+Estados Unidos,fast__coast_frac,PC2,0.3667364565726206
+Estados Unidos,fast__coast_frac,PC3,0.07686734728915243
+Estados Unidos,fast__coast_frac,PC4,0.06219585154318456
+Estados Unidos,fast__coast_frac,PC5,0.14042141639448508
+Estados Unidos,medium__coast_frac,PC1,-0.16462986408641164
+Estados Unidos,medium__coast_frac,PC2,0.5702143562604727
+Estados Unidos,medium__coast_frac,PC3,0.1113650962469395
+Estados Unidos,medium__coast_frac,PC4,0.10336518250701397
+Estados Unidos,medium__coast_frac,PC5,0.0177821094029079
+Estados Unidos,slow__coast_frac,PC1,-0.159371476757833
+Estados Unidos,slow__coast_frac,PC2,0.4981545611955444
+Estados Unidos,slow__coast_frac,PC3,0.14675340658060917
+Estados Unidos,slow__coast_frac,PC4,0.12111415080880605
+Estados Unidos,slow__coast_frac,PC5,-0.02975380087370871
+Estados Unidos,fast__full_throttle_frac,PC1,0.9079413586034898
+Estados Unidos,fast__full_throttle_frac,PC2,0.30142956644766916
+Estados Unidos,fast__full_throttle_frac,PC3,-0.05307877982543849
+Estados Unidos,fast__full_throttle_frac,PC4,-0.1404992835980339
+Estados Unidos,fast__full_throttle_frac,PC5,0.13226638093675586
+Estados Unidos,medium__full_throttle_frac,PC1,0.28298490694308315
+Estados Unidos,medium__full_throttle_frac,PC2,-0.07133512110125588
+Estados Unidos,medium__full_throttle_frac,PC3,0.029610301887035943
+Estados Unidos,medium__full_throttle_frac,PC4,0.187170074233619
+Estados Unidos,medium__full_throttle_frac,PC5,-0.3513055561060869
+Estados Unidos,slow__full_throttle_frac,PC1,0.0850300695568202
+Estados Unidos,slow__full_throttle_frac,PC2,0.04276773450086182
+Estados Unidos,slow__full_throttle_frac,PC3,-0.11731884031031362
+Estados Unidos,slow__full_throttle_frac,PC4,0.23931585419905033
+Estados Unidos,slow__full_throttle_frac,PC5,-0.34516543765114877
+Estados Unidos,medium__throttle_attack,PC1,0.03140109268179805
+Estados Unidos,medium__throttle_attack,PC2,0.10720167222905251
+Estados Unidos,medium__throttle_attack,PC3,0.02861918926137089
+Estados Unidos,medium__throttle_attack,PC4,0.29984141611651943
+Estados Unidos,medium__throttle_attack,PC5,0.4264725440681508
+Estados Unidos,slow__throttle_attack,PC1,0.043110118766037694
+Estados Unidos,slow__throttle_attack,PC2,-0.07031327560750442
+Estados Unidos,slow__throttle_attack,PC3,0.39249084877599855
+Estados Unidos,slow__throttle_attack,PC4,-0.07953324016316432
+Estados Unidos,slow__throttle_attack,PC5,0.2298346916807694
+Estados Unidos,fast__trail_brake_frac,PC1,0.0001853860548036896
+Estados Unidos,fast__trail_brake_frac,PC2,-0.002286131727976268
+Estados Unidos,fast__trail_brake_frac,PC3,-0.001066321750169329
+Estados Unidos,fast__trail_brake_frac,PC4,-0.00423014233991289
+Estados Unidos,fast__trail_brake_frac,PC5,0.00011131036772314621
+Estados Unidos,medium__trail_brake_frac,PC1,0.07180488993237882
+Estados Unidos,medium__trail_brake_frac,PC2,-0.25753896548142335
+Estados Unidos,medium__trail_brake_frac,PC3,0.3589962236759143
+Estados Unidos,medium__trail_brake_frac,PC4,-0.24558900332589423
+Estados Unidos,medium__trail_brake_frac,PC5,0.00286485145329192
+Estados Unidos,slow__trail_brake_frac,PC1,0.017503714208863493
+Estados Unidos,slow__trail_brake_frac,PC2,-0.1103732997943565
+Estados Unidos,slow__trail_brake_frac,PC3,0.5217722024617117
+Estados Unidos,slow__trail_brake_frac,PC4,-0.13685390188452967
+Estados Unidos,slow__trail_brake_frac,PC5,0.10264913591345536
+Ciudad de México,medium__apex_speed_rel,PC1,0.10800860063634961
+Ciudad de México,medium__apex_speed_rel,PC2,0.08582806665944168
+Ciudad de México,medium__apex_speed_rel,PC3,0.27146454439322265
+Ciudad de México,medium__apex_speed_rel,PC4,0.3325750717293223
+Ciudad de México,medium__apex_speed_rel,PC5,0.2611739204622568
+Ciudad de México,slow__apex_speed_rel,PC1,-0.02530272483500973
+Ciudad de México,slow__apex_speed_rel,PC2,0.004062446589922645
+Ciudad de México,slow__apex_speed_rel,PC3,0.20398120455550833
+Ciudad de México,slow__apex_speed_rel,PC4,0.5365569764475093
+Ciudad de México,slow__apex_speed_rel,PC5,0.257349993799831
+Ciudad de México,medium__brake_point_rel,PC1,-0.033027938385401696
+Ciudad de México,medium__brake_point_rel,PC2,0.017367621153577498
+Ciudad de México,medium__brake_point_rel,PC3,0.007803825196952302
+Ciudad de México,medium__brake_point_rel,PC4,-0.43310085194779296
+Ciudad de México,medium__brake_point_rel,PC5,0.3856567707256158
+Ciudad de México,slow__brake_point_rel,PC1,-0.053654968664106094
+Ciudad de México,slow__brake_point_rel,PC2,-0.17848068297443265
+Ciudad de México,slow__brake_point_rel,PC3,-0.19152565376066627
+Ciudad de México,slow__brake_point_rel,PC4,-0.25275919983614104
+Ciudad de México,slow__brake_point_rel,PC5,0.6556323383693397
+Ciudad de México,medium__coast_frac,PC1,0.07397513526345667
+Ciudad de México,medium__coast_frac,PC2,0.24894657971445872
+Ciudad de México,medium__coast_frac,PC3,0.4243369400505172
+Ciudad de México,medium__coast_frac,PC4,-0.4197291998233533
+Ciudad de México,medium__coast_frac,PC5,0.1347688732331514
+Ciudad de México,slow__coast_frac,PC1,0.007528845232453107
+Ciudad de México,slow__coast_frac,PC2,0.2394719314798606
+Ciudad de México,slow__coast_frac,PC3,0.4624743906001161
+Ciudad de México,slow__coast_frac,PC4,-0.19295169363902723
+Ciudad de México,slow__coast_frac,PC5,0.034342605977277375
+Ciudad de México,medium__full_throttle_frac,PC1,0.8895144689169493
+Ciudad de México,medium__full_throttle_frac,PC2,-0.4245692343262123
+Ciudad de México,medium__full_throttle_frac,PC3,0.10066677856086102
+Ciudad de México,medium__full_throttle_frac,PC4,-0.07083700338502741
+Ciudad de México,medium__full_throttle_frac,PC5,-0.04427316602233646
+Ciudad de México,slow__full_throttle_frac,PC1,0.3825579750658607
+Ciudad de México,slow__full_throttle_frac,PC2,0.6133787445793404
+Ciudad de México,slow__full_throttle_frac,PC3,-0.41649951301431537
+Ciudad de México,slow__full_throttle_frac,PC4,0.10437684558602914
+Ciudad de México,slow__full_throttle_frac,PC5,0.17341875167559057
+Ciudad de México,medium__throttle_attack,PC1,0.03364832231155154
+Ciudad de México,medium__throttle_attack,PC2,0.028856571284581897
+Ciudad de México,medium__throttle_attack,PC3,0.31312520822306855
+Ciudad de México,medium__throttle_attack,PC4,0.3344886402100823
+Ciudad de México,medium__throttle_attack,PC5,0.37086321555927276
+Ciudad de México,slow__throttle_attack,PC1,-0.167875501193037
+Ciudad de México,slow__throttle_attack,PC2,-0.3896596283063933
+Ciudad de México,slow__throttle_attack,PC3,0.2620241870932775
+Ciudad de México,slow__throttle_attack,PC4,-0.018494442507451775
+Ciudad de México,slow__throttle_attack,PC5,-0.054387175531992224
+Ciudad de México,medium__trail_brake_frac,PC1,-0.0909080820036595
+Ciudad de México,medium__trail_brake_frac,PC2,-0.281582034871115
+Ciudad de México,medium__trail_brake_frac,PC3,-0.2680785804786276
+Ciudad de México,medium__trail_brake_frac,PC4,0.09133434329356324
+Ciudad de México,medium__trail_brake_frac,PC5,0.24493965026442457
+Ciudad de México,slow__trail_brake_frac,PC1,-0.05504491086839692
+Ciudad de México,slow__trail_brake_frac,PC2,-0.2295442364447831
+Ciudad de México,slow__trail_brake_frac,PC3,-0.17842492071420618
+Ciudad de México,slow__trail_brake_frac,PC4,0.01244388710706367
+Ciudad de México,slow__trail_brake_frac,PC5,0.18736353383267348
+São Paulo,fast__apex_speed_rel,PC1,0.16226366001883263
+São Paulo,fast__apex_speed_rel,PC2,0.08354801184433773
+São Paulo,fast__apex_speed_rel,PC3,-0.02543829095751426
+São Paulo,fast__apex_speed_rel,PC4,0.44298067021436766
+São Paulo,fast__apex_speed_rel,PC5,0.8536905426491018
+São Paulo,medium__apex_speed_rel,PC1,0.2841500382981002
+São Paulo,medium__apex_speed_rel,PC2,0.17622239437757536
+São Paulo,medium__apex_speed_rel,PC3,0.1321283833647459
+São Paulo,medium__apex_speed_rel,PC4,0.06164267015048565
+São Paulo,medium__apex_speed_rel,PC5,-0.0899129804763367
+São Paulo,slow__apex_speed_rel,PC1,0.3657372010326452
+São Paulo,slow__apex_speed_rel,PC2,0.07189355084373014
+São Paulo,slow__apex_speed_rel,PC3,0.28505428723301096
+São Paulo,slow__apex_speed_rel,PC4,0.5583411115725387
+São Paulo,slow__apex_speed_rel,PC5,-0.35782005509591136
+São Paulo,medium__brake_point_rel,PC1,0.07735870962090363
+São Paulo,medium__brake_point_rel,PC2,-0.10732145859676138
+São Paulo,medium__brake_point_rel,PC3,-0.13173046896796722
+São Paulo,medium__brake_point_rel,PC4,-0.5054102031078476
+São Paulo,medium__brake_point_rel,PC5,0.2798946762984066
+São Paulo,slow__brake_point_rel,PC1,-0.09148964024307493
+São Paulo,slow__brake_point_rel,PC2,-0.20525008401013867
+São Paulo,slow__brake_point_rel,PC3,0.061978155079496305
+São Paulo,slow__brake_point_rel,PC4,0.2078994180561527
+São Paulo,slow__brake_point_rel,PC5,0.1448620660574158
+São Paulo,fast__coast_frac,PC1,0.0
+São Paulo,fast__coast_frac,PC2,0.0
+São Paulo,fast__coast_frac,PC3,-5.551115123125783e-17
+São Paulo,fast__coast_frac,PC4,-5.551115123125783e-17
+São Paulo,fast__coast_frac,PC5,-5.551115123125783e-17
+São Paulo,medium__coast_frac,PC1,0.5185865024856007
+São Paulo,medium__coast_frac,PC2,-0.004589008566158445
+São Paulo,medium__coast_frac,PC3,-0.157258460210763
+São Paulo,medium__coast_frac,PC4,-0.1568341176820594
+São Paulo,medium__coast_frac,PC5,-0.003918269533906045
+São Paulo,slow__coast_frac,PC1,0.5196699399691036
+São Paulo,slow__coast_frac,PC2,0.009087807659226262
+São Paulo,slow__coast_frac,PC3,-0.17379671916777115
+São Paulo,slow__coast_frac,PC4,-0.17151421264390862
+São Paulo,slow__coast_frac,PC5,-0.032517162657121554
+São Paulo,fast__full_throttle_frac,PC1,-0.0013232013133249356
+São Paulo,fast__full_throttle_frac,PC2,0.010494122037402942
+São Paulo,fast__full_throttle_frac,PC3,-0.0014093538639512353
+São Paulo,fast__full_throttle_frac,PC4,-0.0017751050624169172
+São Paulo,fast__full_throttle_frac,PC5,0.0003159211837046264
+São Paulo,medium__full_throttle_frac,PC1,-0.09452519559453855
+São Paulo,medium__full_throttle_frac,PC2,0.6611476147096682
+São Paulo,medium__full_throttle_frac,PC3,-0.035874374128543274
+São Paulo,medium__full_throttle_frac,PC4,-0.06420004576271869
+São Paulo,medium__full_throttle_frac,PC5,0.024441377928633684
+São Paulo,slow__full_throttle_frac,PC1,-0.09818186788856766
+São Paulo,slow__full_throttle_frac,PC2,0.6797107208712908
+São Paulo,slow__full_throttle_frac,PC3,-0.041978928866129854
+São Paulo,slow__full_throttle_frac,PC4,-0.06482646650333596
+São Paulo,slow__full_throttle_frac,PC5,0.013156648139201527
+São Paulo,medium__throttle_attack,PC1,0.07035470415840159
+São Paulo,medium__throttle_attack,PC2,0.009100654402121282
+São Paulo,medium__throttle_attack,PC3,0.6270837631937027
+São Paulo,medium__throttle_attack,PC4,-0.25158993804219476
+São Paulo,medium__throttle_attack,PC5,0.13579605969673852
+São Paulo,slow__throttle_attack,PC1,0.05015706684689873
+São Paulo,slow__throttle_attack,PC2,0.01404866485699452
+São Paulo,slow__throttle_attack,PC3,0.6494131482516383
+São Paulo,slow__throttle_attack,PC4,-0.2254865902880778
+São Paulo,slow__throttle_attack,PC5,0.11801850867378005
+São Paulo,fast__trail_brake_frac,PC1,0.0
+São Paulo,fast__trail_brake_frac,PC2,0.0
+São Paulo,fast__trail_brake_frac,PC3,-0.0
+São Paulo,fast__trail_brake_frac,PC4,0.0
+São Paulo,fast__trail_brake_frac,PC5,0.0
+São Paulo,medium__trail_brake_frac,PC1,-0.0070733724692912696
+São Paulo,medium__trail_brake_frac,PC2,-0.004791604904179044
+São Paulo,medium__trail_brake_frac,PC3,0.0004394982680438831
+São Paulo,medium__trail_brake_frac,PC4,-0.0030076468486224394
+São Paulo,medium__trail_brake_frac,PC5,0.0048527734801112965
+São Paulo,slow__trail_brake_frac,PC1,-0.42394579590267234
+São Paulo,slow__trail_brake_frac,PC2,-0.059257654368351426
+São Paulo,slow__trail_brake_frac,PC3,0.0805384511991403
+São Paulo,slow__trail_brake_frac,PC4,0.11432318322591462
+São Paulo,slow__trail_brake_frac,PC5,-0.03912913259686394
+Las Vegas,fast__apex_speed_rel,PC1,-0.20024808446696382
+Las Vegas,fast__apex_speed_rel,PC2,-0.34504769867719143
+Las Vegas,fast__apex_speed_rel,PC3,0.5905241127974844
+Las Vegas,medium__apex_speed_rel,PC1,-0.15050986630881638
+Las Vegas,medium__apex_speed_rel,PC2,-0.3862636450776499
+Las Vegas,medium__apex_speed_rel,PC3,-0.47507998821578473
+Las Vegas,slow__apex_speed_rel,PC1,-0.011946810732691637
+Las Vegas,slow__apex_speed_rel,PC2,-0.10975395026357929
+Las Vegas,slow__apex_speed_rel,PC3,-0.20288397176692718
+Las Vegas,medium__brake_point_rel,PC1,0.10580656374442218
+Las Vegas,medium__brake_point_rel,PC2,0.30481954669818695
+Las Vegas,medium__brake_point_rel,PC3,0.3426045983437411
+Las Vegas,slow__brake_point_rel,PC1,-0.12441293305727305
+Las Vegas,slow__brake_point_rel,PC2,0.21796924924152
+Las Vegas,slow__brake_point_rel,PC3,0.36162390583688153
+Las Vegas,fast__coast_frac,PC1,-0.0
+Las Vegas,fast__coast_frac,PC2,-1.3877787807814457e-17
+Las Vegas,fast__coast_frac,PC3,-6.938893903907228e-18
+Las Vegas,medium__coast_frac,PC1,0.002280494934394134
+Las Vegas,medium__coast_frac,PC2,0.003105807926913872
+Las Vegas,medium__coast_frac,PC3,0.00031433096149999186
+Las Vegas,slow__coast_frac,PC1,0.36679925250691
+Las Vegas,slow__coast_frac,PC2,0.5658699673479817
+Las Vegas,slow__coast_frac,PC3,-0.16990292736050638
+Las Vegas,fast__full_throttle_frac,PC1,-0.0009003196160959335
+Las Vegas,fast__full_throttle_frac,PC2,-0.002438883233628811
+Las Vegas,fast__full_throttle_frac,PC3,-0.0030576304137183126
+Las Vegas,medium__full_throttle_frac,PC1,-0.0
+Las Vegas,medium__full_throttle_frac,PC2,-0.0
+Las Vegas,medium__full_throttle_frac,PC3,1.0842021724855044e-19
+Las Vegas,slow__full_throttle_frac,PC1,0.7076865573871605
+Las Vegas,slow__full_throttle_frac,PC2,-0.45120805639215517
+Las Vegas,slow__full_throttle_frac,PC3,0.13231671577567808
+Las Vegas,medium__throttle_attack,PC1,-0.0
+Las Vegas,medium__throttle_attack,PC2,-0.0
+Las Vegas,medium__throttle_attack,PC3,0.0
+Las Vegas,slow__throttle_attack,PC1,-0.370854322537496
+Las Vegas,slow__throttle_attack,PC2,0.19314530125133214
+Las Vegas,slow__throttle_attack,PC3,-0.10208665521603894
+Las Vegas,fast__trail_brake_frac,PC1,-0.0
+Las Vegas,fast__trail_brake_frac,PC2,-0.0
+Las Vegas,fast__trail_brake_frac,PC3,0.0
+Las Vegas,medium__trail_brake_frac,PC1,-0.13034173660372553
+Las Vegas,medium__trail_brake_frac,PC2,-0.060179564891846726
+Las Vegas,medium__trail_brake_frac,PC3,0.2760262208009936
+Las Vegas,slow__trail_brake_frac,PC1,-0.3471905650456515
+Las Vegas,slow__trail_brake_frac,PC2,-0.12054539039840705
+Las Vegas,slow__trail_brake_frac,PC3,-0.0572038921123771
+Catar,fast__apex_speed_rel,PC1,-0.004723401522169038
+Catar,fast__apex_speed_rel,PC2,0.22038987069396723
+Catar,fast__apex_speed_rel,PC3,0.11798807423818318
+Catar,fast__apex_speed_rel,PC4,-0.030199940438859527
+Catar,fast__apex_speed_rel,PC5,-0.38624554750391726
+Catar,medium__apex_speed_rel,PC1,0.0033330481745018625
+Catar,medium__apex_speed_rel,PC2,0.3156222740680018
+Catar,medium__apex_speed_rel,PC3,0.2759911124151427
+Catar,medium__apex_speed_rel,PC4,0.04486091011635488
+Catar,medium__apex_speed_rel,PC5,-0.35921229147157474
+Catar,slow__apex_speed_rel,PC1,0.011120792638194503
+Catar,slow__apex_speed_rel,PC2,0.40895024116758455
+Catar,slow__apex_speed_rel,PC3,0.3407149601251625
+Catar,slow__apex_speed_rel,PC4,-0.17107642137990922
+Catar,slow__apex_speed_rel,PC5,-0.20865644059674637
+Catar,medium__brake_point_rel,PC1,0.01170334093114773
+Catar,medium__brake_point_rel,PC2,-0.09740475219825913
+Catar,medium__brake_point_rel,PC3,0.1787032366023824
+Catar,medium__brake_point_rel,PC4,0.4926913478187096
+Catar,medium__brake_point_rel,PC5,0.2631458876206246
+Catar,slow__brake_point_rel,PC1,0.011339556707469375
+Catar,slow__brake_point_rel,PC2,-0.10710460853768665
+Catar,slow__brake_point_rel,PC3,0.18602342111762782
+Catar,slow__brake_point_rel,PC4,0.5785279335200733
+Catar,slow__brake_point_rel,PC5,0.1867723631594462
+Catar,fast__coast_frac,PC1,-0.00010750862776670167
+Catar,fast__coast_frac,PC2,0.0031999798752326237
+Catar,fast__coast_frac,PC3,0.0027784782869214207
+Catar,fast__coast_frac,PC4,0.005248035278793066
+Catar,fast__coast_frac,PC5,0.0006587703062346641
+Catar,medium__coast_frac,PC1,-0.003668526421422922
+Catar,medium__coast_frac,PC2,0.34384345851843295
+Catar,medium__coast_frac,PC3,0.20925645109643484
+Catar,medium__coast_frac,PC4,0.2832503765794419
+Catar,medium__coast_frac,PC5,0.00927164416222977
+Catar,slow__coast_frac,PC1,0.004082906895769258
+Catar,slow__coast_frac,PC2,0.4244437398217851
+Catar,slow__coast_frac,PC3,0.1352017368693681
+Catar,slow__coast_frac,PC4,-0.2259570341625957
+Catar,slow__coast_frac,PC5,0.567882287821495
+Catar,fast__full_throttle_frac,PC1,-0.0010314456125498205
+Catar,fast__full_throttle_frac,PC2,0.007770479236113751
+Catar,fast__full_throttle_frac,PC3,-0.003048402010883026
+Catar,fast__full_throttle_frac,PC4,0.001780327942057146
+Catar,fast__full_throttle_frac,PC5,0.00011974276734659713
+Catar,medium__full_throttle_frac,PC1,-0.01684713177640185
+Catar,medium__full_throttle_frac,PC2,0.2346885333044284
+Catar,medium__full_throttle_frac,PC3,-0.527037195072658
+Catar,medium__full_throttle_frac,PC4,0.16447578554916442
+Catar,medium__full_throttle_frac,PC5,-0.10768537216273144
+Catar,slow__full_throttle_frac,PC1,-0.006887376723084378
+Catar,slow__full_throttle_frac,PC2,0.002147109450455624
+Catar,slow__full_throttle_frac,PC3,0.00186466754389333
+Catar,slow__full_throttle_frac,PC4,-0.0049460800126523334
+Catar,slow__full_throttle_frac,PC5,-0.008774330376168031
+Catar,medium__throttle_attack,PC1,0.031170949857357105
+Catar,medium__throttle_attack,PC2,-0.25495155017759447
+Catar,medium__throttle_attack,PC3,0.5853780255811917
+Catar,medium__throttle_attack,PC4,-0.21554992968214046
+Catar,medium__throttle_attack,PC5,0.16133687741234207
+Catar,slow__throttle_attack,PC1,0.99838901597418
+Catar,slow__throttle_attack,PC2,0.027889786555375756
+Catar,slow__throttle_attack,PC3,-0.04170200313719706
+Catar,slow__throttle_attack,PC4,0.0038403210660242523
+Catar,slow__throttle_attack,PC5,0.001217630458817155
+Catar,fast__trail_brake_frac,PC1,0.0011897979326348455
+Catar,fast__trail_brake_frac,PC2,-0.015413564215011636
+Catar,fast__trail_brake_frac,PC3,-0.012940803729041083
+Catar,fast__trail_brake_frac,PC4,-0.018478509719643123
+Catar,fast__trail_brake_frac,PC5,0.015350822405845645
+Catar,medium__trail_brake_frac,PC1,0.02162360517338645
+Catar,medium__trail_brake_frac,PC2,-0.347988916957301
+Catar,medium__trail_brake_frac,PC3,-0.005785899677641199
+Catar,medium__trail_brake_frac,PC4,-0.3944393560706847
+Catar,medium__trail_brake_frac,PC5,0.02842022114729821
+Catar,slow__trail_brake_frac,PC1,0.031522020728976655
+Catar,slow__trail_brake_frac,PC2,-0.3506633067696907
+Catar,slow__trail_brake_frac,PC3,0.20692408895811654
+Catar,slow__trail_brake_frac,PC4,0.17197031377052682
+Catar,slow__trail_brake_frac,PC5,-0.4612910822292803
+Abu Dabi,fast__apex_speed_rel,PC1,-0.15922141308411142
+Abu Dabi,fast__apex_speed_rel,PC2,0.12196638044824089
+Abu Dabi,fast__apex_speed_rel,PC3,-0.08454437826652612
+Abu Dabi,medium__apex_speed_rel,PC1,0.1608896722004526
+Abu Dabi,medium__apex_speed_rel,PC2,0.45360376304832106
+Abu Dabi,medium__apex_speed_rel,PC3,0.18938052590853313
+Abu Dabi,slow__apex_speed_rel,PC1,0.13480987053995508
+Abu Dabi,slow__apex_speed_rel,PC2,0.6441206943792015
+Abu Dabi,slow__apex_speed_rel,PC3,0.24369945905419801
+Abu Dabi,medium__brake_point_rel,PC1,0.5108022736005009
+Abu Dabi,medium__brake_point_rel,PC2,-0.5264178324881991
+Abu Dabi,medium__brake_point_rel,PC3,0.12428553644557373
+Abu Dabi,slow__brake_point_rel,PC1,0.6653980005090803
+Abu Dabi,slow__brake_point_rel,PC2,0.10121654181235769
+Abu Dabi,slow__brake_point_rel,PC3,0.17792106265847518
+Abu Dabi,fast__coast_frac,PC1,-0.03583224337475942
+Abu Dabi,fast__coast_frac,PC2,-0.09548834457536481
+Abu Dabi,fast__coast_frac,PC3,0.445270394745323
+Abu Dabi,medium__coast_frac,PC1,-0.06773965991811418
+Abu Dabi,medium__coast_frac,PC2,-0.08025987154085842
+Abu Dabi,medium__coast_frac,PC3,0.398531128032337
+Abu Dabi,slow__coast_frac,PC1,-0.039939116531869066
+Abu Dabi,slow__coast_frac,PC2,-0.06687436721754049
+Abu Dabi,slow__coast_frac,PC3,0.3925677480158372
+Abu Dabi,fast__full_throttle_frac,PC1,-0.09705034152621693
+Abu Dabi,fast__full_throttle_frac,PC2,0.16047129575243435
+Abu Dabi,fast__full_throttle_frac,PC3,-0.1686523458098529
+Abu Dabi,medium__full_throttle_frac,PC1,-0.04405882766415621
+Abu Dabi,medium__full_throttle_frac,PC2,0.04475909734801745
+Abu Dabi,medium__full_throttle_frac,PC3,0.29281007660159036
+Abu Dabi,slow__full_throttle_frac,PC1,-0.15940615831023291
+Abu Dabi,slow__full_throttle_frac,PC2,-0.04241785625757559
+Abu Dabi,slow__full_throttle_frac,PC3,0.15138154457951936
+Abu Dabi,medium__throttle_attack,PC1,0.02786763365405737
+Abu Dabi,medium__throttle_attack,PC2,0.0034575555587324654
+Abu Dabi,medium__throttle_attack,PC3,-0.14371923483037236
+Abu Dabi,slow__throttle_attack,PC1,0.1347816544403312
+Abu Dabi,slow__throttle_attack,PC2,0.08008336313084585
+Abu Dabi,slow__throttle_attack,PC3,-0.23488518936005987
+Abu Dabi,fast__trail_brake_frac,PC1,0.00035422664600180003
+Abu Dabi,fast__trail_brake_frac,PC2,-0.00034833152590777773
+Abu Dabi,fast__trail_brake_frac,PC3,-0.00046949651697676025
+Abu Dabi,medium__trail_brake_frac,PC1,0.28705697516508916
+Abu Dabi,medium__trail_brake_frac,PC2,0.031630062078563365
+Abu Dabi,medium__trail_brake_frac,PC3,-0.24071828420263933
+Abu Dabi,slow__trail_brake_frac,PC1,0.28519001304928504
+Abu Dabi,slow__trail_brake_frac,PC2,0.14179003721997918
+Abu Dabi,slow__trail_brake_frac,PC3,-0.26157849236295283

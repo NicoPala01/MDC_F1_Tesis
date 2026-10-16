@@ -1,0 +1,25 @@
+event,status,n_laps,n_drivers,k,rule,silhouette,davies_bouldin,zone_source,note
+Australian Grand Prix,skipped,3,,,,,,,speed_threshold_fallback,ningún k dejó una clase de al menos 3 vueltas
+Chinese Grand Prix,skipped,18,,,,,,,speed_threshold_fallback,ningún k dejó una clase de al menos 3 vueltas
+Japanese Grand Prix,ok,837,20,2,silhouette,0.818,0.276,speed_threshold_fallback,
+Bahrain Grand Prix,ok,45,2,2,silhouette,0.570,0.913,speed_threshold_fallback,
+Saudi Arabian Grand Prix,skipped,10,,,,,,,speed_threshold_fallback,ningún k dejó una clase de al menos 3 vueltas
+Miami Grand Prix,ok,46,7,6,davies_bouldin,0.190,1.298,speed_threshold_fallback,
+Emilia Romagna Grand Prix,skipped,,,,,,,,speed_threshold_fallback,matriz vacía: no quedaron vueltas completas
+Monaco Grand Prix,ok,1013,20,2,silhouette,0.736,0.375,key_corners,
+Spanish Grand Prix,ok,635,19,7,davies_bouldin,0.112,2.022,speed_threshold_fallback,
+Canadian Grand Prix,ok,18,5,2,davies_bouldin,0.218,1.534,speed_threshold_fallback,
+Austrian Grand Prix,ok,980,17,2,silhouette,0.289,1.446,speed_threshold_fallback,
+British Grand Prix,ok,402,16,2,silhouette,0.434,1.013,key_corners,
+Belgian Grand Prix,ok,367,20,5,davies_bouldin,0.101,2.122,speed_threshold_fallback,
+Hungarian Grand Prix,skipped,1253,,,,,,,speed_threshold_fallback,ningún k dejó una clase de al menos 3 vueltas
+Dutch Grand Prix,ok,964,20,3,davies_bouldin,0.161,1.888,speed_threshold_fallback,
+Italian Grand Prix,ok,842,19,3,davies_bouldin,0.133,1.986,key_corners,
+Azerbaijan Grand Prix,ok,21,4,2,silhouette,0.279,1.492,speed_threshold_fallback,
+Singapore Grand Prix,skipped,3,,,,,,,speed_threshold_fallback,ningún k dejó una clase de al menos 3 vueltas
+United States Grand Prix,ok,126,11,3,davies_bouldin,0.147,1.875,speed_threshold_fallback,
+Mexico City Grand Prix,ok,940,19,2,silhouette,0.856,0.265,speed_threshold_fallback,
+São Paulo Grand Prix,ok,451,18,4,davies_bouldin,0.123,1.888,speed_threshold_fallback,
+Las Vegas Grand Prix,ok,48,5,4,davies_bouldin,0.201,1.466,speed_threshold_fallback,
+Qatar Grand Prix,ok,378,20,2,silhouette,0.843,0.351,speed_threshold_fallback,
+Abu Dhabi Grand Prix,ok,76,6,2,silhouette,0.254,1.491,speed_threshold_fallback,

@@ -1,0 +1,17 @@
+window,zone,n_fragments,n_onsets,n_edge,n_within_5m,edge_frac_of_onsets,within_5m_frac_of_onsets,median_entry_speed
+pipeline,T1_Variante_del_Rettifilo,869,867,0,0,0.0,0.0,336.0
+pipeline,T3_Curva_Grande,869,0,0,0,,,275.0
+pipeline,T4_Variante_della_Roggia,869,864,0,0,0.0,0.0,317.0
+pipeline,T6_Curva_di_Lesmo,869,859,3,0,0.0034924330616996507,0.0,238.0
+pipeline,T7_Seconda_di_Lesmo,869,774,7,0,0.00904392764857881,0.0,243.0
+pipeline,T8_Variante_Ascari,868,843,1,0,0.0011862396204033216,0.0,322.0
+pipeline,T11_Curva_Parabolica_Alboreto,868,867,2,0,0.002306805074971165,0.0,319.0
+pipeline,TOTAL,6081,5074,13,0,0.002562081198265668,0.0,314.0
+350m,T1_Variante_del_Rettifilo,869,867,0,0,0.0,0.0,336.0
+350m,T3_Curva_Grande,869,2,1,0,0.5,0.0,223.0
+350m,T4_Variante_della_Roggia,869,864,0,0,0.0,0.0,317.0
+350m,T6_Curva_di_Lesmo,869,860,8,5,0.009302325581395349,0.005813953488372093,124.0
+350m,T7_Seconda_di_Lesmo,869,811,250,121,0.3082614056720099,0.14919852034525277,192.0
+350m,T8_Variante_Ascari,868,843,1,1,0.0011862396204033216,0.0011862396204033216,322.0
+350m,T11_Curva_Parabolica_Alboreto,868,867,1,1,0.0011534025374855825,0.0011534025374855825,320.0
+350m,TOTAL,6081,5114,261,128,0.0510363707469691,0.025029331247555728,315.0

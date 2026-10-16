@@ -56,7 +56,19 @@ Tests (sintéticos, sin red): `python -m pytest -v`.
 
 ## Separación: algoritmos y métricas alternativas
 
-`docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap.
+`docs/separacion_nulo_monza_2025.md` mide, en la matriz por defecto de Monza 2025 (normalización por vuelta sincronizada), la silueta del K-means para k de 2 a 7 contra 200 permutaciones de columnas, con el percentil de la silueta real. También compara la misma tabla sin las columnas de IQR 0. El algoritmo por defecto no cambia.
+
+`docs/vector_por_zona_monza_2025.md` mide la variante apagada de un vector por curva (`vector_unit: zone`) y, para el issue #10, la fracción de inicios de frenada que caen en el borde de una ventana de 350 m. Las ventanas escaladas por velocidad (`speed_scaled_windows`) también están apagadas; el documento solo reporta los metros que darían.
+
+`docs/compuesto_monza_2025.md` reporta, sobre la misma corrida por defecto, la fracción de compuesto por clase, el reajuste dentro de MEDIUM y de HARD, y el contraste HAM−LEC y NOR−PIA en `slow__brake_point_rel` con un intervalo bootstrap. No cambia el ajuste.
+
+`docs/temporada_2025.md` es la corrida `python scripts/run_pipeline.py --season 2025` con esa misma configuración: 18 de 24 carreras entran, y la tendencia modal de los 20 pilotos que llegan a 8 carreras es «No dominant trait».
+
+`docs/decision_metodologica_2025.md` junta esa corrida con el perfil continuo, el GMM y la grilla de modelos, y propone la lectura de la tesis. La propuesta queda pendiente de aprobación. No cambia los defaults.
+
+`docs/proceso_completo.md` describe el proceso de punta a punta como está en el código, con archivo y función en cada paso, y marca dónde el código se aparta de este README.
+
+`docs/separacion_algoritmos_metricas.md` compara, sobre la matriz de vueltas de Monza 2025, conjuntos de features (todas / sin casi-constantes / seleccionadas por ICC entre pilotos), escalados, unidad de muestra (vuelta / bloque de 5 vueltas) y algoritmos (K-means, k-medianas, k-medoides, GMM, Ward, enlace promedio coseno, espectral, HDBSCAN), con métricas que van más allá de silueta / Davies-Bouldin: silueta contra un nulo de columnas permutadas, estadístico gap, prediction strength, BIC/ICL, Dunn, AMI con piloto / equipo / compuesto, y estabilidad bootstrap. Ese nulo permuta las componentes ya calculadas; el de `docs/separacion_nulo_monza_2025.md` permuta las columnas y vuelve a ajustar escalador y PCA.
 
 ```bash
 python scripts/monza_separation_benchmark.py            # escribe results/2025/italian_grand_prix/separation/

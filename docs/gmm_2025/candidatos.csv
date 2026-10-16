@@ -1,0 +1,351 @@
+carrera,covariance_type,k,bic,converged
+Australia,full,1,3356.263164762374,True
+Australia,full,2,-5348.204796370436,True
+Australia,full,3,-7455.357628487956,True
+Australia,full,4,-7181.425292870885,True
+Australia,full,5,-6585.824780017006,True
+Australia,full,6,-6457.045034081653,True
+Australia,full,7,-5219.859685944406,True
+Australia,diag,1,4753.822563961749,True
+Australia,diag,2,-4122.974350827402,True
+Australia,diag,3,-7187.041864504326,True
+Australia,diag,4,-7340.263835948072,True
+Australia,diag,5,-7257.934405146722,True
+Australia,diag,6,-7473.0800300887595,True
+Australia,diag,7,-7643.930786259833,True
+China,full,1,9247.017138219786,True
+China,full,2,192.91741217500612,True
+China,full,3,-2851.182975117267,True
+China,full,4,-2183.6591586772647,True
+China,full,5,-1137.5867709091754,True
+China,full,6,-1772.7746128028093,True
+China,full,7,-1586.5095789234292,True
+China,diag,1,9287.552847138,True
+China,diag,2,-2329.019809313962,True
+China,diag,3,-3773.408070165093,True
+China,diag,4,-4632.305498533741,True
+China,diag,5,-4669.222852197816,True
+China,diag,6,-4905.514036581873,True
+China,diag,7,-4943.003701595095,True
+Japón,full,1,32642.56117941875,True
+Japón,full,2,28453.377257638433,True
+Japón,full,3,23158.67545447083,True
+Japón,full,4,22922.70300832896,True
+Japón,full,5,23472.927774784323,True
+Japón,full,6,24138.19740588494,True
+Japón,full,7,24768.193456438174,True
+Japón,diag,1,36488.047280070175,True
+Japón,diag,2,33332.59123365012,True
+Japón,diag,3,27132.577911420696,True
+Japón,diag,4,25912.348214725276,True
+Japón,diag,5,25754.90306765125,True
+Japón,diag,6,25094.10531615446,True
+Japón,diag,7,24997.99046885935,True
+Baréin,full,1,25363.908762501167,True
+Baréin,full,2,17478.89303759506,True
+Baréin,full,3,18020.976489747747,True
+Baréin,full,4,16379.890661558604,True
+Baréin,full,5,16797.415636369202,True
+Baréin,full,6,17403.196372928494,True
+Baréin,full,7,18265.090985271458,True
+Baréin,diag,1,30985.957979565374,True
+Baréin,diag,2,22373.544229746447,True
+Baréin,diag,3,19566.42214978601,True
+Baréin,diag,4,18784.944813048704,True
+Baréin,diag,5,18586.904755613574,True
+Baréin,diag,6,18170.755747111696,True
+Baréin,diag,7,18092.382766881212,True
+Arabia Saudita,full,1,15461.580447578708,True
+Arabia Saudita,full,2,12874.700791004507,True
+Arabia Saudita,full,3,13282.970241277759,True
+Arabia Saudita,full,4,13497.005246226789,True
+Arabia Saudita,full,5,13684.930216884672,True
+Arabia Saudita,full,6,14294.105549344804,True
+Arabia Saudita,full,7,14597.717586683699,True
+Arabia Saudita,diag,1,20221.367712060957,True
+Arabia Saudita,diag,2,19270.140757650508,True
+Arabia Saudita,diag,3,17769.975653995738,True
+Arabia Saudita,diag,4,16783.79149171971,True
+Arabia Saudita,diag,5,16336.99217314178,True
+Arabia Saudita,diag,6,15833.283776659235,True
+Arabia Saudita,diag,7,15542.926826122159,True
+Miami,full,1,1830.775268958736,True
+Miami,full,2,1612.1261704024967,True
+Miami,full,3,2169.4061448658945,True
+Miami,full,4,2159.0158200542437,True
+Miami,full,5,2164.3769046101615,True
+Miami,full,6,2027.4487989236814,True
+Miami,full,7,2007.2188305811273,True
+Miami,diag,1,2597.207020048846,True
+Miami,diag,2,1919.482797920928,True
+Miami,diag,3,1951.9491601551877,True
+Miami,diag,4,1803.8577300046386,True
+Miami,diag,5,1827.2052531192019,True
+Miami,diag,6,1787.3182415480042,True
+Miami,diag,7,1888.4654716595378,True
+Emilia-Romaña,full,1,3463.9716528118324,True
+Emilia-Romaña,full,2,-2154.874682025653,True
+Emilia-Romaña,full,3,-7872.0178637221525,True
+Emilia-Romaña,full,4,-7370.8257337935665,True
+Emilia-Romaña,full,5,-10181.576665288772,True
+Emilia-Romaña,full,6,-9569.519796866176,True
+Emilia-Romaña,full,7,-8610.387616014395,True
+Emilia-Romaña,diag,1,5621.381132819158,True
+Emilia-Romaña,diag,2,771.8678317759444,True
+Emilia-Romaña,diag,3,-5934.194920505861,True
+Emilia-Romaña,diag,4,-10667.818789288573,True
+Emilia-Romaña,diag,5,-11279.17771917209,True
+Emilia-Romaña,diag,6,-12139.961335254748,True
+Emilia-Romaña,diag,7,-11989.899048181054,True
+Mónaco,full,1,28047.96741934865,True
+Mónaco,full,2,26596.94040107569,True
+Mónaco,full,3,26579.61907776521,True
+Mónaco,full,4,26630.64152081502,True
+Mónaco,full,5,26775.018963572806,True
+Mónaco,full,6,27014.93054550254,True
+Mónaco,full,7,27297.063060869907,True
+Mónaco,diag,1,29480.272483146488,True
+Mónaco,diag,2,27726.067044111187,True
+Mónaco,diag,3,27015.3057232914,True
+Mónaco,diag,4,26612.283289760522,True
+Mónaco,diag,5,26398.248231569167,True
+Mónaco,diag,6,26297.256847790613,True
+Mónaco,diag,7,26255.974462206465,True
+España,full,1,26231.793799411316,True
+España,full,2,19555.277958057042,True
+España,full,3,14468.91482056192,True
+España,full,4,15169.507309220131,True
+España,full,5,15493.489736300531,True
+España,full,6,15894.096038097876,True
+España,full,7,16589.740420059432,True
+España,diag,1,29121.922573564465,True
+España,diag,2,21374.53695425493,True
+España,diag,3,15369.440640099798,True
+España,diag,4,15230.895352410429,True
+España,diag,5,14633.531639934099,True
+España,diag,6,14083.837088763135,True
+España,diag,7,13822.989589529492,True
+Canadá,full,1,8301.103969090691,True
+Canadá,full,2,-17012.457264808538,True
+Canadá,full,3,-29771.445745625508,True
+Canadá,full,4,-30537.45069294535,True
+Canadá,full,5,-30076.117280185787,True
+Canadá,full,6,-29431.5583146665,True
+Canadá,full,7,-29041.731817980373,True
+Canadá,diag,1,12662.030400316153,True
+Canadá,diag,2,-14047.028008554345,True
+Canadá,diag,3,-27629.085333119736,True
+Canadá,diag,4,-28912.782825589486,True
+Canadá,diag,5,-30048.01688344251,True
+Canadá,diag,6,-30486.570624838827,True
+Canadá,diag,7,-30707.86750316225,True
+Austria,full,1,19142.073164580564,True
+Austria,full,2,9927.39301715044,True
+Austria,full,3,9874.542144379971,True
+Austria,full,4,10601.462923404153,True
+Austria,full,5,11050.344973836229,True
+Austria,full,6,11351.603799920427,True
+Austria,full,7,12290.079606164014,True
+Austria,diag,1,21008.31066052806,True
+Austria,diag,2,11215.742062725823,True
+Austria,diag,3,10144.21315393919,True
+Austria,diag,4,9987.853066317737,True
+Austria,diag,5,9611.937981010278,True
+Austria,diag,6,9422.97801727797,True
+Austria,diag,7,9319.636644810931,True
+Gran Bretaña,full,1,18656.046775975577,True
+Gran Bretaña,full,2,18667.57946855225,True
+Gran Bretaña,full,3,18950.99468143352,True
+Gran Bretaña,full,4,19008.59260749369,True
+Gran Bretaña,full,5,19450.311513311455,True
+Gran Bretaña,full,6,19997.08363413476,True
+Gran Bretaña,full,7,20097.536300409192,True
+Gran Bretaña,diag,1,19259.705500521097,True
+Gran Bretaña,diag,2,18447.49419798244,True
+Gran Bretaña,diag,3,18256.50956533638,True
+Gran Bretaña,diag,4,18090.446589705993,True
+Gran Bretaña,diag,5,18021.24592202824,True
+Gran Bretaña,diag,6,17961.486674925378,True
+Gran Bretaña,diag,7,18019.295886460706,True
+Bélgica,full,1,4779.488885232605,True
+Bélgica,full,2,-1836.6402884603106,True
+Bélgica,full,3,-1425.1192588712192,True
+Bélgica,full,4,-903.2620028510182,True
+Bélgica,full,5,-580.581710372142,True
+Bélgica,full,6,77.4301299650806,True
+Bélgica,full,7,911.5736997449885,True
+Bélgica,diag,1,5283.968719741602,True
+Bélgica,diag,2,-2013.3963394470152,True
+Bélgica,diag,3,-2369.314553698906,True
+Bélgica,diag,4,-2562.9962927804518,True
+Bélgica,diag,5,-2564.426673633143,True
+Bélgica,diag,6,-2603.629368385459,True
+Bélgica,diag,7,-2602.0221661610512,True
+Hungría,full,1,42040.726544033154,True
+Hungría,full,2,36117.11424786372,True
+Hungría,full,3,26142.089914671298,True
+Hungría,full,4,25768.787109189052,True
+Hungría,full,5,26381.757417192373,True
+Hungría,full,6,27140.107994265723,True
+Hungría,full,7,27330.488642897195,True
+Hungría,diag,1,49241.865841193016,True
+Hungría,diag,2,39124.577243933934,True
+Hungría,diag,3,37178.21946550954,True
+Hungría,diag,4,36697.481910137525,True
+Hungría,diag,5,36095.095737903066,True
+Hungría,diag,6,35468.0844709255,True
+Hungría,diag,7,34587.89936348878,True
+Países Bajos,full,1,21128.226588663776,True
+Países Bajos,full,2,21147.761404299188,True
+Países Bajos,full,3,20663.7040995407,True
+Países Bajos,full,4,21310.450377337045,True
+Países Bajos,full,5,21647.823991332727,True
+Países Bajos,full,6,22476.312556913028,True
+Países Bajos,full,7,23088.293980148876,True
+Países Bajos,diag,1,23922.699545871663,True
+Países Bajos,diag,2,22286.889999784704,True
+Países Bajos,diag,3,21700.918168613094,True
+Países Bajos,diag,4,21322.628870756023,True
+Países Bajos,diag,5,20953.405685388105,True
+Países Bajos,diag,6,20685.36945382928,True
+Países Bajos,diag,7,20467.317643040453,True
+Italia,full,1,16823.440644923736,True
+Italia,full,2,-2469.071491954659,True
+Italia,full,3,-2467.4224336233156,True
+Italia,full,4,-2428.286889644107,True
+Italia,full,5,-1835.9530212491209,True
+Italia,full,6,-1541.9958737843453,True
+Italia,full,7,-1196.7218429492377,True
+Italia,diag,1,18720.903151990213,True
+Italia,diag,2,-1050.4603983135808,True
+Italia,diag,3,-1723.7189561441812,True
+Italia,diag,4,-2539.9378807725097,True
+Italia,diag,5,-2946.181141024586,True
+Italia,diag,6,-3131.770485045636,True
+Italia,diag,7,-3030.480820206147,True
+Monza suelta,full,1,18466.548198663066,True
+Monza suelta,full,2,-249.84723294869946,True
+Monza suelta,full,3,-580.464412985692,True
+Monza suelta,full,4,287.507738019759,True
+Monza suelta,full,5,168.84303853582242,True
+Monza suelta,full,6,767.5401290946484,True
+Monza suelta,full,7,1502.7472032542937,True
+Monza suelta,diag,1,20432.60429362102,True
+Monza suelta,diag,2,1158.7149107204832,True
+Monza suelta,diag,3,563.7435189241095,True
+Monza suelta,diag,4,-267.07541633715493,True
+Monza suelta,diag,5,-590.2904881938671,True
+Monza suelta,diag,6,-919.3173377166895,True
+Monza suelta,diag,7,-949.1293559080009,True
+Azerbaiyán,full,1,-1143.684583595374,True
+Azerbaiyán,full,2,-15594.309236739993,True
+Azerbaiyán,full,3,-17783.11773362839,True
+Azerbaiyán,full,4,-18192.56029096066,True
+Azerbaiyán,full,5,-18715.44198639746,True
+Azerbaiyán,full,6,-18292.76117821555,True
+Azerbaiyán,full,7,-18203.08317748024,True
+Azerbaiyán,diag,1,37.50230528351946,True
+Azerbaiyán,diag,2,-15623.483395406533,True
+Azerbaiyán,diag,3,-18023.414920377356,True
+Azerbaiyán,diag,4,-18525.9827416079,True
+Azerbaiyán,diag,5,-19486.08452460984,True
+Azerbaiyán,diag,6,-19462.512892336807,True
+Azerbaiyán,diag,7,-19386.50070738497,True
+Singapur,full,1,7148.418222763077,True
+Singapur,full,2,-13497.276821265925,True
+Singapur,full,3,-26375.89072290361,True
+Singapur,full,4,-28000.86227180984,True
+Singapur,full,5,-27799.41691809008,True
+Singapur,full,6,-27360.58295723483,True
+Singapur,full,7,-26896.96784254272,True
+Singapur,diag,1,9114.058380173194,True
+Singapur,diag,2,-6944.716698123447,True
+Singapur,diag,3,-28223.692705048925,True
+Singapur,diag,4,-28773.336876780628,True
+Singapur,diag,5,-28856.114163350245,True
+Singapur,diag,6,-29246.2743125484,True
+Singapur,diag,7,-29762.281149098577,True
+Estados Unidos,full,1,26981.645620859752,True
+Estados Unidos,full,2,18740.43236691978,True
+Estados Unidos,full,3,18646.244551660096,True
+Estados Unidos,full,4,17418.08298894997,True
+Estados Unidos,full,5,17895.97521363871,True
+Estados Unidos,full,6,18537.730454394386,True
+Estados Unidos,full,7,19355.50102183506,True
+Estados Unidos,diag,1,29647.02247368128,True
+Estados Unidos,diag,2,22827.69571728191,True
+Estados Unidos,diag,3,21985.812207327304,True
+Estados Unidos,diag,4,20941.523520736537,True
+Estados Unidos,diag,5,20336.823504228312,True
+Estados Unidos,diag,6,20016.50743885183,True
+Estados Unidos,diag,7,19060.3398005758,True
+Ciudad de México,full,1,29281.109297276726,True
+Ciudad de México,full,2,27994.178049270307,True
+Ciudad de México,full,3,26941.3915896268,True
+Ciudad de México,full,4,27154.136792106925,True
+Ciudad de México,full,5,27430.71707718508,True
+Ciudad de México,full,6,27794.25076579426,True
+Ciudad de México,full,7,27830.951125615782,True
+Ciudad de México,diag,1,30973.978533836664,True
+Ciudad de México,diag,2,29065.34769916694,True
+Ciudad de México,diag,3,27994.244700011823,True
+Ciudad de México,diag,4,27725.46519608975,True
+Ciudad de México,diag,5,27474.148269363934,True
+Ciudad de México,diag,6,27400.04051340362,True
+Ciudad de México,diag,7,27296.88099090759,True
+São Paulo,full,1,-9427.868579418935,True
+São Paulo,full,2,-24909.320702185567,True
+São Paulo,full,3,-24624.141254473034,True
+São Paulo,full,4,-24412.417089655595,True
+São Paulo,full,5,-23712.25264430793,True
+São Paulo,full,6,-22967.897946244877,True
+São Paulo,full,7,-22292.7548229164,True
+São Paulo,diag,1,-368.0586120119285,True
+São Paulo,diag,2,-17215.467243998133,True
+São Paulo,diag,3,-18015.05748991059,True
+São Paulo,diag,4,-18852.35232124716,True
+São Paulo,diag,5,-19229.98242600693,True
+São Paulo,diag,6,-19598.890542961435,True
+São Paulo,diag,7,-19918.73129924835,True
+Las Vegas,full,1,-9704.524096549108,True
+Las Vegas,full,2,-13008.086281890211,True
+Las Vegas,full,3,-13003.608914017123,True
+Las Vegas,full,4,-12593.20798644079,True
+Las Vegas,full,5,-12054.682500115494,True
+Las Vegas,full,6,-11595.212799250337,True
+Las Vegas,full,7,-11191.427535938034,True
+Las Vegas,diag,1,-9738.994855870118,True
+Las Vegas,diag,2,-13792.79998141163,True
+Las Vegas,diag,3,-14456.101024799918,True
+Las Vegas,diag,4,-14653.00816353083,True
+Las Vegas,diag,5,-14577.627023039082,True
+Las Vegas,diag,6,-14732.935612697242,True
+Las Vegas,diag,7,-14641.562151977607,True
+Catar,full,1,17700.62973932513,True
+Catar,full,2,3656.386404835721,True
+Catar,full,3,-4860.498961380883,True
+Catar,full,4,-5088.0879474893745,True
+Catar,full,5,-4305.6697096886755,True
+Catar,full,6,-8543.500842603877,True
+Catar,full,7,-8387.813613805403,True
+Catar,diag,1,19985.43685906836,True
+Catar,diag,2,4913.115865503942,True
+Catar,diag,3,-5331.318599237224,True
+Catar,diag,4,-6504.626788078114,True
+Catar,diag,5,-7680.196462774454,True
+Catar,diag,6,-12383.341000806244,True
+Catar,diag,7,-14001.595220798308,True
+Abu Dabi,full,1,30204.87184128145,True
+Abu Dabi,full,2,21715.383701225073,True
+Abu Dabi,full,3,22055.336859417966,True
+Abu Dabi,full,4,22278.57924806148,True
+Abu Dabi,full,5,22505.209441804054,True
+Abu Dabi,full,6,22434.518732525077,True
+Abu Dabi,full,7,23104.541473741876,True
+Abu Dabi,diag,1,35674.81527044264,True
+Abu Dabi,diag,2,25313.5153838159,True
+Abu Dabi,diag,3,23750.616853334177,True
+Abu Dabi,diag,4,23550.019987676118,True
+Abu Dabi,diag,5,23125.9976750409,True
+Abu Dabi,diag,6,22774.60737633749,True
+Abu Dabi,diag,7,22516.984155701935,True

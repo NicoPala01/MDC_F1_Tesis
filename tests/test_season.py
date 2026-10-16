@@ -332,6 +332,24 @@ def test_season_classes_split_race_phase_without_lap_synchronous(monkeypatch, tm
     assert min(spans) >= 10.0
 
 
+def test_season_notebook_reads_the_modal_outputs_not_a_median_matrix():
+    import json
+    from pathlib import Path
+
+    notebook = json.loads(Path("notebooks/04_season_results.ipynb").read_text(encoding="utf-8"))
+    source = "\n".join("".join(cell.get("source", [])) for cell in notebook["cells"])
+    assert "pd.read_csv" in source
+    assert "driver_summary.csv" in source
+    assert "archetype_by_race.csv" in source
+    assert "stability.csv" in source
+    assert "arquetipo modal" in source.lower()
+    assert "build_season_driver_matrix" in source
+    assert "no escribe `driver_matrix.csv`" in source
+    assert "segundo clustering" in source
+    read_lines = [line for line in source.splitlines() if "read_csv" in line]
+    assert all("driver_matrix.csv" not in line for line in read_lines)
+
+
 def test_config_without_normalization_keys_uses_the_lap_synchronous_default(monkeypatch):
     from f1_style_clustering import pipeline as pipeline_mod
     from f1_style_clustering.config import load_config

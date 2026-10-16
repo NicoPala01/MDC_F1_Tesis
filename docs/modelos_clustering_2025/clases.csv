@@ -1,0 +1,437 @@
+carrera,modelo,component,feature,share,within_iqr,marked
+Australia,kmeans,0,medium__throttle_attack,0.17831603266891927,0.5073034963201706,False
+Australia,kmeans,1,medium__throttle_attack,0.1783160326689193,1.9381428748621008,False
+Australia,kmedians,0,medium__throttle_attack,0.14049817379057125,1.9629787561373557,False
+Australia,kmedians,1,medium__throttle_attack,0.14049817379057114,0.5073034963201707,False
+Australia,kmedoids,0,medium__throttle_attack,0.15838528493380394,0.5073034963201706,False
+Australia,kmedoids,1,medium__throttle_attack,0.158385284933804,1.946936610015396,False
+Australia,gmm,0,medium__throttle_attack,0.2637460884353783,1.948174635179385,False
+Australia,gmm,1,medium__throttle_attack,0.283060162233267,0.5073034963201706,False
+Australia,gmm,2,slow__full_throttle_frac,0.1813625794787889,1.2902917600193862,False
+Australia,gmm,3,medium__throttle_attack,0.14712795387909344,2.787357146067235,False
+Australia,ward,0,medium__throttle_attack,0.16972047017789382,1.8472192724070153,False
+Australia,ward,1,medium__throttle_attack,0.16972047017789385,0.5247323425474419,False
+Australia,spectral,0,medium__throttle_attack,0.17238439698753008,1.872784401659982,False
+Australia,spectral,1,medium__throttle_attack,0.17238439698753005,0.49803215853059085,False
+Australia,fuzzy_cmeans,0,medium__throttle_attack,0.15468052436628638,1.7776218739378717,False
+Australia,fuzzy_cmeans,1,medium__throttle_attack,0.1546805243662864,0.4944743983939453,False
+China,kmeans,0,slow__full_throttle_frac,0.8398989871058854,0.7373320680932909,False
+China,kmeans,1,slow__full_throttle_frac,0.8398989871058855,1.3358364992095142,False
+China,kmedians,0,slow__full_throttle_frac,0.8398989871058854,0.7373320680932909,False
+China,kmedians,1,slow__full_throttle_frac,0.8398989871058855,1.3358364992095142,False
+China,kmedoids,0,slow__full_throttle_frac,0.8398989871058854,0.7373320680932909,False
+China,kmedoids,1,slow__full_throttle_frac,0.8398989871058855,1.3358364992095142,False
+China,gmm,0,medium__throttle_attack,0.39695118795897,0.0,False
+China,gmm,1,medium__throttle_attack,0.3969511879589697,0.0,False
+China,ward,0,slow__full_throttle_frac,0.8364117356339177,1.3105451121311136,False
+China,ward,1,slow__full_throttle_frac,0.8364117356339174,0.7407822126753509,False
+China,spectral,0,slow__full_throttle_frac,0.8398989871058855,1.3358364992095142,False
+China,spectral,1,slow__full_throttle_frac,0.8398989871058854,0.7373320680932909,False
+China,hdbscan,0,slow__full_throttle_frac,0.7411913031600074,0.7075850515121166,False
+China,hdbscan,1,slow__full_throttle_frac,0.7271581280465025,1.1337339797241412,False
+China,fuzzy_cmeans,0,slow__full_throttle_frac,0.8347017809869341,0.7352356717636563,False
+China,fuzzy_cmeans,1,slow__full_throttle_frac,0.8347017809869344,1.378883113477297,False
+Japón,kmeans,0,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,kmeans,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,kmedians,0,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,kmedians,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,kmedoids,0,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,kmedoids,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,gmm,0,slow__full_throttle_frac,0.7795131305296469,0.7932491406139494,False
+Japón,gmm,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,gmm,2,slow__full_throttle_frac,0.44562302461805375,0.7814968712991609,False
+Japón,ward,0,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,ward,1,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,average,0,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,average,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,spectral,0,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,spectral,1,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,hdbscan,0,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Japón,hdbscan,1,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,fuzzy_cmeans,0,slow__full_throttle_frac,0.9312578928540115,2.1632473683681166,False
+Japón,fuzzy_cmeans,1,slow__full_throttle_frac,0.9312578928540114,0.801473409740296,False
+Baréin,kmeans,0,medium__full_throttle_frac,0.12431873625990597,0.12195134627822934,False
+Baréin,kmeans,1,medium__full_throttle_frac,0.12431873625990596,1.9665727077242645,False
+Baréin,kmedians,0,slow__full_throttle_frac,0.10049361633404397,0.8454936697149206,False
+Baréin,kmedians,1,slow__full_throttle_frac,0.10049361633404401,0.8185828728183792,False
+Baréin,kmedoids,0,medium__full_throttle_frac,0.14026576587884018,2.093119289497851,False
+Baréin,kmedoids,1,medium__full_throttle_frac,0.14026576587884043,0.13451854585025275,False
+Baréin,gmm,0,medium__full_throttle_frac,0.29339995029559063,0.11159260799786984,False
+Baréin,gmm,1,medium__brake_point_rel,0.19579780959883372,1.0996489320229843,False
+Baréin,gmm,2,medium__full_throttle_frac,0.2962267210140016,1.3660038253074958,False
+Baréin,gmm,3,slow__apex_speed_rel,0.22235025450439969,1.8854708949609869,False
+Baréin,ward,0,medium__full_throttle_frac,0.11090802710443297,0.12971948382979956,False
+Baréin,ward,1,medium__full_throttle_frac,0.11090802710443298,1.7433147962930982,False
+Baréin,spectral,0,medium__full_throttle_frac,0.15490879166482038,2.106406334166573,False
+Baréin,spectral,1,medium__full_throttle_frac,0.15490879166482047,0.12075158077311605,False
+Baréin,fuzzy_cmeans,0,medium__full_throttle_frac,0.11342730499979296,1.82820991075325,False
+Baréin,fuzzy_cmeans,1,medium__full_throttle_frac,0.11342730499979294,0.12075158077311605,False
+Arabia Saudita,kmeans,0,medium__full_throttle_frac,0.18874160842871382,0.8302633245360036,False
+Arabia Saudita,kmeans,1,medium__full_throttle_frac,0.188741608428714,0.7234647958081157,False
+Arabia Saudita,kmedians,0,medium__full_throttle_frac,0.17794919777791435,0.6982157747076297,False
+Arabia Saudita,kmedians,1,slow__full_throttle_frac,0.14620851365444865,0.851036412371413,False
+Arabia Saudita,kmedians,2,fast__coast_frac,0.13574292500834656,0.5402065961576117,False
+Arabia Saudita,kmedoids,0,slow__full_throttle_frac,0.12211451908881353,0.9908664340806569,False
+Arabia Saudita,kmedoids,1,slow__full_throttle_frac,0.12211451908881364,0.7857238980555119,False
+Arabia Saudita,gmm,0,medium__full_throttle_frac,0.1920299201790036,0.9807272672986883,False
+Arabia Saudita,gmm,1,medium__trail_brake_frac,0.10419271052584608,0.7946911329611844,False
+Arabia Saudita,gmm,2,medium__apex_speed_rel,0.1292565989390528,0.8226542202670464,False
+Arabia Saudita,gmm,3,fast__coast_frac,0.1463611387007714,0.2904492428383634,False
+Arabia Saudita,gmm,4,slow__coast_frac,0.1471396266231209,0.8718609723856554,False
+Arabia Saudita,gmm,5,medium__full_throttle_frac,0.13393459210765377,1.0099857265745975,False
+Arabia Saudita,ward,0,medium__full_throttle_frac,0.16727255781596814,1.053901225944898,False
+Arabia Saudita,ward,1,medium__full_throttle_frac,0.1672725578159683,0.8450553308130845,False
+Arabia Saudita,spectral,0,slow__coast_frac,0.12881356581661876,0.9262412535221272,False
+Arabia Saudita,spectral,1,medium__full_throttle_frac,0.19796649631445518,0.8887891140468006,False
+Arabia Saudita,spectral,2,fast__coast_frac,0.12131639857958428,0.6936575216035152,False
+Arabia Saudita,spectral,3,slow__full_throttle_frac,0.1406288675365282,0.9630210126379624,False
+Arabia Saudita,fuzzy_cmeans,0,medium__trail_brake_frac,0.13057610250111887,0.8482862196821511,False
+Arabia Saudita,fuzzy_cmeans,1,medium__trail_brake_frac,0.1305761025011189,0.7571734350400355,False
+Miami,kmeans,0,fast__full_throttle_frac,0.7001364399943836,0.4482432501566728,False
+Miami,kmeans,1,fast__full_throttle_frac,0.7001364399943835,0.27878591590383417,False
+Miami,kmedians,0,fast__full_throttle_frac,0.5818961874326954,0.2804120990172603,False
+Miami,kmedians,1,slow__coast_frac,0.11104946153174047,0.5218871877480936,False
+Miami,kmedians,2,fast__full_throttle_frac,0.18489448692255417,0.4907691065460793,False
+Miami,kmedoids,0,fast__full_throttle_frac,0.2029032962791246,0.40675758087410435,False
+Miami,kmedoids,1,fast__full_throttle_frac,0.15763871429857398,0.5875949350092438,False
+Miami,kmedoids,2,fast__full_throttle_frac,0.5322468144534117,0.284916842621485,False
+Miami,gmm,0,slow__apex_speed_rel,0.13491101288667914,0.8874756996766022,False
+Miami,gmm,1,slow__apex_speed_rel,0.1349110128866793,0.9328094511333216,False
+Miami,ward,0,fast__full_throttle_frac,0.6067489387518717,0.28881360469027806,False
+Miami,ward,1,fast__full_throttle_frac,0.6067489387518719,0.4606751264439667,False
+Miami,spectral,0,fast__full_throttle_frac,0.7001364399943835,0.27878591590383417,False
+Miami,spectral,1,fast__full_throttle_frac,0.7001364399943836,0.4482432501566728,False
+Miami,fuzzy_cmeans,0,fast__full_throttle_frac,0.12492152124954381,0.4588315095810811,False
+Miami,fuzzy_cmeans,1,medium__coast_frac,0.10585112126413049,0.5585230380725512,False
+Miami,fuzzy_cmeans,2,fast__full_throttle_frac,0.665566229596344,0.29342232759506226,False
+Emilia-Romaña,kmeans,0,medium__throttle_attack,0.7674723858426052,0.653150725621241,False
+Emilia-Romaña,kmeans,1,medium__throttle_attack,0.767472385842605,5.512198080163861,False
+Emilia-Romaña,kmedians,0,medium__throttle_attack,0.7589496816530944,0.653150725621241,False
+Emilia-Romaña,kmedians,1,medium__throttle_attack,0.7589496816530943,5.8391161117917765,False
+Emilia-Romaña,kmedoids,0,medium__throttle_attack,0.7706284137567252,0.6630676406810848,False
+Emilia-Romaña,kmedoids,1,medium__throttle_attack,0.7706284137567249,5.026229694068569,False
+Emilia-Romaña,gmm,0,medium__throttle_attack,0.6743438873546687,0.613483065381866,False
+Emilia-Romaña,gmm,1,medium__throttle_attack,0.6743438873546685,7.8156556671975945,False
+Emilia-Romaña,ward,0,medium__throttle_attack,0.7648866286680963,5.512198080163861,False
+Emilia-Romaña,ward,1,medium__throttle_attack,0.7648866286680968,0.653150725621241,False
+Emilia-Romaña,spectral,0,medium__throttle_attack,0.7539191223598793,5.66846256850811,False
+Emilia-Romaña,spectral,1,medium__throttle_attack,0.7539191223598797,0.653150725621241,False
+Emilia-Romaña,fuzzy_cmeans,0,medium__throttle_attack,0.7631949028298693,5.8391161117917765,False
+Emilia-Romaña,fuzzy_cmeans,1,medium__throttle_attack,0.7631949028298695,0.653150725621241,False
+Mónaco,kmeans,0,slow__throttle_attack,0.44573786761480927,1.591715652054725,False
+Mónaco,kmeans,1,slow__full_throttle_frac,0.17210860724555618,0.8250953080993955,False
+Mónaco,kmeans,2,fast__coast_frac,0.15110985668352567,1.279024997299443,False
+Mónaco,kmedians,0,slow__throttle_attack,0.4309485498025863,1.5072290449030457,False
+Mónaco,kmedians,1,fast__coast_frac,0.1644395185165889,1.2022734518862548,False
+Mónaco,kmedians,2,slow__full_throttle_frac,0.16653861110899487,0.8164201551361565,False
+Mónaco,kmedoids,0,slow__throttle_attack,0.24282418566210018,2.0610118385290312,False
+Mónaco,kmedoids,1,slow__full_throttle_frac,0.16948351309541698,0.8528140221666765,False
+Mónaco,kmedoids,2,fast__coast_frac,0.2554926418436501,0.996918496586154,False
+Mónaco,gmm,0,slow__throttle_attack,0.31436397871845667,2.2251880052370696,False
+Mónaco,gmm,1,slow__brake_point_rel,0.29714711778715364,2.015334144265817,False
+Mónaco,gmm,2,slow__throttle_attack,0.21258721192871358,1.276911579764401,False
+Mónaco,gmm,3,slow__throttle_attack,0.22512222035348128,0.1886879996157918,False
+Mónaco,gmm,4,fast__coast_frac,0.2800155346682972,1.0029790816551747,False
+Mónaco,gmm,5,slow__throttle_attack,0.2761092165358451,1.5069271348396271,False
+Mónaco,gmm,6,slow__throttle_attack,0.2040439564371801,0.1540384948641924,False
+Mónaco,gmm,7,fast__coast_frac,0.1761579127422717,0.33327314297553334,False
+Mónaco,ward,0,slow__throttle_attack,0.45283560105627396,1.4419961192709383,False
+Mónaco,ward,1,slow__throttle_attack,0.45283560105627424,0.25798700911899064,False
+Mónaco,spectral,0,slow__throttle_attack,0.44080096500098154,1.5466109712243785,False
+Mónaco,spectral,1,slow__throttle_attack,0.440800965000982,0.26838186054447044,False
+Mónaco,fuzzy_cmeans,0,slow__full_throttle_frac,0.17683571046159677,1.0375529453106624,False
+Mónaco,fuzzy_cmeans,1,slow__full_throttle_frac,0.17683571046159688,0.8262637897820087,False
+España,kmeans,0,fast__coast_frac,0.1783612952052246,1.9807349494860156,False
+España,kmeans,1,fast__coast_frac,0.17836129520522448,0.3917464718788024,False
+España,kmedians,0,fast__coast_frac,0.17870938480820006,1.8789536010143058,False
+España,kmedians,1,fast__coast_frac,0.17870938480819987,0.3768485161747329,False
+España,kmedoids,0,fast__coast_frac,0.19168284452463627,0.4609083916889869,False
+España,kmedoids,1,fast__coast_frac,0.19168284452463624,2.284653827505402,False
+España,gmm,0,slow__full_throttle_frac,0.23313698578460576,1.2891848268269057,False
+España,gmm,1,medium__coast_frac,0.20868012588668272,0.9159306437302186,False
+España,gmm,2,slow__full_throttle_frac,0.2018157043653983,1.019703654976372,False
+España,ward,0,fast__coast_frac,0.28141573395805297,1.5605427644016512,False
+España,ward,1,fast__coast_frac,0.2814157339580527,0.514627216375817,False
+España,average,0,fast__coast_frac,0.17221967338941016,2.13182129588371,False
+España,average,1,fast__coast_frac,0.17221967338940916,0.9891730518559179,False
+España,spectral,0,fast__coast_frac,0.3212598897734776,1.2752134312070253,False
+España,spectral,1,fast__coast_frac,0.32125988977347747,0.4768672505495899,False
+España,fuzzy_cmeans,0,fast__coast_frac,0.1861263011277226,0.39544759248771244,False
+España,fuzzy_cmeans,1,fast__coast_frac,0.1861263011277225,1.9366559571722888,False
+Canadá,kmeans,0,slow__throttle_attack,0.8048651799131493,0.0,True
+Canadá,kmeans,1,slow__throttle_attack,0.8048651799131493,7.291666666666668,False
+Canadá,kmedians,0,slow__throttle_attack,0.8040803460557873,7.546934760223591,False
+Canadá,kmedians,1,slow__throttle_attack,0.8040803460557874,0.0,True
+Canadá,kmedoids,0,slow__throttle_attack,0.3285550187000879,0.0,False
+Canadá,kmedoids,1,slow__throttle_attack,0.8025712234107162,7.5090559723448,False
+Canadá,kmedoids,2,slow__throttle_attack,0.2861086381600756,0.0,False
+Canadá,gmm,0,slow__throttle_attack,0.7501907939167163,0.0,True
+Canadá,gmm,1,slow__throttle_attack,0.7501907939167163,9.713851686507937,False
+Canadá,ward,0,slow__throttle_attack,0.8044955140934165,6.2109375000000036,False
+Canadá,ward,1,slow__throttle_attack,0.8044955140934162,0.0,True
+Canadá,average,0,slow__throttle_attack,0.8002523675388017,0.0,True
+Canadá,average,1,slow__throttle_attack,0.8002523675388019,7.671130952380954,False
+Canadá,spectral,0,slow__throttle_attack,0.768664024533468,9.572916666666664,False
+Canadá,spectral,1,slow__throttle_attack,0.7686640245334679,0.0,True
+Canadá,fuzzy_cmeans,0,slow__throttle_attack,0.8048651799131493,7.291666666666668,False
+Canadá,fuzzy_cmeans,1,slow__throttle_attack,0.8048651799131493,0.0,True
+Austria,kmeans,0,medium__full_throttle_frac,0.3991115166535416,0.9008486968816676,False
+Austria,kmeans,1,medium__full_throttle_frac,0.3991115166535417,0.8943150984503951,False
+Austria,kmedians,0,medium__full_throttle_frac,0.17863183174437602,1.0688744644910988,False
+Austria,kmedians,1,medium__full_throttle_frac,0.178631831744376,1.005450163328792,False
+Austria,kmedoids,0,medium__full_throttle_frac,0.29827449423921476,3.202661813084593,False
+Austria,kmedoids,1,medium__full_throttle_frac,0.29827449423921465,0.9146338443887915,False
+Austria,gmm,0,medium__trail_brake_frac,0.11995710437703097,0.798943317773336,False
+Austria,gmm,1,medium__full_throttle_frac,0.4254557239727854,0.4430118576222304,False
+Austria,gmm,2,medium__full_throttle_frac,0.22879031666280142,3.349008005451886,False
+Austria,gmm,3,medium__coast_frac,0.14481519823749214,0.5956276232418221,False
+Austria,gmm,4,medium__apex_speed_rel,0.20168289270235207,0.5838204895092449,False
+Austria,gmm,5,medium__full_throttle_frac,0.1901308374025621,0.8292256764529271,False
+Austria,gmm,6,fast__full_throttle_frac,0.20590764384468327,1.1749512358224652,False
+Austria,ward,0,medium__full_throttle_frac,0.4881486490370442,0.4472543917643468,False
+Austria,ward,1,medium__full_throttle_frac,0.4881486490370439,0.900441067789236,False
+Austria,average,0,medium__full_throttle_frac,0.5977388236168114,0.9804810899104184,False
+Austria,average,1,medium__full_throttle_frac,0.5977388236168117,2.1217753643279353,False
+Austria,spectral,0,medium__full_throttle_frac,0.4820961786804701,0.4472543917643468,False
+Austria,spectral,1,medium__full_throttle_frac,0.48209617868047,0.900441067789236,False
+Austria,fuzzy_cmeans,0,medium__full_throttle_frac,0.258712510294168,0.9815953950506219,False
+Austria,fuzzy_cmeans,1,medium__full_throttle_frac,0.25871251029416775,1.3740769478200818,False
+Gran Bretaña,kmeans,0,slow__brake_point_rel,0.7486466612704619,1.1404991925612,False
+Gran Bretaña,kmeans,1,slow__brake_point_rel,0.7486466612704623,0.8398221002275055,False
+Gran Bretaña,kmedians,0,fast__apex_speed_rel,0.17708527347440292,0.8463906273807262,False
+Gran Bretaña,kmedians,1,fast__apex_speed_rel,0.17708527347440278,1.1672051723238908,False
+Gran Bretaña,kmedoids,0,slow__coast_frac,0.13388971481838846,0.8527657282255693,False
+Gran Bretaña,kmedoids,1,slow__coast_frac,0.1338897148183885,1.0581266834600356,False
+Gran Bretaña,gmm,0,slow__apex_speed_rel,0.13225384417732322,1.0056602651901423,False
+Gran Bretaña,gmm,1,slow__full_throttle_frac,0.2967717422417484,1.4580861674074042,False
+Gran Bretaña,gmm,2,slow__brake_point_rel,0.2309177615889829,0.6360064731687333,False
+Gran Bretaña,gmm,3,fast__apex_speed_rel,0.1473748633135311,0.9118403879726895,False
+Gran Bretaña,gmm,4,fast__trail_brake_frac,0.1428727881379322,1.2512820012328574,False
+Gran Bretaña,gmm,5,slow__brake_point_rel,0.6761297938927948,1.0764590483510377,False
+Gran Bretaña,gmm,6,fast__coast_frac,0.15054696178016946,1.1831666948418453,False
+Gran Bretaña,ward,0,slow__brake_point_rel,0.7486466612704619,1.1404991925612,False
+Gran Bretaña,ward,1,slow__brake_point_rel,0.7486466612704623,0.8398221002275055,False
+Gran Bretaña,spectral,0,slow__brake_point_rel,0.7486466612704619,1.1404991925612,False
+Gran Bretaña,spectral,1,slow__brake_point_rel,0.7486466612704623,0.8398221002275055,False
+Gran Bretaña,fuzzy_cmeans,0,slow__brake_point_rel,0.34776118568684306,0.7195208917291416,False
+Gran Bretaña,fuzzy_cmeans,1,slow__brake_point_rel,0.3477611856868429,4.661443033137549,False
+Bélgica,kmeans,0,fast__apex_speed_rel,0.217414694433907,1.0042187591304381,False
+Bélgica,kmeans,1,fast__apex_speed_rel,0.21741469443390712,0.8392319776170203,False
+Bélgica,kmedians,0,medium__trail_brake_frac,0.18279129244055006,0.8556922346590825,False
+Bélgica,kmedians,1,medium__trail_brake_frac,0.18279129244055004,0.6784129924862224,False
+Bélgica,kmedoids,0,fast__apex_speed_rel,0.17727997808534177,1.1217558073218297,False
+Bélgica,kmedoids,1,fast__apex_speed_rel,0.17727997808534146,0.8709499953176338,False
+Bélgica,gmm,0,fast__apex_speed_rel,0.18704535739777836,3.4705634963902967,False
+Bélgica,gmm,1,medium__trail_brake_frac,0.17650742782144246,0.8044748171730756,False
+Bélgica,gmm,2,medium__coast_frac,0.25946493810610377,0.7953611479528875,False
+Bélgica,gmm,3,slow__coast_frac,0.2810988032381128,1.2411935719986484,False
+Bélgica,gmm,4,medium__full_throttle_frac,0.193764802990547,1.2917863920976358,False
+Bélgica,gmm,5,medium__coast_frac,0.1298370428579901,0.4223829255158474,False
+Bélgica,ward,0,slow__coast_frac,0.20510994302847485,1.0388452554630696,False
+Bélgica,ward,1,slow__coast_frac,0.20510994302847502,0.6908717822195976,False
+Bélgica,average,0,slow__brake_point_rel,0.3478513783029448,0.6260116991326319,False
+Bélgica,average,1,slow__brake_point_rel,0.3478513783029456,0.9961204768373328,False
+Bélgica,spectral,0,slow__coast_frac,0.1654833525353379,1.0468845676531604,False
+Bélgica,spectral,1,slow__coast_frac,0.16548335253533822,0.6427792123475632,False
+Bélgica,fuzzy_cmeans,0,fast__apex_speed_rel,0.15509665184800003,0.9985299153355253,False
+Bélgica,fuzzy_cmeans,1,fast__apex_speed_rel,0.155096651848,0.9602168209268271,False
+Hungría,kmeans,0,medium__full_throttle_frac,0.21520874241850335,0.7132792362116827,False
+Hungría,kmeans,1,medium__full_throttle_frac,0.21520874241850343,0.6891408406028003,False
+Hungría,kmedians,0,fast__full_throttle_frac,0.2252557778114389,0.7364855591474684,False
+Hungría,kmedians,1,fast__full_throttle_frac,0.22525577781143893,0.7092041081837995,False
+Hungría,kmedoids,0,medium__apex_speed_rel,0.1283039252689542,0.7517076193183988,False
+Hungría,kmedoids,1,medium__apex_speed_rel,0.12830392526895418,1.1777504623689055,False
+Hungría,gmm,0,fast__full_throttle_frac,0.25168306371418814,0.9668560013739136,False
+Hungría,gmm,1,fast__full_throttle_frac,0.2516830637141879,2.4467415269875565,False
+Hungría,spectral,0,medium__full_throttle_frac,0.5956443659257574,6.71370590079426,False
+Hungría,spectral,1,medium__full_throttle_frac,0.5956443659257569,0.9459996176951455,False
+Hungría,fuzzy_cmeans,0,medium__full_throttle_frac,0.21726232307878457,0.7604634640290507,False
+Hungría,fuzzy_cmeans,1,medium__full_throttle_frac,0.21726232307878446,0.72039290167174,False
+Países Bajos,kmeans,0,medium__throttle_attack,0.13352342891032373,0.7504979382923838,False
+Países Bajos,kmeans,1,medium__throttle_attack,0.13352342891032346,1.6059627736367499,False
+Países Bajos,kmedians,0,medium__coast_frac,0.15113720941740905,0.6952523769896016,False
+Países Bajos,kmedians,1,medium__coast_frac,0.1511372094174089,0.572028509381316,False
+Países Bajos,kmedoids,0,medium__throttle_attack,0.4075618558270567,1.6181515081634865,False
+Países Bajos,kmedoids,1,medium__throttle_attack,0.13703029013949847,0.757794982323001,False
+Países Bajos,kmedoids,2,slow__apex_speed_rel,0.14503525314980917,0.901971614066831,False
+Países Bajos,gmm,0,slow__apex_speed_rel,0.1937027691493574,0.5961413723184561,False
+Países Bajos,gmm,1,fast__full_throttle_frac,0.2805411166956218,0.1375828038339746,False
+Países Bajos,gmm,2,medium__coast_frac,0.15065283394674667,0.36885394473274014,False
+Países Bajos,gmm,3,medium__throttle_attack,0.22503596329906136,2.3311050758289364,False
+Países Bajos,gmm,4,slow__trail_brake_frac,0.15758388149843472,0.8282774509116231,False
+Países Bajos,gmm,5,medium__throttle_attack,0.11358962611084962,0.9195097033696662,False
+Países Bajos,gmm,6,medium__throttle_attack,0.1763043638220305,3.326526668110862,False
+Países Bajos,gmm,7,medium__coast_frac,0.21334633704526695,0.7491327148698248,False
+Países Bajos,gmm,8,medium__coast_frac,0.1131342856643677,0.47073732709952953,False
+Países Bajos,ward,0,medium__throttle_attack,0.15619051915812454,0.8138894889770247,False
+Países Bajos,ward,1,medium__throttle_attack,0.15619051915812435,1.6161222630339978,False
+Países Bajos,spectral,0,medium__throttle_attack,0.4917793574713968,1.4913860557492566,False
+Países Bajos,spectral,1,medium__coast_frac,0.14604238756132096,0.8074549566601432,False
+Países Bajos,spectral,2,medium__throttle_attack,0.15087590750245364,0.7362352797583214,False
+Países Bajos,fuzzy_cmeans,0,medium__throttle_attack,0.11873653213053569,1.4481544557332997,False
+Países Bajos,fuzzy_cmeans,1,medium__throttle_attack,0.11873653213053598,0.7593299509258029,False
+Italia,kmeans,0,slow__full_throttle_frac,0.12937638731173076,0.7779262817022967,False
+Italia,kmeans,1,slow__full_throttle_frac,0.12937638731173073,1.089500906469211,False
+Italia,kmedians,0,medium__apex_speed_rel,0.18304697345707358,0.7929374717874448,False
+Italia,kmedians,1,medium__coast_frac,0.11439382508931549,0.8214721235781809,False
+Italia,kmedians,2,medium__trail_brake_frac,0.13607303512783173,0.9450283441445446,False
+Italia,kmedoids,0,slow__full_throttle_frac,0.12238414511920218,1.1705292702774888,False
+Italia,kmedoids,1,slow__trail_brake_frac,0.12893525903418837,0.90761329976905,False
+Italia,kmedoids,2,fast__apex_speed_rel,0.18441333697246798,0.8038705583389189,False
+Italia,gmm,0,medium__throttle_attack,0.3564125565791436,0.0,False
+Italia,gmm,1,medium__throttle_attack,0.3564125565791441,2.006490982587063,False
+Italia,ward,0,fast__trail_brake_frac,0.136221922793265,1.0060229069865854,False
+Italia,ward,1,fast__trail_brake_frac,0.13622192279326503,0.9546163143532314,False
+Italia,spectral,0,fast__trail_brake_frac,0.10431480532223916,0.9476779968978535,False
+Italia,spectral,1,fast__trail_brake_frac,0.10431480532223916,1.0189504481203713,False
+Italia,fuzzy_cmeans,0,medium__trail_brake_frac,0.13468680630870128,0.8842865436566408,False
+Italia,fuzzy_cmeans,1,medium__trail_brake_frac,0.13468680630870117,0.9151842385218114,False
+Monza suelta,kmeans,0,slow__full_throttle_frac,0.11132691290637374,0.980413730603305,False
+Monza suelta,kmeans,1,slow__full_throttle_frac,0.11132691290637374,0.7541706826733778,False
+Monza suelta,kmedians,0,medium__apex_speed_rel,0.16755076504817068,0.7873792108534587,False
+Monza suelta,kmedians,1,medium__trail_brake_frac,0.12175502659988452,1.009424641291375,False
+Monza suelta,kmedians,2,medium__coast_frac,0.10807536836499457,0.8189540021400276,False
+Monza suelta,kmedoids,0,slow__trail_brake_frac,0.1458170270808449,0.8568936907130442,False
+Monza suelta,kmedoids,1,slow__trail_brake_frac,0.14581702708084468,0.8914791564818387,False
+Monza suelta,gmm,0,medium__throttle_attack,0.3091774480197197,1.827651515151514,False
+Monza suelta,gmm,1,medium__throttle_attack,0.3091774480197203,0.0,False
+Monza suelta,ward,0,medium__trail_brake_frac,0.11310499576341393,0.9873692172064295,False
+Monza suelta,ward,1,medium__trail_brake_frac,0.11310499576341403,0.9082598941870056,False
+Monza suelta,spectral,0,medium__apex_speed_rel,0.12923618046536145,0.6908709445018442,False
+Monza suelta,spectral,1,medium__apex_speed_rel,0.1292361804653614,0.7349491888851587,False
+Monza suelta,fuzzy_cmeans,0,fast__trail_brake_frac,0.10917879949025107,0.9642881961541613,False
+Monza suelta,fuzzy_cmeans,1,fast__trail_brake_frac,0.10917879949025128,1.0287920773656074,False
+Azerbaiyán,kmeans,0,slow__throttle_attack,0.819971993026864,0.0,True
+Azerbaiyán,kmeans,1,slow__throttle_attack,0.8199719930268627,8.45650953060758,False
+Azerbaiyán,kmedians,0,fast__full_throttle_frac,0.47159515574972677,0.6694118279844785,False
+Azerbaiyán,kmedians,1,fast__full_throttle_frac,0.8085881459939679,1.5141186777533786,False
+Azerbaiyán,kmedians,2,slow__throttle_attack,0.8340978922718042,8.71725675097988,False
+Azerbaiyán,kmedoids,0,fast__full_throttle_frac,0.4847391641525189,0.6839811694953635,False
+Azerbaiyán,kmedoids,1,fast__full_throttle_frac,0.8085881459939679,1.5141186777533786,False
+Azerbaiyán,kmedoids,2,slow__throttle_attack,0.8332103882663255,8.295160455486547,False
+Azerbaiyán,gmm,0,fast__full_throttle_frac,0.7238070022369436,1.5811733741786558,False
+Azerbaiyán,gmm,1,slow__throttle_attack,0.46801940119886604,0.0,False
+Azerbaiyán,gmm,2,slow__throttle_attack,0.7272850597873028,10.544416190751445,False
+Azerbaiyán,gmm,3,slow__throttle_attack,0.42281650584644437,4.21434784010805,False
+Azerbaiyán,ward,0,slow__throttle_attack,0.837356198868206,9.181003219682417,False
+Azerbaiyán,ward,1,fast__full_throttle_frac,0.4570976174596914,0.667989901534783,False
+Azerbaiyán,ward,2,fast__full_throttle_frac,0.8037151303722817,1.5273973392961269,False
+Azerbaiyán,spectral,0,slow__throttle_attack,0.815862773890384,9.533952393554124,False
+Azerbaiyán,spectral,1,fast__full_throttle_frac,0.8085881459939679,1.5141186777533786,False
+Azerbaiyán,spectral,2,slow__throttle_attack,0.46338003852452603,0.0,False
+Azerbaiyán,hdbscan,0,fast__full_throttle_frac,0.7167701731178947,1.4144038415481086,False
+Azerbaiyán,hdbscan,1,fast__full_throttle_frac,0.4605112791411646,0.6659895054505388,False
+Azerbaiyán,fuzzy_cmeans,0,slow__throttle_attack,0.7986383960141331,8.89759946985687,False
+Azerbaiyán,fuzzy_cmeans,1,slow__throttle_attack,0.7986383960141343,0.0,True
+Singapur,kmeans,0,medium__throttle_attack,0.8777695291293408,0.0,True
+Singapur,kmeans,1,medium__throttle_attack,0.8777695291293407,4.953776041666666,False
+Singapur,kmedians,0,medium__throttle_attack,0.8666487515075215,0.0,True
+Singapur,kmedians,1,medium__throttle_attack,0.8666487515075214,4.552331349206348,False
+Singapur,kmedoids,0,medium__throttle_attack,0.19987539762905665,0.0,False
+Singapur,kmedoids,1,medium__throttle_attack,0.2508999712067952,0.0,False
+Singapur,kmedoids,2,medium__throttle_attack,0.8755579532453388,4.709821428571427,False
+Singapur,gmm,0,medium__throttle_attack,0.7079286319262275,6.310985797827902,False
+Singapur,gmm,1,medium__throttle_attack,0.7079286319262277,0.0,True
+Singapur,ward,0,medium__throttle_attack,0.8792612062545496,0.0,True
+Singapur,ward,1,medium__throttle_attack,0.8792612062545494,4.6900311526479745,False
+Singapur,average,0,medium__throttle_attack,0.9013986396432004,1.6666666666666572,False
+Singapur,average,1,medium__throttle_attack,0.9013986396432003,0.0,True
+Singapur,spectral,0,medium__throttle_attack,0.8766148534587331,5.156249999999998,False
+Singapur,spectral,1,medium__throttle_attack,0.8766148534587332,0.0,True
+Singapur,fuzzy_cmeans,0,medium__throttle_attack,0.7473382573867318,6.310267857142854,False
+Singapur,fuzzy_cmeans,1,medium__throttle_attack,0.747338257386732,0.0,True
+Estados Unidos,kmeans,0,fast__full_throttle_frac,0.820350538338304,0.5090935307757203,False
+Estados Unidos,kmeans,1,fast__full_throttle_frac,0.8203505383383038,0.8960342349729515,False
+Estados Unidos,kmedians,0,medium__coast_frac,0.15074172710561087,0.8777836701845501,False
+Estados Unidos,kmedians,1,medium__coast_frac,0.21817521594218675,0.7369192556841736,False
+Estados Unidos,kmedians,2,fast__full_throttle_frac,0.2540803612397048,0.7335442465360842,False
+Estados Unidos,kmedians,3,fast__full_throttle_frac,0.820350538338304,0.5090935307757203,False
+Estados Unidos,kmedoids,0,fast__full_throttle_frac,0.8203505383383038,0.8960342349729515,False
+Estados Unidos,kmedoids,1,fast__full_throttle_frac,0.820350538338304,0.5090935307757203,False
+Estados Unidos,gmm,0,fast__full_throttle_frac,0.7145259669125904,0.6357366108891815,False
+Estados Unidos,gmm,1,fast__full_throttle_frac,0.7145259669125897,0.8840906427308977,False
+Estados Unidos,ward,0,fast__full_throttle_frac,0.820350538338304,0.5090935307757203,False
+Estados Unidos,ward,1,fast__full_throttle_frac,0.8203505383383038,0.8960342349729515,False
+Estados Unidos,spectral,0,fast__full_throttle_frac,0.820350538338304,0.5090935307757203,False
+Estados Unidos,spectral,1,fast__full_throttle_frac,0.8203505383383038,0.8960342349729515,False
+Estados Unidos,fuzzy_cmeans,0,fast__full_throttle_frac,0.2942604222940403,0.6199752519373816,False
+Estados Unidos,fuzzy_cmeans,1,fast__full_throttle_frac,0.2942604222940405,0.9320102701833407,False
+Ciudad de México,kmeans,0,medium__full_throttle_frac,0.8479285372697459,0.9994922203721126,False
+Ciudad de México,kmeans,1,medium__full_throttle_frac,0.8479285372697459,4.52774011415903,False
+Ciudad de México,kmedians,0,slow__full_throttle_frac,0.3658478009922463,0.603490172348397,False
+Ciudad de México,kmedians,1,slow__full_throttle_frac,0.365847800992246,1.5857707674082588,False
+Ciudad de México,kmedoids,0,slow__full_throttle_frac,0.3806271798183917,0.5993729173566844,False
+Ciudad de México,kmedoids,1,slow__full_throttle_frac,0.38062717981839156,1.6452972716672485,False
+Ciudad de México,gmm,0,slow__full_throttle_frac,0.19121093797877417,1.9859229341500404,False
+Ciudad de México,gmm,1,slow__full_throttle_frac,0.19121093797877442,0.36365146995090386,False
+Ciudad de México,ward,0,medium__full_throttle_frac,0.8479285372697459,4.52774011415903,False
+Ciudad de México,ward,1,medium__full_throttle_frac,0.8479285372697459,0.9994922203721126,False
+Ciudad de México,average,0,medium__full_throttle_frac,0.8479285372697459,0.9994922203721126,False
+Ciudad de México,average,1,medium__full_throttle_frac,0.8479285372697459,4.52774011415903,False
+Ciudad de México,spectral,0,slow__full_throttle_frac,0.36817738162839747,1.689190592938957,False
+Ciudad de México,spectral,1,slow__full_throttle_frac,0.36817738162839775,0.5669924381337559,False
+Ciudad de México,fuzzy_cmeans,0,slow__full_throttle_frac,0.22586259698218808,2.5129617417949164,False
+Ciudad de México,fuzzy_cmeans,1,slow__full_throttle_frac,0.22586259698218838,0.40296724787846094,False
+São Paulo,kmeans,0,slow__coast_frac,0.17102521721923178,0.8414677987438774,False
+São Paulo,kmeans,1,slow__coast_frac,0.17102521721923153,0.8113680856203319,False
+São Paulo,kmedians,0,slow__coast_frac,0.20803459633926277,0.7489214132146331,False
+São Paulo,kmedians,1,slow__coast_frac,0.2080345963392632,0.6944347550420518,False
+São Paulo,kmedoids,0,slow__full_throttle_frac,0.16960432086160185,0.9029237738263195,False
+São Paulo,kmedoids,1,slow__full_throttle_frac,0.16960432086160174,0.9299409758442904,False
+São Paulo,gmm,0,slow__apex_speed_rel,0.15137364117251387,2.402988640492112,False
+São Paulo,gmm,1,slow__apex_speed_rel,0.15137364117251412,0.9865934253615081,False
+São Paulo,ward,0,medium__coast_frac,0.19029271286274801,0.9257402088590819,False
+São Paulo,ward,1,medium__coast_frac,0.19029271286274774,0.8618697827190223,False
+São Paulo,spectral,0,slow__coast_frac,0.17789236617215126,0.811361116403596,False
+São Paulo,spectral,1,slow__coast_frac,0.17789236617215148,0.8952925102157483,False
+São Paulo,fuzzy_cmeans,1,slow__coast_frac,0.16840471339083404,0.8640448443279967,False
+São Paulo,fuzzy_cmeans,2,slow__coast_frac,0.16840471339083374,0.8032430349877301,False
+Las Vegas,kmeans,0,slow__full_throttle_frac,0.4015884907032905,1.0615401453251339,False
+Las Vegas,kmeans,1,slow__full_throttle_frac,0.40158849070329067,0.16375079806862874,False
+Las Vegas,kmedians,0,slow__full_throttle_frac,0.4525397713241925,0.17028825478514895,False
+Las Vegas,kmedians,1,slow__full_throttle_frac,0.4525397713241923,0.8806464924393647,False
+Las Vegas,kmedoids,0,slow__full_throttle_frac,0.38349583300041856,0.1752634557119066,False
+Las Vegas,kmedoids,1,slow__full_throttle_frac,0.3834958330004184,1.0296522556090582,False
+Las Vegas,gmm,0,medium__trail_brake_frac,0.4147184738584158,0.08714657070890078,False
+Las Vegas,gmm,1,medium__trail_brake_frac,0.4808159170177259,1.2438277899323187,False
+Las Vegas,gmm,2,slow__coast_frac,0.21688924648453514,1.4286754787610267,False
+Las Vegas,gmm,3,slow__full_throttle_frac,0.27765971867091366,1.2301429262679886,False
+Las Vegas,ward,0,slow__full_throttle_frac,0.4247158647433637,0.5517034116145665,False
+Las Vegas,ward,1,slow__full_throttle_frac,0.42471586474336404,0.17442992949500444,False
+Las Vegas,average,0,slow__coast_frac,0.3373348749409183,1.478795962190711,False
+Las Vegas,average,1,slow__coast_frac,0.3373348749409185,0.881822993711523,False
+Las Vegas,spectral,0,slow__full_throttle_frac,0.4561221097208865,0.5753421808023338,False
+Las Vegas,spectral,1,slow__full_throttle_frac,0.4561221097208868,0.1768596448613715,False
+Las Vegas,fuzzy_cmeans,0,slow__full_throttle_frac,0.2635005667924865,0.34974903424669984,False
+Las Vegas,fuzzy_cmeans,1,slow__full_throttle_frac,0.26350056679248646,2.175762588810268,False
+Catar,kmeans,0,slow__throttle_attack,0.8698003970583587,0.0,True
+Catar,kmeans,1,slow__throttle_attack,0.8698003970583593,8.512418376865671,False
+Catar,kmedians,0,slow__throttle_attack,0.8571898461309173,0.0,True
+Catar,kmedians,1,slow__throttle_attack,0.8571898461309179,8.794483985765119,False
+Catar,kmedoids,0,slow__throttle_attack,0.8640389699059885,8.931575541895821,False
+Catar,kmedoids,1,slow__throttle_attack,0.8640389699059879,0.0,True
+Catar,gmm,0,slow__throttle_attack,0.78209136551547,0.0,True
+Catar,gmm,1,slow__throttle_attack,0.49034392890602496,14.838169642857142,False
+Catar,gmm,2,slow__throttle_attack,0.8502048341190366,11.24429460580912,False
+Catar,ward,0,slow__throttle_attack,0.8617408931998156,0.0,True
+Catar,ward,1,slow__throttle_attack,0.8617408931998163,9.07202060931899,False
+Catar,average,0,slow__throttle_attack,0.8620334306924164,0.0,True
+Catar,average,1,slow__throttle_attack,0.862033430692417,9.117187499999993,False
+Catar,spectral,0,slow__throttle_attack,0.858939796711419,12.808976783859963,False
+Catar,spectral,1,slow__throttle_attack,0.8589397967114186,0.0,True
+Catar,fuzzy_cmeans,0,slow__throttle_attack,0.8681802227987434,0.0,True
+Catar,fuzzy_cmeans,1,slow__throttle_attack,0.8681802227987439,8.59375,False
+Abu Dabi,kmeans,0,slow__brake_point_rel,0.27725416777386086,5.171141663563859,False
+Abu Dabi,kmeans,1,slow__brake_point_rel,0.27725416777386036,0.9649569532411858,False
+Abu Dabi,kmedians,0,fast__coast_frac,0.1194181825660402,0.6995265658566174,False
+Abu Dabi,kmedians,1,fast__coast_frac,0.11941818256604006,0.7753366300550063,False
+Abu Dabi,kmedoids,0,medium__brake_point_rel,0.27977305319572815,2.31049325309153,False
+Abu Dabi,kmedoids,1,medium__brake_point_rel,0.27977305319572815,0.9087000843012993,False
+Abu Dabi,gmm,0,slow__brake_point_rel,0.22658277065396312,6.952001017129856,False
+Abu Dabi,gmm,1,slow__brake_point_rel,0.22658277065396268,0.9180081484766327,False
+Abu Dabi,ward,0,slow__brake_point_rel,0.2788167766046558,5.028411339300504,False
+Abu Dabi,ward,1,slow__brake_point_rel,0.27881677660465526,0.9690730073074773,False
+Abu Dabi,spectral,0,medium__brake_point_rel,0.26650793404455614,2.1632575839142145,False
+Abu Dabi,spectral,1,medium__brake_point_rel,0.2665079340445562,0.8997176307481775,False
+Abu Dabi,fuzzy_cmeans,0,slow__trail_brake_frac,0.11576002788476066,0.7937025131118497,False
+Abu Dabi,fuzzy_cmeans,1,slow__trail_brake_frac,0.11576002788476039,0.9046704399473702,False

@@ -303,6 +303,12 @@ def print_pipeline_summary(result: Dict[str, Any], heading: str) -> None:
     )
 
 
+def season_exclude_columns(config: Optional[Dict[str, Any]]) -> List[str]:
+    """Columns the season vector leaves out. A single race does not call this."""
+    raw = ((config or {}).get("season") or {}).get("exclude_columns") or []
+    return [str(column) for column in raw]
+
+
 def run_season_pipeline(
     year: int = 2025,
     session_type: str = "R",
@@ -354,6 +360,7 @@ def run_season_pipeline(
                 driver_bootstrap=driver_bootstrap,
                 compare_aggregators=compare_aggregators,
                 residualize=residualize,
+                exclude_columns=season_exclude_columns(cfg),
             )
         except Exception as exc:
             logger.warning("Skipping %s: %s", name, exc)

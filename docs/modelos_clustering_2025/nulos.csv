@@ -1,0 +1,676 @@
+carrera,modelo,nulo,n,p95,percentil,supera_p95
+Australia,kmeans,permutación,50,0.15725496260338692,100.0,True
+Australia,kmeans,gaussiano,50,0.16736963768666693,100.0,True
+Australia,kmeans,cópula,50,0.22541754876382256,92.0,False
+Australia,kmedians,permutación,50,0.1462003289095318,100.0,True
+Australia,kmedians,gaussiano,50,0.15703324919641506,100.0,True
+Australia,kmedians,cópula,50,0.14822334616362678,98.0,True
+Australia,kmedoids,permutación,50,0.13498440527216118,96.0,True
+Australia,kmedoids,gaussiano,50,0.15674451337728093,92.0,False
+Australia,kmedoids,cópula,50,0.21398215219746694,78.0,False
+Australia,gmm,permutación,50,0.028777243398742488,90.0,False
+Australia,gmm,gaussiano,50,0.12345127621115469,6.0,False
+Australia,gmm,cópula,50,0.2789156094021801,56.00000000000001,False
+Australia,ward,permutación,50,0.17549619723348928,16.0,False
+Australia,ward,gaussiano,50,0.14423312841947797,80.0,False
+Australia,ward,cópula,50,0.24050719413844898,50.0,False
+Australia,average,permutación,12,,,False
+Australia,average,gaussiano,18,,,False
+Australia,average,cópula,19,,,False
+Australia,spectral,permutación,50,0.15456509173887503,98.0,True
+Australia,spectral,gaussiano,50,0.16374476935308693,84.0,False
+Australia,spectral,cópula,50,0.19337173596857776,68.0,False
+Australia,hdbscan,permutación,0,,,False
+Australia,hdbscan,gaussiano,0,,,False
+Australia,hdbscan,cópula,1,,,False
+Australia,fuzzy_cmeans,permutación,50,0.1020918508961304,100.0,True
+Australia,fuzzy_cmeans,gaussiano,50,0.16656452440316138,22.0,False
+Australia,fuzzy_cmeans,cópula,50,0.1544853335084523,86.0,False
+China,kmeans,permutación,50,0.5370895275310182,88.0,False
+China,kmeans,gaussiano,50,0.2621016442515024,100.0,True
+China,kmeans,cópula,50,0.5791961530373516,60.0,False
+China,kmedians,permutación,50,0.5370895275310182,90.0,False
+China,kmedians,gaussiano,50,0.25928148152377056,100.0,True
+China,kmedians,cópula,50,0.5791961530373516,64.0,False
+China,kmedoids,permutación,50,0.5363442195764277,92.0,False
+China,kmedoids,gaussiano,50,0.2591409618803675,100.0,True
+China,kmedoids,cópula,50,0.57349241118439,68.0,False
+China,gmm,permutación,50,0.5287917151222726,46.0,False
+China,gmm,gaussiano,50,0.10474382298198764,100.0,True
+China,gmm,cópula,50,0.4142539351059112,68.0,False
+China,ward,permutación,50,0.542490284998183,82.0,False
+China,ward,gaussiano,50,0.24392299749092394,100.0,True
+China,ward,cópula,50,0.5819091278708238,62.0,False
+China,average,permutación,0,,,False
+China,average,gaussiano,33,,,False
+China,average,cópula,13,,,False
+China,spectral,permutación,50,0.5354800581882527,96.0,True
+China,spectral,gaussiano,50,0.25966267122691844,100.0,True
+China,spectral,cópula,50,0.5791961530373516,62.0,False
+China,hdbscan,permutación,49,0.017377405216992485,77.55102040816327,False
+China,hdbscan,gaussiano,0,,,False
+China,hdbscan,cópula,46,0.023110123353573264,71.73913043478261,False
+China,fuzzy_cmeans,permutación,50,0.5336207097821316,88.0,False
+China,fuzzy_cmeans,gaussiano,50,0.26208625867535484,100.0,True
+China,fuzzy_cmeans,cópula,50,0.5773146051281935,62.0,False
+Japón,kmeans,permutación,50,0.7581281785206173,100.0,True
+Japón,kmeans,gaussiano,50,0.40989379793827324,100.0,True
+Japón,kmeans,cópula,50,0.7810350935406373,38.0,False
+Japón,kmedians,permutación,50,0.7581281785206173,100.0,True
+Japón,kmedians,gaussiano,50,0.40895642260996096,100.0,True
+Japón,kmedians,cópula,50,0.7810350935406373,44.0,False
+Japón,kmedoids,permutación,50,0.7581281785206173,100.0,True
+Japón,kmedoids,gaussiano,50,0.40742884671160445,100.0,True
+Japón,kmedoids,cópula,50,0.7795411924144101,56.00000000000001,False
+Japón,gmm,permutación,50,0.12568742040097997,98.0,True
+Japón,gmm,gaussiano,50,0.2805529459725751,42.0,False
+Japón,gmm,cópula,50,0.14524231040381835,88.0,False
+Japón,ward,permutación,50,0.7581281785206173,100.0,True
+Japón,ward,gaussiano,50,0.39714743135940866,100.0,True
+Japón,ward,cópula,50,0.7810350935406373,38.0,False
+Japón,average,permutación,50,0.7581281785206173,100.0,True
+Japón,average,gaussiano,39,0.5608172235641473,100.0,True
+Japón,average,cópula,50,0.7810350935406373,38.0,False
+Japón,spectral,permutación,50,0.7581281785206173,100.0,True
+Japón,spectral,gaussiano,50,0.4088562904844282,100.0,True
+Japón,spectral,cópula,50,0.7810350935406373,38.0,False
+Japón,hdbscan,permutación,50,0.5030769722768544,62.0,False
+Japón,hdbscan,gaussiano,0,,,False
+Japón,hdbscan,cópula,50,0.561763823629632,42.0,False
+Japón,fuzzy_cmeans,permutación,50,0.7581281785206173,100.0,True
+Japón,fuzzy_cmeans,gaussiano,50,0.4098502850704281,100.0,True
+Japón,fuzzy_cmeans,cópula,50,0.7810350935406373,38.0,False
+Baréin,kmeans,permutación,50,0.16568738665447869,68.0,False
+Baréin,kmeans,gaussiano,50,0.1382460045086981,100.0,True
+Baréin,kmeans,cópula,49,0.8468376197235365,87.75510204081633,False
+Baréin,kmedians,permutación,50,0.1302146150368518,96.0,True
+Baréin,kmedians,gaussiano,50,0.12924673790381108,98.0,True
+Baréin,kmedians,cópula,50,0.13208746527770668,96.0,True
+Baréin,kmedoids,permutación,50,0.13459560506992593,100.0,True
+Baréin,kmedoids,gaussiano,50,0.12743888022207897,100.0,True
+Baréin,kmedoids,cópula,50,0.16418305021223412,96.0,True
+Baréin,gmm,permutación,50,0.08720012624329318,98.0,True
+Baréin,gmm,gaussiano,50,0.10266406703546907,94.0,True
+Baréin,gmm,cópula,50,0.17103825258643188,64.0,False
+Baréin,ward,permutación,46,0.184818475494671,10.869565217391305,False
+Baréin,ward,gaussiano,50,0.1136017187939483,100.0,True
+Baréin,ward,cópula,46,0.8469335183750719,60.86956521739131,False
+Baréin,average,permutación,0,,,False
+Baréin,average,gaussiano,18,,,False
+Baréin,average,cópula,9,,,False
+Baréin,spectral,permutación,50,0.1580770565168965,94.0,True
+Baréin,spectral,gaussiano,50,0.13536839969325637,100.0,True
+Baréin,spectral,cópula,50,0.17740691049445492,72.0,False
+Baréin,hdbscan,permutación,0,,,False
+Baréin,hdbscan,gaussiano,0,,,False
+Baréin,hdbscan,cópula,0,,,False
+Baréin,fuzzy_cmeans,permutación,50,0.11382283389927468,100.0,True
+Baréin,fuzzy_cmeans,gaussiano,50,0.1380370407514541,100.0,True
+Baréin,fuzzy_cmeans,cópula,50,0.1414982353190804,100.0,True
+Arabia Saudita,kmeans,permutación,50,0.10446948578351835,100.0,True
+Arabia Saudita,kmeans,gaussiano,50,0.1578126488288171,0.0,False
+Arabia Saudita,kmeans,cópula,50,0.14173025347455026,90.0,False
+Arabia Saudita,kmedians,permutación,50,0.04519616832390002,100.0,True
+Arabia Saudita,kmedians,gaussiano,50,0.15051063368015277,10.0,False
+Arabia Saudita,kmedians,cópula,50,0.12302914025216677,84.0,False
+Arabia Saudita,kmedoids,permutación,50,0.0564693051677271,100.0,True
+Arabia Saudita,kmedoids,gaussiano,50,0.15040007473975825,72.0,False
+Arabia Saudita,kmedoids,cópula,50,0.12445897529841418,100.0,True
+Arabia Saudita,gmm,permutación,50,0.38080461570120516,10.0,False
+Arabia Saudita,gmm,gaussiano,50,0.11915349760427797,62.0,False
+Arabia Saudita,gmm,cópula,50,0.42741861303336975,12.0,False
+Arabia Saudita,ward,permutación,50,0.38521378116677496,0.0,False
+Arabia Saudita,ward,gaussiano,50,0.13558860278404516,100.0,True
+Arabia Saudita,ward,cópula,50,0.7778322865611623,74.0,False
+Arabia Saudita,average,permutación,0,,,False
+Arabia Saudita,average,gaussiano,27,,,False
+Arabia Saudita,average,cópula,19,,,False
+Arabia Saudita,spectral,permutación,50,0.317416497538795,0.0,False
+Arabia Saudita,spectral,gaussiano,50,0.15489731646466778,0.0,False
+Arabia Saudita,spectral,cópula,50,0.40656487310212286,20.0,False
+Arabia Saudita,hdbscan,permutación,0,,,False
+Arabia Saudita,hdbscan,gaussiano,0,,,False
+Arabia Saudita,hdbscan,cópula,0,,,False
+Arabia Saudita,fuzzy_cmeans,permutación,50,0.061444478209463554,100.0,True
+Arabia Saudita,fuzzy_cmeans,gaussiano,50,0.1573887361702912,0.0,False
+Arabia Saudita,fuzzy_cmeans,cópula,50,0.13160467290590921,57.99999999999999,False
+Miami,kmeans,permutación,50,0.23032676429710666,22.0,False
+Miami,kmeans,gaussiano,50,0.15578233504196173,100.0,True
+Miami,kmeans,cópula,49,0.4438659737136248,38.775510204081634,False
+Miami,kmedians,permutación,50,0.2294291306121375,18.0,False
+Miami,kmedians,gaussiano,50,0.14141216786263994,100.0,True
+Miami,kmedians,cópula,50,0.40405790043600043,64.0,False
+Miami,kmedoids,permutación,50,0.2205311158041239,26.0,False
+Miami,kmedoids,gaussiano,50,0.13948740051989472,86.0,False
+Miami,kmedoids,cópula,50,0.428329766772477,26.0,False
+Miami,gmm,permutación,50,0.14379830688019796,36.0,False
+Miami,gmm,gaussiano,50,0.126407784015066,0.0,False
+Miami,gmm,cópula,50,0.36373882472726665,16.0,False
+Miami,ward,permutación,50,0.22943540134168972,2.0,False
+Miami,ward,gaussiano,50,0.14044246971231253,100.0,True
+Miami,ward,cópula,47,0.47434391847756086,34.04255319148936,False
+Miami,average,permutación,0,,,False
+Miami,average,gaussiano,14,,,False
+Miami,average,cópula,14,,,False
+Miami,spectral,permutación,50,0.2294291306121375,26.0,False
+Miami,spectral,gaussiano,50,0.1481426316611201,100.0,True
+Miami,spectral,cópula,50,0.428329766772477,46.0,False
+Miami,hdbscan,permutación,0,,,False
+Miami,hdbscan,gaussiano,0,,,False
+Miami,hdbscan,cópula,3,,,False
+Miami,fuzzy_cmeans,permutación,50,0.21250422088619939,2.0,False
+Miami,fuzzy_cmeans,gaussiano,50,0.1500467477400827,96.0,True
+Miami,fuzzy_cmeans,cópula,50,0.428329766772477,44.0,False
+Emilia-Romaña,kmeans,permutación,50,0.6020000457576037,100.0,True
+Emilia-Romaña,kmeans,gaussiano,50,0.3174840976900913,100.0,True
+Emilia-Romaña,kmeans,cópula,50,0.6995768656490859,48.0,False
+Emilia-Romaña,kmedians,permutación,50,0.5944067397883909,100.0,True
+Emilia-Romaña,kmedians,gaussiano,50,0.3132105474434309,100.0,True
+Emilia-Romaña,kmedians,cópula,50,0.690917041315317,56.00000000000001,False
+Emilia-Romaña,kmedoids,permutación,50,0.5994223331363832,100.0,True
+Emilia-Romaña,kmedoids,gaussiano,50,0.3149396703756274,100.0,True
+Emilia-Romaña,kmedoids,cópula,50,0.6894783804605098,64.0,False
+Emilia-Romaña,gmm,permutación,50,0.44029633272227475,94.0,True
+Emilia-Romaña,gmm,gaussiano,50,0.24563334036476595,100.0,True
+Emilia-Romaña,gmm,cópula,50,0.5395416504215175,64.0,False
+Emilia-Romaña,ward,permutación,50,0.6292239402454134,26.0,False
+Emilia-Romaña,ward,gaussiano,50,0.3014331791936131,100.0,True
+Emilia-Romaña,ward,cópula,50,0.7005535838749442,36.0,False
+Emilia-Romaña,average,permutación,8,,,False
+Emilia-Romaña,average,gaussiano,32,,,False
+Emilia-Romaña,average,cópula,28,,,False
+Emilia-Romaña,spectral,permutación,50,0.5804093589000748,96.0,True
+Emilia-Romaña,spectral,gaussiano,50,0.3156019019311877,100.0,True
+Emilia-Romaña,spectral,cópula,50,0.6662911031233452,54.0,False
+Emilia-Romaña,hdbscan,permutación,0,,,False
+Emilia-Romaña,hdbscan,gaussiano,0,,,False
+Emilia-Romaña,hdbscan,cópula,0,,,False
+Emilia-Romaña,fuzzy_cmeans,permutación,50,0.5954651344261841,100.0,True
+Emilia-Romaña,fuzzy_cmeans,gaussiano,50,0.3173822345788774,100.0,True
+Emilia-Romaña,fuzzy_cmeans,cópula,50,0.6974016140862948,50.0,False
+Mónaco,kmeans,permutación,50,0.18915666688407923,0.0,False
+Mónaco,kmeans,gaussiano,50,0.14620328107847885,100.0,True
+Mónaco,kmeans,cópula,50,0.24004859504008627,34.0,False
+Mónaco,kmedians,permutación,50,0.1674497166290523,8.0,False
+Mónaco,kmedians,gaussiano,50,0.13028407521539237,98.0,True
+Mónaco,kmedians,cópula,50,0.14269508403416417,70.0,False
+Mónaco,kmedoids,permutación,50,0.18904957191588492,80.0,False
+Mónaco,kmedoids,gaussiano,50,0.13689228839744244,100.0,True
+Mónaco,kmedoids,cópula,50,0.2065211369243987,64.0,False
+Mónaco,gmm,permutación,50,0.09879532772871229,12.0,False
+Mónaco,gmm,gaussiano,50,0.13827100127674535,0.0,False
+Mónaco,gmm,cópula,50,0.13372474312753896,26.0,False
+Mónaco,ward,permutación,50,0.16890838597257876,100.0,True
+Mónaco,ward,gaussiano,50,0.12363768498757814,100.0,True
+Mónaco,ward,cópula,50,0.20981331346832094,76.0,False
+Mónaco,average,permutación,17,,,False
+Mónaco,average,gaussiano,19,,,False
+Mónaco,average,cópula,30,,,False
+Mónaco,spectral,permutación,50,0.18131012359021123,100.0,True
+Mónaco,spectral,gaussiano,50,0.14239587566926087,100.0,True
+Mónaco,spectral,cópula,50,0.22446312945565752,76.0,False
+Mónaco,hdbscan,permutación,0,,,False
+Mónaco,hdbscan,gaussiano,0,,,False
+Mónaco,hdbscan,cópula,0,,,False
+Mónaco,fuzzy_cmeans,permutación,50,0.14263183728116588,100.0,True
+Mónaco,fuzzy_cmeans,gaussiano,50,0.1460512244173817,100.0,True
+Mónaco,fuzzy_cmeans,cópula,50,0.14612208766750318,100.0,True
+España,kmeans,permutación,50,0.1396952571490913,10.0,False
+España,kmeans,gaussiano,50,0.12455988646409186,98.0,True
+España,kmeans,cópula,50,0.14150693294728292,66.0,False
+España,kmedians,permutación,50,0.1266170289161547,40.0,False
+España,kmedians,gaussiano,50,0.11709961116478201,90.0,False
+España,kmedians,cópula,50,0.1177426771864138,92.0,False
+España,kmedoids,permutación,50,0.11816830349340317,100.0,True
+España,kmedoids,gaussiano,50,0.11412974876978303,100.0,True
+España,kmedoids,cópula,50,0.15422911881469425,88.0,False
+España,gmm,permutación,50,0.0035450378175262043,84.0,False
+España,gmm,gaussiano,50,0.09331406706753195,0.0,False
+España,gmm,cópula,50,0.013063159562987972,76.0,False
+España,ward,permutación,50,0.14543325127032186,100.0,True
+España,ward,gaussiano,50,0.10368910060146912,100.0,True
+España,ward,cópula,50,0.176121555207346,72.0,False
+España,average,permutación,6,0.30668602001297585,50.0,False
+España,average,gaussiano,22,0.29938487425701715,72.72727272727273,False
+España,average,cópula,16,0.3552284184736823,18.75,False
+España,spectral,permutación,50,0.13613453776334072,100.0,True
+España,spectral,gaussiano,50,0.12151855842174174,100.0,True
+España,spectral,cópula,50,0.1643590370585372,96.0,True
+España,hdbscan,permutación,0,,,False
+España,hdbscan,gaussiano,0,,,False
+España,hdbscan,cópula,0,,,False
+España,fuzzy_cmeans,permutación,50,0.08638174470142418,100.0,True
+España,fuzzy_cmeans,gaussiano,50,0.12374492645704178,48.0,False
+España,fuzzy_cmeans,cópula,50,0.11686591198864171,92.0,False
+Canadá,kmeans,permutación,50,0.6770618141494169,100.0,True
+Canadá,kmeans,gaussiano,50,0.33637103770014487,100.0,True
+Canadá,kmeans,cópula,50,0.6996459455513502,57.99999999999999,False
+Canadá,kmedians,permutación,50,0.6748795899391224,90.0,False
+Canadá,kmedians,gaussiano,50,0.3331209828861075,100.0,True
+Canadá,kmedians,cópula,50,0.6951102031154917,62.0,False
+Canadá,kmedoids,permutación,50,0.6767220950335605,40.0,False
+Canadá,kmedoids,gaussiano,50,0.33401544358712254,0.0,False
+Canadá,kmedoids,cópula,50,0.7004995046922418,14.000000000000002,False
+Canadá,gmm,permutación,50,0.5454240036108392,80.0,False
+Canadá,gmm,gaussiano,50,0.2613739106614079,100.0,True
+Canadá,gmm,cópula,50,0.48724692129779634,100.0,True
+Canadá,ward,permutación,50,0.7069619684731295,64.0,False
+Canadá,ward,gaussiano,50,0.3218220924260187,100.0,True
+Canadá,ward,cópula,50,0.7206344189298634,76.0,False
+Canadá,average,permutación,50,0.733364266827458,12.0,False
+Canadá,average,gaussiano,35,0.49998583061418816,100.0,True
+Canadá,average,cópula,47,0.7377582784742429,12.76595744680851,False
+Canadá,spectral,permutación,50,0.6285125765148739,0.0,False
+Canadá,spectral,gaussiano,50,0.33414958233610087,100.0,True
+Canadá,spectral,cópula,50,0.6665120513620244,8.0,False
+Canadá,hdbscan,permutación,0,,,False
+Canadá,hdbscan,gaussiano,0,,,False
+Canadá,hdbscan,cópula,0,,,False
+Canadá,fuzzy_cmeans,permutación,50,0.6770618141494169,100.0,True
+Canadá,fuzzy_cmeans,gaussiano,50,0.33635515938968874,100.0,True
+Canadá,fuzzy_cmeans,cópula,50,0.6989514326181109,62.0,False
+Austria,kmeans,permutación,50,0.2527969295056552,100.0,True
+Austria,kmeans,gaussiano,50,0.16345615051001908,100.0,True
+Austria,kmeans,cópula,50,0.27759112144838005,88.0,False
+Austria,kmedians,permutación,50,0.25196568326575497,66.0,False
+Austria,kmedians,gaussiano,50,0.14884582642325253,0.0,False
+Austria,kmedians,cópula,50,0.11668544641823426,94.0,False
+Austria,kmedoids,permutación,50,0.24922237455075333,74.0,False
+Austria,kmedoids,gaussiano,50,0.15419151055311425,100.0,True
+Austria,kmedoids,cópula,50,0.2819190772170815,74.0,False
+Austria,gmm,permutación,50,0.2552901673927834,4.0,False
+Austria,gmm,gaussiano,50,0.1239930522949297,22.0,False
+Austria,gmm,cópula,50,0.2632827035655656,42.0,False
+Austria,ward,permutación,50,0.25663591715303824,100.0,True
+Austria,ward,gaussiano,50,0.1459814453980986,100.0,True
+Austria,ward,cópula,50,0.2880743906562706,96.0,True
+Austria,average,permutación,50,0.5469640731743038,96.0,True
+Austria,average,gaussiano,25,0.32762377879874227,100.0,True
+Austria,average,cópula,43,0.6015271742839166,65.11627906976744,False
+Austria,spectral,permutación,50,0.2557273874774106,100.0,True
+Austria,spectral,gaussiano,50,0.16041766607821284,100.0,True
+Austria,spectral,cópula,50,0.2865415067733884,96.0,True
+Austria,hdbscan,permutación,0,,,False
+Austria,hdbscan,gaussiano,0,,,False
+Austria,hdbscan,cópula,0,,,False
+Austria,fuzzy_cmeans,permutación,50,0.07926932867212844,100.0,True
+Austria,fuzzy_cmeans,gaussiano,50,0.1632648529664862,0.0,False
+Austria,fuzzy_cmeans,cópula,50,0.1278738767375123,78.0,False
+Gran Bretaña,kmeans,permutación,50,0.3933301665701873,100.0,True
+Gran Bretaña,kmeans,gaussiano,50,0.1482479321488893,100.0,True
+Gran Bretaña,kmeans,cópula,50,0.44674066802091783,48.0,False
+Gran Bretaña,kmedians,permutación,50,0.3932293810722806,24.0,False
+Gran Bretaña,kmedians,gaussiano,50,0.1384857221051258,38.0,False
+Gran Bretaña,kmedians,cópula,50,0.44245949775119414,22.0,False
+Gran Bretaña,kmedoids,permutación,50,0.39598807355970994,42.0,False
+Gran Bretaña,kmedoids,gaussiano,50,0.13560124680276128,24.0,False
+Gran Bretaña,kmedoids,cópula,50,0.4396154636779891,16.0,False
+Gran Bretaña,gmm,permutación,50,0.14983173701956176,8.0,False
+Gran Bretaña,gmm,gaussiano,50,0.0709225758162514,0.0,False
+Gran Bretaña,gmm,cópula,50,0.11337308643960682,0.0,False
+Gran Bretaña,ward,permutación,50,0.39450151044880355,100.0,True
+Gran Bretaña,ward,gaussiano,50,0.12982308707309248,100.0,True
+Gran Bretaña,ward,cópula,50,0.44679770493989845,46.0,False
+Gran Bretaña,average,permutación,38,,,False
+Gran Bretaña,average,gaussiano,13,,,False
+Gran Bretaña,average,cópula,41,,,False
+Gran Bretaña,spectral,permutación,50,0.3941313972380831,100.0,True
+Gran Bretaña,spectral,gaussiano,50,0.14424386283401414,100.0,True
+Gran Bretaña,spectral,cópula,50,0.44674066802091783,50.0,False
+Gran Bretaña,hdbscan,permutación,0,,,False
+Gran Bretaña,hdbscan,gaussiano,0,,,False
+Gran Bretaña,hdbscan,cópula,1,,,False
+Gran Bretaña,fuzzy_cmeans,permutación,50,0.16906017179101934,56.00000000000001,False
+Gran Bretaña,fuzzy_cmeans,gaussiano,50,0.14775445423101916,100.0,True
+Gran Bretaña,fuzzy_cmeans,cópula,50,0.21834758222427086,70.0,False
+Bélgica,kmeans,permutación,50,0.07083475794880346,100.0,True
+Bélgica,kmeans,gaussiano,50,0.10255920175220865,44.0,False
+Bélgica,kmeans,cópula,50,0.09971049061424923,80.0,False
+Bélgica,kmedians,permutación,50,0.04794296206266656,100.0,True
+Bélgica,kmedians,gaussiano,50,0.0908228055333013,30.0,False
+Bélgica,kmedians,cópula,50,0.08540493952821794,64.0,False
+Bélgica,kmedoids,permutación,50,0.07201904849348767,98.0,True
+Bélgica,kmedoids,gaussiano,50,0.08766665764229578,88.0,False
+Bélgica,kmedoids,cópula,50,0.08715972655297013,94.0,False
+Bélgica,gmm,permutación,50,0.11929044806338468,62.0,False
+Bélgica,gmm,gaussiano,50,0.09224891643753762,0.0,False
+Bélgica,gmm,cópula,50,0.07212900383671648,16.0,False
+Bélgica,ward,permutación,50,0.2197614996450628,30.0,False
+Bélgica,ward,gaussiano,50,0.08156142301221563,88.0,False
+Bélgica,ward,cópula,50,0.10483311193039822,74.0,False
+Bélgica,average,permutación,32,0.4093276644878548,31.25,False
+Bélgica,average,gaussiano,8,0.26991200378451663,100.0,True
+Bélgica,average,cópula,32,0.4295495972014632,18.75,False
+Bélgica,spectral,permutación,50,0.13685281818008815,22.0,False
+Bélgica,spectral,gaussiano,50,0.09880456789428167,4.0,False
+Bélgica,spectral,cópula,50,0.16477594745730195,16.0,False
+Bélgica,hdbscan,permutación,0,,,False
+Bélgica,hdbscan,gaussiano,0,,,False
+Bélgica,hdbscan,cópula,0,,,False
+Bélgica,fuzzy_cmeans,permutación,50,0.06409223083346789,100.0,True
+Bélgica,fuzzy_cmeans,gaussiano,50,0.10184989488187408,28.000000000000004,False
+Bélgica,fuzzy_cmeans,cópula,50,0.09694209627785964,38.0,False
+Hungría,kmeans,permutación,15,0.5625236829693558,0.0,False
+Hungría,kmeans,gaussiano,50,0.1662279149286617,0.0,False
+Hungría,kmeans,cópula,43,0.8752100058472957,37.2093023255814,False
+Hungría,kmedians,permutación,50,0.09970610169759006,98.0,True
+Hungría,kmedians,gaussiano,50,0.15832623363960294,0.0,False
+Hungría,kmedians,cópula,50,0.12179073425836417,82.0,False
+Hungría,kmedoids,permutación,50,0.06913299183358745,96.0,True
+Hungría,kmedoids,gaussiano,50,0.15959168185226133,0.0,False
+Hungría,kmedoids,cópula,50,0.13888821229507223,10.0,False
+Hungría,gmm,permutación,50,0.3931172087391374,86.0,False
+Hungría,gmm,gaussiano,50,0.13715397286254588,100.0,True
+Hungría,gmm,cópula,50,0.3661433980515427,94.0,False
+Hungría,ward,permutación,0,,,False
+Hungría,ward,gaussiano,50,,,False
+Hungría,ward,cópula,35,,,False
+Hungría,average,permutación,0,,,False
+Hungría,average,gaussiano,30,,,False
+Hungría,average,cópula,17,,,False
+Hungría,spectral,permutación,50,0.4750926141825135,100.0,True
+Hungría,spectral,gaussiano,50,0.16430390477686407,100.0,True
+Hungría,spectral,cópula,50,0.627674126587374,70.0,False
+Hungría,hdbscan,permutación,0,,,False
+Hungría,hdbscan,gaussiano,0,,,False
+Hungría,hdbscan,cópula,0,,,False
+Hungría,fuzzy_cmeans,permutación,50,0.0845513828593134,100.0,True
+Hungría,fuzzy_cmeans,gaussiano,50,0.1658511446192828,0.0,False
+Hungría,fuzzy_cmeans,cópula,50,0.11893057386999248,96.0,True
+Países Bajos,kmeans,permutación,50,0.1754131071115114,0.0,False
+Países Bajos,kmeans,gaussiano,50,0.12395075205698924,100.0,True
+Países Bajos,kmeans,cópula,50,0.20128885370926686,94.0,False
+Países Bajos,kmedians,permutación,50,0.12540510290304022,96.0,True
+Países Bajos,kmedians,gaussiano,50,0.11129540117745199,100.0,True
+Países Bajos,kmedians,cópula,50,0.1956479587826684,92.0,False
+Países Bajos,kmedoids,permutación,50,0.11825440184477208,94.0,False
+Países Bajos,kmedoids,gaussiano,50,0.1128470759553463,98.0,True
+Países Bajos,kmedoids,cópula,50,0.20154742712452428,64.0,False
+Países Bajos,gmm,permutación,50,0.02376432799054318,94.0,True
+Países Bajos,gmm,gaussiano,50,0.09765187050476938,4.0,False
+Países Bajos,gmm,cópula,50,0.15986253050749916,12.0,False
+Países Bajos,ward,permutación,50,0.22136876420948326,0.0,False
+Países Bajos,ward,gaussiano,50,0.09918782106354988,100.0,True
+Países Bajos,ward,cópula,50,0.25751012700083814,34.0,False
+Países Bajos,average,permutación,5,,,False
+Países Bajos,average,gaussiano,22,,,False
+Países Bajos,average,cópula,18,,,False
+Países Bajos,spectral,permutación,50,0.18697051327004743,0.0,False
+Países Bajos,spectral,gaussiano,50,0.12075888185375569,100.0,True
+Países Bajos,spectral,cópula,50,0.23918873154213974,24.0,False
+Países Bajos,hdbscan,permutación,0,,,False
+Países Bajos,hdbscan,gaussiano,0,,,False
+Países Bajos,hdbscan,cópula,0,,,False
+Países Bajos,fuzzy_cmeans,permutación,50,0.08613198013683948,100.0,True
+Países Bajos,fuzzy_cmeans,gaussiano,50,0.12357688966317099,100.0,True
+Países Bajos,fuzzy_cmeans,cópula,50,0.18324211587573505,94.0,False
+Italia,kmeans,permutación,50,0.08338891441201735,100.0,True
+Italia,kmeans,gaussiano,50,0.11604406657810597,100.0,True
+Italia,kmeans,cópula,50,0.12253381176332159,94.0,True
+Italia,kmedians,permutación,50,0.045407215768893505,100.0,True
+Italia,kmedians,gaussiano,50,0.10536462323163613,100.0,True
+Italia,kmedians,cópula,50,0.11032810892917078,98.0,True
+Italia,kmedoids,permutación,50,0.07231445157159275,100.0,True
+Italia,kmedoids,gaussiano,50,0.10593986090315034,48.0,False
+Italia,kmedoids,cópula,50,0.12660260156863629,26.0,False
+Italia,gmm,permutación,50,0.2590783105376154,66.0,False
+Italia,gmm,gaussiano,50,0.08438754576204106,100.0,True
+Italia,gmm,cópula,50,0.313892703871567,42.0,False
+Italia,ward,permutación,1,0.7386605776153433,0.0,False
+Italia,ward,gaussiano,50,0.09287306195888241,86.0,False
+Italia,ward,cópula,50,0.7704922878979641,28.000000000000004,False
+Italia,average,permutación,0,,,False
+Italia,average,gaussiano,8,,,False
+Italia,average,cópula,11,,,False
+Italia,spectral,permutación,50,0.20704007296272206,18.0,False
+Italia,spectral,gaussiano,50,0.11221475390828732,88.0,False
+Italia,spectral,cópula,50,0.19339199874135882,56.00000000000001,False
+Italia,hdbscan,permutación,0,,,False
+Italia,hdbscan,gaussiano,0,,,False
+Italia,hdbscan,cópula,0,,,False
+Italia,fuzzy_cmeans,permutación,50,0.06237211629354598,100.0,True
+Italia,fuzzy_cmeans,gaussiano,50,0.11534973568452507,100.0,True
+Italia,fuzzy_cmeans,cópula,50,0.11691973508579534,96.0,True
+Monza suelta,kmeans,permutación,50,0.07678342008834677,100.0,True
+Monza suelta,kmeans,gaussiano,50,0.11297049620729964,100.0,True
+Monza suelta,kmeans,cópula,50,0.12249895000050694,86.0,False
+Monza suelta,kmedians,permutación,50,0.0444719776535741,100.0,True
+Monza suelta,kmedians,gaussiano,50,0.10318740750296357,100.0,True
+Monza suelta,kmedians,cópula,50,0.11143166601428414,88.0,False
+Monza suelta,kmedoids,permutación,50,0.0569652916492023,100.0,True
+Monza suelta,kmedoids,gaussiano,50,0.10243283113088077,56.00000000000001,False
+Monza suelta,kmedoids,cópula,50,0.10499106069377385,26.0,False
+Monza suelta,gmm,permutación,50,0.24920955517552515,84.0,False
+Monza suelta,gmm,gaussiano,50,0.0835760731387281,100.0,True
+Monza suelta,gmm,cópula,50,0.31921766663440115,62.0,False
+Monza suelta,ward,permutación,5,0.721720310018481,0.0,False
+Monza suelta,ward,gaussiano,50,0.08992947802139738,96.0,True
+Monza suelta,ward,cópula,48,0.7612604157525201,50.0,False
+Monza suelta,average,permutación,0,,,False
+Monza suelta,average,gaussiano,15,,,False
+Monza suelta,average,cópula,10,,,False
+Monza suelta,spectral,permutación,50,0.19847816019204378,54.0,False
+Monza suelta,spectral,gaussiano,50,0.10814029650751729,100.0,True
+Monza suelta,spectral,cópula,50,0.1531929581970257,72.0,False
+Monza suelta,hdbscan,permutación,0,,,False
+Monza suelta,hdbscan,gaussiano,0,,,False
+Monza suelta,hdbscan,cópula,0,,,False
+Monza suelta,fuzzy_cmeans,permutación,50,0.057841166544243434,100.0,True
+Monza suelta,fuzzy_cmeans,gaussiano,50,0.11108908818201378,98.0,True
+Monza suelta,fuzzy_cmeans,cópula,50,0.11454146793332999,88.0,False
+Azerbaiyán,kmeans,permutación,50,0.6498249384333682,96.0,True
+Azerbaiyán,kmeans,gaussiano,50,0.3395811293558219,100.0,True
+Azerbaiyán,kmeans,cópula,50,0.6770896596995007,44.0,False
+Azerbaiyán,kmedians,permutación,50,0.6272301190725171,84.0,False
+Azerbaiyán,kmedians,gaussiano,50,0.3360363275440293,100.0,True
+Azerbaiyán,kmedians,cópula,50,0.6543737228377501,57.99999999999999,False
+Azerbaiyán,kmedoids,permutación,50,0.6293482061878801,86.0,False
+Azerbaiyán,kmedoids,gaussiano,50,0.33692264871739674,100.0,True
+Azerbaiyán,kmedoids,cópula,50,0.6601600645963659,44.0,False
+Azerbaiyán,gmm,permutación,50,0.5046433578288215,76.0,False
+Azerbaiyán,gmm,gaussiano,50,0.31231193857877715,100.0,True
+Azerbaiyán,gmm,cópula,50,0.475535185410581,36.0,False
+Azerbaiyán,ward,permutación,50,0.6695245384180433,38.0,False
+Azerbaiyán,ward,gaussiano,50,0.32095205093469076,100.0,True
+Azerbaiyán,ward,cópula,50,0.6964313009095304,30.0,False
+Azerbaiyán,average,permutación,0,,,False
+Azerbaiyán,average,gaussiano,28,,,False
+Azerbaiyán,average,cópula,17,,,False
+Azerbaiyán,spectral,permutación,50,0.6124983724154892,72.0,False
+Azerbaiyán,spectral,gaussiano,50,0.3373248556296022,100.0,True
+Azerbaiyán,spectral,cópula,50,0.6361430564356892,56.00000000000001,False
+Azerbaiyán,hdbscan,permutación,50,0.015364234425066374,57.99999999999999,False
+Azerbaiyán,hdbscan,gaussiano,0,,,False
+Azerbaiyán,hdbscan,cópula,50,0.018545838200287275,62.0,False
+Azerbaiyán,fuzzy_cmeans,permutación,50,0.6364740552217826,96.0,True
+Azerbaiyán,fuzzy_cmeans,gaussiano,50,0.33878174361671487,100.0,True
+Azerbaiyán,fuzzy_cmeans,cópula,50,0.6750979105008901,30.0,False
+Singapur,kmeans,permutación,50,0.620107489335494,100.0,True
+Singapur,kmeans,gaussiano,50,0.2707857485490588,100.0,True
+Singapur,kmeans,cópula,50,0.6392235474504546,68.0,False
+Singapur,kmedians,permutación,50,0.603673366264495,60.0,False
+Singapur,kmedians,gaussiano,50,0.26960509628793994,100.0,True
+Singapur,kmedians,cópula,50,0.6260428728171868,80.0,False
+Singapur,kmedoids,permutación,50,0.612150027977615,30.0,False
+Singapur,kmedoids,gaussiano,50,0.26585522368911535,0.0,False
+Singapur,kmedoids,cópula,50,0.6274133434608348,16.0,False
+Singapur,gmm,permutación,50,0.38489547871564994,80.0,False
+Singapur,gmm,gaussiano,50,0.20986315968021138,100.0,True
+Singapur,gmm,cópula,50,0.2996371034423885,96.0,True
+Singapur,ward,permutación,50,0.6602578643970701,88.0,False
+Singapur,ward,gaussiano,50,0.25517267402106064,100.0,True
+Singapur,ward,cópula,50,0.6667593761816022,70.0,False
+Singapur,average,permutación,48,0.7813445621720911,79.16666666666666,False
+Singapur,average,gaussiano,39,0.46282763823528056,100.0,True
+Singapur,average,cópula,43,0.7994178389707987,76.74418604651163,False
+Singapur,spectral,permutación,50,0.5797783310979275,56.00000000000001,False
+Singapur,spectral,gaussiano,50,0.26842613737164467,100.0,True
+Singapur,spectral,cópula,50,0.6061075177571171,60.0,False
+Singapur,hdbscan,permutación,0,,,False
+Singapur,hdbscan,gaussiano,0,,,False
+Singapur,hdbscan,cópula,0,,,False
+Singapur,fuzzy_cmeans,permutación,50,0.42141783555165685,100.0,True
+Singapur,fuzzy_cmeans,gaussiano,50,0.2695173850211795,100.0,True
+Singapur,fuzzy_cmeans,cópula,50,0.4585285535681181,80.0,False
+Estados Unidos,kmeans,permutación,50,0.38556722773357266,92.0,False
+Estados Unidos,kmeans,gaussiano,50,0.13876632807756362,100.0,True
+Estados Unidos,kmeans,cópula,50,0.42454613998495805,14.000000000000002,False
+Estados Unidos,kmedians,permutación,50,0.3844209877274773,60.0,False
+Estados Unidos,kmedians,gaussiano,50,0.10946737727513565,86.0,False
+Estados Unidos,kmedians,cópula,50,0.15078153447922527,26.0,False
+Estados Unidos,kmedoids,permutación,50,0.3804970816928349,100.0,True
+Estados Unidos,kmedoids,gaussiano,50,0.12658390803954425,100.0,True
+Estados Unidos,kmedoids,cópula,50,0.4205677485587319,68.0,False
+Estados Unidos,gmm,permutación,50,0.38556722773357266,6.0,False
+Estados Unidos,gmm,gaussiano,50,0.10382743042171477,100.0,True
+Estados Unidos,gmm,cópula,50,0.42385459194045205,14.000000000000002,False
+Estados Unidos,ward,permutación,50,0.38556722773357266,92.0,False
+Estados Unidos,ward,gaussiano,50,0.12005139666488034,100.0,True
+Estados Unidos,ward,cópula,50,0.42454613998495805,12.0,False
+Estados Unidos,average,permutación,28,,,False
+Estados Unidos,average,gaussiano,20,,,False
+Estados Unidos,average,cópula,32,,,False
+Estados Unidos,spectral,permutación,50,0.38556722773357266,92.0,False
+Estados Unidos,spectral,gaussiano,50,0.1350185331032432,100.0,True
+Estados Unidos,spectral,cópula,50,0.42454613998495805,12.0,False
+Estados Unidos,hdbscan,permutación,0,,,False
+Estados Unidos,hdbscan,gaussiano,0,,,False
+Estados Unidos,hdbscan,cópula,0,,,False
+Estados Unidos,fuzzy_cmeans,permutación,50,0.10548413492279603,100.0,True
+Estados Unidos,fuzzy_cmeans,gaussiano,50,0.1377558650949783,4.0,False
+Estados Unidos,fuzzy_cmeans,cópula,50,0.1213117649069203,94.0,False
+Ciudad de México,kmeans,permutación,50,0.8417372365939735,100.0,True
+Ciudad de México,kmeans,gaussiano,50,0.1592901170455743,100.0,True
+Ciudad de México,kmeans,cópula,50,0.852216916676406,80.0,False
+Ciudad de México,kmedians,permutación,50,0.21316706015928455,100.0,True
+Ciudad de México,kmedians,gaussiano,50,0.1324695330919783,100.0,True
+Ciudad de México,kmedians,cópula,50,0.2434613363626448,100.0,True
+Ciudad de México,kmedoids,permutación,50,0.25296584344164974,100.0,True
+Ciudad de México,kmedoids,gaussiano,50,0.15112490466144213,100.0,True
+Ciudad de México,kmedoids,cópula,50,0.24940977683520843,100.0,True
+Ciudad de México,gmm,permutación,50,0.2611031464418487,36.0,False
+Ciudad de México,gmm,gaussiano,50,0.1412320369294042,8.0,False
+Ciudad de México,gmm,cópula,50,0.16704710468108458,12.0,False
+Ciudad de México,ward,permutación,50,0.8417372365939735,100.0,True
+Ciudad de México,ward,gaussiano,50,0.14109698937618362,100.0,True
+Ciudad de México,ward,cópula,47,0.8524520677349086,76.59574468085107,False
+Ciudad de México,average,permutación,50,0.8417372365939735,100.0,True
+Ciudad de México,average,gaussiano,20,0.3481352935578666,100.0,True
+Ciudad de México,average,cópula,31,0.8524875453910544,64.51612903225806,False
+Ciudad de México,spectral,permutación,50,0.2586957041037835,100.0,True
+Ciudad de México,spectral,gaussiano,50,0.15619089194621616,100.0,True
+Ciudad de México,spectral,cópula,50,0.292274672910787,96.0,True
+Ciudad de México,hdbscan,permutación,0,,,False
+Ciudad de México,hdbscan,gaussiano,0,,,False
+Ciudad de México,hdbscan,cópula,0,,,False
+Ciudad de México,fuzzy_cmeans,permutación,50,0.16728892371167917,24.0,False
+Ciudad de México,fuzzy_cmeans,gaussiano,50,0.1587635129184234,48.0,False
+Ciudad de México,fuzzy_cmeans,cópula,50,0.15892078843014312,84.0,False
+São Paulo,kmeans,permutación,50,0.07795407058717428,100.0,True
+São Paulo,kmeans,gaussiano,50,0.1404548661447774,46.0,False
+São Paulo,kmeans,cópula,50,0.138311024568192,74.0,False
+São Paulo,kmedians,permutación,50,0.04971961975165749,100.0,True
+São Paulo,kmedians,gaussiano,50,0.13346984375312412,88.0,False
+São Paulo,kmedians,cópula,50,0.1326323371155046,92.0,False
+São Paulo,kmedoids,permutación,50,0.06048346824941406,100.0,True
+São Paulo,kmedoids,gaussiano,50,0.13072100270344475,0.0,False
+São Paulo,kmedoids,cópula,50,0.14381981744953531,4.0,False
+São Paulo,gmm,permutación,50,0.1594950009438705,100.0,True
+São Paulo,gmm,gaussiano,50,0.10997864983559856,100.0,True
+São Paulo,gmm,cópula,50,0.25239675487629176,92.0,False
+São Paulo,ward,permutación,50,0.19669715132522583,16.0,False
+São Paulo,ward,gaussiano,50,0.11037431611634752,18.0,False
+São Paulo,ward,cópula,50,0.8001566245059553,18.0,False
+São Paulo,average,permutación,0,,,False
+São Paulo,average,gaussiano,13,,,False
+São Paulo,average,cópula,11,,,False
+São Paulo,spectral,permutación,50,0.12450447265659059,92.0,False
+São Paulo,spectral,gaussiano,50,0.13648601433610336,14.000000000000002,False
+São Paulo,spectral,cópula,50,0.13186256867919524,32.0,False
+São Paulo,hdbscan,permutación,0,,,False
+São Paulo,hdbscan,gaussiano,0,,,False
+São Paulo,hdbscan,cópula,0,,,False
+São Paulo,fuzzy_cmeans,permutación,50,0.06559348413355144,100.0,True
+São Paulo,fuzzy_cmeans,gaussiano,50,0.1394428093924106,46.0,False
+São Paulo,fuzzy_cmeans,cópula,50,0.1346046063768358,48.0,False
+Las Vegas,kmeans,permutación,50,0.1682262034900945,100.0,True
+Las Vegas,kmeans,gaussiano,50,0.15916430943007134,100.0,True
+Las Vegas,kmeans,cópula,50,0.2504179940471423,54.0,False
+Las Vegas,kmedians,permutación,50,0.16661299730065235,100.0,True
+Las Vegas,kmedians,gaussiano,50,0.15013683999220828,100.0,True
+Las Vegas,kmedians,cópula,50,0.2445405762684144,64.0,False
+Las Vegas,kmedoids,permutación,50,0.1549358320237571,100.0,True
+Las Vegas,kmedoids,gaussiano,50,0.14907141281973432,100.0,True
+Las Vegas,kmedoids,cópula,50,0.23766267754147638,70.0,False
+Las Vegas,gmm,permutación,50,0.14723141427384123,86.0,False
+Las Vegas,gmm,gaussiano,50,0.146958544372363,0.0,False
+Las Vegas,gmm,cópula,50,0.08086843312769787,78.0,False
+Las Vegas,ward,permutación,50,0.1507676085808423,100.0,True
+Las Vegas,ward,gaussiano,50,0.14119586613080126,100.0,True
+Las Vegas,ward,cópula,50,0.25385183345081647,56.00000000000001,False
+Las Vegas,average,permutación,15,0.41372844979936657,86.66666666666667,False
+Las Vegas,average,gaussiano,12,0.32375497502949485,100.0,True
+Las Vegas,average,cópula,14,0.48823079944592757,57.14285714285714,False
+Las Vegas,spectral,permutación,50,0.15933190885883905,100.0,True
+Las Vegas,spectral,gaussiano,50,0.15450404220127856,100.0,True
+Las Vegas,spectral,cópula,50,0.24757141984702494,62.0,False
+Las Vegas,hdbscan,permutación,0,,,False
+Las Vegas,hdbscan,gaussiano,0,,,False
+Las Vegas,hdbscan,cópula,0,,,False
+Las Vegas,fuzzy_cmeans,permutación,50,0.13503291910329754,98.0,True
+Las Vegas,fuzzy_cmeans,gaussiano,50,0.15860054061370119,28.000000000000004,False
+Las Vegas,fuzzy_cmeans,cópula,50,0.1707387343989377,52.0,False
+Catar,kmeans,permutación,50,0.7239446562992499,100.0,True
+Catar,kmeans,gaussiano,50,0.42262444745286654,100.0,True
+Catar,kmeans,cópula,50,0.7422626939146082,46.0,False
+Catar,kmedians,permutación,50,0.7135374687406053,100.0,True
+Catar,kmedians,gaussiano,50,0.42071058501641584,100.0,True
+Catar,kmedians,cópula,50,0.7373952015407129,40.0,False
+Catar,kmedoids,permutación,50,0.7180954468224486,88.0,False
+Catar,kmedoids,gaussiano,50,0.42159398417527316,100.0,True
+Catar,kmedoids,cópula,50,0.7374671895709481,52.0,False
+Catar,gmm,permutación,50,0.3689416652188123,98.0,True
+Catar,gmm,gaussiano,50,0.26832732926485164,100.0,True
+Catar,gmm,cópula,50,0.45569707132859544,80.0,False
+Catar,ward,permutación,50,0.7285875297146949,38.0,False
+Catar,ward,gaussiano,50,0.4129999307060689,100.0,True
+Catar,ward,cópula,50,0.7439280192435461,26.0,False
+Catar,average,permutación,31,0.7579027887179961,45.16129032258064,False
+Catar,average,gaussiano,38,0.5215481978729576,100.0,True
+Catar,average,cópula,38,0.7762920097274161,10.526315789473683,False
+Catar,spectral,permutación,50,0.6997335615436538,0.0,False
+Catar,spectral,gaussiano,50,0.4206418798623459,100.0,True
+Catar,spectral,cópula,50,0.7134707093874323,10.0,False
+Catar,hdbscan,permutación,0,,,False
+Catar,hdbscan,gaussiano,0,,,False
+Catar,hdbscan,cópula,0,,,False
+Catar,fuzzy_cmeans,permutación,50,0.7230405533192596,100.0,True
+Catar,fuzzy_cmeans,gaussiano,50,0.42206056312293333,100.0,True
+Catar,fuzzy_cmeans,cópula,50,0.742111555465346,46.0,False
+Abu Dabi,kmeans,permutación,50,0.6281812725069443,100.0,True
+Abu Dabi,kmeans,gaussiano,50,0.18763210438339323,100.0,True
+Abu Dabi,kmeans,cópula,50,0.6721356180878659,96.0,True
+Abu Dabi,kmedians,permutación,50,0.06940958911622944,100.0,True
+Abu Dabi,kmedians,gaussiano,50,0.17806219163424886,0.0,False
+Abu Dabi,kmedians,cópula,50,0.12405989986798117,80.0,False
+Abu Dabi,kmedoids,permutación,50,0.31633461138133195,100.0,True
+Abu Dabi,kmedoids,gaussiano,50,0.17918167721121775,100.0,True
+Abu Dabi,kmedoids,cópula,50,0.31646743594168564,98.0,True
+Abu Dabi,gmm,permutación,50,0.4262729405518489,100.0,True
+Abu Dabi,gmm,gaussiano,50,0.1330238317626582,100.0,True
+Abu Dabi,gmm,cópula,50,0.472540188296593,100.0,True
+Abu Dabi,ward,permutación,50,0.6059144709851478,100.0,True
+Abu Dabi,ward,gaussiano,50,0.16503728670869297,100.0,True
+Abu Dabi,ward,cópula,50,0.7956512838214732,92.0,False
+Abu Dabi,average,permutación,0,,,False
+Abu Dabi,average,gaussiano,29,,,False
+Abu Dabi,average,cópula,24,,,False
+Abu Dabi,spectral,permutación,50,0.5855441423586467,10.0,False
+Abu Dabi,spectral,gaussiano,50,0.18464128386454928,100.0,True
+Abu Dabi,spectral,cópula,50,0.6276267403624253,52.0,False
+Abu Dabi,hdbscan,permutación,0,,,False
+Abu Dabi,hdbscan,gaussiano,0,,,False
+Abu Dabi,hdbscan,cópula,0,,,False
+Abu Dabi,fuzzy_cmeans,permutación,50,0.11918670513367992,98.0,True
+Abu Dabi,fuzzy_cmeans,gaussiano,50,0.18735719368491507,0.0,False
+Abu Dabi,fuzzy_cmeans,cópula,50,0.13849321650127147,52.0,False

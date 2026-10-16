@@ -1,4 +1,4 @@
-"""Archetype naming and teammate comparisons."""
+"""Archetype naming, teammate comparisons, and separation checks."""
 
 from .archetypes import (
     assign_archetype_names,
