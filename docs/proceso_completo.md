@@ -66,7 +66,9 @@ Después, `clip_and_merge_zones` (líneas 365-411) fusiona ápices que se solapa
 
 ### Zonas a mano
 
-Solo Monza, Silverstone y Mónaco están en `benchmark_circuits`. Una entrada de `key_corners` es una zona, aunque agrupe varios números. El ápice sigue en ±60 m. La frenada y la salida usan el valor de la entrada si existe, y si no los 350 m y 250 m.
+Los 24 grandes premios de 2025 están en `benchmark_circuits`. Monza, Silverstone y Mónaco conservan las ventanas que ya tenían. En el resto, cada entrada de `key_corners` sale del diagnóstico de la carrera 2025 (`scripts/zoi_window_diagnostic.py`, tablas en `docs/zoi_diagnostico_2025/`, fichas en `docs/circuitos_2025/`). El ápice sigue en ±60 m: el YAML de una curva no lo cambia. `default_zoi_offsets` sigue en 350 m, ±60 m y 250 m para un evento que no esté en la lista.
+
+Una entrada de `key_corners` es una zona, aunque agrupe varios números. La frenada y la salida usan el valor de la entrada si existe, y si no los 350 m y 250 m. Si un circuito entra en `benchmark_circuits` con un subconjunto de números, las curvas que faltan no se usan: por eso las fichas nuevas listan todos los `Number` de FastF1.
 
 Monza (`circuits.yaml`, líneas 54-87), tipología ya mapeada a cubo:
 
@@ -81,6 +83,8 @@ Monza (`circuits.yaml`, líneas 54-87), tipología ya mapeada a cubo:
 | T11 Parabólica | 11 | long_medium_fast_entry | media | 320 | 300 |
 
 Silverstone (líneas 94-106): Village y The Loop (3, 4, lenta), Copse (9, rápida), Maggotts–Becketts–Chapel (10 a 14, rápida), Stowe (15, media). Mónaco (líneas 113-124): Sainte Dévote (1, lenta), Grand Hotel (6, lenta), Nouvelle Chicane (10 y 11, lenta), Swimming Pool (15 y 16, rápida). Esas dos no pisan los 350 m ni los 250 m.
+
+En las fichas nuevas no se escribe `typology`. El cubo lo sigue poniendo la sesión. Fijarlo con la mediana de una sola carrera cambiaría la matriz de features.
 
 ### Lenta, media y rápida
 

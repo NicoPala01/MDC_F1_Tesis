@@ -1,0 +1,637 @@
+{
+  "abu_dhabi": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_abu_dhabi_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "17. DRS during Free Practice sessions, Qualifying session and the Race",
+        "activations": [
+          "DRS activation 1: 11, 12, 13, 14",
+          "DRS activation 2: 16, 17, 18, 19, 20"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurface between Turn 1 and Turn 4.",
+      "Grind down the kerb at Turn 4 apex.",
+      "Grind the apex kerb at Turn 6.",
+      "New patch of asphalt to remove a bump at the exit of turn 6 right-hand side",
+      "Debris fence extension at the exit of Turn 1 left-hand side",
+      "Debris fence extension at Turn 3 left-hand side",
+      "New debris fence at Turn 16 left-hand side",
+      "Extended guardrail after Turn 5 on the left-hand side",
+      "Extended Tecpro barrier at the exit of Turn 3 left-hand side",
+      "Support pit entry Tecpro adjusted",
+      "Reposition of the bollard at Turn 6.",
+      "Widen white line and reposition of the blue line at the exit of Turns 1 and 7."
+    ]
+  },
+  "australian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_australian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "15) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 11, 12, 13, 14",
+          "DRS activation 2: 15, 16, 17",
+          "DRS activation 3: 20, 1, 2",
+          "DRS activation 4: 3, 4, 5"
+        ]
+      },
+      {
+        "heading": "16) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 11, 12, 13, 14",
+          "DRS activation 2: 15, 16, 17",
+          "DRS activation 3: 20, 1",
+          "DRS activation 4: 3, 4, 5"
+        ]
+      }
+    ],
+    "changes": [
+      "Exit Turn 6/Apex Turn 7: kerb replaced by a negative kerb.",
+      "Gravel was brought back to the kerb at exit Turn 6/apex Turn 7",
+      "Reprofile the barrier at Turn 6 on LHS.",
+      "Repainted pit exit line, highlighted in blue (back to 2018 configuration).",
+      "Exit Turn 4 blue line added behind the white line.",
+      "Reposition of the white line at exit Turn 10 and added a blue line.",
+      "Reposition of the white line at the exit 11 and added a blue line.",
+      "Exit turn 12 added blue line.",
+      "Highlight blue the safety car line 1 and 2.",
+      "Remove the black paint from Turns 10 and 11 and repaint in white color. (the position of the white line stays the same).",
+      "Remove the green concrete patch in the gravel at the apex of Turn 7.",
+      "Blue line added at Turns 3 and 6."
+    ]
+  },
+  "austrian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_austrian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "14. DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 3, 4, 5, 6",
+          "DRS activation 2: 7, 8, 9",
+          "DRS activation 3: 16,1, 2"
+        ]
+      },
+      {
+        "heading": "15. DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 3, 4, 5, 6",
+          "DRS activation 2: 7, 8, 9",
+          "DRS activation 3: 16, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurface from Turn 2 to exit Turn 3",
+      "Turn 1 exit: realigned the white line and added a blue line behind the white line.",
+      "Turn 3 exit: realigned the white line and added a blue line behind the white line.",
+      "Turn 4 exit: realigned the white line and added a blue line behind the white line.",
+      "Turn 6 exit: realigned the white line and added a blue line behind the white line.",
+      "Turn 7 entry: realigned the white line and added a blue line behind the white line.",
+      "Turn 8 exit: realigned the white line and added a blue line behind the white line."
+    ]
+  },
+  "azerbaijan": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_azerbaijan_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during all Free Practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 3, 4, 5",
+          "DRS activation 2: 20, 21,1, 2"
+        ]
+      },
+      {
+        "heading": "19. DRS during the qualifying sessions",
+        "activations": [
+          "DRS activation 1: 3, 4, 5",
+          "DRS activation 2: 20, 21, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "A few resurfacing patches work:",
+      "From Turn 2 to Turn 3 mainly on the LHS",
+      "Before Turn 4 LHS",
+      "Between Turn 7 and Turn 8 on the LHS",
+      "Turn 12 RHS.",
+      "Turn 14 LHS.",
+      "Between Turn 14 and Turn 15 on the LHS",
+      "Turn 18 LHS.",
+      "Realignment of the TecPro barrier at the exit of Turn 1 RHS"
+    ]
+  },
+  "bahrain": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_bahrain_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "15) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 3, 4",
+          "DRS activation 2: 11, 12",
+          "DRS activation 3: 18, 1, 2"
+        ]
+      },
+      {
+        "heading": "16) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 3, 4",
+          "DRS activation 2: 11, 12",
+          "DRS activation 3: 18, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Exit turn 4 gravel bed has been extended.",
+      "U-drains close to the racing line were closed off by cement and moved away from the white line into the runoff areas.",
+      "Repair of the bumps at the start line straight and turn 9.",
+      "Remove the kerb at turn 3 RHS (another version of the track).",
+      "Replace the glasses at the start and finish platforms.",
+      "Blue line added behind the white line at the entrance of turns 4 and 6.",
+      "Blue line added behind the white line at the exit of turns 2, 4, 10, 11, 13, 14 and 15.",
+      "Widened the white line at the exit of turn 4 and repositioned the blue line behind the white line."
+    ]
+  },
+  "belgian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_belgian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "19. DRS during all free Practice Session, Sprint and the Race",
+        "activations": [
+          "DRS activation 1: 5, 6, 7",
+          "DRS activation 2: 21, 1, 2"
+        ]
+      },
+      {
+        "heading": "20. DRS during sprint qualifying and qualifying sessions",
+        "activations": [
+          "DRS activation 1: 5, 6, 7",
+          "DRS activation 2: 21, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurface racing line from 50 m brake marker board before Turn 1 to the exit of Turn 1",
+      "Replace the apex kerb at Turn 3",
+      "Grinding asphalt halfway down from endurance pit lane to Turn 2.",
+      "Resurfacing after T15 on the RHS (to correct a bump)."
+    ]
+  },
+  "british": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_british_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "16. DRS during all free practice sessions, qualifying and the race",
+        "activations": [
+          "DRS activation 1: 5, 6, 7",
+          "DRS activation 2: 13, 14, 15"
+        ]
+      }
+    ],
+    "changes": [
+      "Removed the kerb at Turn 1 runoff on the left-hand side.",
+      "The gravel in the gravel trap at the exit of T18 has been changed to a lighter material.",
+      "1 red kerb element in Turn 1 (apex) replaced by a flat kerb element.",
+      "2 red kerb elements in Turn 6 (apex) replaced by a flat kerb element.",
+      "1 red kerb element in Turn 7 (apex) replaced by a flat kerb element.",
+      "3 red kerbs elements in Turn 9 (apex) replaced by a flat kerb element."
+    ]
+  },
+  "canadian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_canadian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "15. DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 7, 8, 9",
+          "DRS activation 2: 12,13,14",
+          "DRS activation 3: 15,1"
+        ]
+      },
+      {
+        "heading": "16. DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 7, 8, 9",
+          "DRS activation 2: 12,13, 14",
+          "DRS activation 3: 15"
+        ]
+      }
+    ],
+    "changes": [
+      "Improvement to the drainage at turns 2, 8, 10 and 13 (by making small cuts in the kerbs).",
+      "Track surface grinded to remove bump at T12 (area prior to DRS Line).",
+      "Run-off behind Turn 8 and Turn 9 apex was regraded and a paved path was created.",
+      "Realignment of the width of the white line at Turn 4 and Turn 8 with 1,8 meters to the wall.",
+      "Concrete wall at Turn 10 RHS was extended.",
+      "Realignment of the width of the white line at Turn 14 with 1,8 meters to the wall and add a blue line.",
+      "Black the end of the orange paint at the rejoin of the runoff area of Turn 13"
+    ]
+  },
+  "chinese": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_chinese_grand_prix_-_race_directors_event_notes_v3.pdf",
+    "drs": [
+      {
+        "heading": "14) DRS during all free practice session and the race",
+        "activations": [
+          "DRS Activation 1: Panels 16, 17",
+          "DRS Activation 2: Panels 19, 20, 1"
+        ]
+      },
+      {
+        "heading": "15) DRS during sprint qualifying and qualifying sessions",
+        "activations": [
+          "DRS Activation 1: Panels 16, 17",
+          "DRS Activation 2: Panels 19, 20"
+        ]
+      }
+    ],
+    "changes": [
+      "The track has been fully resurfaced.",
+      "Combination kerb at Turns 2, 6, 10, 11 and 16 apex.",
+      "Blue line added to turns 6, 9, 10, 14 and 16.",
+      "Reposition the white line at turns 10 and 16."
+    ]
+  },
+  "dutch": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_dutch_grand_prix_-_race_directors_event_notes_.pdf",
+    "drs": [
+      {
+        "heading": "19. DRS during all Free Practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 12, 13, 14",
+          "DRS activation 2: 16, 17, 18, 1, 2"
+        ]
+      },
+      {
+        "heading": "20. DRS during Qualifying:",
+        "activations": [
+          "DRS activation 1: 12, 13, 14",
+          "DRS activation 2: 16, 17, 18, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Reprofile the end of the kerb at the apex of Turn 6."
+    ]
+  },
+  "emilia_romagna": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_emilia_romagna_grand_prix_-_race_directors_event_notes_.pdf",
+    "drs": [
+      {
+        "heading": "14) DRS during all free practice sessions, qualifying and the race",
+        "activations": [
+          "DRS activation 1: 19, 1, 2, 3, 4"
+        ]
+      }
+    ],
+    "changes": [
+      "Turn 4 apex: realign white line and blue line at the back, 1,5m from the kerb.",
+      "Turn 4 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 6 apex: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 6 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 7 exit: realign white line and blue line at the back, 1,5m from the grass.",
+      "Turn 9 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 11 exit: realign white line and blue line at the back, 1,5m from the back of the kerb.",
+      "Turn 12 apex: realign white line and blue line at the back, 1,5m from the back of the kerb.",
+      "Turn 12 exit/ Turn 13 apex: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 14 apex: realign white line and the bollard behind the kerb",
+      "Turn 15 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 17 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 18 exit: realign white line and blue line at the back, 1,5m from the gravel.",
+      "Turn 19 apex: realign white line to 1,5 meters from the wall."
+    ]
+  },
+  "hungarian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_hungarian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during all Free Practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 19, 1, 2, 3",
+          "DRS activation 2: 3, 4, 5"
+        ]
+      },
+      {
+        "heading": "19. DRS during Qualifying:",
+        "activations": [
+          "DRS activation 1: 19, 1, 2",
+          "DRS activation 2: 3, 4, 5"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurfaced the main straight",
+      "Changed the grass strip exit turn 5 to a gravel strip.",
+      "New concrete blocks with fences at Turn 14 LHS until the bridge",
+      "Resurfaced the pit lane",
+      "Alignment of the white line and added a blue line at the exit of Turn 7"
+    ]
+  },
+  "italian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_italian_grand_prix_-_race_directors_event_notes_.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during all Free Practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 9, 10, 11, 12, 13",
+          "DRS activation 2: 1, 2, 3"
+        ]
+      }
+    ],
+    "changes": [
+      "New gate in the pit wall in front of garage 32.",
+      "Asphalt repair by application of bitumen coating at Turn 1 and Turn 4."
+    ]
+  },
+  "japanese": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_japanese_grand_prix_-_race_directors_event_notes_v3.pdf",
+    "drs": [
+      {
+        "heading": "15) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 1, 2, 22"
+        ]
+      },
+      {
+        "heading": "16) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 1, 22"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurfacing between Turn 1 until entry Turn 8.",
+      "Gravel was brought to the back of the double kerb at Turn 2, Turn 8 and Turn 9.",
+      "Marshal posts were protected with debris fences.",
+      "Driver exit aperture sign installed throughout the circuit.",
+      "Extinguishers signals supported by plastic posts instead of wooden.",
+      "New double kerb at Turn 9.",
+      "Realignment of the white line and add a blue line at the exit of turns 1, 2, 8, 9, 13, 14, 15",
+      "Grinding asphalt exit T14 RHS"
+    ]
+  },
+  "las_vegas": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_las_vegas_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "17. DRS during Free Practice sessions, Qualifying Sessions and the Race",
+        "activations": [
+          "DRS activation 1: 3, 4, 5, 6",
+          "DRS activation 2: 16, 17, 18"
+        ]
+      }
+    ],
+    "changes": [
+      "Turn 3: adjust right -hand side Inside painted kerb and white line (the wall is in the same position)",
+      "Turn 4: Exit Left-Hand side adjust left track edge. The painted kerb was removed.",
+      "Two patches of Asphalt: one 50m before MP4.8 and the second one 20m after over whole track width",
+      "Patch of Asphalt 40m before Turn 5 over whole track width",
+      "Turn 5 and Turn 6 left-hand side adjustment of painted kerb and white line (the wall is in the same position)",
+      "Turn 8: widening Run Off on the left-hand side for better access for vehicles and pedestrians during track build",
+      "Two patches of Asphalt: one at MP12.9 and the second one at 30 meters after the MP over the whole track width",
+      "MP 12.9 changed location.",
+      "MP15.1 moved to opposite track site for better line of sight and MP16.0 move closer to T15.",
+      "Distance boards updated to new size and 100 m boards printed in blue.",
+      "Reprofiling the manhole between Turn 16 and Turn 17 under the bridge.",
+      "Reprofiling of the concrete barrier before pit entry (after the speed limit board) at the right hand side.",
+      "Remove paint from the apex Turn 16"
+    ]
+  },
+  "mexico_city": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_mexico_city_grand_prix_-_race_directors_event_notes_v3.pdf",
+    "drs": [
+      {
+        "heading": "17. DRS during Free Practice sessions, Qualifying Sessions and the Race",
+        "activations": [
+          "DRS activation 1: 11, 12, 13",
+          "DRS activation 2: 1, 2, 3",
+          "DRS activation 3: 4, 5, 6"
+        ]
+      }
+    ],
+    "changes": [
+      "Asphalt grinding at Turn 12 near the 150 meters brake marker.",
+      "Blue line behind the white line added at the turns: 3 apex, 5 apex and exit, 6 apex and exit, 9 apex.",
+      "Double the white line at the apex of Turn 2",
+      "The bollard at the apex of Turn 2 was moved closer to the track."
+    ]
+  },
+  "miami": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_miami_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "16) DRS during free practice session and the sprint and race",
+        "activations": [
+          "DRS activation 1: 10, 11, 12",
+          "DRS activation 2: 16, 17, 18",
+          "DRS activation 3: 20, 1, 2"
+        ]
+      },
+      {
+        "heading": "17) DRS during sprint qualifying and qualifying sessions",
+        "activations": [
+          "DRS activation 1: 10, 11, 12",
+          "DRS activation 2: 16, 17, 18",
+          "DRS activation 3: 20, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "27.1 Repositioned the white and added blue line at turn 6.",
+      "27.2 Manholes at Turns 3, 6 and between T8 and T9.",
+      "27.3 Realigned the wall at Turn 16 RHS."
+    ]
+  },
+  "monaco": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_monaco_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "18) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 18, 19, 1, 2"
+        ]
+      },
+      {
+        "heading": "19) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 18, 19, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurfacing between Turn 12 until Turn 3.",
+      "Turn 1: painted flat section of the kerb behind temporary kerb at apex T1 omitted.",
+      "Realign guardrail on the LHS of Turn 3",
+      "Turn 4: painted flat section of kerb omitted.",
+      "Turn 10/11: painted flat section of kerb before temporary kerb at apex T10 omitted.",
+      "Painted flat section of kerb from T10 apex kerb to T11 apex kerb omitted.",
+      "Turn 12: painted flat section of kerb at apex T12 omitted.",
+      "Turn 13: painted flat section of kerb before T13 apex temporary kerb omitted.",
+      "Turn 14: painted flat section of kerb before and after T14 apex temporary kerb omitted.",
+      "Turn 15: painted flat section of kerb at Apex T15 omitted."
+    ]
+  },
+  "qatar": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_qatar_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during Free Practice sessions, Sprint and the Race",
+        "activations": [
+          "DRS activation 1: 20, 1, 2, 3"
+        ]
+      },
+      {
+        "heading": "19. DRS during the Sprint Qualifying and Qualifying session",
+        "activations": [
+          "DRS activation 1: 20, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Additional gravel strip at the exit of Turn 6.",
+      "Additional gravel strip at Turn 10 on the right-hand side.",
+      "Gravel strip at the exit of Turn 14 starts earlier.",
+      "Additional gravel strip at the exit of Turn 16.",
+      "Gravel beds have been painted."
+    ]
+  },
+  "sao_paulo": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_sao_paulo_grand_prix_-_race_directors_event_notes_.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during Free Practice sessions, Qualifying Sessions, Sprint and the Race",
+        "activations": [
+          "DRS activation 1: 3, 4, 5",
+          "DRS activation 2: 15, 16, 1, 2"
+        ]
+      },
+      {
+        "heading": "19. DRS during the Sprint Qualifying and Qualifying session",
+        "activations": [
+          "DRS activation 1: 3, 4, 5",
+          "DRS activation 2: 15, 16, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "It was removed the hatched zone between pit exit road (RHS) and track edge.",
+      "Resurface from Turn 12 to Turn 1",
+      "Resurface from Turn 3 to Turn 4",
+      "Realign the white line at the exit of Turn 4",
+      "Grooving at Turn 2",
+      "Grooving from pit exit road until Turn 4",
+      "Grooving between in the straight after Turn 5",
+      "Grooving in the straight between Turn 11 and Turn 12",
+      "Grooving from the Start Line until Grid Position 21"
+    ]
+  },
+  "saudi_arabian": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_saudi_arabian_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "16) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 13, 14, 15",
+          "DRS activation 2: 17, 18, 19, 20",
+          "DRS activation 3: 21, 22, 1, 2"
+        ]
+      },
+      {
+        "heading": "17) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 13, 14, 15",
+          "DRS activation 2: 17, 18, 19, 20",
+          "DRS activation 3: 21, 22, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "26.1 The pit entry and pit exit white lines are highlighted blue.",
+      "26.2 The safety car lines are highlighted blue.",
+      "26.3 Blue line behind the white line at the apex of turns 2, 5, 8, 9, 14, 17.",
+      "26.4 Blue line behind the white line at the exit of turns 8, 19, 23."
+    ]
+  },
+  "singapore": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_singapore_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "19. DRS during all Free Practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 4, 5, 6",
+          "DRS activation 2: 11, 12,13",
+          "DRS activation 3: 13, 14, 15",
+          "DRS activation 4: 16, 1, 2"
+        ]
+      },
+      {
+        "heading": "20. DRS during the qualifying sessions",
+        "activations": [
+          "DRS activation 1: 4, 5, 6",
+          "DRS activation 2: 11, 12,13",
+          "DRS activation 3: 13, 14, 15",
+          "DRS activation 4: 16, 1"
+        ]
+      }
+    ],
+    "changes": [
+      "Resurfacing areas: from Turn 2 until the exit of Turn 3 from entry Turn 6 until the exit of Turn 7 from entry Turn 9 until before Turn 11 from exit Turn 14 until the exit of Turn 16 from exit Turn 16 until the exit of Turn 19",
+      "Localized patching at Turns 5, 6, 13 and 14.",
+      "Repair the edge of the working lane with the fast lane.",
+      "The Safety Car Lines and Pit Entry lines are highlighted blue."
+    ]
+  },
+  "spanish": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_spanish_grand_prix_-_race_directors_event_notes_.pdf",
+    "drs": [
+      {
+        "heading": "14) DRS during all free practice sessions and the race",
+        "activations": [
+          "DRS activation 1: 10, 11, 12",
+          "DRS activation 2: 16,1,2"
+        ]
+      },
+      {
+        "heading": "15) DRS during qualifying sessions",
+        "activations": [
+          "DRS activation 1: 10, 11, 12",
+          "DRS activation 2: 16,1"
+        ]
+      }
+    ],
+    "changes": [
+      "The guardrail on the RHS approaching Turn 1 was replaced by a concrete wall with debris fences.",
+      "Turn 2 exit: realigned the white line.",
+      "Turn 5 exit: realigned the white line and paint a blue line behind the white line.",
+      "Turn 9 exit: realigned the white line and paint a blue line behind the white line.",
+      "Turn 10 exit: realigned the white line and paint a blue line behind the white line.",
+      "Turn 12 exit: realigned the white line and paint a blue line behind the white line.",
+      "Turn 14: realigned the white line and paint a blue line behind the white line.",
+      "New fences to protect the Marshals Posts"
+    ]
+  },
+  "united_states": {
+    "fia_url": "https://www.fia.com/system/files/decision-document/2025_united_states_grand_prix_-_race_directors_event_notes_v2.pdf",
+    "drs": [
+      {
+        "heading": "18. DRS during Free Practice session, Sprint and the Race",
+        "activations": [
+          "DRS activation 1: 12, 13, 14",
+          "DRS activation 2: 20, 1, 2, 3"
+        ]
+      },
+      {
+        "heading": "19. DRS during the Sprint Qualifying and Qualifying session",
+        "activations": [
+          "DRS activation 1: 12, 13, 14",
+          "DRS activation 2: 20, 1, 2"
+        ]
+      }
+    ],
+    "changes": [
+      "Added a blue line at Turn 8 (apex), Turn 10 (exit) and Turn 13 (exit)",
+      "Resurface from before Turn 3 to before Turn 7."
+    ]
+  }
+}

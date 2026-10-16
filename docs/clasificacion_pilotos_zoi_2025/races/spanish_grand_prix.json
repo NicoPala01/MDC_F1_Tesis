@@ -1,0 +1,2086 @@
+{
+  "event": "Spanish Grand Prix",
+  "name": "España",
+  "alignment": {
+    "n_laps_aligned": 1203,
+    "t0": "2025-06-01T12:04:04.371000064+00:00",
+    "offset_median_abs_s": 0.042000064,
+    "offset_max_abs_s": 1.249999936,
+    "openf1_session_key": 9971,
+    "openf1_date_start": "2025-06-01T13:00:00+00:00",
+    "source": "openf1 car_data + fastf1 Telemetry.add_distance via get_car_data"
+  },
+  "before": {
+    "n_before_dropna": 980,
+    "n_dropped": 0,
+    "n_after_dropna": 980,
+    "n_laps": 980,
+    "n_columns": 16,
+    "columns": [
+      "fast__apex_speed_rel",
+      "medium__apex_speed_rel",
+      "slow__apex_speed_rel",
+      "medium__brake_point_rel",
+      "slow__brake_point_rel",
+      "fast__coast_frac",
+      "medium__coast_frac",
+      "slow__coast_frac",
+      "fast__full_throttle_frac",
+      "medium__full_throttle_frac",
+      "slow__full_throttle_frac",
+      "medium__throttle_attack",
+      "slow__throttle_attack",
+      "fast__trail_brake_frac",
+      "medium__trail_brake_frac",
+      "slow__trail_brake_frac"
+    ],
+    "zone_source": "speed_threshold_fallback"
+  },
+  "after": {
+    "n_before_dropna": 980,
+    "n_dropped": 0,
+    "n_after_dropna": 980,
+    "n_laps": 980,
+    "n_columns": 16,
+    "columns": [
+      "fast__apex_speed_rel",
+      "medium__apex_speed_rel",
+      "slow__apex_speed_rel",
+      "medium__brake_point_rel",
+      "slow__brake_point_rel",
+      "fast__coast_frac",
+      "medium__coast_frac",
+      "slow__coast_frac",
+      "fast__full_throttle_frac",
+      "medium__full_throttle_frac",
+      "slow__full_throttle_frac",
+      "medium__throttle_attack",
+      "slow__throttle_attack",
+      "fast__trail_brake_frac",
+      "medium__trail_brake_frac",
+      "slow__trail_brake_frac"
+    ],
+    "zone_source": "key_corners"
+  },
+  "clustering": {
+    "error": null,
+    "k": 6,
+    "k_rule": "davies_bouldin",
+    "zone_source": "key_corners",
+    "n_drivers": 19,
+    "silhouette": 0.10326571496823392,
+    "davies_bouldin": 2.004399759111897,
+    "profiles": [
+      {
+        "Driver": "ALB",
+        "FullName": "Alexander Albon",
+        "Team": "Williams",
+        "Cluster": 0,
+        "Archetype": "Early braking + less full throttle on exit",
+        "n_laps": 21,
+        "modal_fraction": 0.7619047619047619
+      },
+      {
+        "Driver": "ALO",
+        "FullName": "Fernando Alonso",
+        "Team": "Aston Martin",
+        "Cluster": 3,
+        "Archetype": "Less trail braking + more full throttle on exit",
+        "n_laps": 53,
+        "modal_fraction": 0.4528301886792453
+      },
+      {
+        "Driver": "ANT",
+        "FullName": "Kimi Antonelli",
+        "Team": "Mercedes",
+        "Cluster": 2,
+        "Archetype": "High apex speed + more coasting",
+        "n_laps": 46,
+        "modal_fraction": 0.4782608695652174
+      },
+      {
+        "Driver": "BEA",
+        "FullName": "Oliver Bearman",
+        "Team": "Haas F1 Team",
+        "Cluster": 0,
+        "Archetype": "Early braking + less full throttle on exit",
+        "n_laps": 52,
+        "modal_fraction": 0.5192307692307693
+      },
+      {
+        "Driver": "BOR",
+        "FullName": "Gabriel Bortoleto",
+        "Team": "Kick Sauber",
+        "Cluster": 1,
+        "Archetype": "Low apex speed + softer throttle pickup",
+        "n_laps": 54,
+        "modal_fraction": 0.6296296296296297
+      },
+      {
+        "Driver": "COL",
+        "FullName": "Franco Colapinto",
+        "Team": "Alpine",
+        "Cluster": 5,
+        "Archetype": "More coasting + less full throttle on exit",
+        "n_laps": 52,
+        "modal_fraction": 0.7307692307692307
+      },
+      {
+        "Driver": "GAS",
+        "FullName": "Pierre Gasly",
+        "Team": "Alpine",
+        "Cluster": 5,
+        "Archetype": "More coasting + less full throttle on exit",
+        "n_laps": 54,
+        "modal_fraction": 0.4074074074074074
+      },
+      {
+        "Driver": "HAD",
+        "FullName": "Isack Hadjar",
+        "Team": "Racing Bulls",
+        "Cluster": 3,
+        "Archetype": "Less trail braking + more full throttle on exit",
+        "n_laps": 54,
+        "modal_fraction": 0.46296296296296297
+      },
+      {
+        "Driver": "HAM",
+        "FullName": "Lewis Hamilton",
+        "Team": "Ferrari",
+        "Cluster": 4,
+        "Archetype": "More trail braking + less coasting",
+        "n_laps": 55,
+        "modal_fraction": 0.8363636363636363
+      },
+      {
+        "Driver": "HUL",
+        "FullName": "Nico Hulkenberg",
+        "Team": "Kick Sauber",
+        "Cluster": 5,
+        "Archetype": "More coasting + less full throttle on exit",
+        "n_laps": 54,
+        "modal_fraction": 0.46296296296296297
+      },
+      {
+        "Driver": "LAW",
+        "FullName": "Liam Lawson",
+        "Team": "Racing Bulls",
+        "Cluster": 3,
+        "Archetype": "Less trail braking + more full throttle on exit",
+        "n_laps": 53,
+        "modal_fraction": 0.5471698113207547
+      },
+      {
+        "Driver": "LEC",
+        "FullName": "Charles Leclerc",
+        "Team": "Ferrari",
+        "Cluster": 4,
+        "Archetype": "More trail braking + less coasting",
+        "n_laps": 55,
+        "modal_fraction": 0.7818181818181819
+      },
+      {
+        "Driver": "NOR",
+        "FullName": "Lando Norris",
+        "Team": "McLaren",
+        "Cluster": 2,
+        "Archetype": "High apex speed + more coasting",
+        "n_laps": 55,
+        "modal_fraction": 0.6727272727272727
+      },
+      {
+        "Driver": "OCO",
+        "FullName": "Esteban Ocon",
+        "Team": "Haas F1 Team",
+        "Cluster": 4,
+        "Archetype": "More trail braking + less coasting",
+        "n_laps": 54,
+        "modal_fraction": 0.42592592592592593
+      },
+      {
+        "Driver": "PIA",
+        "FullName": "Oscar Piastri",
+        "Team": "McLaren",
+        "Cluster": 2,
+        "Archetype": "High apex speed + more coasting",
+        "n_laps": 55,
+        "modal_fraction": 0.7272727272727273
+      },
+      {
+        "Driver": "RUS",
+        "FullName": "George Russell",
+        "Team": "Mercedes",
+        "Cluster": 2,
+        "Archetype": "High apex speed + more coasting",
+        "n_laps": 55,
+        "modal_fraction": 0.4727272727272727
+      },
+      {
+        "Driver": "SAI",
+        "FullName": "Carlos Sainz",
+        "Team": "Williams",
+        "Cluster": 0,
+        "Archetype": "Early braking + less full throttle on exit",
+        "n_laps": 54,
+        "modal_fraction": 0.42592592592592593
+      },
+      {
+        "Driver": "TSU",
+        "FullName": "Yuki Tsunoda",
+        "Team": "Red Bull Racing",
+        "Cluster": 3,
+        "Archetype": "Less trail braking + more full throttle on exit",
+        "n_laps": 52,
+        "modal_fraction": 0.3269230769230769
+      },
+      {
+        "Driver": "VER",
+        "FullName": "Max Verstappen",
+        "Team": "Red Bull Racing",
+        "Cluster": 2,
+        "Archetype": "High apex speed + more coasting",
+        "n_laps": 52,
+        "modal_fraction": 0.75
+      }
+    ],
+    "gives_classes": true
+  },
+  "null": {
+    "error": null,
+    "n_replicates": 50,
+    "n_laps": 980,
+    "n_columns": 16,
+    "n_components": 9,
+    "pca_used": true,
+    "real": {
+      "k": 6,
+      "k_rule": "davies_bouldin",
+      "floor": 49,
+      "silhouette": 0.10326571496823392,
+      "error": null,
+      "max_abs_name_score": 1.1502860423394272,
+      "any_named": true,
+      "n_classes_named": 6
+    },
+    "nulls": {
+      "column_permutation": {
+        "n": 50,
+        "p95": 0.07001002044466377,
+        "percentile": 100.0,
+        "beats_p95": true,
+        "null_mean": 0.06656092281893658,
+        "name_score": {
+          "n": 50,
+          "p95": 1.5617650025619432,
+          "percentile": 4.0,
+          "beats_p95": false,
+          "null_mean": 1.3658393514053566
+        },
+        "false_name_rate": 1.0,
+        "false_name_n_classes": 350
+      },
+      "gaussian": {
+        "n": 50,
+        "p95": 0.10006355729694913,
+        "percentile": 98.0,
+        "beats_p95": true,
+        "null_mean": 0.09188055274816145,
+        "name_score": {
+          "n": 0,
+          "p95": null,
+          "percentile": null,
+          "beats_p95": false,
+          "null_mean": null
+        },
+        "false_name_rate": null,
+        "false_name_n_classes": 0
+      },
+      "gaussian_copula": {
+        "n": 50,
+        "p95": 0.10336715474412554,
+        "percentile": 94.0,
+        "beats_p95": false,
+        "null_mean": 0.09137107370116034,
+        "name_score": {
+          "n": 50,
+          "p95": 1.4764429914783022,
+          "percentile": 62.0,
+          "beats_p95": false,
+          "null_mean": 1.1193087878081993
+        },
+        "false_name_rate": 1.0,
+        "false_name_n_classes": 317
+      }
+    },
+    "structure": false,
+    "concordance": {
+      "real": {
+        "concordance": 0.6666666666666666,
+        "n_pairs": 9,
+        "pairs": [
+          {
+            "TeamName": "Alpine",
+            "driver_a": "COL",
+            "driver_b": "GAS",
+            "class_a": 5,
+            "class_b": 5,
+            "same_class": true,
+            "stint_pair": true
+          },
+          {
+            "TeamName": "Ferrari",
+            "driver_a": "HAM",
+            "driver_b": "LEC",
+            "class_a": 4,
+            "class_b": 4,
+            "same_class": true,
+            "stint_pair": false
+          },
+          {
+            "TeamName": "Haas F1 Team",
+            "driver_a": "BEA",
+            "driver_b": "OCO",
+            "class_a": 0,
+            "class_b": 4,
+            "same_class": false,
+            "stint_pair": false
+          },
+          {
+            "TeamName": "Kick Sauber",
+            "driver_a": "BOR",
+            "driver_b": "HUL",
+            "class_a": 1,
+            "class_b": 5,
+            "same_class": false,
+            "stint_pair": false
+          },
+          {
+            "TeamName": "McLaren",
+            "driver_a": "NOR",
+            "driver_b": "PIA",
+            "class_a": 2,
+            "class_b": 2,
+            "same_class": true,
+            "stint_pair": false
+          },
+          {
+            "TeamName": "Mercedes",
+            "driver_a": "ANT",
+            "driver_b": "RUS",
+            "class_a": 2,
+            "class_b": 2,
+            "same_class": true,
+            "stint_pair": false
+          },
+          {
+            "TeamName": "Racing Bulls",
+            "driver_a": "HAD",
+            "driver_b": "LAW",
+            "class_a": 3,
+            "class_b": 3,
+            "same_class": true,
+            "stint_pair": true
+          },
+          {
+            "TeamName": "Red Bull Racing",
+            "driver_a": "TSU",
+            "driver_b": "VER",
+            "class_a": 3,
+            "class_b": 2,
+            "same_class": false,
+            "stint_pair": true
+          },
+          {
+            "TeamName": "Williams",
+            "driver_a": "ALB",
+            "driver_b": "SAI",
+            "class_a": 0,
+            "class_b": 0,
+            "same_class": true,
+            "stint_pair": false
+          }
+        ]
+      },
+      "column_permutation": {
+        "n": 50,
+        "p95": 0.3333333333333333,
+        "percentile": 100.0,
+        "beats_p95": true,
+        "null_mean": 0.1488888888888889
+      },
+      "interpret": false
+    }
+  },
+  "profile": {
+    "n_laps": 980,
+    "n_features": 16,
+    "features": [
+      "fast__apex_speed_rel",
+      "medium__apex_speed_rel",
+      "slow__apex_speed_rel",
+      "medium__brake_point_rel",
+      "slow__brake_point_rel",
+      "fast__coast_frac",
+      "medium__coast_frac",
+      "slow__coast_frac",
+      "fast__full_throttle_frac",
+      "medium__full_throttle_frac",
+      "slow__full_throttle_frac",
+      "medium__throttle_attack",
+      "slow__throttle_attack",
+      "fast__trail_brake_frac",
+      "medium__trail_brake_frac",
+      "slow__trail_brake_frac"
+    ],
+    "n_components": 4,
+    "explained_variance_ratio": [
+      0.1624912129492444,
+      0.1429032927933911,
+      0.12756387559098792,
+      0.09206849677670587
+    ],
+    "explained_variance_ratio_all": [
+      0.1624912129492444,
+      0.1429032927933911,
+      0.12756387559098792,
+      0.09206849677670587,
+      0.08259286295864142,
+      0.07311608775036815,
+      0.06691352080188709,
+      0.053904523015266465,
+      0.049349433464277774,
+      0.04696701583243566,
+      0.04095245046184065,
+      0.03324795509679815,
+      0.02766945024680947,
+      0.00020320683993683503,
+      3.3128600480766726e-05,
+      2.348682092833469e-05
+    ],
+    "cumulative_variance": 0.5250268781103293,
+    "eigenvalues": [
+      1.375595801191892,
+      1.2097710760795848,
+      1.0799127439681278,
+      0.7794208393757626,
+      0.6992033195654277,
+      0.6189761371305713,
+      0.5664672974457615,
+      0.45633751006716866,
+      0.41777565834199054,
+      0.3976069142507564,
+      0.34668963251214946,
+      0.28146597344718005,
+      0.2342402329945563,
+      0.001720280566050652,
+      0.0002804555575256928,
+      0.00019883150396849382
+    ],
+    "null_p95": [
+      0.8545878757064161,
+      0.797987198889248,
+      0.7728181615307321,
+      0.738573572209987,
+      0.7146728036843114,
+      0.6847773997747455,
+      0.6615823216071599,
+      0.6469292237204897,
+      0.6180944502763043,
+      0.5949396880444102,
+      0.5743069025247944,
+      0.5364342072826424,
+      0.50450817790436,
+      0.0019802999774950693,
+      0.00028764533556066156,
+      0.0002404010119078129
+    ],
+    "retained": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "loadings": [
+      {
+        "feature": "fast__apex_speed_rel",
+        "PC1": -0.2819485886007832,
+        "PC2": 0.1368924075201101,
+        "PC3": -0.39730141227728266,
+        "PC4": -0.24401355281530193
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "PC1": -0.2456724804832428,
+        "PC2": 0.5052517740276321,
+        "PC3": -0.10905542562880853,
+        "PC4": -0.08391810994254892
+      },
+      {
+        "feature": "slow__apex_speed_rel",
+        "PC1": -0.332256666332571,
+        "PC2": 0.2770725701821369,
+        "PC3": -0.12771742865486577,
+        "PC4": -0.362182378936106
+      },
+      {
+        "feature": "medium__brake_point_rel",
+        "PC1": 0.1896310053817903,
+        "PC2": -0.055945680924346375,
+        "PC3": 0.10647039413559571,
+        "PC4": 0.34668330097511996
+      },
+      {
+        "feature": "slow__brake_point_rel",
+        "PC1": 0.11162561118545394,
+        "PC2": -0.3876446683502489,
+        "PC3": -0.15889435468345275,
+        "PC4": -0.0647050018264969
+      },
+      {
+        "feature": "fast__coast_frac",
+        "PC1": -0.0023119467866507325,
+        "PC2": 0.002753028296848505,
+        "PC3": 0.0009500224401671227,
+        "PC4": 0.002383578109439373
+      },
+      {
+        "feature": "medium__coast_frac",
+        "PC1": -0.3949860099542107,
+        "PC2": 0.07601166903989445,
+        "PC3": 0.5160898552660436,
+        "PC4": 0.15585086808431664
+      },
+      {
+        "feature": "slow__coast_frac",
+        "PC1": -0.30745546114655015,
+        "PC2": 0.047723643059196366,
+        "PC3": 0.48371490766764713,
+        "PC4": 0.16741601257552788
+      },
+      {
+        "feature": "fast__full_throttle_frac",
+        "PC1": -3.440864881232375e-05,
+        "PC2": 3.525369093162108e-05,
+        "PC3": -0.0006240529199964863,
+        "PC4": -0.0007269383313244135
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "PC1": -0.34162140851957273,
+        "PC2": -0.03810665751353971,
+        "PC3": -0.38983576644122875,
+        "PC4": 0.4696276650184445
+      },
+      {
+        "feature": "slow__full_throttle_frac",
+        "PC1": -0.21877707594433457,
+        "PC2": -0.31098167806633276,
+        "PC3": -0.15450125609499513,
+        "PC4": 0.07079926525452197
+      },
+      {
+        "feature": "medium__throttle_attack",
+        "PC1": 0.2468121088619084,
+        "PC2": 0.08948883807899848,
+        "PC3": 0.2785420849233612,
+        "PC4": -0.46109403037762337
+      },
+      {
+        "feature": "slow__throttle_attack",
+        "PC1": 0.023396804207011287,
+        "PC2": 0.29617570473929267,
+        "PC3": 0.0032923783538733806,
+        "PC4": 0.33911124856809244
+      },
+      {
+        "feature": "fast__trail_brake_frac",
+        "PC1": 0.009313067216986656,
+        "PC2": 0.00012856254554870604,
+        "PC3": -0.007261510882877097,
+        "PC4": -0.0010638154982167448
+      },
+      {
+        "feature": "medium__trail_brake_frac",
+        "PC1": 0.4003670351456391,
+        "PC2": 0.3402324914901796,
+        "PC3": -0.15145916753791608,
+        "PC4": 0.24304219949976666
+      },
+      {
+        "feature": "slow__trail_brake_frac",
+        "PC1": 0.25372123264317487,
+        "PC2": 0.42202193017245687,
+        "PC3": -0.024526562302639637,
+        "PC4": 0.1153330944569751
+      }
+    ],
+    "loading_intervals": [
+      {
+        "feature": "fast__apex_speed_rel",
+        "component": "PC1",
+        "loading": -0.2819485886007832,
+        "low": -0.42665195402738254,
+        "high": -0.11608514428253966
+      },
+      {
+        "feature": "fast__apex_speed_rel",
+        "component": "PC2",
+        "loading": 0.1368924075201101,
+        "low": -0.14698932259316322,
+        "high": 0.3678988128058514
+      },
+      {
+        "feature": "fast__apex_speed_rel",
+        "component": "PC3",
+        "loading": -0.39730141227728266,
+        "low": -0.48941263273466484,
+        "high": -0.24824995090884386
+      },
+      {
+        "feature": "fast__apex_speed_rel",
+        "component": "PC4",
+        "loading": -0.24401355281530193,
+        "low": -0.4518728290639738,
+        "high": 0.06204150140647688
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "component": "PC1",
+        "loading": -0.2456724804832428,
+        "low": -0.45096453947160364,
+        "high": 0.08721767904314306
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "component": "PC2",
+        "loading": 0.5052517740276321,
+        "low": 0.2871537932857472,
+        "high": 0.5741193753398849
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "component": "PC3",
+        "loading": -0.10905542562880853,
+        "low": -0.3709121295126529,
+        "high": 0.1473812234096782
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "component": "PC4",
+        "loading": -0.08391810994254892,
+        "low": -0.17087811657660484,
+        "high": 0.040050668456517696
+      },
+      {
+        "feature": "slow__apex_speed_rel",
+        "component": "PC1",
+        "loading": -0.332256666332571,
+        "low": -0.44773755894873846,
+        "high": -0.13599651343907873
+      },
+      {
+        "feature": "slow__apex_speed_rel",
+        "component": "PC2",
+        "loading": 0.2770725701821369,
+        "low": 0.0669204947617736,
+        "high": 0.4238306230153505
+      },
+      {
+        "feature": "slow__apex_speed_rel",
+        "component": "PC3",
+        "loading": -0.12771742865486577,
+        "low": -0.3012285174390205,
+        "high": 0.04256308814591747
+      },
+      {
+        "feature": "slow__apex_speed_rel",
+        "component": "PC4",
+        "loading": -0.362182378936106,
+        "low": -0.4874443741155842,
+        "high": -0.06361624098305681
+      },
+      {
+        "feature": "medium__brake_point_rel",
+        "component": "PC1",
+        "loading": 0.1896310053817903,
+        "low": 0.07510251735408399,
+        "high": 0.27152470952796925
+      },
+      {
+        "feature": "medium__brake_point_rel",
+        "component": "PC2",
+        "loading": -0.055945680924346375,
+        "low": -0.17759567434865198,
+        "high": 0.09530588319987403
+      },
+      {
+        "feature": "medium__brake_point_rel",
+        "component": "PC3",
+        "loading": 0.10647039413559571,
+        "low": -0.04942986973255982,
+        "high": 0.22172807461981142
+      },
+      {
+        "feature": "medium__brake_point_rel",
+        "component": "PC4",
+        "loading": 0.34668330097511996,
+        "low": -0.05157479996494196,
+        "high": 0.5892054299592593
+      },
+      {
+        "feature": "slow__brake_point_rel",
+        "component": "PC1",
+        "loading": 0.11162561118545394,
+        "low": -0.1261514511561424,
+        "high": 0.27935273771947955
+      },
+      {
+        "feature": "slow__brake_point_rel",
+        "component": "PC2",
+        "loading": -0.3876446683502489,
+        "low": -0.45780575476610824,
+        "high": -0.19692672834080766
+      },
+      {
+        "feature": "slow__brake_point_rel",
+        "component": "PC3",
+        "loading": -0.15889435468345275,
+        "low": -0.33899629227845457,
+        "high": 0.10478968725479555
+      },
+      {
+        "feature": "slow__brake_point_rel",
+        "component": "PC4",
+        "loading": -0.0647050018264969,
+        "low": -0.43675738267912273,
+        "high": 0.4578572038481772
+      },
+      {
+        "feature": "fast__coast_frac",
+        "component": "PC1",
+        "loading": -0.0023119467866507325,
+        "low": -0.0034498753025379225,
+        "high": -0.00043197166243733254
+      },
+      {
+        "feature": "fast__coast_frac",
+        "component": "PC2",
+        "loading": 0.002753028296848505,
+        "low": 0.0008960929077189194,
+        "high": 0.0043752158507421625
+      },
+      {
+        "feature": "fast__coast_frac",
+        "component": "PC3",
+        "loading": 0.0009500224401671227,
+        "low": -0.0012998493981045615,
+        "high": 0.002703176835323949
+      },
+      {
+        "feature": "fast__coast_frac",
+        "component": "PC4",
+        "loading": 0.002383578109439373,
+        "low": -0.0006593346717960107,
+        "high": 0.004295405179498837
+      },
+      {
+        "feature": "medium__coast_frac",
+        "component": "PC1",
+        "loading": -0.3949860099542107,
+        "low": -0.49360511289521264,
+        "high": -0.17345858085977559
+      },
+      {
+        "feature": "medium__coast_frac",
+        "component": "PC2",
+        "loading": 0.07601166903989445,
+        "low": -0.21145350363301674,
+        "high": 0.3940079639236832
+      },
+      {
+        "feature": "medium__coast_frac",
+        "component": "PC3",
+        "loading": 0.5160898552660436,
+        "low": 0.30385360231129355,
+        "high": 0.6174217973241682
+      },
+      {
+        "feature": "medium__coast_frac",
+        "component": "PC4",
+        "loading": 0.15585086808431664,
+        "low": -0.013635956746656649,
+        "high": 0.29573852429038466
+      },
+      {
+        "feature": "slow__coast_frac",
+        "component": "PC1",
+        "loading": -0.30745546114655015,
+        "low": -0.41884132449685574,
+        "high": -0.10845649164236544
+      },
+      {
+        "feature": "slow__coast_frac",
+        "component": "PC2",
+        "loading": 0.047723643059196366,
+        "low": -0.2370220206671203,
+        "high": 0.3515555297402572
+      },
+      {
+        "feature": "slow__coast_frac",
+        "component": "PC3",
+        "loading": 0.48371490766764713,
+        "low": 0.3279649830671258,
+        "high": 0.5591874598564878
+      },
+      {
+        "feature": "slow__coast_frac",
+        "component": "PC4",
+        "loading": 0.16741601257552788,
+        "low": -0.07756327288092293,
+        "high": 0.3299510874926665
+      },
+      {
+        "feature": "fast__full_throttle_frac",
+        "component": "PC1",
+        "loading": -3.440864881232375e-05,
+        "low": -0.00044135944002049107,
+        "high": 0.0003002320960218021
+      },
+      {
+        "feature": "fast__full_throttle_frac",
+        "component": "PC2",
+        "loading": 3.525369093162108e-05,
+        "low": -0.0006861641303084654,
+        "high": 0.0008324044283781192
+      },
+      {
+        "feature": "fast__full_throttle_frac",
+        "component": "PC3",
+        "loading": -0.0006240529199964863,
+        "low": -0.001155501329933093,
+        "high": -9.453509764855324e-05
+      },
+      {
+        "feature": "fast__full_throttle_frac",
+        "component": "PC4",
+        "loading": -0.0007269383313244135,
+        "low": -0.001980468109816767,
+        "high": 0.00014764232892101433
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "component": "PC1",
+        "loading": -0.34162140851957273,
+        "low": -0.4420848058112272,
+        "high": -0.19902222210078716
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "component": "PC2",
+        "loading": -0.03810665751353971,
+        "low": -0.2997637096071425,
+        "high": 0.2166253235798768
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "component": "PC3",
+        "loading": -0.38983576644122875,
+        "low": -0.5102668082229056,
+        "high": -0.19872645245371834
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "component": "PC4",
+        "loading": 0.4696276650184445,
+        "low": 0.19084534338665846,
+        "high": 0.5397265926078678
+      },
+      {
+        "feature": "slow__full_throttle_frac",
+        "component": "PC1",
+        "loading": -0.21877707594433457,
+        "low": -0.36119817541744403,
+        "high": -0.03289480608117377
+      },
+      {
+        "feature": "slow__full_throttle_frac",
+        "component": "PC2",
+        "loading": -0.31098167806633276,
+        "low": -0.41661804436940547,
+        "high": -0.09801407264250472
+      },
+      {
+        "feature": "slow__full_throttle_frac",
+        "component": "PC3",
+        "loading": -0.15450125609499513,
+        "low": -0.2757198503656938,
+        "high": 0.03672692062585208
+      },
+      {
+        "feature": "slow__full_throttle_frac",
+        "component": "PC4",
+        "loading": 0.07079926525452197,
+        "low": -0.06823521575919621,
+        "high": 0.17275752715668452
+      },
+      {
+        "feature": "medium__throttle_attack",
+        "component": "PC1",
+        "loading": 0.2468121088619084,
+        "low": 0.13094193210333901,
+        "high": 0.3341595426639163
+      },
+      {
+        "feature": "medium__throttle_attack",
+        "component": "PC2",
+        "loading": 0.08948883807899848,
+        "low": -0.11198793631993777,
+        "high": 0.26653010348923906
+      },
+      {
+        "feature": "medium__throttle_attack",
+        "component": "PC3",
+        "loading": 0.2785420849233612,
+        "low": 0.1308530617237058,
+        "high": 0.3859629776139356
+      },
+      {
+        "feature": "medium__throttle_attack",
+        "component": "PC4",
+        "loading": -0.46109403037762337,
+        "low": -0.5262833834668259,
+        "high": -0.2146838624579966
+      },
+      {
+        "feature": "slow__throttle_attack",
+        "component": "PC1",
+        "loading": 0.023396804207011287,
+        "low": -0.13716741549500888,
+        "high": 0.18535220260538718
+      },
+      {
+        "feature": "slow__throttle_attack",
+        "component": "PC2",
+        "loading": 0.29617570473929267,
+        "low": 0.18149288871860192,
+        "high": 0.37406918497932246
+      },
+      {
+        "feature": "slow__throttle_attack",
+        "component": "PC3",
+        "loading": 0.0032923783538733806,
+        "low": -0.19466450338540195,
+        "high": 0.15618007100705486
+      },
+      {
+        "feature": "slow__throttle_attack",
+        "component": "PC4",
+        "loading": 0.33911124856809244,
+        "low": -0.04642428209379872,
+        "high": 0.5673400461394771
+      },
+      {
+        "feature": "fast__trail_brake_frac",
+        "component": "PC1",
+        "loading": 0.009313067216986656,
+        "low": 0.004900018865739414,
+        "high": 0.012719073588928565
+      },
+      {
+        "feature": "fast__trail_brake_frac",
+        "component": "PC2",
+        "loading": 0.00012856254554870604,
+        "low": -0.006914059121543312,
+        "high": 0.004676205650134457
+      },
+      {
+        "feature": "fast__trail_brake_frac",
+        "component": "PC3",
+        "loading": -0.007261510882877097,
+        "low": -0.011236003684400368,
+        "high": -0.00303544008010941
+      },
+      {
+        "feature": "fast__trail_brake_frac",
+        "component": "PC4",
+        "loading": -0.0010638154982167448,
+        "low": -0.006129823681178832,
+        "high": 0.0039723660239027216
+      },
+      {
+        "feature": "medium__trail_brake_frac",
+        "component": "PC1",
+        "loading": 0.4003670351456391,
+        "low": 0.17145461162178888,
+        "high": 0.5287901817397912
+      },
+      {
+        "feature": "medium__trail_brake_frac",
+        "component": "PC2",
+        "loading": 0.3402324914901796,
+        "low": 0.05618938334261002,
+        "high": 0.47275588181369427
+      },
+      {
+        "feature": "medium__trail_brake_frac",
+        "component": "PC3",
+        "loading": -0.15145916753791608,
+        "low": -0.3255841044445894,
+        "high": 0.09214281045281887
+      },
+      {
+        "feature": "medium__trail_brake_frac",
+        "component": "PC4",
+        "loading": 0.24304219949976666,
+        "low": 0.07315754129501871,
+        "high": 0.341863430165811
+      },
+      {
+        "feature": "slow__trail_brake_frac",
+        "component": "PC1",
+        "loading": 0.25372123264317487,
+        "low": 0.013886613097559867,
+        "high": 0.45605965407042703
+      },
+      {
+        "feature": "slow__trail_brake_frac",
+        "component": "PC2",
+        "loading": 0.42202193017245687,
+        "low": 0.18592925188926124,
+        "high": 0.504156143366331
+      },
+      {
+        "feature": "slow__trail_brake_frac",
+        "component": "PC3",
+        "loading": -0.024526562302639637,
+        "low": -0.248617954132784,
+        "high": 0.17812180821075968
+      },
+      {
+        "feature": "slow__trail_brake_frac",
+        "component": "PC4",
+        "loading": 0.1153330944569751,
+        "low": -0.07789666009190309,
+        "high": 0.25963581810760694
+      }
+    ],
+    "axes": [
+      {
+        "feature": "medium__trail_brake_frac",
+        "loading": 0.4003670351456391,
+        "sign": 1,
+        "component": "PC1"
+      },
+      {
+        "feature": "medium__apex_speed_rel",
+        "loading": 0.5052517740276321,
+        "sign": 1,
+        "component": "PC2"
+      },
+      {
+        "feature": "medium__coast_frac",
+        "loading": 0.5160898552660436,
+        "sign": 1,
+        "component": "PC3"
+      },
+      {
+        "feature": "medium__full_throttle_frac",
+        "loading": 0.4696276650184445,
+        "sign": 1,
+        "component": "PC4"
+      }
+    ],
+    "profiles": [
+      {
+        "Driver": "ALB",
+        "component": "PC1",
+        "n": 21,
+        "median": 1.1862777444789336,
+        "low": 0.4888377785139375,
+        "high": 1.4799749027284514,
+        "n_by_compound": {
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ALB",
+        "component": "PC2",
+        "n": 21,
+        "median": -0.21907408391319197,
+        "low": -0.7937083051543385,
+        "high": 0.041651078835270444,
+        "n_by_compound": {
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ALB",
+        "component": "PC3",
+        "n": 21,
+        "median": 0.21425623771563693,
+        "low": 0.02705413434629621,
+        "high": 0.6156761345697734,
+        "n_by_compound": {
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ALB",
+        "component": "PC4",
+        "n": 21,
+        "median": -1.4472160881328426,
+        "low": -1.6977945313135354,
+        "high": -1.1357198831753597,
+        "n_by_compound": {
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ALO",
+        "component": "PC1",
+        "n": 53,
+        "median": -0.35723388040966936,
+        "low": -0.7913371760400121,
+        "high": -0.016663819880445328,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 28
+        }
+      },
+      {
+        "Driver": "ALO",
+        "component": "PC2",
+        "n": 53,
+        "median": -1.253498186385032,
+        "low": -1.617824495904086,
+        "high": -0.8167577233544316,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 28
+        }
+      },
+      {
+        "Driver": "ALO",
+        "component": "PC3",
+        "n": 53,
+        "median": -0.4292955076779412,
+        "low": -0.6958797127676272,
+        "high": -0.07319397317894853,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 28
+        }
+      },
+      {
+        "Driver": "ALO",
+        "component": "PC4",
+        "n": 53,
+        "median": 0.5226010200855059,
+        "low": 0.12956718577959625,
+        "high": 0.7713137305489772,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 28
+        }
+      },
+      {
+        "Driver": "ANT",
+        "component": "PC1",
+        "n": 46,
+        "median": -1.0218154465443103,
+        "low": -1.2844744563090318,
+        "high": -0.6023987126406654,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ANT",
+        "component": "PC2",
+        "n": 46,
+        "median": 0.5869087307675047,
+        "low": 0.27929482498066033,
+        "high": 0.9324622793077363,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ANT",
+        "component": "PC3",
+        "n": 46,
+        "median": 0.2649230194247596,
+        "low": -0.0009995928660887089,
+        "high": 0.645999270601594,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "ANT",
+        "component": "PC4",
+        "n": 46,
+        "median": -0.05022182832061593,
+        "low": -0.2506707729797194,
+        "high": 0.193005126719449,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "BEA",
+        "component": "PC1",
+        "n": 52,
+        "median": 0.6266781742191943,
+        "low": 0.35363047662522684,
+        "high": 0.8642678475455148,
+        "n_by_compound": {
+          "MEDIUM": 40,
+          "SOFT": 12
+        }
+      },
+      {
+        "Driver": "BEA",
+        "component": "PC2",
+        "n": 52,
+        "median": -0.30024053061579836,
+        "low": -0.6629496143043773,
+        "high": -0.02715676531209734,
+        "n_by_compound": {
+          "MEDIUM": 40,
+          "SOFT": 12
+        }
+      },
+      {
+        "Driver": "BEA",
+        "component": "PC3",
+        "n": 52,
+        "median": 0.13159912977668187,
+        "low": -0.0861901200896706,
+        "high": 0.37295988830746185,
+        "n_by_compound": {
+          "MEDIUM": 40,
+          "SOFT": 12
+        }
+      },
+      {
+        "Driver": "BEA",
+        "component": "PC4",
+        "n": 52,
+        "median": -0.5756044324493594,
+        "low": -0.8101174505688022,
+        "high": -0.17494757976637582,
+        "n_by_compound": {
+          "MEDIUM": 40,
+          "SOFT": 12
+        }
+      },
+      {
+        "Driver": "BOR",
+        "component": "PC1",
+        "n": 54,
+        "median": 0.8894724602875271,
+        "low": 0.6990235759578567,
+        "high": 1.2229726703417958,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 26
+        }
+      },
+      {
+        "Driver": "BOR",
+        "component": "PC2",
+        "n": 54,
+        "median": -0.565399699886113,
+        "low": -0.9374518261390813,
+        "high": -0.154745805630445,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 26
+        }
+      },
+      {
+        "Driver": "BOR",
+        "component": "PC3",
+        "n": 54,
+        "median": 0.1308547485222472,
+        "low": -0.08494467536714935,
+        "high": 0.5200261548821046,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 26
+        }
+      },
+      {
+        "Driver": "BOR",
+        "component": "PC4",
+        "n": 54,
+        "median": 0.7753968877352352,
+        "low": 0.5241688619543048,
+        "high": 1.118704767967083,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 26
+        }
+      },
+      {
+        "Driver": "COL",
+        "component": "PC1",
+        "n": 52,
+        "median": 0.22008852055801503,
+        "low": 0.02510655102879582,
+        "high": 0.5211156529651257,
+        "n_by_compound": {
+          "MEDIUM": 23,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "COL",
+        "component": "PC2",
+        "n": 52,
+        "median": -0.21988868044155338,
+        "low": -0.4285703598917186,
+        "high": 0.04705104797251347,
+        "n_by_compound": {
+          "MEDIUM": 23,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "COL",
+        "component": "PC3",
+        "n": 52,
+        "median": 1.4651678545378002,
+        "low": 1.2914884244482678,
+        "high": 1.7498754631998181,
+        "n_by_compound": {
+          "MEDIUM": 23,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "COL",
+        "component": "PC4",
+        "n": 52,
+        "median": 0.02128841856076415,
+        "low": -0.1633827524930625,
+        "high": 0.3942365123626292,
+        "n_by_compound": {
+          "MEDIUM": 23,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "GAS",
+        "component": "PC1",
+        "n": 54,
+        "median": -0.41702788879381825,
+        "low": -0.6901341605049889,
+        "high": -0.2028106664820409,
+        "n_by_compound": {
+          "MEDIUM": 21,
+          "SOFT": 33
+        }
+      },
+      {
+        "Driver": "GAS",
+        "component": "PC2",
+        "n": 54,
+        "median": -0.18126181172810663,
+        "low": -0.5431703970956798,
+        "high": 0.14218241312171565,
+        "n_by_compound": {
+          "MEDIUM": 21,
+          "SOFT": 33
+        }
+      },
+      {
+        "Driver": "GAS",
+        "component": "PC3",
+        "n": 54,
+        "median": 0.3820467585089061,
+        "low": 0.14452728382407684,
+        "high": 0.5482018201769464,
+        "n_by_compound": {
+          "MEDIUM": 21,
+          "SOFT": 33
+        }
+      },
+      {
+        "Driver": "GAS",
+        "component": "PC4",
+        "n": 54,
+        "median": -0.11216794864449131,
+        "low": -0.35677851598787014,
+        "high": 0.07494423097742595,
+        "n_by_compound": {
+          "MEDIUM": 21,
+          "SOFT": 33
+        }
+      },
+      {
+        "Driver": "HAD",
+        "component": "PC1",
+        "n": 54,
+        "median": -0.8285748021678108,
+        "low": -1.0628136219297426,
+        "high": -0.38927101446302026,
+        "n_by_compound": {
+          "MEDIUM": 27,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAD",
+        "component": "PC2",
+        "n": 54,
+        "median": -0.38220929595310493,
+        "low": -0.6775976110413473,
+        "high": -0.014205313492070711,
+        "n_by_compound": {
+          "MEDIUM": 27,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAD",
+        "component": "PC3",
+        "n": 54,
+        "median": -0.11404017963891558,
+        "low": -0.3103502503032055,
+        "high": 0.16499141224119301,
+        "n_by_compound": {
+          "MEDIUM": 27,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAD",
+        "component": "PC4",
+        "n": 54,
+        "median": -0.019737754166131747,
+        "low": -0.20322632903833177,
+        "high": 0.12835114723968272,
+        "n_by_compound": {
+          "MEDIUM": 27,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAM",
+        "component": "PC1",
+        "n": 55,
+        "median": 0.5432752591626611,
+        "low": 0.2301164532112476,
+        "high": 0.9712752572629096,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAM",
+        "component": "PC2",
+        "n": 55,
+        "median": 0.8945834745408966,
+        "low": 0.6931777760235958,
+        "high": 1.0265065341800896,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAM",
+        "component": "PC3",
+        "n": 55,
+        "median": -0.6884311220610839,
+        "low": -1.0004074692722251,
+        "high": -0.3805734255175167,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HAM",
+        "component": "PC4",
+        "n": 55,
+        "median": -0.2383565309264198,
+        "low": -0.5640100686218751,
+        "high": -0.02908350702240863,
+        "n_by_compound": {
+          "MEDIUM": 28,
+          "SOFT": 27
+        }
+      },
+      {
+        "Driver": "HUL",
+        "component": "PC1",
+        "n": 54,
+        "median": 0.03153647808327212,
+        "low": -0.19789151320608198,
+        "high": 0.3680959910528936,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 20
+        }
+      },
+      {
+        "Driver": "HUL",
+        "component": "PC2",
+        "n": 54,
+        "median": -0.2618051740954336,
+        "low": -0.4339443641970995,
+        "high": -0.015577403551371712,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 20
+        }
+      },
+      {
+        "Driver": "HUL",
+        "component": "PC3",
+        "n": 54,
+        "median": 0.5113532230591038,
+        "low": 0.13835670764115954,
+        "high": 0.8769720330080075,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 20
+        }
+      },
+      {
+        "Driver": "HUL",
+        "component": "PC4",
+        "n": 54,
+        "median": 0.24689788442851324,
+        "low": -0.011513778217748995,
+        "high": 0.45934679129959344,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 20
+        }
+      },
+      {
+        "Driver": "LAW",
+        "component": "PC1",
+        "n": 53,
+        "median": -0.6333911737304174,
+        "low": -0.9059794284743938,
+        "high": -0.3410675850261835,
+        "n_by_compound": {
+          "MEDIUM": 24,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "LAW",
+        "component": "PC2",
+        "n": 53,
+        "median": -0.8081744049065105,
+        "low": -1.2419418199278343,
+        "high": -0.3174033497264627,
+        "n_by_compound": {
+          "MEDIUM": 24,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "LAW",
+        "component": "PC3",
+        "n": 53,
+        "median": 0.1548748480731268,
+        "low": 0.01302428717415458,
+        "high": 0.3576466189320688,
+        "n_by_compound": {
+          "MEDIUM": 24,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "LAW",
+        "component": "PC4",
+        "n": 53,
+        "median": -0.23912836319767333,
+        "low": -0.6480891885214058,
+        "high": -0.0566864982878168,
+        "n_by_compound": {
+          "MEDIUM": 24,
+          "SOFT": 29
+        }
+      },
+      {
+        "Driver": "LEC",
+        "component": "PC1",
+        "n": 55,
+        "median": 0.8010712095955476,
+        "low": 0.5807756684062401,
+        "high": 1.0344050196896517,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "LEC",
+        "component": "PC2",
+        "n": 55,
+        "median": 0.7107612999989714,
+        "low": 0.48015691118145376,
+        "high": 1.0522798383607121,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "LEC",
+        "component": "PC3",
+        "n": 55,
+        "median": -1.1900981994728177,
+        "low": -1.3875368759001137,
+        "high": -0.8111250901762108,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "LEC",
+        "component": "PC4",
+        "n": 55,
+        "median": -0.7055374665634497,
+        "low": -0.9940764376882293,
+        "high": -0.5776225861416281,
+        "n_by_compound": {
+          "MEDIUM": 34,
+          "SOFT": 21
+        }
+      },
+      {
+        "Driver": "NOR",
+        "component": "PC1",
+        "n": 55,
+        "median": -0.17812154709994232,
+        "low": -0.27779663840877206,
+        "high": 0.14232917984782598,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "NOR",
+        "component": "PC2",
+        "n": 55,
+        "median": 1.2146016625521794,
+        "low": 1.017127738578108,
+        "high": 1.4673123718421708,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "NOR",
+        "component": "PC3",
+        "n": 55,
+        "median": -0.25567903167527306,
+        "low": -0.4166098268474232,
+        "high": -0.015968050774670606,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "NOR",
+        "component": "PC4",
+        "n": 55,
+        "median": 0.2845608804901663,
+        "low": 0.13140338177623204,
+        "high": 0.3311356429757273,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "OCO",
+        "component": "PC1",
+        "n": 54,
+        "median": 1.1677204212774104,
+        "low": 0.8403543965699514,
+        "high": 1.6770618008248113,
+        "n_by_compound": {
+          "MEDIUM": 36,
+          "SOFT": 18
+        }
+      },
+      {
+        "Driver": "OCO",
+        "component": "PC2",
+        "n": 54,
+        "median": -0.21868441043660453,
+        "low": -0.5987878394481622,
+        "high": 0.09676090678359008,
+        "n_by_compound": {
+          "MEDIUM": 36,
+          "SOFT": 18
+        }
+      },
+      {
+        "Driver": "OCO",
+        "component": "PC3",
+        "n": 54,
+        "median": -0.9074361559532346,
+        "low": -1.404523725791096,
+        "high": -0.7046012858058573,
+        "n_by_compound": {
+          "MEDIUM": 36,
+          "SOFT": 18
+        }
+      },
+      {
+        "Driver": "OCO",
+        "component": "PC4",
+        "n": 54,
+        "median": 0.07989193897370037,
+        "low": -0.30342040477128784,
+        "high": 0.3804935328058543,
+        "n_by_compound": {
+          "MEDIUM": 36,
+          "SOFT": 18
+        }
+      },
+      {
+        "Driver": "PIA",
+        "component": "PC1",
+        "n": 55,
+        "median": -0.7066391916539154,
+        "low": -0.9627643246341787,
+        "high": -0.5416308452893072,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "PIA",
+        "component": "PC2",
+        "n": 55,
+        "median": 0.8515828081635886,
+        "low": 0.7213269058730054,
+        "high": 1.1560484046307782,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "PIA",
+        "component": "PC3",
+        "n": 55,
+        "median": 0.29970019597398734,
+        "low": 0.04647343551373637,
+        "high": 0.3731771003081584,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "PIA",
+        "component": "PC4",
+        "n": 55,
+        "median": -0.017658947696310177,
+        "low": -0.22374583005252227,
+        "high": 0.2246260826546083,
+        "n_by_compound": {
+          "MEDIUM": 25,
+          "SOFT": 30
+        }
+      },
+      {
+        "Driver": "RUS",
+        "component": "PC1",
+        "n": 55,
+        "median": -1.0043675795793512,
+        "low": -1.1938736727072068,
+        "high": -0.7516555850835213,
+        "n_by_compound": {
+          "MEDIUM": 19,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "RUS",
+        "component": "PC2",
+        "n": 55,
+        "median": 0.29786385331244664,
+        "low": 0.15084254537134442,
+        "high": 0.48489156759306656,
+        "n_by_compound": {
+          "MEDIUM": 19,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "RUS",
+        "component": "PC3",
+        "n": 55,
+        "median": -0.21129951118324528,
+        "low": -0.5771502151532936,
+        "high": -0.11255840957169072,
+        "n_by_compound": {
+          "MEDIUM": 19,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "RUS",
+        "component": "PC4",
+        "n": 55,
+        "median": -0.05750844069388645,
+        "low": -0.2650532945618269,
+        "high": 0.18216079749977762,
+        "n_by_compound": {
+          "MEDIUM": 19,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "SAI",
+        "component": "PC1",
+        "n": 54,
+        "median": 0.6861091593607174,
+        "low": 0.4836043566119378,
+        "high": 1.1281005880562562,
+        "n_by_compound": {
+          "MEDIUM": 18,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "SAI",
+        "component": "PC2",
+        "n": 54,
+        "median": 0.4164307890875313,
+        "low": 0.21307088989388248,
+        "high": 0.7195725179066759,
+        "n_by_compound": {
+          "MEDIUM": 18,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "SAI",
+        "component": "PC3",
+        "n": 54,
+        "median": 0.574871354811377,
+        "low": 0.32894628391708547,
+        "high": 0.8353063451030086,
+        "n_by_compound": {
+          "MEDIUM": 18,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "SAI",
+        "component": "PC4",
+        "n": 54,
+        "median": -0.44324254093131693,
+        "low": -0.6441147476281998,
+        "high": -0.24607789770592234,
+        "n_by_compound": {
+          "MEDIUM": 18,
+          "SOFT": 36
+        }
+      },
+      {
+        "Driver": "TSU",
+        "component": "PC1",
+        "n": 52,
+        "median": -0.16612085955341377,
+        "low": -0.4804031398583123,
+        "high": 0.061343672266205795,
+        "n_by_compound": {
+          "MEDIUM": 6,
+          "SOFT": 46
+        }
+      },
+      {
+        "Driver": "TSU",
+        "component": "PC2",
+        "n": 52,
+        "median": -0.9915621980577081,
+        "low": -1.3140701956136849,
+        "high": -0.5075979481868523,
+        "n_by_compound": {
+          "MEDIUM": 6,
+          "SOFT": 46
+        }
+      },
+      {
+        "Driver": "TSU",
+        "component": "PC3",
+        "n": 52,
+        "median": 0.5785642549198456,
+        "low": 0.24202899814474937,
+        "high": 0.9085333955922129,
+        "n_by_compound": {
+          "MEDIUM": 6,
+          "SOFT": 46
+        }
+      },
+      {
+        "Driver": "TSU",
+        "component": "PC4",
+        "n": 52,
+        "median": 0.327211363000221,
+        "low": 0.10607055311273023,
+        "high": 0.5968232186977976,
+        "n_by_compound": {
+          "MEDIUM": 6,
+          "SOFT": 46
+        }
+      },
+      {
+        "Driver": "VER",
+        "component": "PC1",
+        "n": 52,
+        "median": -0.9642142070207214,
+        "low": -1.110719192561798,
+        "high": -0.5840835005067653,
+        "n_by_compound": {
+          "HARD": 5,
+          "MEDIUM": 16,
+          "SOFT": 31
+        }
+      },
+      {
+        "Driver": "VER",
+        "component": "PC2",
+        "n": 52,
+        "median": 0.3133334778384912,
+        "low": 0.019380152209700574,
+        "high": 0.5576673090870785,
+        "n_by_compound": {
+          "HARD": 5,
+          "MEDIUM": 16,
+          "SOFT": 31
+        }
+      },
+      {
+        "Driver": "VER",
+        "component": "PC3",
+        "n": 52,
+        "median": -0.7896366364761142,
+        "low": -1.0891192937530363,
+        "high": -0.5773479608148034,
+        "n_by_compound": {
+          "HARD": 5,
+          "MEDIUM": 16,
+          "SOFT": 31
+        }
+      },
+      {
+        "Driver": "VER",
+        "component": "PC4",
+        "n": 52,
+        "median": 1.1544922075649793,
+        "low": 0.9516000525977972,
+        "high": 1.3620155213933087,
+        "n_by_compound": {
+          "HARD": 5,
+          "MEDIUM": 16,
+          "SOFT": 31
+        }
+      }
+    ],
+    "teammates": {
+      "n_pairs": 9,
+      "mean_distance": 1.1195174968971715,
+      "null_p05": 1.557770415663973,
+      "percentile": 0.0,
+      "closer": true,
+      "n_perm": 50,
+      "pairs": [
+        {
+          "TeamName": "Alpine",
+          "driver_a": "COL",
+          "driver_b": "GAS",
+          "distance": 1.2642670859681648
+        },
+        {
+          "TeamName": "Ferrari",
+          "driver_a": "HAM",
+          "driver_b": "LEC",
+          "distance": 0.755100805915633
+        },
+        {
+          "TeamName": "Haas F1 Team",
+          "driver_a": "BEA",
+          "driver_b": "OCO",
+          "distance": 1.3448598186358063
+        },
+        {
+          "TeamName": "Kick Sauber",
+          "driver_a": "BOR",
+          "driver_b": "HUL",
+          "distance": 1.119068394367351
+        },
+        {
+          "TeamName": "McLaren",
+          "driver_a": "NOR",
+          "driver_b": "PIA",
+          "distance": 0.9004979179875082
+        },
+        {
+          "TeamName": "Mercedes",
+          "driver_a": "ANT",
+          "driver_b": "RUS",
+          "distance": 0.557397849496396
+        },
+        {
+          "TeamName": "Racing Bulls",
+          "driver_a": "HAD",
+          "driver_b": "LAW",
+          "distance": 0.5830870040708096
+        },
+        {
+          "TeamName": "Red Bull Racing",
+          "driver_a": "TSU",
+          "driver_b": "VER",
+          "distance": 2.2127071634639432
+        },
+        {
+          "TeamName": "Williams",
+          "driver_a": "ALB",
+          "driver_b": "SAI",
+          "distance": 1.3386714321689293
+        }
+      ]
+    },
+    "error": null
+  },
+  "complete": true
+}

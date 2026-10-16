@@ -1,0 +1,313 @@
+event,zone_a,zone_b,wrapped,span_overlap,apex_overlap
+Abu Dhabi Grand Prix,Turn_1,Turn_2,False,True,False
+Abu Dhabi Grand Prix,Turn_2,Turn_3,False,True,False
+Abu Dhabi Grand Prix,Turn_3,Turn_4,False,True,False
+Abu Dhabi Grand Prix,Turn_4,Turn_5,False,True,False
+Abu Dhabi Grand Prix,Turn_6,Turn_7,False,True,True
+Abu Dhabi Grand Prix,Turn_7,Turn_8,False,True,False
+Abu Dhabi Grand Prix,Turn_9,Turn_10,False,True,False
+Abu Dhabi Grand Prix,Turn_10,Turn_11,False,True,False
+Abu Dhabi Grand Prix,Turn_11,Turn_12,False,True,False
+Abu Dhabi Grand Prix,Turn_12,Turn_13,False,True,True
+Abu Dhabi Grand Prix,Turn_13,Turn_14,False,True,True
+Abu Dhabi Grand Prix,Turn_14,Turn_15,False,True,False
+Abu Dhabi Grand Prix,Turn_15,Turn_16,False,True,False
+Abu Dhabi Grand Prix,Turn_16,Turn_1,True,True,False
+Australian Grand Prix,Turn_1,Turn_2,False,True,True
+Australian Grand Prix,Turn_3,Turn_4,False,True,False
+Australian Grand Prix,Turn_4,Turn_5,False,True,False
+Australian Grand Prix,Turn_5,Turn_6,False,True,False
+Australian Grand Prix,Turn_6,Turn_7,False,True,True
+Australian Grand Prix,Turn_7,Turn_8,False,True,False
+Australian Grand Prix,Turn_9,Turn_10,False,True,True
+Australian Grand Prix,Turn_11,Turn_12,False,True,False
+Australian Grand Prix,Turn_12,Turn_13,False,True,False
+Australian Grand Prix,Turn_13,Turn_14,False,True,False
+Austrian Grand Prix,Turn_2,Turn_3,False,True,False
+Austrian Grand Prix,Turn_4,Turn_5,False,True,False
+Austrian Grand Prix,Turn_5,Turn_6,False,True,False
+Austrian Grand Prix,Turn_6,Turn_7,False,True,False
+Austrian Grand Prix,Turn_7,Turn_8,False,True,False
+Austrian Grand Prix,Turn_8,Turn_9,False,True,False
+Austrian Grand Prix,Turn_9,Turn_10,False,True,False
+Azerbaijan Grand Prix,Turn_3,Turn_4,False,True,False
+Azerbaijan Grand Prix,Turn_4,Turn_5,False,True,False
+Azerbaijan Grand Prix,Turn_5,Turn_6,False,True,True
+Azerbaijan Grand Prix,Turn_6,Turn_7,False,True,False
+Azerbaijan Grand Prix,Turn_7,Turn_8,False,True,False
+Azerbaijan Grand Prix,Turn_8,Turn_9,False,True,True
+Azerbaijan Grand Prix,Turn_9,Turn_10,False,True,True
+Azerbaijan Grand Prix,Turn_10,Turn_11,False,True,True
+Azerbaijan Grand Prix,Turn_11,Turn_12,False,True,True
+Azerbaijan Grand Prix,Turn_12,Turn_13,False,True,False
+Azerbaijan Grand Prix,Turn_13,Turn_14,False,True,False
+Azerbaijan Grand Prix,Turn_14,Turn_15,False,True,False
+Azerbaijan Grand Prix,Turn_15,Turn_16,False,True,False
+Azerbaijan Grand Prix,Turn_16,Turn_17,False,True,False
+Azerbaijan Grand Prix,Turn_17,Turn_18,False,True,False
+Azerbaijan Grand Prix,Turn_18,Turn_19,False,True,False
+Azerbaijan Grand Prix,Turn_19,Turn_20,False,True,False
+Bahrain Grand Prix,Turn_1,Turn_2,False,True,True
+Bahrain Grand Prix,Turn_2,Turn_3,False,True,True
+Bahrain Grand Prix,Turn_3,Turn_4,False,True,False
+Bahrain Grand Prix,Turn_4,Turn_5,False,True,False
+Bahrain Grand Prix,Turn_5,Turn_6,False,True,True
+Bahrain Grand Prix,Turn_6,Turn_7,False,True,True
+Bahrain Grand Prix,Turn_7,Turn_8,False,True,False
+Bahrain Grand Prix,Turn_8,Turn_9,False,True,False
+Bahrain Grand Prix,Turn_9,Turn_10,False,True,True
+Bahrain Grand Prix,Turn_11,Turn_12,False,True,False
+Bahrain Grand Prix,Turn_12,Turn_13,False,True,False
+Bahrain Grand Prix,Turn_14,Turn_15,False,True,True
+Belgian Grand Prix,Turn_2,Turn_3,False,True,True
+Belgian Grand Prix,Turn_3,Turn_4,False,True,True
+Belgian Grand Prix,Turn_5,Turn_6,False,True,True
+Belgian Grand Prix,Turn_6,Turn_7,False,True,False
+Belgian Grand Prix,Turn_7,Turn_8,False,True,False
+Belgian Grand Prix,Turn_8,Turn_9,False,True,False
+Belgian Grand Prix,Turn_9,Turn_10,False,True,False
+Belgian Grand Prix,Turn_10,Turn_11,False,True,False
+Belgian Grand Prix,Turn_11,Turn_12,False,True,False
+Belgian Grand Prix,Turn_12,Turn_13,False,True,False
+Belgian Grand Prix,Turn_13,Turn_14,False,True,False
+Belgian Grand Prix,Turn_14,Turn_15,False,True,False
+Belgian Grand Prix,Turn_16,Turn_17,False,True,False
+Belgian Grand Prix,Turn_17,Turn_18,False,True,False
+Belgian Grand Prix,Turn_18,Turn_19,False,True,True
+Belgian Grand Prix,Turn_19,Turn_1,True,True,False
+British Grand Prix,T9_Copse,Maggotts_Becketts_Chapel,False,True,False
+Canadian Grand Prix,Turn_1,Turn_2,False,True,True
+Canadian Grand Prix,Turn_3,Turn_4,False,True,True
+Canadian Grand Prix,Turn_4,Turn_5,False,True,False
+Canadian Grand Prix,Turn_5,Turn_6,False,True,False
+Canadian Grand Prix,Turn_6,Turn_7,False,True,True
+Canadian Grand Prix,Turn_8,Turn_9,False,True,True
+Canadian Grand Prix,Turn_9,Turn_10,False,True,False
+Canadian Grand Prix,Turn_10,Turn_11,False,True,True
+Canadian Grand Prix,Turn_11,Turn_12,False,True,False
+Canadian Grand Prix,Turn_13,Turn_14,False,True,True
+Chinese Grand Prix,Turn_1,Turn_2,False,True,False
+Chinese Grand Prix,Turn_2,Turn_3,False,True,False
+Chinese Grand Prix,Turn_3,Turn_4,False,True,False
+Chinese Grand Prix,Turn_4,Turn_5,False,True,False
+Chinese Grand Prix,Turn_5,Turn_6,False,True,False
+Chinese Grand Prix,Turn_6,Turn_7,False,True,False
+Chinese Grand Prix,Turn_7,Turn_8,False,True,False
+Chinese Grand Prix,Turn_8,Turn_9,False,True,False
+Chinese Grand Prix,Turn_9,Turn_10,False,True,True
+Chinese Grand Prix,Turn_10,Turn_11,False,True,False
+Chinese Grand Prix,Turn_11,Turn_12,False,True,True
+Chinese Grand Prix,Turn_12,Turn_13,False,True,False
+Chinese Grand Prix,Turn_14,Turn_15,False,True,True
+Chinese Grand Prix,Turn_15,Turn_16,False,True,False
+Dutch Grand Prix,Turn_2,Turn_3,False,True,False
+Dutch Grand Prix,Turn_3,Turn_4,False,True,False
+Dutch Grand Prix,Turn_4,Turn_5,False,True,False
+Dutch Grand Prix,Turn_5,Turn_6,False,True,False
+Dutch Grand Prix,Turn_6,Turn_7,False,True,False
+Dutch Grand Prix,Turn_7,Turn_8,False,True,False
+Dutch Grand Prix,Turn_8,Turn_9,False,True,False
+Dutch Grand Prix,Turn_9,Turn_10,False,True,False
+Dutch Grand Prix,Turn_10,Turn_11,False,True,False
+Dutch Grand Prix,Turn_11,Turn_12,False,True,True
+Dutch Grand Prix,Turn_12,Turn_13,False,True,False
+Dutch Grand Prix,Turn_13,Turn_14,False,True,False
+Emilia Romagna Grand Prix,Turn_2,Turn_3,False,True,True
+Emilia Romagna Grand Prix,Turn_3,Turn_4,False,True,False
+Emilia Romagna Grand Prix,Turn_4,Turn_5,False,True,False
+Emilia Romagna Grand Prix,Turn_5,Turn_6,False,True,True
+Emilia Romagna Grand Prix,Turn_6,Turn_7,False,True,False
+Emilia Romagna Grand Prix,Turn_7,Turn_8,False,True,False
+Emilia Romagna Grand Prix,Turn_8,Turn_9,False,True,False
+Emilia Romagna Grand Prix,Turn_9,Turn_10,False,True,False
+Emilia Romagna Grand Prix,Turn_10,Turn_11,False,True,False
+Emilia Romagna Grand Prix,Turn_11,Turn_12,False,True,True
+Emilia Romagna Grand Prix,Turn_12,Turn_13,False,True,True
+Emilia Romagna Grand Prix,Turn_13,Turn_14,False,True,False
+Emilia Romagna Grand Prix,Turn_14,Turn_15,False,True,True
+Emilia Romagna Grand Prix,Turn_15,Turn_16,False,True,False
+Emilia Romagna Grand Prix,Turn_16,Turn_17,False,True,False
+Emilia Romagna Grand Prix,Turn_17,Turn_18,False,True,False
+Emilia Romagna Grand Prix,Turn_18,Turn_19,False,True,False
+Emilia Romagna Grand Prix,Turn_19,Turn_1,True,True,False
+Hungarian Grand Prix,Turn_1,Turn_2,False,True,False
+Hungarian Grand Prix,Turn_2,Turn_3,False,True,False
+Hungarian Grand Prix,Turn_3,Turn_4,False,True,False
+Hungarian Grand Prix,Turn_4,Turn_5,False,True,False
+Hungarian Grand Prix,Turn_5,Turn_6,False,True,False
+Hungarian Grand Prix,Turn_6,Turn_7,False,True,True
+Hungarian Grand Prix,Turn_7,Turn_8,False,True,False
+Hungarian Grand Prix,Turn_8,Turn_9,False,True,False
+Hungarian Grand Prix,Turn_9,Turn_10,False,True,False
+Hungarian Grand Prix,Turn_10,Turn_11,False,True,False
+Hungarian Grand Prix,Turn_11,Turn_12,False,True,False
+Hungarian Grand Prix,Turn_12,Turn_13,False,True,False
+Hungarian Grand Prix,Turn_13,Turn_14,False,True,False
+Italian Grand Prix,T4_Variante_della_Roggia,T6_Curva_di_Lesmo,False,True,False
+Italian Grand Prix,T6_Curva_di_Lesmo,T7_Seconda_di_Lesmo,False,True,False
+Japanese Grand Prix,Turn_1,Turn_2,False,True,False
+Japanese Grand Prix,Turn_2,Turn_3,False,True,False
+Japanese Grand Prix,Turn_3,Turn_4,False,True,True
+Japanese Grand Prix,Turn_4,Turn_5,False,True,False
+Japanese Grand Prix,Turn_5,Turn_6,False,True,False
+Japanese Grand Prix,Turn_6,Turn_7,False,True,False
+Japanese Grand Prix,Turn_7,Turn_8,False,True,False
+Japanese Grand Prix,Turn_8,Turn_9,False,True,False
+Japanese Grand Prix,Turn_9,Turn_10,False,True,False
+Japanese Grand Prix,Turn_10,Turn_11,False,True,False
+Japanese Grand Prix,Turn_11,Turn_12,False,True,False
+Japanese Grand Prix,Turn_13,Turn_14,False,True,False
+Japanese Grand Prix,Turn_15,Turn_16,False,True,False
+Japanese Grand Prix,Turn_16,Turn_17,False,True,True
+Japanese Grand Prix,Turn_17,Turn_18,False,True,False
+Las Vegas Grand Prix,Turn_1,Turn_2,False,False,True
+Las Vegas Grand Prix,Turn_2,Turn_3,False,True,False
+Las Vegas Grand Prix,Turn_3,Turn_4,False,True,True
+Las Vegas Grand Prix,Turn_5,Turn_6,False,True,False
+Las Vegas Grand Prix,Turn_6,Turn_7,False,True,False
+Las Vegas Grand Prix,Turn_7,Turn_8,False,True,True
+Las Vegas Grand Prix,Turn_8,Turn_9,False,True,False
+Las Vegas Grand Prix,Turn_9,Turn_10,False,True,False
+Las Vegas Grand Prix,Turn_10,Turn_11,False,True,False
+Las Vegas Grand Prix,Turn_11,Turn_12,False,True,False
+Las Vegas Grand Prix,Turn_14,Turn_15,False,True,True
+Las Vegas Grand Prix,Turn_15,Turn_16,False,True,True
+Las Vegas Grand Prix,Turn_17,Turn_1,True,True,False
+Mexico City Grand Prix,Turn_1,Turn_2,False,True,True
+Mexico City Grand Prix,Turn_2,Turn_3,False,True,True
+Mexico City Grand Prix,Turn_4,Turn_5,False,True,True
+Mexico City Grand Prix,Turn_5,Turn_6,False,True,False
+Mexico City Grand Prix,Turn_6,Turn_7,False,True,False
+Mexico City Grand Prix,Turn_7,Turn_8,False,True,True
+Mexico City Grand Prix,Turn_8,Turn_9,False,True,True
+Mexico City Grand Prix,Turn_9,Turn_10,False,True,False
+Mexico City Grand Prix,Turn_10,Turn_11,False,True,True
+Mexico City Grand Prix,Turn_11,Turn_12,False,True,False
+Mexico City Grand Prix,Turn_12,Turn_13,False,True,False
+Mexico City Grand Prix,Turn_13,Turn_14,False,True,True
+Mexico City Grand Prix,Turn_14,Turn_15,False,True,True
+Mexico City Grand Prix,Turn_15,Turn_16,False,True,True
+Mexico City Grand Prix,Turn_16,Turn_17,False,True,True
+Miami Grand Prix,Turn_1,Turn_2,False,True,True
+Miami Grand Prix,Turn_2,Turn_3,False,True,True
+Miami Grand Prix,Turn_3,Turn_4,False,True,False
+Miami Grand Prix,Turn_4,Turn_5,False,True,False
+Miami Grand Prix,Turn_5,Turn_6,False,True,False
+Miami Grand Prix,Turn_6,Turn_7,False,True,False
+Miami Grand Prix,Turn_7,Turn_8,False,True,True
+Miami Grand Prix,Turn_8,Turn_9,False,True,False
+Miami Grand Prix,Turn_9,Turn_10,False,True,False
+Miami Grand Prix,Turn_11,Turn_12,False,True,False
+Miami Grand Prix,Turn_12,Turn_13,False,True,False
+Miami Grand Prix,Turn_13,Turn_14,False,True,True
+Miami Grand Prix,Turn_14,Turn_15,False,True,True
+Miami Grand Prix,Turn_15,Turn_16,False,True,True
+Miami Grand Prix,Turn_17,Turn_18,False,True,False
+Miami Grand Prix,Turn_18,Turn_19,False,True,False
+Miami Grand Prix,Turn_19,Turn_1,True,True,False
+Monaco Grand Prix,T10_Nouvelle_Chicane,T15_Swimming_Pool,False,True,False
+Qatar Grand Prix,Turn_1,Turn_2,False,True,False
+Qatar Grand Prix,Turn_2,Turn_3,False,True,False
+Qatar Grand Prix,Turn_3,Turn_4,False,True,False
+Qatar Grand Prix,Turn_4,Turn_5,False,True,False
+Qatar Grand Prix,Turn_5,Turn_6,False,True,False
+Qatar Grand Prix,Turn_6,Turn_7,False,True,False
+Qatar Grand Prix,Turn_7,Turn_8,False,True,False
+Qatar Grand Prix,Turn_8,Turn_9,False,True,True
+Qatar Grand Prix,Turn_9,Turn_10,False,True,False
+Qatar Grand Prix,Turn_10,Turn_11,False,True,False
+Qatar Grand Prix,Turn_11,Turn_12,False,True,False
+Qatar Grand Prix,Turn_12,Turn_13,False,True,False
+Qatar Grand Prix,Turn_13,Turn_14,False,True,False
+Qatar Grand Prix,Turn_14,Turn_15,False,True,False
+Qatar Grand Prix,Turn_15,Turn_16,False,True,False
+Saudi Arabian Grand Prix,Turn_1,Turn_2,False,True,True
+Saudi Arabian Grand Prix,Turn_2,Turn_3,False,True,False
+Saudi Arabian Grand Prix,Turn_3,Turn_4,False,True,False
+Saudi Arabian Grand Prix,Turn_4,Turn_5,False,True,True
+Saudi Arabian Grand Prix,Turn_5,Turn_6,False,True,False
+Saudi Arabian Grand Prix,Turn_6,Turn_7,False,True,True
+Saudi Arabian Grand Prix,Turn_7,Turn_8,False,True,True
+Saudi Arabian Grand Prix,Turn_8,Turn_9,False,True,False
+Saudi Arabian Grand Prix,Turn_9,Turn_10,False,True,True
+Saudi Arabian Grand Prix,Turn_10,Turn_11,False,True,True
+Saudi Arabian Grand Prix,Turn_11,Turn_12,False,True,True
+Saudi Arabian Grand Prix,Turn_12,Turn_13,False,True,False
+Saudi Arabian Grand Prix,Turn_13,Turn_14,False,True,False
+Saudi Arabian Grand Prix,Turn_14,Turn_15,False,True,False
+Saudi Arabian Grand Prix,Turn_15,Turn_16,False,True,False
+Saudi Arabian Grand Prix,Turn_16,Turn_17,False,True,True
+Saudi Arabian Grand Prix,Turn_17,Turn_18,False,True,False
+Saudi Arabian Grand Prix,Turn_18,Turn_19,False,True,False
+Saudi Arabian Grand Prix,Turn_19,Turn_20,False,True,False
+Saudi Arabian Grand Prix,Turn_20,Turn_21,False,True,False
+Saudi Arabian Grand Prix,Turn_21,Turn_22,False,True,False
+Saudi Arabian Grand Prix,Turn_22,Turn_23,False,True,True
+Saudi Arabian Grand Prix,Turn_23,Turn_24,False,True,False
+Saudi Arabian Grand Prix,Turn_24,Turn_25,False,True,False
+Saudi Arabian Grand Prix,Turn_25,Turn_26,False,True,False
+Saudi Arabian Grand Prix,Turn_26,Turn_27,False,True,False
+Singapore Grand Prix,Turn_1,Turn_2,False,True,True
+Singapore Grand Prix,Turn_2,Turn_3,False,True,True
+Singapore Grand Prix,Turn_3,Turn_4,False,True,False
+Singapore Grand Prix,Turn_4,Turn_5,False,True,False
+Singapore Grand Prix,Turn_5,Turn_6,False,True,False
+Singapore Grand Prix,Turn_6,Turn_7,False,True,False
+Singapore Grand Prix,Turn_7,Turn_8,False,True,False
+Singapore Grand Prix,Turn_8,Turn_9,False,True,False
+Singapore Grand Prix,Turn_9,Turn_10,False,True,False
+Singapore Grand Prix,Turn_10,Turn_11,False,True,False
+Singapore Grand Prix,Turn_11,Turn_12,False,True,True
+Singapore Grand Prix,Turn_12,Turn_13,False,True,False
+Singapore Grand Prix,Turn_13,Turn_14,False,True,False
+Singapore Grand Prix,Turn_14,Turn_15,False,True,False
+Singapore Grand Prix,Turn_15,Turn_16,False,True,False
+Singapore Grand Prix,Turn_16,Turn_17,False,True,True
+Singapore Grand Prix,Turn_17,Turn_18,False,True,False
+Singapore Grand Prix,Turn_18,Turn_19,False,True,True
+Singapore Grand Prix,Turn_19,Turn_1,True,True,False
+Spanish Grand Prix,Turn_1,Turn_2,False,True,True
+Spanish Grand Prix,Turn_2,Turn_3,False,True,False
+Spanish Grand Prix,Turn_3,Turn_4,False,True,False
+Spanish Grand Prix,Turn_4,Turn_5,False,True,False
+Spanish Grand Prix,Turn_5,Turn_6,False,True,False
+Spanish Grand Prix,Turn_6,Turn_7,False,True,False
+Spanish Grand Prix,Turn_7,Turn_8,False,True,True
+Spanish Grand Prix,Turn_8,Turn_9,False,True,False
+Spanish Grand Prix,Turn_9,Turn_10,False,True,False
+Spanish Grand Prix,Turn_10,Turn_11,False,True,False
+Spanish Grand Prix,Turn_11,Turn_12,False,True,False
+Spanish Grand Prix,Turn_12,Turn_13,False,True,False
+Spanish Grand Prix,Turn_13,Turn_14,False,True,False
+São Paulo Grand Prix,Turn_1,Turn_2,False,True,True
+São Paulo Grand Prix,Turn_2,Turn_3,False,True,False
+São Paulo Grand Prix,Turn_4,Turn_5,False,True,False
+São Paulo Grand Prix,Turn_5,Turn_6,False,True,False
+São Paulo Grand Prix,Turn_6,Turn_7,False,True,False
+São Paulo Grand Prix,Turn_7,Turn_8,False,True,False
+São Paulo Grand Prix,Turn_8,Turn_9,False,True,False
+São Paulo Grand Prix,Turn_9,Turn_10,False,True,False
+São Paulo Grand Prix,Turn_10,Turn_11,False,True,False
+São Paulo Grand Prix,Turn_11,Turn_12,False,True,False
+São Paulo Grand Prix,Turn_12,Turn_13,False,True,True
+São Paulo Grand Prix,Turn_13,Turn_14,False,True,False
+São Paulo Grand Prix,Turn_14,Turn_15,False,True,False
+São Paulo Grand Prix,Turn_15,Turn_1,True,True,False
+United States Grand Prix,Turn_1,Turn_2,False,True,False
+United States Grand Prix,Turn_2,Turn_3,False,True,False
+United States Grand Prix,Turn_3,Turn_4,False,True,True
+United States Grand Prix,Turn_4,Turn_5,False,True,True
+United States Grand Prix,Turn_5,Turn_6,False,True,False
+United States Grand Prix,Turn_6,Turn_7,False,True,False
+United States Grand Prix,Turn_7,Turn_8,False,True,False
+United States Grand Prix,Turn_8,Turn_9,False,True,True
+United States Grand Prix,Turn_9,Turn_10,False,True,False
+United States Grand Prix,Turn_10,Turn_11,False,True,False
+United States Grand Prix,Turn_12,Turn_13,False,True,False
+United States Grand Prix,Turn_13,Turn_14,False,True,True
+United States Grand Prix,Turn_14,Turn_15,False,True,False
+United States Grand Prix,Turn_15,Turn_16,False,True,False
+United States Grand Prix,Turn_16,Turn_17,False,True,False
+United States Grand Prix,Turn_17,Turn_18,False,True,False
+United States Grand Prix,Turn_18,Turn_19,False,True,False
+United States Grand Prix,Turn_19,Turn_20,False,True,False

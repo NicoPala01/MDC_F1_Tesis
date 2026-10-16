@@ -6,6 +6,7 @@ Unmatched events use one zone per FastF1 ``Number`` and fill typology later
 from speed thresholds.
 """
 
+import logging
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import numpy as np
@@ -13,6 +14,14 @@ import pandas as pd
 from fastf1.core import Session
 
 from ..config import load_circuit_config
+
+logger = logging.getLogger(__name__)
+
+# Una ventana con menos de tres muestras esperadas, o con mediana observada
+# menor que dos, no alcanza para spatial_fraction (pide al menos dos puntos).
+MIN_EXPECTED_SAMPLES = 3.0
+MIN_OBSERVED_SAMPLES = 2.0
+WINDOW_NAMES = ("braking", "apex", "exit")
 
 DistanceWindow = Tuple[float, float]
 
@@ -661,3 +670,164 @@ def get_corner_fragments(
         "corner_numbers": zone_dict.get("corner_numbers"),
         "zone_source": zone_dict.get("zone_source"),
     }
+
+
+def window_length_m(
+    start: float,
+    end: float,
+    track_length: Optional[float] = None,
+) -> float:
+    """Largo del tramo, con cruce de meta cuando el final queda antes del inicio."""
+    length = float(end) - float(start)
+    if track_length is not None and track_length > 0 and length < 0:
+        length += float(track_length)
+    return float(length)
+
+
+def expected_sample_count(length_m: float, speed_kmh: float, dt_s: float) -> float:
+    """Muestras esperadas: ``L / (v · Δt)``. La velocidad entra en km/h."""
+    if not np.isfinite(length_m) or not np.isfinite(speed_kmh) or not np.isfinite(dt_s):
+        return float("nan")
+    speed_mps = float(speed_kmh) / 3.6
+    if speed_mps <= 0 or dt_s <= 0 or length_m < 0:
+        return float("nan")
+    return float(length_m) / (speed_mps * float(dt_s))
+
+
+def samples_required_m(speed_kmh: float, dt_s: float, n_samples: float = MIN_EXPECTED_SAMPLES) -> float:
+    """Metros que hacen falta para ``n_samples`` a esa velocidad y ese Δt."""
+    if not np.isfinite(speed_kmh) or not np.isfinite(dt_s) or dt_s <= 0 or speed_kmh <= 0:
+        return float("nan")
+    return float(n_samples) * (float(speed_kmh) / 3.6) * float(dt_s)
+
+
+def _lap_dt_seconds(telemetry: pd.DataFrame) -> np.ndarray:
+    if telemetry is None or telemetry.empty:
+        return np.array([], dtype=float)
+    if "TimeDelta" in telemetry.columns:
+        dt = pd.to_numeric(telemetry["TimeDelta"], errors="coerce").to_numpy(dtype=float)
+    elif "Time" in telemetry.columns:
+        time = telemetry["Time"]
+        if pd.api.types.is_timedelta64_dtype(time):
+            dt = time.diff().dt.total_seconds().to_numpy(dtype=float)
+        else:
+            dt = pd.to_numeric(time, errors="coerce").diff().to_numpy(dtype=float)
+    else:
+        return np.array([], dtype=float)
+    return dt[np.isfinite(dt) & (dt > 0) & (dt < 2.0)]
+
+
+class WindowSampling:
+    """Acumula, después del clip, muestras y velocidad de cada ventana.
+
+    No modifica las zonas ni las features. Sirve para el warning.
+    """
+
+    def __init__(self) -> None:
+        self.counts: Dict[Tuple[str, str], List[int]] = {}
+        self.speeds: Dict[Tuple[str, str], List[float]] = {}
+        self.dts: List[float] = []
+        self.n_laps = 0
+
+    def add_lap(self, telemetry: pd.DataFrame, zones: Dict[str, Dict[str, Any]]) -> None:
+        if telemetry is None or telemetry.empty or "Distance" not in telemetry.columns or not zones:
+            return
+        self.n_laps += 1
+        self.dts.extend(_lap_dt_seconds(telemetry).tolist())
+        for zone_name, zone in zones.items():
+            try:
+                fragments = get_corner_fragments(telemetry, zone)
+            except Exception:
+                fragments = {}
+            for window in WINDOW_NAMES:
+                key = (str(zone_name), window)
+                frag = fragments.get(window)
+                n_samples = 0 if frag is None else int(len(frag))
+                self.counts.setdefault(key, []).append(n_samples)
+                self.speeds.setdefault(key, [])
+                if frag is not None and not frag.empty and "Speed" in frag.columns:
+                    speed = pd.to_numeric(frag["Speed"], errors="coerce").dropna()
+                    if not speed.empty:
+                        self.speeds[key].extend(float(v) for v in speed.tolist())
+
+
+def _format_samples(value: float) -> str:
+    if not np.isfinite(value):
+        return "nan"
+    return f"{value:.2f}"
+
+
+def undersampled_window_messages(
+    circuit: str,
+    zones: Dict[str, Dict[str, Any]],
+    sampling: WindowSampling,
+) -> List[str]:
+    """Textos de warning. No loguea: el llamador decide."""
+    if sampling.n_laps <= 0:
+        return []
+    dt = float(np.median(sampling.dts)) if sampling.dts else float("nan")
+    messages: List[str] = []
+    for zone_name, zone in zones.items():
+        track = zone.get("track_length")
+        for window in WINDOW_NAMES:
+            bounds = zone.get(window)
+            if not bounds:
+                continue
+            length = window_length_m(float(bounds[0]), float(bounds[1]), track)
+            key = (str(zone_name), window)
+            counts = sampling.counts.get(key) or []
+            speeds = sampling.speeds.get(key) or []
+            speed = float(np.median(speeds)) if speeds else float("nan")
+            expected = expected_sample_count(length, speed, dt)
+            observed = float(np.median(counts)) if counts else float("nan")
+            short_expected = np.isfinite(expected) and expected < MIN_EXPECTED_SAMPLES
+            short_observed = np.isfinite(observed) and observed < MIN_OBSERVED_SAMPLES
+            if not short_expected and not short_observed:
+                continue
+            messages.append(
+                f"{circuit} zona {zone_name} ventana {window}: "
+                f"L_ef={length:.1f} m, "
+                f"muestras esperadas={_format_samples(expected)}, "
+                f"mediana de muestras por vuelta={_format_samples(observed)}"
+            )
+    return messages
+
+
+def warn_undersampled_windows(
+    circuit: str,
+    zones: Dict[str, Dict[str, Any]],
+    sampling: WindowSampling,
+) -> List[str]:
+    """Warning si, después del clip, una ventana no llega a 3 muestras esperadas o a 2 observadas."""
+    messages = undersampled_window_messages(circuit, zones, sampling)
+    for message in messages:
+        logger.warning(message)
+    return messages
+
+
+def windows_below_sample_floor(
+    zones: Dict[str, Dict[str, Any]],
+    *,
+    dt_s: float,
+    speed_kmh_by_window: Dict[str, float],
+    speed_overrides: Optional[Dict[Tuple[str, str], float]] = None,
+) -> List[Tuple[str, str, float, float]]:
+    """Ventanas con L efectivo menor que ``3 · v · Δt``.
+
+    ``speed_overrides`` pisa la velocidad de referencia de ``(zona, ventana)``.
+    Devuelve ``(zona, ventana, L_m, metros_necesarios)``.
+    """
+    overrides = speed_overrides or {}
+    short: List[Tuple[str, str, float, float]] = []
+    for zone_name, zone in zones.items():
+        track = zone.get("track_length")
+        for window in WINDOW_NAMES:
+            bounds = zone.get(window)
+            if not bounds:
+                continue
+            speed = float(overrides.get((str(zone_name), window), speed_kmh_by_window[window]))
+            needed = samples_required_m(speed, dt_s, MIN_EXPECTED_SAMPLES)
+            length = window_length_m(float(bounds[0]), float(bounds[1]), track)
+            if np.isfinite(needed) and length < needed:
+                short.append((str(zone_name), window, float(length), float(needed)))
+    return short
