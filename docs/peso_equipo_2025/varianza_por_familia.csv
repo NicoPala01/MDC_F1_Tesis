@@ -1,0 +1,25 @@
+race,familia,variante_iqr,n_features,proporcion_piloto_media,proporcion_equipo_media,columnas
+Canadian Grand Prix,auto,con_iqr0,8,0.05441998900923116,0.06780907828789037,
+Canadian Grand Prix,auto,sin_iqr0,8,0.05441998900923116,0.06780907828789037,
+Canadian Grand Prix,estilo,con_iqr0,8,0.054128501605579776,0.14227648369420962,
+Canadian Grand Prix,estilo,sin_iqr0,6,0.0554218996024205,0.14038990387618167,
+Chinese Grand Prix,auto,con_iqr0,8,0.10178025253174487,0.0972175069631585,
+Chinese Grand Prix,auto,sin_iqr0,8,0.10178025253174489,0.0972175069631585,
+Chinese Grand Prix,estilo,con_iqr0,8,0.13521503405715984,0.1423759644824266,
+Chinese Grand Prix,estilo,sin_iqr0,6,0.16603749739190832,0.14695655451687759,
+Saudi Arabian Grand Prix,auto,con_iqr0,8,0.04551613690086177,0.11606894080235422,
+Saudi Arabian Grand Prix,auto,sin_iqr0,7,0.05201844217241346,0.1326502180598334,
+Saudi Arabian Grand Prix,estilo,con_iqr0,7,0.04095928999895282,0.2116597833530053,
+Saudi Arabian Grand Prix,estilo,sin_iqr0,6,0.04778583833211162,0.24693641391183951,
+Canadian Grand Prix,auto,con_iqr0,8,0.05441998900923116,0.06780907828789037,comunes
+Canadian Grand Prix,auto,sin_iqr0,8,0.05441998900923116,0.06780907828789037,comunes
+Canadian Grand Prix,estilo,con_iqr0,8,0.054128501605579776,0.14227648369420962,comunes
+Canadian Grand Prix,estilo,sin_iqr0,6,0.0554218996024205,0.14038990387618167,comunes
+Chinese Grand Prix,auto,con_iqr0,8,0.10178025253174487,0.0972175069631585,comunes
+Chinese Grand Prix,auto,sin_iqr0,8,0.10178025253174489,0.0972175069631585,comunes
+Chinese Grand Prix,estilo,con_iqr0,8,0.13521503405715984,0.1423759644824266,comunes
+Chinese Grand Prix,estilo,sin_iqr0,6,0.16603749739190832,0.14695655451687759,comunes
+Saudi Arabian Grand Prix,auto,con_iqr0,8,0.04551613690086177,0.11606894080235422,comunes
+Saudi Arabian Grand Prix,auto,sin_iqr0,7,0.05201844217241346,0.1326502180598334,comunes
+Saudi Arabian Grand Prix,estilo,con_iqr0,7,0.04095928999895282,0.2116597833530053,comunes
+Saudi Arabian Grand Prix,estilo,sin_iqr0,6,0.04778583833211162,0.24693641391183951,comunes

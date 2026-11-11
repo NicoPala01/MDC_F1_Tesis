@@ -1,0 +1,4 @@
+n_vueltas,n_verde,n_sc,n_vsc,n_yellow,n_red,n_lluvia_no_verde,share_afectada,share_conservada,excluida,motivo,nota,race,fuente,track_status_nota,is_accurate_nota,reference_lap,reference_driver
+1016,940,0,0,57,19,0,0.0,1.0,False,,sin lluvia alineada al reloj; solo SC y VSC,Chinese Grand Prix,openf1,"reconstruido desde race_control de OpenF1, no es el TrackStatus de FastF1","duración finita, no borrada y no es vuelta de boxes",41,44
+861,798,34,0,11,18,0,0.0394889663182346,0.9605110336817654,False,,sin lluvia alineada al reloj; solo SC y VSC,Saudi Arabian Grand Prix,openf1,"reconstruido desde race_control de OpenF1, no es el TrackStatus de FastF1","duración finita, no borrada y no es vuelta de boxes",41,4
+1175,1157,0,0,18,0,0,0.0,1.0,False,,sin lluvia alineada al reloj; solo SC y VSC,Canadian Grand Prix,openf1,"reconstruido desde race_control de OpenF1, no es el TrackStatus de FastF1","duración finita, no borrada y no es vuelta de boxes",63,63

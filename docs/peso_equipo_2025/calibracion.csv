@@ -1,0 +1,31 @@
+race,falso,n_pares,observado,percentil_midrank,percentil_le,n_perm,nulo_p50
+Chinese Grand Prix,2,9,0.3430311747399419,72.5,72.5,200,0.3223903593208537
+Chinese Grand Prix,3,9,0.3222201247581885,72.0,72.0,200,0.3068398875835261
+Chinese Grand Prix,5,9,0.3759603498619209,87.5,87.5,200,0.322778052206414
+Chinese Grand Prix,4,9,0.2866453293742078,8.5,8.5,200,0.3230055834518445
+Chinese Grand Prix,0,9,0.3170944368212823,43.5,43.5,200,0.3249982445283941
+Chinese Grand Prix,1,9,0.3654826180555726,88.0,88.0,200,0.3246872365102959
+Chinese Grand Prix,7,9,0.3099130170368384,63.0,63.0,200,0.3004394602072754
+Chinese Grand Prix,6,9,0.3089353137191807,29.5,29.5,200,0.3251678830770928
+Chinese Grand Prix,9,9,0.3338414861017694,84.5,84.5,200,0.2976517573059722
+Chinese Grand Prix,8,9,0.3229812534564923,83.5,83.5,200,0.2914771326608151
+Saudi Arabian Grand Prix,1,9,0.0,32.0,64.0,200,0.0
+Saudi Arabian Grand Prix,0,9,0.0,34.75,69.5,200,0.0
+Saudi Arabian Grand Prix,3,9,0.0,33.5,67.0,200,0.0
+Saudi Arabian Grand Prix,2,9,0.0,31.25,62.5,200,0.0
+Saudi Arabian Grand Prix,5,9,0.0,31.0,62.0,200,0.0
+Saudi Arabian Grand Prix,4,9,0.0,33.0,66.0,200,0.0
+Saudi Arabian Grand Prix,8,9,0.0,32.25,64.5,200,0.0
+Saudi Arabian Grand Prix,9,9,0.0645338202584425,98.5,98.5,200,0.0
+Saudi Arabian Grand Prix,6,9,0.0,33.5,67.0,200,0.0
+Saudi Arabian Grand Prix,7,9,0.0,33.75,67.5,200,0.0
+Canadian Grand Prix,9,5,0.0,48.0,96.0,200,0.0
+Canadian Grand Prix,8,5,0.0,48.75,97.5,200,0.0
+Canadian Grand Prix,6,5,0.0,48.25,96.5,200,0.0
+Canadian Grand Prix,7,5,0.0,50.0,100.0,200,0.0
+Canadian Grand Prix,1,5,0.0,49.0,98.0,200,0.0
+Canadian Grand Prix,0,5,0.0,49.0,98.0,200,0.0
+Canadian Grand Prix,2,5,0.0,48.5,97.0,200,0.0
+Canadian Grand Prix,3,5,0.0,48.75,97.5,200,0.0
+Canadian Grand Prix,4,5,0.0,47.5,95.0,200,0.0
+Canadian Grand Prix,5,5,0.0,49.25,98.5,200,0.0

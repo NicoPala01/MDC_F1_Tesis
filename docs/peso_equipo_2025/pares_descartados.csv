@@ -1,0 +1,229 @@
+race,team,driver_a,driver_b,motivo_NA,detalle_NA,estrato,n_a,n_b,compuesto_comun,V_cramer_bc,AMI,ARI,pct_null_permutacion_piloto,pct_null_le,V_cramer_bc_piloto_modal,AMI_piloto_modal,AMI_clase_piloto,ARI_piloto_modal,V_cramer_bc_piloto_prop,ic_v_bajo,ic_v_alto,motivo_asociacion,n_perm,estructura_supera_nulo,clases_chicas,piso_clase,variante_iqr
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=17",HARD|vida_26_mas,0,17,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=2",MEDIUM|vida_11_25,0,2,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Williams,ALB,SAI,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=0",HARD|vida_26_mas,0,0,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=15",HARD|vida_26_mas,0,15,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=0",MEDIUM|vida_11_25,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=4, n_b=0",MEDIUM|vida_26_mas,4,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=15, n_b=0",MEDIUM|vida_11_25,15,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=18",HARD|vida_26_mas,0,18,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=15",HARD|vida_26_mas,0,15,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=0",MEDIUM|vida_11_25,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Williams,ALB,SAI,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=4, n_b=0",MEDIUM|vida_26_mas,4,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=15, n_b=0",MEDIUM|vida_11_25,15,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=18",HARD|vida_26_mas,0,18,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=15",HARD|vida_26_mas,0,15,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=4, n_b=0",MEDIUM|vida_26_mas,4,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=15, n_b=0",MEDIUM|vida_11_25,15,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=18",HARD|vida_26_mas,0,18,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=2",MEDIUM|vida_11_25,0,2,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=17",HARD|vida_26_mas,0,17,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=0",MEDIUM|vida_11_25,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,con_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=0",HARD|vida_26_mas,0,0,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,sin_iqr0
+Chinese Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=0",MEDIUM|vida_11_25,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,49,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=15",HARD|vida_26_mas,0,15,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Williams,ALB,SAI,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=2",MEDIUM|vida_11_25,0,2,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=17",HARD|vida_26_mas,0,17,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=0",HARD|vida_26_mas,0,0,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,46,sin_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=0",HARD|vida_26_mas,0,0,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Racing Bulls,HAD,TSU,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=17",HARD|vida_26_mas,0,17,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Red Bull Racing,LAW,VER,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=0, n_b=2",MEDIUM|vida_11_25,0,2,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Williams,ALB,SAI,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato HARD|vida_26_mas: n_a=0, n_b=18",HARD|vida_26_mas,0,18,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_11_25: n_a=15, n_b=0",MEDIUM|vida_11_25,15,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=4, n_b=0",MEDIUM|vida_26_mas,4,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Chinese Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"estrato MEDIUM|vida_26_mas: n_a=0, n_b=0",MEDIUM|vida_26_mas,0,0,MEDIUM,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,46,con_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,una_sola_clase,una_sola_clase,estratificado,34,39,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,una_sola_clase,una_sola_clase,crudo,40,42,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,estratificado,36,43,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,una_sola_clase,una_sola_clase,crudo,36,28,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,una_sola_clase,una_sola_clase,estratificado,36,28,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,una_sola_clase,una_sola_clase,crudo,32,33,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,una_sola_clase,una_sola_clase,estratificado,32,33,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,31,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,31,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,una_sola_clase,una_sola_clase,crudo,43,40,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,una_sola_clase,una_sola_clase,estratificado,43,40,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,crudo,39,32,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,una_sola_clase,una_sola_clase,crudo,37,25,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,31,,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,31,,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,clase_dominante,clase_dominante,crudo,43,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,clase_dominante,clase_dominante,estratificado,43,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",crudo,43,0,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",estratificado,43,0,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,una_sola_clase,una_sola_clase,crudo,34,39,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,una_sola_clase,una_sola_clase,estratificado,34,39,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,una_sola_clase,una_sola_clase,crudo,37,25,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,crudo,36,43,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,clase_dominante,clase_dominante,crudo,40,42,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,una_sola_clase,una_sola_clase,estratificado,37,25,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",crudo,43,0,,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",estratificado,43,0,,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,clase_dominante,clase_dominante,crudo,34,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,clase_dominante,clase_dominante,estratificado,34,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,clase_dominante,clase_dominante,crudo,37,25,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,clase_dominante,clase_dominante,estratificado,37,25,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,crudo,37,43,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,estratificado,37,43,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,crudo,39,32,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,estratificado,39,32,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,una_sola_clase,una_sola_clase,crudo,34,39,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,clase_dominante,clase_dominante,estratificado,40,42,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,clase_dominante,clase_dominante,crudo,36,28,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,clase_dominante,clase_dominante,estratificado,36,28,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,clase_dominante,clase_dominante,crudo,32,34,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,clase_dominante,clase_dominante,estratificado,32,34,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,31,,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,31,,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,clase_dominante,clase_dominante,crudo,43,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,clase_dominante,clase_dominante,estratificado,43,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,con_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",crudo,43,0,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",estratificado,43,0,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",crudo,43,0,,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,crudo,39,31,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,clase_dominante,clase_dominante,estratificado,32,34,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,clase_dominante,clase_dominante,crudo,32,34,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,clase_dominante,clase_dominante,estratificado,36,28,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,clase_dominante,clase_dominante,crudo,36,28,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,clase_dominante,clase_dominante,estratificado,40,42,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,clase_dominante,clase_dominante,crudo,40,42,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,estratificado,39,32,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,estratificado,39,31,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,crudo,37,43,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,clase_dominante,clase_dominante,estratificado,37,25,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,clase_dominante,clase_dominante,crudo,37,25,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,clase_dominante,clase_dominante,estratificado,34,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,clase_dominante,clase_dominante,crudo,34,40,HARD+MEDIUM,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Alpine,DOO,GAS,pocas_vueltas,"vueltas_b=0<15,stints_b=0<2",estratificado,43,0,,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,estratificado,37,43,HARD,,,,,,,,,,,,,clase_dominante,0,True,con,33,sin_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,una_sola_clase,una_sola_clase,estratificado,43,40,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Williams,ALB,SAI,una_sola_clase,una_sola_clase,crudo,43,40,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",estratificado,0,31,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_a=0<15,stints_a=0<2",crudo,0,31,,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,una_sola_clase,una_sola_clase,estratificado,32,33,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,una_sola_clase,una_sola_clase,crudo,32,33,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,una_sola_clase,una_sola_clase,estratificado,36,28,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,una_sola_clase,una_sola_clase,crudo,36,28,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,una_sola_clase,una_sola_clase,estratificado,40,42,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,una_sola_clase,una_sola_clase,crudo,40,42,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,estratificado,39,31,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,stints_a=1<2,crudo,39,31,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,estratificado,36,43,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,stints_b=1<2,crudo,36,43,HARD,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,una_sola_clase,una_sola_clase,estratificado,37,25,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,con_iqr0
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,una_sola_clase,una_sola_clase,estratificado,40,42,HARD+MEDIUM,,,,,,,,,,,,,una_sola_clase,0,True,sin,33,sin_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",crudo,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",estratificado,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",crudo,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",estratificado,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",estratificado,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",crudo,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",estratificado,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",crudo,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",estratificado,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",crudo,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",estratificado,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",crudo,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",estratificado,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",estratificado,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",crudo,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",estratificado,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",crudo,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",estratificado,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",crudo,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",estratificado,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",crudo,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",crudo,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",crudo,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",estratificado,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",crudo,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",estratificado,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",crudo,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",estratificado,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",estratificado,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",crudo,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",estratificado,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",crudo,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",estratificado,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,McLaren,NOR,PIA,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",crudo,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",crudo,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",crudo,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",estratificado,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,con_iqr0
+Canadian Grand Prix,Haas F1 Team,BEA,OCO,pocas_vueltas,"vueltas_a=13<15,vueltas_b=0<15,stints_b=0<2",crudo,13,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",estratificado,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",crudo,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",estratificado,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Alpine,COL,GAS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=3<15,stints_a=0<2",crudo,0,3,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",estratificado,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Kick Sauber,BOR,HUL,pocas_vueltas,"vueltas_a=6<15,vueltas_b=3<15,stints_b=1<2",crudo,6,3,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,con,4,sin_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Red Bull Racing,TSU,VER,pocas_vueltas,"vueltas_b=0<15,stints_a=1<2,stints_b=0<2",crudo,15,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",estratificado,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Racing Bulls,HAD,LAW,pocas_vueltas,"vueltas_a=14<15,vueltas_b=0<15,stints_b=0<2",crudo,14,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Mercedes,ANT,RUS,pocas_vueltas,"vueltas_a=0<15,vueltas_b=0<15,stints_a=0<2,stints_b=0<2",estratificado,0,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Ferrari,HAM,LEC,pocas_vueltas,"vueltas_a=3<15,vueltas_b=0<15,stints_a=1<2,stints_b=0<2",estratificado,3,0,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Williams,ALB,SAI,pocas_vueltas,"vueltas_a=0<15,vueltas_b=7<15,stints_a=0<2,stints_b=1<2",estratificado,0,7,,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,sin_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",estratificado,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
+Canadian Grand Prix,Aston Martin,ALO,STR,pocas_vueltas,"vueltas_a=6<15,vueltas_b=6<15",crudo,6,6,HARD,,,,,,,,,,,,,estructura_no_supera_nulo,0,False,sin,4,con_iqr0
