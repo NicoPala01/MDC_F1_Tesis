@@ -125,19 +125,24 @@ def race_retention(session) -> dict:
 
 
 def _load_race(event: str, cfg: dict):
+    """FastF1 when an F1 account is configured. Otherwise the public OpenF1 path.
+
+    ``Session.load`` prompts for an F1 email when ``F1_USERNAME`` and
+    ``F1_PASSWORD`` are missing, and a tty blocks there. This function does
+    not call that prompt.
+    """
+    import os
+
     cache_dir = (cfg.get("general") or {}).get("cache_dir", "cache")
     enable_cache(cache_dir)
-    try:
+    if os.environ.get("F1_USERNAME") and os.environ.get("F1_PASSWORD"):
         session = load_session(year=2025, grand_prix=event, session_type="R", cache_dir=cache_dir)
         return session, "fastf1"
-    except Exception as first:
-        archive = Path("/tmp/ti2025") / event / "Race"
-        if not archive.is_dir():
-            raise first
-        from openf1_session import build_session
+    from openf1_public_session import load_public_session
 
-        session, _note = build_session(event)
-        return session, "openf1"
+    session, note = load_public_session(event)
+    session._openf1_note = note
+    return session, "openf1"
 
 
 def _analysis_frame(result: dict, session) -> pd.DataFrame:
@@ -284,6 +289,12 @@ def analyse_loaded_race(event: str, session, source: str, cfg: dict) -> dict:
     retention = race_retention(session)
     retention["race"] = event
     retention["fuente"] = source
+    note = getattr(session, "_openf1_note", None)
+    if isinstance(note, dict):
+        retention["track_status_nota"] = note.get("track_status")
+        retention["is_accurate_nota"] = note.get("is_accurate")
+        retention["reference_lap"] = note.get("reference_lap")
+        retention["reference_driver"] = note.get("reference_driver")
     if retention.get("excluida"):
         return {"race": event, "retention": retention, "skipped": "lluvia_sc_vsc"}
     print(f"[pipeline] {event}", flush=True)
