@@ -1,0 +1,9 @@
+piloto,aplica,motivo,race,fase,equipo,companero,distancia,distancia_antes,distancia_despues,se_acerca_al_companero_nuevo
+LAW,True,,Chinese Grand Prix,antes,Red Bull Racing,VER,2.437646492365618,,,
+LAW,True,,Saudi Arabian Grand Prix,despues,Racing Bulls,HAD,1.8019461748406207,,,
+LAW,True,,Canadian Grand Prix,despues,Racing Bulls,HAD,,,,
+LAW,True,,,resumen,,,,2.437646492365618,1.8019461748406207,True
+TSU,True,,Chinese Grand Prix,antes,Racing Bulls,HAD,4.200404964921252,,,
+TSU,True,,Saudi Arabian Grand Prix,despues,Red Bull Racing,VER,,,,
+TSU,True,,Canadian Grand Prix,despues,Red Bull Racing,VER,,,,
+TSU,True,,,resumen,,,,4.200404964921252,,False

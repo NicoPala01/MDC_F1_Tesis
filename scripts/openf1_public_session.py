@@ -130,7 +130,7 @@ def _weather(session_key: int, origin: pd.Timestamp) -> pd.DataFrame:
     frame = pd.DataFrame(payload)
     if frame.empty or "date" not in frame.columns:
         return pd.DataFrame(columns=["SessionTime", "Rainfall"])
-    frame["date"] = pd.to_datetime(frame["date"], utc=True)
+    frame["date"] = pd.to_datetime(frame["date"], utc=True, format="ISO8601")
     origin = pd.Timestamp(origin)
     if origin.tzinfo is None:
         origin = origin.tz_localize("UTC")

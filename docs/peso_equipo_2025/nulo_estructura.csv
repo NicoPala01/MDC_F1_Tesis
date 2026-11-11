@@ -1,0 +1,7 @@
+race,variante,structure,k,silhouette,pct_perm,pct_gauss,pct_copula,error
+Chinese Grand Prix,sin_iqr0,False,4,0.0998394781509675,100.0,100.0,46.0,
+Chinese Grand Prix,con_iqr0,False,4,0.0998392041305997,100.0,100.0,52.0,
+Saudi Arabian Grand Prix,sin_iqr0,True,2,0.9309110471810788,100.0,100.0,100.0,
+Saudi Arabian Grand Prix,con_iqr0,True,2,0.9309169551698568,100.0,100.0,100.0,
+Canadian Grand Prix,con_iqr0,False,2,0.7856923356300272,100.0,100.0,54.0,
+Canadian Grand Prix,sin_iqr0,False,2,0.7856924231800758,100.0,100.0,46.0,

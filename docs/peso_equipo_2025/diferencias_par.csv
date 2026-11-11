@@ -1,0 +1,913 @@
+race,team,driver_a,driver_b,estrato,feature,familia,delta_mediana,ic_bajo,ic_alto,n_a,n_b,motivo_NA,metodo
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,fast__apex_speed_rel,auto,-1.0669311232475982,-1.4097394175753195,0.6192950208008812,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__apex_speed_rel,auto,-2.1411510101180014,-2.7499569758711644,-0.7704072300417312,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__apex_speed_rel,auto,-1.3864949439956775,-4.491048280114644,0.7827325005171831,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__brake_point_rel,auto,7.886328312242419,6.208261167370717,27.65876360759196,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__brake_point_rel,auto,5.317406219841819,3.795699959772453,10.77854842726661,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__coast_frac,estilo,-0.0201095650285947,-0.030067910881774,-0.0139835851373854,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__coast_frac,estilo,-0.0173798552212124,-0.021376093882042,-0.0170341665611893,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,fast__full_throttle_frac,auto,-0.1838019505833674,-0.504591257841969,-0.1826749749252539,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__full_throttle_frac,auto,0.0163316300385406,-0.0088948137482321,0.0646142449353746,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__full_throttle_frac,auto,0.0066782597205069,0.0028608883743578,0.0223500662050813,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__throttle_attack,estilo,0.4791495349643433,-0.117050571702233,5.4425697780274325,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__throttle_attack,estilo,-3.014407363088947,-3.866973759123837,1.5425188557234055,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,medium__trail_brake_frac,estilo,-0.0369842235027543,-0.0810303015315982,0.0438613979086761,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,crudo,slow__trail_brake_frac,estilo,0.0326125397912499,0.0022527959628879,0.0536938074096135,48,45,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,fast__apex_speed_rel,auto,2.6815402496105776,2.6815402496105776,2.6815402496105776,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__apex_speed_rel,auto,4.348314721682042,4.348314721682042,4.348314721682042,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__apex_speed_rel,auto,2.5,2.5,2.5,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__brake_point_rel,auto,5.948199887481404,5.948199887481404,5.948199887481404,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__brake_point_rel,auto,2.467298427265643,2.467298427265643,2.467298427265643,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__coast_frac,estilo,-0.0244955113199639,-0.0244955113199639,-0.0244955113199639,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__coast_frac,estilo,-0.0086555961603257,-0.0086555961603257,-0.0086555961603257,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,fast__full_throttle_frac,auto,-0.0007513171054089,-0.0007513171054089,-0.0007513171054089,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__full_throttle_frac,auto,0.09117907217453,0.09117907217453,0.09117907217453,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0148690605683816,-0.0148690605683816,-0.0148690605683816,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__throttle_attack,estilo,1.0264082355065869,1.0264082355065869,1.0264082355065869,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__throttle_attack,estilo,2.6096381070888985,2.6096381070888985,2.6096381070888985,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,medium__trail_brake_frac,estilo,0.061775812828512,0.061775812828512,0.061775812828512,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_1_10,slow__trail_brake_frac,estilo,0.0620710584008811,0.0620710584008811,0.0620710584008811,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,fast__apex_speed_rel,auto,-1.7043601664070511,-1.7043601664070511,-1.7043601664070511,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__apex_speed_rel,auto,-5.246488577266682,-5.246488577266682,-5.246488577266682,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__apex_speed_rel,auto,-1.482396488018369,-1.482396488018369,-1.482396488018369,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__brake_point_rel,auto,7.325458192685131,7.325458192685131,7.325458192685131,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__brake_point_rel,auto,14.3486381535122,14.3486381535122,14.3486381535122,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__coast_frac,estilo,-0.0172339205171171,-0.0172339205171171,-0.0172339205171171,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__coast_frac,estilo,-0.017693251229663,-0.017693251229663,-0.017693251229663,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,fast__full_throttle_frac,auto,-0.3540044669562917,-0.3540044669562917,-0.3540044669562917,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__full_throttle_frac,auto,0.1375477011557477,0.1375477011557477,0.1375477011557477,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__full_throttle_frac,auto,-0.0130720539637529,-0.0130720539637529,-0.0130720539637529,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__throttle_attack,estilo,2.5892361749751696,2.5892361749751696,2.5892361749751696,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__throttle_attack,estilo,-1.0297039883396089,-1.0297039883396089,-1.0297039883396089,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.0179372502120693,-0.0179372502120693,-0.0179372502120693,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_11_25,slow__trail_brake_frac,estilo,0.0364976700634159,0.0364976700634159,0.0364976700634159,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,fast__apex_speed_rel,auto,-1.2043601664070516,-1.2043601664070516,-1.2043601664070516,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__apex_speed_rel,auto,-0.2654492370564258,-0.2654492370564258,-0.2654492370564258,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__apex_speed_rel,auto,-2.755386376009725,-2.755386376009725,-2.755386376009725,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__brake_point_rel,auto,8.557028857240041,8.557028857240041,8.557028857240041,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__brake_point_rel,auto,0.3520731924322982,0.3520731924322982,0.3520731924322982,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,fast__coast_frac,estilo,0.0,0.0,0.0,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__coast_frac,estilo,-0.0158977922551187,-0.0158977922551187,-0.0158977922551187,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__coast_frac,estilo,-0.0145977811636659,-0.0145977811636659,-0.0145977811636659,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,fast__full_throttle_frac,auto,0.0262893714695411,0.0262893714695411,0.0262893714695411,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__full_throttle_frac,auto,-0.0015354484867482,-0.0015354484867482,-0.0015354484867482,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__full_throttle_frac,auto,0.0229598087081914,0.0229598087081914,0.0229598087081914,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__throttle_attack,estilo,-1.9183364893098795,-1.9183364893098795,-1.9183364893098795,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__throttle_attack,estilo,-5.656710998764203,-5.656710998764203,-5.656710998764203,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,fast__trail_brake_frac,estilo,0.0,0.0,0.0,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,medium__trail_brake_frac,estilo,-0.1701161203581231,-0.1701161203581231,-0.1701161203581231,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,HARD|vida_26_mas,slow__trail_brake_frac,estilo,-0.004926210903899,-0.004926210903899,-0.004926210903899,18,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,0.6192950208008812,0.6192950208008812,0.6192950208008812,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,-1.117275381471787,-1.117275381471787,-1.117275381471787,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,-2.051366151992436,-2.051366151992436,-2.051366151992436,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__brake_point_rel,auto,27.65876360759196,27.65876360759196,27.65876360759196,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__brake_point_rel,auto,10.77854842726661,10.77854842726661,10.77854842726661,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__coast_frac,estilo,-0.0250349025449266,-0.0250349025449266,-0.0250349025449266,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__coast_frac,estilo,-0.021376093882042,-0.021376093882042,-0.021376093882042,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,-0.4372662327672229,-0.4372662327672229,-0.4372662327672229,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.0056543560564318,-0.0056543560564318,-0.0056543560564318,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,0.0128977677596293,0.0128977677596293,0.0128977677596293,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__throttle_attack,estilo,5.4425697780274325,5.4425697780274325,5.4425697780274325,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__throttle_attack,estilo,0.7108922263523426,0.7108922263523426,0.7108922263523426,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,0.0149357251079844,0.0149357251079844,0.0149357251079844,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Alpine,DOO,GAS,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,0.0193251992705241,0.0193251992705241,0.0193251992705241,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,fast__apex_speed_rel,auto,2.987570956840546,0.7214751040044072,4.272819916796474,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__apex_speed_rel,auto,2.689606597897447,0.8026472715099221,5.007022845466637,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__apex_speed_rel,auto,0.4324747199783891,-0.4016239325312303,2.8081969119546173,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__brake_point_rel,auto,11.965654936702125,9.41366836614306,12.842587088587884,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__brake_point_rel,auto,2.808890727332659,-6.002437950775996,6.860567909264769,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,fast__coast_frac,estilo,0.0,-0.0664689828003388,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__coast_frac,estilo,-0.0058410327895846,-0.009305306363133,-0.0008791073309566,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__coast_frac,estilo,-0.0031584127142091,-0.0184893801951243,0.0071310403221905,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,fast__full_throttle_frac,auto,-0.5560058707080603,-0.6409915537931486,-0.3223797465631503,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__full_throttle_frac,auto,-0.008646174062174,-0.0138974467037368,-0.0035067241369326,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__full_throttle_frac,auto,-0.0284319410393762,-0.0383147555200213,-0.0089161166391337,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__throttle_attack,estilo,1.104723669799852,0.0045215737868087,3.3208144960381167,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__throttle_attack,estilo,1.1758970624129566,0.4318391506141439,2.426377368440005,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,medium__trail_brake_frac,estilo,0.1486308511952642,-0.049318604827714,0.189302994326331,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,crudo,slow__trail_brake_frac,estilo,0.0825052744566665,0.0760740102112834,0.0927554070097928,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,fast__apex_speed_rel,auto,1.7385900416017628,-1.2842298751947114,4.75,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__apex_speed_rel,auto,1.9431180206307657,1.7120786804205104,2.689606597897447,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__apex_speed_rel,auto,3.198633848007564,0.2837626400108055,5.0,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__brake_point_rel,auto,10.854219078758678,7.635000000000531,11.830083052036796,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__brake_point_rel,auto,2.970097406066391,0.8091107434223312,6.295291298979088,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,fast__coast_frac,estilo,-0.1048862679022746,-0.1048862679022746,-0.1048862679022746,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__coast_frac,estilo,-0.0028856971977555,-0.0036707467489629,0.0020539004567757,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__coast_frac,estilo,0.0042417973077627,-0.0025007152832601,0.0096612911065716,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,fast__full_throttle_frac,auto,-0.4623005271268794,-0.5844984908085717,-0.3401025634451872,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0917039017858565,-0.0938776598117583,-0.087687605575857,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.062205738920855,-0.0628349588804746,-0.0560995003303518,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__throttle_attack,estilo,1.2300916285773482,0.0,1.3786610878660808,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__throttle_attack,estilo,3.3925653376494003,2.855304497697967,3.7153281398649383,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,medium__trail_brake_frac,estilo,0.1849393791120134,0.1696126657951001,0.2232367532240504,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_1_10,slow__trail_brake_frac,estilo,0.1383489389174525,0.110190246323076,0.1386157560652693,18,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,fast__apex_speed_rel,auto,4.25,3.341279667185897,6.761409958398237,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__apex_speed_rel,auto,5.5568819793692334,4.363763958738468,9.037921319579487,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__apex_speed_rel,auto,2.1702575840064835,1.3405151680129666,4.886494943995678,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__brake_point_rel,auto,13.182800253167562,13.12062227848184,13.244978227853284,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__brake_point_rel,auto,4.239454585344904,1.9186805555552269,8.215262418135154,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__coast_frac,estilo,-0.0068705703625384,-0.0074070276131175,-0.0058459250191308,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__coast_frac,estilo,0.0019196429724021,0.000886722843107,0.0023842434640995,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,fast__full_throttle_frac,auto,-0.5749306182550303,-0.6865646796332008,-0.1900655137424416,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.0045712763866646,-0.0050096651727709,-0.0041328876005583,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__full_throttle_frac,auto,-0.0306216163376632,-0.0342745817668029,-0.0137468030672146,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__throttle_attack,estilo,1.4611231848129504,1.4458415645862095,1.4764048050396914,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__throttle_attack,estilo,0.9570105220597268,-0.0394830756666015,1.452768067406362,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,medium__trail_brake_frac,estilo,0.2070478741950174,0.0508318857656502,0.2392339902949137,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,HARD|vida_11_25,slow__trail_brake_frac,estilo,0.0700637524713464,0.0442223526074951,0.1009595324969073,20,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,-1.0228199167964744,-1.0228199167964744,-1.0228199167964744,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,0.8258426391589788,0.8258426391589788,0.8258426391589788,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,-0.5513661519924362,-0.5513661519924362,-0.5513661519924362,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__brake_point_rel,auto,15.866836195500149,15.866836195500149,15.866836195500149,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__brake_point_rel,auto,-6.754420782344118,-6.754420782344118,-6.754420782344118,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,fast__coast_frac,estilo,-0.0446566691960462,-0.0446566691960462,-0.0446566691960462,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__coast_frac,estilo,-0.0027554094266168,-0.0027554094266168,-0.0027554094266168,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__coast_frac,estilo,-0.0224239621880396,-0.0224239621880396,-0.0224239621880396,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,-0.4406471597415633,-0.4406471597415633,-0.4406471597415633,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,0.0016265784135856,0.0016265784135856,0.0016265784135856,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0130184133745202,-0.0130184133745202,-0.0130184133745202,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__throttle_attack,estilo,1.3393716463944725,1.3393716463944725,1.3393716463944725,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__throttle_attack,estilo,1.3732579823856572,1.3732579823856572,1.3732579823856572,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,-0.0742604132372402,-0.0742604132372402,-0.0742604132372402,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,0.0908904375569905,0.0908904375569905,0.0908904375569905,7,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,fast__apex_speed_rel,auto,5.869295020800882,5.869295020800882,5.869295020800882,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__apex_speed_rel,auto,1.193118020630766,1.193118020630766,1.193118020630766,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__apex_speed_rel,auto,-0.5,-0.5,-0.5,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__brake_point_rel,auto,-17.501591779185883,-17.501591779185883,-17.501591779185883,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__brake_point_rel,auto,2.167527961622614,2.167527961622614,2.167527961622614,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,fast__coast_frac,estilo,-0.072525317589498,-0.072525317589498,-0.072525317589498,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__coast_frac,estilo,-0.0028423537358646,-0.0028423537358646,-0.0028423537358646,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__coast_frac,estilo,-0.0331597403746896,-0.0331597403746896,-0.0331597403746896,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,fast__full_throttle_frac,auto,-1.053790022665265,-1.053790022665265,-1.053790022665265,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__full_throttle_frac,auto,-0.0987558734011754,-0.0987558734011754,-0.0987558734011754,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__full_throttle_frac,auto,0.0051727681757503,0.0051727681757503,0.0051727681757503,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__throttle_attack,estilo,2.9228436657681893,2.9228436657681893,2.9228436657681893,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__throttle_attack,estilo,-7.1245530948730185,-7.1245530948730185,-7.1245530948730185,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,medium__trail_brake_frac,estilo,0.0171146514935789,0.0171146514935789,0.0171146514935789,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Ferrari,HAM,LEC,MEDIUM|vida_11_25,slow__trail_brake_frac,estilo,0.0671470611455873,0.0671470611455873,0.0671470611455873,2,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,fast__apex_speed_rel,auto,-1.5554745631643023,-7.778015353614984,0.6120614144599383,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__apex_speed_rel,auto,-2.6691993678557155,-3.410111669907746,-0.4845507629435741,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__apex_speed_rel,auto,2.502474523446078,1.716237359989195,5.482396488018368,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__brake_point_rel,auto,6.181852155176667,3.819106701810135,10.623183188936814,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__brake_point_rel,auto,5.571814908653272,0.4286169524899399,8.818895649489644,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__coast_frac,estilo,0.0278287732727202,0.0246931020252715,0.0366730260083152,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__coast_frac,estilo,0.0285320462359259,0.0221301879834478,0.0423360755107065,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,fast__full_throttle_frac,auto,0.0037565855270449,-0.0763408303396538,0.0714572691544954,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__full_throttle_frac,auto,-0.0060628260381607,-0.0064858019062713,-0.0015792920337186,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__full_throttle_frac,auto,0.0197213847340852,-0.0205828914201666,0.0274785985459259,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__throttle_attack,estilo,-0.5202991910169493,-3.4076842746649176,-0.145735478434215,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__throttle_attack,estilo,-0.485373619910904,-0.7527950958855634,1.0976250783791242,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,medium__trail_brake_frac,estilo,-0.1995563144683229,-0.2272638581402437,-0.0891267664496565,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,crudo,slow__trail_brake_frac,estilo,-0.0580495523438059,-0.0767513303430933,-0.0486255510722123,49,48,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,fast__apex_speed_rel,auto,-0.4201302912123403,-0.4201302912123403,-0.4201302912123403,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__apex_speed_rel,auto,-2.924157360841021,-2.924157360841021,-2.924157360841021,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__apex_speed_rel,auto,3.613505056004322,3.613505056004322,3.613505056004322,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__brake_point_rel,auto,-15.279166666667292,-15.279166666667292,-15.279166666667292,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__brake_point_rel,auto,11.395931658621796,11.395931658621796,11.395931658621796,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__coast_frac,estilo,0.0242137446889951,0.0242137446889951,0.0242137446889951,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__coast_frac,estilo,0.0145005417653816,0.0145005417653816,0.0145005417653816,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,fast__full_throttle_frac,auto,-0.0022539513162269,-0.0022539513162269,-0.0022539513162269,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__full_throttle_frac,auto,0.0008200746497272,0.0008200746497272,0.0008200746497272,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0362410687731786,-0.0362410687731786,-0.0362410687731786,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__throttle_attack,estilo,-4.644706396878143,-4.644706396878143,-4.644706396878143,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__throttle_attack,estilo,2.7596542496223133,2.7596542496223133,2.7596542496223133,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.0547496933463416,-0.0547496933463416,-0.0547496933463416,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0153165912975717,-0.0153165912975717,-0.0153165912975717,7,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,fast__apex_speed_rel,auto,1.312754771190304,1.312754771190304,1.312754771190304,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__apex_speed_rel,auto,-4.704354061892298,-4.704354061892298,-4.704354061892298,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__apex_speed_rel,auto,1.8013661519924362,1.8013661519924362,1.8013661519924362,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__brake_point_rel,auto,6.068988973277803,6.068988973277803,6.068988973277803,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__brake_point_rel,auto,2.3477117136333927,2.3477117136333927,2.3477117136333927,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__coast_frac,estilo,0.0290140343852199,0.0290140343852199,0.0290140343852199,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__coast_frac,estilo,0.0230195406897362,0.0230195406897362,0.0230195406897362,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,fast__full_throttle_frac,auto,-0.0007513171054089,-0.0007513171054089,-0.0007513171054089,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.0038942039785553,-0.0038942039785553,-0.0038942039785553,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__full_throttle_frac,auto,0.0445310552819813,0.0445310552819813,0.0445310552819813,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__throttle_attack,estilo,-0.0064103368706942,-0.0064103368706942,-0.0064103368706942,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__throttle_attack,estilo,-2.812717833441244,-2.812717833441244,-2.812717833441244,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0264409779842908,0.0264409779842908,0.0264409779842908,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.2568142850271685,-0.2568142850271685,-0.2568142850271685,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,HARD|vida_11_25,slow__trail_brake_frac,estilo,-0.0446606072954204,-0.0446606072954204,-0.0446606072954204,14,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,-8.704360166407053,-8.704360166407053,-8.704360166407053,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,-1.189606597897447,-1.189606597897447,-1.189606597897447,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,4.772989887991355,4.772989887991355,4.772989887991355,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__brake_point_rel,auto,17.50459694092545,17.50459694092545,17.50459694092545,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__brake_point_rel,auto,7.310604718199381,7.310604718199381,7.310604718199381,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__coast_frac,estilo,0.0269343922348519,0.0269343922348519,0.0269343922348519,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__coast_frac,estilo,0.0248772911694496,0.0248772911694496,0.0248772911694496,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,0.0007513171054089,0.0007513171054089,0.0007513171054089,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.016291174069119,-0.016291174069119,-0.016291174069119,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0246800582007422,-0.0246800582007422,-0.0246800582007422,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__throttle_attack,estilo,-1.5697686119729566,-1.5697686119729566,-1.5697686119729566,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__throttle_attack,estilo,-1.8466734611468687,-1.8466734611468687,-1.8466734611468687,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,-0.0743897883385056,-0.0743897883385056,-0.0743897883385056,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Haas F1 Team,BEA,OCO,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,-0.0745600609247878,-0.0745600609247878,-0.0745600609247878,9,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,fast__apex_speed_rel,auto,-1.051344812792067,-3.1140995839823717,2.503620207991627,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__apex_speed_rel,auto,5.867275381471787,4.446629443364085,7.207120687435206,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__apex_speed_rel,auto,0.3057223885085388,-0.8199998034676894,0.943247471997839,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__brake_point_rel,auto,-5.161321139011466,-13.833643132445411,3.985670977729759,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__brake_point_rel,auto,-0.3404904106332309,-3.615398977364328,1.433670863855483,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__coast_frac,estilo,-0.0057559394968189,-0.0197959717791096,0.0003330920825289,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__coast_frac,estilo,0.0082438511613791,-0.027281560164228,0.0604391754515178,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,fast__full_throttle_frac,auto,0.3505732713345839,0.2210829480540813,0.4960248893957196,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__full_throttle_frac,auto,0.009331777314633,0.0005501954910219,0.0148647549157432,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__full_throttle_frac,auto,0.0046886845848514,0.0029048407518699,0.0059320329649784,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__throttle_attack,estilo,-1.177655516734796,-1.9269729220113847,0.0045215737868087,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__throttle_attack,estilo,-0.5285196554716457,-2.803401692336726,0.1835421897123475,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,medium__trail_brake_frac,estilo,-0.0291292528348591,-0.0942594065957727,0.0136692124292791,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,crudo,slow__trail_brake_frac,estilo,-0.0213581185444999,-0.0396511366794453,-0.0158793452034055,48,47,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,fast__apex_speed_rel,auto,0.3978199167964742,-3.954360166407051,2.284229875194711,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__apex_speed_rel,auto,6.882724618528213,6.575842639158979,7.075842639158979,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__apex_speed_rel,auto,-0.1135050560043222,-0.2837626400108055,0.5,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__brake_point_rel,auto,-1.3929445850926232,-18.32041122362965,6.078961054851637,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__brake_point_rel,auto,-0.8280767565767986,-1.5107841706884,5.187826940422776,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__coast_frac,estilo,-0.0079192924466811,-0.0203368060032963,-0.0039661738365359,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__coast_frac,estilo,0.0042726738577727,-0.0224298561180652,0.0133317707322717,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,fast__full_throttle_frac,auto,0.4877620946861445,0.4414391760227966,0.5340850133494924,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__full_throttle_frac,auto,0.0062223647152461,0.0057797221769513,0.0271108090477683,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0128284519406047,-0.0229694418780066,-0.0091069408177142,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__throttle_attack,estilo,-0.3762444201150794,-1.347451374512314,1.2545215737868087,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__throttle_attack,estilo,3.1105124837550786,3.10049111885604,3.1205338486541185,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,medium__trail_brake_frac,estilo,0.0494731436240866,0.0097388011630703,0.1873066696472201,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0081436209222882,-0.0082842064452625,-0.0080030353993139,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,fast__apex_speed_rel,auto,-1.70486970878766,-2.909229875194711,1.8065402496105771,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__apex_speed_rel,auto,3.6172753814717873,3.268960659789745,4.272472082523064,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__apex_speed_rel,auto,-0.1135050560043222,-1.1986338480075638,0.3297424159935167,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__brake_point_rel,auto,-2.914013466942148,-12.42373160688783,3.9829473066115417,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__brake_point_rel,auto,5.587750735377469,4.754590093934279,5.740100786366819,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__coast_frac,estilo,-0.0080879135334543,-0.0168296516539668,-0.0038781173534071,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__coast_frac,estilo,-0.0501021770574129,-0.0718776967256609,-0.003700946181801,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,fast__full_throttle_frac,auto,0.3671651096923233,0.3035213797474448,0.4470089785402859,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__full_throttle_frac,auto,0.0096030053838279,0.008313341944259,0.0099726344885721,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__full_throttle_frac,auto,0.003844800571846,0.003844800571846,0.0043564132623726,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__throttle_attack,estilo,-3.11366811882046,-3.47653420462562,-0.5217778892062115,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__throttle_attack,estilo,-0.4558715440284759,-0.8384262686808405,0.1187024994604484,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.0374292606676374,-0.0657977728544244,-0.0005379476507954,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_11_25,slow__trail_brake_frac,estilo,-0.0156967677894316,-0.0403053103942003,-0.0099116145400796,29,14,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,fast__apex_speed_rel,auto,-1.3807049791991184,-1.3807049791991184,-1.3807049791991184,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__apex_speed_rel,auto,3.837078680420511,3.837078680420511,3.837078680420511,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__apex_speed_rel,auto,2.4432474719978385,2.4432474719978385,2.4432474719978385,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__brake_point_rel,auto,-21.87220317159417,-21.87220317159417,-21.87220317159417,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__brake_point_rel,auto,-0.9938532474449716,-0.9938532474449716,-0.9938532474449716,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,fast__coast_frac,estilo,0.0,0.0,0.0,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__coast_frac,estilo,-0.0010592026885558,-0.0010592026885558,-0.0010592026885558,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__coast_frac,estilo,0.0234241297782752,0.0234241297782752,0.0234241297782752,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,fast__full_throttle_frac,auto,0.0230790562871988,0.0230790562871988,0.0230790562871988,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__full_throttle_frac,auto,0.247188257905238,0.247188257905238,0.247188257905238,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__full_throttle_frac,auto,-0.0199001508291832,-0.0199001508291832,-0.0199001508291832,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__throttle_attack,estilo,-1.4610803715194365,-1.4610803715194365,-1.4610803715194365,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__throttle_attack,estilo,-3.2739316514060883,-3.2739316514060883,-3.2739316514060883,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,fast__trail_brake_frac,estilo,0.0,0.0,0.0,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,medium__trail_brake_frac,estilo,-0.0180206256515735,-0.0180206256515735,-0.0180206256515735,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Kick Sauber,BOR,HUL,HARD|vida_26_mas,slow__trail_brake_frac,estilo,-0.0273312710236696,-0.0273312710236696,-0.0273312710236696,3,8,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,fast__apex_speed_rel,auto,0.7609004160176288,-1.3589507488489194,4.508145956207105,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__apex_speed_rel,auto,1.6390026668044395,0.9543110377634624,3.2999021580314327,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__apex_speed_rel,auto,-3.7399609822861457,-5.113505056004322,-3.436416712035658,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__brake_point_rel,auto,-3.5803688325155014,-9.944024064934233,-0.0673480961686512,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__brake_point_rel,auto,-17.022626235933718,-18.260623161556616,-12.75784722222184,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__coast_frac,estilo,0.0174537708083342,0.0043407946109034,0.0201754504518678,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__coast_frac,estilo,0.0482678886818557,0.0185529947988354,0.0610686564139108,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,fast__full_throttle_frac,auto,0.0022539513162269,-0.0748381961288358,0.0774678059977672,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__full_throttle_frac,auto,-0.0071970572334899,-0.0120793671294286,0.0056757178021162,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__full_throttle_frac,auto,0.0150472465895121,0.0039550373625419,0.0233920492273819,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__throttle_attack,estilo,-2.0875476674019127,-3.228051319788708,-1.6143952567688635,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__throttle_attack,estilo,-1.8046732591341328,-2.5089343332835186,-1.7443040060792476,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,medium__trail_brake_frac,estilo,-0.1001959229736856,-0.1088170060914865,-0.0067576414197119,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,crudo,slow__trail_brake_frac,estilo,-0.02907310682232,-0.0570588335019103,-0.0163222841620003,48,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,fast__apex_speed_rel,auto,-0.6815402496105776,-0.6815402496105776,-0.6815402496105776,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__apex_speed_rel,auto,-3.310393402102553,-3.310393402102553,-3.310393402102553,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__apex_speed_rel,auto,-3.1135050560043225,-3.1135050560043225,-3.1135050560043225,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__brake_point_rel,auto,-3.258955611814907,-3.258955611814907,-3.258955611814907,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__brake_point_rel,auto,-23.3094782474449,-23.3094782474449,-23.3094782474449,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,fast__coast_frac,estilo,0.0497685208553317,0.0497685208553317,0.0497685208553317,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__coast_frac,estilo,0.0339104457964293,0.0339104457964293,0.0339104457964293,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__coast_frac,estilo,0.0739967014110741,0.0739967014110741,0.0739967014110741,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,fast__full_throttle_frac,auto,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0346098188536149,-0.0346098188536149,-0.0346098188536149,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0031985678317037,-0.0031985678317037,-0.0031985678317037,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__throttle_attack,estilo,-2.2243209253514173,-2.2243209253514173,-2.2243209253514173,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__throttle_attack,estilo,-1.925647419431852,-1.925647419431852,-1.925647419431852,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.1163114722708612,-0.1163114722708612,-0.1163114722708612,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0037251179706465,-0.0037251179706465,-0.0037251179706465,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,fast__apex_speed_rel,auto,3.3978199167964744,3.3978199167964744,3.3978199167964744,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__apex_speed_rel,auto,1.916432742312808,1.916432742312808,1.916432742312808,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__apex_speed_rel,auto,-3.4256439600162083,-3.4256439600162083,-3.4256439600162083,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__brake_point_rel,auto,-8.86788945148266,-8.86788945148266,-8.86788945148266,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__brake_point_rel,auto,-15.62566986312132,-15.62566986312132,-15.62566986312132,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__coast_frac,estilo,0.0110796157529762,0.0110796157529762,0.0110796157529762,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__coast_frac,estilo,0.0405367831188001,0.0405367831188001,0.0405367831188001,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,fast__full_throttle_frac,auto,0.0011269756581134,0.0011269756581134,0.0011269756581134,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.0049134351575943,-0.0049134351575943,-0.0049134351575943,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__full_throttle_frac,auto,0.0136299588221173,0.0136299588221173,0.0136299588221173,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__throttle_attack,estilo,-1.069458933603518,-1.069458933603518,-1.069458933603518,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__throttle_attack,estilo,-4.95131015460004,-4.95131015460004,-4.95131015460004,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.1937676506593792,-0.1937676506593792,-0.1937676506593792,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_11_25,slow__trail_brake_frac,estilo,-0.029029861112866,-0.029029861112866,-0.029029861112866,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,fast__apex_speed_rel,auto,-1.7043601664070516,-1.7043601664070516,-1.7043601664070516,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__apex_speed_rel,auto,-0.1362360412615313,-0.1362360412615313,-0.1362360412615313,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__apex_speed_rel,auto,-3.1702575840064835,-3.1702575840064835,-3.1702575840064835,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__brake_point_rel,auto,-3.428202608998647,-3.428202608998647,-3.428202608998647,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__brake_point_rel,auto,-15.015889256577031,-15.015889256577031,-15.015889256577031,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,fast__coast_frac,estilo,0.0,0.0,0.0,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__coast_frac,estilo,0.0224222970177935,0.0224222970177935,0.0224222970177935,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__coast_frac,estilo,0.0685146460309904,0.0685146460309904,0.0685146460309904,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,fast__full_throttle_frac,auto,0.0022539513162269,0.0022539513162269,0.0022539513162269,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__full_throttle_frac,auto,-0.0142833125656458,-0.0142833125656458,-0.0142833125656458,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__full_throttle_frac,auto,-0.0027886486613562,-0.0027886486613562,-0.0027886486613562,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__throttle_attack,estilo,-3.6344160593711976,-3.6344160593711976,-3.6344160593711976,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__throttle_attack,estilo,0.7767513543817015,0.7767513543817015,0.7767513543817015,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,fast__trail_brake_frac,estilo,0.0,0.0,0.0,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,medium__trail_brake_frac,estilo,-0.0148553355157496,-0.0148553355157496,-0.0148553355157496,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,HARD|vida_26_mas,slow__trail_brake_frac,estilo,-0.0467627980198735,-0.0467627980198735,-0.0467627980198735,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,2.2157701248052883,2.2157701248052883,2.2157701248052883,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,2.6818819793692343,2.6818819793692343,2.6818819793692343,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,-5.085128792003242,-5.085128792003242,-5.085128792003242,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__brake_point_rel,auto,-4.66226646975905,-4.66226646975905,-4.66226646975905,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__brake_point_rel,auto,-11.048699295498968,-11.048699295498968,-11.048699295498968,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__coast_frac,estilo,0.0131984873118288,0.0131984873118288,0.0131984873118288,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__coast_frac,estilo,0.0246497853442864,0.0246497853442864,0.0246497853442864,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,-0.0003756585527044,-0.0003756585527044,-0.0003756585527044,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,0.0094062578813972,0.0094062578813972,0.0094062578813972,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,0.042133346507518,0.042133346507518,0.042133346507518,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__throttle_attack,estilo,-4.957603549485822,-4.957603549485822,-4.957603549485822,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__throttle_attack,estilo,-2.7414887260286105,-2.7414887260286105,-2.7414887260286105,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,0.0324101211477125,0.0324101211477125,0.0324101211477125,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,-0.0257845315121031,-0.0257845315121031,-0.0257845315121031,6,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,fast__apex_speed_rel,auto,1.1192950208008816,1.1192950208008816,1.1192950208008816,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__apex_speed_rel,auto,4.193118020630767,4.193118020630767,4.193118020630767,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__apex_speed_rel,auto,-6.47162373599892,-6.47162373599892,-6.47162373599892,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__brake_point_rel,auto,-9.985277777777142,-9.985277777777142,-9.985277777777142,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__brake_point_rel,auto,-15.697802359099311,-15.697802359099311,-15.697802359099311,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__coast_frac,estilo,-0.0017104126738004,-0.0017104126738004,-0.0017104126738004,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__coast_frac,estilo,0.0016699587535181,0.0016699587535181,0.0016699587535181,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,fast__full_throttle_frac,auto,0.0007513171054089,0.0007513171054089,0.0007513171054089,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__full_throttle_frac,auto,0.0048536028758657,0.0048536028758657,0.0048536028758657,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__full_throttle_frac,auto,-0.0063053290652703,-0.0063053290652703,-0.0063053290652703,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__throttle_attack,estilo,-1.986218173873292,-1.986218173873292,-1.986218173873292,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__throttle_attack,estilo,-2.188525875524964,-2.188525875524964,-2.188525875524964,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,medium__trail_brake_frac,estilo,-0.0109385702666633,-0.0109385702666633,-0.0109385702666633,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,McLaren,NOR,PIA,MEDIUM|vida_11_25,slow__trail_brake_frac,estilo,-0.0618854994944807,-0.0618854994944807,-0.0618854994944807,4,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,fast__apex_speed_rel,auto,-2.972007947227545,-5.995360707247157,0.2795905824418678,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__apex_speed_rel,auto,0.4620786804205106,-0.8532727146673476,1.4136661167699005,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__apex_speed_rel,auto,-0.0369708977624789,-0.2837626400108054,1.5513661519924362,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__brake_point_rel,auto,-4.514709272147021,-12.125896343415754,-0.0287843527880382,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__brake_point_rel,auto,-2.8269628878024355,-3.787443089431738,-1.9134472128950528,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__coast_frac,estilo,0.0176243548796004,0.0080744208646455,0.0203293227268913,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__coast_frac,estilo,0.0530949936019143,0.0448006005327507,0.0716170924685783,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,fast__full_throttle_frac,auto,0.0395936094735223,-0.067325025074746,0.0763408303396538,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__full_throttle_frac,auto,0.0037199018021998,-0.0079720882797793,0.0078387606052502,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__full_throttle_frac,auto,-0.0303075200973905,-0.032025627717926,-0.0245525080869912,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__throttle_attack,estilo,2.549906045453178,1.6841114119485856,2.8115217004824262,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__throttle_attack,estilo,1.2292413279268026,1.0785096509162482,1.6780135676905872,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,medium__trail_brake_frac,estilo,-0.0047444391907605,-0.0725341999092197,0.0035476609439314,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,crudo,slow__trail_brake_frac,estilo,-0.0101492537487537,-0.037539779458043,0.007452475579874,50,50,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,fast__apex_speed_rel,auto,-2.7385900416017632,-2.7385900416017632,-2.7385900416017632,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__apex_speed_rel,auto,-1.6516852783179576,-1.6516852783179576,-1.6516852783179576,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__apex_speed_rel,auto,0.7162373599891946,0.7162373599891946,0.7162373599891946,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__brake_point_rel,auto,-2.1782720534429965,-2.1782720534429965,-2.1782720534429965,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__brake_point_rel,auto,-3.5801118464898565,-3.5801118464898565,-3.5801118464898565,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__coast_frac,estilo,0.0122131222076952,0.0122131222076952,0.0122131222076952,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__coast_frac,estilo,0.0399806633213624,0.0399806633213624,0.0399806633213624,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,fast__full_throttle_frac,auto,0.0007513171054089,0.0007513171054089,0.0007513171054089,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0864089303664072,-0.0864089303664072,-0.0864089303664072,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0040499317116307,-0.0040499317116307,-0.0040499317116307,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__throttle_attack,estilo,2.6517284262131904,2.6517284262131904,2.6517284262131904,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__throttle_attack,estilo,0.3852893805207404,0.3852893805207404,0.3852893805207404,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.0813785560352436,-0.0813785560352436,-0.0813785560352436,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0068242537358563,-0.0068242537358563,-0.0068242537358563,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,fast__apex_speed_rel,auto,-3.284229875194711,-3.284229875194711,-3.284229875194711,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__apex_speed_rel,auto,0.4550558349538729,0.4550558349538729,0.4550558349538729,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__apex_speed_rel,auto,0.6594848319870334,0.6594848319870334,0.6594848319870334,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__brake_point_rel,auto,-8.405416666665872,-8.405416666665872,-8.405416666665872,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__brake_point_rel,auto,0.1632350080441336,0.1632350080441336,0.1632350080441336,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__coast_frac,estilo,0.0222480704317525,0.0222480704317525,0.0222480704317525,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__coast_frac,estilo,0.0647802997777576,0.0647802997777576,0.0647802997777576,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,fast__full_throttle_frac,auto,0.0007513171054089,0.0007513171054089,0.0007513171054089,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__full_throttle_frac,auto,0.0913154023702652,0.0913154023702652,0.0913154023702652,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__full_throttle_frac,auto,-0.0416257684811716,-0.0416257684811716,-0.0416257684811716,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__throttle_attack,estilo,3.5755258882440275,3.5755258882440275,3.5755258882440275,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__throttle_attack,estilo,1.839041516179811,1.839041516179811,1.839041516179811,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,medium__trail_brake_frac,estilo,0.0114566640957603,0.0114566640957603,0.0114566640957603,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_11_25,slow__trail_brake_frac,estilo,0.0086056665302716,0.0086056665302716,0.0086056665302716,15,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,fast__apex_speed_rel,auto,1.3070497919911852,1.3070497919911852,1.3070497919911852,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__apex_speed_rel,auto,2.583567257687192,2.583567257687192,2.583567257687192,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__apex_speed_rel,auto,-0.3351287920032415,-0.3351287920032415,-0.3351287920032415,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__brake_point_rel,auto,-8.642544247537398,-8.642544247537398,-8.642544247537398,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__brake_point_rel,auto,-6.640278696997829,-6.640278696997829,-6.640278696997829,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,fast__coast_frac,estilo,0.0,0.0,0.0,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__coast_frac,estilo,0.0205714662669772,0.0205714662669772,0.0205714662669772,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__coast_frac,estilo,0.0592096135696776,0.0592096135696776,0.0592096135696776,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,fast__full_throttle_frac,auto,0.2432784706720931,0.2432784706720931,0.2432784706720931,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__full_throttle_frac,auto,0.0,0.0,0.0,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__full_throttle_frac,auto,-0.0210112081510016,-0.0210112081510016,-0.0210112081510016,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__throttle_attack,estilo,0.8633465886209946,0.8633465886209946,0.8633465886209946,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__throttle_attack,estilo,1.769309474050853,1.769309474050853,1.769309474050853,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,fast__trail_brake_frac,estilo,0.0,0.0,0.0,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,medium__trail_brake_frac,estilo,-0.0161098337563045,-0.0161098337563045,-0.0161098337563045,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,HARD|vida_26_mas,slow__trail_brake_frac,estilo,-0.0285772644542162,-0.0285772644542162,-0.0285772644542162,18,16,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,-3.931540249610577,-3.931540249610577,-3.931540249610577,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,-1.310393402102553,-1.310393402102553,-1.310393402102553,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,1.2270101120086443,1.2270101120086443,1.2270101120086443,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__brake_point_rel,auto,-10.545900056259535,-10.545900056259535,-10.545900056259535,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__brake_point_rel,auto,-0.7583671363346665,-0.7583671363346665,-0.7583671363346665,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__coast_frac,estilo,0.0068248714396503,0.0068248714396503,0.0068248714396503,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__coast_frac,estilo,0.061629125894395,0.061629125894395,0.061629125894395,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,-0.0015026342108179,-0.0015026342108179,-0.0015026342108179,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.0050665889288614,-0.0050665889288614,-0.0050665889288614,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0262586483254457,-0.0262586483254457,-0.0262586483254457,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__throttle_attack,estilo,0.7430034421090186,0.7430034421090186,0.7430034421090186,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__throttle_attack,estilo,1.3384511193713506,1.3384511193713506,1.3384511193713506,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,-0.0493746793875574,-0.0493746793875574,-0.0493746793875574,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,-0.0278709483678721,-0.0278709483678721,-0.0278709483678721,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,fast__apex_speed_rel,auto,-5.5,-5.5,-5.5,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__apex_speed_rel,auto,-0.5758426391589788,-0.5758426391589788,-0.5758426391589788,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__apex_speed_rel,auto,1.9432474719978388,1.9432474719978388,1.9432474719978388,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__brake_point_rel,auto,23.81972222222228,23.81972222222228,23.81972222222228,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__brake_point_rel,auto,-10.238472222222526,-10.238472222222526,-10.238472222222526,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__coast_frac,estilo,0.0155357606620872,0.0155357606620872,0.0155357606620872,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__coast_frac,estilo,0.0444787284398879,0.0444787284398879,0.0444787284398879,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,fast__full_throttle_frac,auto,0.0,0.0,0.0,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__full_throttle_frac,auto,0.1791546339156462,0.1791546339156462,0.1791546339156462,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__full_throttle_frac,auto,-0.0169265047369848,-0.0169265047369848,-0.0169265047369848,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__throttle_attack,estilo,7.083333333333327,7.083333333333327,7.083333333333327,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__throttle_attack,estilo,8.806048542726447,8.806048542726447,8.806048542726447,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,medium__trail_brake_frac,estilo,0.0114971146261268,0.0114971146261268,0.0114971146261268,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Mercedes,ANT,RUS,MEDIUM|vida_11_25,slow__trail_brake_frac,estilo,0.0070125351223584,0.0070125351223584,0.0070125351223584,1,3,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,fast__apex_speed_rel,auto,1.7956398335929489,0.0177718681756015,4.45300234637124,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__apex_speed_rel,auto,-3.0027881376073253,-3.265118689092108,-2.034129187621542,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__apex_speed_rel,auto,-0.5513661519924362,-2.0126240901055272,1.5306752528002152,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__brake_point_rel,auto,1.2900440856828683,-7.687374718703294,4.246945259322856,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__brake_point_rel,auto,1.6447774718537915,-3.640802066742305,3.554865384654945,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__coast_frac,estilo,0.0164968578763816,0.0087884366568719,0.0346067758017414,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__coast_frac,estilo,-0.0059637823456605,-0.0242465233949879,0.0289019113876703,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,fast__full_throttle_frac,auto,-0.0340381710900775,-0.1620436119912182,0.0646954152058146,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__full_throttle_frac,auto,-0.0070819829326532,-0.0913839363447329,0.0024567175787971,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__full_throttle_frac,auto,-0.0031268988448135,-0.0292571145185121,0.0119479075046189,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__throttle_attack,estilo,4.172874780394091,2.787479408817361,6.306599296648818,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__throttle_attack,estilo,-0.4785019672577194,-1.158043073208373,0.7291157532826327,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,medium__trail_brake_frac,estilo,-0.0327023930626485,-0.089513633000482,0.0119034698731431,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,crudo,slow__trail_brake_frac,estilo,-0.0132907593794043,-0.0343923283898368,0.0020272552278049,46,44,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,fast__apex_speed_rel,auto,0.5114099583982377,-1.375,0.7043601664070511,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__apex_speed_rel,auto,-1.9051967010512765,-4.189606597897448,-0.1043539340210324,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__apex_speed_rel,auto,0.8013661519924361,-3.255386376009725,2.886494943995677,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__brake_point_rel,auto,-4.118250281296848,-17.566777637129004,-1.014855668074365,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__brake_point_rel,auto,3.8153718035441937,-2.839757863664406,10.51382620504368,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__coast_frac,estilo,0.0243043599229388,0.0059962592497193,0.0389326297150055,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__coast_frac,estilo,0.0136602245925793,-0.0100269875343819,0.0295706858113012,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,fast__full_throttle_frac,auto,0.0018782927635224,-0.0007513171054089,0.0030052684216359,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0006141793946992,-0.1150610342911432,0.0018425381840978,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0307491524162279,-0.043121170666553,-0.0103873018165705,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__throttle_attack,estilo,2.3647998477459597,0.4765928836074966,4.057631229845129,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__throttle_attack,estilo,-0.7678345959595942,-1.860590529440188,-0.3706190748582432,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.0159852858318571,-0.0361209911576655,0.0220836933051537,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0176559173110256,-0.0468784298485218,-0.0009182857703638,18,17,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,fast__apex_speed_rel,auto,1.5057049791991184,0.2442950208008811,2.784229875194711,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__apex_speed_rel,auto,-3.670645938107703,-4.9775279174769365,-3.007724618528213,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__apex_speed_rel,auto,-0.9148712079967584,-1.9716237359989195,0.3864949439956778,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__brake_point_rel,auto,9.145861251759271,8.374052974685366,11.423279560482342,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__brake_point_rel,auto,0.1340769404207511,-1.742047691890744,2.4989718545327197,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__coast_frac,estilo,0.0066428120444356,0.0026702141199535,0.0079972087771528,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__coast_frac,estilo,-0.0248266376933155,-0.0435304074262228,-0.0048833907654143,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,fast__full_throttle_frac,auto,-0.0007513171054089,-0.0011269756581134,-0.0007513171054089,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.007559137712246,-0.0195963694969771,-0.0029279150363813,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__full_throttle_frac,auto,0.0304122700860228,-0.0094447872755304,0.0569503069994009,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__throttle_attack,estilo,1.7602923100682846,1.7236076650671333,1.8500924458811776,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__throttle_attack,estilo,-1.1847941705391345,-1.2763212123946406,-0.859363909040135,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.0580200538009979,-0.1442833383090543,0.0154297044656109,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,HARD|vida_11_25,slow__trail_brake_frac,estilo,-0.0344647915168498,-0.0499196492860396,-0.0123696061494019,20,13,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,4.750000000000001,2.3070497919911856,5.75,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,-2.6931180206307657,-3.5379213195794894,-1.9620786804205104,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,-1.9202575840064835,-3.283762640010805,-1.7837626400108055,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__brake_point_rel,auto,-10.22888888888872,-11.88686683544425,1.4700776089997745,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__brake_point_rel,auto,-4.2104759702110055,-7.377034170688436,-4.057195179821477,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__coast_frac,estilo,0.0185389888611307,0.0180210875489188,0.0190568901733426,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__coast_frac,estilo,0.0247346060893982,0.0201941779459126,0.045809774782149,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,-0.0007513171054089,-0.1895019589948771,0.0007513171054089,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.0022536128658766,-0.0105811023756174,0.0019136394052729,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0121612230973313,-0.033585928257266,0.0062800201074628,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__throttle_attack,estilo,6.9397093846028,6.757566823899364,7.121851945306238,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__throttle_attack,estilo,-0.126208596353598,-1.2650987858221965,0.5872530354445092,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,-0.0341193633253021,-0.0395922278341916,-0.008495980795038,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,0.0103059128987693,0.0097704121301909,0.0116629503073234,7,10,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,fast__apex_speed_rel,auto,6.727180083203527,6.727180083203527,6.727180083203527,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__apex_speed_rel,auto,0.96207868042051,0.96207868042051,0.96207868042051,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__apex_speed_rel,auto,0.4148712079967583,0.4148712079967583,0.4148712079967583,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__brake_point_rel,auto,-23.02833061181472,-23.02833061181472,-23.02833061181472,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__brake_point_rel,auto,0.1056876838452072,0.1056876838452072,0.1056876838452072,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__coast_frac,estilo,0.0251947512731154,0.0251947512731154,0.0251947512731154,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__coast_frac,estilo,-0.0195516564895103,-0.0195516564895103,-0.0195516564895103,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,fast__full_throttle_frac,auto,-0.1657511969307181,-0.1657511969307181,-0.1657511969307181,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__full_throttle_frac,auto,-0.1820738384860136,-0.1820738384860136,-0.1820738384860136,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__full_throttle_frac,auto,-0.0237126425020309,-0.0237126425020309,-0.0237126425020309,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__throttle_attack,estilo,6.670530124943209,6.670530124943209,6.670530124943209,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__throttle_attack,estilo,-0.4182942745440015,-0.4182942745440015,-0.4182942745440015,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,medium__trail_brake_frac,estilo,0.0873414544054701,0.0873414544054701,0.0873414544054701,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Racing Bulls,HAD,TSU,MEDIUM|vida_11_25,slow__trail_brake_frac,estilo,-0.0716474469963832,-0.0716474469963832,-0.0716474469963832,1,4,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,fast__apex_speed_rel,auto,0.283210790433495,-1.029034438376201,7.527482510391847,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__apex_speed_rel,auto,-1.7963477111692778,-4.599718267805193,-0.1916330899597741,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__apex_speed_rel,auto,-0.8821387074795752,-1.8759974626424991,-0.1135050560043221,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__brake_point_rel,auto,-8.840251969079238,-18.40153800633544,-7.040492960633197,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__brake_point_rel,auto,-11.496145405328916,-15.75600110306612,-5.171032576405035,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,fast__coast_frac,estilo,0.0,-0.0785936996294323,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__coast_frac,estilo,-8.615865981137331e-05,-0.0187747781702628,0.0109395415301066,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__coast_frac,estilo,0.0209460467479176,-0.012264407220291,0.0315909543856121,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,fast__full_throttle_frac,auto,0.0007513171054089,-0.0707059520490864,0.0707623008319921,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__full_throttle_frac,auto,-0.0260841092985882,-0.0314542922216274,-0.017041209087312,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__full_throttle_frac,auto,0.0015875886072377,-0.0181295398187875,0.0195199280020731,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__throttle_attack,estilo,-1.819477309463421,-3.560483183096097,-0.617501045300556,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__throttle_attack,estilo,1.6216763720312826,-2.6512778695332204,4.066731162294037,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,medium__trail_brake_frac,estilo,-0.0138705804081242,-0.0371004477391035,0.0643788852905817,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,crudo,slow__trail_brake_frac,estilo,-0.0340198352005348,-0.0731484573138962,-0.0125956220780754,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,fast__apex_speed_rel,auto,1.3807049791991186,-2.204360166407052,2.25,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__apex_speed_rel,auto,-1.2120786804205106,-5.863763958738468,0.8862360412615315,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__apex_speed_rel,auto,-1.0,-1.6702575840064833,-0.0567525280021611,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__brake_point_rel,auto,-11.567363832629786,-17.046399774962502,-10.575291385369862,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__brake_point_rel,auto,-16.59733314948927,-24.111061948466677,-13.041763153511669,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__coast_frac,estilo,-0.0017902632487971,-0.0066606578457136,0.0096345957307859,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__coast_frac,estilo,0.0188835915511755,0.0079179099430158,0.0369979032049835,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,fast__full_throttle_frac,auto,-0.0003756585527044,-0.0015026342108179,0.0007513171054089,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0089731717406699,-0.0126744007007387,-0.0086315329423781,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__full_throttle_frac,auto,0.0112292808469712,0.0015875886072377,0.0167326467097775,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__throttle_attack,estilo,-3.72965291795936,-4.8214285714285685,-2.348271573786808,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__throttle_attack,estilo,1.1652513992141866,-2.359247713854077,2.924760643180869,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.028876714415752,-0.075846836131567,0.0038045432876764,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0682084275384463,-0.0940901394671638,-0.0250380681196858,16,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,fast__apex_speed_rel,auto,-1.437245228809696,-1.635900416017629,2.977180083203526,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__apex_speed_rel,auto,-2.07233121642566,-2.530898474112852,-1.9929771545333623,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__apex_speed_rel,auto,-0.9148712079967584,-2.5,-0.4892272479805502,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__brake_point_rel,auto,-8.057341357239707,-9.915563720110242,0.1494444444451232,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__brake_point_rel,auto,-10.193795782341883,-14.9946306575328,-6.36965953837726,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__coast_frac,estilo,0.0114913700737207,0.0091441656519521,0.0223582320682621,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__coast_frac,estilo,0.0330816607029706,0.0302712226721648,0.0449291091471349,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,fast__full_throttle_frac,auto,-0.0007513171054089,-0.0015026342108179,0.0,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.0253649529042607,-0.0293772915678044,-0.0192567807534837,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__full_throttle_frac,auto,-0.0091054265424278,-0.0110169679008716,0.0136495892303596,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__throttle_attack,estilo,-1.1386792975054645,-1.143200871292282,-0.8616448700229896,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__throttle_attack,estilo,1.09200412081318,-3.6089431946899806,2.817168866289127,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.0704215303948911,-0.1316788763580511,-0.0373066917602636,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,HARD|vida_11_25,slow__trail_brake_frac,estilo,-0.0455277394205226,-0.0506778342399148,-0.045174118212287,22,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,7.636409958398238,7.636409958398238,7.636409958398238,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,-0.2085672576871917,-0.2085672576871917,-0.2085672576871917,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,0.2216237359989193,0.2216237359989193,0.2216237359989193,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__brake_point_rel,auto,-18.07824347750172,-18.07824347750172,-18.07824347750172,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__brake_point_rel,auto,-6.182701572733113,-6.182701572733113,-6.182701572733113,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,fast__coast_frac,estilo,-0.0785936996294323,-0.0785936996294323,-0.0785936996294323,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__coast_frac,estilo,-0.0250052105956913,-0.0250052105956913,-0.0250052105956913,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__coast_frac,estilo,-0.0098465941680743,-0.0098465941680743,-0.0098465941680743,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,0.0018782927635224,0.0018782927635224,0.0018782927635224,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.0135624299790475,-0.0135624299790475,-0.0135624299790475,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0138992340992957,-0.0138992340992957,-0.0138992340992957,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__throttle_attack,estilo,-3.72278462517039,-3.72278462517039,-3.72278462517039,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__throttle_attack,estilo,3.220103980083686,3.220103980083686,3.220103980083686,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,0.1290294875712533,0.1290294875712533,0.1290294875712533,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Red Bull Racing,LAW,VER,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,-0.025987934343732,-0.025987934343732,-0.025987934343732,9,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,fast__apex_speed_rel,auto,0.9657701248052888,-0.5964751040044072,4.091279667185897,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__apex_speed_rel,auto,3.318819793692341,1.7830063507230198,6.658708123784595,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__apex_speed_rel,auto,3.3757221919762284,1.443247471997839,3.5283762640010803,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__brake_point_rel,auto,2.7792306680736414,-0.8250395077423609,9.813103931095378,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__brake_point_rel,auto,4.631342318742924,3.8770891747118776,5.256360008044631,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__coast_frac,estilo,-0.0111533624835867,-0.0167144161083004,0.0099508946920374,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__coast_frac,estilo,-0.0068684657118604,-0.0187874665944561,0.0120404321678988,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,fast__full_throttle_frac,auto,-0.0015026342108179,-0.0748381961288358,0.0692033178382684,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__full_throttle_frac,auto,-0.0111153477783423,-0.0226716019962835,-0.0019175008723463,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__full_throttle_frac,auto,-0.0394945502532472,-0.0497721652229939,-0.0345898152530013,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__throttle_attack,estilo,-5.078179517896916,-5.973787166439564,-4.436374598933944,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__throttle_attack,estilo,3.249593891084432,2.512589259015927,4.069333774155983,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,medium__trail_brake_frac,estilo,-0.0943877747325325,-0.142421259351249,0.0067992610590287,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,crudo,slow__trail_brake_frac,estilo,0.0277683505052203,0.0088241381204437,0.0334938912490068,47,49,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,fast__apex_speed_rel,auto,-2.465770124805289,-2.465770124805289,-2.465770124805289,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__apex_speed_rel,auto,1.4620786804205108,1.4620786804205108,1.4620786804205108,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__apex_speed_rel,auto,1.056752528002161,1.056752528002161,1.056752528002161,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__brake_point_rel,auto,-11.839805274258064,-11.839805274258064,-11.839805274258064,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__brake_point_rel,auto,9.257132495978675,9.257132495978675,9.257132495978675,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__coast_frac,estilo,-0.0247978452105942,-0.0247978452105942,-0.0247978452105942,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__coast_frac,estilo,-0.0191335310955956,-0.0191335310955956,-0.0191335310955956,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,fast__full_throttle_frac,auto,-0.0007513171054089,-0.0007513171054089,-0.0007513171054089,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__full_throttle_frac,auto,-0.0101513230482304,-0.0101513230482304,-0.0101513230482304,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__full_throttle_frac,auto,-0.0334362465375273,-0.0334362465375273,-0.0334362465375273,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__throttle_attack,estilo,-5.317021573786808,-5.317021573786808,-5.317021573786808,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__throttle_attack,estilo,2.8497023809523814,2.8497023809523814,2.8497023809523814,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,medium__trail_brake_frac,estilo,-0.1481609495162525,-0.1481609495162525,-0.1481609495162525,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_1_10,slow__trail_brake_frac,estilo,-0.0067133894902717,-0.0067133894902717,-0.0067133894902717,9,9,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,fast__apex_speed_rel,auto,1.3241647295885408,1.3241647295885408,1.3241647295885408,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__apex_speed_rel,auto,0.9431180206307656,0.9431180206307656,0.9431180206307656,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__apex_speed_rel,auto,3.914871207996759,3.914871207996759,3.914871207996759,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__brake_point_rel,auto,20.256134947259568,20.256134947259568,20.256134947259568,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__brake_point_rel,auto,4.699384221679565,4.699384221679565,4.699384221679565,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__coast_frac,estilo,-0.011609073432267,-0.011609073432267,-0.011609073432267,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__coast_frac,estilo,-0.0346718707293061,-0.0346718707293061,-0.0346718707293061,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,fast__full_throttle_frac,auto,0.0007513171054089,0.0007513171054089,0.0007513171054089,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__full_throttle_frac,auto,-0.0059355394037112,-0.0059355394037112,-0.0059355394037112,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__full_throttle_frac,auto,-0.0291758715938768,-0.0291758715938768,-0.0291758715938768,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__throttle_attack,estilo,-5.738353034421607,-5.738353034421607,-5.738353034421607,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__throttle_attack,estilo,0.3970300479343127,0.3970300479343127,0.3970300479343127,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,medium__trail_brake_frac,estilo,-0.1537587655179085,-0.1537587655179085,-0.1537587655179085,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_11_25,slow__trail_brake_frac,estilo,0.0223469664077543,0.0223469664077543,0.0223469664077543,14,15,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,fast__apex_speed_rel,auto,-1.7328850624026444,-1.7328850624026444,-1.7328850624026444,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__apex_speed_rel,auto,3.5870786804205106,3.5870786804205106,3.5870786804205106,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__apex_speed_rel,auto,4.631108567985953,4.631108567985953,4.631108567985953,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__brake_point_rel,auto,-3.732251501407742,-3.732251501407742,-3.732251501407742,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__brake_point_rel,auto,3.786205136876133,3.786205136876133,3.786205136876133,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,fast__coast_frac,estilo,0.0,0.0,0.0,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__coast_frac,estilo,-0.0135095119167848,-0.0135095119167848,-0.0135095119167848,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__coast_frac,estilo,-0.0061731112258922,-0.0061731112258922,-0.0061731112258922,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,fast__full_throttle_frac,auto,-0.1458993961196551,-0.1458993961196551,-0.1458993961196551,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__full_throttle_frac,auto,-0.0289106078328594,-0.0289106078328594,-0.0289106078328594,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__full_throttle_frac,auto,-0.036142907365757,-0.036142907365757,-0.036142907365757,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__throttle_attack,estilo,0.5726451666471452,0.5726451666471452,0.5726451666471452,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__throttle_attack,estilo,4.240295365046093,4.240295365046093,4.240295365046093,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,fast__trail_brake_frac,estilo,0.0,0.0,0.0,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,medium__trail_brake_frac,estilo,-0.1351234729448094,-0.1351234729448094,-0.1351234729448094,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,HARD|vida_26_mas,slow__trail_brake_frac,estilo,0.0491263916471699,0.0491263916471699,0.0491263916471699,9,12,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,fast__apex_speed_rel,auto,3.5114099583982368,3.5114099583982368,3.5114099583982368,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__apex_speed_rel,auto,7.310393402102553,7.310393402102553,7.310393402102553,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__apex_speed_rel,auto,-0.8297424159935167,-0.8297424159935167,-0.8297424159935167,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__brake_point_rel,auto,1.5182774964814572,1.5182774964814572,1.5182774964814572,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__brake_point_rel,auto,1.0833468545326577,1.0833468545326577,1.0833468545326577,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,fast__coast_frac,estilo,0.0,0.0,0.0,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__coast_frac,estilo,0.0065318562539296,0.0065318562539296,0.0065318562539296,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__coast_frac,estilo,0.0161292118819037,0.0161292118819037,0.0161292118819037,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,fast__full_throttle_frac,auto,0.0,0.0,0.0,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__full_throttle_frac,auto,-0.0016851594944083,-0.0016851594944083,-0.0016851594944083,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__full_throttle_frac,auto,-0.0580851853403545,-0.0580851853403545,-0.0580851853403545,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__throttle_attack,estilo,-6.870626310298107,-6.870626310298107,-6.870626310298107,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__throttle_attack,estilo,3.86193389301901,3.86193389301901,3.86193389301901,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,fast__trail_brake_frac,estilo,0.0,0.0,0.0,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,medium__trail_brake_frac,estilo,0.012811728696019,0.012811728696019,0.012811728696019,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_1_10,slow__trail_brake_frac,estilo,0.0003140505355977,0.0003140505355977,0.0003140505355977,7,7,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,fast__apex_speed_rel,auto,1.8807049791991184,1.8807049791991184,1.8807049791991184,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__apex_speed_rel,auto,4.795645938107702,4.795645938107702,4.795645938107702,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__apex_speed_rel,auto,4.727010112008644,4.727010112008644,4.727010112008644,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__brake_point_rel,auto,-3.8460831926848784,-3.8460831926848784,-3.8460831926848784,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__brake_point_rel,auto,5.916433752011203,5.916433752011203,5.916433752011203,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,fast__coast_frac,estilo,0.0,0.0,0.0,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__coast_frac,estilo,0.006108526727229,0.006108526727229,0.006108526727229,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__coast_frac,estilo,0.0158910583155018,0.0158910583155018,0.0158910583155018,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,fast__full_throttle_frac,auto,-0.0015026342108179,-0.0015026342108179,-0.0015026342108179,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__full_throttle_frac,auto,-0.0218042106864555,-0.0218042106864555,-0.0218042106864555,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__full_throttle_frac,auto,-0.0314185058034502,-0.0314185058034502,-0.0314185058034502,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__throttle_attack,estilo,-4.571895812384716,-4.571895812384716,-4.571895812384716,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__throttle_attack,estilo,4.115736081517379,4.115736081517379,4.115736081517379,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,fast__trail_brake_frac,estilo,0.0,0.0,0.0,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,medium__trail_brake_frac,estilo,0.0516901236591016,0.0516901236591016,0.0516901236591016,8,6,,diferencia_de_medianas_bootstrap_stint
+Chinese Grand Prix,Williams,ALB,SAI,MEDIUM|vida_11_25,slow__trail_brake_frac,estilo,0.0411154669411579,0.0411154669411579,0.0411154669411579,8,6,,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,fast__apex_speed_rel,auto,1.0932214673698,-2.6011553527071296,1.5524466292621566,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__apex_speed_rel,auto,1.7520455319541952,-2.9690262654181416,2.3693804708322004,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__apex_speed_rel,auto,-2.4357943337406813,-3.2090186254582664,-0.9556041948735412,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__brake_point_rel,auto,-10.53786107913702,-11.781689293128595,-7.96959573380604,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__brake_point_rel,auto,-1.754990039579145,-8.913382392855615,8.583388779758906,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__coast_frac,estilo,-0.0438172128194173,-0.049655521059766,-0.0364044570369222,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__coast_frac,estilo,-0.0216376796375921,-0.0307243882276792,0.0052024025731448,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__full_throttle_frac,auto,0.0106795116265911,-0.014279710009195,0.0185253057980405,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__full_throttle_frac,auto,0.0114646366539626,-0.0158493807722741,0.0186116335650908,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__throttle_attack,estilo,1.0106025468449524,-3.3558604220433543,2.0523808409328064,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__throttle_attack,estilo,-2.3954141801534834,-3.602009232752954,-1.6437125793874534,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,medium__trail_brake_frac,estilo,-0.0126476172866169,-0.0157279659985117,0.0054410377536465,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,crudo,slow__trail_brake_frac,estilo,-0.007468248637467,-0.0210729281863786,0.0394003355828844,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,fast__apex_speed_rel,auto,1.0932214673698,-2.6011553527071296,1.8518349719466176,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__apex_speed_rel,auto,1.7520455319541952,-2.9690262654181416,2.3693804708322004,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__apex_speed_rel,auto,-2.4357943337406813,-3.2090186254582664,-0.6974064795994737,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__brake_point_rel,auto,-10.53786107913702,-11.781689293128595,-7.96959573380604,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__brake_point_rel,auto,-1.754990039579145,-8.913382392855615,8.583388779758906,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__coast_frac,estilo,-0.0438172128194173,-0.049655521059766,-0.0364044570369222,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__coast_frac,estilo,-0.0216376796375921,-0.0304227850896418,0.0052024025731448,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__full_throttle_frac,auto,0.0106795116265911,-0.014279710009195,0.0185253057980405,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__full_throttle_frac,auto,0.0114646366539626,-0.0158493807722741,0.0186116335650908,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__throttle_attack,estilo,1.0106025468449524,-3.3558604220433543,2.0523808409328064,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__throttle_attack,estilo,-2.3954141801534834,-3.527363558024033,-1.6437125793874534,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,medium__trail_brake_frac,estilo,-0.0126476172866169,-0.0157279659985117,0.0054410377536465,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Aston Martin,ALO,STR,estratificado,slow__trail_brake_frac,estilo,-0.007468248637467,-0.0210729281863786,0.0394003355828844,34,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,fast__apex_speed_rel,auto,-0.9612640196108204,-1.4419981527387218,-0.4105164384473836,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__apex_speed_rel,auto,-3.351691326540138,-4.4895696732058505,-1.8649759168299327,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__apex_speed_rel,auto,-1.0289731837497664,-1.8664031417266704,-0.1390640671667664,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__brake_point_rel,auto,0.7729577878560523,-2.1146859764357844,5.515557993257623,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__brake_point_rel,auto,6.385305988302489,5.224146156948953,10.411364823203543,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__coast_frac,estilo,-0.0006266473051433,-0.0031930584036365,0.00155192703636,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__coast_frac,estilo,-0.0010118121004244,-0.00522462086536,0.0017247579708981,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__full_throttle_frac,auto,-0.0301316101104219,-0.039746952175448,-0.0257943520103208,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__full_throttle_frac,auto,-0.0286152371581518,-0.0424902994737827,-0.0237009448497238,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__throttle_attack,estilo,-0.4972943722943714,-3.1418322451877128,2.514756160605404,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__throttle_attack,estilo,0.9532973372375588,0.898003491088395,1.3309113281041929,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,medium__trail_brake_frac,estilo,0.0133789242194256,-0.0024896607234934,0.0267472630709596,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,crudo,slow__trail_brake_frac,estilo,-0.0017459845296294,-0.0045302821503127,-0.0017459845296294,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,fast__apex_speed_rel,auto,-0.9612640196108204,-1.4419981527387218,-0.4105164384473836,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__apex_speed_rel,auto,-3.351691326540138,-4.84050722495102,-1.8649759168299327,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__apex_speed_rel,auto,-1.0289731837497664,-1.8664031417266704,-0.1390640671667664,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__brake_point_rel,auto,0.7729577878560523,-2.1146859764357844,5.515557993257623,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__brake_point_rel,auto,6.385305988302489,5.224146156948953,10.411364823203543,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__coast_frac,estilo,-0.0006266473051433,-0.0030886794746265,0.00155192703636,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__coast_frac,estilo,-0.0010118121004244,-0.00522462086536,0.0017247579708981,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__full_throttle_frac,auto,-0.0301316101104219,-0.039746952175448,-0.0257943520103208,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__full_throttle_frac,auto,-0.0286152371581518,-0.0418681290453952,-0.0237009448497238,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__throttle_attack,estilo,-0.4972943722943714,-3.1418322451877128,2.514756160605404,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__throttle_attack,estilo,0.9532973372375588,0.898003491088395,1.3309113281041929,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,medium__trail_brake_frac,estilo,0.0133789242194256,-0.0053323983196998,0.0267472630709596,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Ferrari,HAM,LEC,estratificado,slow__trail_brake_frac,estilo,-0.0017459845296294,-0.0045302821503127,-0.0017459845296294,37,25,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,fast__apex_speed_rel,auto,2.300067961923949,1.5566426087823024,3.640910761955541,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__apex_speed_rel,auto,-1.6671578361709756,-2.4867154097102047,-0.1176484289718802,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__apex_speed_rel,auto,-0.5142049087361387,-2.90710283312966,3.476775708282415,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__brake_point_rel,auto,-9.06148958492062,-12.97968780471332,-2.25395650505792,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__brake_point_rel,auto,0.9178614347271908,-1.3393174363138822,12.847524654558288,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__coast_frac,estilo,0.008459415972922,-0.0040427867833805,0.0196242821378649,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__coast_frac,estilo,0.0039952845826678,0.0017494872250836,0.0147840709600028,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__full_throttle_frac,auto,0.0203649430655366,0.0116056951521868,0.0279067070732199,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__full_throttle_frac,auto,0.0211530031831375,0.0185679804853192,0.0284762003366372,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__throttle_attack,estilo,-8.961021242835736,-9.335059354641524,-4.517969006309329,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__throttle_attack,estilo,-1.9320515034418968,-5.104636042723313,0.3119479676753287,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,medium__trail_brake_frac,estilo,-0.0049504304952872,-0.0301716812946256,0.0236585263832794,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,crudo,slow__trail_brake_frac,estilo,-0.0069788887218225,-0.0738959582676402,0.0223398200554373,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,fast__apex_speed_rel,auto,2.300067961923949,1.5566426087823024,3.470999076369361,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__apex_speed_rel,auto,-1.6671578361709756,-2.4867154097102047,-0.4529868672909289,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__apex_speed_rel,auto,-0.5142049087361387,-2.90710283312966,3.476775708282415,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__brake_point_rel,auto,-9.06148958492062,-12.88214715046484,-2.25395650505792,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__brake_point_rel,auto,0.9178614347271908,-1.3393174363138822,12.847524654558288,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__coast_frac,estilo,0.008459415972922,-0.0040427867833805,0.0172493843423717,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__coast_frac,estilo,0.0039952845826678,0.0015863112649428,0.0129902923753183,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__full_throttle_frac,auto,0.0203649430655366,0.0116056951521868,0.0279067070732199,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__full_throttle_frac,auto,0.0211530031831375,0.0185679804853192,0.0295084643749952,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__throttle_attack,estilo,-8.961021242835736,-9.440409643899123,-4.517969006309329,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__throttle_attack,estilo,-1.9320515034418968,-5.104636042723313,0.3119479676753287,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,medium__trail_brake_frac,estilo,-0.0049504304952872,-0.0301716812946256,0.0236585263832794,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,McLaren,NOR,PIA,estratificado,slow__trail_brake_frac,estilo,-0.0069788887218225,-0.0738959582676402,0.0223398200554373,40,42,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,fast__apex_speed_rel,auto,-1.4205913048256682,-1.9913864954231828,-1.0800883144138198,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__apex_speed_rel,auto,0.2126974603671199,-2.257665061121996,1.5129711001959194,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__apex_speed_rel,auto,-1.171307741865798,-3.726775708282415,-0.0464485834351703,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__brake_point_rel,auto,-5.770504234003855,-10.95993808062651,-2.980042577631127,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__brake_point_rel,auto,2.471719871029059,0.1665953194408587,2.7613235892833217,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__coast_frac,estilo,0.0029555540966826,-0.0066256435905349,0.0098047488727144,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__coast_frac,estilo,0.0007221110407817,-0.0105303168795418,0.0048678715522686,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__full_throttle_frac,auto,0.007953292415084,0.0017043930136659,0.0113843147717267,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__full_throttle_frac,auto,0.0048583736391096,-0.0004322079745188,0.0067296844520214,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__throttle_attack,estilo,6.566274986361629,5.320364794699268,8.4963106866122,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__throttle_attack,estilo,4.136265036089932,2.264694923582528,5.787528723737414,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,medium__trail_brake_frac,estilo,-0.0028621843846412,-0.0030873988583612,-0.0024579494869225,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,crudo,slow__trail_brake_frac,estilo,-0.0247002810822547,-0.0595771753188639,-0.0054903248956053,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,fast__apex_speed_rel,auto,-1.4205913048256682,-2.141590381195029,-0.9084775807289198,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__apex_speed_rel,auto,0.2126974603671199,-2.257665061121996,1.4158524216890862,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__apex_speed_rel,auto,-1.171307741865798,-3.726775708282415,-0.0464485834351703,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__brake_point_rel,auto,-5.770504234003855,-10.95993808062651,-2.980042577631127,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__brake_point_rel,auto,2.471719871029059,0.1665953194408587,2.7613235892833217,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__coast_frac,estilo,0.0029555540966826,-0.0066256435905349,0.0098047488727144,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__coast_frac,estilo,0.0007221110407817,-0.0105303168795418,0.0041926399609192,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__full_throttle_frac,auto,0.007953292415084,0.0017043930136659,0.0113843147717267,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__full_throttle_frac,auto,0.0048583736391096,-0.0004322079745188,0.0067296844520214,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__throttle_attack,estilo,6.566274986361629,5.320364794699268,8.4963106866122,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__throttle_attack,estilo,4.136265036089932,2.264694923582528,5.932775349074641,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,medium__trail_brake_frac,estilo,-0.0028621843846412,-0.0030873988583612,-0.0023509726119055,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Mercedes,ANT,RUS,estratificado,slow__trail_brake_frac,estilo,-0.0247002810822547,-0.0666140142795666,0.0006449774945646,36,28,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,fast__apex_speed_rel,auto,0.3224942386962344,-1.2008036749283943,3.290095218868156,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__apex_speed_rel,auto,-1.3085107243920642,-5.21831698953492,1.5539689179478444,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__apex_speed_rel,auto,-1.1715894250045429,-5.831681065944722,0.6452090041321221,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__brake_point_rel,auto,3.781463022819081,-5.153974627950088,6.401025676762945,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__brake_point_rel,auto,-19.459350470238125,-30.08575940476822,-2.8036254484134986,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__coast_frac,estilo,0.0093704077798396,-0.0038882118049301,0.0187166049846169,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__coast_frac,estilo,-0.0033898301022167,-0.0097229513910228,0.0058939882011921,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__full_throttle_frac,auto,0.0010561716885087,-0.0064239866611741,0.0080767302013093,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__full_throttle_frac,auto,0.0008009562239794,-0.0095329855789314,0.019487985200089,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__throttle_attack,estilo,-1.7953240454352866,-2.0788540395915183,7.005875257898575,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__throttle_attack,estilo,0.151106230444606,-3.1126525116250305,3.848906172431208,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,medium__trail_brake_frac,estilo,-0.0248841432958907,-0.0404831141588171,-0.0178395954338294,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,crudo,slow__trail_brake_frac,estilo,-0.016431066544524,-0.0661577220441661,0.0257435662205992,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,fast__apex_speed_rel,auto,0.3224942386962344,-1.5908428000315922,3.290095218868156,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__apex_speed_rel,auto,-1.3085107243920642,-6.696658062239907,1.5539689179478444,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__apex_speed_rel,auto,-1.1715894250045429,-5.831681065944722,0.6452090041321221,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__brake_point_rel,auto,3.781463022819081,-5.153974627950088,6.401025676762945,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__brake_point_rel,auto,-19.459350470238125,-30.08575940476822,-2.8036254484134986,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__coast_frac,estilo,0.0093704077798396,-0.0038882118049301,0.0187166049846169,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__coast_frac,estilo,-0.0033898301022167,-0.0099533331961822,0.0058939882011921,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__full_throttle_frac,auto,0.0010561716885087,-0.0064239866611741,0.0146967101789417,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__full_throttle_frac,auto,0.0008009562239794,-0.0095329855789314,0.019487985200089,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__throttle_attack,estilo,-1.7953240454352866,-2.0788540395915183,7.005875257898575,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__throttle_attack,estilo,0.151106230444606,-1.4878926540216746,3.848906172431208,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,medium__trail_brake_frac,estilo,-0.0248841432958907,-0.0404831141588171,-0.0178395954338294,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Racing Bulls,HAD,LAW,estratificado,slow__trail_brake_frac,estilo,-0.016431066544524,-0.0661577220441661,0.0257435662205992,32,34,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,fast__apex_speed_rel,auto,2.050067961923949,1.2990485330647168,2.9005436953915904,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__apex_speed_rel,auto,0.684533490369162,0.1514910920677658,2.6706768766380966,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__apex_speed_rel,auto,-1.869673632675936,-2.424859915953808,-0.5464485834351702,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__brake_point_rel,auto,-4.245347222222108,-8.883897632808562,-2.819621644986144,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__brake_point_rel,auto,8.702620299505583,-0.7169278650836226,13.65942215674297,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,fast__coast_frac,estilo,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__coast_frac,estilo,0.0166447624179476,0.0151522175655452,0.0236731453037856,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__coast_frac,estilo,0.0080583762171495,0.0032055955771015,0.0107736646236739,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,fast__full_throttle_frac,auto,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__full_throttle_frac,auto,-0.0614511066883735,-0.0704526396988642,-0.0551284697551487,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__full_throttle_frac,auto,-0.0649266810930763,-0.0690148154247167,-0.062278547015758,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__throttle_attack,estilo,0.0032737485107194,-6.304112470457549,1.7122490243489792,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__throttle_attack,estilo,1.152842742014275,-1.00668866005029,2.5136160098523623,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,fast__trail_brake_frac,estilo,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,medium__trail_brake_frac,estilo,0.006888376549953,0.0018743802904521,0.013507567340482,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,crudo,slow__trail_brake_frac,estilo,0.0145919702787705,0.0055727751404555,0.035165685643269,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,fast__apex_speed_rel,auto,2.050067961923949,1.2990485330647168,2.9005436953915904,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__apex_speed_rel,auto,0.684533490369162,0.0692990401918356,2.874686509906124,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__apex_speed_rel,auto,-1.869673632675936,-2.424859915953808,-0.5464485834351702,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__brake_point_rel,auto,-4.245347222222108,-8.883897632808562,-2.819621644986144,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__brake_point_rel,auto,8.702620299505583,-0.7169278650836226,13.65942215674297,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,fast__coast_frac,estilo,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__coast_frac,estilo,0.0166447624179476,0.0151522175655452,0.0236731453037856,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__coast_frac,estilo,0.0080583762171495,0.0031740774043903,0.0107736646236739,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,fast__full_throttle_frac,auto,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__full_throttle_frac,auto,-0.0614511066883735,-0.0664701801930539,-0.0551284697551487,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__full_throttle_frac,auto,-0.0649266810930763,-0.0690148154247167,-0.062278547015758,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__throttle_attack,estilo,0.0032737485107194,-6.304112470457549,1.7122490243489792,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__throttle_attack,estilo,1.152842742014275,-1.00668866005029,2.6460383890452266,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,fast__trail_brake_frac,estilo,0.0,0.0,0.0,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,medium__trail_brake_frac,estilo,0.006888376549953,0.0018743802904521,0.0128995112275031,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint
+Saudi Arabian Grand Prix,Williams,ALB,SAI,estratificado,slow__trail_brake_frac,estilo,0.0145919702787705,0.0055727751404555,0.0337417657937739,43,40,clase_dominante,diferencia_de_medianas_bootstrap_stint

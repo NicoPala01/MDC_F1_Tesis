@@ -1,0 +1,18 @@
+[
+  "fast__apex_speed_rel",
+  "fast__coast_frac",
+  "fast__full_throttle_frac",
+  "fast__trail_brake_frac",
+  "medium__apex_speed_rel",
+  "medium__brake_point_rel",
+  "medium__coast_frac",
+  "medium__full_throttle_frac",
+  "medium__throttle_attack",
+  "medium__trail_brake_frac",
+  "slow__apex_speed_rel",
+  "slow__brake_point_rel",
+  "slow__coast_frac",
+  "slow__full_throttle_frac",
+  "slow__throttle_attack",
+  "slow__trail_brake_frac"
+]

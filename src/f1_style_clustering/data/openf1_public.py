@@ -29,6 +29,18 @@ VSC_RE = re.compile(r"VIRTUAL SAFETY CAR|\bVSC\b", re.IGNORECASE)
 SC_RE = re.compile(r"SAFETY CAR", re.IGNORECASE)
 
 
+def utc_stamp(value) -> pd.Timestamp:
+    """Parse one ISO-8601 stamp. Fractional seconds are optional."""
+    stamp = pd.Timestamp(value)
+    if stamp.tzinfo is None:
+        return stamp.tz_localize("UTC")
+    return stamp.tz_convert("UTC")
+
+
+def utc_series(values) -> pd.Series:
+    return pd.to_datetime(values, utc=True, format="ISO8601")
+
+
 def tyre_life(age_at_start, lap_number, lap_start) -> float:
     """Age on this lap. A new tyre (age 0 at the stint's first lap) is life 1."""
     age = pd.to_numeric(age_at_start, errors="coerce")
@@ -82,9 +94,7 @@ def track_status_for_lap(messages: Iterable[dict]) -> str:
 def messages_between(messages: Sequence[dict], start: pd.Timestamp, end: pd.Timestamp) -> List[dict]:
     window = []
     for message in messages or []:
-        stamp = pd.Timestamp(message.get("date"))
-        if stamp.tzinfo is None:
-            stamp = stamp.tz_localize("UTC")
+        stamp = utc_stamp(message.get("date"))
         if start <= stamp < end:
             window.append(message)
     return window
@@ -131,10 +141,10 @@ def corner_distance_on_lap(
     """
     loc = location.copy()
     tel = car.copy()
-    loc["date"] = pd.to_datetime(loc["date"], utc=True)
-    tel["date"] = pd.to_datetime(tel["date"], utc=True)
-    start = pd.Timestamp(lap_start)
-    end = pd.Timestamp(lap_end)
+    loc["date"] = utc_series(loc["date"])
+    tel["date"] = utc_series(tel["date"])
+    start = utc_stamp(lap_start)
+    end = utc_stamp(lap_end)
     if start.tzinfo is None:
         start = start.tz_localize("UTC")
     if end.tzinfo is None:
@@ -173,7 +183,7 @@ def assemble_lap_records(
     driver_frame["driver_number"] = driver_frame["driver_number"].astype(str)
     lap_frame["driver_number"] = lap_frame["driver_number"].astype(str)
     lap_frame["lap_number"] = lap_frame["lap_number"].astype(int)
-    lap_frame["date_start"] = pd.to_datetime(lap_frame["date_start"], utc=True)
+    lap_frame["date_start"] = utc_series(lap_frame["date_start"])
     merged = lap_frame.merge(
         driver_frame[["driver_number", "name_acronym", "team_name", "first_name", "last_name"]],
         on="driver_number",

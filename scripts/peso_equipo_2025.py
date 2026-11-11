@@ -216,16 +216,26 @@ def _recluster(frame: pd.DataFrame, columns: list, cfg: dict) -> pd.Series:
     local["clustering"]["min_cluster_size"] = _lap_min_cluster_size(len(reduced))
     local["clustering"]["driver_bootstrap"] = False
     local["clustering"]["compare_aggregators"] = False
-    fitted = cluster_driver_matrix(
-        reduced,
-        config=local,
-        residualize=False,
-        driver_bootstrap=False,
-        compare_aggregators=False,
-    )
-    if fitted.get("error"):
-        raise RuntimeError(fitted["error"])
-    return fitted["cluster_labels"]
+    from f1_style_clustering.models.evaluation import InvalidKPoolError
+
+    def _fit(config):
+        fitted = cluster_driver_matrix(
+            reduced,
+            config=config,
+            residualize=False,
+            driver_bootstrap=False,
+            compare_aggregators=False,
+        )
+        if fitted.get("error"):
+            raise RuntimeError(fitted["error"])
+        return fitted["cluster_labels"]
+
+    try:
+        return _fit(local)
+    except InvalidKPoolError:
+        # Same retry as run_pipeline: the 5% floor can empty the k pool.
+        local["clustering"]["min_cluster_size"] = 3
+        return _fit(local)
 
 
 def _one_variant(frame, columns, labels, race, structure, results: pd.DataFrame) -> dict:
@@ -349,37 +359,42 @@ def analyse_loaded_race(event: str, session, source: str, cfg: dict) -> dict:
         )
         if len(calibration):
             calibration.insert(0, "race", event)
-    extra = {"variante": "sin_iqr0", "pares": pd.DataFrame(), "components": pd.DataFrame(), "null": None}
+    extra = {"variante": "sin_iqr0", "pares": pd.DataFrame(), "components": pd.DataFrame(), "null": None, "error": ""}
     if split["iqr0"] and len(split["sin_iqr0"]) >= 2:
         print(f"[nulo sin iqr0] {event} drop={split['iqr0']}", flush=True)
-        labels = _recluster(frame, split["sin_iqr0"], cfg)
-        reduced = frame[split["sin_iqr0"]].apply(pd.to_numeric, errors="coerce")
-        null_drop = run_triple_null(
-            reduced,
-            cfg,
-            n_replicates=N_NULL,
-            seed=42,
-            progress=f"{event} sin_iqr0",
-            drivers=frame["Driver"].astype(str).tolist(),
-            teams=frame.groupby(frame["Driver"].astype(str))["Team"].first(),
-        )
-        variant = _one_variant(
-            frame,
-            split["sin_iqr0"],
-            labels.reindex(frame.index),
-            event,
-            bool(null_drop.get("structure")),
-            results,
-        )
-        variant["pares"]["variante_iqr"] = "sin_iqr0"
-        extra = {
-            "variante": "sin_iqr0",
-            "pares": variant["pares"],
-            "components": variance_table(
-                frame, split["sin_iqr0"], event, n_boot=N_BOOT, seed=BOOT_SEED + 7, variante_iqr="sin_iqr0"
-            ),
-            "null": _slim_null(null_drop),
-        }
+        try:
+            labels = _recluster(frame, split["sin_iqr0"], cfg)
+            reduced = frame[split["sin_iqr0"]].apply(pd.to_numeric, errors="coerce")
+            null_drop = run_triple_null(
+                reduced,
+                cfg,
+                n_replicates=N_NULL,
+                seed=42,
+                progress=f"{event} sin_iqr0",
+                drivers=frame["Driver"].astype(str).tolist(),
+                teams=frame.groupby(frame["Driver"].astype(str))["Team"].first(),
+            )
+            variant = _one_variant(
+                frame,
+                split["sin_iqr0"],
+                labels.reindex(frame.index),
+                event,
+                bool(null_drop.get("structure")),
+                results,
+            )
+            variant["pares"]["variante_iqr"] = "sin_iqr0"
+            extra = {
+                "variante": "sin_iqr0",
+                "pares": variant["pares"],
+                "components": variance_table(
+                    frame, split["sin_iqr0"], event, n_boot=N_BOOT, seed=BOOT_SEED + 7, variante_iqr="sin_iqr0"
+                ),
+                "null": _slim_null(null_drop),
+                "error": "",
+            }
+        except Exception as exc:
+            extra["error"] = f"{type(exc).__name__}: {exc}"
+            print(f"[sin iqr0] {event} {extra['error']}", flush=True)
     medians = driver_medians(frame, [column for column in split["con_iqr0"] if feature_family(column) == "estilo"])
     teams = frame.groupby(frame["Driver"].astype(str))["Team"].first().to_dict()
     mates = {}
@@ -709,6 +724,7 @@ def run(draw_only: bool = False) -> dict:
     common_families = family_summary(common_table) if len(common_table) else pd.DataFrame()
     if len(common_families):
         common_families.insert(0, "columnas", "comunes")
+    order = {name: index for index, name in enumerate(population)}
     lawson = lawson_tsunoda_control(
         [
             {
@@ -717,7 +733,7 @@ def run(draw_only: bool = False) -> dict:
                 "teammate_of": item["mates"],
                 "medians": item["medians"],
             }
-            for item in profiles
+            for item in sorted(profiles, key=lambda item: order.get(item["race"], 10**9))
         ],
         common or [],
     )
